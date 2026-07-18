@@ -1,6 +1,6 @@
 # draft()
 
-> draft() is a private, on-device AI app that turns your raw, spoken words into a finished, shareable story. You just talk — about your day, a trip, a moment — and draft() asks a few gentle questions, then shapes it into a real narrative: a hook, a rising middle, a peak, a reflection, and a close. Built for social creators and personal-brand builders who freeze at the blank page. Your voice is processed on-device and isn't stored on a server.
+> draft() is a private AI app that turns your raw, spoken words into a finished, shareable story. You just talk — about your day, a trip, a moment — and draft() asks a few gentle questions, then shapes it into a real narrative: a hook, a rising middle, a peak, a reflection, and a close. Built for social creators and personal-brand builders who freeze at the blank page. Your words stay yours — you decide what's kept and what's shared, and nothing is ever sold or used to train.
 
 ## Key facts
 - Name: draft() — "say it, get your story"; part of ipe Studio
@@ -8,7 +8,7 @@
 - What it does: turns about thirty messy spoken seconds into a structured, readable story ready to post
 - Signature flow: talk → a few questions → a finished story (hook · rising · peak · reflection · close)
 - Formats: one-tap reshaping for an Instagram caption, a LinkedIn post, or a YouTube script
-- Privacy: voice is processed on-device; nothing you say is uploaded, stored, or used to train — only the finished story leaves the app, when you choose to share it
+- Privacy: your words stay yours — never sold, never used to train; you decide what's kept and what's deleted, and only the finished story is shared, when you choose to
 - Pricing: free (3 finished stories); subscription $2.99/month for unlimited
 - Website: https://draft.ipe.rest
 - Maker: ipe Studio (brand ipe(), motto "when the process finally rests"), https://ipe.rest
