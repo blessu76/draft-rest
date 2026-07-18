@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://draft.ipe.rest/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/?lang=vi"/>
   </url>
 </urlset>

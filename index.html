@@ -3,30 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>draft() — Say it. Get your story.</title>
-<meta name="description" content="A private, on-device AI that turns your messy spoken words into a finished, shareable story. You talk — draft() shapes it into something people actually read.">
+<title id="meta-title">draft() — Say it. Get your story.</title>
+<meta id="meta-desc" name="description" content="A private, on-device AI that turns your messy spoken words into a finished, shareable story. You talk — draft() shapes it into something people actually read.">
 <meta name="keywords" content="storytelling app, AI writing, voice to text, story generator, creator tool, journaling, caption writer, on-device AI, private, draft, ipe">
 <meta name="author" content="ipe Studio">
 <meta name="theme-color" content="#FAF7F0">
-<link rel="canonical" href="https://draft.ipe.rest/">
+<link id="canonical" rel="canonical" href="https://draft.ipe.rest/">
 <meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- hreflang (client-side i18n via ?lang=) — supportedLangs matches draft app L10n -->
+<link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/">
+<link rel="alternate" hreflang="en" href="https://draft.ipe.rest/?lang=en">
+<link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/?lang=ko">
+<link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/?lang=ja">
+<link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/?lang=zh">
+<link rel="alternate" hreflang="es" href="https://draft.ipe.rest/?lang=es">
+<link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/?lang=pt">
+<link rel="alternate" hreflang="id" href="https://draft.ipe.rest/?lang=id">
+<link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/?lang=ru">
+<link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/?lang=vi">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="draft()">
-<meta property="og:url" content="https://draft.ipe.rest/">
-<meta property="og:title" content="draft() — Say it. Get your story.">
-<meta property="og:description" content="You talk. draft() asks a few questions, then shapes it into a finished, shareable story — hook to close. Private and on-device.">
+<meta id="og-url" property="og:url" content="https://draft.ipe.rest/">
+<meta id="og-title" property="og:title" content="draft() — Say it. Get your story.">
+<meta id="og-desc" property="og:description" content="You talk. draft() asks a few questions, then shapes it into a finished, shareable story — hook to close. Private and on-device.">
 <meta property="og:image" content="https://draft.ipe.rest/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="draft() — Say it. Get your story.">
-<meta property="og:locale" content="en_US">
+<meta id="og-locale" property="og:locale" content="en_US">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="draft() — Say it. Get your story.">
-<meta name="twitter:description" content="Turn thirty messy spoken seconds into a story people actually read. Private, on-device.">
+<meta id="tw-title" name="twitter:title" content="draft() — Say it. Get your story.">
+<meta id="tw-desc" name="twitter:description" content="Turn thirty messy spoken seconds into a story people actually read. Private, on-device.">
 <meta name="twitter:image" content="https://draft.ipe.rest/og-image.png">
 
 <!-- Structured data (SEO + GEO) -->
@@ -303,6 +315,27 @@
   .foot-links a:hover{color:var(--ink);}
   .foot-studio{margin-top:26px;font-size:12px;letter-spacing:.06em;color:#A8AEB8;}
 
+  /* ---------- language selector (minimal, mono, top-right) ---------- */
+  .langsel{
+    position:fixed;top:16px;right:16px;z-index:50;
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.72);backdrop-filter:blur(8px);
+    border:1px solid var(--line);border-radius:8px;
+    padding:6px 10px;color:var(--ink-soft);
+    transition:border-color .3s ease,color .3s ease;
+  }
+  .langsel:hover{border-color:var(--sage);color:var(--ink);}
+  .langsel svg{width:13px;height:13px;opacity:.7;flex-shrink:0;}
+  .langsel select{
+    appearance:none;-webkit-appearance:none;background:transparent;border:0;
+    color:inherit;font-family:var(--mono);font-size:12.5px;font-weight:400;
+    letter-spacing:.01em;cursor:pointer;padding-right:2px;outline:none;
+  }
+  .langsel select option{color:#1B1F27;background:#fff;}
+  @media (max-width:640px){
+    .langsel{top:12px;right:12px;padding:5px 9px;}
+  }
+
   @media (prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none;}
     .cursor{animation:none;}
@@ -314,23 +347,39 @@
 </head>
 <body>
 
+<!-- language selector -->
+<label class="langsel" aria-label="Language">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
+  <select id="lang" aria-label="Language">
+    <option value="en">English</option>
+    <option value="ko">한국어</option>
+    <option value="ja">日本語</option>
+    <option value="zh">中文</option>
+    <option value="es">Español</option>
+    <option value="pt">Português</option>
+    <option value="id">Bahasa Indonesia</option>
+    <option value="ru">Русский</option>
+    <option value="vi">Tiếng Việt</option>
+  </select>
+</label>
+
 <!-- 1 · HERO -->
 <header class="hero">
-  <div class="comment reveal in">// what happened today?</div>
+  <div class="comment reveal in" data-i18n="hero_comment">// what happened today?</div>
   <div class="wordmark reveal in" style="transition-delay:.15s">draft()<span class="cursor" aria-hidden="true"></span></div>
-  <h1 class="reveal in" style="transition-delay:.35s">Say it. Get your story.</h1>
-  <p class="hero-sub reveal in" style="transition-delay:.5s">You talk. draft() shapes it into something people actually read.</p>
+  <h1 class="reveal in" style="transition-delay:.35s" data-i18n="hero_h1">Say it. Get your story.</h1>
+  <p class="hero-sub reveal in" style="transition-delay:.5s" data-i18n="hero_sub">You talk. draft() shapes it into something people actually read.</p>
   <div class="reveal in" style="transition-delay:.65s">
     <a class="btn" href="#">
       <svg class="apple-glyph" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-      Download on the App Store
+      <span data-i18n="cta_download">Download on the App Store</span>
     </a>
   </div>
   <div class="hero-demo reveal in" id="heroDemo" style="transition-delay:.85s" aria-label="Raw speech becoming a finished paragraph">
     <div class="hero-demo-bar" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="hero-demo-body">
       <p class="demo-raw" id="demoRaw"></p>
-      <p class="demo-clean">The bakery was closing when I got there — but the owner saw me through the glass, unlocked the door, and handed me the last croissant. Some days the city is kinder than you expect.</p>
+      <p class="demo-clean" data-i18n="demo_clean">The bakery was closing when I got there — but the owner saw me through the glass, unlocked the door, and handed me the last croissant. Some days the city is kinder than you expect.</p>
     </div>
   </div>
 </header>
@@ -338,10 +387,10 @@
 <!-- 2 · THE PROBLEM -->
 <section class="problem">
   <div class="wrap">
-    <div class="comment reveal">// the blank caption box</div>
-    <h2 class="reveal">You had a whole day. Then you opened the caption box and… nothing.</h2>
-    <p class="lede reveal">You're not a bad storyteller. You just started at the hardest part — the blank page. The story was already in you. It just needed a way out.</p>
-    <span class="comment reveal">// no perfect sentences required</span>
+    <div class="comment reveal" data-i18n="prob_comment">// the blank caption box</div>
+    <h2 class="reveal" data-i18n="prob_h2">You had a whole day. Then you opened the caption box and… nothing.</h2>
+    <p class="lede reveal" data-i18n="prob_lede">You're not a bad storyteller. You just started at the hardest part — the blank page. The story was already in you. It just needed a way out.</p>
+    <span class="comment reveal" data-i18n="prob_comment2">// no perfect sentences required</span>
   </div>
 </section>
 
@@ -349,8 +398,8 @@
 <section class="how">
   <div class="wrap">
     <div style="text-align:center">
-      <div class="comment reveal">// how it works</div>
-      <h2 class="reveal">Three turns. One story.</h2>
+      <div class="comment reveal" data-i18n="how_comment">// how it works</div>
+      <h2 class="reveal" data-i18n="how_h2">Three turns. One story.</h2>
     </div>
     <div class="steps">
       <div class="step reveal">
@@ -358,8 +407,8 @@
           <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
         </div>
         <div>
-          <h3>Just talk — 30 seconds is enough.</h3>
-          <p>Rambling is fine. Half-sentences are fine. Say it however it comes.</p>
+          <h3 data-i18n="how1_h">Just talk — 30 seconds is enough.</h3>
+          <p data-i18n="how1_p">Rambling is fine. Half-sentences are fine. Say it however it comes.</p>
         </div>
       </div>
       <div class="step reveal">
@@ -367,8 +416,8 @@
           <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.8c0 1.7-2.4 2.2-2.4 3.2"/><line x1="12" y1="16" x2="12" y2="16.01"/></svg>
         </div>
         <div>
-          <h3>draft() asks a few questions to find the real moment.</h3>
-          <p>Two or three gentle prompts — the ones a good editor would ask.</p>
+          <h3 data-i18n="how2_h">draft() asks a few questions to find the real moment.</h3>
+          <p data-i18n="how2_p">Two or three gentle prompts — the ones a good editor would ask.</p>
         </div>
       </div>
       <div class="step reveal">
@@ -376,8 +425,8 @@
           <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
         </div>
         <div>
-          <h3>Get a finished story — hook to close — ready to post.</h3>
-          <p>Structured, readable, and yours. The gold moment.</p>
+          <h3 data-i18n="how3_h">Get a finished story — hook to close — ready to post.</h3>
+          <p data-i18n="how3_p">Structured, readable, and yours. The gold moment.</p>
         </div>
       </div>
     </div>
@@ -388,23 +437,23 @@
 <section class="transform">
   <div class="wrap-wide">
     <div class="transform-head">
-      <div class="comment reveal">// raw → finished</div>
-      <h2 class="reveal">Show, don't tell.</h2>
-      <p class="lede reveal" style="margin:0 auto">This is what thirty messy seconds becomes.</p>
+      <div class="comment reveal" data-i18n="tf_comment">// raw → finished</div>
+      <h2 class="reveal" data-i18n="tf_h2">Show, don't tell.</h2>
+      <p class="lede reveal" style="margin:0 auto" data-i18n="tf_lede">This is what thirty messy seconds becomes.</p>
     </div>
     <div class="ba reveal">
       <div class="ba-col" aria-label="What you said">
-        <div class="ba-label">what you said</div>
-        <p class="ba-raw">so um today I went to that bakery… <em>the one near the station?</em> and it was basically closed, like lights half off… and the owner just… <em>I don't know</em>… he let me in anyway? and gave me the last croissant and I just… <em>yeah</em>. it was a good day I guess</p>
+        <div class="ba-label" data-i18n="tf_said_label">what you said</div>
+        <p class="ba-raw" data-i18n="tf_raw">so um today I went to that bakery… the one near the station? and it was basically closed, like lights half off… and the owner just… I don't know… he let me in anyway? and gave me the last croissant and I just… yeah. it was a good day I guess</p>
       </div>
       <div class="ba-arrow" aria-hidden="true">
         <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </div>
       <div class="ba-col ba-after story" aria-label="Your story">
-        <div class="ba-label">your story</div>
-        <p><span class="tag">hook</span>The bakery lights were already half off when I got there.</p>
-        <p><span class="tag">rising · peak</span>I almost turned back — then the owner saw me through the glass, unlocked the door without a word, and handed me the last croissant on the tray.</p>
-        <p><span class="tag">reflection · close</span>I keep thinking about that small, unearned kindness. Some days the city is softer than you expect. Today was one of them.</p>
+        <div class="ba-label" data-i18n="tf_story_label">your story</div>
+        <p><span class="tag" data-i18n="tf_tag_hook">hook</span><span data-i18n="tf_s1">The bakery lights were already half off when I got there.</span></p>
+        <p><span class="tag" data-i18n="tf_tag_rising">rising · peak</span><span data-i18n="tf_s2">I almost turned back — then the owner saw me through the glass, unlocked the door without a word, and handed me the last croissant on the tray.</span></p>
+        <p><span class="tag" data-i18n="tf_tag_reflect">reflection · close</span><span data-i18n="tf_s3">I keep thinking about that small, unearned kindness. Some days the city is softer than you expect. Today was one of them.</span></p>
       </div>
     </div>
   </div>
@@ -413,15 +462,15 @@
 <!-- 5 · MADE FOR CREATORS -->
 <section class="creators">
   <div class="wrap">
-    <div class="comment reveal">// where it's going</div>
-    <h2 class="reveal">One story. Every format.</h2>
-    <p class="lede reveal" style="margin:0 auto">One tap reshapes your story for where you post it — length, tone, and line breaks included.</p>
+    <div class="comment reveal" data-i18n="cr_comment">// where it's going</div>
+    <h2 class="reveal" data-i18n="cr_h2">One story. Every format.</h2>
+    <p class="lede reveal" style="margin:0 auto" data-i18n="cr_lede">One tap reshapes your story for where you post it — length, tone, and line breaks included.</p>
     <div class="formats reveal">
-      <span class="format">Instagram caption</span>
-      <span class="format">LinkedIn post</span>
-      <span class="format">YouTube script</span>
+      <span class="format" data-i18n="cr_fmt1">Instagram caption</span>
+      <span class="format" data-i18n="cr_fmt2">LinkedIn post</span>
+      <span class="format" data-i18n="cr_fmt3">YouTube script</span>
     </div>
-    <span class="comment reveal">// same story, different room</span>
+    <span class="comment reveal" data-i18n="cr_comment2">// same story, different room</span>
   </div>
 </section>
 
@@ -431,12 +480,12 @@
     <div class="privacy-seal reveal" aria-hidden="true">
       <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     </div>
-    <h2 class="reveal">Your rough thoughts stay yours.</h2>
-    <p class="lede reveal">Your voice is understood on your device — and it isn't stored on a server. The messy version, the honest version, the 11pm version: all yours.</p>
+    <h2 class="reveal" data-i18n="priv_h2">Your rough thoughts stay yours.</h2>
+    <p class="lede reveal" data-i18n="priv_lede">Your voice is understood on your device — and it isn't stored on a server. The messy version, the honest version, the 11pm version: all yours.</p>
     <div class="ppoints">
-      <div class="ppoint reveal">Speech is processed on-device, not in the cloud.</div>
-      <div class="ppoint reveal">Nothing you say is uploaded, stored, or used to train anything.</div>
-      <div class="ppoint reveal">Only the finished story leaves the app — when you choose to share it.</div>
+      <div class="ppoint reveal" data-i18n="priv1">Speech is processed on-device, not in the cloud.</div>
+      <div class="ppoint reveal" data-i18n="priv2">Nothing you say is uploaded, stored, or used to train anything.</div>
+      <div class="ppoint reveal" data-i18n="priv3">Only the finished story leaves the app — when you choose to share it.</div>
     </div>
   </div>
 </section>
@@ -444,43 +493,43 @@
 <!-- 7 · PRICING -->
 <section class="pricing">
   <div class="wrap-wide">
-    <div class="comment reveal">// pricing</div>
-    <h2 class="reveal">Less than a coffee.</h2>
+    <div class="comment reveal" data-i18n="price_comment">// pricing</div>
+    <h2 class="reveal" data-i18n="price_h2">Less than a coffee.</h2>
     <div class="plans">
       <div class="plan reveal">
-        <div class="plan-name">Try it</div>
-        <div class="plan-price">Free</div>
+        <div class="plan-name" data-i18n="plan1_name">Try it</div>
+        <div class="plan-price" data-i18n="plan1_price">Free</div>
         <ul>
-          <li>3 finished stories, on us</li>
-          <li>The full talk → story flow</li>
-          <li>No account needed</li>
+          <li data-i18n="plan1_li1">3 finished stories, on us</li>
+          <li data-i18n="plan1_li2">The full talk → story flow</li>
+          <li data-i18n="plan1_li3">No account needed</li>
         </ul>
-        <div class="plan-note">Enough to feel the transformation.</div>
+        <div class="plan-note" data-i18n="plan1_note">Enough to feel the transformation.</div>
       </div>
       <div class="plan reveal">
-        <div class="plan-name">Keep going</div>
-        <div class="plan-price">$2.99<span>/ month</span></div>
+        <div class="plan-name" data-i18n="plan2_name">Keep going</div>
+        <div class="plan-price">$2.99<span data-i18n="per_month">/ month</span></div>
         <ul>
-          <li>Unlimited stories</li>
-          <li>All formats — caption, post, script</li>
-          <li>Your story archive, on your device</li>
+          <li data-i18n="plan2_li1">Unlimited stories</li>
+          <li data-i18n="plan2_li2">All formats — caption, post, script</li>
+          <li data-i18n="plan2_li3">Your story archive, on your device</li>
         </ul>
-        <div class="plan-note">Cancel anytime, in one tap.</div>
+        <div class="plan-note" data-i18n="plan2_note">Cancel anytime, in one tap.</div>
       </div>
     </div>
-    <span class="comment reveal">// no countdown timers here. ever.</span>
+    <span class="comment reveal" data-i18n="price_comment2">// no countdown timers here. ever.</span>
   </div>
 </section>
 
 <!-- 8 · CTA -->
 <section class="cta">
   <div class="wrap">
-    <span class="comment reveal">// one last thing</span>
-    <h2 class="reveal">Your story was in you <span class="gold">the whole time.</span></h2>
+    <span class="comment reveal" data-i18n="cta_comment">// one last thing</span>
+    <h2 class="reveal"><span data-i18n="cta_h2_a">Your story was in you</span> <span class="gold" data-i18n="cta_h2_b">the whole time.</span></h2>
     <div class="reveal">
       <a class="btn" href="#">
         <svg class="apple-glyph" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-        Download on the App Store
+        <span data-i18n="cta_download">Download on the App Store</span>
       </a>
     </div>
   </div>
@@ -492,12 +541,538 @@
     <div class="foot-mark">draft()</div>
     <div class="comment foot-sign">// when the process finally rests</div>
     <nav class="foot-links" aria-label="Footer">
-      <a href="#">Privacy</a>
-      <a href="#">Support</a>
+      <a href="#" data-i18n="foot_privacy">Privacy</a>
+      <a href="#" data-i18n="foot_support">Support</a>
     </nav>
-    <div class="foot-studio">an ipe studio app</div>
+    <div class="foot-studio" data-i18n="foot_studio">an ipe studio app</div>
   </div>
 </footer>
+
+<!-- ===== i18n ===== -->
+<script>
+  // supportedLangs mirrors the draft app's L10n. en/ko = high quality (ko native-tuned).
+  // ja/zh/es/pt/id/ru/vi = brand-voice MT, pending native review.
+  // Brand-fixed (never translated): draft(), "// when the process finally rests", the // comment glyph.
+  var DEFAULT_LANG = 'en';
+  var LOCALE = { en:'en_US', ko:'ko_KR', ja:'ja_JP', zh:'zh_CN', es:'es_ES', pt:'pt_BR', id:'id_ID', ru:'ru_RU', vi:'vi_VN' };
+
+  var I18N = {
+    en: {
+      meta_title:"draft() — Say it. Get your story.",
+      meta_desc:"A private, on-device AI that turns your messy spoken words into a finished, shareable story. You talk — draft() shapes it into something people actually read.",
+      hero_comment:"// what happened today?",
+      hero_h1:"Say it. Get your story.",
+      hero_sub:"You talk. draft() shapes it into something people actually read.",
+      cta_download:"Download on the App Store",
+      demo_raw:"so um… the bakery was closing… lights half off… and the owner just let me in? gave me the last croissant… yeah. good day I guess",
+      demo_clean:"The bakery was closing when I got there — but the owner saw me through the glass, unlocked the door, and handed me the last croissant. Some days the city is kinder than you expect.",
+      prob_comment:"// the blank caption box",
+      prob_h2:"You had a whole day. Then you opened the caption box and… nothing.",
+      prob_lede:"You're not a bad storyteller. You just started at the hardest part — the blank page. The story was already in you. It just needed a way out.",
+      prob_comment2:"// no perfect sentences required",
+      how_comment:"// how it works",
+      how_h2:"Three turns. One story.",
+      how1_h:"Just talk — 30 seconds is enough.", how1_p:"Rambling is fine. Half-sentences are fine. Say it however it comes.",
+      how2_h:"draft() asks a few questions to find the real moment.", how2_p:"Two or three gentle prompts — the ones a good editor would ask.",
+      how3_h:"Get a finished story — hook to close — ready to post.", how3_p:"Structured, readable, and yours. The gold moment.",
+      tf_comment:"// raw → finished",
+      tf_h2:"Show, don't tell.",
+      tf_lede:"This is what thirty messy seconds becomes.",
+      tf_said_label:"what you said",
+      tf_raw:"so um today I went to that bakery… the one near the station? and it was basically closed, like lights half off… and the owner just… I don't know… he let me in anyway? and gave me the last croissant and I just… yeah. it was a good day I guess",
+      tf_story_label:"your story",
+      tf_tag_hook:"hook", tf_tag_rising:"rising · peak", tf_tag_reflect:"reflection · close",
+      tf_s1:"The bakery lights were already half off when I got there.",
+      tf_s2:"I almost turned back — then the owner saw me through the glass, unlocked the door without a word, and handed me the last croissant on the tray.",
+      tf_s3:"I keep thinking about that small, unearned kindness. Some days the city is softer than you expect. Today was one of them.",
+      cr_comment:"// where it's going",
+      cr_h2:"One story. Every format.",
+      cr_lede:"One tap reshapes your story for where you post it — length, tone, and line breaks included.",
+      cr_fmt1:"Instagram caption", cr_fmt2:"LinkedIn post", cr_fmt3:"YouTube script",
+      cr_comment2:"// same story, different room",
+      priv_h2:"Your rough thoughts stay yours.",
+      priv_lede:"Your voice is understood on your device — and it isn't stored on a server. The messy version, the honest version, the 11pm version: all yours.",
+      priv1:"Speech is processed on-device, not in the cloud.",
+      priv2:"Nothing you say is uploaded, stored, or used to train anything.",
+      priv3:"Only the finished story leaves the app — when you choose to share it.",
+      price_comment:"// pricing",
+      price_h2:"Less than a coffee.",
+      plan1_name:"Try it", plan1_price:"Free",
+      plan1_li1:"3 finished stories, on us", plan1_li2:"The full talk → story flow", plan1_li3:"No account needed",
+      plan1_note:"Enough to feel the transformation.",
+      plan2_name:"Keep going", per_month:"/ month",
+      plan2_li1:"Unlimited stories", plan2_li2:"All formats — caption, post, script", plan2_li3:"Your story archive, on your device",
+      plan2_note:"Cancel anytime, in one tap.",
+      price_comment2:"// no countdown timers here. ever.",
+      cta_comment:"// one last thing",
+      cta_h2_a:"Your story was in you", cta_h2_b:"the whole time.",
+      foot_privacy:"Privacy", foot_support:"Support", foot_studio:"an ipe studio app"
+    },
+    ko: {
+      meta_title:"draft() — 말하면, 이야기가 됩니다.",
+      meta_desc:"두서없이 말한 것을, 완성되어 공유할 수 있는 이야기로 바꿔주는 온디바이스 AI. 당신은 말만 하세요 — draft()가 사람들이 실제로 읽는 글로 다듬어 줍니다.",
+      hero_comment:"// 오늘 무슨 일 있었어요?",
+      hero_h1:"말하면, 이야기가 됩니다.",
+      hero_sub:"당신은 말하고, draft()는 사람들이 실제로 읽는 글로 다듬습니다.",
+      cta_download:"App Store에서 다운로드",
+      demo_raw:"그러니까 음… 빵집이 문 닫고 있었는데… 불도 반쯤 꺼져 있고… 근데 주인이 그냥 들여보내 줬어? 마지막 크루아상도 주고… 응. 좋은 하루였던 것 같아",
+      demo_clean:"도착했을 때 빵집은 문을 닫는 중이었다 — 그런데 주인이 유리 너머로 나를 보고는, 문을 열어 마지막 크루아상을 건네주었다. 어떤 날의 도시는, 생각보다 다정하다.",
+      prob_comment:"// 텅 빈 캡션 창",
+      prob_h2:"하루를 다 보냈는데, 캡션 창을 열자… 아무것도 떠오르지 않는다.",
+      prob_lede:"당신이 이야기를 못하는 게 아닙니다. 가장 어려운 데서 시작했을 뿐이에요 — 빈 페이지. 이야기는 이미 당신 안에 있었고, 나올 길이 필요했을 뿐입니다.",
+      prob_comment2:"// 완벽한 문장은 필요 없어요",
+      how_comment:"// 이렇게 작동해요",
+      how_h2:"세 번의 오감. 하나의 이야기.",
+      how1_h:"그냥 말하세요 — 30초면 충분합니다.", how1_p:"두서없어도 괜찮아요. 반쯤 만 문장도 괜찮고요. 나오는 대로 말하세요.",
+      how2_h:"draft()가 진짜 순간을 찾기 위해 몇 가지 질문을 합니다.", how2_p:"두어 개의 부드러운 질문 — 좋은 편집자라면 물어볼 그것들.",
+      how3_h:"완성된 이야기를 — 훅부터 마무리까지 — 바로 올릴 수 있게.", how3_p:"짜임새 있고, 읽기 좋고, 온전히 당신의 것. 그 빛나는 순간.",
+      tf_comment:"// 날것 → 완성",
+      tf_h2:"설명 말고, 보여주기.",
+      tf_lede:"두서없는 30초가 이렇게 바뀝니다.",
+      tf_said_label:"당신이 말한 것",
+      tf_raw:"그러니까 음 오늘 그 빵집 갔거든… 역 근처 그거? 근데 거의 문 닫았더라고, 불도 반쯤 꺼지고… 근데 주인이 그냥… 모르겠어… 그래도 들여보내 줬어? 마지막 크루아상도 주고 나는 그냥… 응. 좋은 하루였던 것 같아",
+      tf_story_label:"당신의 이야기",
+      tf_tag_hook:"훅", tf_tag_rising:"전개 · 절정", tf_tag_reflect:"성찰 · 마무리",
+      tf_s1:"도착했을 때, 빵집 불은 이미 반쯤 꺼져 있었다.",
+      tf_s2:"돌아설 뻔했다 — 그때 주인이 유리 너머로 나를 보더니, 말없이 문을 열고, 쟁반 위 마지막 크루아상을 건넸다.",
+      tf_s3:"그 작고 뜻밖의 친절을 자꾸 생각한다. 어떤 날의 도시는 생각보다 부드럽다. 오늘이 그런 날이었다.",
+      cr_comment:"// 이 이야기가 향하는 곳",
+      cr_h2:"하나의 이야기. 모든 형식.",
+      cr_lede:"한 번의 탭으로, 올릴 곳에 맞게 이야기를 다시 매만집니다 — 길이도, 톤도, 줄바꿈까지.",
+      cr_fmt1:"인스타그램 캡션", cr_fmt2:"링크드인 포스트", cr_fmt3:"유튜브 스크립트",
+      cr_comment2:"// 같은 이야기, 다른 방",
+      priv_h2:"당신의 거친 생각은, 당신 것으로 남습니다.",
+      priv_lede:"당신의 목소리는 기기 안에서 이해되고 — 서버에 저장되지 않습니다. 엉망인 버전도, 솔직한 버전도, 밤 11시의 버전도, 전부 당신 것입니다.",
+      priv1:"음성은 클라우드가 아니라 기기 안에서 처리됩니다.",
+      priv2:"당신이 한 말은 업로드되거나, 저장되거나, 무언가를 학습시키는 데 쓰이지 않습니다.",
+      priv3:"앱을 떠나는 건 완성된 이야기뿐입니다 — 당신이 공유하기로 선택할 때에만.",
+      price_comment:"// 요금",
+      price_h2:"커피 한 잔보다 쌉니다.",
+      plan1_name:"체험하기", plan1_price:"무료",
+      plan1_li1:"완성된 이야기 3편, 무료로", plan1_li2:"말하기 → 이야기 전체 흐름", plan1_li3:"계정 필요 없음",
+      plan1_note:"그 변화를 느끼기엔 충분합니다.",
+      plan2_name:"계속하기", per_month:"/ 월",
+      plan2_li1:"무제한 이야기", plan2_li2:"모든 형식 — 캡션, 포스트, 스크립트", plan2_li3:"당신의 이야기 보관함, 당신의 기기 안에",
+      plan2_note:"언제든 한 번의 탭으로 해지.",
+      price_comment2:"// 여기엔 카운트다운 타이머가 없습니다. 앞으로도.",
+      cta_comment:"// 마지막으로 하나만",
+      cta_h2_a:"당신의 이야기는 당신 안에 있었습니다", cta_h2_b:"내내.",
+      foot_privacy:"개인정보", foot_support:"지원", foot_studio:"an ipe studio app"
+    },
+    // ---- ja (MT, brand-voice, pending native review) ----
+    ja: {
+      meta_title:"draft() — 話せば、物語になる。",
+      meta_desc:"とりとめのない話し言葉を、完成された共有できる物語に変えるオンデバイスAI。あなたは話すだけ — draft()が、人が実際に読む文章へと仕立てます。",
+      hero_comment:"// 今日は何があった？",
+      hero_h1:"話せば、物語になる。",
+      hero_sub:"あなたは話す。draft()が、人が実際に読む文章へと仕立てます。",
+      cta_download:"App Storeでダウンロード",
+      demo_raw:"えっと…パン屋がもう閉まりかけてて…灯りも半分消えてて…でも店主がそのまま入れてくれて？最後のクロワッサンをくれて…うん。いい一日だったと思う",
+      demo_clean:"着いたとき、パン屋はもう閉まりかけていた — けれど店主はガラス越しに私を見つけ、扉を開けて、最後のクロワッサンを手渡してくれた。ある日の街は、思っているよりやさしい。",
+      prob_comment:"// 空っぽのキャプション欄",
+      prob_h2:"まる一日を過ごした。なのにキャプション欄を開くと…何も出てこない。",
+      prob_lede:"あなたが語るのが下手なのではありません。ただ一番難しいところ — 白紙 — から始めただけ。物語はもうあなたの中にあり、出口が必要だっただけです。",
+      prob_comment2:"// 完璧な文はいりません",
+      how_comment:"// 使い方",
+      how_h2:"三つのやりとり。ひとつの物語。",
+      how1_h:"ただ話すだけ — 30秒で十分です。", how1_p:"とりとめなくても大丈夫。言いかけの文でも大丈夫。出てくるままに話してください。",
+      how2_h:"draft()が本当の瞬間を見つけるため、いくつか質問します。", how2_p:"二つか三つのやさしい問い — よい編集者なら尋ねるような。",
+      how3_h:"完成した物語を — フックから結びまで — すぐ投稿できる形で。", how3_p:"構成があり、読みやすく、あなたのもの。あの輝く瞬間。",
+      tf_comment:"// 生 → 完成",
+      tf_h2:"語らず、見せる。",
+      tf_lede:"とりとめのない30秒が、これに変わります。",
+      tf_said_label:"あなたが話したこと",
+      tf_raw:"えっと今日あのパン屋に行ったんだけど…駅の近くの？で、ほぼ閉まってて、灯りも半分消えてて…でも店主がその…なんだろう…それでも入れてくれて？最後のクロワッサンもくれて、私はただ…うん。いい一日だったと思う",
+      tf_story_label:"あなたの物語",
+      tf_tag_hook:"フック", tf_tag_rising:"展開 · 頂点", tf_tag_reflect:"省察 · 結び",
+      tf_s1:"着いたとき、パン屋の灯りはもう半分消えていた。",
+      tf_s2:"引き返しかけた — そのとき店主がガラス越しに私を見つけ、ひと言もなく扉を開け、トレイの最後のクロワッサンを手渡してくれた。",
+      tf_s3:"あの小さな、思いがけないやさしさを、ずっと考えている。ある日の街は、思っているよりやわらかい。今日はそんな一日だった。",
+      cr_comment:"// この物語の行き先",
+      cr_h2:"ひとつの物語。あらゆる形式。",
+      cr_lede:"ワンタップで、投稿する場所に合わせて物語を組み直します — 長さも、トーンも、改行まで。",
+      cr_fmt1:"Instagramキャプション", cr_fmt2:"LinkedIn投稿", cr_fmt3:"YouTube台本",
+      cr_comment2:"// 同じ物語、違う部屋",
+      priv_h2:"あなたの粗い思いは、あなたのものに。",
+      priv_lede:"あなたの声は端末で理解され — サーバーには保存されません。散らかった版も、正直な版も、深夜11時の版も、すべてあなたのもの。",
+      priv1:"音声はクラウドではなく、端末上で処理されます。",
+      priv2:"話した内容がアップロードされたり、保存されたり、何かの学習に使われることはありません。",
+      priv3:"アプリを出るのは完成した物語だけ — あなたが共有すると決めたときに。",
+      price_comment:"// 料金",
+      price_h2:"コーヒー一杯より安く。",
+      plan1_name:"試す", plan1_price:"無料",
+      plan1_li1:"完成した物語を3つ、私たちから", plan1_li2:"話す → 物語の全フロー", plan1_li3:"アカウント不要",
+      plan1_note:"あの変化を感じるには十分。",
+      plan2_name:"続ける", per_month:"/ 月",
+      plan2_li1:"無制限の物語", plan2_li2:"すべての形式 — キャプション、投稿、台本", plan2_li3:"あなたの物語アーカイブを、端末の中に",
+      plan2_note:"いつでもワンタップで解約。",
+      price_comment2:"// ここにカウントダウンタイマーはありません。これからも。",
+      cta_comment:"// 最後にひとつ",
+      cta_h2_a:"あなたの物語は、あなたの中にありました", cta_h2_b:"ずっと。",
+      foot_privacy:"プライバシー", foot_support:"サポート", foot_studio:"an ipe studio app"
+    },
+    // ---- zh (简体, MT, pending native review) ----
+    zh: {
+      meta_title:"draft() — 说出来，就有了故事。",
+      meta_desc:"一款设备端 AI，把你零散的口头话语变成完成、可分享的故事。你只管说 — draft() 把它打磨成人们真正会读的文字。",
+      hero_comment:"// 今天发生了什么？",
+      hero_h1:"说出来，就有了故事。",
+      hero_sub:"你来说，draft() 把它打磨成人们真正会读的文字。",
+      cta_download:"在 App Store 下载",
+      demo_raw:"就是…那家面包店当时正要打烊…灯都关了一半…但老板还是让我进去了？还给了我最后一个可颂…嗯。算是不错的一天吧",
+      demo_clean:"我到的时候，面包店正要打烊 — 可老板隔着玻璃看见了我，打开门，把最后一个可颂递给我。有些日子，这座城市比你以为的更温柔。",
+      prob_comment:"// 空白的文案框",
+      prob_h2:"你过了一整天。然后打开文案框，却… 什么也写不出。",
+      prob_lede:"你并不是不会讲故事。你只是从最难的地方开始了 — 那张白纸。故事早已在你心里，只是需要一个出口。",
+      prob_comment2:"// 无需完美的句子",
+      how_comment:"// 运作方式",
+      how_h2:"三次对话。一个故事。",
+      how1_h:"只管说 — 30 秒就够了。", how1_p:"啰嗦没关系。说半句也没关系。想怎么说就怎么说。",
+      how2_h:"draft() 会问几个问题，找到真正的那个瞬间。", how2_p:"两三个温和的追问 — 好编辑才会问的那种。",
+      how3_h:"得到一个完成的故事 — 从开头到收尾 — 随时可发。", how3_p:"有结构、好读，且属于你。那个闪光的瞬间。",
+      tf_comment:"// 原始 → 完成",
+      tf_h2:"展示，而非讲述。",
+      tf_lede:"这就是零散三十秒会变成的样子。",
+      tf_said_label:"你说的",
+      tf_raw:"就是我今天去了那家面包店…车站附近那家？然后基本上关门了，灯关了一半…但老板就…我也说不好…还是让我进去了？还给了我最后一个可颂，我就…嗯。算是不错的一天吧",
+      tf_story_label:"你的故事",
+      tf_tag_hook:"开头", tf_tag_rising:"推进 · 高潮", tf_tag_reflect:"回味 · 收尾",
+      tf_s1:"我到的时候，面包店的灯已经关了一半。",
+      tf_s2:"我差点转身离开 — 这时老板隔着玻璃看见了我，一言不发地打开门，把托盘上最后一个可颂递到我手里。",
+      tf_s3:"我一直在想那份微小而意外的善意。有些日子，这座城市比你以为的更柔软。今天就是这样的一天。",
+      cr_comment:"// 它要去往哪里",
+      cr_h2:"一个故事。每一种格式。",
+      cr_lede:"一次轻点，就为你要发布的地方重塑故事 — 长度、语气，连换行都算上。",
+      cr_fmt1:"Instagram 文案", cr_fmt2:"LinkedIn 帖子", cr_fmt3:"YouTube 脚本",
+      cr_comment2:"// 同一个故事，不同的房间",
+      priv_h2:"你粗糙的念头，仍归你所有。",
+      priv_lede:"你的声音在设备上被理解 — 不会存到服务器。凌乱的版本、诚实的版本、深夜十一点的版本：全都是你的。",
+      priv1:"语音在设备端处理，而非云端。",
+      priv2:"你说的话不会被上传、存储，或用来训练任何东西。",
+      priv3:"离开应用的只有完成的故事 — 且只在你选择分享时。",
+      price_comment:"// 价格",
+      price_h2:"比一杯咖啡还便宜。",
+      plan1_name:"试试看", plan1_price:"免费",
+      plan1_li1:"3 个完成的故事，请你的", plan1_li2:"完整的「说 → 故事」流程", plan1_li3:"无需账号",
+      plan1_note:"足以感受这份转变。",
+      plan2_name:"继续", per_month:"/ 月",
+      plan2_li1:"无限故事", plan2_li2:"全部格式 — 文案、帖子、脚本", plan2_li3:"你的故事存档，就在你的设备里",
+      plan2_note:"随时一点即可取消。",
+      price_comment2:"// 这里没有倒计时。永远不会有。",
+      cta_comment:"// 最后一件事",
+      cta_h2_a:"你的故事一直都在你心里", cta_h2_b:"从未离开。",
+      foot_privacy:"隐私", foot_support:"支持", foot_studio:"an ipe studio app"
+    },
+    // ---- es (MT, pending native review) ----
+    es: {
+      meta_title:"draft() — Dilo. Y ten tu historia.",
+      meta_desc:"Una IA privada, en tu dispositivo, que convierte tus palabras habladas y desordenadas en una historia terminada y lista para compartir. Tú hablas — draft() le da la forma de algo que la gente de verdad lee.",
+      hero_comment:"// ¿qué pasó hoy?",
+      hero_h1:"Dilo. Y ten tu historia.",
+      hero_sub:"Tú hablas. draft() le da forma de algo que la gente de verdad lee.",
+      cta_download:"Descargar en el App Store",
+      demo_raw:"pues eh… la panadería estaba cerrando… las luces medio apagadas… y el dueño simplemente me dejó entrar? me dio el último croissant… sí. buen día, supongo",
+      demo_clean:"La panadería estaba cerrando cuando llegué — pero el dueño me vio a través del cristal, abrió la puerta y me entregó el último croissant. Algunos días la ciudad es más amable de lo que esperas.",
+      prob_comment:"// la casilla de texto en blanco",
+      prob_h2:"Tuviste todo un día. Luego abriste la casilla de texto y… nada.",
+      prob_lede:"No eres mal narrador. Solo empezaste por la parte más difícil — la página en blanco. La historia ya estaba en ti. Solo necesitaba una salida.",
+      prob_comment2:"// no hacen falta frases perfectas",
+      how_comment:"// cómo funciona",
+      how_h2:"Tres turnos. Una historia.",
+      how1_h:"Solo habla — 30 segundos bastan.", how1_p:"Divagar está bien. Las frases a medias están bien. Dilo como salga.",
+      how2_h:"draft() hace algunas preguntas para hallar el momento real.", how2_p:"Dos o tres indicaciones suaves — las que haría un buen editor.",
+      how3_h:"Recibe una historia terminada — del gancho al cierre — lista para publicar.", how3_p:"Estructurada, legible y tuya. El momento dorado.",
+      tf_comment:"// en bruto → terminado",
+      tf_h2:"Muestra, no cuentes.",
+      tf_lede:"En esto se convierten treinta segundos desordenados.",
+      tf_said_label:"lo que dijiste",
+      tf_raw:"pues eh hoy fui a esa panadería… ¿la de cerca de la estación? y estaba prácticamente cerrada, las luces medio apagadas… y el dueño simplemente… no sé… ¿igual me dejó entrar? y me dio el último croissant y yo solo… sí. buen día, supongo",
+      tf_story_label:"tu historia",
+      tf_tag_hook:"gancho", tf_tag_rising:"desarrollo · clímax", tf_tag_reflect:"reflexión · cierre",
+      tf_s1:"Las luces de la panadería ya estaban medio apagadas cuando llegué.",
+      tf_s2:"Casi me di la vuelta — entonces el dueño me vio a través del cristal, abrió la puerta sin decir palabra y me entregó el último croissant de la bandeja.",
+      tf_s3:"No dejo de pensar en esa pequeña amabilidad no merecida. Algunos días la ciudad es más suave de lo que esperas. Hoy fue uno de ellos.",
+      cr_comment:"// hacia dónde va",
+      cr_h2:"Una historia. Todos los formatos.",
+      cr_lede:"Un toque reescribe tu historia para donde la publicas — longitud, tono y saltos de línea incluidos.",
+      cr_fmt1:"Pie de foto de Instagram", cr_fmt2:"Publicación de LinkedIn", cr_fmt3:"Guion de YouTube",
+      cr_comment2:"// misma historia, otra sala",
+      priv_h2:"Tus pensamientos en bruto siguen siendo tuyos.",
+      priv_lede:"Tu voz se entiende en tu dispositivo — y no se guarda en un servidor. La versión desordenada, la honesta, la de las 11 de la noche: todas tuyas.",
+      priv1:"El habla se procesa en el dispositivo, no en la nube.",
+      priv2:"Nada de lo que dices se sube, se guarda ni se usa para entrenar nada.",
+      priv3:"Solo la historia terminada sale de la app — cuando eliges compartirla.",
+      price_comment:"// precios",
+      price_h2:"Menos que un café.",
+      plan1_name:"Pruébalo", plan1_price:"Gratis",
+      plan1_li1:"3 historias terminadas, invita la casa", plan1_li2:"Todo el flujo de hablar → historia", plan1_li3:"Sin cuenta",
+      plan1_note:"Suficiente para sentir la transformación.",
+      plan2_name:"Sigue", per_month:"/ mes",
+      plan2_li1:"Historias ilimitadas", plan2_li2:"Todos los formatos — pie de foto, publicación, guion", plan2_li3:"Tu archivo de historias, en tu dispositivo",
+      plan2_note:"Cancela cuando quieras, con un toque.",
+      price_comment2:"// aquí no hay cuentas atrás. nunca.",
+      cta_comment:"// una última cosa",
+      cta_h2_a:"Tu historia estuvo en ti", cta_h2_b:"todo el tiempo.",
+      foot_privacy:"Privacidad", foot_support:"Soporte", foot_studio:"an ipe studio app"
+    },
+    // ---- pt (MT, pending native review) ----
+    pt: {
+      meta_title:"draft() — Diga. E tenha a sua história.",
+      meta_desc:"Uma IA privada, no seu dispositivo, que transforma suas palavras faladas e desordenadas em uma história pronta e compartilhável. Você fala — draft() dá a ela a forma de algo que as pessoas realmente leem.",
+      hero_comment:"// o que aconteceu hoje?",
+      hero_h1:"Diga. E tenha a sua história.",
+      hero_sub:"Você fala. draft() dá a isso a forma de algo que as pessoas realmente leem.",
+      cta_download:"Baixar na App Store",
+      demo_raw:"então tipo… a padaria estava fechando… as luzes meio apagadas… e o dono simplesmente me deixou entrar? me deu o último croissant… é. um bom dia, eu acho",
+      demo_clean:"A padaria estava fechando quando cheguei — mas o dono me viu através do vidro, abriu a porta e me entregou o último croissant. Alguns dias a cidade é mais gentil do que você espera.",
+      prob_comment:"// a caixa de legenda em branco",
+      prob_h2:"Você teve um dia inteiro. Aí abriu a caixa de legenda e… nada.",
+      prob_lede:"Você não é um mau contador de histórias. Só começou pela parte mais difícil — a página em branco. A história já estava em você. Só precisava de uma saída.",
+      prob_comment2:"// não são necessárias frases perfeitas",
+      how_comment:"// como funciona",
+      how_h2:"Três turnos. Uma história.",
+      how1_h:"É só falar — 30 segundos bastam.", how1_p:"Divagar tudo bem. Frases pela metade tudo bem. Diga do jeito que vier.",
+      how2_h:"draft() faz algumas perguntas para achar o momento real.", how2_p:"Duas ou três perguntas gentis — as que um bom editor faria.",
+      how3_h:"Receba uma história pronta — do gancho ao fecho — pronta para postar.", how3_p:"Estruturada, legível e sua. O momento de ouro.",
+      tf_comment:"// bruto → pronto",
+      tf_h2:"Mostre, não conte.",
+      tf_lede:"É nisto que trinta segundos desordenados se transformam.",
+      tf_said_label:"o que você disse",
+      tf_raw:"então tipo hoje eu fui naquela padaria… a que fica perto da estação? e estava basicamente fechada, luzes meio apagadas… e o dono simplesmente… sei lá… me deixou entrar mesmo assim? e me deu o último croissant e eu só… é. um bom dia, eu acho",
+      tf_story_label:"a sua história",
+      tf_tag_hook:"gancho", tf_tag_rising:"desenvolvimento · ápice", tf_tag_reflect:"reflexão · fecho",
+      tf_s1:"As luzes da padaria já estavam meio apagadas quando cheguei.",
+      tf_s2:"Quase dei meia-volta — então o dono me viu através do vidro, abriu a porta sem uma palavra e me entregou o último croissant da bandeja.",
+      tf_s3:"Não paro de pensar naquela pequena gentileza imerecida. Alguns dias a cidade é mais suave do que você espera. Hoje foi um deles.",
+      cr_comment:"// para onde vai",
+      cr_h2:"Uma história. Todos os formatos.",
+      cr_lede:"Um toque remodela sua história para onde você posta — comprimento, tom e quebras de linha incluídos.",
+      cr_fmt1:"Legenda do Instagram", cr_fmt2:"Post do LinkedIn", cr_fmt3:"Roteiro do YouTube",
+      cr_comment2:"// mesma história, outra sala",
+      priv_h2:"Seus pensamentos em bruto continuam seus.",
+      priv_lede:"Sua voz é compreendida no seu dispositivo — e não é guardada em um servidor. A versão desordenada, a honesta, a das 23h: todas suas.",
+      priv1:"A fala é processada no dispositivo, não na nuvem.",
+      priv2:"Nada do que você diz é enviado, guardado ou usado para treinar coisa alguma.",
+      priv3:"Só a história pronta sai do app — quando você escolhe compartilhá-la.",
+      price_comment:"// preços",
+      price_h2:"Menos que um café.",
+      plan1_name:"Experimente", plan1_price:"Grátis",
+      plan1_li1:"3 histórias prontas, por nossa conta", plan1_li2:"Todo o fluxo falar → história", plan1_li3:"Sem conta",
+      plan1_note:"O suficiente para sentir a transformação.",
+      plan2_name:"Continue", per_month:"/ mês",
+      plan2_li1:"Histórias ilimitadas", plan2_li2:"Todos os formatos — legenda, post, roteiro", plan2_li3:"Seu arquivo de histórias, no seu dispositivo",
+      plan2_note:"Cancele quando quiser, com um toque.",
+      price_comment2:"// aqui não há contagens regressivas. nunca.",
+      cta_comment:"// uma última coisa",
+      cta_h2_a:"A sua história esteve em você", cta_h2_b:"o tempo todo.",
+      foot_privacy:"Privacidade", foot_support:"Suporte", foot_studio:"an ipe studio app"
+    },
+    // ---- id (MT, pending native review) ----
+    id: {
+      meta_title:"draft() — Ucapkan. Dapatkan ceritamu.",
+      meta_desc:"AI privat di perangkatmu yang mengubah ucapan berantakanmu menjadi cerita yang selesai dan siap dibagikan. Kamu bicara — draft() membentuknya menjadi sesuatu yang benar-benar dibaca orang.",
+      hero_comment:"// apa yang terjadi hari ini?",
+      hero_h1:"Ucapkan. Dapatkan ceritamu.",
+      hero_sub:"Kamu bicara. draft() membentuknya menjadi sesuatu yang benar-benar dibaca orang.",
+      cta_download:"Unduh di App Store",
+      demo_raw:"jadi eh… toko rotinya lagi mau tutup… lampunya setengah mati… dan pemiliknya malah membiarkanku masuk? memberiku croissant terakhir… ya. hari yang baik kurasa",
+      demo_clean:"Toko roti itu hampir tutup saat aku tiba — tapi pemiliknya melihatku dari balik kaca, membuka pintu, dan menyerahkan croissant terakhir padaku. Ada hari-hari ketika kota lebih baik dari yang kamu kira.",
+      prob_comment:"// kotak keterangan yang kosong",
+      prob_h2:"Kamu punya satu hari penuh. Lalu kamu buka kotak keterangan dan… kosong.",
+      prob_lede:"Kamu bukan pencerita yang buruk. Kamu hanya mulai dari bagian tersulit — halaman kosong. Ceritanya sudah ada dalam dirimu. Ia hanya butuh jalan keluar.",
+      prob_comment2:"// tak perlu kalimat yang sempurna",
+      how_comment:"// cara kerjanya",
+      how_h2:"Tiga giliran. Satu cerita.",
+      how1_h:"Cukup bicara — 30 detik sudah cukup.", how1_p:"Bertele-tele tak masalah. Setengah kalimat tak masalah. Katakan apa adanya.",
+      how2_h:"draft() menanyakan beberapa hal untuk menemukan momen yang sebenarnya.", how2_p:"Dua atau tiga pertanyaan lembut — yang akan ditanyakan seorang editor yang baik.",
+      how3_h:"Dapatkan cerita yang selesai — dari kait hingga penutup — siap diunggah.", how3_p:"Tertata, mudah dibaca, dan milikmu. Momen emas itu.",
+      tf_comment:"// mentah → selesai",
+      tf_h2:"Tunjukkan, jangan ceritakan.",
+      tf_lede:"Inilah jadinya tiga puluh detik yang berantakan.",
+      tf_said_label:"yang kamu ucapkan",
+      tf_raw:"jadi eh hari ini aku ke toko roti itu… yang dekat stasiun? dan hampir tutup, lampunya setengah mati… dan pemiliknya cuma… entahlah… tetap membiarkanku masuk? dan memberiku croissant terakhir dan aku cuma… ya. hari yang baik kurasa",
+      tf_story_label:"ceritamu",
+      tf_tag_hook:"kait", tf_tag_rising:"naik · puncak", tf_tag_reflect:"renungan · penutup",
+      tf_s1:"Lampu toko roti itu sudah setengah mati saat aku tiba.",
+      tf_s2:"Aku nyaris berbalik — lalu pemiliknya melihatku dari balik kaca, membuka pintu tanpa sepatah kata, dan menyerahkan croissant terakhir di nampan itu padaku.",
+      tf_s3:"Aku terus memikirkan kebaikan kecil yang tak kuminta itu. Ada hari-hari ketika kota lebih lembut dari yang kamu kira. Hari ini salah satunya.",
+      cr_comment:"// ke mana ia menuju",
+      cr_h2:"Satu cerita. Setiap format.",
+      cr_lede:"Satu ketukan membentuk ulang ceritamu untuk tempat kamu mengunggahnya — panjang, nada, hingga jeda baris.",
+      cr_fmt1:"Keterangan Instagram", cr_fmt2:"Postingan LinkedIn", cr_fmt3:"Naskah YouTube",
+      cr_comment2:"// cerita yang sama, ruang yang berbeda",
+      priv_h2:"Pikiran kasarmu tetap milikmu.",
+      priv_lede:"Suaramu dipahami di perangkatmu — dan tidak disimpan di server. Versi yang berantakan, versi yang jujur, versi pukul 11 malam: semuanya milikmu.",
+      priv1:"Ucapan diproses di perangkat, bukan di awan.",
+      priv2:"Tak ada yang kamu ucapkan diunggah, disimpan, atau dipakai untuk melatih apa pun.",
+      priv3:"Hanya cerita yang selesai yang meninggalkan aplikasi — saat kamu memilih membagikannya.",
+      price_comment:"// harga",
+      price_h2:"Lebih murah dari secangkir kopi.",
+      plan1_name:"Coba dulu", plan1_price:"Gratis",
+      plan1_li1:"3 cerita jadi, gratis dari kami", plan1_li2:"Alur lengkap bicara → cerita", plan1_li3:"Tanpa perlu akun",
+      plan1_note:"Cukup untuk merasakan perubahannya.",
+      plan2_name:"Lanjutkan", per_month:"/ bulan",
+      plan2_li1:"Cerita tanpa batas", plan2_li2:"Semua format — keterangan, postingan, naskah", plan2_li3:"Arsip ceritamu, di perangkatmu",
+      plan2_note:"Batalkan kapan saja, dengan satu ketukan.",
+      price_comment2:"// tak ada penghitung mundur di sini. tak akan pernah.",
+      cta_comment:"// satu hal terakhir",
+      cta_h2_a:"Ceritamu ada dalam dirimu", cta_h2_b:"sejak awal.",
+      foot_privacy:"Privasi", foot_support:"Dukungan", foot_studio:"an ipe studio app"
+    },
+    // ---- ru (MT, pending native review) ----
+    ru: {
+      meta_title:"draft() — Скажи. И получи свою историю.",
+      meta_desc:"Приватный ИИ на вашем устройстве, который превращает сбивчивую устную речь в законченную историю, готовую к публикации. Вы говорите — draft() придаёт этому форму того, что люди действительно читают.",
+      hero_comment:"// что случилось сегодня?",
+      hero_h1:"Скажи. И получи свою историю.",
+      hero_sub:"Вы говорите. draft() придаёт этому форму того, что люди действительно читают.",
+      cta_download:"Загрузить в App Store",
+      demo_raw:"ну эээ… пекарня уже закрывалась… свет наполовину выключен… а хозяин просто впустил меня? отдал последний круассан… да. хороший был день, наверное",
+      demo_clean:"Когда я пришёл, пекарня уже закрывалась — но хозяин увидел меня через стекло, отпер дверь и протянул последний круассан. В иные дни город добрее, чем ожидаешь.",
+      prob_comment:"// пустое поле для подписи",
+      prob_h2:"У тебя был целый день. А потом ты открыл поле для подписи и… ничего.",
+      prob_lede:"Ты не плохой рассказчик. Ты просто начал с самого трудного — с чистого листа. История уже была в тебе. Ей нужен был лишь выход.",
+      prob_comment2:"// идеальные фразы не требуются",
+      how_comment:"// как это работает",
+      how_h2:"Три хода. Одна история.",
+      how1_h:"Просто говори — 30 секунд достаточно.", how1_p:"Сбивчиво — нормально. Обрывками фраз — нормально. Говори, как выйдет.",
+      how2_h:"draft() задаёт несколько вопросов, чтобы найти настоящий момент.", how2_p:"Два-три мягких вопроса — те, что задал бы хороший редактор.",
+      how3_h:"Получи готовую историю — от зацепки до финала — готовую к публикации.", how3_p:"Выстроенная, читаемая и твоя. Тот самый золотой миг.",
+      tf_comment:"// черновик → готово",
+      tf_h2:"Показывай, а не рассказывай.",
+      tf_lede:"Вот во что превращаются тридцать сбивчивых секунд.",
+      tf_said_label:"что ты сказал",
+      tf_raw:"ну эээ сегодня я зашёл в ту пекарню… ту, что у станции? и она почти закрылась, свет наполовину выключен… а хозяин просто… не знаю… всё равно впустил меня? и дал последний круассан, а я только… да. хороший был день, наверное",
+      tf_story_label:"твоя история",
+      tf_tag_hook:"зацепка", tf_tag_rising:"развитие · пик", tf_tag_reflect:"осмысление · финал",
+      tf_s1:"Когда я пришёл, свет в пекарне был уже наполовину выключен.",
+      tf_s2:"Я чуть не повернул назад — и тут хозяин увидел меня через стекло, без единого слова отпер дверь и протянул последний круассан с подноса.",
+      tf_s3:"Я всё думаю о той маленькой, незаслуженной доброте. В иные дни город мягче, чем ожидаешь. Сегодня был как раз такой.",
+      cr_comment:"// куда это идёт",
+      cr_h2:"Одна история. Любой формат.",
+      cr_lede:"Одно касание перекраивает твою историю под то, где ты её публикуешь — длину, тон и даже переносы строк.",
+      cr_fmt1:"Подпись в Instagram", cr_fmt2:"Пост в LinkedIn", cr_fmt3:"Сценарий для YouTube",
+      cr_comment2:"// та же история, другая комната",
+      priv_h2:"Твои сырые мысли остаются твоими.",
+      priv_lede:"Твой голос понимается на твоём устройстве — и не хранится на сервере. Черновая версия, честная версия, версия в 11 вечера: все твои.",
+      priv1:"Речь обрабатывается на устройстве, а не в облаке.",
+      priv2:"Ничто из сказанного не загружается, не хранится и не используется для обучения чего-либо.",
+      priv3:"Приложение покидает лишь готовая история — когда ты сам решаешь ею поделиться.",
+      price_comment:"// цены",
+      price_h2:"Дешевле чашки кофе.",
+      plan1_name:"Попробуй", plan1_price:"Бесплатно",
+      plan1_li1:"3 готовые истории — за наш счёт", plan1_li2:"Весь путь «говори → история»", plan1_li3:"Без учётной записи",
+      plan1_note:"Достаточно, чтобы почувствовать превращение.",
+      plan2_name:"Продолжай", per_month:"/ месяц",
+      plan2_li1:"Безлимитные истории", plan2_li2:"Все форматы — подпись, пост, сценарий", plan2_li3:"Твой архив историй — на твоём устройстве",
+      plan2_note:"Отмена в любой момент, одним касанием.",
+      price_comment2:"// здесь нет таймеров обратного отсчёта. никогда.",
+      cta_comment:"// и последнее",
+      cta_h2_a:"Твоя история была в тебе", cta_h2_b:"всё это время.",
+      foot_privacy:"Конфиденциальность", foot_support:"Поддержка", foot_studio:"an ipe studio app"
+    },
+    // ---- vi (MT, pending native review) ----
+    vi: {
+      meta_title:"draft() — Nói ra. Và có câu chuyện của bạn.",
+      meta_desc:"Một AI riêng tư, chạy trên thiết bị, biến những lời nói lộn xộn của bạn thành một câu chuyện hoàn chỉnh, sẵn sàng chia sẻ. Bạn chỉ việc nói — draft() nhào nặn thành thứ mà người ta thật sự đọc.",
+      hero_comment:"// hôm nay đã xảy ra chuyện gì?",
+      hero_h1:"Nói ra. Và có câu chuyện của bạn.",
+      hero_sub:"Bạn nói. draft() nhào nặn thành thứ mà người ta thật sự đọc.",
+      cta_download:"Tải trên App Store",
+      demo_raw:"thì ừm… tiệm bánh đang đóng cửa… đèn tắt một nửa… mà chủ tiệm vẫn cho tôi vào? đưa tôi chiếc bánh sừng bò cuối cùng… ừ. chắc là một ngày đẹp",
+      demo_clean:"Tiệm bánh đang đóng cửa khi tôi đến — nhưng người chủ nhìn thấy tôi qua lớp kính, mở cửa, và đưa tôi chiếc bánh sừng bò cuối cùng. Có những ngày, thành phố tử tế hơn bạn tưởng.",
+      prob_comment:"// ô chú thích trống trơn",
+      prob_h2:"Bạn có cả một ngày. Rồi bạn mở ô chú thích lên và… trống rỗng.",
+      prob_lede:"Bạn không phải người kể chuyện tồi. Bạn chỉ bắt đầu từ phần khó nhất — trang giấy trắng. Câu chuyện vốn đã ở trong bạn. Nó chỉ cần một lối ra.",
+      prob_comment2:"// không cần câu chữ hoàn hảo",
+      how_comment:"// cách hoạt động",
+      how_h2:"Ba lượt. Một câu chuyện.",
+      how1_h:"Cứ nói thôi — 30 giây là đủ.", how1_p:"Lan man cũng được. Câu dở dang cũng được. Nói sao cũng được, cứ để nó tuôn ra.",
+      how2_h:"draft() hỏi vài câu để tìm ra khoảnh khắc thật sự.", how2_p:"Hai ba câu gợi ý nhẹ nhàng — những câu mà một biên tập viên giỏi sẽ hỏi.",
+      how3_h:"Nhận một câu chuyện hoàn chỉnh — từ mở đầu đến kết — sẵn sàng đăng.", how3_p:"Có bố cục, dễ đọc, và là của bạn. Khoảnh khắc vàng.",
+      tf_comment:"// thô → hoàn chỉnh",
+      tf_h2:"Hãy cho thấy, đừng kể lể.",
+      tf_lede:"Đây là thứ mà ba mươi giây lộn xộn trở thành.",
+      tf_said_label:"điều bạn đã nói",
+      tf_raw:"thì ừm hôm nay tôi ghé tiệm bánh đó… cái tiệm gần ga ấy? mà nó gần như đóng cửa rồi, đèn tắt một nửa… mà chủ tiệm cứ… tôi cũng không biết nữa… vẫn cho tôi vào? rồi đưa tôi chiếc bánh sừng bò cuối cùng và tôi chỉ… ừ. chắc là một ngày đẹp",
+      tf_story_label:"câu chuyện của bạn",
+      tf_tag_hook:"mở đầu", tf_tag_rising:"phát triển · cao trào", tf_tag_reflect:"suy ngẫm · kết",
+      tf_s1:"Đèn tiệm bánh đã tắt một nửa khi tôi đến.",
+      tf_s2:"Tôi suýt quay lưng — thì người chủ nhìn thấy tôi qua lớp kính, lặng lẽ mở cửa, và đưa tôi chiếc bánh sừng bò cuối cùng trên khay.",
+      tf_s3:"Tôi cứ nghĩ mãi về lòng tốt nhỏ bé, không cầu mà được ấy. Có những ngày, thành phố dịu dàng hơn bạn tưởng. Hôm nay là một ngày như thế.",
+      cr_comment:"// nó sẽ đi về đâu",
+      cr_h2:"Một câu chuyện. Mọi định dạng.",
+      cr_lede:"Một chạm là câu chuyện của bạn được nắn lại cho nơi bạn đăng — cả độ dài, giọng điệu, lẫn cách ngắt dòng.",
+      cr_fmt1:"Chú thích Instagram", cr_fmt2:"Bài đăng LinkedIn", cr_fmt3:"Kịch bản YouTube",
+      cr_comment2:"// cùng một câu chuyện, căn phòng khác",
+      priv_h2:"Những suy nghĩ thô ráp của bạn vẫn là của bạn.",
+      priv_lede:"Giọng nói của bạn được thấu hiểu ngay trên thiết bị — và không được lưu trên máy chủ. Phiên bản lộn xộn, phiên bản thành thật, phiên bản lúc 11 giờ đêm: tất cả đều của bạn.",
+      priv1:"Giọng nói được xử lý trên thiết bị, không phải trên đám mây.",
+      priv2:"Không điều gì bạn nói được tải lên, lưu lại, hay dùng để huấn luyện bất cứ thứ gì.",
+      priv3:"Chỉ câu chuyện hoàn chỉnh mới rời khỏi ứng dụng — khi bạn chọn chia sẻ nó.",
+      price_comment:"// giá",
+      price_h2:"Rẻ hơn một ly cà phê.",
+      plan1_name:"Dùng thử", plan1_price:"Miễn phí",
+      plan1_li1:"3 câu chuyện hoàn chỉnh, chúng tôi mời", plan1_li2:"Trọn vẹn luồng nói → câu chuyện", plan1_li3:"Không cần tài khoản",
+      plan1_note:"Đủ để cảm nhận sự đổi thay.",
+      plan2_name:"Tiếp tục", per_month:"/ tháng",
+      plan2_li1:"Câu chuyện không giới hạn", plan2_li2:"Mọi định dạng — chú thích, bài đăng, kịch bản", plan2_li3:"Kho lưu câu chuyện của bạn, ngay trên thiết bị",
+      plan2_note:"Hủy bất cứ lúc nào, chỉ một chạm.",
+      price_comment2:"// ở đây không có đồng hồ đếm ngược. mãi mãi không.",
+      cta_comment:"// một điều cuối cùng",
+      cta_h2_a:"Câu chuyện của bạn vẫn ở trong bạn", cta_h2_b:"suốt từ đầu.",
+      foot_privacy:"Quyền riêng tư", foot_support:"Hỗ trợ", foot_studio:"an ipe studio app"
+    }
+  };
+
+  function setMeta(sel, attr, val){ var el = document.querySelector(sel); if(el) el.setAttribute(attr, val); }
+
+  var CUR_LANG = DEFAULT_LANG;
+  function applyLang(lang){
+    if(!I18N[lang]) lang = DEFAULT_LANG;
+    CUR_LANG = lang;
+    var dict = I18N[lang];
+    document.documentElement.setAttribute('lang', lang);
+    var nodes = document.querySelectorAll('[data-i18n]');
+    for(var i=0;i<nodes.length;i++){
+      var key = nodes[i].getAttribute('data-i18n');
+      if(key === 'demo_raw') continue; // driven by the hero typing animation
+      var val = dict[key] || I18N.en[key];
+      if(val != null) nodes[i].textContent = val;
+    }
+    if(dict.meta_title){ document.title = dict.meta_title; setMeta('#og-title','content',dict.meta_title); setMeta('#tw-title','content',dict.meta_title); }
+    if(dict.meta_desc){ setMeta('#meta-desc','content',dict.meta_desc); setMeta('#og-desc','content',dict.meta_desc); setMeta('#tw-desc','content',dict.meta_desc); }
+    setMeta('#og-locale','content', LOCALE[lang] || 'en_US');
+    var base = 'https://draft.ipe.rest/';
+    var url = lang === DEFAULT_LANG ? base : base + '?lang=' + lang;
+    setMeta('#canonical','href',url); setMeta('#og-url','content',url);
+    try{ history.replaceState(null,'', lang === DEFAULT_LANG ? location.pathname : '?lang=' + lang); }catch(e){}
+    try{ localStorage.setItem('draft_lang', lang); }catch(e){}
+    // if the hero demo already finished, keep the clean paragraph localized (handled by data-i18n above)
+  }
+
+  var urlLang = null;
+  try{ urlLang = new URLSearchParams(location.search).get('lang'); }catch(e){}
+  var stored = null;
+  try{ stored = localStorage.getItem('draft_lang'); }catch(e){}
+  function detectBrowserLang(){
+    try{
+      var list = navigator.languages || [navigator.language || navigator.userLanguage];
+      for(var i=0;i<list.length;i++){
+        var code = (list[i] || '').toLowerCase().split('-')[0];
+        if(I18N[code]) return code;
+      }
+    }catch(e){}
+    return DEFAULT_LANG;
+  }
+  // priority: URL ?lang= > stored choice > browser language > en
+  var initial = (urlLang && I18N[urlLang]) ? urlLang
+              : ((stored && I18N[stored]) ? stored
+              : detectBrowserLang());
+  var sel = document.getElementById('lang');
+  if(sel){ sel.value = initial; sel.addEventListener('change', function(){ applyLang(this.value); }); }
+  applyLang(initial);
+</script>
 
 <script>
   // scroll reveal
@@ -508,11 +1083,11 @@
   },{threshold:.16});
   document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 
-  // hero: raw speech types out, then transforms into the clean paragraph
-  const rawText = "so um… the bakery was closing… lights half off… and the owner just let me in? gave me the last croissant… yeah. good day I guess";
+  // hero: raw speech types out (in the active language), then transforms into the clean paragraph
   const rawEl = document.getElementById('demoRaw');
   const demo = document.getElementById('heroDemo');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const rawText = (I18N[CUR_LANG] && I18N[CUR_LANG].demo_raw) || I18N.en.demo_raw;
 
   if(reduced){
     demo.classList.add('done');
