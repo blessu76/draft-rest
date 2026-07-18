@@ -306,6 +306,13 @@
   }
   .cta h2 .gold{color:var(--gold-deep);}
 
+  /* ---------- 8.5 COMMUNITY (Phase-1) ---------- */
+  .community{text-align:center;background:var(--paper);}
+  .community .comment{display:block;}
+  .community h2{max-width:22ch;margin-left:auto;margin-right:auto;}
+  .community .lede{margin:0 auto;}
+  .community .btn svg{fill:currentColor;}
+
   /* ---------- 9. FOOTER ---------- */
   footer{padding:64px 0 56px;border-top:1px solid var(--line);text-align:center;}
   .foot-mark{font-family:var(--mono);font-size:20px;font-weight:300;color:var(--ink);}
@@ -535,6 +542,23 @@
   </div>
 </section>
 
+<!-- 8.5 · COMMUNITY (Phase-1, pre-launch) -->
+<section class="community">
+  <div class="wrap">
+    <div class="comment reveal" data-i18n="comm_comment">// you're not drafting alone</div>
+    <h2 class="reveal" data-i18n="comm_h2">A room for people who make things.</h2>
+    <p class="lede reveal" data-i18n="comm_lede">Creators trading first drafts, honest notes, and the small wins that keep you posting. We're opening the doors soon.</p>
+    <div class="reveal" style="margin-top:40px">
+      <!-- COMMUNITY: swap href with Discord invite -->
+      <a class="btn" href="#" id="communityCta">
+        <svg class="apple-glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.5a18.3 18.3 0 0 1 4.3 1.4 16.6 16.6 0 0 0-5-1.6 16.9 16.9 0 0 0-6 0 16.6 16.6 0 0 0-5 1.6A18.3 18.3 0 0 1 8.8 3.5L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.2 8.1.5 11.7.8 15.3a19.9 19.9 0 0 0 6 3l.8-1.1a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.1 0l.5.4a12.9 12.9 0 0 1-2 1l.8 1.1a19.9 19.9 0 0 0 6-3c.4-4.2-.6-7.8-3-11zM9 13.4c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2zm6 0c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2z"/></svg>
+        <span data-i18n="comm_cta">Join the creators community</span>
+      </a>
+    </div>
+    <span class="comment reveal" data-i18n="comm_note" style="display:block;margin-top:22px">// opening soon — early folks get the good seats</span>
+  </div>
+</section>
+
 <!-- 9 · FOOTER -->
 <footer>
   <div class="wrap">
@@ -606,6 +630,12 @@
       price_comment2:"// no countdown timers here. ever.",
       cta_comment:"// one last thing",
       cta_h2_a:"Your story was in you", cta_h2_b:"the whole time.",
+      comm_comment:"// you're not drafting alone",
+      comm_h2:"A room for people who make things.",
+      comm_lede:"Creators trading first drafts, honest notes, and the small wins that keep you posting. We're opening the doors soon.",
+      comm_cta:"Join the creators community",
+      comm_note:"// opening soon — early folks get the good seats",
+      comm_thanks:"You're on the list — see you inside.",
       foot_privacy:"Privacy", foot_support:"Support", foot_studio:"an ipe studio app"
     },
     ko: {
@@ -657,6 +687,12 @@
       price_comment2:"// 여기엔 카운트다운 타이머가 없습니다. 앞으로도.",
       cta_comment:"// 마지막으로 하나만",
       cta_h2_a:"당신의 이야기는 당신 안에 있었습니다", cta_h2_b:"내내.",
+      comm_comment:"// 혼자 쓰는 게 아닙니다",
+      comm_h2:"무언가를 만드는 사람들을 위한 공간.",
+      comm_lede:"초고를 나누고, 솔직한 의견을 주고받고, 계속 올리게 해주는 작은 성취들을 함께하는 크리에이터들. 곧 문을 엽니다.",
+      comm_cta:"크리에이터 커뮤니티 참여하기",
+      comm_note:"// 곧 오픈 — 먼저 온 사람이 좋은 자리를 차지합니다",
+      comm_thanks:"명단에 올랐습니다 — 안에서 뵐게요.",
       foot_privacy:"개인정보", foot_support:"지원", foot_studio:"an ipe studio app"
     },
     // ---- ja (MT, brand-voice, pending native review) ----
@@ -709,6 +745,12 @@
       price_comment2:"// ここにカウントダウンタイマーはありません。これからも。",
       cta_comment:"// 最後にひとつ",
       cta_h2_a:"あなたの物語は、あなたの中にありました", cta_h2_b:"ずっと。",
+      comm_comment:"// ひとりで書いているのではありません",
+      comm_h2:"何かをつくる人たちのための部屋。",
+      comm_lede:"下書きを見せ合い、率直な感想を交わし、投稿を続けさせてくれる小さな勝利を分かち合うクリエイターたち。まもなく扉を開きます。",
+      comm_cta:"クリエイターコミュニティに参加",
+      comm_note:"// まもなくオープン — 早く来た人がいい席に",
+      comm_thanks:"リストに登録されました — 中でお会いしましょう。",
       foot_privacy:"プライバシー", foot_support:"サポート", foot_studio:"an ipe studio app"
     },
     // ---- zh (简体, MT, pending native review) ----
@@ -761,6 +803,12 @@
       price_comment2:"// 这里没有倒计时。永远不会有。",
       cta_comment:"// 最后一件事",
       cta_h2_a:"你的故事一直都在你心里", cta_h2_b:"从未离开。",
+      comm_comment:"// 你不是一个人在写",
+      comm_h2:"一个属于创作者的房间。",
+      comm_lede:"创作者们互相分享初稿、真诚的意见，以及那些让你坚持发布的小小成就。我们很快就会开门。",
+      comm_cta:"加入创作者社区",
+      comm_note:"// 即将开放 —— 先来的人能占到好位置",
+      comm_thanks:"你已在名单上 —— 里面见。",
       foot_privacy:"隐私", foot_support:"支持", foot_studio:"an ipe studio app"
     },
     // ---- es (MT, pending native review) ----
@@ -813,6 +861,12 @@
       price_comment2:"// aquí no hay cuentas atrás. nunca.",
       cta_comment:"// una última cosa",
       cta_h2_a:"Tu historia estuvo en ti", cta_h2_b:"todo el tiempo.",
+      comm_comment:"// no escribes en soledad",
+      comm_h2:"Un espacio para quienes crean cosas.",
+      comm_lede:"Creadores que intercambian borradores, comentarios sinceros y las pequeñas victorias que te hacen seguir publicando. Abrimos las puertas muy pronto.",
+      comm_cta:"Unirme a la comunidad de creadores",
+      comm_note:"// abre pronto — quienes llegan temprano se quedan con los buenos asientos",
+      comm_thanks:"Ya estás en la lista — nos vemos dentro.",
       foot_privacy:"Privacidad", foot_support:"Soporte", foot_studio:"an ipe studio app"
     },
     // ---- pt (MT, pending native review) ----
@@ -865,6 +919,12 @@
       price_comment2:"// aqui não há contagens regressivas. nunca.",
       cta_comment:"// uma última coisa",
       cta_h2_a:"A sua história esteve em você", cta_h2_b:"o tempo todo.",
+      comm_comment:"// você não escreve sozinho",
+      comm_h2:"Um espaço para quem cria coisas.",
+      comm_lede:"Criadores trocando primeiros rascunhos, opiniões honestas e as pequenas vitórias que mantêm você postando. Vamos abrir as portas em breve.",
+      comm_cta:"Entrar na comunidade de criadores",
+      comm_note:"// abre em breve — quem chega cedo pega os melhores lugares",
+      comm_thanks:"Você está na lista — a gente se vê lá dentro.",
       foot_privacy:"Privacidade", foot_support:"Suporte", foot_studio:"an ipe studio app"
     },
     // ---- id (MT, pending native review) ----
@@ -917,6 +977,12 @@
       price_comment2:"// tak ada penghitung mundur di sini. tak akan pernah.",
       cta_comment:"// satu hal terakhir",
       cta_h2_a:"Ceritamu ada dalam dirimu", cta_h2_b:"sejak awal.",
+      comm_comment:"// kamu tak menulis sendirian",
+      comm_h2:"Sebuah ruang bagi orang-orang yang berkarya.",
+      comm_lede:"Para kreator saling bertukar draf pertama, masukan yang jujur, dan kemenangan-kemenangan kecil yang membuatmu terus mengunggah. Kami segera membuka pintunya.",
+      comm_cta:"Gabung komunitas kreator",
+      comm_note:"// segera dibuka — yang datang lebih awal dapat tempat terbaik",
+      comm_thanks:"Kamu sudah masuk daftar — sampai jumpa di dalam.",
       foot_privacy:"Privasi", foot_support:"Dukungan", foot_studio:"an ipe studio app"
     },
     // ---- ru (MT, pending native review) ----
@@ -969,6 +1035,12 @@
       price_comment2:"// здесь нет таймеров обратного отсчёта. никогда.",
       cta_comment:"// и последнее",
       cta_h2_a:"Твоя история была в тебе", cta_h2_b:"всё это время.",
+      comm_comment:"// ты пишешь не в одиночку",
+      comm_h2:"Комната для тех, кто что-то создаёт.",
+      comm_lede:"Авторы обмениваются черновиками, честными отзывами и маленькими победами, которые не дают бросить публикации. Скоро мы откроем двери.",
+      comm_cta:"Вступить в сообщество авторов",
+      comm_note:"// скоро открытие — ранним гостям достаются лучшие места",
+      comm_thanks:"Ты в списке — увидимся внутри.",
       foot_privacy:"Конфиденциальность", foot_support:"Поддержка", foot_studio:"an ipe studio app"
     },
     // ---- vi (MT, pending native review) ----
@@ -1021,6 +1093,12 @@
       price_comment2:"// ở đây không có đồng hồ đếm ngược. mãi mãi không.",
       cta_comment:"// một điều cuối cùng",
       cta_h2_a:"Câu chuyện của bạn vẫn ở trong bạn", cta_h2_b:"suốt từ đầu.",
+      comm_comment:"// bạn không viết một mình",
+      comm_h2:"Một căn phòng cho những người làm nên điều gì đó.",
+      comm_lede:"Những nhà sáng tạo trao đổi bản nháp đầu tiên, những góp ý chân thành, và những chiến thắng nhỏ giúp bạn tiếp tục đăng bài. Chúng tôi sắp mở cửa.",
+      comm_cta:"Tham gia cộng đồng nhà sáng tạo",
+      comm_note:"// sắp mở — người đến sớm có chỗ ngồi đẹp",
+      comm_thanks:"Bạn đã có tên trong danh sách — hẹn gặp bên trong.",
       foot_privacy:"Quyền riêng tư", foot_support:"Hỗ trợ", foot_studio:"an ipe studio app"
     }
   };
