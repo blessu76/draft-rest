@@ -16,5 +16,7 @@
     <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/?lang=id"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/?lang=ru"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/?lang=vi"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/?lang=de"/>
   </url>
 </urlset>

@@ -24,6 +24,8 @@
 <link rel="alternate" hreflang="id" href="https://draft.ipe.rest/?lang=id">
 <link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/?lang=ru">
 <link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/?lang=vi">
+<link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://draft.ipe.rest/?lang=de">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -369,6 +371,8 @@
     <option value="id">Bahasa Indonesia</option>
     <option value="ru">Русский</option>
     <option value="vi">Tiếng Việt</option>
+    <option value="fr">Français</option>
+    <option value="de">Deutsch</option>
   </select>
 </label>
 
@@ -577,10 +581,10 @@
 <!-- ===== i18n ===== -->
 <script>
   // supportedLangs mirrors the draft app's L10n. en/ko = high quality (ko native-tuned).
-  // ja/zh/es/pt/id/ru/vi = brand-voice MT, pending native review.
+  // ja/zh/es/pt/id/ru/vi/fr/de = brand-voice MT, pending native review.
   // Brand-fixed (never translated): draft(), "// when the process finally rests", the // comment glyph.
   var DEFAULT_LANG = 'en';
-  var LOCALE = { en:'en_US', ko:'ko_KR', ja:'ja_JP', zh:'zh_CN', es:'es_ES', pt:'pt_BR', id:'id_ID', ru:'ru_RU', vi:'vi_VN' };
+  var LOCALE = { en:'en_US', ko:'ko_KR', ja:'ja_JP', zh:'zh_CN', es:'es_ES', pt:'pt_BR', id:'id_ID', ru:'ru_RU', vi:'vi_VN', fr:'fr_FR', de:'de_DE' };
 
   var I18N = {
     en: {
@@ -1102,6 +1106,122 @@
       comm_note:"// sắp mở — người đến sớm có chỗ ngồi đẹp",
       comm_thanks:"Bạn đã có tên trong danh sách — hẹn gặp bên trong.",
       foot_privacy:"Quyền riêng tư", foot_support:"Hỗ trợ", foot_studio:"an ipe studio app"
+    },
+    // ---- fr (MT, pending native review) — creator-cool tone, // comment glyph kept ----
+    fr: {
+      meta_title:"draft() — Dis-le. Récupère ton histoire.",
+      meta_desc:"Une IA privée qui transforme tes mots parlés en vrac en une histoire finie, prête à partager. Tu parles — draft() lui donne la forme de quelque chose que les gens lisent vraiment. Tes mots restent à toi : jamais vendus, jamais utilisés pour entraîner.",
+      hero_comment:"// c'était comment, aujourd'hui ?",
+      hero_h1:"Dis-le. Récupère ton histoire.",
+      hero_sub:"Tu parles. draft() lui donne la forme de quelque chose que les gens lisent vraiment.",
+      cta_download:"Télécharger dans l'App Store",
+      demo_raw:"alors euh… la boulangerie fermait… lumières à moitié éteintes… et le patron m'a quand même laissé entrer ? m'a donné le dernier croissant… ouais. bonne journée je crois",
+      demo_clean:"La boulangerie fermait quand je suis arrivé — mais le patron m'a vu à travers la vitre, a déverrouillé la porte et m'a tendu le dernier croissant. Certains jours, la ville est plus gentille qu'on ne le croit.",
+      prob_comment:"// la légende, page blanche",
+      prob_h2:"Tu as eu toute une journée. Puis tu as ouvert le champ de légende et… rien.",
+      prob_lede:"Tu n'es pas mauvais conteur. Tu as juste commencé par le plus dur — la page blanche. L'histoire était déjà en toi. Il lui fallait seulement une sortie.",
+      prob_comment2:"// pas besoin de phrases parfaites",
+      how_comment:"// comment ça marche",
+      how_h2:"Trois échanges. Une histoire.",
+      how1_h:"Parle, tout simplement — 30 secondes suffisent.", how1_p:"Partir dans tous les sens, ça va. Les demi-phrases, ça va. Dis-le comme ça vient.",
+      how2_h:"draft() pose quelques questions pour trouver le vrai moment.", how2_p:"Deux ou trois relances douces — celles qu'un bon éditeur poserait.",
+      how3_h:"Reçois une histoire finie — de l'accroche à la chute — prête à publier.", how3_p:"Structurée, lisible, et à toi. Le moment en or.",
+      tf_comment:"// brut → fini",
+      tf_h2:"Montre, ne raconte pas.",
+      tf_lede:"Voilà ce que deviennent trente secondes en vrac.",
+      tf_said_label:"ce que tu as dit",
+      tf_raw:"alors euh aujourd'hui je suis allé à cette boulangerie… celle près de la gare ? et c'était quasi fermé, lumières à moitié éteintes… et le patron a juste… je sais pas… il m'a laissé entrer quand même ? et m'a donné le dernier croissant et moi j'ai juste… ouais. bonne journée je crois",
+      tf_story_label:"ton histoire",
+      tf_tag_hook:"accroche", tf_tag_rising:"montée · sommet", tf_tag_reflect:"réflexion · chute",
+      tf_s1:"Les lumières de la boulangerie étaient déjà à moitié éteintes quand je suis arrivé.",
+      tf_s2:"J'ai failli faire demi-tour — puis le patron m'a vu à travers la vitre, a déverrouillé la porte sans un mot, et m'a tendu le dernier croissant du plateau.",
+      tf_s3:"Je repense sans cesse à cette petite gentillesse imméritée. Certains jours, la ville est plus douce qu'on ne le croit. Aujourd'hui en était un.",
+      cr_comment:"// vers où ça va",
+      cr_h2:"Une histoire. Tous les formats.",
+      cr_lede:"Une touche remodèle ton histoire pour l'endroit où tu la publies — longueur, ton et sauts de ligne compris.",
+      cr_fmt1:"Légende Instagram", cr_fmt2:"Publication LinkedIn", cr_fmt3:"Script YouTube",
+      cr_comment2:"// même histoire, autre pièce",
+      priv_h2:"Tes pensées brutes restent privées.",
+      priv_lede:"La version en vrac, la version honnête, la version de 23 h — elles restent à toi. Tu décides de ce qui est gardé et de ce qui est partagé ; rien n'est jamais vendu ni utilisé pour entraîner.",
+      priv1:"Tes mots sont à toi — jamais vendus, jamais utilisés pour entraîner.",
+      priv2:"Tu décides de ce qui est gardé, et de ce qui est supprimé.",
+      priv3:"Seule l'histoire finie est partagée — quand tu le choisis.",
+      price_comment:"// tarifs",
+      price_h2:"Moins qu'un café.",
+      plan1_name:"Essaie", plan1_price:"Gratuit",
+      plan1_li1:"3 histoires finies, offertes", plan1_li2:"Tout le flux parler → histoire", plan1_li3:"Aucun compte requis",
+      plan1_note:"De quoi sentir la transformation.",
+      plan2_name:"Continue", per_month:"/ mois",
+      plan2_li1:"Histoires illimitées", plan2_li2:"Tous les formats — légende, publication, script", plan2_li3:"Ton archive d'histoires privée",
+      plan2_note:"Résilie à tout moment, d'une touche.",
+      price_comment2:"// pas de compte à rebours ici. jamais.",
+      cta_comment:"// une dernière chose",
+      cta_h2_a:"Ton histoire était en toi", cta_h2_b:"depuis le début.",
+      comm_comment:"// tu ne rédiges pas tout seul",
+      comm_h2:"Un espace pour ceux qui créent des choses.",
+      comm_lede:"Des créateurs qui échangent premiers jets, retours honnêtes et petites victoires qui te font continuer à publier. On ouvre bientôt les portes.",
+      comm_cta:"Rejoindre la communauté des créateurs",
+      comm_note:"// ouverture bientôt — les premiers ont les meilleures places",
+      comm_thanks:"Tu es sur la liste — à l'intérieur.",
+      foot_privacy:"Confidentialité", foot_support:"Assistance", foot_studio:"an ipe studio app"
+    },
+    // ---- de (MT, pending native review) — creator-cool tone, // comment glyph kept ----
+    de: {
+      meta_title:"draft() — Sag es. Bekomm deine Geschichte.",
+      meta_desc:"Eine private KI, die deine unordentlich gesprochenen Worte in eine fertige, teilbare Geschichte verwandelt. Du sprichst — draft() formt daraus etwas, das Leute wirklich lesen. Deine Worte bleiben deine: nie verkauft, nie zum Trainieren verwendet.",
+      hero_comment:"// was war heute los?",
+      hero_h1:"Sag es. Bekomm deine Geschichte.",
+      hero_sub:"Du sprichst. draft() formt daraus etwas, das Leute wirklich lesen.",
+      cta_download:"Im App Store laden",
+      demo_raw:"also ähm… die Bäckerei machte gerade zu… Lichter halb aus… und der Inhaber hat mich trotzdem reingelassen? hat mir das letzte Croissant gegeben… ja. war wohl ein guter Tag",
+      demo_clean:"Die Bäckerei schloss gerade, als ich ankam — doch der Inhaber sah mich durch die Scheibe, schloss die Tür auf und reichte mir das letzte Croissant. An manchen Tagen ist die Stadt freundlicher, als man erwartet.",
+      prob_comment:"// das leere Beschriftungsfeld",
+      prob_h2:"Du hattest einen ganzen Tag. Dann öffnetest du das Beschriftungsfeld und… nichts.",
+      prob_lede:"Du bist kein schlechter Erzähler. Du hast nur beim Schwersten angefangen — dem leeren Blatt. Die Geschichte war längst in dir. Sie brauchte nur einen Ausweg.",
+      prob_comment2:"// keine perfekten Sätze nötig",
+      how_comment:"// so funktioniert es",
+      how_h2:"Drei Züge. Eine Geschichte.",
+      how1_h:"Sprich einfach — 30 Sekunden reichen.", how1_p:"Abschweifen ist okay. Halbe Sätze sind okay. Sag es, wie es kommt.",
+      how2_h:"draft() stellt ein paar Fragen, um den wahren Moment zu finden.", how2_p:"Zwei, drei sanfte Nachfragen — die, die ein guter Lektor stellen würde.",
+      how3_h:"Bekomm eine fertige Geschichte — vom Aufhänger bis zum Schluss — bereit zum Posten.", how3_p:"Strukturiert, lesbar und deine. Der goldene Moment.",
+      tf_comment:"// roh → fertig",
+      tf_h2:"Zeigen, nicht erzählen.",
+      tf_lede:"Das wird aus dreißig unordentlichen Sekunden.",
+      tf_said_label:"was du gesagt hast",
+      tf_raw:"also ähm heute war ich in dieser Bäckerei… die in der Nähe vom Bahnhof? und sie war quasi zu, Lichter halb aus… und der Inhaber hat einfach… ich weiß nicht… mich trotzdem reingelassen? und mir das letzte Croissant gegeben und ich hab nur… ja. war wohl ein guter Tag",
+      tf_story_label:"deine Geschichte",
+      tf_tag_hook:"Aufhänger", tf_tag_rising:"Aufbau · Höhepunkt", tf_tag_reflect:"Rückblick · Schluss",
+      tf_s1:"Die Lichter der Bäckerei waren schon halb aus, als ich ankam.",
+      tf_s2:"Ich wäre fast umgekehrt — dann sah mich der Inhaber durch die Scheibe, schloss wortlos die Tür auf und reichte mir das letzte Croissant vom Blech.",
+      tf_s3:"Ich denke immer wieder an diese kleine, unverdiente Freundlichkeit. An manchen Tagen ist die Stadt sanfter, als man erwartet. Heute war so einer.",
+      cr_comment:"// wohin es geht",
+      cr_h2:"Eine Geschichte. Jedes Format.",
+      cr_lede:"Eine Berührung formt deine Geschichte für den Ort, an dem du sie postest — Länge, Ton und Zeilenumbrüche inklusive.",
+      cr_fmt1:"Instagram-Bildunterschrift", cr_fmt2:"LinkedIn-Beitrag", cr_fmt3:"YouTube-Skript",
+      cr_comment2:"// dieselbe Geschichte, anderer Raum",
+      priv_h2:"Deine rohen Gedanken bleiben privat.",
+      priv_lede:"Die unordentliche Version, die ehrliche Version, die Version um 23 Uhr — sie bleiben deine. Du entscheidest, was behalten und was geteilt wird; nichts wird je verkauft oder zum Trainieren verwendet.",
+      priv1:"Deine Worte sind deine — nie verkauft, nie zum Trainieren verwendet.",
+      priv2:"Du entscheidest, was behalten und was gelöscht wird.",
+      priv3:"Nur die fertige Geschichte wird geteilt — wenn du es wählst.",
+      price_comment:"// preise",
+      price_h2:"Weniger als ein Kaffee.",
+      plan1_name:"Ausprobieren", plan1_price:"Kostenlos",
+      plan1_li1:"3 fertige Geschichten, geschenkt", plan1_li2:"Der ganze Ablauf sprechen → Geschichte", plan1_li3:"Kein Konto nötig",
+      plan1_note:"Genug, um die Verwandlung zu spüren.",
+      plan2_name:"Weitermachen", per_month:"/ Monat",
+      plan2_li1:"Unbegrenzte Geschichten", plan2_li2:"Alle Formate — Bildunterschrift, Beitrag, Skript", plan2_li3:"Dein privates Geschichten-Archiv",
+      plan2_note:"Jederzeit kündbar, mit einer Berührung.",
+      price_comment2:"// hier gibt es keine Countdown-Timer. niemals.",
+      cta_comment:"// eine letzte Sache",
+      cta_h2_a:"Deine Geschichte war in dir", cta_h2_b:"die ganze Zeit.",
+      comm_comment:"// du schreibst nicht allein",
+      comm_h2:"Ein Raum für Menschen, die etwas erschaffen.",
+      comm_lede:"Kreative, die erste Entwürfe, ehrliches Feedback und die kleinen Siege austauschen, die dich am Posten halten. Wir öffnen bald die Türen.",
+      comm_cta:"Der Creator-Community beitreten",
+      comm_note:"// öffnet bald — wer früh kommt, kriegt die guten Plätze",
+      comm_thanks:"Du stehst auf der Liste — wir sehen uns drinnen.",
+      foot_privacy:"Datenschutz", foot_support:"Support", foot_studio:"an ipe studio app"
     }
   };
 
