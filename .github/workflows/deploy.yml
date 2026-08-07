@@ -1,0 +1,73 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site (repo root)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Notify Slack — success
+        if: success() && env.SLACK_BOT_TOKEN != ''
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          HEAD_COMMIT_MSG: ${{ github.event.head_commit.message }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          COMMIT_MSG=$(printf '%s' "$HEAD_COMMIT_MSG" | head -1)
+          TEXT=$(printf '📖 *draft.ipe.rest 배포 완료*\n_보고: Paul (Head of Reach) → #release-note_\n\n• 커밋: `%s`\n• URL: https://draft.ipe.rest' "$COMMIT_MSG")
+          PAYLOAD=$(jq -nc \
+            --arg channel "C0BJ1EF5PC0" \
+            --arg text "$TEXT" \
+            '{channel: $channel, text: $text, mrkdwn: true}')
+          curl -s -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$PAYLOAD"
+
+      - name: Notify Slack — failure
+        if: failure() && env.SLACK_BOT_TOKEN != ''
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          HEAD_COMMIT_MSG: ${{ github.event.head_commit.message }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          COMMIT_MSG=$(printf '%s' "$HEAD_COMMIT_MSG" | head -1)
+          TEXT=$(printf '❌ *draft.ipe.rest 배포 실패 — 즉시 확인 필요*\n_보고: Paul (Head of Reach) → #release-note_\n\n• 커밋: `%s`\n• Actions: https://github.com/blessu76/draft-rest/actions/runs/%s' "$COMMIT_MSG" "$RUN_ID")
+          PAYLOAD=$(jq -nc \
+            --arg channel "C0BJ1EF5PC0" \
+            --arg text "$TEXT" \
+            '{channel: $channel, text: $text, mrkdwn: true}')
+          curl -s -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$PAYLOAD"
