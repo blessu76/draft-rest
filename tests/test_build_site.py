@@ -424,5 +424,46 @@ class SitemapChecker(unittest.TestCase):
         self.assertTrue(check_sitemap.check(self.dir))
 
 
+class Pricing(unittest.TestCase):
+    """Monthly price is $2.99 everywhere; $1.99 must never appear; no yearly price is invented."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+        cls.content = build_site.load_content(ROOT)
+
+    def test_no_1_99_anywhere(self):
+        for rel, text in self.files.items():
+            if isinstance(text, bytes):
+                text = text.decode("utf-8", "ignore")
+            self.assertNotRegex(text, r"1[.,]99", rel)
+        for path in [*ROOT.glob("content/*.json"), *ROOT.glob("locales/*.json"), *ROOT.glob("posts/**/*"), ROOT / "llms.txt"]:
+            if path.is_file():
+                self.assertNotRegex(path.read_text(encoding="utf-8"), r"1[.,]99", str(path))
+
+    def test_monthly_price_is_2_99(self):
+        for c in build_site.CODES:
+            home = self.files[build_site.home_path(c).strip("/") + "/index.html" if build_site.home_path(c).strip("/") else "index.html"]
+            self.assertIn("$2.99<span>", home)
+            self.assertIn('"price": "2.99"', home)
+        self.assertIn("$2.99/month", (ROOT / "llms.txt").read_text(encoding="utf-8"))
+
+    def test_faq_price_answer_has_caveats_and_matches_json_ld(self):
+        for c in build_site.CODES:
+            answer = self.content[c]["faq"]["items"][6][1]
+            self.assertRegex(answer, r"2[.,]99", c)
+            html = self.files[build_site.page_path(c, "faq").strip("/") + "/index.html"]
+            ld = [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">\n(.*?)\n</script>', html, re.S)]
+            faq = [x for x in ld if x["@type"] == "FAQPage"][0]
+            texts = [q["acceptedAnswer"]["text"] for q in faq["mainEntity"]]
+            self.assertIn(answer, texts)
+            self.assertIn("3", answer)  # 3-day trial caveat is spelled out
+
+    def test_no_yearly_price(self):
+        for rel, text in self.files.items():
+            if rel.endswith((".html", ".txt")) and isinstance(text, str):
+                self.assertNotRegex(text, r"(19|24|29)[.,]99", rel)
+
+
 if __name__ == "__main__":
     unittest.main()
