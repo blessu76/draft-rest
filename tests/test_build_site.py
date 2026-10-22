@@ -40,11 +40,49 @@ class Pages(unittest.TestCase):
     def home(self):
         return {k: v for k, v in self.files.items() if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html"))}
 
+    @property
+    def indexed_home(self):
+        return {k: v for k, v in self.home.items() if k not in ("en/index.html", "404.html")}
+
     def test_page_set(self):
         self.assertEqual(set(self.home), {"index.html"} | {"%s/index.html" % c for c in build_site.CODES})
 
+    def test_english_is_the_root_only(self):
+        """One English body: / (canonical, hreflang en AND x-default). /en/ is a noindex stub, not in the sitemap."""
+        root = self.files["index.html"]
+        self.assertIn('<link rel="canonical" href="https://draft.ipe.rest/">', root)
+        self.assertIn('hreflang="en" href="https://draft.ipe.rest/"', root)
+        self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/"', root)
+        self.assertNotIn("https://draft.ipe.rest/en/\"", self.files["ko/index.html"])
+        stub = self.files["en/index.html"]
+        self.assertIn('content="noindex', stub)
+        self.assertIn('<link rel="canonical" href="https://draft.ipe.rest/">', stub)
+        self.assertNotIn("hreflang", stub)
+        self.assertNotIn("<h1", stub)
+        self.assertNotIn("<loc>https://draft.ipe.rest/en/</loc>", self.files["sitemap.xml"])
+        self.assertNotIn("(https://draft.ipe.rest/en/)", self.files["llms.txt"])
+
+    def test_404_is_noindex_and_links_every_language(self):
+        t = self.files["404.html"]
+        self.assertIn('content="noindex', t)
+        self.assertNotIn('rel="canonical"', t)
+        for c in build_site.CODES:
+            self.assertIn('href="%s"' % build_site.home_path(c), t)
+        self.assertNotIn("<loc>https://draft.ipe.rest/404", self.files["sitemap.xml"])
+
+    def test_og_locale_alternates_and_short_og_description(self):
+        loc = build_site.load_locales(ROOT)
+        t = self.files["ko/index.html"]
+        self.assertIn('<meta property="og:locale" content="ko_KR">', t)
+        self.assertEqual(len(re.findall(r'property="og:locale:alternate"', t)), 10)
+        self.assertNotIn('og:locale:alternate" content="ko_KR"', t)
+        og = re.search(r'property="og:description" content="([^"]*)"', t).group(1)
+        meta = re.search(r'name="description" content="([^"]*)"', t).group(1)
+        self.assertNotEqual(og, meta)
+        self.assertLess(len(og), len(meta))
+
     def test_canonical_and_hreflang(self):
-        for rel, text in self.home.items():
+        for rel, text in self.indexed_home.items():
             lang = rel.split("/")[0] if "/" in rel else None
             url = build_site.page_url(lang)
             self.assertIn('<link rel="canonical" href="%s">' % url, text, rel)
@@ -58,10 +96,19 @@ class Pages(unittest.TestCase):
     def test_only_root_has_legacy_redirect(self):
         self.assertIn("location.replace", self.files["index.html"])
         for c in build_site.CODES:
-            self.assertNotIn("location.replace", self.files["%s/index.html" % c])
+            if c != "en":
+                self.assertNotIn("location.replace", self.files["%s/index.html" % c])
+
+    def test_root_has_language_hint_but_no_auto_redirect_on_browser_language(self):
+        root = self.files["index.html"]
+        self.assertIn('id="langhint"', root)
+        self.assertNotIn("navigator.language", build_site.LEGACY_REDIRECT)
+        self.assertIn("draft_lang", build_site.LEGACY_REDIRECT)
+        self.assertIn("toLowerCase", build_site.LEGACY_REDIRECT)
+        self.assertNotIn('id="langhint"', self.files["ko/index.html"])
 
     def test_legacy_redirect_covers_all_languages(self):
-        m = re.search(r"\^\(([^)]*)\)\$", build_site.LEGACY_REDIRECT)
+        m = re.search(r"var C='([^']*)'", build_site.LEGACY_REDIRECT)
         self.assertEqual(m.group(1).split("|"), build_site.CODES)
 
     def test_language_page_uses_its_own_strings(self):
@@ -76,22 +123,61 @@ class Pages(unittest.TestCase):
 
     def test_footer_links_to_every_language(self):
         for c in build_site.CODES:
-            self.assertIn('href="/%s/"' % c, self.files["index.html"])
+            self.assertIn('href="%s"' % build_site.home_path(c), self.files["index.html"])
 
     def test_json_ld_parses(self):
-        for rel, text in self.home.items():
+        for rel, text in self.indexed_home.items():
             m = re.search(r'<script type="application/ld\+json">\n(.*?)\n</script>', text, re.S)
             self.assertEqual(json.loads(m.group(1))["@graph"][0]["@type"], "MobileApplication", rel)
 
     def test_assets_are_cache_busted(self):
         for rel, text in self.files.items():
-            if rel.endswith("index.html"):
+            if rel.endswith("index.html") and rel != "en/index.html":
                 self.assertRegex(text, r'/assets/site\.css\?v=[0-9a-f]{8}"')
                 self.assertRegex(text, r'/assets/site\.js\?v=[0-9a-f]{8}"')
 
     def test_llms_block_lists_every_page(self):
         for c in build_site.CODES:
             self.assertIn("(%s)" % build_site.page_url(c), self.files["llms.txt"])
+        self.assertNotIn("One post per day", self.files["llms.txt"])
+
+
+class InternalLinks(unittest.TestCase):
+    """Every internal href/src in every generated HTML page must resolve to a real file (or a directory index.html)."""
+
+    ATTR = re.compile(r'\b(?:href|src)="([^"]*)"')
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+
+    def exists(self, path):
+        path = path.split("#")[0].split("?")[0]
+        rel = path.lstrip("/")
+        if path.endswith("/"):
+            rel += "index.html"
+        return rel in self.files or (ROOT / rel).is_file()
+
+    def test_all_internal_links_resolve(self):
+        broken, checked = [], 0
+        for rel, text in self.files.items():
+            if not rel.endswith(".html"):
+                continue
+            for u in self.ATTR.findall(text):
+                if u.startswith(build_site.SITE + "/"):
+                    u = u[len(build_site.SITE):]
+                if not u.startswith("/") or u.startswith("//"):
+                    continue
+                checked += 1
+                if not self.exists(u):
+                    broken.append("%s -> %s" % (rel, u))
+        self.assertEqual(broken, [])
+        self.assertGreater(checked, 500)
+
+    def test_root_blog_link_points_to_english_blog(self):
+        root = self.files["index.html"]
+        self.assertNotIn('href="/blog/"', root)
+        self.assertIn('href="/en/blog/"', root)
 
 
 POST_FM = "---\ntitle: %s\ndescription: d %s\ndate: 2026-10-01\nslug: %s\n%s---\n\n%s\n"
@@ -184,6 +270,20 @@ class PostValidation(unittest.TestCase):
             f = self.dir / "posts" / "new-one" / (c + ".md" if c in ("ko", "en") else "translations/%s.md" % c)
             f.write_text(f.read_text(encoding="utf-8").replace("2026-10-01", "2026-10-02"), encoding="utf-8")
         self.assertEqual([p["slug"] for p in build_site.load_posts(self.dir)[0]], ["new-one", "old-one"])
+
+
+class StageSite(unittest.TestCase):
+    def test_only_public_files_are_staged(self):
+        import stage_site
+        with tempfile.TemporaryDirectory() as tmp:
+            files = {f.as_posix() for f in stage_site.stage(ROOT, tmp)}
+            for must in ("index.html", "404.html", "CNAME", ".nojekyll", "robots.txt", "sitemap.xml", "llms.txt", "og-image.png",
+                         "assets/site.css", "assets/site.js", "ko/index.html", "en/index.html", "ko/blog/feed.xml"):
+                self.assertIn(must, files)
+            self.assertTrue(any(re.match(r"^[0-9a-f]{32}\.txt$", f) for f in files), "IndexNow key file")
+            for f in files:
+                self.assertFalse(f.startswith(("scripts/", "tests/", "posts/", "locales/", "src/", ".github/", "_site/")), f)
+                self.assertNotIn(f.rsplit(".", 1)[-1], ("md", "py", "json", "yml"), f)
 
 
 class RepoIsBuilt(unittest.TestCase):

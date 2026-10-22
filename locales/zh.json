@@ -78,5 +78,9 @@
   "blog_back": "全部文章",
   "blog_rss": "RSS 订阅",
   "blog_langs": "用其他语言阅读",
-  "skip": "跳到正文"
+  "skip": "跳到正文",
+  "view_in": "查看中文版",
+  "blog_copy": "复制",
+  "blog_copied": "已复制",
+  "close": "关闭"
 }

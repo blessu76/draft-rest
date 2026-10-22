@@ -3,8 +3,10 @@
 
 Reads   src/home_body.html          home page body template ({{key}} = locale string, {{key|attr}} = for attributes)
         locales/<lang>.json         per-language strings (11 languages, en is the fallback)
-Writes  index.html                  x-default (English content + language links)
-        <lang>/index.html           one static page per language   (en ko ja zh es pt id ru vi fr de)
+Writes  index.html                  the English page; also x-default and hreflang "en" (single English body)
+        <lang>/index.html           one static page per other language (ko ja zh es pt id ru vi fr de)
+        en/index.html               redirect stub -> / (noindex, canonical /; not in the sitemap)
+        404.html                    not-found page (noindex)
         sitemap.xml                 every page with hreflang alternates, real lastmod
         llms.txt                    "Languages" list between <!-- pages:llms:start --> / <!-- pages:llms:end -->
         assets/*.css|js are NOT generated; their ?v= is a hash of the files (cache busting).
@@ -45,17 +47,25 @@ KEYWORDS = "storytelling app, AI writing, voice to text, story generator, creato
 APPLE = '<svg class="apple-glyph" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>'
 FONTS = ("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400"
          "&family=Inter:wght@300;400;500;600&display=swap")
-LEGACY_REDIRECT = ("(function(){try{var l=new URLSearchParams(location.search).get('lang');"
-                   "if(l&&/^(%s)$/.test(l))location.replace('/'+l+'/'+location.hash);}catch(e){}})();" % "|".join(CODES))
-
-
+# Root-only script (runs before paint). ?lang=xx (any case, other query params kept) -> that language's page;
+# else a language the visitor picked earlier (localStorage draft_lang) -> that page. No browser-language redirect.
+LEGACY_REDIRECT = ("(function(){try{var C='%s',q=new URLSearchParams(location.search),l=(q.get('lang')||'').toLowerCase();"
+                   "function go(c){q.delete('lang');var s=q.toString();location.replace((c==='en'?'/':'/'+c+'/')+(s?'?'+s:'')+location.hash);}"
+                   "if(l&&new RegExp('^('+C+')$').test(l)){go(l);return;}"
+                   "if(!q.has('lang')){var v=localStorage.getItem('draft_lang');if(v&&v!=='en'&&new RegExp('^('+C+')$').test(v))go(v);}"
+                   "}catch(e){}})();" % "|".join(CODES))
 def esc(s):
     return html.escape(str(s), quote=True)
 
 
+def home_path(lang):
+    """Site path of a language's home page. English lives at the root; /en/ is only a redirect stub."""
+    return "/" if lang in (None, DEFAULT_LANG) else "/%s/" % lang
+
+
 def page_url(lang):
-    """Public URL of a language page; lang=None -> the x-default root."""
-    return SITE + "/" if lang is None else "%s/%s/" % (SITE, lang)
+    """Public URL of a language's home page; lang=None or 'en' -> the root."""
+    return SITE + home_path(lang)
 
 
 # ---------------------------------------------------------------- inputs
@@ -103,7 +113,7 @@ def alternates(lang_urls):
 
 
 def home_cluster():
-    d = {c: page_url(c) for c in CODES}
+    d = {c: page_url(c) for c in CODES}  # en -> /
     d["x-default"] = page_url(None)
     return d
 
@@ -126,10 +136,16 @@ def jsonld(locales, lang, url):
     return '<script type="application/ld+json">\n%s\n</script>' % body
 
 
-def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website", extra="", legacy="", feed=None):
+def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website", extra="", legacy="", feed=None, og_desc=None,
+         robots="index, follow, max-image-preview:large"):
     """<head> shared by every page. cluster = {lang: url, 'x-default': url}; ld = ready <script ld+json> blocks."""
     rss = '<link rel="alternate" type="application/rss+xml" title="draft() Blog" href="%s">\n' % esc(feed) if feed else ""
     legacy = '<script>%s</script>\n' % legacy if legacy else ""
+    og_desc = og_desc or desc
+    canon = '<link rel="canonical" href="%s">\n' % esc(url) if url else ""
+    og_url = '<meta property="og:url" content="%s">\n' % esc(url) if url else ""
+    alts = alternates(cluster) + "\n" if cluster else ""
+    og_alt = "".join('<meta property="og:locale:alternate" content="%s">\n' % LOCALE[c] for c in CODES if c != lang)
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -141,22 +157,19 @@ def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website
 <meta name="author" content="ipe Studio">
 <meta name="theme-color" content="#FAF7F0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FAF7F0'/%3E%3Ctext x='14' y='22' font-family='ui-monospace,Menlo,monospace' font-size='16' font-weight='500' fill='%231B1F27' text-anchor='middle'%3Ed()%3C/text%3E%3Crect x='23' y='10' width='2.4' height='12' fill='%235F7D5F'/%3E%3C/svg%3E">
-<link rel="canonical" href="{esc(url)}">
-<meta name="robots" content="index, follow, max-image-preview:large">
-{alternates(cluster)}
-{rss}<meta property="og:type" content="{og_type}">
+{canon}<meta name="robots" content="{robots}">
+{alts}{rss}<meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="draft()">
-<meta property="og:url" content="{esc(url)}">
-<meta property="og:title" content="{esc(title)}">
-<meta property="og:description" content="{esc(desc)}">
+{og_url}<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(og_desc)}">
 <meta property="og:image" content="{SITE}/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{esc(title)}">
 <meta property="og:locale" content="{LOCALE[lang]}">
-<meta name="twitter:card" content="summary_large_image">
+{og_alt}<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(title)}">
-<meta name="twitter:description" content="{esc(desc)}">
+<meta name="twitter:description" content="{esc(og_desc)}">
 <meta name="twitter:image" content="{SITE}/og-image.png">
 {extra}{ld}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -181,9 +194,8 @@ def lang_select(lang, path=""):
 </label>"""
 
 
-def foot_langs(lang, root_page, path=""):
-    cur = None if root_page else lang
-    links = ['<a href="/%s/%s" hreflang="%s" lang="%s"%s>%s</a>' % (c, path, c, c, ' aria-current="page"' if c == cur else "", esc(n))
+def foot_langs(lang, path=""):
+    links = ['<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (home_path(c) if not path else "/%s/%s" % (c, path), c, c, ' aria-current="page"' if c == lang else "", esc(n))
              for c, n, _ in LANGS]
     return '<nav class="foot-langs" aria-label="Languages">\n      %s\n    </nav>' % "\n      ".join(links)
 
@@ -202,29 +214,72 @@ def home_ld(locales, lang, url):
     return jsonld(locales, lang, url)
 
 
-def chrome(locales, lang, root_page=False, path="", blog=False):
+def chrome(locales, lang, path="", blog=False):
     """Shared page furniture: top-left links, language select, footer pieces."""
-    cur = DEFAULT_LANG if root_page else lang
-    base = "/" if root_page else "/%s/" % lang
+    base = home_path(lang)
+    blog_href = "/%s/blog/" % lang
     top = '<nav class="toplink" aria-label="draft()"><a href="%s">draft()</a>' % base
     footlink = ""
     if blog:
-        top += '<span aria-hidden="true">/</span><a href="%sblog/"%s>%s</a>' % (base, ' aria-current="page"' if path.startswith("blog") else "", esc(tr(locales, cur, "nav_blog")))
-        footlink = '\n      <a href="%sblog/">%s</a>' % (base, esc(tr(locales, cur, "nav_blog")))
+        top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (blog_href, ' aria-current="page"' if path.startswith("blog") else "", esc(tr(locales, lang, "nav_blog")))
+        footlink = '\n      <a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog")))
     top += "</nav>"
-    return {"LANGSEL": lang_select(None if root_page else lang, path), "FOOTLANGS": foot_langs(lang, root_page, path),
-            "BLOGLINK": footlink, "TOPLINK": top}
+    return {"LANGSEL": lang_select(lang, path), "FOOTLANGS": foot_langs(lang, path), "BLOGLINK": footlink, "TOPLINK": top}
 
 
-def render_home(root, locales, lang, version, root_page=False, blog=False):
+def render_home(root, locales, lang, version, blog=False):
     tpl = (Path(root) / "src" / "home_body.html").read_text(encoding="utf-8")
-    cur = DEFAULT_LANG if root_page else lang
-    url = page_url(None) if root_page else page_url(lang)
-    body = render_template(tpl, locales, cur, chrome(locales, lang, root_page, "", blog))
-    h = head(locales, cur, version, url, tr(locales, cur, "meta_title"), tr(locales, cur, "meta_desc"), home_cluster(),
-             home_ld(locales, cur, url), extra='<meta name="keywords" content="%s">\n' % esc(KEYWORDS),
-             legacy=LEGACY_REDIRECT if root_page else "", feed=blog_feed_url(cur) if blog else None)
+    url = page_url(lang)
+    body = render_template(tpl, locales, lang, chrome(locales, lang, "", blog))
+    root_page = lang == DEFAULT_LANG
+    if root_page:
+        hint = {c: [tr(locales, c, "view_in"), tr(locales, c, "close")] for c in CODES if c != DEFAULT_LANG}
+        body += '\n<div id="langhint" hidden data-langs=\'%s\'></div>' % json.dumps(hint, ensure_ascii=False, separators=(",", ":")).replace("'", "&#39;")
+    h = head(locales, lang, version, url, tr(locales, lang, "meta_title"), tr(locales, lang, "meta_desc"), home_cluster(),
+             home_ld(locales, lang, url), extra='<meta name="keywords" content="%s">\n' % esc(KEYWORDS),
+             legacy=LEGACY_REDIRECT if root_page else "", feed=blog_feed_url(lang) if blog else None, og_desc=tr(locales, lang, "hero_sub"))
     return h + body + f'\n<script src="/assets/site.js?v={version}"></script>\n</body>\n</html>\n'
+
+
+def render_en_stub(version):
+    """/en/ -> / : English lives at the root, so the old-style address just forwards (and is kept out of the index)."""
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- {GEN_MARK} — do not hand-edit -->
+<title>draft()</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="{SITE}/">
+<meta http-equiv="refresh" content="0; url=/">
+<script>try{{localStorage.setItem('draft_lang','en');}}catch(e){{}}location.replace('/'+location.search+location.hash);</script>
+</head>
+<body>
+<p><a href="/">draft()</a></p>
+</body>
+</html>
+"""
+
+
+def render_404(version):
+    links = "\n".join('    <li><a href="%s" lang="%s">%s</a></li>' % (home_path(c), c, esc(n)) for c, n, _ in LANGS)
+    h = head({}, "en", version, None, "404 — draft()", "Page not found.", None, "", robots="noindex, follow")
+    return h + f"""<nav class="toplink" aria-label="draft()"><a href="/">draft()</a></nav>
+<main id="main" class="post-wrap">
+  <header class="blog-head">
+    <p class="comment">// 404</p>
+    <h1>Page not found</h1>
+    <p class="post-desc">That page doesn't exist, or it has moved. Pick a language to start from the home page.</p>
+  </header>
+  <ul class="nf-langs">
+{links}
+  </ul>
+</main>
+<script src="/assets/site.js?v={version}"></script>
+</body>
+</html>
+"""
 
 
 # ---------------------------------------------------------------- blog
@@ -438,7 +493,7 @@ def breadcrumb(locales, lang, post=None):
 
 
 def page_shell(root, locales, lang, version, *, url, title, desc, cluster, ld, main, path, og_type="website"):
-    ch = chrome(locales, lang, False, path, True)
+    ch = chrome(locales, lang, path, True)
     skip = '<a class="skip-link" href="#main">%s</a>\n' % esc(tr(locales, lang, "skip"))
     foot = render_template((Path(root) / "src" / "blog_footer.html").read_text(encoding="utf-8"), locales, lang, ch)
     return (head(locales, lang, version, url, title, desc, cluster, ld, og_type=og_type, feed=blog_feed_url(lang))
@@ -462,7 +517,7 @@ def render_post(root, locales, version, post, lang):
     <p class="comment"><time datetime="{m['_date'].isoformat()}">// {fmt_date(m['_date'])}</time></p>
     <h1>{esc(m['title'])}</h1>
     <p class="post-desc">{esc(m['description'])}</p>
-    <div class="prose">
+    <div class="prose" data-copy="{esc(tr(locales, lang, 'blog_copy'))}" data-copied="{esc(tr(locales, lang, 'blog_copied'))}">
 {body}
     </div>
     <aside class="post-cta">
@@ -539,7 +594,7 @@ def render_feed(locales, posts, lang):
 
 def render_llms_blog(posts):
     lines = ["## Blog",
-             "Short guides on turning what you say into a story people actually read. One post per day, each in 11 languages. "
+             "Short guides on turning what you say into a story people actually read. New posts regularly, each in 11 languages. "
              "Feed: %s · Index: %s" % (blog_feed_url("en"), blog_list_url("en")),
              "Blog index per language: " + ", ".join("[%s](%s)" % (c, blog_list_url(c)) for c in CODES), ""]
     for p in posts:
@@ -568,9 +623,10 @@ def render_sitemap(root, pages):
 
 def render_llms_pages():
     lines = ["## Languages", "One static page per language (all describe the same app):", ""]
-    lines.append("- [English (default)](%s) — x-default" % page_url(None))
+    lines.append("- [English (default)](%s) — en, x-default" % page_url(None))
     for c, n, _ in LANGS:
-        lines.append("- [%s](%s) — %s" % (n, page_url(c), c))
+        if c != DEFAULT_LANG:
+            lines.append("- [%s](%s) — %s" % (n, page_url(c), c))
     return "\n".join(lines) + "\n"
 
 
@@ -596,11 +652,14 @@ def build(root):
     if errors:
         raise BuildError("\n  ".join(errors))
     blog = bool(posts)
-    out = {"index.html": render_home(root, locales, DEFAULT_LANG, version, root_page=True, blog=blog)}
-    src_date = git_date(root, ["src", "assets"])
+    out = {"index.html": render_home(root, locales, DEFAULT_LANG, version, blog=blog),
+           "en/index.html": render_en_stub(version), "404.html": render_404(version)}
+    src_date = git_date(root, ["src", "assets", "locales/en.json"])
     cluster = home_cluster()
     pages = [(page_url(None), src_date, "1.0", "monthly", cluster)]
     for c in CODES:
+        if c == DEFAULT_LANG:
+            continue  # served from the root; /en/ is a stub that stays out of the sitemap
         out["%s/index.html" % c] = render_home(root, locales, c, version, blog=blog)
         pages.append((page_url(c), git_date(root, ["src", "assets", "locales/%s.json" % c]), "0.9", "monthly", cluster))
     if blog:

@@ -78,5 +78,9 @@
   "blog_back": "Tất cả bài viết",
   "blog_rss": "RSS",
   "blog_langs": "Đọc bằng ngôn ngữ khác",
-  "skip": "Bỏ qua đến nội dung"
+  "skip": "Bỏ qua đến nội dung",
+  "view_in": "Xem bằng tiếng Việt",
+  "blog_copy": "Sao chép",
+  "blog_copied": "Đã sao chép",
+  "close": "Đóng"
 }

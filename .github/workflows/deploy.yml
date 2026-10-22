@@ -24,13 +24,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Gate: nothing is deployed unless the generated pages are current and valid.
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests
+
+      - name: Generated files are up to date
+        run: python3 scripts/build_site.py --check
+
+      - name: Sitemap / hreflang / llms check
+        run: python3 scripts/check_sitemap.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload site (repo root)
+      # Only public files go out (no scripts/ tests/ posts/ locales/ src/ .github/ manuscripts).
+      - name: Stage public files
+        run: python3 scripts/stage_site.py --out _site
+
+      - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
 
       - name: Deploy
         id: deployment

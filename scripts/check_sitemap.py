@@ -78,7 +78,10 @@ def check(root):
         if not f.is_file():
             errs.append("%s: file not found (%s)" % (loc, f.relative_to(root) if root in f.parents else f))
             continue
-        canonical, page_alts = page_links(f.read_text(encoding="utf-8"))
+        page_text = f.read_text(encoding="utf-8")
+        if re.search(r'<meta name="robots" content="[^"]*noindex', page_text):
+            errs.append("%s: is noindex but listed in the sitemap" % loc)
+        canonical, page_alts = page_links(page_text)
         if canonical != loc:
             errs.append("%s: page canonical is %r" % (loc, canonical))
         if alts:

@@ -78,5 +78,9 @@
   "blog_back": "모든 글",
   "blog_rss": "RSS 피드",
   "blog_langs": "다른 언어로 읽기",
-  "skip": "본문으로 건너뛰기"
+  "skip": "본문으로 건너뛰기",
+  "view_in": "한국어로 보기",
+  "blog_copy": "복사",
+  "blog_copied": "복사됨",
+  "close": "닫기"
 }

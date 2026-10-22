@@ -78,5 +78,9 @@
   "blog_back": "All posts",
   "blog_rss": "RSS feed",
   "blog_langs": "Read in another language",
-  "skip": "Skip to content"
+  "skip": "Skip to content",
+  "view_in": "View in English",
+  "blog_copy": "Copy",
+  "blog_copied": "Copied",
+  "close": "Close"
 }

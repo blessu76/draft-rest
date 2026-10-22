@@ -67,9 +67,11 @@ class IndexNow(unittest.TestCase):
             indexnow.send = orig
 
     def test_repo_sitemap_payload(self):
-        # no IndexNow key file is committed yet for draft.ipe.rest -> use a dummy key
         urls = indexnow.sitemap_urls(ROOT / "sitemap.xml")
-        indexnow.build_payload(KEY, urls)
+        key = indexnow.find_key(ROOT)  # the committed public key file <key>.txt (its content is the key itself)
+        payload = indexnow.build_payload(key, urls)
+        self.assertEqual(payload["keyLocation"], "https://draft.ipe.rest/%s.txt" % key)
+        self.assertEqual(payload["host"], "draft.ipe.rest")
 
 
 if __name__ == "__main__":

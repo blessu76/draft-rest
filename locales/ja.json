@@ -78,5 +78,9 @@
   "blog_back": "記事一覧",
   "blog_rss": "RSSフィード",
   "blog_langs": "他の言語で読む",
-  "skip": "本文へスキップ"
+  "skip": "本文へスキップ",
+  "view_in": "日本語で見る",
+  "blog_copy": "コピー",
+  "blog_copied": "コピーしました",
+  "close": "閉じる"
 }
