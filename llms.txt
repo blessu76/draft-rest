@@ -15,3 +15,21 @@
 
 ## Positioning
 draft() is a calm, creator-cool writing tool that respects you — private, low-pressure, and quietly capable of making your words shine. "Your story was in you the whole time."
+
+<!-- pages:llms:start -->
+## Languages
+One static page per language (all describe the same app):
+
+- [English (default)](https://draft.ipe.rest/) — x-default
+- [English](https://draft.ipe.rest/en/) — en
+- [한국어](https://draft.ipe.rest/ko/) — ko
+- [日本語](https://draft.ipe.rest/ja/) — ja
+- [中文](https://draft.ipe.rest/zh/) — zh
+- [Español](https://draft.ipe.rest/es/) — es
+- [Português](https://draft.ipe.rest/pt/) — pt
+- [Bahasa Indonesia](https://draft.ipe.rest/id/) — id
+- [Русский](https://draft.ipe.rest/ru/) — ru
+- [Tiếng Việt](https://draft.ipe.rest/vi/) — vi
+- [Français](https://draft.ipe.rest/fr/) — fr
+- [Deutsch](https://draft.ipe.rest/de/) — de
+<!-- pages:llms:end -->

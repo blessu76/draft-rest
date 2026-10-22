@@ -1,0 +1,205 @@
+{{TOPLINK}}
+{{LANGSEL}}
+
+<!-- 1 · HERO -->
+<header class="hero">
+  <div class="comment reveal in">{{hero_comment}}</div>
+  <div class="wordmark reveal in" style="transition-delay:.15s">draft()<span class="cursor" aria-hidden="true"></span></div>
+  <h1 class="reveal in" style="transition-delay:.35s">{{hero_h1}}</h1>
+  <p class="hero-sub reveal in" style="transition-delay:.5s">{{hero_sub}}</p>
+  <div class="reveal in" style="transition-delay:.65s">
+    <a class="btn" href="#">
+      <svg class="apple-glyph" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+      <span>{{cta_download}}</span>
+    </a>
+  </div>
+  <div class="hero-demo reveal in" id="heroDemo" style="transition-delay:.85s" aria-label="Raw speech becoming a finished paragraph">
+    <div class="hero-demo-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="hero-demo-body">
+      <p class="demo-raw" id="demoRaw" data-raw="{{demo_raw|attr}}"></p>
+      <p class="demo-clean">{{demo_clean}}</p>
+    </div>
+  </div>
+</header>
+
+<!-- 2 · THE PROBLEM -->
+<section class="problem">
+  <div class="wrap">
+    <div class="comment reveal">{{prob_comment}}</div>
+    <h2 class="reveal">{{prob_h2}}</h2>
+    <p class="lede reveal">{{prob_lede}}</p>
+    <span class="comment reveal">{{prob_comment2}}</span>
+  </div>
+</section>
+
+<!-- 3 · HOW IT WORKS -->
+<section class="how">
+  <div class="wrap">
+    <div style="text-align:center">
+      <div class="comment reveal">{{how_comment}}</div>
+      <h2 class="reveal">{{how_h2}}</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-visual">
+          <div class="waveform" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div>
+          <h3>{{how1_h}}</h3>
+          <p>{{how1_p}}</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-visual q-glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.8c0 1.7-2.4 2.2-2.4 3.2"/><line x1="12" y1="16" x2="12" y2="16.01"/></svg>
+        </div>
+        <div>
+          <h3>{{how2_h}}</h3>
+          <p>{{how2_p}}</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-visual done-glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div>
+          <h3>{{how3_h}}</h3>
+          <p>{{how3_p}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · THE TRANSFORMATION -->
+<section class="transform">
+  <div class="wrap-wide">
+    <div class="transform-head">
+      <div class="comment reveal">{{tf_comment}}</div>
+      <h2 class="reveal">{{tf_h2}}</h2>
+      <p class="lede reveal" style="margin:0 auto">{{tf_lede}}</p>
+    </div>
+    <div class="ba reveal">
+      <div class="ba-col" aria-label="What you said">
+        <div class="ba-label">{{tf_said_label}}</div>
+        <p class="ba-raw">{{tf_raw}}</p>
+      </div>
+      <div class="ba-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+      <div class="ba-col ba-after story" aria-label="Your story">
+        <div class="ba-label">{{tf_story_label}}</div>
+        <p><span class="tag">{{tf_tag_hook}}</span><span>{{tf_s1}}</span></p>
+        <p><span class="tag">{{tf_tag_rising}}</span><span>{{tf_s2}}</span></p>
+        <p><span class="tag">{{tf_tag_reflect}}</span><span>{{tf_s3}}</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · MADE FOR CREATORS -->
+<section class="creators">
+  <div class="wrap">
+    <div class="comment reveal">{{cr_comment}}</div>
+    <h2 class="reveal">{{cr_h2}}</h2>
+    <p class="lede reveal" style="margin:0 auto">{{cr_lede}}</p>
+    <div class="formats reveal">
+      <span class="format">{{cr_fmt1}}</span>
+      <span class="format">{{cr_fmt2}}</span>
+      <span class="format">{{cr_fmt3}}</span>
+    </div>
+    <span class="comment reveal">{{cr_comment2}}</span>
+  </div>
+</section>
+
+<!-- 6 · PRIVACY -->
+<section class="privacy">
+  <div class="wrap">
+    <div class="privacy-seal reveal" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </div>
+    <h2 class="reveal">{{priv_h2}}</h2>
+    <p class="lede reveal">{{priv_lede}}</p>
+    <div class="ppoints">
+      <div class="ppoint reveal">{{priv1}}</div>
+      <div class="ppoint reveal">{{priv2}}</div>
+      <div class="ppoint reveal">{{priv3}}</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · PRICING -->
+<section class="pricing">
+  <div class="wrap-wide">
+    <div class="comment reveal">{{price_comment}}</div>
+    <h2 class="reveal">{{price_h2}}</h2>
+    <div class="plans">
+      <div class="plan reveal">
+        <div class="plan-name">{{plan1_name}}</div>
+        <div class="plan-price">{{plan1_price}}</div>
+        <ul>
+          <li>{{plan1_li1}}</li>
+          <li>{{plan1_li2}}</li>
+          <li>{{plan1_li3}}</li>
+        </ul>
+        <div class="plan-note">{{plan1_note}}</div>
+      </div>
+      <div class="plan reveal">
+        <div class="plan-name">{{plan2_name}}</div>
+        <div class="plan-price">$2.99<span>{{per_month}}</span></div>
+        <ul>
+          <li>{{plan2_li1}}</li>
+          <li>{{plan2_li2}}</li>
+          <li>{{plan2_li3}}</li>
+        </ul>
+        <div class="plan-note">{{plan2_note}}</div>
+      </div>
+    </div>
+    <span class="comment reveal">{{price_comment2}}</span>
+  </div>
+</section>
+
+<!-- 8 · CTA -->
+<section class="cta">
+  <div class="wrap">
+    <span class="comment reveal">{{cta_comment}}</span>
+    <h2 class="reveal"><span>{{cta_h2_a}}</span> <span class="gold">{{cta_h2_b}}</span></h2>
+    <div class="reveal">
+      <a class="btn" href="#">
+        <svg class="apple-glyph" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span>{{cta_download}}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 8.5 · COMMUNITY (Phase-1, pre-launch) -->
+<section class="community">
+  <div class="wrap">
+    <div class="comment reveal">{{comm_comment}}</div>
+    <h2 class="reveal">{{comm_h2}}</h2>
+    <p class="lede reveal">{{comm_lede}}</p>
+    <div class="reveal" style="margin-top:40px">
+      <!-- COMMUNITY: swap href with Discord invite -->
+      <a class="btn" href="#" id="communityCta">
+        <svg class="apple-glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.5a18.3 18.3 0 0 1 4.3 1.4 16.6 16.6 0 0 0-5-1.6 16.9 16.9 0 0 0-6 0 16.6 16.6 0 0 0-5 1.6A18.3 18.3 0 0 1 8.8 3.5L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.2 8.1.5 11.7.8 15.3a19.9 19.9 0 0 0 6 3l.8-1.1a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.1 0l.5.4a12.9 12.9 0 0 1-2 1l.8 1.1a19.9 19.9 0 0 0 6-3c.4-4.2-.6-7.8-3-11zM9 13.4c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2zm6 0c-.9 0-1.7-.9-1.7-2s.8-2 1.7-2 1.7.9 1.7 2-.8 2-1.7 2z"/></svg>
+        <span>{{comm_cta}}</span>
+      </a>
+    </div>
+    <span class="comment reveal" style="display:block;margin-top:22px">{{comm_note}}</span>
+  </div>
+</section>
+
+<!-- 9 · FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-mark">draft()</div>
+    <div class="comment foot-sign">// when the process finally rests</div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#">{{foot_privacy}}</a>
+      <a href="#">{{foot_support}}</a>{{BLOGLINK}}
+    </nav>
+    <div class="foot-studio">{{foot_studio}}</div>
+    {{FOOTLANGS}}
+  </div>
+</footer>
