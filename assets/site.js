@@ -5,7 +5,7 @@
   if (sel) {
     sel.addEventListener('change', function () {
       try { localStorage.setItem('draft_lang', this.value); } catch (e) {}
-      location.href = '/' + this.value + '/';
+      location.href = '/' + this.value + '/' + (this.getAttribute('data-path') || '');
     });
   }
   // scroll reveal

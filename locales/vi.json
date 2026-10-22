@@ -69,5 +69,14 @@
   "comm_thanks": "Bạn đã có tên trong danh sách — hẹn gặp bên trong.",
   "foot_privacy": "Quyền riêng tư",
   "foot_support": "Hỗ trợ",
-  "foot_studio": "an ipe studio app"
+  "foot_studio": "an ipe studio app",
+  "nav_blog": "Blog",
+  "blog_comment": "// ghi chép",
+  "blog_h1": "Ghi chép về cách nói cho hay",
+  "blog_sub": "Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().",
+  "blog_read": "Đọc tiếp",
+  "blog_back": "Tất cả bài viết",
+  "blog_rss": "RSS",
+  "blog_langs": "Đọc bằng ngôn ngữ khác",
+  "skip": "Bỏ qua đến nội dung"
 }

@@ -69,5 +69,14 @@
   "comm_thanks": "Du stehst auf der Liste — wir sehen uns drinnen.",
   "foot_privacy": "Datenschutz",
   "foot_support": "Support",
-  "foot_studio": "an ipe studio app"
+  "foot_studio": "an ipe studio app",
+  "nav_blog": "Blog",
+  "blog_comment": "// Notizen",
+  "blog_h1": "Notizen zum guten Erzählen",
+  "blog_sub": "Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.",
+  "blog_read": "Weiterlesen",
+  "blog_back": "Alle Beiträge",
+  "blog_rss": "RSS-Feed",
+  "blog_langs": "In einer anderen Sprache lesen",
+  "skip": "Zum Inhalt springen"
 }

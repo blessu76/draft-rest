@@ -36,14 +36,15 @@ class Pages(unittest.TestCase):
     def setUpClass(cls):
         cls.files = build_site.build(ROOT)
 
+    @property
+    def home(self):
+        return {k: v for k, v in self.files.items() if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html"))}
+
     def test_page_set(self):
-        pages = {k for k in self.files if k.endswith("index.html")}
-        self.assertEqual(pages, {"index.html"} | {"%s/index.html" % c for c in build_site.CODES})
+        self.assertEqual(set(self.home), {"index.html"} | {"%s/index.html" % c for c in build_site.CODES})
 
     def test_canonical_and_hreflang(self):
-        for rel, text in self.files.items():
-            if not rel.endswith("index.html"):
-                continue
+        for rel, text in self.home.items():
             lang = rel.split("/")[0] if "/" in rel else None
             url = build_site.page_url(lang)
             self.assertIn('<link rel="canonical" href="%s">' % url, text, rel)
@@ -78,10 +79,9 @@ class Pages(unittest.TestCase):
             self.assertIn('href="/%s/"' % c, self.files["index.html"])
 
     def test_json_ld_parses(self):
-        for rel, text in self.files.items():
-            if rel.endswith("index.html"):
-                m = re.search(r'<script type="application/ld\+json">\n(.*?)\n</script>', text, re.S)
-                self.assertEqual(json.loads(m.group(1))["@graph"][0]["@type"], "MobileApplication", rel)
+        for rel, text in self.home.items():
+            m = re.search(r'<script type="application/ld\+json">\n(.*?)\n</script>', text, re.S)
+            self.assertEqual(json.loads(m.group(1))["@graph"][0]["@type"], "MobileApplication", rel)
 
     def test_assets_are_cache_busted(self):
         for rel, text in self.files.items():
@@ -92,6 +92,98 @@ class Pages(unittest.TestCase):
     def test_llms_block_lists_every_page(self):
         for c in build_site.CODES:
             self.assertIn("(%s)" % build_site.page_url(c), self.files["llms.txt"])
+
+
+POST_FM = "---\ntitle: %s\ndescription: d %s\ndate: 2026-10-01\nslug: %s\n%s---\n\n%s\n"
+
+
+def write_post(root, slug, langs=None, body=None, extra="", slug_in_file=None):
+    for c in langs or build_site.CODES:
+        f = Path(root) / "posts" / slug / (c + ".md" if c in ("ko", "en") else "translations/%s.md" % c)
+        f.parent.mkdir(parents=True, exist_ok=True)
+        b = body if body is not None else ("가" * 1400 if c == "ko" else "word " * 300)
+        f.write_text(POST_FM % ("T " + c, c, slug_in_file or slug, extra, b), encoding="utf-8")
+
+
+class Blog(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+
+    def test_every_language_has_list_feed_and_post(self):
+        for c in build_site.CODES:
+            for rel in ("%s/blog/index.html" % c, "%s/blog/feed.xml" % c, "%s/blog/blank-caption-box/index.html" % c):
+                self.assertIn(rel, self.files)
+
+    def test_post_has_hreflang_group_and_x_default_en(self):
+        t = self.files["ko/blog/blank-caption-box/index.html"]
+        self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', t)), 12)
+        self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/en/blog/blank-caption-box/"', t)
+        self.assertIn('<link rel="canonical" href="https://draft.ipe.rest/ko/blog/blank-caption-box/">', t)
+        self.assertIn('"@type": "BlogPosting"', t)
+
+    def test_feed_is_valid_xml(self):
+        import xml.etree.ElementTree as ET
+        for c in build_site.CODES:
+            ch = ET.fromstring(self.files["%s/blog/feed.xml" % c].split("?>", 1)[1]).find("channel")
+            self.assertEqual(ch.find("language").text, c)
+            self.assertEqual(len(ch.findall("item")), 1)
+
+    def test_home_links_to_blog_and_blog_is_in_sitemap_and_llms(self):
+        self.assertIn('href="/ko/blog/"', self.files["ko/index.html"])
+        self.assertIn("https://draft.ipe.rest/ko/blog/blank-caption-box/", self.files["sitemap.xml"])
+        self.assertIn("(https://draft.ipe.rest/en/blog/blank-caption-box/)", self.files["llms.txt"])
+
+    def test_first_post_ko_length(self):
+        posts, errors = build_site.load_posts(ROOT)
+        self.assertEqual(errors, [])
+        self.assertTrue(1200 <= len(posts[0]["langs"]["ko"]["_body"].strip()) <= 1800)
+
+    def test_markdown_escapes_html_and_bad_links(self):
+        out = build_site.markdown("<script>x</script> [a](javascript:alert(1)) **b**")
+        self.assertNotIn("<script>", out)
+        self.assertIn('href="#"', out)
+        self.assertIn("<strong>b</strong>", out)
+
+
+class PostValidation(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.dir = Path(self.tmp.name)
+
+    def test_complete_post_is_ok(self):
+        write_post(self.dir, "a-post")
+        posts, errors = build_site.load_posts(self.dir)
+        self.assertEqual((len(posts), errors), (1, []))
+
+    def test_missing_language_is_an_error(self):
+        write_post(self.dir, "a-post", langs=[c for c in build_site.CODES if c != "de"])
+        self.assertTrue(any("missing languages: de" in e for e in build_site.load_posts(self.dir)[1]))
+
+    def test_slug_must_match_folder(self):
+        write_post(self.dir, "a-post", slug_in_file="other")
+        self.assertTrue(any("folder name" in e for e in build_site.load_posts(self.dir)[1]))
+
+    def test_bad_slug_and_date(self):
+        write_post(self.dir, "Bad_Slug")
+        self.assertTrue(build_site.load_posts(self.dir)[1])
+
+    def test_draft_is_skipped_everywhere(self):
+        write_post(self.dir, "a-post", extra="draft: true\n")
+        self.assertEqual(build_site.load_posts(self.dir), ([], []))
+
+    def test_ko_length_is_enforced(self):
+        write_post(self.dir, "a-post", body="짧다")
+        self.assertTrue(any("ko body" in e for e in build_site.load_posts(self.dir)[1]))
+
+    def test_posts_sorted_newest_first(self):
+        write_post(self.dir, "old-one")
+        write_post(self.dir, "new-one")
+        for c in build_site.CODES:
+            f = self.dir / "posts" / "new-one" / (c + ".md" if c in ("ko", "en") else "translations/%s.md" % c)
+            f.write_text(f.read_text(encoding="utf-8").replace("2026-10-01", "2026-10-02"), encoding="utf-8")
+        self.assertEqual([p["slug"] for p in build_site.load_posts(self.dir)[0]], ["new-one", "old-one"])
 
 
 class RepoIsBuilt(unittest.TestCase):

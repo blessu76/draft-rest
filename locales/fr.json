@@ -69,5 +69,14 @@
   "comm_thanks": "Tu es sur la liste — à l'intérieur.",
   "foot_privacy": "Confidentialité",
   "foot_support": "Assistance",
-  "foot_studio": "an ipe studio app"
+  "foot_studio": "an ipe studio app",
+  "nav_blog": "Blog",
+  "blog_comment": "// carnet de notes",
+  "blog_h1": "Notes pour bien le dire",
+  "blog_sub": "De courts guides pour transformer ce que vous dites en une histoire que l'on lit vraiment, par l'équipe de draft().",
+  "blog_read": "Lire la suite",
+  "blog_back": "Tous les articles",
+  "blog_rss": "Flux RSS",
+  "blog_langs": "Lire dans une autre langue",
+  "skip": "Aller au contenu"
 }

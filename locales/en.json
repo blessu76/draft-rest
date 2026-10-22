@@ -69,5 +69,14 @@
   "comm_thanks": "You're on the list — see you inside.",
   "foot_privacy": "Privacy",
   "foot_support": "Support",
-  "foot_studio": "an ipe studio app"
+  "foot_studio": "an ipe studio app",
+  "nav_blog": "Blog",
+  "blog_comment": "// field notes",
+  "blog_h1": "Notes on saying it well",
+  "blog_sub": "Short guides on turning what you say into a story people actually read — from the team behind draft().",
+  "blog_read": "Read more",
+  "blog_back": "All posts",
+  "blog_rss": "RSS feed",
+  "blog_langs": "Read in another language",
+  "skip": "Skip to content"
 }

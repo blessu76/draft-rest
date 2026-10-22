@@ -69,5 +69,14 @@
   "comm_thanks": "リストに登録されました — 中でお会いしましょう。",
   "foot_privacy": "プライバシー",
   "foot_support": "サポート",
-  "foot_studio": "an ipe studio app"
+  "foot_studio": "an ipe studio app",
+  "nav_blog": "ブログ",
+  "blog_comment": "// フィールドノート",
+  "blog_h1": "上手に話すためのノート",
+  "blog_sub": "話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。",
+  "blog_read": "続きを読む",
+  "blog_back": "記事一覧",
+  "blog_rss": "RSSフィード",
+  "blog_langs": "他の言語で読む",
+  "skip": "本文へスキップ"
 }

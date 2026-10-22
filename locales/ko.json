@@ -69,5 +69,14 @@
   "comm_thanks": "명단에 올랐습니다 — 안에서 뵐게요.",
   "foot_privacy": "개인정보",
   "foot_support": "지원",
-  "foot_studio": "an ipe studio app"
+  "foot_studio": "an ipe studio app",
+  "nav_blog": "블로그",
+  "blog_comment": "// 작업 노트",
+  "blog_h1": "잘 말하는 법에 대한 노트",
+  "blog_sub": "말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.",
+  "blog_read": "더 읽기",
+  "blog_back": "모든 글",
+  "blog_rss": "RSS 피드",
+  "blog_langs": "다른 언어로 읽기",
+  "skip": "본문으로 건너뛰기"
 }

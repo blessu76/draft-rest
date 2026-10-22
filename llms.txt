@@ -33,3 +33,11 @@ One static page per language (all describe the same app):
 - [Français](https://draft.ipe.rest/fr/) — fr
 - [Deutsch](https://draft.ipe.rest/de/) — de
 <!-- pages:llms:end -->
+
+<!-- blog:llms:start -->
+## Blog
+Short guides on turning what you say into a story people actually read. One post per day, each in 11 languages. Feed: https://draft.ipe.rest/en/blog/feed.xml · Index: https://draft.ipe.rest/en/blog/
+Blog index per language: [en](https://draft.ipe.rest/en/blog/), [ko](https://draft.ipe.rest/ko/blog/), [ja](https://draft.ipe.rest/ja/blog/), [zh](https://draft.ipe.rest/zh/blog/), [es](https://draft.ipe.rest/es/blog/), [pt](https://draft.ipe.rest/pt/blog/), [id](https://draft.ipe.rest/id/blog/), [ru](https://draft.ipe.rest/ru/blog/), [vi](https://draft.ipe.rest/vi/blog/), [fr](https://draft.ipe.rest/fr/blog/), [de](https://draft.ipe.rest/de/blog/)
+
+- [Stuck at the blank caption box? Say it out loud instead](https://draft.ipe.rest/en/blog/blank-caption-box/) — You had a whole day, but the caption box gives you nothing. Here's how to get the story out by talking first, then letting a few questions find the real moment. (2026-10-23). Other languages: [ko](https://draft.ipe.rest/ko/blog/blank-caption-box/), [ja](https://draft.ipe.rest/ja/blog/blank-caption-box/), [zh](https://draft.ipe.rest/zh/blog/blank-caption-box/), [es](https://draft.ipe.rest/es/blog/blank-caption-box/), [pt](https://draft.ipe.rest/pt/blog/blank-caption-box/), [id](https://draft.ipe.rest/id/blog/blank-caption-box/), [ru](https://draft.ipe.rest/ru/blog/blank-caption-box/), [vi](https://draft.ipe.rest/vi/blog/blank-caption-box/), [fr](https://draft.ipe.rest/fr/blog/blank-caption-box/), [de](https://draft.ipe.rest/de/blog/blank-caption-box/)
+<!-- blog:llms:end -->
