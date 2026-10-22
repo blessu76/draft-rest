@@ -18,7 +18,7 @@
         "draft() is an app from ipe Studio, the studio behind ipe(). The umbrella site is [ipe.rest](https://ipe.rest); this site, draft.ipe.rest, is the official site for draft()."
       ],
       [
-        "Is draft() the same as Draft AI or other apps called Draft?",
+        "Is draft() the same as other apps called Draft?",
         "No. Several apps and tools share the name “Draft”. draft() — written with parentheses — is a voice-first storytelling app by ipe Studio. See [About](/about/) for how to tell them apart."
       ],
       [
@@ -27,15 +27,15 @@
       ],
       [
         "Which devices does it run on?",
-        "draft() is an iOS app."
+        "draft() is an iOS and Android app."
       ],
       [
         "Is draft() available now?",
-        "draft() is still being prepared for iOS. We will announce the App Store release on this site. Until then, please treat the app as not yet released."
+        "draft() is still being prepared for iOS and Android. We will announce the App Store release on this site. Until then, please treat the app as not yet released."
       ],
       [
         "What will it cost?",
-        "The home page shows a free way to try it — three finished stories, no account needed — and a monthly subscription (shown as $2.99 per month) for unlimited stories. The price is confirmed at launch. Final prices and terms are shown on the App Store. The 3-day free trial requires a payment method, and when the trial ends it converts automatically to a paid subscription. There are no free features after the trial ends."
+        "A monthly subscription (shown as $2.99 per month) gives unlimited stories. The price is confirmed at launch; final prices and terms are shown on the App Store. The 3-day free trial requires a payment method, and when the trial ends it converts automatically to a paid subscription. {free_note}"
       ],
       [
         "Which languages are supported?",
@@ -43,13 +43,14 @@
       ],
       [
         "Are my words private?",
-        "Your words are yours — never sold, never used to train. You decide what is kept and what is deleted, and only the finished story is shared, when you choose to. Details are on the [Privacy](/privacy/) page."
+        "Your words are yours — never sold. Whether they are used for training will be confirmed before launch and published on this site. You decide what is kept and what is deleted, and only the finished story is shared, when you choose to. Details are on the [Privacy](/privacy/) page."
       ],
       [
         "How do I get help?",
         "A support contact will be published on this page when the app launches. Until then, the pages on this site are the place for answers."
       ]
-    ]
+    ],
+    "free_note": "The home page shows a free way to try it — three finished stories, no account needed. There are no free features after the trial ends."
   },
   "about": {
     "title": "About draft() — and how it differs from other Draft apps",
@@ -60,7 +61,7 @@
       {
         "h": "One name, several apps",
         "p": [
-          "Many apps and tools use the name “Draft” — for example Draft AI, a carousel post maker. draft() on this site is a different product: a voice-first storytelling app made by ipe Studio. You talk for about thirty seconds, answer two or three gentle questions, and get a finished story — hook, rising action, peak, reflection and close — while your words stay yours."
+          "Many apps and tools use the name “Draft”. draft() on this site is a different product: a voice-first storytelling app made by ipe Studio. You talk for about thirty seconds, answer two or three gentle questions, and get a finished story — hook, rising action, peak, reflection and close — while your words stay yours."
         ]
       },
       {
@@ -69,7 +70,7 @@
           "Official site: draft.ipe.rest — this site.",
           "Maker: ipe Studio — [ipe.rest](https://ipe.rest).",
           "The name is written draft(), with parentheses, and marked “an ipe studio app”.",
-          "Platform: iOS, in preparation."
+          "Platform: iOS and Android, in preparation."
         ]
       },
       {
@@ -89,7 +90,7 @@
       {
         "h": "Our promise",
         "li": [
-          "Your words are yours — never sold, never used to train.",
+          "Your words are yours — never sold.",
           "You decide what is kept, and what is deleted.",
           "Only the finished story is shared — when you choose to."
         ]
@@ -104,7 +105,8 @@
           "How long stories and drafts are kept, and how you delete them.",
           "What usage statistics the app collects, if any.",
           "How subscriptions and payments are handled through the App Store.",
-          "How to contact us about your data."
+          "How to contact us about your data.",
+          "Whether your words are ever used to train or improve anything — to be confirmed before launch and published on this page."
         ]
       },
       {

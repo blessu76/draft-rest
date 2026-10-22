@@ -1,6 +1,6 @@
 {
   "meta_title": "draft() — Ucapkan. Dapatkan ceritamu.",
-  "meta_desc": "AI privat yang mengubah ucapan berantakanmu menjadi cerita yang selesai dan siap dibagikan. Kamu bicara — draft() membentuknya menjadi sesuatu yang benar-benar dibaca orang. Kata-katamu milikmu: tak pernah dijual, tak pernah dipakai untuk melatih.",
+  "meta_desc": "AI privat yang mengubah ucapan berantakanmu menjadi cerita yang selesai dan siap dibagikan. Kamu bicara — draft() membentuknya menjadi sesuatu yang benar-benar dibaca orang. Kata-katamu milikmu: tak pernah dijual.",
   "hero_comment": "// apa yang terjadi hari ini?",
   "hero_h1": "Ucapkan. Dapatkan ceritamu.",
   "hero_sub": "Kamu bicara. draft() membentuknya menjadi sesuatu yang benar-benar dibaca orang.",
@@ -39,8 +39,8 @@
   "cr_fmt3": "Naskah YouTube",
   "cr_comment2": "// cerita yang sama, ruang yang berbeda",
   "priv_h2": "Pikiran kasarmu tetap privat.",
-  "priv_lede": "Versi yang berantakan, versi yang jujur, versi pukul 11 malam — semuanya tetap milikmu. Kamu yang menentukan apa yang disimpan dan apa yang dibagikan; tak ada yang dijual atau dipakai untuk melatih apa pun.",
-  "priv1": "Kata-katamu milikmu — tak pernah dijual, tak pernah dipakai untuk melatih.",
+  "priv_lede": "Versi yang berantakan, versi yang jujur, versi pukul 11 malam — semuanya tetap milikmu. Kamu yang menentukan apa yang disimpan dan apa yang dibagikan; tak ada yang dijual.",
+  "priv1": "Kata-katamu milikmu — tak pernah dijual.",
   "priv2": "Kamu yang menentukan apa yang disimpan, dan apa yang dihapus.",
   "priv3": "Hanya cerita yang selesai yang dibagikan — saat kamu memilih membagikannya.",
   "price_comment": "// harga",

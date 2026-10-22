@@ -1,6 +1,6 @@
 {
   "meta_title": "draft() — Nói ra. Và có câu chuyện của bạn.",
-  "meta_desc": "Một AI riêng tư biến những lời nói lộn xộn của bạn thành một câu chuyện hoàn chỉnh, sẵn sàng chia sẻ. Bạn chỉ việc nói — draft() nhào nặn thành thứ mà người ta thật sự đọc. Lời của bạn là của bạn: không bao giờ bị bán, không bao giờ dùng để huấn luyện.",
+  "meta_desc": "Một AI riêng tư biến những lời nói lộn xộn của bạn thành một câu chuyện hoàn chỉnh, sẵn sàng chia sẻ. Bạn chỉ việc nói — draft() nhào nặn thành thứ mà người ta thật sự đọc. Lời của bạn là của bạn: không bao giờ bị bán.",
   "hero_comment": "// hôm nay đã xảy ra chuyện gì?",
   "hero_h1": "Nói ra. Và có câu chuyện của bạn.",
   "hero_sub": "Bạn nói. draft() nhào nặn thành thứ mà người ta thật sự đọc.",
@@ -39,8 +39,8 @@
   "cr_fmt3": "Kịch bản YouTube",
   "cr_comment2": "// cùng một câu chuyện, căn phòng khác",
   "priv_h2": "Những suy nghĩ thô ráp của bạn vẫn riêng tư.",
-  "priv_lede": "Phiên bản lộn xộn, phiên bản thành thật, phiên bản lúc 11 giờ đêm — tất cả vẫn là của bạn. Bạn quyết định điều gì được giữ và điều gì được chia sẻ; không gì bị bán đi hay dùng để huấn luyện.",
-  "priv1": "Lời của bạn là của bạn — không bao giờ bị bán, không bao giờ dùng để huấn luyện.",
+  "priv_lede": "Phiên bản lộn xộn, phiên bản thành thật, phiên bản lúc 11 giờ đêm — tất cả vẫn là của bạn. Bạn quyết định điều gì được giữ và điều gì được chia sẻ; không gì bị bán đi.",
+  "priv1": "Lời của bạn là của bạn — không bao giờ bị bán.",
   "priv2": "Bạn quyết định điều gì được giữ lại, và điều gì bị xóa đi.",
   "priv3": "Chỉ câu chuyện hoàn chỉnh mới được chia sẻ — khi bạn chọn như vậy.",
   "price_comment": "// giá",

@@ -18,7 +18,7 @@
         "O draft() é um app da ipe Studio, o estúdio por trás do ipe(). O site principal é [ipe.rest](https://ipe.rest); este site, draft.ipe.rest, é o site oficial do draft()."
       ],
       [
-        "O draft() é o mesmo que o Draft AI ou outros apps chamados Draft?",
+        "O draft() é o mesmo que outros apps chamados Draft?",
         "Não. Vários apps e ferramentas compartilham o nome “Draft”. O draft() — escrito com parênteses — é um app de narrativa que começa pela voz, feito pela ipe Studio. Veja em [Sobre](/about/) como distingui-los."
       ],
       [
@@ -27,15 +27,15 @@
       ],
       [
         "Em quais dispositivos funciona?",
-        "O draft() é um app para iOS."
+        "O draft() é um app para iOS e Android."
       ],
       [
         "Já está disponível?",
-        "O draft() ainda está sendo preparado para iOS. Vamos anunciar o lançamento na App Store neste site. Até lá, considere que o app ainda não foi lançado."
+        "O draft() ainda está sendo preparado para iOS e Android. Vamos anunciar o lançamento na App Store neste site. Até lá, considere que o app ainda não foi lançado."
       ],
       [
         "Quanto vai custar?",
-        "A página inicial mostra uma forma gratuita de experimentar — três histórias prontas, sem conta — e uma assinatura mensal (indicada como US$ 2,99 por mês) para histórias ilimitadas. O preço será confirmado no lançamento; preços e condições finais aparecem na App Store. O teste grátis de 3 dias exige o cadastro de uma forma de pagamento e, ao terminar, converte-se automaticamente em assinatura paga. Depois do teste não há recursos gratuitos."
+        "Uma assinatura mensal (indicada como US$ 2,99 por mês) dá histórias ilimitadas. O preço será confirmado no lançamento; preços e condições finais aparecem na App Store. O teste grátis de 3 dias exige o cadastro de uma forma de pagamento e, ao terminar, converte-se automaticamente em assinatura paga. {free_note}"
       ],
       [
         "Quais idiomas são suportados?",
@@ -43,13 +43,14 @@
       ],
       [
         "Minhas palavras são privadas?",
-        "Suas palavras são suas — nunca vendidas, nunca usadas para treinar. Você decide o que fica guardado e o que é apagado, e só a história pronta é compartilhada, quando você escolher. Os detalhes estão na página de [Privacidade](/privacy/)."
+        "Suas palavras são suas — nunca vendidas. Se elas serão usadas para treinar será confirmado antes do lançamento e publicado neste site. Você decide o que fica guardado e o que é apagado, e só a história pronta é compartilhada, quando você escolher. Os detalhes estão na página de [Privacidade](/privacy/)."
       ],
       [
         "Como consigo ajuda?",
         "Vamos publicar um contato de suporte nesta página quando o app for lançado. Até lá, as páginas deste site são o lugar para respostas."
       ]
-    ]
+    ],
+    "free_note": "A página inicial mostra uma forma gratuita de experimentar — três histórias prontas, sem conta. Depois do teste não há recursos gratuitos."
   },
   "about": {
     "title": "Sobre o draft() — e como ele difere de outros apps Draft",
@@ -60,7 +61,7 @@
       {
         "h": "Um nome, vários apps",
         "p": [
-          "Muitos apps e ferramentas usam o nome “Draft” — por exemplo o Draft AI, um criador de posts em carrossel. O draft() deste site é outro produto: um app de narrativa que começa pela voz, feito pela ipe Studio. Você fala por cerca de trinta segundos, responde duas ou três perguntas gentis e recebe uma história pronta — gancho, desenvolvimento, ponto alto, reflexão e fecho — enquanto suas palavras continuam sendo suas."
+          "Muitos apps e ferramentas usam o nome “Draft”. O draft() deste site é outro produto: um app de narrativa que começa pela voz, feito pela ipe Studio. Você fala por cerca de trinta segundos, responde duas ou três perguntas gentis e recebe uma história pronta — gancho, desenvolvimento, ponto alto, reflexão e fecho — enquanto suas palavras continuam sendo suas."
         ]
       },
       {
@@ -69,7 +70,7 @@
           "Site oficial: draft.ipe.rest — este site.",
           "Criador: ipe Studio — [ipe.rest](https://ipe.rest).",
           "O nome se escreve draft(), com parênteses, e vem marcado como “an ipe studio app”.",
-          "Plataforma: iOS, em preparação."
+          "Plataforma: iOS e Android, em preparação."
         ]
       },
       {
@@ -89,7 +90,7 @@
       {
         "h": "Nossa promessa",
         "li": [
-          "Suas palavras são suas — nunca vendidas, nunca usadas para treinar.",
+          "Suas palavras são suas — nunca vendidas.",
           "Você decide o que fica guardado e o que é apagado.",
           "Só a história pronta é compartilhada — quando você escolher."
         ]
@@ -104,7 +105,8 @@
           "Por quanto tempo histórias e rascunhos ficam guardados e como excluí-los.",
           "Quais estatísticas de uso o app coleta, se coletar alguma.",
           "Como assinaturas e pagamentos são tratados pela App Store.",
-          "Como falar conosco sobre seus dados."
+          "Como falar conosco sobre seus dados.",
+          "Se suas palavras são usadas para treinar ou melhorar algo — será confirmado antes do lançamento e publicado nesta página."
         ]
       },
       {

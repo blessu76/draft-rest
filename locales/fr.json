@@ -1,6 +1,6 @@
 {
   "meta_title": "draft() — Dis-le. Récupère ton histoire.",
-  "meta_desc": "Une IA privée qui transforme tes mots parlés en vrac en une histoire finie, prête à partager. Tu parles — draft() lui donne la forme de quelque chose que les gens lisent vraiment. Tes mots restent à toi : jamais vendus, jamais utilisés pour entraîner.",
+  "meta_desc": "Une IA privée qui transforme tes mots parlés en vrac en une histoire finie, prête à partager. Tu parles — draft() lui donne la forme de quelque chose que les gens lisent vraiment. Tes mots restent à toi : jamais vendus.",
   "hero_comment": "// c'était comment, aujourd'hui ?",
   "hero_h1": "Dis-le. Récupère ton histoire.",
   "hero_sub": "Tu parles. draft() lui donne la forme de quelque chose que les gens lisent vraiment.",
@@ -39,8 +39,8 @@
   "cr_fmt3": "Script YouTube",
   "cr_comment2": "// même histoire, autre pièce",
   "priv_h2": "Tes pensées brutes restent privées.",
-  "priv_lede": "La version en vrac, la version honnête, la version de 23 h — elles restent à toi. Tu décides de ce qui est gardé et de ce qui est partagé ; rien n'est jamais vendu ni utilisé pour entraîner.",
-  "priv1": "Tes mots sont à toi — jamais vendus, jamais utilisés pour entraîner.",
+  "priv_lede": "La version en vrac, la version honnête, la version de 23 h — elles restent à toi. Tu décides de ce qui est gardé et de ce qui est partagé ; rien n'est jamais vendu.",
+  "priv1": "Tes mots sont à toi — jamais vendus.",
   "priv2": "Tu décides de ce qui est gardé, et de ce qui est supprimé.",
   "priv3": "Seule l'histoire finie est partagée — quand tu le choisis.",
   "price_comment": "// tarifs",

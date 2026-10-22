@@ -1,6 +1,6 @@
 {
   "meta_title": "draft() — Say it. Get your story.",
-  "meta_desc": "A private AI that turns your messy spoken words into a finished, shareable story. You talk — draft() shapes it into something people actually read. Your words stay yours: never sold, never used to train.",
+  "meta_desc": "A private AI that turns your messy spoken words into a finished, shareable story. You talk — draft() shapes it into something people actually read. Your words stay yours: never sold.",
   "hero_comment": "// what happened today?",
   "hero_h1": "Say it. Get your story.",
   "hero_sub": "You talk. draft() shapes it into something people actually read.",
@@ -39,8 +39,8 @@
   "cr_fmt3": "YouTube script",
   "cr_comment2": "// same story, different room",
   "priv_h2": "Your rough thoughts stay private.",
-  "priv_lede": "The messy version, the honest version, the 11pm version — they stay yours. You decide what's kept and what's shared; nothing is ever sold or used to train.",
-  "priv1": "Your words are yours — never sold, never used to train.",
+  "priv_lede": "The messy version, the honest version, the 11pm version — they stay yours. You decide what's kept and what's shared; nothing is ever sold.",
+  "priv1": "Your words are yours — never sold.",
   "priv2": "You decide what's kept, and what's deleted.",
   "priv3": "Only the finished story is shared — when you choose to.",
   "price_comment": "// pricing",

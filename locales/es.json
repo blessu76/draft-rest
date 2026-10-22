@@ -1,6 +1,6 @@
 {
   "meta_title": "draft() — Dilo. Y ten tu historia.",
-  "meta_desc": "Una IA privada que convierte tus palabras habladas y desordenadas en una historia terminada y lista para compartir. Tú hablas — draft() le da la forma de algo que la gente de verdad lee. Tus palabras son tuyas: nunca se venden, nunca se usan para entrenar.",
+  "meta_desc": "Una IA privada que convierte tus palabras habladas y desordenadas en una historia terminada y lista para compartir. Tú hablas — draft() le da la forma de algo que la gente de verdad lee. Tus palabras son tuyas: nunca se venden.",
   "hero_comment": "// ¿qué pasó hoy?",
   "hero_h1": "Dilo. Y ten tu historia.",
   "hero_sub": "Tú hablas. draft() le da forma de algo que la gente de verdad lee.",
@@ -39,8 +39,8 @@
   "cr_fmt3": "Guion de YouTube",
   "cr_comment2": "// misma historia, otra sala",
   "priv_h2": "Tus pensamientos en bruto siguen siendo privados.",
-  "priv_lede": "La versión desordenada, la honesta, la de las 11 de la noche — siguen siendo tuyas. Tú decides qué se guarda y qué se comparte; nada se vende ni se usa para entrenar.",
-  "priv1": "Tus palabras son tuyas — nunca se venden, nunca se usan para entrenar.",
+  "priv_lede": "La versión desordenada, la honesta, la de las 11 de la noche — siguen siendo tuyas. Tú decides qué se guarda y qué se comparte; nada se vende.",
+  "priv1": "Tus palabras son tuyas — nunca se venden.",
   "priv2": "Tú decides qué se guarda y qué se borra.",
   "priv3": "Solo la historia terminada se comparte — cuando tú lo eliges.",
   "price_comment": "// precios",

@@ -465,5 +465,45 @@ class Pricing(unittest.TestCase):
                 self.assertNotRegex(text, r"(19|24|29)[.,]99", rel)
 
 
+class Facts(unittest.TestCase):
+    """Claims we cannot back yet stay off the site: iOS-only, 'never used to train', other apps described."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+        cls.content = build_site.load_content(ROOT)
+
+    def pages(self):
+        for rel, text in self.files.items():
+            if rel.endswith((".html", ".txt")) and isinstance(text, str):
+                yield rel, text
+
+    def test_platform_is_ios_and_android(self):
+        for rel, text in self.pages():
+            for m in re.finditer(r"\biOS\b", text):
+                near = text[max(0, m.start() - 12): m.end() + 40]
+                self.assertTrue(re.search(r"Android", near) or "apple-mobile" in near or "iOS, Android" in near, (rel, near))
+
+    def test_json_ld_operating_system_lists_android(self):
+        for c in build_site.CODES:
+            html = self.files[build_site.page_path(c, "about").strip("/") + "/index.html"]
+            self.assertIn('"operatingSystem": "iOS, Android"', html)
+
+    def test_no_training_promise_and_no_other_app_described(self):
+        for rel, text in self.pages():
+            self.assertNotIn("Draft AI", text, rel)
+            self.assertNotRegex(text, r"never used to train|nie zum Trainieren|jamais utilisés pour entraîner|학습에 쓰지 않|学習にも使わない|绝不用于训练", rel)
+
+    def test_free_note_is_one_key_and_resolved_everywhere(self):
+        for c in build_site.CODES:
+            faq = self.content[c]["faq"]
+            self.assertTrue(faq["free_note"].strip(), c)
+            self.assertNotIn("{", json.dumps(faq["items"], ensure_ascii=False), c)
+            self.assertIn(faq["free_note"], faq["items"][6][1], c)
+            raw = json.loads((ROOT / "content" / (c + ".json")).read_text(encoding="utf-8"))
+            self.assertIn("{free_note}", raw["faq"]["items"][6][1], c)
+            self.assertEqual(sum("{free_note}" in a for _, a in raw["faq"]["items"]), 1, c)
+
+
 if __name__ == "__main__":
     unittest.main()

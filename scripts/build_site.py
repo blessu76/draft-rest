@@ -99,7 +99,11 @@ def load_locales(root):
 
 def load_content(root):
     """content/<lang>.json -> {lang: {faq|about|privacy: {...}, updated, updated_label}}"""
-    return {c: json.loads((Path(root) / "content" / (c + ".json")).read_text(encoding="utf-8")) for c in CODES}
+    out = {c: json.loads((Path(root) / "content" / (c + ".json")).read_text(encoding="utf-8")) for c in CODES}
+    for d in out.values():  # faq.free_note = the one place that says what is free; answers reference it as {free_note}
+        note = d["faq"].get("free_note", "")
+        d["faq"]["items"] = [[q, a.replace("{free_note}", note)] for q, a in d["faq"]["items"]]
+    return out
 
 
 def tr(locales, lang, key):
@@ -149,7 +153,7 @@ def jsonld(locales, lang, url):
     publisher = {"@type": "Organization", "name": "ipe Studio", "url": "https://ipe.rest"}
     graph = [
         {"@type": "MobileApplication", "name": "draft()", "alternateName": "draft", "url": url,
-         "operatingSystem": "iOS", "applicationCategory": "ProductivityApplication",
+         "operatingSystem": "iOS, Android", "applicationCategory": "ProductivityApplication",
          "applicationSubCategory": "Writing / Storytelling", "description": desc, "inLanguage": lang,
          "image": SITE + "/og-image.png",
          "offers": [{"@type": "Offer", "price": "0", "priceCurrency": "USD", "name": tr(locales, lang, "plan1_name")},
@@ -645,7 +649,7 @@ def render_content_page(root, locales, content, version, slug, lang):
                     "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in pg["items"]]})
     elif slug == "about":
         org = {"@type": "Organization", "name": "ipe Studio", "url": "https://ipe.rest"}
-        app = {"@type": "MobileApplication", "name": "draft()", "alternateName": "draft", "url": page_url(None), "operatingSystem": "iOS",
+        app = {"@type": "MobileApplication", "name": "draft()", "alternateName": "draft", "url": page_url(None), "operatingSystem": "iOS, Android",
                "applicationCategory": "ProductivityApplication", "applicationSubCategory": "Writing / Storytelling",
                "description": tr(locales, lang, "meta_desc"), "inLanguage": lang, "image": SITE + "/og-image.png",
                "disambiguatingDescription": plain(pg["sections"][0]["p"][0]), "author": org, "publisher": org}

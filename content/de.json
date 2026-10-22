@@ -18,7 +18,7 @@
         "draft() ist eine App von ipe Studio, dem Studio hinter ipe(). Die Dachseite ist [ipe.rest](https://ipe.rest); diese Seite, draft.ipe.rest, ist die offizielle Seite von draft()."
       ],
       [
-        "Ist draft() dasselbe wie Draft AI oder andere Apps namens Draft?",
+        "Ist draft() dasselbe wie andere Apps namens Draft?",
         "Nein. Mehrere Apps und Tools tragen den Namen „Draft“. draft() — mit Klammern geschrieben — ist eine Erzähl-App, die bei der Stimme beginnt, von ipe Studio. Wie man sie unterscheidet, steht auf der Seite [Über](/about/)."
       ],
       [
@@ -27,15 +27,15 @@
       ],
       [
         "Auf welchen Geräten läuft es?",
-        "draft() ist eine iOS-App."
+        "draft() ist eine iOS- und Android-App."
       ],
       [
         "Gibt es draft() schon?",
-        "draft() wird noch für iOS vorbereitet. Die Veröffentlichung im App Store kündigen wir auf dieser Seite an. Bis dahin betrachte die App bitte als noch nicht veröffentlicht."
+        "draft() wird noch für iOS und Android vorbereitet. Die Veröffentlichung im App Store kündigen wir auf dieser Seite an. Bis dahin betrachte die App bitte als noch nicht veröffentlicht."
       ],
       [
         "Was wird es kosten?",
-        "Die Startseite zeigt eine kostenlose Testmöglichkeit — drei fertige Geschichten, ohne Konto — und ein Monatsabo (angezeigt mit 2,99 $ pro Monat) für unbegrenzte Geschichten. Der Preis wird zum Start bestätigt; endgültige Preise und Bedingungen werden im App Store angezeigt. Die 3-tägige kostenlose Testphase setzt ein hinterlegtes Zahlungsmittel voraus und geht nach Ende automatisch in ein kostenpflichtiges Abo über. Nach der Testphase gibt es keine kostenlosen Funktionen."
+        "Ein Monatsabo (angezeigt mit 2,99 $ pro Monat) bietet unbegrenzte Geschichten. Der Preis wird zum Start bestätigt; endgültige Preise und Bedingungen werden im App Store angezeigt. Die 3-tägige kostenlose Testphase setzt ein hinterlegtes Zahlungsmittel voraus und geht nach Ende automatisch in ein kostenpflichtiges Abo über. {free_note}"
       ],
       [
         "Welche Sprachen werden unterstützt?",
@@ -43,13 +43,14 @@
       ],
       [
         "Bleiben meine Worte privat?",
-        "Deine Worte gehören dir — nie verkauft, nie zum Training genutzt. Du entscheidest, was behalten und was gelöscht wird, und nur die fertige Geschichte wird geteilt, wenn du es willst. Details stehen auf der Seite [Datenschutz](/privacy/)."
+        "Deine Worte gehören dir — nie verkauft. Ob sie zum Training genutzt werden, wird vor dem Start festgelegt und auf dieser Seite veröffentlicht. Du entscheidest, was behalten und was gelöscht wird, und nur die fertige Geschichte wird geteilt, wenn du es willst. Details stehen auf der Seite [Datenschutz](/privacy/)."
       ],
       [
         "Wie bekomme ich Hilfe?",
         "Einen Support-Kontakt veröffentlichen wir auf dieser Seite, sobald die App startet. Bis dahin sind die Seiten dieser Website die Anlaufstelle für Antworten."
       ]
-    ]
+    ],
+    "free_note": "Die Startseite zeigt eine kostenlose Testmöglichkeit — drei fertige Geschichten, ohne Konto. Nach der Testphase gibt es keine kostenlosen Funktionen."
   },
   "about": {
     "title": "Über draft() — und wie es sich von anderen Draft-Apps unterscheidet",
@@ -60,7 +61,7 @@
       {
         "h": "Ein Name, mehrere Apps",
         "p": [
-          "Viele Apps und Tools tragen den Namen „Draft“ — zum Beispiel Draft AI, ein Karussell-Post-Maker. draft() auf dieser Seite ist ein anderes Produkt: eine Erzähl-App, die bei der Stimme beginnt, gemacht von ipe Studio. Du sprichst etwa dreißig Sekunden, beantwortest zwei oder drei sanfte Fragen und erhältst eine fertige Geschichte — Aufhänger, Steigerung, Höhepunkt, Rückblick und Schluss —, während deine Worte deine bleiben."
+          "Viele Apps und Tools tragen den Namen „Draft“. draft() auf dieser Seite ist ein anderes Produkt: eine Erzähl-App, die bei der Stimme beginnt, gemacht von ipe Studio. Du sprichst etwa dreißig Sekunden, beantwortest zwei oder drei sanfte Fragen und erhältst eine fertige Geschichte — Aufhänger, Steigerung, Höhepunkt, Rückblick und Schluss —, während deine Worte deine bleiben."
         ]
       },
       {
@@ -69,7 +70,7 @@
           "Offizielle Website: draft.ipe.rest — diese Seite.",
           "Hersteller: ipe Studio — [ipe.rest](https://ipe.rest).",
           "Der Name wird draft() geschrieben, mit Klammern, und trägt den Zusatz „an ipe studio app“.",
-          "Plattform: iOS, in Vorbereitung."
+          "Plattform: iOS und Android, in Vorbereitung."
         ]
       },
       {
@@ -89,7 +90,7 @@
       {
         "h": "Unser Versprechen",
         "li": [
-          "Deine Worte gehören dir — nie verkauft, nie zum Training genutzt.",
+          "Deine Worte gehören dir — nie verkauft.",
           "Du entscheidest, was behalten und was gelöscht wird.",
           "Nur die fertige Geschichte wird geteilt — wenn du es willst."
         ]
@@ -104,7 +105,8 @@
           "Wie lange Geschichten und Entwürfe aufbewahrt werden und wie du sie löschst.",
           "Welche Nutzungsstatistiken die App erfasst, falls überhaupt.",
           "Wie Abos und Zahlungen über den App Store abgewickelt werden.",
-          "Wie du uns zu deinen Daten erreichst."
+          "Wie du uns zu deinen Daten erreichst.",
+          "Ob deine Worte zum Training oder zur Verbesserung genutzt werden — wird vor dem Start festgelegt und auf dieser Seite veröffentlicht."
         ]
       },
       {
