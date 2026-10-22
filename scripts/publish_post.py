@@ -21,19 +21,42 @@ def post_files(root, slug):
     return [f for f in [d / "ko.md", d / "en.md"] + sorted((d / "translations").glob("*.md")) if f.is_file()]
 
 
+def rewrite(f, text, date):
+    """Return the new text of one post file (draft flag removed, date set) or raise ValueError — never writes."""
+    text = text.replace("\r\n", "\n")
+    if not text.startswith("---\n"):
+        raise ValueError("bad front matter (must start with ---)")
+    head, sep, rest = text[4:].partition("\n---")
+    if not sep:
+        raise ValueError("front matter is not closed with ---")
+    if not re.search(r"^date:.*$", head, flags=re.M):
+        raise ValueError("no `date:` line in front matter")
+    head = re.sub(r"^draft:.*\n?", "", head, flags=re.M)
+    head = re.sub(r"^date:.*$", "date: " + date, head, flags=re.M)
+    return "---\n" + head.rstrip("\n") + "\n---" + rest
+
+
 def publish(root, slug, date):
+    """Validate every language file first; write only if all of them are fine (no partial publish)."""
     files = post_files(root, slug)
     if not files:
         raise SystemExit("no files for slug %r under posts/" % slug)
-    dt.date.fromisoformat(date)
+    try:
+        dt.date.fromisoformat(date)
+    except ValueError:
+        raise SystemExit("--date must be YYYY-MM-DD, got %r" % date)
+    if dt.date.fromisoformat(date) > dt.datetime.now(KST).date():
+        raise SystemExit("--date %s is in the future (check_sitemap rejects future lastmod)" % date)
+    new, errors = {}, []
     for f in files:
-        text = f.read_text(encoding="utf-8")
-        head, sep, rest = text[4:].partition("\n---")
-        if not text.startswith("---\n") or not sep:
-            raise SystemExit("%s: bad front matter" % f)
-        head = re.sub(r"^draft:.*\n?", "", head, flags=re.M)
-        head = re.sub(r"^date:.*$", "date: " + date, head, flags=re.M)
-        f.write_text("---\n" + head.rstrip("\n") + "\n---" + rest, encoding="utf-8")
+        try:
+            new[f] = rewrite(f, f.read_text(encoding="utf-8"), date)
+        except ValueError as ex:
+            errors.append("%s: %s" % (f, ex))
+    if errors:
+        raise SystemExit("publish_post: nothing written\n  " + "\n  ".join(errors))
+    for f, text in new.items():
+        f.write_text(text, encoding="utf-8")
     return files
 
 

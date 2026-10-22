@@ -395,6 +395,25 @@ class Publish(unittest.TestCase):
             files = build_site.build(tmp)
             self.assertIn("de/blog/queued-one/index.html", files)
 
+    def test_missing_date_line_errors_and_writes_nothing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            write_post(tmp, "queued-one", extra="draft: true\n")
+            bad = tmp / "posts/queued-one/translations/de.md"
+            bad.write_text(re.sub(r"^date:.*\n", "", bad.read_text(encoding="utf-8"), flags=re.M), encoding="utf-8")
+            before = {f: f.read_text(encoding="utf-8") for f in (tmp / "posts").rglob("*.md")}
+            with self.assertRaises(SystemExit) as cm:
+                publish_post.publish(tmp, "queued-one", "2026-10-01")
+            self.assertIn("no `date:` line", str(cm.exception))
+            self.assertEqual(before, {f: f.read_text(encoding="utf-8") for f in (tmp / "posts").rglob("*.md")})
+
+    def test_future_or_malformed_date_is_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            write_post(tmp, "queued-one", extra="draft: true\n")
+            for d in ("2999-01-01", "10/01/2026"):
+                with self.assertRaises(SystemExit):
+                    publish_post.publish(tmp, "queued-one", d)
+
     def test_queue_posts_in_repo_validate(self):
         self.assertEqual(build_site.load_posts(ROOT, drafts=True)[1], [])
 

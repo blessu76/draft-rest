@@ -17,10 +17,10 @@ Queued dates are placeholders; `publish_post.py` sets the real date. Facts about
 
 ```
 python3 scripts/publish_post.py <slug>          # removes `draft: true` in all 11 files, date = today (KST)
-python3 scripts/build_site.py                   # writes pages, feeds, sitemap.xml, llms.txt
+python3 scripts/build_site.py                   # writes pages, feeds, sitemap.xml, llms.txt (re-run build_site.py --check afterwards)
 python3 scripts/check_sitemap.py
 python3 -m unittest discover -s tests
-git add -A && git commit && push main          # GitHub Actions deploys; then: python3 scripts/indexnow.py <new urls> (needs a key file)
+git add -A && git commit && push main          # GitHub Actions deploys; then: python3 scripts/indexnow.py <new urls> (key file is committed at the site root)
 ```
 
 Validate the whole queue without publishing: `python3 scripts/build_site.py --validate-drafts`.
