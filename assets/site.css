@@ -357,3 +357,15 @@
   .nf-langs a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:8px;color:var(--ink-soft);text-decoration:none;background:var(--card);}
   .nf-langs a:hover{border-color:var(--sage);color:var(--ink);}
 
+
+  /* ---------- content pages (faq / about / privacy) ---------- */
+  .page-body{margin-top:8px;}
+  .page-body .qa,.page-body .sec{padding:0;}
+  .page-body .qa h2,.page-body .sec h2{font-size:clamp(18px,3.4vw,21px);margin:34px 0 10px;scroll-margin-top:72px;}
+  .page-body .qa:first-child h2,.page-body .sec:first-child h2{margin-top:6px;}
+  .page-body .sec p{margin-bottom:14px;}
+  @media (max-width:380px){
+    .toplink{font-size:11.5px;gap:5px;padding:5px 8px;}
+    .langsel{padding:5px 8px;}
+    .langsel select{max-width:78px;}
+  }

@@ -31,6 +31,15 @@ One static page per language (all describe the same app):
 - [Tiếng Việt](https://draft.ipe.rest/vi/) — vi
 - [Français](https://draft.ipe.rest/fr/) — fr
 - [Deutsch](https://draft.ipe.rest/de/) — de
+
+## FAQ
+[en](https://draft.ipe.rest/faq/), [ko](https://draft.ipe.rest/ko/faq/), [ja](https://draft.ipe.rest/ja/faq/), [zh](https://draft.ipe.rest/zh/faq/), [es](https://draft.ipe.rest/es/faq/), [pt](https://draft.ipe.rest/pt/faq/), [id](https://draft.ipe.rest/id/faq/), [ru](https://draft.ipe.rest/ru/faq/), [vi](https://draft.ipe.rest/vi/faq/), [fr](https://draft.ipe.rest/fr/faq/), [de](https://draft.ipe.rest/de/faq/)
+
+## About (how draft() differs from other Draft apps)
+[en](https://draft.ipe.rest/about/), [ko](https://draft.ipe.rest/ko/about/), [ja](https://draft.ipe.rest/ja/about/), [zh](https://draft.ipe.rest/zh/about/), [es](https://draft.ipe.rest/es/about/), [pt](https://draft.ipe.rest/pt/about/), [id](https://draft.ipe.rest/id/about/), [ru](https://draft.ipe.rest/ru/about/), [vi](https://draft.ipe.rest/vi/about/), [fr](https://draft.ipe.rest/fr/about/), [de](https://draft.ipe.rest/de/about/)
+
+## Privacy
+[en](https://draft.ipe.rest/privacy/), [ko](https://draft.ipe.rest/ko/privacy/), [ja](https://draft.ipe.rest/ja/privacy/), [zh](https://draft.ipe.rest/zh/privacy/), [es](https://draft.ipe.rest/es/privacy/), [pt](https://draft.ipe.rest/pt/privacy/), [id](https://draft.ipe.rest/id/privacy/), [ru](https://draft.ipe.rest/ru/privacy/), [vi](https://draft.ipe.rest/vi/privacy/), [fr](https://draft.ipe.rest/fr/privacy/), [de](https://draft.ipe.rest/de/privacy/)
 <!-- pages:llms:end -->
 
 <!-- blog:llms:start -->

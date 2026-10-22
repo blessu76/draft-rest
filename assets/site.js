@@ -6,7 +6,7 @@
     sel.addEventListener('change', function () {
       try { localStorage.setItem('draft_lang', this.value); } catch (e) {}
       var path = this.getAttribute('data-path') || '';
-      location.href = (this.value === 'en' && !path) ? '/' : '/' + this.value + '/' + path;
+      location.href = this.value === 'en' ? (this.getAttribute('data-en') || '/') : '/' + this.value + '/' + path;
     });
   }
   // an explicit language link click is a choice too (otherwise the root would send the visitor straight back)

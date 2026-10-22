@@ -7,6 +7,7 @@ Writes  index.html                  the English page; also x-default and hreflan
         <lang>/index.html           one static page per other language (ko ja zh es pt id ru vi fr de)
         en/index.html               redirect stub -> / (noindex, canonical /; not in the sitemap)
         404.html                    not-found page (noindex)
+        faq/ about/ privacy/        English content pages (root-level); <lang>/faq|about|privacy/ for the others — texts in content/<lang>.json
         sitemap.xml                 every page with hreflang alternates, real lastmod
         llms.txt                    "Languages" list between <!-- pages:llms:start --> / <!-- pages:llms:end -->
         assets/*.css|js are NOT generated; their ?v= is a hash of the files (cache busting).
@@ -49,10 +50,10 @@ FONTS = ("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,30
          "&family=Inter:wght@300;400;500;600&display=swap")
 # Root-only script (runs before paint). ?lang=xx (any case, other query params kept) -> that language's page;
 # else a language the visitor picked earlier (localStorage draft_lang) -> that page. No browser-language redirect.
-LEGACY_REDIRECT = ("(function(){try{var C='%s',q=new URLSearchParams(location.search),l=(q.get('lang')||'').toLowerCase();"
+LEGACY_REDIRECT = ("(function(){try{var C='%s',R=new RegExp('^('+C+')$'),q=new URLSearchParams(location.search),l=(q.get('lang')||'').toLowerCase();"
                    "function go(c){q.delete('lang');var s=q.toString();location.replace((c==='en'?'/':'/'+c+'/')+(s?'?'+s:'')+location.hash);}"
-                   "if(l&&new RegExp('^('+C+')$').test(l)){go(l);return;}"
-                   "if(!q.has('lang')){var v=localStorage.getItem('draft_lang');if(v&&v!=='en'&&new RegExp('^('+C+')$').test(v))go(v);}"
+                   "if(l&&R.test(l)){try{localStorage.setItem('draft_lang',l);}catch(e){}go(l);return;}"
+                   "var v=localStorage.getItem('draft_lang');if(v&&v!=='en'&&R.test(v))go(v);"
                    "}catch(e){}})();" % "|".join(CODES))
 def esc(s):
     return html.escape(str(s), quote=True)
@@ -61,6 +62,22 @@ def esc(s):
 def home_path(lang):
     """Site path of a language's home page. English lives at the root; /en/ is only a redirect stub."""
     return "/" if lang in (None, DEFAULT_LANG) else "/%s/" % lang
+
+
+PAGES = ("faq", "about", "privacy")  # content pages; English lives at /<page>/, the others at /<lang>/<page>/
+
+
+def page_path(lang, slug):
+    return "/%s/" % slug if lang == DEFAULT_LANG else "/%s/%s/" % (lang, slug)
+
+
+def lang_path(lang, path=""):
+    """Site path of `lang`'s version of the page whose language-less path is `path` ('' = home, 'blog/', 'faq/', ...)."""
+    if not path:
+        return home_path(lang)
+    if path.strip("/") in PAGES:
+        return page_path(lang, path.strip("/"))
+    return "/%s/%s" % (lang, path)
 
 
 def page_url(lang):
@@ -73,7 +90,16 @@ def load_locales(root):
     out = {}
     for c in CODES:
         out[c] = json.loads((Path(root) / "locales" / (c + ".json")).read_text(encoding="utf-8"))
+        content = Path(root) / "content" / (c + ".json")
+        if content.is_file():  # nav labels live next to the page texts
+            d = json.loads(content.read_text(encoding="utf-8"))
+            out[c].update({k: d[k] for k in ("nav_faq", "nav_about") if k in d})
     return out
+
+
+def load_content(root):
+    """content/<lang>.json -> {lang: {faq|about|privacy: {...}, updated, updated_label}}"""
+    return {c: json.loads((Path(root) / "content" / (c + ".json")).read_text(encoding="utf-8")) for c in CODES}
 
 
 def tr(locales, lang, key):
@@ -188,14 +214,14 @@ def lang_select(lang, path=""):
     opts = "\n".join('    <option value="%s"%s>%s</option>' % (c, " selected" if c == lang else "", esc(n)) for c, n, _ in LANGS)
     return f"""<label class="langsel" aria-label="Language">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
-  <select id="lang" aria-label="Language" data-path="{path}">
+  <select id="lang" aria-label="Language" data-path="{path}" data-en="{lang_path(DEFAULT_LANG, path)}">
 {opts}
   </select>
 </label>"""
 
 
 def foot_langs(lang, path=""):
-    links = ['<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (home_path(c) if not path else "/%s/%s" % (c, path), c, c, ' aria-current="page"' if c == lang else "", esc(n))
+    links = ['<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (lang_path(c, path), c, c, ' aria-current="page"' if c == lang else "", esc(n))
              for c, n, _ in LANGS]
     return '<nav class="foot-langs" aria-label="Languages">\n      %s\n    </nav>' % "\n      ".join(links)
 
@@ -217,14 +243,20 @@ def home_ld(locales, lang, url):
 def chrome(locales, lang, path="", blog=False):
     """Shared page furniture: top-left links, language select, footer pieces."""
     base = home_path(lang)
-    blog_href = "/%s/blog/" % lang
+    cur = lambda p: ' aria-current="page"' if path.strip("/") == p else ""
     top = '<nav class="toplink" aria-label="draft()"><a href="%s">draft()</a>' % base
-    footlink = ""
+    foot = []
     if blog:
+        blog_href = "/%s/blog/" % lang
         top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (blog_href, ' aria-current="page"' if path.startswith("blog") else "", esc(tr(locales, lang, "nav_blog")))
-        footlink = '\n      <a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog")))
+        foot.append('<a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog"))))
+    top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (page_path(lang, "faq"), cur("faq"), esc(tr(locales, lang, "nav_faq")))
     top += "</nav>"
-    return {"LANGSEL": lang_select(lang, path), "FOOTLANGS": foot_langs(lang, path), "BLOGLINK": footlink, "TOPLINK": top}
+    foot += ['<a href="%s">%s</a>' % (page_path(lang, "faq"), esc(tr(locales, lang, "nav_faq"))),
+             '<a href="%s">%s</a>' % (page_path(lang, "about"), esc(tr(locales, lang, "nav_about"))),
+             '<a href="%s">%s</a>' % (page_path(lang, "privacy"), esc(tr(locales, lang, "foot_privacy"))),
+             '<a href="%s#support">%s</a>' % (page_path(lang, "faq"), esc(tr(locales, lang, "foot_support")))]
+    return {"LANGSEL": lang_select(lang, path), "FOOTLANGS": foot_langs(lang, path), "FOOTLINKS": "\n      ".join(foot), "TOPLINK": top}
 
 
 def render_home(root, locales, lang, version, blog=False):
@@ -564,6 +596,79 @@ def render_list(root, locales, version, posts, lang):
     return page_shell(root, locales, lang, version, url=url, title=title, desc=desc, cluster=list_cluster(), ld=ld, main=main, path="blog/")
 
 
+# ---------------------------------------------------------------- content pages (faq / about / privacy)
+def content_url(lang, slug):
+    return SITE + page_path(lang, slug)
+
+
+def content_cluster(slug):
+    d = {c: content_url(c, slug) for c in CODES}
+    d["x-default"] = content_url(DEFAULT_LANG, slug)
+    return d
+
+
+def plain(text):
+    """Markdown-ish inline text -> plain text (for JSON-LD)."""
+    text = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r"\1", text)
+    return text.replace("**", "").replace("*", "")
+
+
+def fill_links(text, lang):
+    return text.replace("](/faq/)", "](%s)" % page_path(lang, "faq")).replace("](/about/)", "](%s)" % page_path(lang, "about")) \
+               .replace("](/privacy/)", "](%s)" % page_path(lang, "privacy"))
+
+
+def render_content_page(root, locales, content, version, slug, lang):
+    c = content[lang]
+    pg = c[slug]
+    url = content_url(lang, slug)
+    if slug == "faq":
+        body = "\n".join('    <section class="qa"><h2 id="%s">%s</h2>\n      <p>%s</p></section>' % (
+            "support" if i == len(pg["items"]) - 1 else "q%d" % (i + 1), esc(q), inline(fill_links(a, lang))) for i, (q, a) in enumerate(pg["items"]))
+    else:
+        parts = []
+        for sec in pg["sections"]:
+            h = '    <h2>%s</h2>' % esc(sec["h"])
+            ps = "".join("\n    <p>%s</p>" % inline(fill_links(t, lang)) for t in sec.get("p", []))
+            ul = "\n    <ul>%s</ul>" % "".join("<li>%s</li>" % inline(fill_links(t, lang)) for t in sec["li"]) if sec.get("li") else ""
+            parts.append('  <section class="sec">\n%s%s%s\n  </section>' % (h, ps, ul))
+        body = "\n".join(parts)
+    stamp = ""
+    if slug == "privacy":
+        stamp = '\n    <p class="comment"><time datetime="%s">// %s: %s</time></p>' % (c["updated"], esc(c["updated_label"]), c["updated"])
+    crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "draft()", "item": page_url(lang)},
+        {"@type": "ListItem", "position": 2, "name": pg["h1"], "item": url}]}
+    lds = []
+    if slug == "faq":
+        lds.append({"@context": "https://schema.org", "@type": "FAQPage", "url": url, "inLanguage": lang, "name": pg["h1"],
+                    "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in pg["items"]]})
+    elif slug == "about":
+        org = {"@type": "Organization", "name": "ipe Studio", "url": "https://ipe.rest"}
+        app = {"@type": "MobileApplication", "name": "draft()", "alternateName": "draft", "url": page_url(None), "operatingSystem": "iOS",
+               "applicationCategory": "ProductivityApplication", "applicationSubCategory": "Writing / Storytelling",
+               "description": tr(locales, lang, "meta_desc"), "inLanguage": lang, "image": SITE + "/og-image.png",
+               "disambiguatingDescription": plain(pg["sections"][0]["p"][0]), "author": org, "publisher": org}
+        lds.append({"@context": "https://schema.org", "@type": "AboutPage", "url": url, "inLanguage": lang, "name": pg["h1"],
+                    "description": pg["desc"], "mainEntity": app, "publisher": org})
+        lds.append(dict(org, **{"@context": "https://schema.org", "slogan": "when the process finally rests", "brand": "ipe()"}))
+    else:
+        lds.append({"@context": "https://schema.org", "@type": "WebPage", "url": url, "inLanguage": lang, "name": pg["h1"],
+                    "description": pg["desc"], "dateModified": c["updated"], "publisher": ORG})
+    lds.append(crumbs)
+    main = f"""<main id="main" class="post-wrap">
+  <header class="blog-head">
+    <p class="comment">{esc(pg['comment'])}</p>
+    <h1>{esc(pg['h1'])}</h1>{stamp}
+  </header>
+  <div class="prose page-body">
+{body}
+  </div>
+</main>"""
+    return page_shell(root, locales, lang, version, url=url, title=pg["title"], desc=pg["desc"], cluster=content_cluster(slug),
+                      ld="\n".join(ld_script(x) for x in lds), main=main, path="%s/" % slug)
+
+
 def rfc822(d):
     return dt.datetime(d.year, d.month, d.day, 16, 0, tzinfo=KST).strftime("%a, %d %b %Y %H:%M:%S +0900")
 
@@ -627,6 +732,11 @@ def render_llms_pages():
     for c, n, _ in LANGS:
         if c != DEFAULT_LANG:
             lines.append("- [%s](%s) — %s" % (n, page_url(c), c))
+    names = {"faq": "FAQ", "about": "About (how draft() differs from other Draft apps)", "privacy": "Privacy"}
+    for slug in PAGES:
+        lines.append("")
+        lines.append("## %s" % names[slug])
+        lines.append(", ".join("[%s](%s)" % (c, content_url(c, slug)) for c in CODES))
     return "\n".join(lines) + "\n"
 
 
@@ -651,6 +761,7 @@ def build(root):
     posts, errors = load_posts(root)
     if errors:
         raise BuildError("\n  ".join(errors))
+    content = load_content(root)
     blog = bool(posts)
     out = {"index.html": render_home(root, locales, DEFAULT_LANG, version, blog=blog),
            "en/index.html": render_en_stub(version), "404.html": render_404(version)}
@@ -672,6 +783,11 @@ def build(root):
             for c in CODES:
                 out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c)
                 pages.append((post_url(c, p["slug"]), p["langs"][c].get("updated") or p["langs"][c]["date"], "0.6", "monthly", post_cluster(p["slug"])))
+    prio = {"faq": "0.8", "about": "0.8", "privacy": "0.4"}
+    for slug in PAGES:
+        for c in CODES:
+            out[page_path(c, slug).strip("/") + "/index.html"] = render_content_page(root, locales, content, version, slug, c)
+            pages.append((content_url(c, slug), git_date(root, ["src", "assets", "content/%s.json" % c]), prio[slug], "monthly", content_cluster(slug)))
     pages = [(u, d.isoformat() if hasattr(d, "isoformat") else d, pr, fq, cl) for u, d, pr, fq, cl in pages]
     out["sitemap.xml"] = render_sitemap(root, pages)
     llms = (root / "llms.txt").read_text(encoding="utf-8")

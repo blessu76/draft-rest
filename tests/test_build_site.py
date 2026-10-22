@@ -26,7 +26,7 @@ class Locales(unittest.TestCase):
     def test_template_keys_exist(self):
         loc = build_site.load_locales(ROOT)
         tpl = (ROOT / "src" / "home_body.html").read_text(encoding="utf-8")
-        reserved = {"LANGSEL", "FOOTLANGS", "BLOGLINK", "TOPLINK"}
+        reserved = {"LANGSEL", "FOOTLANGS", "FOOTLINKS", "TOPLINK"}
         for k in set(re.findall(r"\{\{(\w+)", tpl)) - reserved:
             self.assertIn(k, loc["en"], k)
 
@@ -38,7 +38,8 @@ class Pages(unittest.TestCase):
 
     @property
     def home(self):
-        return {k: v for k, v in self.files.items() if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html"))}
+        return {k: v for k, v in self.files.items()
+                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES)}
 
     @property
     def indexed_home(self):
@@ -105,6 +106,8 @@ class Pages(unittest.TestCase):
         self.assertNotIn("navigator.language", build_site.LEGACY_REDIRECT)
         self.assertIn("draft_lang", build_site.LEGACY_REDIRECT)
         self.assertIn("toLowerCase", build_site.LEGACY_REDIRECT)
+        # an explicit ?lang=xx wins over the saved value, and is saved itself
+        self.assertLess(build_site.LEGACY_REDIRECT.index("setItem('draft_lang',l)"), build_site.LEGACY_REDIRECT.index("getItem('draft_lang')"))
         self.assertNotIn('id="langhint"', self.files["ko/index.html"])
 
     def test_legacy_redirect_covers_all_languages(self):
@@ -273,13 +276,100 @@ class PostValidation(unittest.TestCase):
         self.assertEqual([p["slug"] for p in build_site.load_posts(self.dir)[0]], ["new-one", "old-one"])
 
 
+class ContentPages(unittest.TestCase):
+    """FAQ / About / Privacy in 11 languages (English at /<page>/, others at /<lang>/<page>/)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+        cls.content = build_site.load_content(ROOT)
+
+    def rel(self, lang, slug):
+        return build_site.page_path(lang, slug).strip("/") + "/index.html"
+
+    def ld(self, text):
+        return [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">\n(.*?)\n</script>', text, re.S)]
+
+    def test_every_page_in_every_language(self):
+        for slug in build_site.PAGES:
+            for c in build_site.CODES:
+                self.assertIn(self.rel(c, slug), self.files)
+        self.assertNotIn("en/faq/index.html", self.files)
+
+    def test_clusters_are_symmetric_with_x_default_english(self):
+        for slug in build_site.PAGES:
+            for c in build_site.CODES:
+                t = self.files[self.rel(c, slug)]
+                self.assertIn('<link rel="canonical" href="%s">' % build_site.content_url(c, slug), t)
+                self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', t)), 12)
+                self.assertIn('hreflang="x-default" href="%s"' % build_site.content_url("en", slug), t)
+                self.assertIn('hreflang="en" href="https://draft.ipe.rest/%s/"' % slug, t)
+                self.assertIn("<loc>%s</loc>" % build_site.content_url(c, slug), self.files["sitemap.xml"])
+
+    def test_json_ld_parses_and_matches(self):
+        for c in build_site.CODES:
+            faq = [x for x in self.ld(self.files[self.rel(c, "faq")]) if x["@type"] == "FAQPage"][0]
+            self.assertEqual(len(faq["mainEntity"]), len(self.content[c]["faq"]["items"]))
+            self.assertGreaterEqual(len(faq["mainEntity"]), 8)
+            self.assertNotIn("](", json.dumps(faq, ensure_ascii=False))
+            about = self.ld(self.files[self.rel(c, "about")])
+            kinds = {x["@type"] for x in about}
+            self.assertTrue({"AboutPage", "Organization", "BreadcrumbList"} <= kinds, c)
+            app = [x for x in about if x["@type"] == "AboutPage"][0]["mainEntity"]
+            self.assertEqual(app["@type"], "MobileApplication")
+            for forbidden in ("sameAs", "downloadUrl", "installUrl"):
+                self.assertNotIn(forbidden, json.dumps(about), c)
+            for slug in ("privacy",):
+                self.assertTrue(self.ld(self.files[self.rel(c, slug)]))
+
+    def test_content_files_are_complete_and_free_of_placeholders(self):
+        en = self.content["en"]
+        for c, d in self.content.items():
+            self.assertEqual(len(d["faq"]["items"]), len(en["faq"]["items"]), c)
+            self.assertEqual(len(d["privacy"]["sections"]), len(en["privacy"]["sections"]), c)
+            self.assertEqual(len(d["about"]["sections"]), len(en["about"]["sections"]), c)
+            self.assertTrue(re.match(r"^\d{4}-\d{2}-\d{2}$", d["updated"]))
+            self.assertIn("https://ipe.rest", json.dumps(d["about"]) + json.dumps(d["faq"]))
+            for slug in build_site.PAGES:
+                self.assertIn("<h1>", self.files[self.rel(c, slug)])
+
+    def test_placeholder_links_are_gone_and_new_pages_linked_everywhere(self):
+        for rel, t in self.files.items():
+            if rel.endswith("index.html") and rel != "en/index.html" and rel != "404.html":
+                self.assertNotIn('href="#">Privacy', t, rel)
+                lang = rel.split("/")[0] if rel.split("/")[0] in build_site.CODES else "en"
+                for slug in build_site.PAGES:
+                    self.assertIn('href="%s"' % build_site.page_path(lang, slug), t, (rel, slug))
+
+    def test_not_in_noindex_and_in_llms(self):
+        for slug in build_site.PAGES:
+            for c in build_site.CODES:
+                self.assertNotIn("noindex", self.files[self.rel(c, slug)])
+                self.assertIn("(%s)" % build_site.content_url(c, slug), self.files["llms.txt"])
+
+    def test_privacy_does_not_overclaim(self):
+        """Facts only: the unconfirmed items are announced as 'to be published before launch', never stated as fact."""
+        en = json.dumps(self.content["en"]["privacy"])
+        self.assertIn("still being finalized", en)
+        self.assertIn("No cookies", en)
+        self.assertNotIn("end-to-end", en.lower())
+        self.assertNotIn("GDPR", en)
+
+    def test_language_switch_goes_to_the_same_page(self):
+        t = self.files["ko/faq/index.html"]
+        self.assertIn('data-path="faq/" data-en="/faq/"', t)
+        self.assertIn('href="/faq/" hreflang="en"', t)
+        self.assertIn('href="/ja/faq/" hreflang="ja"', t)
+
+
 class StageSite(unittest.TestCase):
     def test_only_public_files_are_staged(self):
         import stage_site
         with tempfile.TemporaryDirectory() as tmp:
             files = {f.as_posix() for f in stage_site.stage(ROOT, tmp)}
             for must in ("index.html", "404.html", "CNAME", ".nojekyll", "robots.txt", "sitemap.xml", "llms.txt", "og-image.png",
-                         "assets/site.css", "assets/site.js", "ko/index.html", "en/index.html", "ko/blog/feed.xml"):
+                         "assets/site.css", "assets/site.js", "ko/index.html", "en/index.html", "ko/blog/feed.xml",
+                         "faq/index.html", "about/index.html", "privacy/index.html", "ko/faq/index.html", "ja/privacy/index.html"):
                 self.assertIn(must, files)
             self.assertTrue(any(re.match(r"^[0-9a-f]{32}\.txt$", f) for f in files), "IndexNow key file")
             for f in files:

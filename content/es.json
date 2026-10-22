@@ -1,0 +1,128 @@
+{
+  "nav_faq": "FAQ",
+  "nav_about": "Acerca de",
+  "updated_label": "Última actualización",
+  "updated": "2026-10-23",
+  "faq": {
+    "title": "Preguntas frecuentes — draft()",
+    "desc": "Respuestas sobre draft(): qué es, quién lo crea, cómo funciona, privacidad, precio y estado de lanzamiento.",
+    "comment": "// preguntas, respondidas",
+    "h1": "Preguntas frecuentes",
+    "items": [
+      [
+        "¿Qué es draft()?",
+        "draft() es una app de IA privada que convierte lo que dices en voz alta en una historia terminada y lista para compartir. Hablas unos treinta segundos, draft() te hace dos o tres preguntas amables y da forma a tus palabras: gancho, desarrollo, punto álgido, reflexión y cierre."
+      ],
+      [
+        "¿Quién hace draft()?",
+        "draft() es una app de ipe Studio, el estudio detrás de ipe(). El sitio principal es [ipe.rest](https://ipe.rest); este sitio, draft.ipe.rest, es el sitio oficial de draft()."
+      ],
+      [
+        "¿draft() es lo mismo que Draft AI u otras apps llamadas Draft?",
+        "No. Varias apps y herramientas comparten el nombre «Draft». draft() — escrito con paréntesis — es una app de narración que empieza por la voz, creada por ipe Studio. En [Acerca de](/about/) verás cómo distinguirlas."
+      ],
+      [
+        "¿Cómo funciona?",
+        "Tres turnos. Solo habla: no pasa nada si divagas o dejas frases a medias. draft() hace unas preguntas para encontrar el momento real. Y recibes una historia terminada, del gancho al cierre, lista para publicar."
+      ],
+      [
+        "¿En qué dispositivos funciona?",
+        "draft() es una app para iOS."
+      ],
+      [
+        "¿Ya está disponible?",
+        "draft() todavía se está preparando para iOS. Anunciaremos el lanzamiento en la App Store en este sitio. Hasta entonces, considera que la app aún no ha salido."
+      ],
+      [
+        "¿Cuánto costará?",
+        "La página de inicio muestra una forma gratuita de probarla — tres historias terminadas, sin cuenta — y una suscripción mensual (indicada como 2,99 $ al mes) para historias ilimitadas. Los precios y condiciones definitivos se mostrarán en la App Store al lanzar."
+      ],
+      [
+        "¿Qué idiomas admite?",
+        "Este sitio web está disponible en 11 idiomas: English, 한국어, 日本語, 中文, Español, Português, Bahasa Indonesia, Русский, Tiếng Việt, Français, Deutsch. Los idiomas que admitirá la app se confirmarán en el lanzamiento."
+      ],
+      [
+        "¿Mis palabras son privadas?",
+        "Tus palabras son tuyas: nunca se venden ni se usan para entrenar. Tú decides qué se guarda y qué se borra, y solo se comparte la historia terminada, cuando tú lo decides. Los detalles están en la página de [Privacidad](/privacy/)."
+      ],
+      [
+        "¿Cómo consigo ayuda?",
+        "Publicaremos un contacto de soporte en esta página cuando la app se lance. Hasta entonces, las páginas de este sitio son el lugar para las respuestas."
+      ]
+    ]
+  },
+  "about": {
+    "title": "Acerca de draft() — y en qué se diferencia de otras apps Draft",
+    "desc": "draft() de ipe Studio es una app de narración que empieza por la voz. En qué se diferencia de otras apps que comparten el nombre Draft.",
+    "comment": "// no es el otro Draft",
+    "h1": "draft() de ipe Studio",
+    "sections": [
+      {
+        "h": "Un nombre, varias apps",
+        "p": [
+          "Muchas apps y herramientas usan el nombre «Draft», por ejemplo Draft AI, un creador de publicaciones en carrusel. draft() en este sitio es otro producto: una app de narración que empieza por la voz, hecha por ipe Studio. Hablas unos treinta segundos, respondes dos o tres preguntas amables y obtienes una historia terminada — gancho, desarrollo, punto álgido, reflexión y cierre — mientras tus palabras siguen siendo tuyas."
+        ]
+      },
+      {
+        "h": "Cómo reconocer la nuestra",
+        "li": [
+          "Sitio oficial: draft.ipe.rest — este sitio.",
+          "Creador: ipe Studio — [ipe.rest](https://ipe.rest).",
+          "El nombre se escribe draft(), con paréntesis, y lleva la marca «an ipe studio app».",
+          "Plataforma: iOS, en preparación."
+        ]
+      },
+      {
+        "h": "Más información",
+        "p": [
+          "Lee las [FAQ](/faq/) o la página de [Privacidad](/privacy/)."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacidad — draft()",
+    "desc": "Cómo tratan tus datos draft() y draft.ipe.rest: lo que prometemos, lo que aún se está definiendo y cómo funciona este sitio web.",
+    "comment": "// privacidad, sin rodeos",
+    "h1": "Privacidad",
+    "sections": [
+      {
+        "h": "Nuestra promesa",
+        "li": [
+          "Tus palabras son tuyas: nunca se venden ni se usan para entrenar.",
+          "Tú decides qué se guarda y qué se borra.",
+          "Solo se comparte la historia terminada, cuando tú decides."
+        ]
+      },
+      {
+        "h": "En la app: aún en definición",
+        "p": [
+          "draft() todavía se está preparando, así que algunos detalles no son definitivos y aquí no vamos a adivinar. Antes del lanzamiento confirmaremos cada uno de estos puntos y los publicaremos en esta página:"
+        ],
+        "li": [
+          "Cómo se convierte tu voz en texto y si eso ocurre en tu dispositivo o con un servicio externo.",
+          "Cuánto tiempo se guardan las historias y los borradores, y cómo se eliminan.",
+          "Qué estadísticas de uso recoge la app, si recoge alguna.",
+          "Cómo se gestionan las suscripciones y los pagos a través de la App Store.",
+          "Cómo contactarnos sobre tus datos."
+        ]
+      },
+      {
+        "h": "En este sitio web",
+        "li": [
+          "No se instalan cookies.",
+          "Las visitas se cuentan con Cloudflare Web Analytics, que no usa cookies ni recoge datos personales.",
+          "Las fuentes se cargan desde Google Fonts, así que tu navegador se conecta a los servidores de fuentes de Google.",
+          "Tu idioma elegido, y si cerraste el aviso de idioma, se recuerdan solo en tu navegador (almacenamiento local) y nunca se nos envían.",
+          "Este sitio no tiene cuentas y no recoge formularios ni datos personales."
+        ]
+      },
+      {
+        "h": "Contacto",
+        "p": [
+          "Publicaremos aquí un correo de contacto para consultas de privacidad en el lanzamiento."
+        ]
+      }
+    ]
+  }
+}
