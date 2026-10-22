@@ -382,7 +382,7 @@ class Publish(unittest.TestCase):
     def test_publish_removes_draft_and_sets_date_then_builds(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp = Path(tmp)
-            for rel in ("src", "locales", "assets"):
+            for rel in ("src", "locales", "content", "assets"):
                 shutil.copytree(ROOT / rel, tmp / rel)
             shutil.copy(ROOT / "llms.txt", tmp / "llms.txt")
             write_post(tmp, "queued-one", extra="draft: true\n")
