@@ -213,7 +213,8 @@ class Blog(unittest.TestCase):
         for c in build_site.CODES:
             ch = ET.fromstring(self.files["%s/blog/feed.xml" % c].split("?>", 1)[1]).find("channel")
             self.assertEqual(ch.find("language").text, c)
-            self.assertEqual(len(ch.findall("item")), 1)
+            self.assertEqual(len(ch.findall("item")), len(build_site.load_posts(ROOT)[0]))
+            self.assertGreaterEqual(len(ch.findall("item")), 1)
 
     def test_home_links_to_blog_and_blog_is_in_sitemap_and_llms(self):
         self.assertIn('href="/ko/blog/"', self.files["ko/index.html"])
