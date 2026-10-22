@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_site  # noqa: E402
 import check_sitemap  # noqa: E402
+import publish_post  # noqa: E402
 
 
 class Locales(unittest.TestCase):
@@ -375,6 +376,27 @@ class StageSite(unittest.TestCase):
             for f in files:
                 self.assertFalse(f.startswith(("scripts/", "tests/", "posts/", "locales/", "src/", ".github/", "_site/")), f)
                 self.assertNotIn(f.rsplit(".", 1)[-1], ("md", "py", "json", "yml"), f)
+
+
+class Publish(unittest.TestCase):
+    def test_publish_removes_draft_and_sets_date_then_builds(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            for rel in ("src", "locales", "assets"):
+                shutil.copytree(ROOT / rel, tmp / rel)
+            shutil.copy(ROOT / "llms.txt", tmp / "llms.txt")
+            write_post(tmp, "queued-one", extra="draft: true\n")
+            self.assertEqual(build_site.load_posts(tmp), ([], []))
+            self.assertEqual(build_site.load_posts(tmp, drafts=True)[1], [])
+            publish_post.publish(tmp, "queued-one", "2026-10-01")
+            posts, errors = build_site.load_posts(tmp)
+            self.assertEqual((len(posts), errors), (1, []))
+            self.assertNotIn("draft", (tmp / "posts/queued-one/ja.md".replace("ja.md", "translations/ja.md")).read_text(encoding="utf-8").split("---")[1])
+            files = build_site.build(tmp)
+            self.assertIn("de/blog/queued-one/index.html", files)
+
+    def test_queue_posts_in_repo_validate(self):
+        self.assertEqual(build_site.load_posts(ROOT, drafts=True)[1], [])
 
 
 class RepoIsBuilt(unittest.TestCase):

@@ -369,7 +369,7 @@ def parse_post_file(path):
     return meta
 
 
-def load_posts(root):
+def load_posts(root, drafts=False):
     """-> (posts, errors). posts: [{slug, date, updated, draft, langs: {lang: meta}}] newest first, drafts skipped.
     Layout: posts/<slug>/ko.md (canonical) + en.md + translations/<lang>.md  — every published post needs all 11 languages."""
     base = Path(root) / "posts"
@@ -395,7 +395,7 @@ def load_posts(root):
             continue
         if len(draft_flags) > 1:
             errors.append("%s: `draft` differs between languages" % d.name)
-        if all(m["draft"] for m in langs.values()):
+        if not drafts and all(m["draft"] for m in langs.values()):
             continue
         missing = [c for c in CODES if c not in langs]
         if missing:
@@ -821,9 +821,17 @@ def strip_lastmod(s):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--root", default=str(Path(__file__).resolve().parent.parent), help="site root (default: this repo)")
+    ap.add_argument("--validate-drafts", action="store_true", help="also validate draft posts (all languages, length, slug) and exit")
     ap.add_argument("--check", action="store_true", help="write nothing; exit 1 if posts are invalid or files on disk differ from the build")
     a = ap.parse_args(argv)
     root = Path(a.root).resolve()
+    if a.validate_drafts:
+        posts, errors = load_posts(root, drafts=True)
+        if errors:
+            print("build_site: draft errors\n  " + "\n  ".join(errors), file=sys.stderr)
+            return 1
+        print("build_site: OK — %d post(s) incl. drafts validated" % len(posts))
+        return 0
     try:
         files = build(root)
     except BuildError as ex:
