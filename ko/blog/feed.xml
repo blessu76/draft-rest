@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 23 Oct 2026 17:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>30초 말하기 연습, 오늘의 한 장면만 고르세요</title>
+      <link>https://draft.ipe.rest/ko/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>하루 전체를 설명하려다 말문이 막힌다면 장면 하나만 고르세요. 30초 안에 이야기의 재료를 꺼내는 간단한 연습법입니다.</description>
+    </item>
     <item>
       <title>빈 캡션창 앞에서 멈췄다면, 쓰지 말고 말해 보세요</title>
       <link>https://draft.ipe.rest/ko/blog/blank-caption-box/</link>

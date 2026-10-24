@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Fri, 23 Oct 2026 17:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>30-Sekunden-Übung: Wähle nur eine Szene von heute</title>
+      <link>https://draft.ipe.rest/de/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Wenn dich der Versuch, den ganzen Tag zu erklären, blockiert, wähle eine einzige Szene. Eine einfache Übung, um das Rohmaterial einer Geschichte in dreißig Sekunden herauszuholen.</description>
+    </item>
     <item>
       <title>Vor dem leeren Bildunterschrift-Feld festgefahren? Sag es erst laut</title>
       <link>https://draft.ipe.rest/de/blog/blank-caption-box/</link>

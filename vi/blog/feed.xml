@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/vi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Fri, 23 Oct 2026 17:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Bài tập nói 30 giây: chỉ chọn một cảnh của hôm nay</title>
+      <link>https://draft.ipe.rest/vi/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Nếu cố kể cả ngày khiến bạn đứng hình, hãy chỉ chọn một cảnh. Một bài tập đơn giản để lấy nguyên liệu câu chuyện ra trong ba mươi giây.</description>
+    </item>
     <item>
       <title>Đứng hình trước ô chú thích trống? Hãy nói ra trước</title>
       <link>https://draft.ipe.rest/vi/blog/blank-caption-box/</link>

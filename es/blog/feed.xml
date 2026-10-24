@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Fri, 23 Oct 2026 17:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Un ejercicio de 30 segundos: elige solo una escena de hoy</title>
+      <link>https://draft.ipe.rest/es/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Si intentar explicar todo tu día te bloquea, elige una sola escena. Un ejercicio sencillo para sacar en treinta segundos la materia prima de una historia.</description>
+    </item>
     <item>
       <title>¿Te quedaste en blanco ante la casilla del pie de foto? Dilo en voz alta</title>
       <link>https://draft.ipe.rest/es/blog/blank-caption-box/</link>

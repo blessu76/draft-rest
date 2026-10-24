@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/id/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Fri, 23 Oct 2026 17:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Latihan bicara 30 detik: pilih satu adegan dari hari ini</title>
+      <link>https://draft.ipe.rest/id/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Kalau menjelaskan seluruh harimu bikin buntu, pilih satu adegan saja. Latihan sederhana untuk mengeluarkan bahan cerita dalam tiga puluh detik.</description>
+    </item>
     <item>
       <title>Buntu di depan kotak keterangan yang kosong? Ucapkan saja dulu</title>
       <link>https://draft.ipe.rest/id/blog/blank-caption-box/</link>
