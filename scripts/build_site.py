@@ -285,6 +285,7 @@ def render_404(version):
 # ---------------------------------------------------------------- blog
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 REQUIRED = ("title", "description", "date", "slug")
+PUBLISHED_REQUIRED_FROM = dt.date(2026, 10, 24)  # posts dated on/after this day must carry `published` (publish_post.py stamps it)
 
 
 def blog_feed_url(lang):
@@ -397,6 +398,8 @@ def load_posts(root):
         pubs = {m.get("published", "") for m in langs.values()}
         if len(pubs) > 1:
             errors.append("%s: `published` differs between languages" % d.name)
+        if "" in pubs and any("_date" in m and m["_date"] >= PUBLISHED_REQUIRED_FROM for m in langs.values()):
+            errors.append("%s: `published` is required for posts dated %s or later (run scripts/publish_post.py)" % (d.name, PUBLISHED_REQUIRED_FROM))
         for pub in pubs - {""}:
             try:
                 if parse_when(pub) > dt.datetime.now(KST) + dt.timedelta(minutes=1):
