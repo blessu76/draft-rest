@@ -273,6 +273,91 @@ class PostValidation(unittest.TestCase):
         self.assertEqual([p["slug"] for p in build_site.load_posts(self.dir)[0]], ["new-one", "old-one"])
 
 
+class PublishedTime(unittest.TestCase):
+    """Davy 10-24: show HH:MM (KST, two digits, no seconds) next to the date; machine forms carry +09:00."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.dir = Path(self.tmp.name)
+        self.shutil = __import__("shutil")
+        self.shutil.copytree(ROOT / "locales", self.dir / "locales")
+        for n in ("src", "assets", "content"):
+            if (ROOT / n).is_dir():
+                self.shutil.copytree(ROOT / n, self.dir / n)
+        for n in ("llms.txt",):
+            self.shutil.copy(ROOT / n, self.dir / n)
+
+    def build_with(self, published):
+        extra = "published: %s\n" % published if published else ""
+        write_post(self.dir, "a-post", extra=extra)
+        return build_site.build(self.dir)
+
+    def test_nine_past_nine_is_zero_padded_and_has_no_seconds(self):
+        f = self.build_with("2026-10-01T09:09:45+09:00")
+        for c in build_site.CODES:
+            for rel in ("%s/blog/a-post/index.html" % c, "%s/blog/index.html" % c):
+                self.assertIn(">// 2026-10-01 09:09</time>", f[rel])
+                self.assertNotIn("09:09:", re.sub(r"<time datetime=[^>]*>", "", f[rel]).replace("T09:09:00+09:00", ""))
+        post = f["en/blog/a-post/index.html"]
+        self.assertIn('<time datetime="2026-10-01T09:09:00+09:00">', post)
+        self.assertIn('"datePublished": "2026-10-01T09:09:00+09:00"', post)
+        self.assertIn('"dateModified": "2026-10-01T09:09:00+09:00"', post)
+        self.assertIn("<lastmod>2026-10-01T09:09:00+09:00</lastmod>", f["sitemap.xml"])
+        self.assertIn("Thu, 01 Oct 2026 09:09:00 +0900", f["en/blog/feed.xml"])
+
+    def test_other_offsets_are_converted_to_kst(self):
+        f = self.build_with("2026-09-30T23:30:00+00:00")  # 08:30 KST on 10-01
+        self.assertIn(">// 2026-10-01 08:30</time>", f["en/blog/a-post/index.html"])
+        self.assertIn('datetime="2026-10-01T08:30:00+09:00"', f["en/blog/a-post/index.html"])
+
+    def test_post_without_published_shows_date_only(self):
+        f = self.build_with(None)
+        post = f["en/blog/a-post/index.html"]
+        self.assertIn('<time datetime="2026-10-01">// 2026-10-01</time>', post)
+        self.assertIn('"datePublished": "2026-10-01"', post)
+        self.assertIn("<lastmod>2026-10-01</lastmod>", f["sitemap.xml"])
+        self.assertNotRegex(post, r"// 2026-10-01 \d\d:\d\d")
+
+    def test_published_must_have_offset_time_and_match_date(self):
+        for bad in ("2026-10-01T09:09:00", "2026-10-01", "2026-10-02T09:09:00+09:00"):
+            write_post(self.dir, "a-post", extra="published: %s\n" % bad)
+            self.assertTrue(build_site.load_posts(self.dir)[1], bad)
+
+    def test_published_must_match_across_languages(self):
+        write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:00+09:00\n")
+        f = self.dir / "posts" / "a-post" / "ko.md"
+        f.write_text(f.read_text(encoding="utf-8").replace("09:09", "09:10"), encoding="utf-8")
+        self.assertTrue(any("`published` differs" in e for e in build_site.load_posts(self.dir)[1]))
+
+    def test_same_day_posts_sort_by_time(self):
+        write_post(self.dir, "early-one", extra="published: 2026-10-01T08:00:00+09:00\n")
+        write_post(self.dir, "late-one", extra="published: 2026-10-01T16:00:00+09:00\n")
+        self.assertEqual([p["slug"] for p in build_site.load_posts(self.dir)[0]], ["late-one", "early-one"])
+
+    def test_future_published_is_rejected(self):
+        write_post(self.dir, "a-post", extra="published: 2999-10-01T09:09:00+09:00\n")
+        for f in (self.dir / "posts" / "a-post").rglob("*.md"):
+            f.write_text(f.read_text(encoding="utf-8").replace("date: 2026-10-01", "date: 2999-10-01"), encoding="utf-8")
+        self.assertTrue(any("future" in e for e in build_site.load_posts(self.dir)[1]))
+
+    def test_stamp_script_sets_date_and_published_in_all_languages(self):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import stamp_published
+        write_post(self.dir, "a-post", extra="published: 2026-10-01T08:00:00+09:00\n")
+        n, iso = stamp_published.stamp(self.dir, "a-post", __import__("datetime").datetime(
+            2026, 10, 3, 9, 9, tzinfo=build_site.KST))
+        self.assertEqual((n, iso), (len(build_site.CODES), "2026-10-03T09:09:00+09:00"))
+        posts, errors = build_site.load_posts(self.dir)
+        self.assertEqual(errors, [])
+        self.assertEqual(build_site.fmt_date(posts[0]["date"]), "2026-10-03 09:09")
+
+    def test_first_post_uses_its_recorded_deploy_time(self):
+        post = build_site.build(ROOT)["en/blog/blank-caption-box/index.html"]
+        self.assertIn(">// 2026-10-23 17:30</time>", post)
+        self.assertIn('"datePublished": "2026-10-23T17:30:00+09:00"', post)
+
+
 class StageSite(unittest.TestCase):
     def test_only_public_files_are_staged(self):
         import stage_site
@@ -323,6 +408,14 @@ class SitemapChecker(unittest.TestCase):
 
     def test_future_lastmod_is_rejected(self):
         self.sitemap(lambda s: re.sub(r"<lastmod>[^<]*</lastmod>", "<lastmod>2999-01-01</lastmod>", s, count=1))
+        self.assertTrue(any("future" in e for e in check_sitemap.check(self.dir)))
+
+    def test_datetime_lastmod_ok_but_needs_offset_and_not_future(self):
+        self.sitemap(lambda s: re.sub(r"<lastmod>[^<]*</lastmod>", "<lastmod>2026-10-01T09:09:00+09:00</lastmod>", s, count=1))
+        self.assertEqual(check_sitemap.check(self.dir), [])
+        self.sitemap(lambda s: re.sub(r"<lastmod>[^<]*</lastmod>", "<lastmod>2026-10-01T09:09:00</lastmod>", s, count=1))
+        self.assertTrue(check_sitemap.check(self.dir))
+        self.sitemap(lambda s: re.sub(r"<lastmod>[^<]*</lastmod>", "<lastmod>2999-01-01T09:09:00+09:00</lastmod>", s, count=1))
         self.assertTrue(any("future" in e for e in check_sitemap.check(self.dir)))
 
     def test_missing_robots_sitemap_line(self):

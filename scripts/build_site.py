@@ -299,6 +299,27 @@ def post_url(lang, slug):
     return "%s/%s/blog/%s/" % (SITE, lang, slug)
 
 
+def parse_when(v, allow_time=True):
+    """YYYY-MM-DD -> date; with a time and an explicit UTC offset -> aware datetime in KST (seconds dropped)."""
+    if len(v) == 10:
+        return dt.date.fromisoformat(v)
+    if not allow_time:
+        raise ValueError(v)
+    w = dt.datetime.fromisoformat(v)
+    if w.tzinfo is None:
+        raise ValueError("time needs an offset: " + v)
+    return w.astimezone(KST).replace(second=0, microsecond=0)
+
+
+def when_iso(w):
+    """machine form: date -> 2026-10-24 · datetime -> 2026-10-24T16:00:00+09:00"""
+    return w.isoformat() if not isinstance(w, dt.datetime) else w.isoformat(timespec="seconds")
+
+
+def when_key(w):
+    return (w.date(), w.timetz()) if isinstance(w, dt.datetime) else (w, dt.time(0, 0, tzinfo=KST))
+
+
 def parse_post_file(path):
     text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
     if not text.startswith("---\n"):
@@ -322,12 +343,18 @@ def parse_post_file(path):
         raise ValueError("missing front matter: " + ", ".join(missing))
     if not SLUG_RE.match(meta["slug"]):
         raise ValueError("slug must match [a-z0-9-]+: %r" % meta["slug"])
-    for k in ("date", "updated"):
+    for k in ("date", "updated", "published"):
         if meta.get(k):
             try:
-                meta["_" + k] = dt.date.fromisoformat(meta[k])
+                meta["_" + k] = parse_when(meta[k], allow_time=(k != "date"))
             except ValueError:
-                raise ValueError("%s must be YYYY-MM-DD: %r" % (k, meta[k]))
+                raise ValueError("%s must be %s: %r" % (k, "YYYY-MM-DD" if k == "date" else "YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS+09:00", meta[k]))
+    pub = meta.get("_published")
+    if pub is not None:
+        if not isinstance(pub, dt.datetime):
+            raise ValueError("published needs a time: YYYY-MM-DDTHH:MM:SS+09:00, got %r" % meta["published"])
+        if "_date" in meta and pub.date() != meta["_date"]:
+            raise ValueError("published %s (KST) is not on `date` %s" % (meta["published"], meta["date"]))
     meta["draft"] = str(meta.get("draft", "false")).lower() in ("true", "yes", "1")
     meta["_body"] = text[end + 4:].lstrip("\n")
     return meta
@@ -367,6 +394,15 @@ def load_posts(root):
         dates = {m["date"] for m in langs.values()}
         if len(dates) > 1:
             errors.append("%s: `date` differs between languages" % d.name)
+        pubs = {m.get("published", "") for m in langs.values()}
+        if len(pubs) > 1:
+            errors.append("%s: `published` differs between languages" % d.name)
+        for pub in pubs - {""}:
+            try:
+                if parse_when(pub) > dt.datetime.now(KST) + dt.timedelta(minutes=1):
+                    errors.append("%s: `published` %s is in the future (stamp it at publish time, not before)" % (d.name, pub))
+            except ValueError:
+                pass  # reported per file by parse_post_file
         if "ko" in langs:
             ko_len = len(langs["ko"]["_body"].strip())
             if not 1100 <= ko_len <= 1900:
@@ -374,9 +410,10 @@ def load_posts(root):
         any_m = next(iter(langs.values()))
         if "_date" not in any_m:
             continue
-        posts.append({"slug": d.name, "date": any_m["_date"], "updated": max((m.get("_updated") or m["_date"]) for m in langs.values()),
+        when = any_m.get("_published") or any_m["_date"]
+        posts.append({"slug": d.name, "date": when, "updated": max((m.get("_updated") or when for m in langs.values()), key=when_key),
                       "langs": langs})
-    posts.sort(key=lambda p: (p["date"], p["slug"]), reverse=True)
+    posts.sort(key=lambda p: (when_key(p["date"]), p["slug"]), reverse=True)
     return posts, errors
 
 
@@ -462,7 +499,9 @@ def markdown(src):
 
 
 def fmt_date(d):
-    return "%04d-%02d-%02d" % (d.year, d.month, d.day)
+    """shown form: date -> 2026-10-24 · datetime (KST) -> 2026-10-24 16:00 (HH:MM, two digits, no seconds)"""
+    base = "%04d-%02d-%02d" % (d.year, d.month, d.day)
+    return base + " %02d:%02d" % (d.hour, d.minute) if isinstance(d, dt.datetime) else base
 
 
 def post_cluster(slug):
@@ -504,17 +543,18 @@ def page_shell(root, locales, lang, version, *, url, title, desc, cluster, ld, m
 def render_post(root, locales, version, post, lang):
     m = post["langs"][lang]
     url = post_url(lang, post["slug"])
-    updated = m.get("_updated") or m["_date"]
+    when = post["date"]
+    updated = m.get("_updated") or when
     body = markdown(m["_body"])
     data = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": m["title"], "description": m["description"],
-            "datePublished": m["_date"].isoformat(), "dateModified": updated.isoformat(), "inLanguage": lang,
+            "datePublished": when_iso(when), "dateModified": when_iso(updated), "inLanguage": lang,
             "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url, "image": SITE + "/og-image.png",
             "author": ORG, "publisher": ORG, "isPartOf": {"@type": "Blog", "name": "draft() Blog", "url": blog_list_url(lang)}}
     ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang, {"title": m["title"], "slug": post["slug"]}))
     extra_langs = " · ".join('<a href="%s" hreflang="%s" lang="%s">%s</a>' % (post_url(c, post["slug"]), c, c, esc(NAMES[c])) for c in CODES if c != lang)
     main = f"""<main id="main" class="post-wrap">
   <article class="post">
-    <p class="comment"><time datetime="{m['_date'].isoformat()}">// {fmt_date(m['_date'])}</time></p>
+    <p class="comment"><time datetime="{when_iso(when)}">// {fmt_date(when)}</time></p>
     <h1>{esc(m['title'])}</h1>
     <p class="post-desc">{esc(m['description'])}</p>
     <div class="prose" data-copy="{esc(tr(locales, lang, 'blog_copy'))}" data-copied="{esc(tr(locales, lang, 'blog_copied'))}">
@@ -541,14 +581,14 @@ def render_list(root, locales, version, posts, lang):
     title = "%s — draft()" % tr(locales, lang, "nav_blog")
     desc = tr(locales, lang, "blog_sub")
     items = "\n".join(f"""      <li>
-        <p class="comment"><time datetime="{p['date'].isoformat()}">// {fmt_date(p['date'])}</time></p>
+        <p class="comment"><time datetime="{when_iso(p['date'])}">// {fmt_date(p['date'])}</time></p>
         <h2><a href="/{lang}/blog/{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h2>
         <p>{esc(p['langs'][lang]['description'])}</p>
         <a class="more" href="/{lang}/blog/{p['slug']}/" aria-label="{esc(tr(locales, lang, 'blog_read'))}: {esc(p['langs'][lang]['title'])}">{esc(tr(locales, lang, 'blog_read'))} &rarr;</a>
       </li>""" for p in posts)
     data = {"@context": "https://schema.org", "@type": "Blog", "name": "draft() Blog", "url": url, "inLanguage": lang, "publisher": ORG,
             "blogPost": [{"@type": "BlogPosting", "headline": p["langs"][lang]["title"], "url": post_url(lang, p["slug"]),
-                          "datePublished": p["date"].isoformat(), "inLanguage": lang} for p in posts]}
+                          "datePublished": when_iso(p["date"]), "inLanguage": lang} for p in posts]}
     ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang))
     main = f"""<main id="main" class="post-wrap">
   <header class="blog-head">
@@ -565,7 +605,9 @@ def render_list(root, locales, version, posts, lang):
 
 
 def rfc822(d):
-    return dt.datetime(d.year, d.month, d.day, 16, 0, tzinfo=KST).strftime("%a, %d %b %Y %H:%M:%S +0900")
+    if not isinstance(d, dt.datetime):
+        d = dt.datetime(d.year, d.month, d.day, 16, 0, tzinfo=KST)
+    return d.strftime("%a, %d %b %Y %H:%M:%S +0900")
 
 
 def render_feed(locales, posts, lang):
@@ -600,7 +642,7 @@ def render_llms_blog(posts):
     for p in posts:
         en = p["langs"]["en"]
         others = ", ".join("[%s](%s)" % (c, post_url(c, p["slug"])) for c in CODES if c != "en")
-        lines.append("- [%s](%s) — %s (%s). Other languages: %s" % (en["title"], post_url("en", p["slug"]), en["description"], p["date"].isoformat(), others))
+        lines.append("- [%s](%s) — %s (%s). Other languages: %s" % (en["title"], post_url("en", p["slug"]), en["description"], when_iso(p["date"]), others))
     return "\n".join(lines) + "\n"
 
 
@@ -663,7 +705,7 @@ def build(root):
         out["%s/index.html" % c] = render_home(root, locales, c, version, blog=blog)
         pages.append((page_url(c), git_date(root, ["src", "assets", "locales/%s.json" % c]), "0.9", "monthly", cluster))
     if blog:
-        newest = max(p["updated"] for p in posts).isoformat()
+        newest = when_iso(max((p["updated"] for p in posts), key=when_key))
         for c in CODES:
             out["%s/blog/index.html" % c] = render_list(root, locales, version, posts, c)
             out["%s/blog/feed.xml" % c] = render_feed(locales, posts, c)
@@ -671,8 +713,8 @@ def build(root):
         for p in posts:
             for c in CODES:
                 out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c)
-                pages.append((post_url(c, p["slug"]), p["langs"][c].get("updated") or p["langs"][c]["date"], "0.6", "monthly", post_cluster(p["slug"])))
-    pages = [(u, d.isoformat() if hasattr(d, "isoformat") else d, pr, fq, cl) for u, d, pr, fq, cl in pages]
+                pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
+    pages = [(u, when_iso(d) if hasattr(d, "isoformat") else d, pr, fq, cl) for u, d, pr, fq, cl in pages]
     out["sitemap.xml"] = render_sitemap(root, pages)
     llms = (root / "llms.txt").read_text(encoding="utf-8")
     llms = replace_between(llms, "<!-- pages:llms:start -->", "<!-- pages:llms:end -->", render_llms_pages(), "llms.txt")

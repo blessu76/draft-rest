@@ -51,7 +51,8 @@ def check(root):
         tree = ET.parse(root / "sitemap.xml")
     except (ET.ParseError, OSError) as ex:
         return ["sitemap.xml: %s" % ex]
-    today = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date()
+    now = dt.datetime.now(dt.timezone(dt.timedelta(hours=9)))
+    today = now.date()
     entries = {}
     for u in tree.getroot().findall("s:url", NS):
         loc = (u.findtext("s:loc", "", NS) or "").strip()
@@ -70,10 +71,17 @@ def check(root):
             errs.append("%s: loc must be a clean %s/ URL (no query/fragment)" % (loc, SITE))
             continue
         try:
-            if dt.date.fromisoformat(lastmod) > today:
+            if len(lastmod) == 10:
+                future = dt.date.fromisoformat(lastmod) > today
+            else:  # W3C datetime with an explicit offset, e.g. 2026-10-24T16:00:00+09:00
+                w = dt.datetime.fromisoformat(lastmod)
+                if w.tzinfo is None:
+                    raise ValueError(lastmod)
+                future = w > now
+            if future:
                 errs.append("%s: lastmod %s is in the future" % (loc, lastmod))
         except ValueError:
-            errs.append("%s: lastmod missing or not YYYY-MM-DD: %r" % (loc, lastmod))
+            errs.append("%s: lastmod missing or not YYYY-MM-DD / YYYY-MM-DDTHH:MM:SS+09:00: %r" % (loc, lastmod))
         f = url_to_file(root, loc)
         if not f.is_file():
             errs.append("%s: file not found (%s)" % (loc, f.relative_to(root) if root in f.parents else f))

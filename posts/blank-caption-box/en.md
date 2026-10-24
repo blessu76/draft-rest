@@ -2,6 +2,7 @@
 title: Stuck at the blank caption box? Say it out loud instead
 description: You had a whole day, but the caption box gives you nothing. Here's how to get the story out by talking first, then letting a few questions find the real moment.
 date: 2026-10-23
+published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box
 ---
 

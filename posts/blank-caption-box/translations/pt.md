@@ -2,6 +2,7 @@
 title: Travou diante da caixa de legenda em branco? Fale em voz alta
 description: Você teve um dia inteiro, mas a caixa de legenda não rende nada. Veja como tirar a história falando primeiro e deixando algumas perguntas encontrarem o momento real.
 date: 2026-10-23
+published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box
 ---
 
