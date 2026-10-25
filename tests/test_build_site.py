@@ -282,7 +282,7 @@ class PublishedTime(unittest.TestCase):
         self.dir = Path(self.tmp.name)
         self.shutil = __import__("shutil")
         self.shutil.copytree(ROOT / "locales", self.dir / "locales")
-        for n in ("src", "assets", "content"):
+        for n in ("src", "assets", "content", "shared"):
             if (ROOT / n).is_dir():
                 self.shutil.copytree(ROOT / n, self.dir / n)
         for n in ("llms.txt",):
@@ -297,10 +297,10 @@ class PublishedTime(unittest.TestCase):
         f = self.build_with("2026-10-01T09:09:45+09:00")
         for c in build_site.CODES:
             for rel in ("%s/blog/a-post/index.html" % c, "%s/blog/index.html" % c):
-                self.assertIn(">// 2026-10-01 09:09</time>", f[rel])
+                self.assertIn(">2026-10-01 09:09 KST</time>", f[rel])
                 self.assertNotIn("09:09:", re.sub(r"<time datetime=[^>]*>", "", f[rel]).replace("T09:09:00+09:00", ""))
         post = f["en/blog/a-post/index.html"]
-        self.assertIn('<time datetime="2026-10-01T09:09:00+09:00">', post)
+        self.assertIn('<time datetime="2026-10-01T09:09+09:00" data-ipe-time title="2026-10-01 09:09 KST">', post)
         self.assertIn('"datePublished": "2026-10-01T09:09:00+09:00"', post)
         self.assertIn('"dateModified": "2026-10-01T09:09:00+09:00"', post)
         self.assertIn("<lastmod>2026-10-01T09:09:00+09:00</lastmod>", f["sitemap.xml"])
@@ -308,13 +308,13 @@ class PublishedTime(unittest.TestCase):
 
     def test_other_offsets_are_converted_to_kst(self):
         f = self.build_with("2026-09-30T23:30:00+00:00")  # 08:30 KST on 10-01
-        self.assertIn(">// 2026-10-01 08:30</time>", f["en/blog/a-post/index.html"])
-        self.assertIn('datetime="2026-10-01T08:30:00+09:00"', f["en/blog/a-post/index.html"])
+        self.assertIn(">2026-10-01 08:30 KST</time>", f["en/blog/a-post/index.html"])
+        self.assertIn('datetime="2026-10-01T08:30+09:00"', f["en/blog/a-post/index.html"])
 
     def test_post_without_published_shows_date_only(self):
         f = self.build_with(None)
         post = f["en/blog/a-post/index.html"]
-        self.assertIn('<time datetime="2026-10-01">// 2026-10-01</time>', post)
+        self.assertIn('// <time datetime="2026-10-01">2026-10-01</time>', post)
         self.assertIn('"datePublished": "2026-10-01"', post)
         self.assertIn("<lastmod>2026-10-01</lastmod>", f["sitemap.xml"])
         self.assertNotRegex(post, r"// 2026-10-01 \d\d:\d\d")
@@ -354,7 +354,7 @@ class PublishedTime(unittest.TestCase):
 
     def test_first_post_uses_its_recorded_deploy_time(self):
         post = build_site.build(ROOT)["en/blog/blank-caption-box/index.html"]
-        self.assertIn(">// 2026-10-23 17:30</time>", post)
+        self.assertIn(">2026-10-23 17:30 KST</time>", post)
         self.assertIn('"datePublished": "2026-10-23T17:30:00+09:00"', post)
 
 
@@ -429,3 +429,42 @@ class SitemapChecker(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LocalTime(unittest.TestCase):
+    """Company-wide publish-time module (ipe-rest c466827, v2): byte-identical copy, inlined; every <time> carries data-ipe-time and +09:00."""
+
+    SHA256 = "57326449ddf5050eabadd1394d69eb2b0f61c88f084ec83ee4aff6fcad0f74b8"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+        cls.pages = {k: v for k, v in cls.files.items() if re.match(r"^[a-z]{2}/blog/.+\.html$", k)}
+
+    def test_copy_matches_canonical_hash(self):
+        import hashlib
+        data = (ROOT / "shared" / "ipe-localtime.js").read_bytes()
+        self.assertEqual(hashlib.sha256(data).hexdigest(), self.SHA256)
+        self.assertEqual(len(data), 1639)
+
+    def test_build_inlines_module_bytes_before_body_end(self):
+        js = (ROOT / "shared" / "ipe-localtime.js").read_bytes().decode("utf-8")
+        self.assertTrue(self.pages)
+        for rel, html in self.pages.items():
+            self.assertIn("<script>" + js + "</script>\n</body>", html, rel)
+            self.assertEqual(html.count("ipe-localtime v2"), 1, rel)
+            self.assertNotIn("ipe-localtime.js\"", html, rel)  # inline, never an external src
+
+    def test_every_time_tag_is_convertible_and_kst(self):
+        n = 0
+        for rel, html in self.pages.items():
+            for m in re.finditer(r"<time\b([^>]*)>([^<]*)</time>", html):
+                n += 1
+                attrs, text = m.group(1), m.group(2)
+                self.assertIn("data-ipe-time", attrs, rel)
+                self.assertRegex(attrs, r'datetime="\d{4}-\d\d-\d\dT\d\d:\d\d\+09:00"', rel)
+                self.assertRegex(text, r"^\d{4}-\d\d-\d\d \d\d:\d\d KST$", rel)
+        self.assertGreater(n, 0)
+
+    def test_pages_without_times_do_not_carry_the_script(self):
+        self.assertNotIn("ipe-localtime", self.files["en/index.html"])
