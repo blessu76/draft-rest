@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Sat, 24 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 16:53:00 +0900</lastBuildDate>
+    <item>
+      <title>Первая фраза может спасти историю: как написать зацепку</title>
+      <link>https://draft.ipe.rest/ru/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>Тексты, которые начинаются с объяснений, трудно дочитать. Три способа написать первую фразу, начинающуюся прямо посреди сцены, с примерами.</description>
+    </item>
     <item>
       <title>30 секунд вслух: выберите всего одну сцену за сегодня</title>
       <link>https://draft.ipe.rest/ru/blog/thirty-second-practice/</link>

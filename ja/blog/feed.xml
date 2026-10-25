@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 24 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 16:53:00 +0900</lastBuildDate>
+    <item>
+      <title>最初のひと文が物語を生かす:フックの書き方</title>
+      <link>https://draft.ipe.rest/ja/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>説明から始まる文章は、最後まで読まれにくいものです。場面のど真ん中から始まる最初の一文、フックの作り方を三つ、例とともに紹介します。</description>
+    </item>
     <item>
       <title>30秒スピーチ練習:今日の「ひとつの場面」だけ選ぼう</title>
       <link>https://draft.ipe.rest/ja/blog/thirty-second-practice/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Sat, 24 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 16:53:00 +0900</lastBuildDate>
+    <item>
+      <title>Una primera línea puede salvar una historia: cómo escribir un gancho</title>
+      <link>https://draft.ipe.rest/es/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>Los textos que empiezan con una explicación cuesta terminarlos. Tres formas de escribir una primera línea que arranca en mitad de una escena, con ejemplos.</description>
+    </item>
     <item>
       <title>Un ejercicio de 30 segundos: elige solo una escena de hoy</title>
       <link>https://draft.ipe.rest/es/blog/thirty-second-practice/</link>

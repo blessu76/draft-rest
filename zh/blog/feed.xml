@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Sat, 24 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 16:53:00 +0900</lastBuildDate>
+    <item>
+      <title>第一句话能救活一个故事:钩子怎么写</title>
+      <link>https://draft.ipe.rest/zh/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>以说明开头的文字很难让人读到最后。这里用例句整理了三种方法,教你写出从场景正中间开始的第一句话——也就是钩子。</description>
+    </item>
     <item>
       <title>30秒开口练习:只挑今天的一个场景</title>
       <link>https://draft.ipe.rest/zh/blog/thirty-second-practice/</link>

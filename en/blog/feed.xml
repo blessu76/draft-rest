@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 16:53:00 +0900</lastBuildDate>
+    <item>
+      <title>One first line can save a story: how to write a hook</title>
+      <link>https://draft.ipe.rest/en/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>Posts that open with explanation are hard to finish. Three ways to write a first line that starts in the middle of a scene, with examples.</description>
+    </item>
     <item>
       <title>A 30-second speaking drill: pick just one scene from today</title>
       <link>https://draft.ipe.rest/en/blog/thirty-second-practice/</link>
