@@ -85,6 +85,7 @@ def asset_version(root):
     h = hashlib.sha1()
     for n in ("site.css", "site.js"):
         h.update((Path(root) / "assets" / n).read_bytes())
+    h.update((Path(root) / LOCALTIME_JS).read_bytes())  # inlined into blog pages: a new module bumps ?v=
     return h.hexdigest()[:8]
 
 
@@ -501,6 +502,18 @@ def markdown(src):
     return "\n".join(out)
 
 
+LOCALTIME_JS = "shared/ipe-localtime.js"  # company-wide module (ipe-rest c466827, v2), copied byte for byte, inlined before </body>
+
+
+def time_tag(d):
+    """<time> for a publish time. datetime (KST) -> static 'YYYY-MM-DD HH:MM KST' that ipe-localtime.js shows in the viewer's zone;
+    date only -> plain date (no time to convert)."""
+    if not isinstance(d, dt.datetime):
+        return f'<time datetime="{when_iso(d)}">{fmt_date(d)}</time>'
+    text = fmt_date(d) + " KST"
+    return f'<time datetime="{d.strftime("%Y-%m-%dT%H:%M")}+09:00" data-ipe-time title="{text}">{text}</time>'
+
+
 def fmt_date(d):
     """shown form: date -> 2026-10-24 · datetime (KST) -> 2026-10-24 16:00 (HH:MM, two digits, no seconds)"""
     base = "%04d-%02d-%02d" % (d.year, d.month, d.day)
@@ -538,9 +551,12 @@ def page_shell(root, locales, lang, version, *, url, title, desc, cluster, ld, m
     ch = chrome(locales, lang, path, True)
     skip = '<a class="skip-link" href="#main">%s</a>\n' % esc(tr(locales, lang, "skip"))
     foot = render_template((Path(root) / "src" / "blog_footer.html").read_text(encoding="utf-8"), locales, lang, ch)
+    local = ""
+    if "data-ipe-time" in main:
+        local = "<script>" + (Path(root) / LOCALTIME_JS).read_bytes().decode("utf-8") + "</script>\n"
     return (head(locales, lang, version, url, title, desc, cluster, ld, og_type=og_type, feed=blog_feed_url(lang))
             + skip + ch["TOPLINK"] + "\n" + ch["LANGSEL"] + "\n" + main + "\n" + foot
-            + f'\n<script src="/assets/site.js?v={version}"></script>\n</body>\n</html>\n')
+            + f'\n<script src="/assets/site.js?v={version}"></script>\n' + local + "</body>\n</html>\n")
 
 
 def render_post(root, locales, version, post, lang):
@@ -557,7 +573,7 @@ def render_post(root, locales, version, post, lang):
     extra_langs = " · ".join('<a href="%s" hreflang="%s" lang="%s">%s</a>' % (post_url(c, post["slug"]), c, c, esc(NAMES[c])) for c in CODES if c != lang)
     main = f"""<main id="main" class="post-wrap">
   <article class="post">
-    <p class="comment"><time datetime="{when_iso(when)}">// {fmt_date(when)}</time></p>
+    <p class="comment">// {time_tag(when)}</p>
     <h1>{esc(m['title'])}</h1>
     <p class="post-desc">{esc(m['description'])}</p>
     <div class="prose" data-copy="{esc(tr(locales, lang, 'blog_copy'))}" data-copied="{esc(tr(locales, lang, 'blog_copied'))}">
@@ -584,7 +600,7 @@ def render_list(root, locales, version, posts, lang):
     title = "%s — draft()" % tr(locales, lang, "nav_blog")
     desc = tr(locales, lang, "blog_sub")
     items = "\n".join(f"""      <li>
-        <p class="comment"><time datetime="{when_iso(p['date'])}">// {fmt_date(p['date'])}</time></p>
+        <p class="comment">// {time_tag(p['date'])}</p>
         <h2><a href="/{lang}/blog/{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h2>
         <p>{esc(p['langs'][lang]['description'])}</p>
         <a class="more" href="/{lang}/blog/{p['slug']}/" aria-label="{esc(tr(locales, lang, 'blog_read'))}: {esc(p['langs'][lang]['title'])}">{esc(tr(locales, lang, 'blog_read'))} &rarr;</a>
