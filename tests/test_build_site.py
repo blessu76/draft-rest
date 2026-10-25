@@ -427,10 +427,6 @@ class SitemapChecker(unittest.TestCase):
         self.assertTrue(check_sitemap.check(self.dir))
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class LocalTime(unittest.TestCase):
     """Company-wide publish-time module (ipe-rest c466827, v2): byte-identical copy, inlined; every <time> carries data-ipe-time and +09:00."""
 
@@ -537,3 +533,7 @@ class HomeCards(unittest.TestCase):
         m = re.search(r"<loc>https://draft\.ipe\.rest/</loc>\s*<lastmod>([^<]+)</lastmod>", sm)
         self.assertTrue(m)
         self.assertGreaterEqual(m.group(1)[:10], newest)
+
+
+if __name__ == "__main__":
+    unittest.main()
