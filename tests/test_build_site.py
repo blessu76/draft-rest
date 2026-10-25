@@ -26,7 +26,7 @@ class Locales(unittest.TestCase):
     def test_template_keys_exist(self):
         loc = build_site.load_locales(ROOT)
         tpl = (ROOT / "src" / "home_body.html").read_text(encoding="utf-8")
-        reserved = {"LANGSEL", "FOOTLANGS", "BLOGLINK", "TOPLINK"}
+        reserved = {"LANGSEL", "FOOTLANGS", "BLOGLINK", "TOPLINK", "BLOGCARDS"}
         for k in set(re.findall(r"\{\{(\w+)", tpl)) - reserved:
             self.assertIn(k, loc["en"], k)
 
@@ -467,4 +467,73 @@ class LocalTime(unittest.TestCase):
         self.assertGreater(n, 0)
 
     def test_pages_without_times_do_not_carry_the_script(self):
-        self.assertNotIn("ipe-localtime", self.files["en/index.html"])
+        for rel in ("en/index.html", "404.html"):  # the /en/ stub and the 404 list no times
+            self.assertNotIn("ipe-localtime", self.files[rel], rel)
+
+
+class HomeCards(unittest.TestCase):
+    """Home page 'field notes' cards: newest 3 published posts of the page language, one link per card, built statically."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+        cls.posts, _ = build_site.load_posts(ROOT)
+
+    def home(self, lang):
+        return self.files["index.html" if lang == build_site.DEFAULT_LANG else "%s/index.html" % lang]
+
+    def cards(self, lang):
+        return re.findall(r'<li class="bcard reveal">(.*?)</li>', self.home(lang), re.S)
+
+    def test_count_order_language_and_links(self):
+        want = [p["slug"] for p in self.posts][:3]
+        self.assertTrue(want)
+        for c in build_site.CODES:
+            got = [re.search(r'href="/%s/blog/([^/"]+)/"' % c, x).group(1) for x in self.cards(c)]
+            self.assertEqual(got, want, c)
+            self.assertLessEqual(len(got), 3, c)
+            for slug, x in zip(want, self.cards(c)):
+                p = next(q for q in self.posts if q["slug"] == slug)
+                self.assertIn(build_site.esc(p["langs"][c]["title"]), x, c)
+                self.assertEqual(x.count("<a "), 1, c)  # the whole card is one link
+
+    def test_newest_published_post_is_first(self):
+        newest = self.posts[0]["slug"]
+        self.assertEqual(newest, "first-line-hook")
+        for c in build_site.CODES:
+            self.assertIn("/%s/blog/%s/" % (c, newest), self.cards(c)[0], c)
+
+    def test_see_all_link_and_no_unpublished(self):
+        drafts = {d.name for d in (ROOT / "posts").iterdir() if d.is_dir()} - {p["slug"] for p in self.posts}
+        for c in build_site.CODES:
+            self.assertIn('class="btn-line" href="/%s/blog/"' % c, self.home(c), c)
+            for slug in drafts:
+                self.assertNotIn(slug, self.home(c), c)
+
+    def test_section_sits_right_after_hero_and_once(self):
+        for c in build_site.CODES:
+            h = self.home(c)
+            self.assertEqual(h.count('class="blognotes"'), 1, c)
+            self.assertLess(h.index("</header>"), h.index('class="blognotes"'), c)
+            self.assertLess(h.index('class="blognotes"'), h.index('<section class="problem">'), c)
+
+    def test_times_are_kst_convertible_and_module_inlined_once(self):
+        import hashlib
+        js = (ROOT / "shared" / "ipe-localtime.js").read_bytes()
+        for c in build_site.CODES:
+            h = self.home(c)
+            self.assertIn("<script>" + js.decode("utf-8") + "</script>\n</body>", h, c)
+            self.assertEqual(h.count("ipe-localtime v2"), 1, c)
+            for m in re.finditer(r"<time\b([^>]*)>([^<]*)</time>", h):
+                self.assertIn("data-ipe-time", m.group(1), c)
+                self.assertRegex(m.group(2), r"^\d{4}-\d\d-\d\d \d\d:\d\d KST$", c)
+
+    def test_no_posts_no_section(self):
+        self.assertEqual(build_site.blog_cards_html({}, "en", []), "")
+
+    def test_home_lastmod_follows_newest_post(self):
+        sm = self.files["sitemap.xml"]
+        newest = build_site.when_iso(self.posts[0]["updated"])[:10]
+        m = re.search(r"<loc>https://draft\.ipe\.rest/</loc>\s*<lastmod>([^<]+)</lastmod>", sm)
+        self.assertTrue(m)
+        self.assertGreaterEqual(m.group(1)[:10], newest)
