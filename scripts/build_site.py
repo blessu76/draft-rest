@@ -270,12 +270,12 @@ def chrome(locales, lang, path="", blog=False):
 HOME_CARDS = 3  # newest posts shown on the home page
 
 
-def blog_cards_html(locales, lang, posts):
+def blog_cards_html(locales, lang, posts, numbers=None):
     """Home 'field notes' section: the newest HOME_CARDS published posts of `lang`; empty string (no section) without posts."""
     if not posts:
         return ""
     cards = "\n".join(f"""        <li class="bcard reveal">
-          <p class="comment">// {time_tag(p['date'])}</p>
+          <p class="comment">// {no_label(numbers[p['slug']]) + ' · ' if numbers else ''}{time_tag(p['date'])}</p>
           <h3><a class="bcard-link" href="/{lang}/blog/{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h3>
           <p class="bcard-ex">{esc(p['langs'][lang]['description'])}</p>
           <span class="bcard-more" aria-hidden="true">{esc(tr(locales, lang, 'blog_read'))} &rarr;</span>
@@ -296,10 +296,11 @@ def blog_cards_html(locales, lang, posts):
 
 
 def render_home(root, locales, lang, version, blog=False, posts=()):
+    numbers = post_numbers(posts)
     tpl = (Path(root) / "src" / "home_body.html").read_text(encoding="utf-8")
     url = page_url(lang)
     extra = chrome(locales, lang, "", blog)
-    extra["BLOGCARDS"] = blog_cards_html(locales, lang, posts)
+    extra["BLOGCARDS"] = blog_cards_html(locales, lang, posts, numbers)
     body = render_template(tpl, locales, lang, extra)
     root_page = lang == DEFAULT_LANG
     if root_page:
@@ -365,8 +366,26 @@ def blog_feed_url(lang):
     return "%s/%s/blog/feed.xml" % (SITE, lang)
 
 
-def blog_list_url(lang):
-    return "%s/%s/blog/" % (SITE, lang)
+LIST_PAGE_SIZE = 10  # posts per blog list page (Davy 10-27: never more than 10)
+
+
+def blog_list_url(lang, page=1):
+    """Page 1 keeps the plain /<lang>/blog/ URL; later pages live at /<lang>/blog/page/<n>/ (there is no /page/1/)."""
+    return "%s/%s/blog/" % (SITE, lang) + ("page/%d/" % page if page > 1 else "")
+
+
+def page_count(n_posts):
+    return max(1, -(-n_posts // LIST_PAGE_SIZE))
+
+
+def post_numbers(posts):
+    """{slug: n}: the oldest published post is No. 1 (published ascending, slug breaks ties); later posts never renumber earlier ones."""
+    ordered = sorted(posts, key=lambda p: (when_key(p["date"]), p["slug"]))
+    return {p["slug"]: i + 1 for i, p in enumerate(ordered)}
+
+
+def no_label(n):
+    return '<span class="postno">No. %d</span>' % n
 
 
 def post_url(lang, slug):
@@ -601,9 +620,9 @@ def post_cluster(slug):
     return d
 
 
-def list_cluster():
-    d = {c: blog_list_url(c) for c in CODES}
-    d["x-default"] = blog_list_url("en")
+def list_cluster(page=1):
+    d = {c: blog_list_url(c, page) for c in CODES}
+    d["x-default"] = blog_list_url("en", page)
     return d
 
 
@@ -671,8 +690,10 @@ def ld_script(obj):
     return '<script type="application/ld+json">\n%s\n</script>' % json.dumps(obj, ensure_ascii=False, indent=2).replace("</", "<\\/")
 
 
-def breadcrumb(locales, lang, post=None):
+def breadcrumb(locales, lang, post=None, page=1):
     items = [("draft()", page_url(lang)), (tr(locales, lang, "nav_blog"), blog_list_url(lang))]
+    if page > 1:
+        items.append((tr(locales, lang, "blog_page").format(n=page), blog_list_url(lang, page)))
     if post:
         items.append((post["title"], post_url(lang, post["slug"])))
     return {"@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -701,7 +722,7 @@ def post_title(title):
     return full if len(full) <= TITLE_MAX else title
 
 
-def render_post(root, locales, version, post, lang):
+def render_post(root, locales, version, post, lang, number=None):
     m = post["langs"][lang]
     url = post_url(lang, post["slug"])
     when = post["date"]
@@ -718,7 +739,7 @@ def render_post(root, locales, version, post, lang):
     extra_langs = " · ".join('<a href="%s" hreflang="%s" lang="%s">%s</a>' % (post_url(c, post["slug"]), c, c, esc(NAMES[c])) for c in CODES if c != lang)
     main = f"""<main id="main" class="post-wrap">
   <article class="post">
-    <p class="comment">// {time_tag(when)}</p>
+    <p class="comment">// {no_label(number) + ' · ' if number else ''}{time_tag(when)}</p>
     <h1>{esc(m['title'])}</h1>
     <p class="post-desc">{esc(m['description'])}</p>
     <div class="prose" data-copy="{esc(tr(locales, lang, 'blog_copy'))}" data-copied="{esc(tr(locales, lang, 'blog_copied'))}">
@@ -740,25 +761,46 @@ def render_post(root, locales, version, post, lang):
                       cluster=post_cluster(post["slug"]), ld=ld, main=main, path="blog/%s/" % post["slug"], og_type="article")
 
 
-def render_list(root, locales, version, posts, lang):
-    url = blog_list_url(lang)
+def render_list(root, locales, version, posts, lang, page=1, numbers=None):
+    """One page of the blog list (newest first, LIST_PAGE_SIZE per page). `posts` is the full list; page 1 = /<lang>/blog/, n>1 = /<lang>/blog/page/<n>/."""
+    numbers = numbers or post_numbers(posts)
+    pages_total = page_count(len(posts))
+    shown = posts[(page - 1) * LIST_PAGE_SIZE:page * LIST_PAGE_SIZE]
+    url = blog_list_url(lang, page)
     title = tr(locales, lang, "blog_title")
+    page_label = tr(locales, lang, "blog_page").format(n=page)
+    if page > 1:
+        title = "%s · %s" % (title, page_label)
     desc = tr(locales, lang, "blog_sub")
     items = "\n".join(f"""      <li>
-        <p class="comment">// {time_tag(p['date'])}</p>
+        <p class="comment">// {no_label(numbers[p['slug']])} · {time_tag(p['date'])}</p>
         <h2><a href="/{lang}/blog/{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h2>
         <p>{esc(p['langs'][lang]['description'])}</p>
         <a class="more" href="/{lang}/blog/{p['slug']}/" aria-label="{esc(tr(locales, lang, 'blog_read'))}: {esc(p['langs'][lang]['title'])}">{esc(tr(locales, lang, 'blog_read'))} &rarr;</a>
-      </li>""" for p in posts)
-    data = {"@context": "https://schema.org", "@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": url, "inLanguage": lang,
+      </li>""" for p in shown)
+    data = {"@context": "https://schema.org", "@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang), "inLanguage": lang,
             "isPartOf": {"@id": WEBSITE_ID}, "publisher": ORG, "author": ORG_REF,
             "blogPost": [{"@type": "BlogPosting", "@id": post_url(lang, p["slug"]) + "#article", "headline": p["langs"][lang]["title"], "url": post_url(lang, p["slug"]),
-                          "datePublished": when_iso(p["date"]), "inLanguage": lang} for p in posts],
-            "mainEntity": {"@type": "ItemList", "numberOfItems": len(posts),
+                          "datePublished": when_iso(p["date"]), "inLanguage": lang} for p in shown],
+            "mainEntity": {"@type": "ItemList", "numberOfItems": len(shown),
                            "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": post_url(lang, p["slug"]),
                                                 "item": {"@id": post_url(lang, p["slug"]) + "#article"}}
-                                               for i, p in enumerate(posts)]}}
-    ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang))
+                                               for i, p in enumerate(shown)]}}
+    ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang, page=page))
+    pager = ""
+    if pages_total > 1:
+        def rel(n):
+            return blog_list_url(lang, n).replace(SITE, "")
+        newer = '<a class="pager-newer" rel="prev" href="%s">&larr; %s</a>' % (rel(page - 1), esc(tr(locales, lang, "blog_newer"))) if page > 1 else ""
+        older = '<a class="pager-older" rel="next" href="%s">%s &rarr;</a>' % (rel(page + 1), esc(tr(locales, lang, "blog_older"))) if page < pages_total else ""
+        nums = " ".join('<a href="%s" aria-label="%s"%s>%d</a>' % (rel(n), esc(tr(locales, lang, "blog_page").format(n=n)), ' aria-current="page"' if n == page else "", n)
+                        for n in range(1, pages_total + 1))
+        pager = f"""
+  <nav class="pager" aria-label="{esc(tr(locales, lang, 'blog_pages'))}">
+    {newer}
+    <span class="pager-nums">{nums}</span>
+    {older}
+  </nav>"""
     main = f"""<main id="main" class="post-wrap">
   <header class="blog-head">
     <p class="comment">{esc(tr(locales, lang, 'blog_comment'))}</p>
@@ -767,13 +809,11 @@ def render_list(root, locales, version, posts, lang):
   </header>
   <ol class="blog-list">
 {items}
-  </ol>
+  </ol>{pager}
   <p class="blog-rss"><a href="/{lang}/blog/feed.xml">{esc(tr(locales, lang, 'blog_rss'))}</a></p>
 </main>"""
-    return page_shell(root, locales, lang, version, url=url, title=title, desc=desc, cluster=list_cluster(), ld=ld, main=main, path="blog/")
+    return page_shell(root, locales, lang, version, url=url, title=title, desc=desc, cluster=list_cluster(page), ld=ld, main=main, path="blog/page/%d/" % page if page > 1 else "blog/")
 
-
-# ---------------------------------------------------------------- content pages (about / privacy)
 def content_url(lang, slug):
     return SITE + page_path(lang, slug)
 
@@ -863,7 +903,11 @@ def render_llms_blog(posts):
     lines = ["## Blog",
              "Short guides on turning what you say into a story people actually read. New posts regularly, each in 11 languages. "
              "Feed: %s · Index: %s" % (blog_feed_url("en"), blog_list_url("en")),
-             "Blog index per language: " + ", ".join("[%s](%s)" % (c, blog_list_url(c)) for c in CODES), ""]
+             "Blog index per language: " + ", ".join("[%s](%s)" % (c, blog_list_url(c)) for c in CODES)]
+    if page_count(len(posts)) > 1:  # older posts: /<lang>/blog/page/<n>/
+        lines.append("Older posts (index pages 2+): " + "; ".join(
+            "%s: %s" % (c, ", ".join("[%d](%s)" % (n, blog_list_url(c, n)) for n in range(2, page_count(len(posts)) + 1))) for c in CODES))
+    lines.append("")
     for p in posts:
         en = p["langs"]["en"]
         others = ", ".join("[%s](%s)" % (c, post_url(c, p["slug"])) for c in CODES if c != "en")
@@ -942,13 +986,15 @@ def build(root):
         pages.append((page_url(c), lm, "0.9", "monthly", cluster))
     if blog:
         newest = when_iso(max((p["updated"] for p in posts), key=when_key))
+        numbers = post_numbers(posts)
         for c in CODES:
-            out["%s/blog/index.html" % c] = render_list(root, locales, version, posts, c)
             out["%s/blog/feed.xml" % c] = render_feed(locales, posts, c)
-            pages.append((blog_list_url(c), newest, "0.7", "daily", list_cluster()))
+            for n in range(1, page_count(len(posts)) + 1):
+                out["%s/blog/index.html" % c if n == 1 else "%s/blog/page/%d/index.html" % (c, n)] = render_list(root, locales, version, posts, c, n, numbers)
+                pages.append((blog_list_url(c, n), newest, "0.7" if n == 1 else "0.5", "daily", list_cluster(n)))
         for p in posts:
             for c in CODES:
-                out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c)
+                out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]])
                 pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
     prio = {"about": "0.8", "privacy": "0.4"}
     for slug in PAGES:

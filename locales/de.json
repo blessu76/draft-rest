@@ -87,5 +87,9 @@
   "ld_topic": "Geschichtenerzählen",
   "ld_keywords": "Storytelling, Schreibtipps, Sprache zu Text, KI-Schreiben, draft()",
   "meta_desc_short": "Eine private KI, die gesprochene Worte in eine fertige, teilbare Geschichte verwandelt. Du sprichst, draft() formt sie. Deine Worte bleiben deine: nie verkauft.",
-  "blog_title": "Blog — draft(): Notizen zum Schreiben der ersten Zeile"
+  "blog_title": "Blog — draft(): Notizen zum Schreiben der ersten Zeile",
+  "blog_page": "Seite {n}",
+  "blog_newer": "Neuere Beiträge",
+  "blog_older": "Ältere Beiträge",
+  "blog_pages": "Blogseiten"
 }

@@ -87,5 +87,9 @@
   "ld_topic": "Storytelling",
   "ld_keywords": "storytelling, writing tips, voice to text, AI writing, draft()",
   "meta_desc_short": "A private AI that turns your messy spoken words into a finished, shareable story. You talk — draft() shapes it. Your words stay yours: never sold.",
-  "blog_title": "Blog — draft(): notes on writing your first line"
+  "blog_title": "Blog — draft(): notes on writing your first line",
+  "blog_page": "Page {n}",
+  "blog_newer": "Newer posts",
+  "blog_older": "Older posts",
+  "blog_pages": "Blog pages"
 }

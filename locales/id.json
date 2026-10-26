@@ -87,5 +87,9 @@
   "ld_topic": "Bercerita",
   "ld_keywords": "bercerita, tips menulis, suara ke teks, menulis dengan AI, draft()",
   "meta_desc_short": "AI privat yang mengubah ucapan berantakanmu menjadi cerita siap dibagikan. Kamu bicara, draft() membentuknya. Kata-katamu milikmu: tak pernah dijual.",
-  "blog_title": "Blog — draft(): catatan menulis kalimat pertama"
+  "blog_title": "Blog — draft(): catatan menulis kalimat pertama",
+  "blog_page": "Halaman {n}",
+  "blog_newer": "Lebih baru",
+  "blog_older": "Lebih lama",
+  "blog_pages": "Halaman blog"
 }

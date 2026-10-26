@@ -87,5 +87,9 @@
   "ld_topic": "ストーリーテリング",
   "ld_keywords": "ストーリーテリング, 文章術, 音声入力, AIライティング, draft()",
   "meta_desc_short": "とりとめのない話し言葉を、共有できる物語に変えるプライベートAI。話すだけ — draft()が仕立てます。あなたの言葉はあなたのもの：売りません。",
-  "blog_title": "ブログ — draft(): 最初の一文を書くためのノート"
+  "blog_title": "ブログ — draft(): 最初の一文を書くためのノート",
+  "blog_page": "{n}ページ",
+  "blog_newer": "新しい記事",
+  "blog_older": "古い記事",
+  "blog_pages": "ブログのページ"
 }

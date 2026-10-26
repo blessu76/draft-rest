@@ -316,7 +316,8 @@ class PublishedTime(unittest.TestCase):
     def test_post_without_published_shows_date_only(self):
         f = self.build_with(None)
         post = f["en/blog/a-post/index.html"]
-        self.assertIn('// <time datetime="2026-10-01">2026-10-01</time>', post)
+        self.assertIn('<time datetime="2026-10-01">2026-10-01</time>', post)
+        self.assertIn('// <span class="postno">No. 1</span> · <time datetime="2026-10-01">', post)
         self.assertIn('"datePublished": "2026-10-01"', post)
         self.assertIn("<lastmod>2026-10-01</lastmod>", f["sitemap.xml"])
         self.assertNotRegex(post, r"// 2026-10-01 \d\d:\d\d")
@@ -358,6 +359,125 @@ class PublishedTime(unittest.TestCase):
         post = build_site.build(ROOT)["en/blog/blank-caption-box/index.html"]
         self.assertIn(">2026-10-23 17:30 KST</time>", post)
         self.assertIn('"datePublished": "2026-10-23T17:30:00+09:00"', post)
+
+
+class NumberingAndPaging(unittest.TestCase):
+    """Davy 10-27: 'No. N' on every post (oldest = No. 1) and at most 10 posts per list page (/page/2/ ...)."""
+
+    N = 12
+
+    def make_root(self, n):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        d = Path(tmp.name)
+        shutil.copytree(ROOT / "locales", d / "locales")
+        for name in ("src", "assets", "content", "shared"):
+            if (ROOT / name).is_dir():
+                shutil.copytree(ROOT / name, d / name)
+        for name in ("llms.txt", "og-image.png", "robots.txt"):
+            shutil.copy(ROOT / name, d / name)
+        # slugs sort opposite to dates, so a slug-ordered numbering would fail
+        for i in range(n):
+            slug = "post-%02d" % (n - i)
+            write_post(d, slug, extra="published: 2026-10-%02dT09:00:00+09:00\n" % (i + 1))
+            for f in (d / "posts" / slug).rglob("*.md"):
+                f.write_text(f.read_text(encoding="utf-8").replace("date: 2026-10-01", "date: 2026-10-%02d" % (i + 1)), encoding="utf-8")
+        write_post(d, "unpublished-draft", extra="draft: true\n")
+        return d
+
+    def build(self, n):
+        return build_site.build(self.make_root(n))
+
+    def test_page_split_ten_and_rest(self):
+        files = self.build(self.N)
+        for c in build_site.CODES:
+            self.assertEqual(files["%s/blog/index.html" % c].count('<li>\n        <p class="comment">'), 10)
+            self.assertEqual(files["%s/blog/page/2/index.html" % c].count('<li>\n        <p class="comment">'), 2)
+            self.assertNotIn("%s/blog/page/3/index.html" % c, files)
+
+    def test_page_one_url_unchanged_and_no_page_one_file(self):
+        files = self.build(self.N)
+        for c in build_site.CODES:
+            self.assertNotIn("%s/blog/page/1/index.html" % c, files)
+            html = files["%s/blog/index.html" % c]
+            self.assertIn('<link rel="canonical" href="https://draft.ipe.rest/%s/blog/">' % c, html)
+            self.assertNotIn("/page/1/", html)
+            self.assertIn('href="/%s/blog/page/2/"' % c, html)
+        sm = files["sitemap.xml"]
+        self.assertNotIn("/page/1/", sm)
+
+    def test_page_two_canonical_title_prev_and_hreflang(self):
+        files = self.build(self.N)
+        loc = build_site.load_locales(ROOT)
+        for c in build_site.CODES:
+            html = files["%s/blog/page/2/index.html" % c]
+            url = "https://draft.ipe.rest/%s/blog/page/2/" % c
+            self.assertIn('<link rel="canonical" href="%s">' % url, html)
+            title = re.search(r"<title>(.*?)</title>", html).group(1)
+            self.assertIn(loc[c]["blog_page"].format(n=2), title)
+            self.assertIn('rel="prev" href="/%s/blog/"' % c, html)
+            self.assertNotIn('rel="next"', html)
+            for o in build_site.CODES:
+                self.assertIn('hreflang="%s" href="https://draft.ipe.rest/%s/blog/page/2/"' % (o, o), html)
+            self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/en/blog/page/2/"', html)
+            page1 = files["%s/blog/index.html" % c]
+            self.assertNotIn(loc[c]["blog_page"].format(n=2), re.search(r"<title>(.*?)</title>", page1).group(1))
+            self.assertIn('rel="next" href="/%s/blog/page/2/"' % c, page1)
+
+    def test_sitemap_has_page_two_for_every_language(self):
+        root = self.make_root(self.N)
+        files = build_site.build(root)
+        sm = files["sitemap.xml"]
+        for c in build_site.CODES:
+            self.assertIn("<loc>https://draft.ipe.rest/%s/blog/page/2/</loc>" % c, sm)
+        for rel, text in files.items():  # the checker wants every sitemap URL built on disk
+            f = root / rel
+            f.parent.mkdir(parents=True, exist_ok=True)
+            f.write_text(text, encoding="utf-8")
+        self.assertEqual(check_sitemap.main(["--root", str(root)]), 0)
+
+    def test_item_list_covers_only_the_page_in_page_order(self):
+        files = self.build(self.N)
+        for page, want in (("blog", 10), ("blog/page/2", 2)):
+            html = files["en/%s/index.html" % page]
+            il = ld_of(html, "Blog")["mainEntity"]
+            self.assertEqual(il["numberOfItems"], want)
+            self.assertEqual([x["position"] for x in il["itemListElement"]], list(range(1, want + 1)))
+            self.assertEqual(len(ld_of(html, "Blog")["blogPost"]), want)
+
+    def test_numbers_oldest_is_one_same_in_every_language_drafts_excluded(self):
+        files = self.build(self.N)
+        for c in build_site.CODES:
+            self.assertIn("No. 1</span>", files["%s/blog/page/2/index.html" % c])
+            oldest = files["%s/blog/post-%02d/index.html" % (c, self.N)]
+            newest = files["%s/blog/post-01/index.html" % c]
+            self.assertIn('<span class="postno">No. 1</span>', oldest)
+            self.assertIn('<span class="postno">No. %d</span>' % self.N, newest)  # draft did not take a number
+            self.assertNotIn("No. %d</span>" % (self.N + 1), files["%s/blog/index.html" % c])
+            self.assertNotIn("unpublished-draft", files["%s/blog/index.html" % c])
+
+    def test_home_cards_carry_the_same_numbers(self):
+        files = self.build(self.N)
+        for c in build_site.CODES:
+            home = files["index.html" if c == "en" else "%s/index.html" % c]
+            self.assertEqual(re.findall(r'class="postno">(No\. \d+)<', home), ["No. 12", "No. 11", "No. 10"])
+
+    def test_earlier_numbers_do_not_change_when_a_newer_post_arrives(self):
+        posts = build_site.load_posts(self.make_root(6))[0]
+        before = build_site.post_numbers(posts[1:])  # newest dropped = the state before it arrived
+        after = build_site.post_numbers(posts)
+        self.assertEqual({k: after[k] for k in before}, before)
+        self.assertEqual(sorted(after.values()), list(range(1, 7)))
+
+    def test_few_posts_make_no_second_page(self):
+        files = self.build(5)
+        self.assertEqual([r for r in files if "/blog/page/" in r], [])
+        self.assertNotIn('class="pager"', files["en/blog/index.html"])
+        self.assertNotIn("/page/", files["sitemap.xml"])
+
+    def test_repo_today_has_no_second_page(self):
+        files = build_site.build(ROOT)
+        self.assertEqual([r for r in files if "/blog/page/" in r], [])
 
 
 class StageSite(unittest.TestCase):

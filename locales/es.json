@@ -87,5 +87,9 @@
   "ld_topic": "Narración de historias",
   "ld_keywords": "narración, consejos de escritura, voz a texto, escritura con IA, draft()",
   "meta_desc_short": "Una IA privada que convierte tu voz desordenada en una historia lista para compartir. Tú hablas, draft() le da forma. Tus palabras son tuyas: nunca se venden.",
-  "blog_title": "Blog — draft(): notas para escribir tu primera línea"
+  "blog_title": "Blog — draft(): notas para escribir tu primera línea",
+  "blog_page": "Página {n}",
+  "blog_newer": "Más recientes",
+  "blog_older": "Más antiguas",
+  "blog_pages": "Páginas del blog"
 }

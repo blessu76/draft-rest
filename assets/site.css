@@ -316,6 +316,14 @@
   .blog-list p{font-size:15px;color:var(--ink-soft);}
   .blog-list .more{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:13px;color:var(--sage);text-decoration:none;}
   .blog-list .more:hover{text-decoration:underline;}
+  .postno{white-space:nowrap;font-weight:500;color:var(--ink-soft);}
+  .pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:13px;}
+  .pager a{color:var(--sage);text-decoration:none;padding:6px 2px;}
+  .pager a:hover{text-decoration:underline;}
+  .pager-nums{display:flex;flex-wrap:wrap;gap:4px 10px;order:3;flex:1 0 100%;justify-content:center;}
+  .pager-nums a[aria-current]{color:var(--ink);font-weight:500;text-decoration:underline;}
+  .pager-older{margin-left:auto;}
+  @media (min-width:480px){.pager-nums{order:0;flex:0 1 auto;}}
   .blog-rss{margin-top:28px;font-family:var(--mono);font-size:12.5px;}
   .blog-rss a{color:var(--gray);}
   .prose{margin-top:36px;}
