@@ -1,0 +1,74 @@
+{
+  "nav_about": "Tentang",
+  "updated_label": "Terakhir diperbarui",
+  "updated": "2026-10-23",
+  "about": {
+    "title": "Tentang draft() — dan bedanya dengan aplikasi Draft lain",
+    "desc": "draft() dari ipe Studio adalah aplikasi bercerita yang dimulai dari suara. Apa bedanya dengan aplikasi lain yang memakai nama Draft.",
+    "comment": "// bukan Draft yang lain",
+    "h1": "draft() dari ipe Studio",
+    "sections": [
+      {
+        "h": "Satu nama, beberapa aplikasi",
+        "p": [
+          "Banyak aplikasi dan alat memakai nama “Draft”. draft() di situs ini adalah produk yang berbeda: aplikasi bercerita yang dimulai dari suara, dibuat oleh ipe Studio. Kamu bicara sekitar tiga puluh detik, menjawab dua atau tiga pertanyaan lembut, dan mendapat cerita utuh — pembuka, alur naik, puncak, renungan, dan penutup — sementara kata-katamu tetap milikmu."
+        ]
+      },
+      {
+        "h": "Cara mengenali aplikasi kami",
+        "li": [
+          "Situs resmi: draft.ipe.rest — situs ini.",
+          "Pembuat: ipe Studio — [ipe.rest](https://ipe.rest).",
+          "Namanya ditulis draft(), dengan tanda kurung, dan bertanda “an ipe studio app”.",
+          "Platform: iOS dan Android, dalam persiapan."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privasi — draft()",
+    "desc": "Bagaimana draft() dan draft.ipe.rest menangani datamu: janji kami, hal yang masih difinalkan, dan cara kerja situs web ini.",
+    "comment": "// privasi, apa adanya",
+    "h1": "Privasi",
+    "sections": [
+      {
+        "h": "Janji kami",
+        "li": [
+          "Kata-katamu milikmu — tidak pernah dijual.",
+          "Kamu yang menentukan apa yang disimpan dan apa yang dihapus.",
+          "Hanya cerita yang sudah jadi yang dibagikan — saat kamu memilihnya."
+        ]
+      },
+      {
+        "h": "Di aplikasi: masih difinalkan",
+        "p": [
+          "draft() masih dalam persiapan, jadi sebagian rincian belum final dan kami tidak akan menebak di sini. Sebelum rilis, kami akan memastikan setiap hal berikut dan mempublikasikannya di halaman ini:"
+        ],
+        "li": [
+          "Bagaimana suaramu diubah menjadi teks, dan apakah itu terjadi di perangkatmu atau lewat layanan eksternal.",
+          "Berapa lama cerita dan draf disimpan, dan cara menghapusnya.",
+          "Statistik penggunaan apa yang dikumpulkan aplikasi, jika ada.",
+          "Bagaimana langganan dan pembayaran ditangani lewat App Store.",
+          "Cara menghubungi kami tentang datamu.",
+          "Apakah kata-katamu dipakai untuk melatih atau meningkatkan sesuatu — akan dipastikan sebelum rilis dan dipublikasikan di halaman ini."
+        ]
+      },
+      {
+        "h": "Di situs web ini",
+        "li": [
+          "Tidak ada cookie yang dipasang.",
+          "Kunjungan dihitung dengan Cloudflare Web Analytics, yang tanpa cookie dan tidak mengumpulkan data pribadi.",
+          "Font dimuat dari Google Fonts, sehingga browsermu terhubung ke server font Google.",
+          "Pilihan bahasamu, dan apakah kamu menutup petunjuk bahasa, hanya diingat di browsermu (penyimpanan lokal) dan tidak pernah dikirim ke kami.",
+          "Situs ini tidak punya akun dan tidak mengumpulkan formulir maupun data pribadi."
+        ]
+      },
+      {
+        "h": "Kontak",
+        "p": [
+          "Alamat kontak untuk pertanyaan privasi akan dipublikasikan di sini saat rilis."
+        ]
+      }
+    ]
+  }
+}

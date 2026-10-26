@@ -1,6 +1,6 @@
 ---
 title: ¿Te quedaste en blanco ante la casilla del pie de foto? Dilo en voz alta
-description: Tuviste un día entero, pero la casilla del pie de foto no te da nada. Cómo sacar la historia hablando primero y dejando que unas pocas preguntas encuentren el momento real.
+description: Tuviste un día entero, pero el pie de foto sigue vacío. Cómo sacar la historia: primero hablar y dejar que unas pocas preguntas encuentren el momento real.
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box

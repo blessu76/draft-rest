@@ -1,6 +1,6 @@
 ---
 title: Buntu di depan kotak keterangan yang kosong? Ucapkan saja dulu
-description: Hari ini panjang, tetapi kotak keterangan tak memberimu apa-apa. Begini cara mengeluarkan ceritanya: bicara dulu, lalu biarkan beberapa pertanyaan menemukan momen yang sebenarnya.
+description: Harimu panjang, tapi kotak keterangan tetap kosong. Begini cara mengeluarkan ceritanya: bicara dulu, lalu biarkan beberapa pertanyaan menemukan momen nyata.
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box

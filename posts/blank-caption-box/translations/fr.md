@@ -1,6 +1,6 @@
 ---
 title: Bloqué devant la zone de légende vide ? Dites-le à voix haute
-description: Vous avez eu une journée entière, mais la zone de légende ne donne rien. Comment sortir l'histoire en parlant d'abord, puis en laissant quelques questions trouver le vrai moment.
+description: Une journée entière, mais la zone de légende reste vide. Comment sortir l'histoire : parler d'abord, puis laisser quelques questions trouver le vrai moment.
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box

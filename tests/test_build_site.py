@@ -26,7 +26,7 @@ class Locales(unittest.TestCase):
     def test_template_keys_exist(self):
         loc = build_site.load_locales(ROOT)
         tpl = (ROOT / "src" / "home_body.html").read_text(encoding="utf-8")
-        reserved = {"LANGSEL", "FOOTLANGS", "BLOGLINK", "TOPLINK", "BLOGCARDS"}
+        reserved = {"LANGSEL", "FOOTLANGS", "FOOTLINKS", "TOPLINK", "BLOGCARDS"}
         for k in set(re.findall(r"\{\{(\w+)", tpl)) - reserved:
             self.assertIn(k, loc["en"], k)
 
@@ -38,7 +38,8 @@ class Pages(unittest.TestCase):
 
     @property
     def home(self):
-        return {k: v for k, v in self.files.items() if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html"))}
+        return {k: v for k, v in self.files.items()
+                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES)}
 
     @property
     def indexed_home(self):
@@ -605,10 +606,10 @@ class JsonLd(unittest.TestCase):
             self.assertEqual(app["publisher"], {"@id": HUB})
             self.assertEqual(app["author"], {"@id": HUB})
 
-    def test_no_ipe_studio_name_left(self):
+    def test_no_ipe_studio_publisher_name_left(self):
         for rel, t in self.files.items():
             if rel.endswith(".html") and "application/ld+json" in t:
-                self.assertNotIn("ipe Studio", "\n".join(re.findall(r'<script type="application/ld\+json">.*?</script>', t, re.S)), rel)
+                self.assertNotIn('"name": "ipe Studio"', "\n".join(re.findall(r'<script type="application/ld\+json">.*?</script>', t, re.S)), rel)
 
     def article(self, c, slug):
         return ld_of(self.files["%s/blog/%s/index.html" % (c, slug)], "BlogPosting")
@@ -699,6 +700,151 @@ class JsonLdPostFields(unittest.TestCase):
         self.assertEqual(d["keywords"], "alpha, beta")
         self.assertEqual(d["articleSection"], "Craft")
         self.assertEqual([a["name"] for a in d["about"]], ["Hooks", "Openings"])
+
+
+
+class SeoFixes(unittest.TestCase):
+    """10-26 SEO audit: no placeholder links, About/Privacy pages, title/description lengths, touch icon, home <main>."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+        cls.posts, _ = build_site.load_posts(ROOT)
+        cls.loc = build_site.load_locales(ROOT)
+
+    def pages(self):
+        return {k: v for k, v in self.files.items() if k.endswith(".html")}
+
+    def title(self, html):
+        return re.search(r"<title>(.*?)</title>", html, re.S).group(1)
+
+    def test_no_placeholder_links_anywhere(self):
+        for rel, t in self.pages().items():
+            self.assertNotIn('href="#"', t, rel)
+
+    def test_cta_is_not_a_link_but_keeps_its_text(self):
+        for c in build_site.CODES:
+            home = self.files["index.html" if c == "en" else "%s/index.html" % c]
+            self.assertNotIn('<a class="btn"', home, c)
+            self.assertEqual(home.count('class="btn" aria-disabled="true"'), 3, c)  # two store buttons + community
+            self.assertGreaterEqual(home.count("<span>%s</span>" % html_unescape_free(self.loc[c]["cta_download"])), 2, c)
+            self.assertIn("<span>%s</span>" % html_unescape_free(self.loc[c]["comm_cta"]), home, c)
+            post = self.files["%s/blog/%s/index.html" % (c, self.posts[0]["slug"])]
+            self.assertIn('class="btn" aria-disabled="true"', post, c)
+            self.assertNotIn('<a class="btn"', post, c)
+
+    def test_about_and_privacy_pages_in_every_language(self):
+        for slug in build_site.PAGES:
+            for c in build_site.CODES:
+                rel = ("%s/index.html" % slug) if c == "en" else "%s/%s/index.html" % (c, slug)
+                t = self.files[rel]
+                url = build_site.content_url(c, slug)
+                self.assertIn('<link rel="canonical" href="%s">' % url, t)
+                self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', t)), 12, rel)
+                self.assertIn("<loc>%s</loc>" % url, self.files["sitemap.xml"])
+                home = self.files["index.html" if c == "en" else "%s/index.html" % c]
+                self.assertIn('href="%s"' % build_site.page_path(c, slug), home, "%s footer link to %s" % (c, slug))
+        self.assertNotIn("/faq", self.files["sitemap.xml"])
+        for rel, t in self.pages().items():
+            self.assertNotIn("/faq/", t, rel)
+
+    def test_content_pages_say_nothing_about_price_or_free(self):
+        for c in build_site.CODES:
+            d = build_site.load_content(ROOT)[c]
+            text = json.dumps({k: d[k] for k in ("about", "privacy")}, ensure_ascii=False)
+            self.assertNotRegex(text, r"[$€¥]|USD|\d+[.,]\d{2}\s", c)
+
+    def test_footer_has_no_support_link(self):
+        for c in build_site.CODES:
+            home = self.files["index.html" if c == "en" else "%s/index.html" % c]
+            self.assertNotIn(">%s</a>" % self.loc[c]["foot_support"], home, c)
+
+    def test_post_title_suffix_rule(self):
+        self.assertEqual(build_site.post_title("Short"), "Short — draft()")
+        long = "x" * 51
+        self.assertEqual(build_site.post_title(long), long)
+        self.assertEqual(len(build_site.post_title("x" * 50)), 60)
+        for c in build_site.CODES:
+            for p in self.posts:
+                t = self.files["%s/blog/%s/index.html" % (c, p["slug"])]
+                head = p["langs"][c]["title"]
+                self.assertEqual(html_unescape(self.title(t)), build_site.post_title(head))
+                self.assertIn("<h1>%s</h1>" % build_site.esc(head), t)
+
+    def test_blog_list_title_is_descriptive_per_language(self):
+        seen = set()
+        for c in build_site.CODES:
+            t = html_unescape(self.title(self.files["%s/blog/index.html" % c]))
+            self.assertEqual(t, self.loc[c]["blog_title"])
+            self.assertLessEqual(len(t), 60, c)
+            self.assertGreater(len(t), 20, c)
+            seen.add(t)
+        self.assertEqual(len(seen), 11)
+
+    def test_home_description_lengths(self):
+        for c in build_site.CODES:
+            d = self.loc[c]["meta_desc_short"]
+            self.assertLessEqual(len(d), 100 if c in ("ko", "ja", "zh") else 160, c)
+            home = self.files["index.html" if c == "en" else "%s/index.html" % c]
+            self.assertIn('<meta name="description" content="%s">' % build_site.esc(d), home)
+
+    def test_post_descriptions_within_limit_and_validated(self):
+        for p in self.posts:
+            for c, m in p["langs"].items():
+                self.assertLessEqual(len(m["description"]), build_site.DESC_MAX, "%s/%s" % (p["slug"], c))
+
+    def test_touch_icon_and_favicon(self):
+        for rel, t in self.pages().items():
+            if rel == "en/index.html":  # redirect stub, no <head> furniture
+                continue
+            self.assertIn('<link rel="apple-touch-icon" href="/apple-touch-icon.png">', t, rel)
+        png = (ROOT / "apple-touch-icon.png").read_bytes()
+        self.assertEqual(build_site.image_size(ROOT / "apple-touch-icon.png"), (180, 180))
+        self.assertEqual(png[:8], b"\x89PNG\r\n\x1a\n")
+        self.assertEqual((ROOT / "favicon.ico").read_bytes()[:4], b"\x00\x00\x01\x00")
+        import stage_site
+        names = {p.as_posix() for p in stage_site.public_files(ROOT)}
+        self.assertTrue({"apple-touch-icon.png", "favicon.ico", "about/index.html", "privacy/index.html", "ko/about/index.html"} <= names)
+
+    def test_home_has_one_main_landmark_around_the_content(self):
+        for c in build_site.CODES:
+            home = self.files["index.html" if c == "en" else "%s/index.html" % c]
+            self.assertEqual(home.count("<main"), 1, c)
+            self.assertEqual(home.count("</main>"), 1, c)
+            a, b = home.index("<main"), home.index("</main>")
+            self.assertIn("<h1", home[a:b])
+            self.assertIn('<section class="pricing">', home[a:b])
+            self.assertLess(home.index("<footer>"), len(home))
+            self.assertGreater(home.index("<footer>"), b)
+            self.assertLess(home.index('class="toplink"'), a)
+
+
+def html_unescape_free(s):
+    """Text as the home template writes it (& < > escaped, quotes kept)."""
+    import html
+    return html.escape(s, quote=False)
+
+
+def html_unescape(s):
+    import html
+    return html.unescape(s)
+
+
+class DescriptionLimit(unittest.TestCase):
+    def test_too_long_post_description_fails_the_build(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp)
+            shutil.copytree(ROOT / "locales", d / "locales")
+            for n in ("src", "assets", "content", "shared"):
+                shutil.copytree(ROOT / n, d / n)
+            for n in ("llms.txt", "og-image.png"):
+                shutil.copy(ROOT / n, d / n)
+            write_post(d, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
+            f = d / "posts" / "a-post" / "en.md"
+            f.write_text(f.read_text(encoding="utf-8").replace("description: d en", "description: " + "x" * 161), encoding="utf-8")
+            with self.assertRaises(build_site.BuildError) as cm:
+                build_site.build(d)
+            self.assertIn("a-post/en: description is", str(cm.exception))
 
 
 if __name__ == "__main__":

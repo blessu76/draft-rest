@@ -49,6 +49,7 @@
     transition:background .3s ease,color .3s ease;
   }
   .btn:hover{background:transparent;color:var(--navy);}
+  .btn[aria-disabled="true"],.btn[aria-disabled="true"]:hover{background:var(--navy);color:var(--cream);cursor:default;}  /* store/community links not live yet: same look, not a link */
   .apple-glyph{width:16px;height:16px;fill:currentColor;flex-shrink:0;}
 
   .cursor{
@@ -251,7 +252,7 @@
   footer{padding:64px 0 56px;border-top:1px solid var(--line);text-align:center;}
   .foot-mark{font-family:var(--mono);font-size:20px;font-weight:300;color:var(--ink);}
   .foot-sign{margin-top:10px;}
-  .foot-links{margin-top:28px;display:flex;gap:28px;justify-content:center;font-size:13px;color:var(--gray);}
+  .foot-links{margin-top:28px;display:flex;flex-wrap:wrap;gap:4px 24px;justify-content:center;font-size:13px;color:var(--gray);}
   .foot-links a{text-decoration:none;transition:color .3s;}
   .foot-links a:hover{color:var(--ink);}
   .foot-studio{margin-top:26px;font-size:12px;letter-spacing:.06em;color:#A8AEB8;}
@@ -382,3 +383,9 @@
   .nf-langs a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:8px;color:var(--ink-soft);text-decoration:none;background:var(--card);}
   .nf-langs a:hover{border-color:var(--sage);color:var(--ink);}
 
+  /* ---------- content pages (about / privacy) ---------- */
+  .page-body{margin-top:8px;}
+  .page-body .sec{padding:0;}
+  .page-body .sec h2{font-size:clamp(18px,3.4vw,21px);margin:34px 0 10px;scroll-margin-top:72px;}
+  .page-body .sec:first-child h2{margin-top:6px;}
+  .page-body .sec p{margin-bottom:14px;}

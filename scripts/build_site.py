@@ -5,6 +5,7 @@ Reads   src/home_body.html          home page body template ({{key}} = locale st
         locales/<lang>.json         per-language strings (11 languages, en is the fallback)
 Writes  index.html                  the English page; also x-default and hreflang "en" (single English body)
         <lang>/index.html           one static page per other language (ko ja zh es pt id ru vi fr de)
+        about/ privacy/             English content pages (root-level); <lang>/about|privacy/ for the others — texts in content/<lang>.json
         en/index.html               redirect stub -> / (noindex, canonical /; not in the sitemap)
         404.html                    not-found page (noindex)
         sitemap.xml                 every page with hreflang alternates, real lastmod
@@ -65,6 +66,22 @@ def home_path(lang):
     return "/" if lang in (None, DEFAULT_LANG) else "/%s/" % lang
 
 
+PAGES = ("about", "privacy")  # content pages; English lives at /<page>/, the others at /<lang>/<page>/
+
+
+def page_path(lang, slug):
+    return "/%s/" % slug if lang == DEFAULT_LANG else "/%s/%s/" % (lang, slug)
+
+
+def lang_path(lang, path=""):
+    """Site path of `lang`'s version of the page whose language-less path is `path` ('' = home, 'blog/', 'about/', ...)."""
+    if not path:
+        return home_path(lang)
+    if path.strip("/") in PAGES:
+        return page_path(lang, path.strip("/"))
+    return "/%s/%s" % (lang, path)
+
+
 def page_url(lang):
     """Public URL of a language's home page; lang=None or 'en' -> the root."""
     return SITE + home_path(lang)
@@ -75,7 +92,15 @@ def load_locales(root):
     out = {}
     for c in CODES:
         out[c] = json.loads((Path(root) / "locales" / (c + ".json")).read_text(encoding="utf-8"))
+        content = Path(root) / "content" / (c + ".json")
+        if content.is_file():  # nav labels live next to the page texts
+            out[c].update({k: v for k, v in json.loads(content.read_text(encoding="utf-8")).items() if k.startswith("nav_")})
     return out
+
+
+def load_content(root):
+    """content/<lang>.json -> {lang: {about|privacy: {...}, updated, updated_label}}"""
+    return {c: json.loads((Path(root) / "content" / (c + ".json")).read_text(encoding="utf-8")) for c in CODES}
 
 
 def tr(locales, lang, key):
@@ -168,6 +193,7 @@ def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website
 <meta name="author" content="ipe Studio">
 <meta name="theme-color" content="#FAF7F0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FAF7F0'/%3E%3Ctext x='14' y='22' font-family='ui-monospace,Menlo,monospace' font-size='16' font-weight='500' fill='%231B1F27' text-anchor='middle'%3Ed()%3C/text%3E%3Crect x='23' y='10' width='2.4' height='12' fill='%235F7D5F'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 {canon}<meta name="robots" content="{robots}">
 {alts}{rss}<meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="draft()">
@@ -199,14 +225,14 @@ def lang_select(lang, path=""):
     opts = "\n".join('    <option value="%s"%s>%s</option>' % (c, " selected" if c == lang else "", esc(n)) for c, n, _ in LANGS)
     return f"""<label class="langsel" aria-label="Language">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
-  <select id="lang" aria-label="Language" data-path="{path}">
+  <select id="lang" aria-label="Language" data-path="{path}" data-en="{lang_path(DEFAULT_LANG, path)}">
 {opts}
   </select>
 </label>"""
 
 
 def foot_langs(lang, path=""):
-    links = ['<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (home_path(c) if not path else "/%s/%s" % (c, path), c, c, ' aria-current="page"' if c == lang else "", esc(n))
+    links = ['<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (lang_path(c, path), c, c, ' aria-current="page"' if c == lang else "", esc(n))
              for c, n, _ in LANGS]
     return '<nav class="foot-langs" aria-label="Languages">\n      %s\n    </nav>' % "\n      ".join(links)
 
@@ -230,12 +256,14 @@ def chrome(locales, lang, path="", blog=False):
     base = home_path(lang)
     blog_href = "/%s/blog/" % lang
     top = '<nav class="toplink" aria-label="draft()"><a href="%s">draft()</a>' % base
-    footlink = ""
+    foot = []
     if blog:
         top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (blog_href, ' aria-current="page"' if path.startswith("blog") else "", esc(tr(locales, lang, "nav_blog")))
-        footlink = '\n      <a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog")))
+        foot.append('<a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog"))))
     top += "</nav>"
-    return {"LANGSEL": lang_select(lang, path), "FOOTLANGS": foot_langs(lang, path), "BLOGLINK": footlink, "TOPLINK": top}
+    foot += ['<a href="%s">%s</a>' % (page_path(lang, "about"), esc(tr(locales, lang, "nav_about"))),
+             '<a href="%s">%s</a>' % (page_path(lang, "privacy"), esc(tr(locales, lang, "foot_privacy")))]
+    return {"LANGSEL": lang_select(lang, path), "FOOTLANGS": foot_langs(lang, path), "FOOTLINKS": "\n      ".join(foot), "TOPLINK": top}
 
 
 HOME_CARDS = 3  # newest posts shown on the home page
@@ -276,7 +304,7 @@ def render_home(root, locales, lang, version, blog=False, posts=()):
     if root_page:
         hint = {c: [tr(locales, c, "view_in"), tr(locales, c, "close")] for c in CODES if c != DEFAULT_LANG}
         body += '\n<div id="langhint" hidden data-langs=\'%s\'></div>' % json.dumps(hint, ensure_ascii=False, separators=(",", ":")).replace("'", "&#39;")
-    h = head(locales, lang, version, url, tr(locales, lang, "meta_title"), tr(locales, lang, "meta_desc"), home_cluster(),
+    h = head(locales, lang, version, url, tr(locales, lang, "meta_title"), tr(locales, lang, "meta_desc_short"), home_cluster(),
              home_ld(locales, lang, url), extra='<meta name="keywords" content="%s">\n' % esc(KEYWORDS),
              legacy=LEGACY_REDIRECT if root_page else "", feed=blog_feed_url(lang) if blog else None, og_desc=tr(locales, lang, "hero_sub"))
     local = ""
@@ -433,6 +461,9 @@ def load_posts(root):
             errors.append("%s: `draft` differs between languages" % d.name)
         if all(m["draft"] for m in langs.values()):
             continue
+        for c, m in langs.items():
+            if len(m["description"]) > DESC_MAX:
+                errors.append("%s/%s: description is %d chars (max %d: it is the meta, og and JSON-LD description)" % (d.name, c, len(m["description"]), DESC_MAX))
         missing = [c for c in CODES if c not in langs]
         if missing:
             errors.append("%s: missing languages: %s" % (d.name, ", ".join(missing)))
@@ -659,6 +690,16 @@ def page_shell(root, locales, lang, version, *, url, title, desc, cluster, ld, m
             + f'\n<script src="/assets/site.js?v={version}"></script>\n' + local + "</body>\n</html>\n")
 
 
+TITLE_MAX = 60
+DESC_MAX = 160
+
+
+def post_title(title):
+    """<title> of a post: '<headline> — draft()', but without the suffix when that would pass TITLE_MAX characters (the h1 is untouched)."""
+    full = "%s — draft()" % title
+    return full if len(full) <= TITLE_MAX else title
+
+
 def render_post(root, locales, version, post, lang):
     m = post["langs"][lang]
     url = post_url(lang, post["slug"])
@@ -686,7 +727,7 @@ def render_post(root, locales, version, post, lang):
       <span class="comment">{esc(tr(locales, lang, 'cta_comment'))}</span>
       <h2>{esc(tr(locales, lang, 'hero_h1'))}</h2>
       <p>{esc(tr(locales, lang, 'hero_sub'))}</p>
-      <a class="btn" href="#">{APPLE}<span>{esc(tr(locales, lang, 'cta_download'))}</span></a>
+      <span class="btn" aria-disabled="true">{APPLE}<span>{esc(tr(locales, lang, 'cta_download'))}</span></span>
     </aside>
     <nav class="post-foot" aria-label="Blog">
       <a href="{blog_list_url(lang).replace(SITE, '')}">&larr; {esc(tr(locales, lang, 'blog_back'))}</a>
@@ -694,13 +735,13 @@ def render_post(root, locales, version, post, lang):
     </nav>
   </article>
 </main>"""
-    return page_shell(root, locales, lang, version, url=url, title="%s — draft()" % m["title"], desc=m["description"],
+    return page_shell(root, locales, lang, version, url=url, title=post_title(m["title"]), desc=m["description"],
                       cluster=post_cluster(post["slug"]), ld=ld, main=main, path="blog/%s/" % post["slug"], og_type="article")
 
 
 def render_list(root, locales, version, posts, lang):
     url = blog_list_url(lang)
-    title = "%s — draft()" % tr(locales, lang, "nav_blog")
+    title = tr(locales, lang, "blog_title")
     desc = tr(locales, lang, "blog_sub")
     items = "\n".join(f"""      <li>
         <p class="comment">// {time_tag(p['date'])}</p>
@@ -728,6 +769,62 @@ def render_list(root, locales, version, posts, lang):
   <p class="blog-rss"><a href="/{lang}/blog/feed.xml">{esc(tr(locales, lang, 'blog_rss'))}</a></p>
 </main>"""
     return page_shell(root, locales, lang, version, url=url, title=title, desc=desc, cluster=list_cluster(), ld=ld, main=main, path="blog/")
+
+
+# ---------------------------------------------------------------- content pages (about / privacy)
+def content_url(lang, slug):
+    return SITE + page_path(lang, slug)
+
+
+def content_cluster(slug):
+    d = {c: content_url(c, slug) for c in CODES}
+    d["x-default"] = content_url(DEFAULT_LANG, slug)
+    return d
+
+
+def plain(text):
+    """Markdown-ish inline text -> plain text (for JSON-LD)."""
+    return re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r"\1", text).replace("**", "").replace("*", "")
+
+
+def render_content_page(root, locales, content, version, slug, lang):
+    c = content[lang]
+    pg = c[slug]
+    url = content_url(lang, slug)
+    parts = []
+    for sec in pg["sections"]:
+        h = '    <h2>%s</h2>' % esc(sec["h"])
+        ps = "".join("\n    <p>%s</p>" % inline(t) for t in sec.get("p", []))
+        ul = "\n    <ul>%s</ul>" % "".join("<li>%s</li>" % inline(t) for t in sec["li"]) if sec.get("li") else ""
+        parts.append('  <section class="sec">\n%s%s%s\n  </section>' % (h, ps, ul))
+    body = "\n".join(parts)
+    stamp = ""
+    if slug == "privacy":
+        stamp = '\n    <p class="comment"><time datetime="%s">// %s: %s</time></p>' % (c["updated"], esc(c["updated_label"]), c["updated"])
+    crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "draft()", "item": page_url(lang)},
+        {"@type": "ListItem", "position": 2, "name": pg["h1"], "item": url}]}
+    if slug == "about":
+        app = {"@type": "MobileApplication", "name": "draft()", "alternateName": "draft", "url": page_url(None), "operatingSystem": "iOS, Android",
+               "applicationCategory": "ProductivityApplication", "applicationSubCategory": "Writing / Storytelling",
+               "description": tr(locales, lang, "meta_desc"), "inLanguage": lang, "image": image_object(root, "og-image.png"),
+               "disambiguatingDescription": plain(pg["sections"][0]["p"][0]), "author": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}}
+        main_ld = {"@context": "https://schema.org", "@type": "AboutPage", "url": url, "inLanguage": lang, "name": pg["h1"],
+                   "description": pg["desc"], "mainEntity": app, "publisher": ORG}
+    else:
+        main_ld = {"@context": "https://schema.org", "@type": "WebPage", "url": url, "inLanguage": lang, "name": pg["h1"],
+                   "description": pg["desc"], "dateModified": c["updated"], "publisher": ORG}
+    main = f"""<main id="main" class="post-wrap">
+  <header class="blog-head">
+    <p class="comment">{esc(pg['comment'])}</p>
+    <h1>{esc(pg['h1'])}</h1>{stamp}
+  </header>
+  <div class="prose page-body">
+{body}
+  </div>
+</main>"""
+    return page_shell(root, locales, lang, version, url=url, title=pg["title"], desc=pg["desc"], cluster=content_cluster(slug),
+                      ld=ld_script(main_ld) + "\n" + ld_script(crumbs), main=main, path="%s/" % slug)
 
 
 def rfc822(d):
@@ -795,6 +892,11 @@ def render_llms_pages():
     for c, n, _ in LANGS:
         if c != DEFAULT_LANG:
             lines.append("- [%s](%s) — %s" % (n, page_url(c), c))
+    names = {"about": "About (how draft() differs from other Draft apps)", "privacy": "Privacy"}
+    for slug in PAGES:
+        lines.append("")
+        lines.append("## %s" % names[slug])
+        lines.append(", ".join("[%s](%s)" % (c, content_url(c, slug)) for c in CODES))
     return "\n".join(lines) + "\n"
 
 
@@ -819,6 +921,7 @@ def build(root):
     posts, errors = load_posts(root)
     if errors:
         raise BuildError("\n  ".join(errors))
+    content = load_content(root)
     blog = bool(posts)
     out = {"index.html": render_home(root, locales, DEFAULT_LANG, version, blog=blog, posts=posts),
            "en/index.html": render_en_stub(version), "404.html": render_404(version)}
@@ -845,6 +948,11 @@ def build(root):
             for c in CODES:
                 out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c)
                 pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
+    prio = {"about": "0.8", "privacy": "0.4"}
+    for slug in PAGES:
+        for c in CODES:
+            out[page_path(c, slug).strip("/") + "/index.html"] = render_content_page(root, locales, content, version, slug, c)
+            pages.append((content_url(c, slug), git_date(root, ["src", "assets", "content/%s.json" % c]), prio[slug], "monthly", content_cluster(slug)))
     want = min(HOME_CARDS, len(posts))
     for c in CODES:
         rel = "index.html" if c == DEFAULT_LANG else "%s/index.html" % c

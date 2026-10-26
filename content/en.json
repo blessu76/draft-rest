@@ -1,0 +1,74 @@
+{
+  "nav_about": "About",
+  "updated_label": "Last updated",
+  "updated": "2026-10-23",
+  "about": {
+    "title": "About draft() — and how it differs from other Draft apps",
+    "desc": "draft() by ipe Studio is a voice-first storytelling app. How it differs from other apps that share the name Draft.",
+    "comment": "// not the other Draft",
+    "h1": "draft() by ipe Studio",
+    "sections": [
+      {
+        "h": "One name, several apps",
+        "p": [
+          "Many apps and tools use the name “Draft”. draft() on this site is a different product: a voice-first storytelling app made by ipe Studio. You talk for about thirty seconds, answer two or three gentle questions, and get a finished story — hook, rising action, peak, reflection and close — while your words stay yours."
+        ]
+      },
+      {
+        "h": "How to tell it is ours",
+        "li": [
+          "Official site: draft.ipe.rest — this site.",
+          "Maker: ipe Studio — [ipe.rest](https://ipe.rest).",
+          "The name is written draft(), with parentheses, and marked “an ipe studio app”.",
+          "Platform: iOS and Android, in preparation."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy — draft()",
+    "desc": "How draft() and draft.ipe.rest handle your data: what we promise, what is still being finalized, and how this website works.",
+    "comment": "// privacy, plainly",
+    "h1": "Privacy",
+    "sections": [
+      {
+        "h": "Our promise",
+        "li": [
+          "Your words are yours — never sold.",
+          "You decide what is kept, and what is deleted.",
+          "Only the finished story is shared — when you choose to."
+        ]
+      },
+      {
+        "h": "In the app: still being finalized",
+        "p": [
+          "draft() is still being prepared, so some details are not final, and we will not guess here. Before launch we will confirm each of these and publish them on this page:"
+        ],
+        "li": [
+          "How your speech is turned into text, and whether that happens on your device or with a service.",
+          "How long stories and drafts are kept, and how you delete them.",
+          "What usage statistics the app collects, if any.",
+          "How subscriptions and payments are handled through the App Store.",
+          "How to contact us about your data.",
+          "Whether your words are ever used to train or improve anything — to be confirmed before launch and published on this page."
+        ]
+      },
+      {
+        "h": "On this website",
+        "li": [
+          "No cookies are set.",
+          "Visits are counted with Cloudflare Web Analytics, which is cookieless and does not collect personal data.",
+          "Fonts load from Google Fonts, so your browser contacts Google’s font servers.",
+          "Your language choice, and whether you closed the language hint, are remembered in your browser only (local storage) and are never sent to us.",
+          "There are no accounts on this site, and it collects no forms or personal details."
+        ]
+      },
+      {
+        "h": "Contact",
+        "p": [
+          "A contact address for privacy questions will be published here at launch."
+        ]
+      }
+    ]
+  }
+}

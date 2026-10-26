@@ -1,0 +1,74 @@
+{
+  "nav_about": "À propos",
+  "updated_label": "Dernière mise à jour",
+  "updated": "2026-10-23",
+  "about": {
+    "title": "À propos de draft() — et ce qui le distingue des autres applis Draft",
+    "desc": "draft() d’ipe Studio est une appli de récit qui part de la voix. Ce qui la distingue des autres applis portant le nom Draft.",
+    "comment": "// pas l’autre Draft",
+    "h1": "draft() par ipe Studio",
+    "sections": [
+      {
+        "h": "Un nom, plusieurs applis",
+        "p": [
+          "De nombreuses applis et outils portent le nom « Draft ». draft() sur ce site est un autre produit : une appli de récit qui part de la voix, faite par ipe Studio. Vous parlez une trentaine de secondes, répondez à deux ou trois questions douces et obtenez une histoire aboutie — accroche, montée, sommet, réflexion et clôture — tandis que vos mots restent les vôtres."
+        ]
+      },
+      {
+        "h": "Comment reconnaître la nôtre",
+        "li": [
+          "Site officiel : draft.ipe.rest — ce site.",
+          "Éditeur : ipe Studio — [ipe.rest](https://ipe.rest).",
+          "Le nom s’écrit draft(), avec des parenthèses, et porte la mention « an ipe studio app ».",
+          "Plateforme : iOS et Android, en préparation."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Confidentialité — draft()",
+    "desc": "Comment draft() et draft.ipe.rest traitent vos données : nos engagements, ce qui reste à finaliser et le fonctionnement de ce site.",
+    "comment": "// confidentialité, simplement",
+    "h1": "Confidentialité",
+    "sections": [
+      {
+        "h": "Notre engagement",
+        "li": [
+          "Vos mots sont à vous : jamais vendus.",
+          "Vous décidez de ce qui est conservé et de ce qui est supprimé.",
+          "Seule l’histoire terminée est partagée — quand vous le choisissez."
+        ]
+      },
+      {
+        "h": "Dans l’appli : encore en cours de finalisation",
+        "p": [
+          "draft() est encore en préparation ; certains détails ne sont donc pas définitifs et nous ne les devinerons pas ici. Avant la sortie, nous confirmerons chacun de ces points et les publierons sur cette page :"
+        ],
+        "li": [
+          "Comment votre voix est transformée en texte, et si cela se fait sur votre appareil ou via un service externe.",
+          "Combien de temps les histoires et brouillons sont conservés, et comment les supprimer.",
+          "Quelles statistiques d’usage l’appli collecte, le cas échéant.",
+          "Comment les abonnements et paiements sont gérés via l’App Store.",
+          "Comment nous contacter au sujet de vos données.",
+          "Si vos mots servent à entraîner ou améliorer quoi que ce soit : à confirmer avant le lancement et à publier sur cette page."
+        ]
+      },
+      {
+        "h": "Sur ce site web",
+        "li": [
+          "Aucun cookie n’est déposé.",
+          "Les visites sont comptées avec Cloudflare Web Analytics, sans cookie et sans collecte de données personnelles.",
+          "Les polices se chargent depuis Google Fonts : votre navigateur contacte donc les serveurs de polices de Google.",
+          "Votre choix de langue, et le fait d’avoir fermé l’invite de langue, sont mémorisés uniquement dans votre navigateur (stockage local) et ne nous sont jamais envoyés.",
+          "Ce site n’a pas de comptes et ne collecte ni formulaires ni données personnelles."
+        ]
+      },
+      {
+        "h": "Contact",
+        "p": [
+          "Une adresse de contact pour les questions de confidentialité sera publiée ici à la sortie."
+        ]
+      }
+    ]
+  }
+}

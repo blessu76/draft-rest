@@ -1,6 +1,6 @@
 ---
 title: 30-Sekunden-Übung: Wähle nur eine Szene von heute
-description: Wenn dich der Versuch, den ganzen Tag zu erklären, blockiert, wähle eine einzige Szene. Eine einfache Übung, um das Rohmaterial einer Geschichte in dreißig Sekunden herauszuholen.
+description: Blockiert dich der Versuch, den ganzen Tag zu erklären, wähle eine einzige Szene. Eine einfache Übung: das Rohmaterial einer Geschichte in dreißig Sekunden.
 date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00

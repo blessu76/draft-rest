@@ -1,6 +1,6 @@
 ---
 title: Đứng hình trước ô chú thích trống? Hãy nói ra trước
-description: Bạn có cả một ngày để kể, nhưng ô chú thích lại chẳng cho bạn chữ nào. Cách lấy câu chuyện ra bằng việc nói trước, rồi để vài câu hỏi tìm ra khoảnh khắc thật sự.
+description: Bạn có cả một ngày để kể, nhưng ô chú thích vẫn trống. Cách lấy câu chuyện ra: nói trước, rồi để vài câu hỏi tìm ra khoảnh khắc thật sự.
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box

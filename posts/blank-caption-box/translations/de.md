@@ -1,6 +1,6 @@
 ---
 title: Vor dem leeren Bildunterschrift-Feld festgefahren? Sag es erst laut
-description: Du hattest einen ganzen Tag, aber das Feld für die Bildunterschrift bleibt leer. So holst du die Geschichte heraus: erst sprechen, dann ein paar Fragen den echten Moment finden lassen.
+description: Ein ganzer Tag, aber die Bildunterschrift bleibt leer. So holst du die Geschichte heraus: erst sprechen, dann Fragen den echten Moment finden lassen.
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box

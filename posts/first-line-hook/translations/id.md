@@ -1,6 +1,6 @@
 ---
 title: Satu kalimat pembuka bisa menyelamatkan cerita: cara menulis hook
-description: Tulisan yang dibuka dengan penjelasan sulit dibaca sampai habis. Tiga cara menulis kalimat pertama yang langsung dimulai di tengah adegan, lengkap dengan contoh.
+description: Tulisan yang dibuka dengan penjelasan sulit dibaca sampai habis. Tiga cara menulis kalimat pertama yang langsung di tengah adegan, lengkap dengan contoh.
 date: 2026-10-25
 slug: first-line-hook
 published: 2026-10-25T16:53:00+09:00
