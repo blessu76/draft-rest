@@ -38,7 +38,8 @@ class PublishPost(unittest.TestCase):
         for n in ("src", "assets", "locales", "content", "shared"):
             if (ROOT / n).is_dir():
                 shutil.copytree(ROOT / n, self.dir / n)
-        shutil.copy(ROOT / "llms.txt", self.dir / "llms.txt")
+        for n in ("llms.txt", "og-image.png"):
+            shutil.copy(ROOT / n, self.dir / n)
         write_post(self.dir, "q-one", extra="draft: true\n")
         _, iso = publish_post.publish(self.dir, "q-one")
         posts, errors = build_site.load_posts(self.dir)

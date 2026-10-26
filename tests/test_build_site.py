@@ -285,7 +285,7 @@ class PublishedTime(unittest.TestCase):
         for n in ("src", "assets", "content", "shared"):
             if (ROOT / n).is_dir():
                 self.shutil.copytree(ROOT / n, self.dir / n)
-        for n in ("llms.txt",):
+        for n in ("llms.txt", "og-image.png"):
             self.shutil.copy(ROOT / n, self.dir / n)
 
     def build_with(self, published):
@@ -548,6 +548,7 @@ def ld_of(html, typ):
 
 
 HUB = "https://ipe.rest/#organization"
+AUTHOR = {"@type": "Organization", "@id": HUB, "name": "ipe()", "url": "https://ipe.rest/"}
 
 
 class JsonLd(unittest.TestCase):
@@ -569,7 +570,7 @@ class JsonLd(unittest.TestCase):
                 self.assertEqual(pub["@id"], HUB)
                 self.assertEqual(pub["name"], "ipe()")
                 self.assertEqual(pub["logo"]["url"], "https://ipe.rest/icon-512.png")
-                self.assertEqual(d["author"], {"@id": HUB})
+                self.assertEqual(d["author"], AUTHOR)
                 self.assertEqual(d["isPartOf"]["@id"], "https://draft.ipe.rest/%s/blog/#blog" % c)
 
     def test_list_blog_itemlist_and_ids(self):
@@ -580,7 +581,7 @@ class JsonLd(unittest.TestCase):
             self.assertEqual(blog["isPartOf"], {"@id": "https://draft.ipe.rest/#website"})
             self.assertEqual(blog["publisher"]["@id"], HUB)
             self.assertEqual(blog["publisher"]["logo"]["url"], "https://ipe.rest/icon-512.png")
-            self.assertEqual(blog["author"], {"@id": HUB})
+            self.assertEqual(blog["author"], AUTHOR)
             items = blog["mainEntity"]["itemListElement"]
             shown = re.findall(r'<li>\s*<p class="comment">.*?<h2><a href="(/%s/blog/[^"]+/)"' % c, html, re.S)
             self.assertEqual(len(items), len(self.posts))
@@ -609,6 +610,57 @@ class JsonLd(unittest.TestCase):
             if rel.endswith(".html") and "application/ld+json" in t:
                 self.assertNotIn("ipe Studio", "\n".join(re.findall(r'<script type="application/ld\+json">.*?</script>', t, re.S)), rel)
 
+    def article(self, c, slug):
+        return ld_of(self.files["%s/blog/%s/index.html" % (c, slug)], "BlogPosting")
+
+    def test_image_is_imageobject_with_real_file_size(self):
+        w, h = build_site.image_size(ROOT / "og-image.png")
+        self.assertEqual((w, h), (1200, 630))
+        for c in build_site.CODES:
+            for p in self.posts:
+                img = self.article(c, p["slug"])["image"]
+                self.assertEqual(img, {"@type": "ImageObject", "url": "https://draft.ipe.rest/og-image.png", "width": w, "height": h})
+                self.assertEqual(self.article(c, p["slug"])["publisher"]["logo"]["width"], 512)
+
+    def test_word_count_method_is_pinned(self):
+        self.assertEqual(build_site.word_count("<p>One two  three</p><p>four</p>", "en"), 4)
+        self.assertEqual(build_site.word_count("<p>첫 줄이 이야기를 살립니다</p>", "ko"), 4)  # space-delimited: words
+        self.assertEqual(build_site.word_count("<p>最初の、ひと文。 A1</p>", "ja"), 8)  # characters; spaces and punctuation excluded
+        self.assertEqual(build_site.word_count("<p>第一句，很重要。</p>", "zh"), 6)
+        self.assertEqual(build_site.word_count("<p>a &amp; b</p>", "en"), 3)
+
+    def test_post_has_wordcount_keywords_section_about_per_language(self):
+        loc = build_site.load_locales(ROOT)
+        for c in build_site.CODES:
+            for p in self.posts:
+                d = self.article(c, p["slug"])
+                body = build_site.markdown(p["langs"][c]["_body"])
+                self.assertEqual(d["wordCount"], build_site.word_count(body, c))
+                self.assertGreater(d["wordCount"], 100, c)
+                self.assertEqual(d["keywords"], loc[c]["ld_keywords"])
+                self.assertEqual(d["articleSection"], loc[c]["ld_section"])
+                self.assertEqual(d["about"], [{"@type": "Thing", "name": loc[c]["ld_topic"]}])
+        self.assertNotEqual(loc["ko"]["ld_section"], loc["en"]["ld_section"])
+
+    def test_article_ids_and_translation_links(self):
+        for p in self.posts:
+            slug = p["slug"]
+            en = self.article("en", slug)
+            self.assertEqual(en["@id"], "https://draft.ipe.rest/en/blog/%s/#article" % slug)
+            self.assertNotIn("translationOfWork", en)
+            want = {"https://draft.ipe.rest/%s/blog/%s/#article" % (c, slug) for c in build_site.CODES if c != "en"}
+            self.assertEqual({x["@id"] for x in en["workTranslation"]}, want)
+            self.assertEqual(len(en["workTranslation"]), 10)
+            for c in build_site.CODES:
+                if c == "en":
+                    continue
+                d = self.article(c, slug)
+                self.assertEqual(d["@id"], "https://draft.ipe.rest/%s/blog/%s/#article" % (c, slug))
+                self.assertEqual(d["translationOfWork"]["@id"], en["@id"])
+                self.assertEqual(d["translationOfWork"]["inLanguage"], "en")
+                self.assertNotIn("workTranslation", d)
+                self.assertIn(d["@id"], {x["@id"] for x in en["workTranslation"]})
+
 
 class JsonLdPostFields(unittest.TestCase):
     def setUp(self):
@@ -619,7 +671,8 @@ class JsonLdPostFields(unittest.TestCase):
         for n in ("src", "assets", "content", "shared"):
             if (ROOT / n).is_dir():
                 shutil.copytree(ROOT / n, self.dir / n)
-        shutil.copy(ROOT / "llms.txt", self.dir / "llms.txt")
+        for n in ("llms.txt", "og-image.png"):
+            shutil.copy(ROOT / n, self.dir / n)
 
     def test_date_modified_follows_updated_else_published(self):
         write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
@@ -638,6 +691,14 @@ class JsonLdPostFields(unittest.TestCase):
         urls = [i["url"] for i in ld_of(f["ko/blog/index.html"], "Blog")["mainEntity"]["itemListElement"]]
         self.assertEqual(urls, ["https://draft.ipe.rest/ko/blog/a-post/"])
         self.assertNotIn("z-draft", f["ko/blog/index.html"])
+
+
+    def test_front_matter_overrides_keywords_section_about(self):
+        write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\nkeywords: alpha, beta\nsection: Craft\nabout: Hooks | Openings | Extra\n")
+        d = ld_of(build_site.build(self.dir)["ko/blog/a-post/index.html"], "BlogPosting")
+        self.assertEqual(d["keywords"], "alpha, beta")
+        self.assertEqual(d["articleSection"], "Craft")
+        self.assertEqual([a["name"] for a in d["about"]], ["Hooks", "Openings"])
 
 
 if __name__ == "__main__":

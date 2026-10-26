@@ -24,8 +24,10 @@ import hashlib
 import html
 import json
 import re
+import struct
 import subprocess
 import sys
+import unicodedata
 from pathlib import Path
 
 SITE = "https://draft.ipe.rest"
@@ -122,8 +124,9 @@ def home_cluster():
 # Organization hub lives on the parent site (https://ipe.rest/#organization); every page here references it by @id.
 ORG_ID = "https://ipe.rest/#organization"
 WEBSITE_ID = SITE + "/#website"
-ORG = {"@type": "Organization", "@id": ORG_ID, "name": "ipe()", "url": "https://ipe.rest/",
-       "logo": {"@type": "ImageObject", "url": "https://ipe.rest/icon-512.png"}}
+ORG_REF = {"@type": "Organization", "@id": ORG_ID, "name": "ipe()", "url": "https://ipe.rest/"}  # author
+# Square icon on the parent site; 512x512 checked against the live file (it is not in this repo, so the size cannot be read here).
+ORG = dict(ORG_REF, logo={"@type": "ImageObject", "url": "https://ipe.rest/icon-512.png", "width": 512, "height": 512})  # publisher
 
 
 def jsonld(locales, lang, url):
@@ -574,6 +577,60 @@ def list_cluster():
 
 
 
+def image_size(path):
+    """(width, height) of a PNG/JPEG file, read from its header."""
+    b = Path(path).read_bytes()
+    if b[:8] == b"\x89PNG\r\n\x1a\n":
+        return struct.unpack(">II", b[16:24])
+    if b[:2] == b"\xff\xd8":
+        i = 2
+        while i + 9 < len(b):
+            if b[i] != 0xFF:
+                i += 1
+                continue
+            m = b[i + 1]
+            if 0xC0 <= m <= 0xCF and m not in (0xC4, 0xC8, 0xCC):
+                h, w = struct.unpack(">HH", b[i + 5:i + 9])
+                return w, h
+            i += 2 + struct.unpack(">H", b[i + 2:i + 4])[0]
+    raise BuildError("cannot read image size of %s (PNG/JPEG only)" % path)
+
+
+def image_object(root, rel):
+    w, h = image_size(Path(root) / rel)
+    return {"@type": "ImageObject", "url": SITE + "/" + rel, "width": w, "height": h}
+
+
+def word_count(html_body, lang):
+    """Words of the post text; ja/zh have no spaces, so count characters (letters/digits, no punctuation or spaces) instead."""
+    text = html.unescape(re.sub(r"<[^>]+>", " ", html_body))
+    if lang in ("ja", "zh"):
+        return sum(1 for ch in text if unicodedata.category(ch)[0] in "LN")
+    return len(text.split())
+
+
+def post_ld_extras(locales, lang, m):
+    """keywords / articleSection / about: from the post's own front matter when set, else the per-language defaults in locales."""
+    about = [x.strip() for x in m.get("about", "").split("|") if x.strip()][:2] or [tr(locales, lang, "ld_topic")]
+    return {"keywords": m.get("keywords") or tr(locales, lang, "ld_keywords"),
+            "articleSection": m.get("section") or tr(locales, lang, "ld_section"),
+            "about": [{"@type": "Thing", "name": n} for n in about]}
+
+
+def article_id(lang, slug):
+    return post_url(lang, slug) + "#article"
+
+
+def translation_links(post, lang):
+    """English is the original: it lists the other languages as workTranslation; each of them points back with translationOfWork."""
+    def ref(c):
+        return {"@type": "BlogPosting", "@id": article_id(c, post["slug"]), "url": post_url(c, post["slug"]),
+                "headline": post["langs"][c]["title"], "inLanguage": c}
+    if lang == DEFAULT_LANG:
+        return {"workTranslation": [ref(c) for c in CODES if c != DEFAULT_LANG]}
+    return {"translationOfWork": ref(DEFAULT_LANG)}
+
+
 def blog_id(lang):
     return blog_list_url(lang) + "#blog"
 
@@ -608,10 +665,13 @@ def render_post(root, locales, version, post, lang):
     when = post["date"]
     updated = m.get("_updated") or when
     body = markdown(m["_body"])
-    data = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": m["title"], "description": m["description"],
+    data = {"@context": "https://schema.org", "@type": "BlogPosting", "@id": article_id(lang, post["slug"]),
+            "headline": m["title"], "description": m["description"],
             "datePublished": when_iso(when), "dateModified": when_iso(updated), "inLanguage": lang,
-            "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url, "image": SITE + "/og-image.png",
-            "author": {"@id": ORG_ID}, "publisher": ORG, "isPartOf": {"@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang)}}
+            "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url, "image": image_object(root, "og-image.png"),
+            "wordCount": word_count(body, lang), **post_ld_extras(locales, lang, m),
+            "author": ORG_REF, "publisher": ORG, "isPartOf": {"@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang)},
+            **translation_links(post, lang)}
     ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang, {"title": m["title"], "slug": post["slug"]}))
     extra_langs = " · ".join('<a href="%s" hreflang="%s" lang="%s">%s</a>' % (post_url(c, post["slug"]), c, c, esc(NAMES[c])) for c in CODES if c != lang)
     main = f"""<main id="main" class="post-wrap">
@@ -649,7 +709,7 @@ def render_list(root, locales, version, posts, lang):
         <a class="more" href="/{lang}/blog/{p['slug']}/" aria-label="{esc(tr(locales, lang, 'blog_read'))}: {esc(p['langs'][lang]['title'])}">{esc(tr(locales, lang, 'blog_read'))} &rarr;</a>
       </li>""" for p in posts)
     data = {"@context": "https://schema.org", "@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": url, "inLanguage": lang,
-            "isPartOf": {"@id": WEBSITE_ID}, "publisher": ORG, "author": {"@id": ORG_ID},
+            "isPartOf": {"@id": WEBSITE_ID}, "publisher": ORG, "author": ORG_REF,
             "blogPost": [{"@type": "BlogPosting", "headline": p["langs"][lang]["title"], "url": post_url(lang, p["slug"]),
                           "datePublished": when_iso(p["date"]), "inLanguage": lang} for p in posts],
             "mainEntity": {"@type": "ItemList", "numberOfItems": len(posts),
