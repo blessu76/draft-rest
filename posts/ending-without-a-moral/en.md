@@ -3,7 +3,7 @@ title: How to end on an echo instead of a moral
 description: When you're tempted to close with "and that's when I realized how precious it is." Three ways to cut the lesson and end on a scene instead, with examples.
 slug: ending-without-a-moral
 date: 2026-10-26
-published: 2026-10-26T16:31:00+09:00
+published: 2026-10-26T17:15:00+09:00
 ---
 
 Plenty of good stories get spoiled by their last line, something like "and I learned how precious small kindnesses are." It's true, but it takes away the part the reader was going to feel for themselves.
