@@ -535,5 +535,110 @@ class HomeCards(unittest.TestCase):
         self.assertGreaterEqual(m.group(1)[:10], newest)
 
 
+def ld_blocks(html):
+    return [json.loads(x) for x in re.findall(r'<script type="application/ld\+json">\n(.*?)\n</script>', html, re.S)]
+
+
+def ld_of(html, typ):
+    for b in ld_blocks(html):
+        for n in b.get("@graph", [b]):
+            if n.get("@type") == typ:
+                return n
+    raise AssertionError("no %s block" % typ)
+
+
+HUB = "https://ipe.rest/#organization"
+
+
+class JsonLd(unittest.TestCase):
+    """Davy 10-26: every page's JSON-LD points at the ipe.rest Organization hub; list pages carry an ItemList."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+        cls.posts, _ = build_site.load_posts(ROOT)
+
+    def home(self, c):
+        return self.files["index.html" if c == build_site.DEFAULT_LANG else "%s/index.html" % c]
+
+    def test_post_publisher_author_and_blog_ids(self):
+        for c in build_site.CODES:
+            for p in self.posts:
+                d = ld_of(self.files["%s/blog/%s/index.html" % (c, p["slug"])], "BlogPosting")
+                pub = d["publisher"]
+                self.assertEqual(pub["@id"], HUB)
+                self.assertEqual(pub["name"], "ipe()")
+                self.assertEqual(pub["logo"]["url"], "https://ipe.rest/icon-512.png")
+                self.assertEqual(d["author"], {"@id": HUB})
+                self.assertEqual(d["isPartOf"]["@id"], "https://draft.ipe.rest/%s/blog/#blog" % c)
+
+    def test_list_blog_itemlist_and_ids(self):
+        for c in build_site.CODES:
+            html = self.files["%s/blog/index.html" % c]
+            blog = ld_of(html, "Blog")
+            self.assertEqual(blog["@id"], "https://draft.ipe.rest/%s/blog/#blog" % c)
+            self.assertEqual(blog["isPartOf"], {"@id": "https://draft.ipe.rest/#website"})
+            self.assertEqual(blog["publisher"]["@id"], HUB)
+            self.assertEqual(blog["publisher"]["logo"]["url"], "https://ipe.rest/icon-512.png")
+            self.assertEqual(blog["author"], {"@id": HUB})
+            items = blog["mainEntity"]["itemListElement"]
+            shown = re.findall(r'<li>\s*<p class="comment">.*?<h2><a href="(/%s/blog/[^"]+/)"' % c, html, re.S)
+            self.assertEqual(len(items), len(self.posts))
+            self.assertEqual(len(items), len(shown))
+            self.assertEqual([i["position"] for i in items], list(range(1, len(items) + 1)))
+            self.assertEqual([i["url"] for i in items], ["https://draft.ipe.rest" + u for u in shown])
+            self.assertEqual(blog["mainEntity"]["numberOfItems"], len(items))
+
+    def test_home_organization_and_website_ids(self):
+        for c in build_site.CODES:
+            html = self.home(c)
+            org = ld_of(html, "Organization")
+            self.assertEqual(org["@id"], HUB)
+            self.assertEqual(org["name"], "ipe()")
+            self.assertEqual(org["url"], "https://ipe.rest/")
+            self.assertEqual(org["logo"]["url"], "https://ipe.rest/icon-512.png")
+            site = ld_of(html, "WebSite")
+            self.assertEqual(site["@id"], "https://draft.ipe.rest/#website")
+            self.assertEqual(site["publisher"], {"@id": HUB})
+            app = ld_of(html, "MobileApplication")
+            self.assertEqual(app["publisher"], {"@id": HUB})
+            self.assertEqual(app["author"], {"@id": HUB})
+
+    def test_no_ipe_studio_name_left(self):
+        for rel, t in self.files.items():
+            if rel.endswith(".html") and "application/ld+json" in t:
+                self.assertNotIn("ipe Studio", "\n".join(re.findall(r'<script type="application/ld\+json">.*?</script>', t, re.S)), rel)
+
+
+class JsonLdPostFields(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.dir = Path(self.tmp.name)
+        shutil.copytree(ROOT / "locales", self.dir / "locales")
+        for n in ("src", "assets", "content", "shared"):
+            if (ROOT / n).is_dir():
+                shutil.copytree(ROOT / n, self.dir / n)
+        shutil.copy(ROOT / "llms.txt", self.dir / "llms.txt")
+
+    def test_date_modified_follows_updated_else_published(self):
+        write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
+        write_post(self.dir, "b-post", extra="published: 2026-10-01T10:00:00+09:00\nupdated: 2026-10-20T11:30:00+09:00\n")
+        f = build_site.build(self.dir)
+        a = ld_of(f["ko/blog/a-post/index.html"], "BlogPosting")
+        b = ld_of(f["ko/blog/b-post/index.html"], "BlogPosting")
+        self.assertEqual(a["dateModified"], a["datePublished"])
+        self.assertEqual(b["datePublished"], "2026-10-01T10:00:00+09:00")
+        self.assertEqual(b["dateModified"], "2026-10-20T11:30:00+09:00")
+
+    def test_draft_post_is_not_in_itemlist(self):
+        write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
+        write_post(self.dir, "z-draft", extra="draft: true\n")
+        f = build_site.build(self.dir)
+        urls = [i["url"] for i in ld_of(f["ko/blog/index.html"], "Blog")["mainEntity"]["itemListElement"]]
+        self.assertEqual(urls, ["https://draft.ipe.rest/ko/blog/a-post/"])
+        self.assertNotIn("z-draft", f["ko/blog/index.html"])
+
+
 if __name__ == "__main__":
     unittest.main()

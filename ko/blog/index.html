@@ -52,13 +52,25 @@
 {
   "@context": "https://schema.org",
   "@type": "Blog",
+  "@id": "https://draft.ipe.rest/ko/blog/#blog",
   "name": "draft() Blog",
   "url": "https://draft.ipe.rest/ko/blog/",
   "inLanguage": "ko",
+  "isPartOf": {
+    "@id": "https://draft.ipe.rest/#website"
+  },
   "publisher": {
     "@type": "Organization",
-    "name": "ipe Studio",
-    "url": "https://ipe.rest"
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png"
+    }
+  },
+  "author": {
+    "@id": "https://ipe.rest/#organization"
   },
   "blogPost": [
     {
@@ -82,7 +94,28 @@
       "datePublished": "2026-10-23T17:30:00+09:00",
       "inLanguage": "ko"
     }
-  ]
+  ],
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": 3,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://draft.ipe.rest/ko/blog/first-line-hook/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://draft.ipe.rest/ko/blog/thirty-second-practice/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://draft.ipe.rest/ko/blog/blank-caption-box/"
+      }
+    ]
+  }
 }
 </script>
 <script type="application/ld+json">

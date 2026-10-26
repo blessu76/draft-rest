@@ -119,9 +119,16 @@ def home_cluster():
     return d
 
 
+# Organization hub lives on the parent site (https://ipe.rest/#organization); every page here references it by @id.
+ORG_ID = "https://ipe.rest/#organization"
+WEBSITE_ID = SITE + "/#website"
+ORG = {"@type": "Organization", "@id": ORG_ID, "name": "ipe()", "url": "https://ipe.rest/",
+       "logo": {"@type": "ImageObject", "url": "https://ipe.rest/icon-512.png"}}
+
+
 def jsonld(locales, lang, url):
     desc = tr(locales, lang, "meta_desc")
-    publisher = {"@type": "Organization", "name": "ipe Studio", "url": "https://ipe.rest"}
+    publisher = {"@id": ORG_ID}
     graph = [
         {"@type": "MobileApplication", "name": "draft()", "alternateName": "draft", "url": url,
          "operatingSystem": "iOS", "applicationCategory": "ProductivityApplication",
@@ -129,9 +136,9 @@ def jsonld(locales, lang, url):
          "image": SITE + "/og-image.png",
          "offers": [{"@type": "Offer", "price": "0", "priceCurrency": "USD", "name": tr(locales, lang, "plan1_name")},
                     {"@type": "Offer", "price": "2.99", "priceCurrency": "USD", "name": tr(locales, lang, "plan2_name")}],
-         "publisher": publisher},
-        {"@type": "Organization", "name": "ipe Studio", "url": "https://ipe.rest", "slogan": "when the process finally rests", "brand": "ipe()"},
-        {"@type": "WebSite", "name": "draft()", "url": page_url(None), "inLanguage": lang, "publisher": publisher},
+         "publisher": publisher, "author": publisher},
+        dict(ORG, slogan="when the process finally rests", brand="ipe()"),
+        {"@type": "WebSite", "@id": WEBSITE_ID, "name": "draft()", "url": page_url(None), "inLanguage": lang, "publisher": publisher},
     ]
     body = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2).replace("</", "<\\/")
     return '<script type="application/ld+json">\n%s\n</script>' % body
@@ -565,7 +572,10 @@ def list_cluster():
     return d
 
 
-ORG = {"@type": "Organization", "name": "ipe Studio", "url": "https://ipe.rest"}
+
+
+def blog_id(lang):
+    return blog_list_url(lang) + "#blog"
 
 
 def ld_script(obj):
@@ -601,7 +611,7 @@ def render_post(root, locales, version, post, lang):
     data = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": m["title"], "description": m["description"],
             "datePublished": when_iso(when), "dateModified": when_iso(updated), "inLanguage": lang,
             "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url, "image": SITE + "/og-image.png",
-            "author": ORG, "publisher": ORG, "isPartOf": {"@type": "Blog", "name": "draft() Blog", "url": blog_list_url(lang)}}
+            "author": {"@id": ORG_ID}, "publisher": ORG, "isPartOf": {"@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang)}}
     ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang, {"title": m["title"], "slug": post["slug"]}))
     extra_langs = " · ".join('<a href="%s" hreflang="%s" lang="%s">%s</a>' % (post_url(c, post["slug"]), c, c, esc(NAMES[c])) for c in CODES if c != lang)
     main = f"""<main id="main" class="post-wrap">
@@ -638,9 +648,13 @@ def render_list(root, locales, version, posts, lang):
         <p>{esc(p['langs'][lang]['description'])}</p>
         <a class="more" href="/{lang}/blog/{p['slug']}/" aria-label="{esc(tr(locales, lang, 'blog_read'))}: {esc(p['langs'][lang]['title'])}">{esc(tr(locales, lang, 'blog_read'))} &rarr;</a>
       </li>""" for p in posts)
-    data = {"@context": "https://schema.org", "@type": "Blog", "name": "draft() Blog", "url": url, "inLanguage": lang, "publisher": ORG,
+    data = {"@context": "https://schema.org", "@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": url, "inLanguage": lang,
+            "isPartOf": {"@id": WEBSITE_ID}, "publisher": ORG, "author": {"@id": ORG_ID},
             "blogPost": [{"@type": "BlogPosting", "headline": p["langs"][lang]["title"], "url": post_url(lang, p["slug"]),
-                          "datePublished": when_iso(p["date"]), "inLanguage": lang} for p in posts]}
+                          "datePublished": when_iso(p["date"]), "inLanguage": lang} for p in posts],
+            "mainEntity": {"@type": "ItemList", "numberOfItems": len(posts),
+                           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": post_url(lang, p["slug"])}
+                                               for i, p in enumerate(posts)]}}
     ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang))
     main = f"""<main id="main" class="post-wrap">
   <header class="blog-head">
