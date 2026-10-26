@@ -310,7 +310,7 @@ def render_home(root, locales, lang, version, blog=False, posts=()):
     local = ""
     if "data-ipe-time" in body:
         local = "<script>" + (Path(root) / LOCALTIME_JS).read_bytes().decode("utf-8") + "</script>\n"
-    return h + body + f'\n<script src="/assets/site.js?v={version}"></script>\n' + local + "</body>\n</html>\n"
+    return h + body + f'\n<script src="/assets/site.js?v={version}" defer></script>\n' + local + "</body>\n</html>\n"
 
 
 def render_en_stub(version):
@@ -348,7 +348,7 @@ def render_404(version):
 {links}
   </ul>
 </main>
-<script src="/assets/site.js?v={version}"></script>
+<script src="/assets/site.js?v={version}" defer></script>
 </body>
 </html>
 """
@@ -687,7 +687,7 @@ def page_shell(root, locales, lang, version, *, url, title, desc, cluster, ld, m
         local = "<script>" + (Path(root) / LOCALTIME_JS).read_bytes().decode("utf-8") + "</script>\n"
     return (head(locales, lang, version, url, title, desc, cluster, ld, og_type=og_type, feed=blog_feed_url(lang))
             + skip + ch["TOPLINK"] + "\n" + ch["LANGSEL"] + "\n" + main + "\n" + foot
-            + f'\n<script src="/assets/site.js?v={version}"></script>\n' + local + "</body>\n</html>\n")
+            + f'\n<script src="/assets/site.js?v={version}" defer></script>\n' + local + "</body>\n</html>\n")
 
 
 TITLE_MAX = 60

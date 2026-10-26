@@ -806,6 +806,23 @@ class SeoFixes(unittest.TestCase):
         names = {p.as_posix() for p in stage_site.public_files(ROOT)}
         self.assertTrue({"apple-touch-icon.png", "favicon.ico", "about/index.html", "privacy/index.html", "ko/about/index.html"} <= names)
 
+    def test_render_blocking_resources_are_tamed(self):
+        """10-26 perf: fonts swap + preconnect, site.js deferred; the inline localtime script stays where it is."""
+        samples = ["index.html", "ko/index.html", "en/blog/index.html", "ko/blog/%s/index.html" % self.posts[0]["slug"], "about/index.html"]
+        for rel in samples:
+            t = self.files[rel]
+            self.assertRegex(t, r'<script src="/assets/site\.js\?v=[0-9a-f]{8}" defer></script>', rel)
+            self.assertNotRegex(t, r'<script src="/assets/site\.js[^>]*></script>(?<!defer></script>)', rel)
+            self.assertIn('<link rel="preconnect" href="https://fonts.googleapis.com">', t, rel)
+            self.assertIn('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>', t, rel)
+            font = re.search(r'<link href="(https://fonts\.googleapis\.com/[^"]+)" rel="stylesheet">', t)
+            self.assertTrue(font and "display=swap" in font.group(1), rel)
+            self.assertLess(t.index("fonts.googleapis.com"), t.index("/assets/site.css"), rel)
+            self.assertIn('href="/assets/site.css?v=', t, rel)
+        post = self.files["ko/blog/%s/index.html" % self.posts[0]["slug"]]
+        self.assertIn("<script>", post[post.index("</footer>"):])  # inline localtime, after the footer, not deferred
+        self.assertLess(post.index("</footer>"), post.rindex("<script>"))
+
     def test_home_has_one_main_landmark_around_the_content(self):
         for c in build_site.CODES:
             home = self.files["index.html" if c == "en" else "%s/index.html" % c]
