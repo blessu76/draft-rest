@@ -1,9 +1,9 @@
 ---
 title: Como terminar com um eco em vez de uma moral
 description: Quando bate a vontade de fechar com "e foi aí que percebi como isso é precioso". Três formas de cortar a lição e terminar com uma cena, com exemplos.
-date: 2026-10-26
 slug: ending-without-a-moral
-draft: true
+date: 2026-10-26
+published: 2026-10-26T16:31:00+09:00
 ---
 
 Muita história boa é estragada pela última linha, algo como "e aprendi como as pequenas gentilezas são preciosas". É verdade, mas tira do leitor a parte que ele sentiria por conta própria.

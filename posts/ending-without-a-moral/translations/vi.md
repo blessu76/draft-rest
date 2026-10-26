@@ -1,9 +1,9 @@
 ---
 title: Cách kết bằng dư âm thay vì bài học
 description: Khi bạn muốn khép lại bằng câu "và lúc đó mình nhận ra nó quý giá thế nào". Ba cách bỏ bài học và kết bằng một cảnh, kèm ví dụ.
-date: 2026-10-26
 slug: ending-without-a-moral
-draft: true
+date: 2026-10-26
+published: 2026-10-26T16:31:00+09:00
 ---
 
 Nhiều câu chuyện hay bị hỏng ở dòng cuối, kiểu như "và mình học được rằng những điều tử tế nhỏ bé quý giá biết bao". Câu ấy đúng, nhưng nó lấy mất phần mà người đọc lẽ ra tự cảm nhận.

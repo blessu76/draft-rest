@@ -225,7 +225,8 @@ class Blog(unittest.TestCase):
     def test_first_post_ko_length(self):
         posts, errors = build_site.load_posts(ROOT)
         self.assertEqual(errors, [])
-        self.assertTrue(1200 <= len(posts[0]["langs"]["ko"]["_body"].strip()) <= 1800)
+        first = next(p for p in posts if p["slug"] == "blank-caption-box")
+        self.assertTrue(1200 <= len(first["langs"]["ko"]["_body"].strip()) <= 1800)
 
     def test_markdown_escapes_html_and_bad_links(self):
         out = build_site.markdown("<script>x</script> [a](javascript:alert(1)) **b**")
@@ -496,7 +497,7 @@ class HomeCards(unittest.TestCase):
 
     def test_newest_published_post_is_first(self):
         newest = self.posts[0]["slug"]
-        self.assertEqual(newest, "first-line-hook")
+        self.assertEqual(build_site.when_key(self.posts[0]["date"]), max(build_site.when_key(p["date"]) for p in self.posts))
         for c in build_site.CODES:
             self.assertIn("/%s/blog/%s/" % (c, newest), self.cards(c)[0], c)
 

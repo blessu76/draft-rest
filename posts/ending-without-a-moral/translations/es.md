@@ -1,9 +1,9 @@
 ---
 title: Cómo terminar con un eco en lugar de una moraleja
-description: Cuando sientes la tentación de cerrar con "y entonces me di cuenta de lo valioso que es". Tres formas de quitar la lección y terminar con una escena, con ejemplos.
-date: 2026-10-26
+description: Cuando sientes la tentación de cerrar con "y entonces me di cuenta de lo valioso que es". Tres formas de quitar la lección y terminar con una escena.
 slug: ending-without-a-moral
-draft: true
+date: 2026-10-26
+published: 2026-10-26T16:31:00+09:00
 ---
 
 Muchas buenas historias se estropean con la última línea, algo como "y aprendí lo valiosas que son las pequeñas amabilidades". Es verdad, pero le quita al lector la parte que iba a sentir por sí mismo.

@@ -1,9 +1,9 @@
 ---
 title: Mit einem Nachklang enden statt mit einer Moral
-description: Wenn du versucht bist, mit „und da erkannte ich, wie kostbar das ist“ zu schließen. Drei Wege, die Lehre zu streichen und mit einer Szene zu enden, mit Beispielen.
-date: 2026-10-26
+description: Wenn du versucht bist, mit „und da erkannte ich, wie kostbar das ist“ zu schließen. Drei Wege, die Lehre zu streichen und mit einer Szene zu enden.
 slug: ending-without-a-moral
-draft: true
+date: 2026-10-26
+published: 2026-10-26T16:31:00+09:00
 ---
 
 Viele gute Geschichten werden durch ihre letzte Zeile verdorben, etwa durch „und ich lernte, wie kostbar kleine Freundlichkeiten sind“. Das stimmt, nimmt dem Leser aber den Teil, den er selbst gefühlt hätte.

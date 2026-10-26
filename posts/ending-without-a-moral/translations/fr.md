@@ -1,9 +1,9 @@
 ---
 title: Finir sur un écho plutôt que sur une morale
-description: Quand la tentation vous prend de conclure par « et c'est là que j'ai compris combien c'est précieux ». Trois façons de retirer la leçon et de finir sur une scène, avec des exemples.
-date: 2026-10-26
+description: Quand on est tenté de conclure par « et c'est là que j'ai compris combien c'est précieux ». Trois façons de retirer la leçon et de finir sur une scène.
 slug: ending-without-a-moral
-draft: true
+date: 2026-10-26
+published: 2026-10-26T16:31:00+09:00
 ---
 
 Beaucoup de bonnes histoires sont gâchées par leur dernière ligne, du genre « et j'ai appris combien les petites gentillesses sont précieuses ». C'est vrai, mais cela retire au lecteur la part qu'il aurait ressentie lui-même.

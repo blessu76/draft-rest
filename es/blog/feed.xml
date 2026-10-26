@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Sun, 25 Oct 2026 16:53:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 16:31:00 +0900</lastBuildDate>
+    <item>
+      <title>Cómo terminar con un eco en lugar de una moraleja</title>
+      <link>https://draft.ipe.rest/es/blog/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/ending-without-a-moral/</guid>
+      <pubDate>Mon, 26 Oct 2026 16:31:00 +0900</pubDate>
+      <description>Cuando sientes la tentación de cerrar con &quot;y entonces me di cuenta de lo valioso que es&quot;. Tres formas de quitar la lección y terminar con una escena.</description>
+    </item>
     <item>
       <title>Una primera línea puede salvar una historia: cómo escribir un gancho</title>
       <link>https://draft.ipe.rest/es/blog/first-line-hook/</link>

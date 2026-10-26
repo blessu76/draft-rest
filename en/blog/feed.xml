@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Sun, 25 Oct 2026 16:53:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 16:31:00 +0900</lastBuildDate>
+    <item>
+      <title>How to end on an echo instead of a moral</title>
+      <link>https://draft.ipe.rest/en/blog/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/ending-without-a-moral/</guid>
+      <pubDate>Mon, 26 Oct 2026 16:31:00 +0900</pubDate>
+      <description>When you&#x27;re tempted to close with &quot;and that&#x27;s when I realized how precious it is.&quot; Three ways to cut the lesson and end on a scene instead, with examples.</description>
+    </item>
     <item>
       <title>One first line can save a story: how to write a hook</title>
       <link>https://draft.ipe.rest/en/blog/first-line-hook/</link>
