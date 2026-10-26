@@ -149,6 +149,7 @@ def home_cluster():
 # Organization hub lives on the parent site (https://ipe.rest/#organization); every page here references it by @id.
 ORG_ID = "https://ipe.rest/#organization"
 WEBSITE_ID = SITE + "/#website"
+APP_ID = SITE + "/#app"
 ORG_REF = {"@type": "Organization", "@id": ORG_ID, "name": "ipe()", "url": "https://ipe.rest/"}  # author
 # Square icon on the parent site; 512x512 checked against the live file (it is not in this repo, so the size cannot be read here).
 ORG = dict(ORG_REF, logo={"@type": "ImageObject", "url": "https://ipe.rest/icon-512.png", "width": 512, "height": 512})  # publisher
@@ -158,7 +159,7 @@ def jsonld(locales, lang, url):
     desc = tr(locales, lang, "meta_desc")
     publisher = {"@id": ORG_ID}
     graph = [
-        {"@type": "MobileApplication", "name": "draft()", "alternateName": "draft", "url": url,
+        {"@type": "MobileApplication", "@id": APP_ID, "name": "draft()", "alternateName": "draft", "url": url,
          "operatingSystem": "iOS", "applicationCategory": "ProductivityApplication",
          "applicationSubCategory": "Writing / Storytelling", "description": desc, "inLanguage": lang,
          "image": SITE + "/og-image.png",
@@ -166,7 +167,7 @@ def jsonld(locales, lang, url):
                     {"@type": "Offer", "price": "2.99", "priceCurrency": "USD", "name": tr(locales, lang, "plan2_name")}],
          "publisher": publisher, "author": publisher},
         dict(ORG, slogan="when the process finally rests", brand="ipe()"),
-        {"@type": "WebSite", "@id": WEBSITE_ID, "name": "draft()", "url": page_url(None), "inLanguage": lang, "publisher": publisher},
+        {"@type": "WebSite", "@id": WEBSITE_ID, "name": "draft()", "url": page_url(None), "publisher": publisher},
     ]
     body = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2).replace("</", "<\\/")
     return '<script type="application/ld+json">\n%s\n</script>' % body
@@ -751,10 +752,11 @@ def render_list(root, locales, version, posts, lang):
       </li>""" for p in posts)
     data = {"@context": "https://schema.org", "@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": url, "inLanguage": lang,
             "isPartOf": {"@id": WEBSITE_ID}, "publisher": ORG, "author": ORG_REF,
-            "blogPost": [{"@type": "BlogPosting", "headline": p["langs"][lang]["title"], "url": post_url(lang, p["slug"]),
+            "blogPost": [{"@type": "BlogPosting", "@id": post_url(lang, p["slug"]) + "#article", "headline": p["langs"][lang]["title"], "url": post_url(lang, p["slug"]),
                           "datePublished": when_iso(p["date"]), "inLanguage": lang} for p in posts],
             "mainEntity": {"@type": "ItemList", "numberOfItems": len(posts),
-                           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": post_url(lang, p["slug"])}
+                           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": post_url(lang, p["slug"]),
+                                                "item": {"@id": post_url(lang, p["slug"]) + "#article"}}
                                                for i, p in enumerate(posts)]}}
     ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang))
     main = f"""<main id="main" class="post-wrap">
@@ -805,7 +807,7 @@ def render_content_page(root, locales, content, version, slug, lang):
         {"@type": "ListItem", "position": 1, "name": "draft()", "item": page_url(lang)},
         {"@type": "ListItem", "position": 2, "name": pg["h1"], "item": url}]}
     if slug == "about":
-        app = {"@type": "MobileApplication", "name": "draft()", "alternateName": "draft", "url": page_url(None), "operatingSystem": "iOS, Android",
+        app = {"@type": "MobileApplication", "@id": APP_ID, "name": "draft()", "alternateName": "draft", "url": page_url(None), "operatingSystem": "iOS",
                "applicationCategory": "ProductivityApplication", "applicationSubCategory": "Writing / Storytelling",
                "description": tr(locales, lang, "meta_desc"), "inLanguage": lang, "image": image_object(root, "og-image.png"),
                "disambiguatingDescription": plain(pg["sections"][0]["p"][0]), "author": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}}

@@ -3,7 +3,7 @@
   "updated_label": "Última actualización",
   "updated": "2026-10-23",
   "about": {
-    "title": "Acerca de draft() — y en qué se diferencia de otras apps Draft",
+    "title": "Acerca de draft() — y en qué se distingue de otras apps",
     "desc": "draft() de ipe Studio es una app de narración que empieza por la voz. En qué se diferencia de otras apps que comparten el nombre Draft.",
     "comment": "// no es el otro Draft",
     "h1": "draft() de ipe Studio",
@@ -20,7 +20,7 @@
           "Sitio oficial: draft.ipe.rest — este sitio.",
           "Creador: ipe Studio — [ipe.rest](https://ipe.rest).",
           "El nombre se escribe draft(), con paréntesis, y lleva la marca «an ipe studio app».",
-          "Plataforma: iOS y Android, en preparación."
+          "Plataforma: iOS, en preparación."
         ]
       }
     ]

@@ -552,6 +552,9 @@ HUB = "https://ipe.rest/#organization"
 AUTHOR = {"@type": "Organization", "@id": HUB, "name": "ipe()", "url": "https://ipe.rest/"}
 
 
+FREE_WORDS = r"free|무료|無料|免费|免費|gratis|grátis|gratuit|kostenlos|бесплатно|miễn phí"
+
+
 class JsonLd(unittest.TestCase):
     """Davy 10-26: every page's JSON-LD points at the ipe.rest Organization hub; list pages carry an ItemList."""
 
@@ -606,10 +609,55 @@ class JsonLd(unittest.TestCase):
             self.assertEqual(app["publisher"], {"@id": HUB})
             self.assertEqual(app["author"], {"@id": HUB})
 
-    def test_no_ipe_studio_publisher_name_left(self):
+    def test_every_organization_node_is_the_hub(self):
+        def walk(n):
+            if isinstance(n, dict):
+                yield n
+                for v in n.values():
+                    yield from walk(v)
+            elif isinstance(n, list):
+                for v in n:
+                    yield from walk(v)
         for rel, t in self.files.items():
-            if rel.endswith(".html") and "application/ld+json" in t:
-                self.assertNotIn('"name": "ipe Studio"', "\n".join(re.findall(r'<script type="application/ld\+json">.*?</script>', t, re.S)), rel)
+            if not (rel.endswith(".html") and "application/ld+json" in t):
+                continue
+            blocks = ld_blocks(t)
+            for n in walk(blocks):
+                if n.get("@type") == "Organization":
+                    self.assertEqual(n.get("name"), "ipe()", rel)
+                    self.assertEqual(n.get("@id"), HUB, rel)
+            if not rel.endswith("about/index.html"):
+                self.assertNotIn("ipe studio", json.dumps(blocks, ensure_ascii=False).lower(), rel)
+
+    def test_app_node_is_one_entity_ios_only(self):
+        ids = set()
+        for c in build_site.CODES:
+            for t in (self.home(c), self.files[build_site.page_path(c, "about").strip("/") + "/index.html"]):
+                for b in ld_blocks(t):
+                    for n in [b] + list(b.get("@graph", [])) + [b.get("mainEntity", {})]:
+                        if n.get("@type") == "MobileApplication":
+                            ids.add(n["@id"])
+                            self.assertEqual(n["operatingSystem"], "iOS")
+        self.assertEqual(ids, {"https://draft.ipe.rest/#app"})
+
+    def test_website_node_identical_on_all_homes(self):
+        nodes = {json.dumps(ld_of(self.home(c), "WebSite"), sort_keys=True) for c in build_site.CODES}
+        self.assertEqual(len(nodes), 1)
+
+    def test_blog_list_items_reference_article_ids(self):
+        for c in build_site.CODES:
+            html = self.files["%s/blog/index.html" % c]
+            blog = ld_of(html, "Blog")
+            for it in blog["mainEntity"]["itemListElement"]:
+                self.assertEqual(it["item"], {"@id": it["url"] + "#article"})
+            for bp in blog["blogPost"]:
+                self.assertEqual(bp["@id"], bp["url"] + "#article")
+
+    def test_about_titles_within_60(self):
+        for c in build_site.CODES:
+            for slug in ("about", "privacy"):
+                t = html_unescape(re.search(r"<title>(.*?)</title>", self.files[build_site.page_path(c, slug).strip("/") + "/index.html"]).group(1))
+                self.assertLessEqual(len(t), 60, (c, slug, len(t)))
 
     def article(self, c, slug):
         return ld_of(self.files["%s/blog/%s/index.html" % (c, slug)], "BlogPosting")
@@ -753,6 +801,7 @@ class SeoFixes(unittest.TestCase):
             d = build_site.load_content(ROOT)[c]
             text = json.dumps({k: d[k] for k in ("about", "privacy")}, ensure_ascii=False)
             self.assertNotRegex(text, r"[$€¥]|USD|\d+[.,]\d{2}\s", c)
+            self.assertNotRegex(text.lower(), FREE_WORDS, c)
 
     def test_footer_has_no_support_link(self):
         for c in build_site.CODES:
