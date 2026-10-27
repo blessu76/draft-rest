@@ -317,7 +317,7 @@ class PublishedTime(unittest.TestCase):
         f = self.build_with(None)
         post = f["en/blog/a-post/index.html"]
         self.assertIn('<time datetime="2026-10-01">2026-10-01</time>', post)
-        self.assertIn('// <span class="postno">No. 1</span> · <time datetime="2026-10-01">', post)
+        self.assertIn('// <span class="j-no">No. 1</span> · <time datetime="2026-10-01">', post)
         self.assertIn('"datePublished": "2026-10-01"', post)
         self.assertIn("<lastmod>2026-10-01</lastmod>", f["sitemap.xml"])
         self.assertNotRegex(post, r"// 2026-10-01 \d\d:\d\d")
@@ -359,6 +359,11 @@ class PublishedTime(unittest.TestCase):
         post = build_site.build(ROOT)["en/blog/blank-caption-box/index.html"]
         self.assertIn(">2026-10-23 17:30 KST</time>", post)
         self.assertIn('"datePublished": "2026-10-23T17:30:00+09:00"', post)
+
+
+PAGER_LABEL = {"en": "Page", "ko": "페이지", "ja": "ページ", "zh": "分页", "es": "Página", "pt": "Página",
+               "id": "Halaman", "ru": "Страница", "vi": "Trang", "fr": "Page", "de": "Seite"}
+PAGE_WORD = dict(PAGER_LABEL, zh="页")  # title/description word; only zh differs from the aria-label
 
 
 class NumberingAndPaging(unittest.TestCase):
@@ -414,15 +419,23 @@ class NumberingAndPaging(unittest.TestCase):
             url = "https://draft.ipe.rest/%s/blog/page/2/" % c
             self.assertIn('<link rel="canonical" href="%s">' % url, html)
             title = re.search(r"<title>(.*?)</title>", html).group(1)
-            self.assertIn(loc[c]["blog_page"].format(n=2), title)
-            self.assertIn('rel="prev" href="/%s/blog/"' % c, html)
+            word = PAGE_WORD[c]
+            self.assertTrue(title.endswith(" · %s 2" % word), title)
+            desc = re.search(r'<meta name="description" content="(.*?)">', html).group(1)
+            self.assertTrue(desc.endswith(" · %s 2" % word), desc)
+            self.assertIn('<a class="pg-step" rel="prev" href="/%s/blog/">' % c, html)
             self.assertNotIn('rel="next"', html)
+            self.assertIn('<span class="pg-num" aria-current="page">2</span>', html)
+            self.assertIn('<a class="pg-num" href="/%s/blog/" aria-label="%s 1">1</a>' % (c, word), html)
             for o in build_site.CODES:
                 self.assertIn('hreflang="%s" href="https://draft.ipe.rest/%s/blog/page/2/"' % (o, o), html)
             self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/en/blog/page/2/"', html)
             page1 = files["%s/blog/index.html" % c]
-            self.assertNotIn(loc[c]["blog_page"].format(n=2), re.search(r"<title>(.*?)</title>", page1).group(1))
-            self.assertIn('rel="next" href="/%s/blog/page/2/"' % c, page1)
+            self.assertNotIn(" %s 2" % word, re.search(r"<title>(.*?)</title>", page1).group(1))
+            self.assertIn('<a class="pg-step" rel="next" href="/%s/blog/page/2/">' % c, page1)
+            self.assertIn('<span class="pg-num" aria-current="page">1</span>', page1)
+            self.assertIn('<nav class="pager" aria-label="%s">' % PAGER_LABEL[c], page1)
+            self.assertIn('<nav class="pager" aria-label="%s">' % PAGER_LABEL[c], html)
 
     def test_sitemap_has_page_two_for_every_language(self):
         root = self.make_root(self.N)
@@ -451,8 +464,8 @@ class NumberingAndPaging(unittest.TestCase):
             self.assertIn("No. 1</span>", files["%s/blog/page/2/index.html" % c])
             oldest = files["%s/blog/post-%02d/index.html" % (c, self.N)]
             newest = files["%s/blog/post-01/index.html" % c]
-            self.assertIn('<span class="postno">No. 1</span>', oldest)
-            self.assertIn('<span class="postno">No. %d</span>' % self.N, newest)  # draft did not take a number
+            self.assertIn('<span class="j-no">No. 1</span>', oldest)
+            self.assertIn('<span class="j-no">No. %d</span>' % self.N, newest)  # draft did not take a number
             self.assertNotIn("No. %d</span>" % (self.N + 1), files["%s/blog/index.html" % c])
             self.assertNotIn("unpublished-draft", files["%s/blog/index.html" % c])
 
@@ -460,7 +473,7 @@ class NumberingAndPaging(unittest.TestCase):
         files = self.build(self.N)
         for c in build_site.CODES:
             home = files["index.html" if c == "en" else "%s/index.html" % c]
-            self.assertEqual(re.findall(r'class="postno">(No\. \d+)<', home), ["No. 12", "No. 11", "No. 10"])
+            self.assertEqual(re.findall(r'class="j-no">(No\. \d+)<', home), ["No. 12", "No. 11", "No. 10"])
 
     def test_earlier_numbers_do_not_change_when_a_newer_post_arrives(self):
         posts = build_site.load_posts(self.make_root(6))[0]
@@ -468,6 +481,13 @@ class NumberingAndPaging(unittest.TestCase):
         after = build_site.post_numbers(posts)
         self.assertEqual({k: after[k] for k in before}, before)
         self.assertEqual(sorted(after.values()), list(range(1, 7)))
+
+    def test_reserved_slug_page_is_a_build_error(self):
+        root = self.make_root(2)
+        write_post(root, "page")
+        with self.assertRaises(build_site.BuildError) as cm:
+            build_site.build(root)
+        self.assertIn("reserved", str(cm.exception))
 
     def test_few_posts_make_no_second_page(self):
         files = self.build(5)

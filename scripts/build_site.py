@@ -385,7 +385,7 @@ def post_numbers(posts):
 
 
 def no_label(n):
-    return '<span class="postno">No. %d</span>' % n
+    return '<span class="j-no">No. %d</span>' % n
 
 
 def post_url(lang, slug):
@@ -436,6 +436,8 @@ def parse_post_file(path):
         raise ValueError("missing front matter: " + ", ".join(missing))
     if not SLUG_RE.match(meta["slug"]):
         raise ValueError("slug must match [a-z0-9-]+: %r" % meta["slug"])
+    if meta["slug"] == "page":
+        raise ValueError("slug 'page' is reserved (list paging lives at /blog/page/N/)")
     for k in ("date", "updated", "published"):
         if meta.get(k):
             try:
@@ -769,9 +771,10 @@ def render_list(root, locales, version, posts, lang, page=1, numbers=None):
     url = blog_list_url(lang, page)
     title = tr(locales, lang, "blog_title")
     page_label = tr(locales, lang, "blog_page").format(n=page)
+    desc = tr(locales, lang, "blog_sub")
     if page > 1:
         title = "%s · %s" % (title, page_label)
-    desc = tr(locales, lang, "blog_sub")
+        desc = "%s · %s" % (desc, page_label)
     items = "\n".join(f"""      <li>
         <p class="comment">// {no_label(numbers[p['slug']])} · {time_tag(p['date'])}</p>
         <h2><a href="/{lang}/blog/{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h2>
@@ -791,15 +794,16 @@ def render_list(root, locales, version, posts, lang, page=1, numbers=None):
     if pages_total > 1:
         def rel(n):
             return blog_list_url(lang, n).replace(SITE, "")
-        newer = '<a class="pager-newer" rel="prev" href="%s">&larr; %s</a>' % (rel(page - 1), esc(tr(locales, lang, "blog_newer"))) if page > 1 else ""
-        older = '<a class="pager-older" rel="next" href="%s">%s &rarr;</a>' % (rel(page + 1), esc(tr(locales, lang, "blog_older"))) if page < pages_total else ""
-        nums = " ".join('<a href="%s" aria-label="%s"%s>%d</a>' % (rel(n), esc(tr(locales, lang, "blog_page").format(n=n)), ' aria-current="page"' if n == page else "", n)
+        prev = '<a class="pg-step" rel="prev" href="%s">&larr; %s</a>' % (rel(page - 1), esc(tr(locales, lang, "blog_newer"))) if page > 1 else ""
+        nxt = '<a class="pg-step" rel="next" href="%s">%s &rarr;</a>' % (rel(page + 1), esc(tr(locales, lang, "blog_older"))) if page < pages_total else ""
+        nums = " ".join('<span class="pg-num" aria-current="page">%d</span>' % n if n == page else
+                        '<a class="pg-num" href="%s" aria-label="%s">%d</a>' % (rel(n), esc(tr(locales, lang, "blog_page").format(n=n)), n)
                         for n in range(1, pages_total + 1))
         pager = f"""
   <nav class="pager" aria-label="{esc(tr(locales, lang, 'blog_pages'))}">
-    {newer}
-    <span class="pager-nums">{nums}</span>
-    {older}
+    {prev}
+    <span class="pg-nums">{nums}</span>
+    {nxt}
   </nav>"""
     main = f"""<main id="main" class="post-wrap">
   <header class="blog-head">
