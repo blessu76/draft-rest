@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Mon, 26 Oct 2026 17:15:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Eine Geschichte in „heute ist nichts passiert“ finden</title>
+      <link>https://draft.ipe.rest/de/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Auch ein Tag ohne Besonderes birgt eine Geschichte. Drei Fragen, mit denen du aus einem gewöhnlichen Tag Erzählenswertes fischst, mit Beispiel.</description>
+    </item>
     <item>
       <title>Mit einem Nachklang enden statt mit einer Moral</title>
       <link>https://draft.ipe.rest/de/blog/ending-without-a-moral/</link>

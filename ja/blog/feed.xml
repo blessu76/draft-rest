@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 26 Oct 2026 17:15:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>「今日は何もなかった」から物語を見つける方法</title>
+      <link>https://draft.ipe.rest/ja/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>特別なことがなかった一日にも、物語はあります。ありふれた日から話す材料をすくい上げる三つの質問を、例とともに紹介します。</description>
+    </item>
     <item>
       <title>教訓ではなく余韻で終わらせる方法</title>
       <link>https://draft.ipe.rest/ja/blog/ending-without-a-moral/</link>

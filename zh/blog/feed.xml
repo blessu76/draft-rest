@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Mon, 26 Oct 2026 17:15:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>从&quot;今天没什么事&quot;里找到故事</title>
+      <link>https://draft.ipe.rest/zh/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>没有特别事情的一天,同样藏着故事。用三个问题,从平凡的日子里捞出值得讲的东西,并附例子。</description>
+    </item>
     <item>
       <title>用余韵代替说教来收尾</title>
       <link>https://draft.ipe.rest/zh/blog/ending-without-a-moral/</link>

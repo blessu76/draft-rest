@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Mon, 26 Oct 2026 17:15:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Cómo encontrar una historia en &quot;hoy no pasó nada&quot;</title>
+      <link>https://draft.ipe.rest/es/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Incluso un día sin nada especial guarda una historia. Tres preguntas para pescar algo que merezca contarse en un día corriente, con un ejemplo.</description>
+    </item>
     <item>
       <title>Cómo terminar con un eco en lugar de una moraleja</title>
       <link>https://draft.ipe.rest/es/blog/ending-without-a-moral/</link>

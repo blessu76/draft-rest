@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Mon, 26 Oct 2026 17:15:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Как найти историю в «сегодня ничего не произошло»</title>
+      <link>https://draft.ipe.rest/ru/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Даже в день без ничего особенного есть история. Три вопроса, которые помогают выудить из обычного дня то, о чём стоит рассказать, с примером.</description>
+    </item>
     <item>
       <title>Как закончить эхом, а не моралью</title>
       <link>https://draft.ipe.rest/ru/blog/ending-without-a-moral/</link>
