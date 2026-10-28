@@ -455,6 +455,24 @@ def parse_post_file(path):
     return meta
 
 
+DESC_MAX = 160  # meta / og / JSON-LD description (every language)
+KO_BODY_MIN, KO_BODY_MAX = 1100, 1900  # allowed ko body length (target 1,200~1,800)
+
+
+def length_problems(name, langs):
+    """Length rules every post must meet before it is published. Shared with scripts/check_queue.py, so the queue check
+    and the build can never disagree. langs: {lang: parsed meta}. Returns a list of error strings."""
+    errors = []
+    for c, m in langs.items():
+        if len(m["description"]) > DESC_MAX:
+            errors.append("%s/%s: description is %d chars (max %d: it is the meta, og and JSON-LD description)" % (name, c, len(m["description"]), DESC_MAX))
+    if "ko" in langs:
+        ko_len = len(langs["ko"]["_body"].strip())
+        if not KO_BODY_MIN <= ko_len <= KO_BODY_MAX:
+            errors.append("%s: ko body is %d chars (target 1,200~1,800; allowed %s~%s)" % (name, ko_len, format(KO_BODY_MIN, ","), format(KO_BODY_MAX, ",")))
+    return errors
+
+
 def load_posts(root):
     """-> (posts, errors). posts: [{slug, date, updated, draft, langs: {lang: meta}}] newest first, drafts skipped.
     Layout: posts/<slug>/ko.md (canonical) + en.md + translations/<lang>.md  — every published post needs all 11 languages."""
@@ -483,9 +501,7 @@ def load_posts(root):
             errors.append("%s: `draft` differs between languages" % d.name)
         if all(m["draft"] for m in langs.values()):
             continue
-        for c, m in langs.items():
-            if len(m["description"]) > DESC_MAX:
-                errors.append("%s/%s: description is %d chars (max %d: it is the meta, og and JSON-LD description)" % (d.name, c, len(m["description"]), DESC_MAX))
+        errors.extend(length_problems(d.name, langs))
         missing = [c for c in CODES if c not in langs]
         if missing:
             errors.append("%s: missing languages: %s" % (d.name, ", ".join(missing)))
@@ -503,10 +519,6 @@ def load_posts(root):
                     errors.append("%s: `published` %s is in the future (stamp it at publish time, not before)" % (d.name, pub))
             except ValueError:
                 pass  # reported per file by parse_post_file
-        if "ko" in langs:
-            ko_len = len(langs["ko"]["_body"].strip())
-            if not 1100 <= ko_len <= 1900:
-                errors.append("%s: ko body is %d chars (target 1,200~1,800; allowed 1,100~1,900)" % (d.name, ko_len))
         any_m = next(iter(langs.values()))
         if "_date" not in any_m:
             continue
@@ -715,7 +727,6 @@ def page_shell(root, locales, lang, version, *, url, title, desc, cluster, ld, m
 
 
 TITLE_MAX = 60
-DESC_MAX = 160
 
 
 def post_title(title):
