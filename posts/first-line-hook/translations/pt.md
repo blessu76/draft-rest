@@ -3,7 +3,7 @@ title: Uma primeira linha pode salvar uma história: como escrever um gancho
 description: Textos que abrem com explicação são difíceis de terminar. Três formas de escrever uma primeira linha que começa no meio de uma cena, com exemplos.
 date: 2026-10-25
 slug: first-line-hook
-draft: true
+published: 2026-10-25T16:53:00+09:00
 ---
 
 Quem está rolando a tela decide na primeira linha se continua lendo. Por isso a primeira frase de uma história, o gancho, importa. Ela não precisa ser grandiosa. Só de entrar direto no meio de uma cena, o texto já muda.

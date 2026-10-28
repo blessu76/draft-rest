@@ -3,7 +3,7 @@ title: Exercice de 30 secondes : ne choisissez qu'une seule scène d'aujourd'hui
 description: Si raconter toute votre journée vous bloque, choisissez une seule scène. Un exercice simple pour sortir en trente secondes la matière d'une histoire.
 date: 2026-10-24
 slug: thirty-second-practice
-draft: true
+published: 2026-10-24T16:00:00+09:00
 ---
 
 On vous a déjà demandé « comment était ta journée ? » et vous n'avez su répondre que « bof » ? Quand on essaie d'expliquer une journée entière, on ne sait pas par où commencer. Une histoire ne commence pas par une journée. Elle commence par une scène.

@@ -1,6 +1,6 @@
 {
   "meta_title": "draft() — Sag es. Bekomm deine Geschichte.",
-  "meta_desc": "Eine private KI, die deine unordentlich gesprochenen Worte in eine fertige, teilbare Geschichte verwandelt. Du sprichst — draft() formt daraus etwas, das Leute wirklich lesen. Deine Worte bleiben deine: nie verkauft.",
+  "meta_desc": "Eine private KI, die deine unordentlich gesprochenen Worte in eine fertige, teilbare Geschichte verwandelt. Du sprichst — draft() formt daraus etwas, das Leute wirklich lesen. Deine Worte bleiben deine: nie verkauft, nie zum Trainieren verwendet.",
   "hero_comment": "// was war heute los?",
   "hero_h1": "Sag es. Bekomm deine Geschichte.",
   "hero_sub": "Du sprichst. draft() formt daraus etwas, das Leute wirklich lesen.",
@@ -39,8 +39,8 @@
   "cr_fmt3": "YouTube-Skript",
   "cr_comment2": "// dieselbe Geschichte, anderer Raum",
   "priv_h2": "Deine rohen Gedanken bleiben privat.",
-  "priv_lede": "Die unordentliche Version, die ehrliche Version, die Version um 23 Uhr — sie bleiben deine. Du entscheidest, was behalten und was geteilt wird; nichts wird je verkauft.",
-  "priv1": "Deine Worte sind deine — nie verkauft.",
+  "priv_lede": "Die unordentliche Version, die ehrliche Version, die Version um 23 Uhr — sie bleiben deine. Du entscheidest, was behalten und was geteilt wird; nichts wird je verkauft oder zum Trainieren verwendet.",
+  "priv1": "Deine Worte sind deine — nie verkauft, nie zum Trainieren verwendet.",
   "priv2": "Du entscheidest, was behalten und was gelöscht wird.",
   "priv3": "Nur die fertige Geschichte wird geteilt — wenn du es wählst.",
   "price_comment": "// preise",
@@ -82,5 +82,14 @@
   "view_in": "Auf Deutsch ansehen",
   "blog_copy": "Kopieren",
   "blog_copied": "Kopiert",
-  "close": "Schließen"
+  "close": "Schließen",
+  "ld_section": "Schreibratgeber",
+  "ld_topic": "Geschichtenerzählen",
+  "ld_keywords": "Storytelling, Schreibtipps, Sprache zu Text, KI-Schreiben, draft()",
+  "meta_desc_short": "Eine private KI, die gesprochene Worte in eine fertige, teilbare Geschichte verwandelt. Du sprichst, draft() formt sie. Deine Worte bleiben deine: nie verkauft.",
+  "blog_title": "Blog — draft(): Notizen zum Schreiben der ersten Zeile",
+  "blog_page": "Seite {n}",
+  "blog_newer": "Neuere Beiträge",
+  "blog_older": "Ältere Beiträge",
+  "blog_pages": "Seite"
 }

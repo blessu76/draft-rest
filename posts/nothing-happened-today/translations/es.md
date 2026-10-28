@@ -3,7 +3,7 @@ title: Cómo encontrar una historia en "hoy no pasó nada"
 description: Incluso un día sin nada especial guarda una historia. Tres preguntas para pescar algo que merezca contarse en un día corriente, con un ejemplo.
 date: 2026-10-27
 slug: nothing-happened-today
-draft: true
+published: 2026-10-27T16:00:00+09:00
 ---
 
 "Hoy no pasó nada." Los días en que más sale esa frase son los días con más historias escondidas. Un día sin gran acontecimiento no es un día sin historia. Solo significa que el ojo para las cosas pequeñas todavía no se ha encendido.

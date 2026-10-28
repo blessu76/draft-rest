@@ -4,7 +4,7 @@
     python3 scripts/stage_site.py [--root DIR] [--out DIR]
 
 Whitelist: root files (index.html, 404.html, CNAME, .nojekyll, robots.txt, sitemap.xml, llms.txt, og-image.png,
-the IndexNow key file <32 hex>.txt), assets/, the language folders (en ko ja zh es pt id ru vi fr de) and the English content-page folders (faq about privacy).
+the IndexNow key file <32 hex>.txt), assets/, the language folders (en ko ja zh es pt id ru vi fr de) and the English content-page folders (about privacy).
 Everything else (scripts/ tests/ posts/ locales/ src/ .github/ manuscripts, STATUS.md, ...) stays out.
 Standard library only.
 """
@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_site import CODES, PAGES  # noqa: E402
 
-ROOT_FILES = ("index.html", "404.html", "CNAME", ".nojekyll", "robots.txt", "sitemap.xml", "llms.txt", "og-image.png")
+ROOT_FILES = ("index.html", "404.html", "CNAME", ".nojekyll", "robots.txt", "sitemap.xml", "llms.txt", "og-image.png", "apple-touch-icon.png", "favicon.ico")
 KEY_RE = re.compile(r"^[0-9a-f]{32}\.txt$")
 # inside language folders only generated site files are public (never a stray .md)
 PUBLIC_EXT = {".html", ".xml"}
@@ -30,7 +30,7 @@ def public_files(root):
     out += [Path(p.name) for p in root.iterdir() if p.is_file() and KEY_RE.match(p.name)]
     if (root / "assets").is_dir():
         out += [f.relative_to(root) for f in sorted((root / "assets").rglob("*")) if f.is_file()]
-    for c in list(CODES) + list(PAGES):  # PAGES = the English faq/about/privacy folders at the root
+    for c in list(CODES) + list(PAGES):  # PAGES = the English about/privacy folders at the root
         d = root / c
         if d.is_dir():
             out += [f.relative_to(root) for f in sorted(d.rglob("*")) if f.is_file() and f.suffix in PUBLIC_EXT]

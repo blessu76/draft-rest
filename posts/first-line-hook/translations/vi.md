@@ -3,7 +3,7 @@ title: Một câu mở đầu có thể cứu cả câu chuyện: cách viết "
 description: Những bài viết mở đầu bằng giải thích rất khó đọc đến cuối. Ba cách viết câu đầu tiên bắt đầu ngay giữa một cảnh, kèm ví dụ.
 date: 2026-10-25
 slug: first-line-hook
-draft: true
+published: 2026-10-25T16:53:00+09:00
 ---
 
 Người đang lướt màn hình quyết định có đọc tiếp hay không ngay ở dòng đầu tiên. Vì vậy câu mở đầu của một câu chuyện, tức "móc câu", rất quan trọng. Nó không cần hoành tráng. Chỉ cần nhảy thẳng vào giữa một cảnh, bài viết đã khác đi.

@@ -1,59 +1,9 @@
 {
-  "nav_faq": "FAQ",
   "nav_about": "Über",
   "updated_label": "Zuletzt aktualisiert",
   "updated": "2026-10-23",
-  "faq": {
-    "title": "FAQ — draft()",
-    "desc": "Antworten zu draft(): was es ist, wer es macht, wie es funktioniert, Datenschutz, Preis und Veröffentlichungsstand.",
-    "comment": "// Fragen, beantwortet",
-    "h1": "Häufige Fragen",
-    "items": [
-      [
-        "Was ist draft()?",
-        "draft() ist eine private KI-App, die das, was du laut sagst, in eine fertige, teilbare Geschichte verwandelt. Du sprichst etwa dreißig Sekunden, draft() stellt zwei oder drei sanfte Fragen und formt deine Worte zu einer Geschichte: Aufhänger, Steigerung, Höhepunkt, Rückblick und Schluss."
-      ],
-      [
-        "Wer macht draft()?",
-        "draft() ist eine App von ipe Studio, dem Studio hinter ipe(). Die Dachseite ist [ipe.rest](https://ipe.rest); diese Seite, draft.ipe.rest, ist die offizielle Seite von draft()."
-      ],
-      [
-        "Ist draft() dasselbe wie andere Apps namens Draft?",
-        "Nein. Mehrere Apps und Tools tragen den Namen „Draft“. draft() — mit Klammern geschrieben — ist eine Erzähl-App, die bei der Stimme beginnt, von ipe Studio. Wie man sie unterscheidet, steht auf der Seite [Über](/about/)."
-      ],
-      [
-        "Wie funktioniert es?",
-        "Drei Runden. Sprich einfach — Abschweifen und halbe Sätze sind in Ordnung. draft() stellt ein paar Fragen, um den wahren Moment zu finden. Dann bekommst du eine fertige Geschichte, vom Aufhänger bis zum Schluss, bereit zum Posten."
-      ],
-      [
-        "Auf welchen Geräten läuft es?",
-        "draft() ist eine iOS- und Android-App."
-      ],
-      [
-        "Gibt es draft() schon?",
-        "draft() wird noch für iOS und Android vorbereitet. Die Veröffentlichung im App Store kündigen wir auf dieser Seite an. Bis dahin betrachte die App bitte als noch nicht veröffentlicht."
-      ],
-      [
-        "Was wird es kosten?",
-        "Ein Monatsabo (angezeigt mit 2,99 $ pro Monat) bietet unbegrenzte Geschichten. Der Preis wird zum Start bestätigt; endgültige Preise und Bedingungen werden im App Store angezeigt. Die 3-tägige kostenlose Testphase setzt ein hinterlegtes Zahlungsmittel voraus und geht nach Ende automatisch in ein kostenpflichtiges Abo über. {free_note}"
-      ],
-      [
-        "Welche Sprachen werden unterstützt?",
-        "Diese Website gibt es in 11 Sprachen: English, 한국어, 日本語, 中文, Español, Português, Bahasa Indonesia, Русский, Tiếng Việt, Français, Deutsch. Welche Sprachen die App unterstützt, wird zum Start bestätigt."
-      ],
-      [
-        "Bleiben meine Worte privat?",
-        "Deine Worte gehören dir — nie verkauft. Ob sie zum Training genutzt werden, wird vor dem Start festgelegt und auf dieser Seite veröffentlicht. Du entscheidest, was behalten und was gelöscht wird, und nur die fertige Geschichte wird geteilt, wenn du es willst. Details stehen auf der Seite [Datenschutz](/privacy/)."
-      ],
-      [
-        "Wie bekomme ich Hilfe?",
-        "Einen Support-Kontakt veröffentlichen wir auf dieser Seite, sobald die App startet. Bis dahin sind die Seiten dieser Website die Anlaufstelle für Antworten."
-      ]
-    ],
-    "free_note": "Die Startseite zeigt eine kostenlose Testmöglichkeit — drei fertige Geschichten, ohne Konto. Nach der Testphase gibt es keine kostenlosen Funktionen."
-  },
   "about": {
-    "title": "Über draft() — und wie es sich von anderen Draft-Apps unterscheidet",
+    "title": "Über draft() — anders als andere Draft-Apps",
     "desc": "draft() von ipe Studio ist eine Erzähl-App, die bei der Stimme beginnt. Wie sie sich von anderen Apps mit dem Namen Draft unterscheidet.",
     "comment": "// nicht das andere Draft",
     "h1": "draft() von ipe Studio",
@@ -70,13 +20,7 @@
           "Offizielle Website: draft.ipe.rest — diese Seite.",
           "Hersteller: ipe Studio — [ipe.rest](https://ipe.rest).",
           "Der Name wird draft() geschrieben, mit Klammern, und trägt den Zusatz „an ipe studio app“.",
-          "Plattform: iOS und Android, in Vorbereitung."
-        ]
-      },
-      {
-        "h": "Mehr erfahren",
-        "p": [
-          "Lies die [FAQ](/faq/) oder die Seite [Datenschutz](/privacy/)."
+          "Plattform: iOS, in Vorbereitung."
         ]
       }
     ]

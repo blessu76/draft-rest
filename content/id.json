@@ -1,57 +1,7 @@
 {
-  "nav_faq": "FAQ",
   "nav_about": "Tentang",
   "updated_label": "Terakhir diperbarui",
   "updated": "2026-10-23",
-  "faq": {
-    "title": "FAQ — draft()",
-    "desc": "Jawaban tentang draft(): apa itu, siapa pembuatnya, cara kerja, privasi, harga, dan status rilis.",
-    "comment": "// pertanyaan, dijawab",
-    "h1": "Pertanyaan yang sering diajukan",
-    "items": [
-      [
-        "Apa itu draft()?",
-        "draft() adalah aplikasi AI privat yang mengubah ucapanmu menjadi cerita utuh yang siap dibagikan. Kamu bicara sekitar tiga puluh detik, draft() mengajukan dua atau tiga pertanyaan lembut, lalu merangkai kata-katamu menjadi cerita: pembuka, alur naik, puncak, renungan, dan penutup."
-      ],
-      [
-        "Siapa yang membuat draft()?",
-        "draft() adalah aplikasi dari ipe Studio, studio di balik ipe(). Situs induknya [ipe.rest](https://ipe.rest); situs ini, draft.ipe.rest, adalah situs resmi draft()."
-      ],
-      [
-        "Apakah draft() sama dengan aplikasi lain bernama Draft?",
-        "Tidak. Beberapa aplikasi dan alat memakai nama “Draft”. draft() — ditulis dengan tanda kurung — adalah aplikasi bercerita yang dimulai dari suara, buatan ipe Studio. Lihat [Tentang](/about/) untuk cara membedakannya."
-      ],
-      [
-        "Bagaimana cara kerjanya?",
-        "Tiga giliran. Cukup bicara — melantur atau kalimat terputus tidak masalah. draft() mengajukan beberapa pertanyaan untuk menemukan momen yang sebenarnya. Lalu kamu mendapat cerita utuh, dari pembuka sampai penutup, siap diposting."
-      ],
-      [
-        "Berjalan di perangkat apa?",
-        "draft() adalah aplikasi iOS dan Android."
-      ],
-      [
-        "Apakah sudah tersedia sekarang?",
-        "draft() masih dalam persiapan untuk iOS dan Android. Rilis di App Store akan kami umumkan di situs ini. Sampai saat itu, anggap aplikasinya belum dirilis."
-      ],
-      [
-        "Berapa biayanya?",
-        "Langganan bulanan (tertera $2,99 per bulan) memberi cerita tanpa batas. Harga dikonfirmasi saat rilis; harga dan ketentuan final akan ditampilkan di App Store. Uji coba gratis 3 hari mengharuskan Anda mendaftarkan metode pembayaran, dan saat uji coba berakhir akan otomatis beralih menjadi langganan berbayar. {free_note}"
-      ],
-      [
-        "Bahasa apa yang didukung?",
-        "Situs web ini tersedia dalam 11 bahasa: English, 한국어, 日本語, 中文, Español, Português, Bahasa Indonesia, Русский, Tiếng Việt, Français, Deutsch. Bahasa yang didukung aplikasi akan dipastikan saat rilis."
-      ],
-      [
-        "Apakah kata-kataku bersifat privat?",
-        "Kata-katamu milikmu — tidak pernah dijual. Apakah dipakai untuk melatih akan dipastikan sebelum rilis dan dipublikasikan di situs ini. Kamu yang menentukan apa yang disimpan dan apa yang dihapus, dan hanya cerita yang sudah jadi yang dibagikan, saat kamu memilihnya. Rinciannya ada di halaman [Privasi](/privacy/)."
-      ],
-      [
-        "Bagaimana mendapat bantuan?",
-        "Kontak dukungan akan kami cantumkan di halaman ini saat aplikasi dirilis. Sampai saat itu, halaman-halaman di situs ini adalah tempat mencari jawaban."
-      ]
-    ],
-    "free_note": "Halaman utama menampilkan cara mencoba gratis — tiga cerita utuh, tanpa akun. Setelah uji coba berakhir tidak ada fitur gratis."
-  },
   "about": {
     "title": "Tentang draft() — dan bedanya dengan aplikasi Draft lain",
     "desc": "draft() dari ipe Studio adalah aplikasi bercerita yang dimulai dari suara. Apa bedanya dengan aplikasi lain yang memakai nama Draft.",
@@ -70,13 +20,7 @@
           "Situs resmi: draft.ipe.rest — situs ini.",
           "Pembuat: ipe Studio — [ipe.rest](https://ipe.rest).",
           "Namanya ditulis draft(), dengan tanda kurung, dan bertanda “an ipe studio app”.",
-          "Platform: iOS dan Android, dalam persiapan."
-        ]
-      },
-      {
-        "h": "Pelajari lebih lanjut",
-        "p": [
-          "Baca [FAQ](/faq/) atau halaman [Privasi](/privacy/)."
+          "Platform: iOS, dalam persiapan."
         ]
       }
     ]

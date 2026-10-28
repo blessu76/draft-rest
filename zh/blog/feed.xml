@@ -7,12 +7,40 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Fri, 23 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>从&quot;今天没什么事&quot;里找到故事</title>
+      <link>https://draft.ipe.rest/zh/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>没有特别事情的一天,同样藏着故事。用三个问题,从平凡的日子里捞出值得讲的东西,并附例子。</description>
+    </item>
+    <item>
+      <title>用余韵代替说教来收尾</title>
+      <link>https://draft.ipe.rest/zh/blog/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/ending-without-a-moral/</guid>
+      <pubDate>Mon, 26 Oct 2026 17:15:00 +0900</pubDate>
+      <description>忍不住想在最后补一句&quot;所以我懂得了……有多珍贵&quot;时,怎么办?用例句整理了三种删去道理、用场景收尾的方法。</description>
+    </item>
+    <item>
+      <title>第一句话能救活一个故事:钩子怎么写</title>
+      <link>https://draft.ipe.rest/zh/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>以说明开头的文字很难让人读到最后。这里用例句整理了三种方法,教你写出从场景正中间开始的第一句话——也就是钩子。</description>
+    </item>
+    <item>
+      <title>30秒开口练习:只挑今天的一个场景</title>
+      <link>https://draft.ipe.rest/zh/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>想把一整天都说清楚反而卡住?那就只挑一个场景。这是一个用三十秒把故事素材说出来的简单练习。</description>
+    </item>
     <item>
       <title>对着空白的配文框发呆？先说出来，别急着写</title>
       <link>https://draft.ipe.rest/zh/blog/blank-caption-box/</link>
       <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/blank-caption-box/</guid>
-      <pubDate>Fri, 23 Oct 2026 16:00:00 +0900</pubDate>
+      <pubDate>Fri, 23 Oct 2026 17:30:00 +0900</pubDate>
       <description>明明过了充实的一天，配文框前却一个字也写不出来。试试先开口说，再让几个问题帮你找到真正的那个瞬间。</description>
     </item>
   </channel>

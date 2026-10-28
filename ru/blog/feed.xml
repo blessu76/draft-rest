@@ -7,12 +7,40 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Fri, 23 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Как найти историю в «сегодня ничего не произошло»</title>
+      <link>https://draft.ipe.rest/ru/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Даже в день без ничего особенного есть история. Три вопроса, которые помогают выудить из обычного дня то, о чём стоит рассказать, с примером.</description>
+    </item>
+    <item>
+      <title>Как закончить эхом, а не моралью</title>
+      <link>https://draft.ipe.rest/ru/blog/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/ending-without-a-moral/</guid>
+      <pubDate>Mon, 26 Oct 2026 17:15:00 +0900</pubDate>
+      <description>Когда тянет закончить словами «и тогда я понял, как это ценно». Три способа убрать поучение и завершить сценой, с примерами.</description>
+    </item>
+    <item>
+      <title>Первая фраза может спасти историю: как написать зацепку</title>
+      <link>https://draft.ipe.rest/ru/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>Тексты, которые начинаются с объяснений, трудно дочитать. Три способа написать первую фразу, начинающуюся прямо посреди сцены, с примерами.</description>
+    </item>
+    <item>
+      <title>30 секунд вслух: выберите всего одну сцену за сегодня</title>
+      <link>https://draft.ipe.rest/ru/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Если попытка рассказать весь день вгоняет в ступор, выберите одну сцену. Простое упражнение, чтобы за тридцать секунд достать материал для истории.</description>
+    </item>
     <item>
       <title>Застряли перед пустым полем подписи? Скажите это вслух</title>
       <link>https://draft.ipe.rest/ru/blog/blank-caption-box/</link>
       <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/blank-caption-box/</guid>
-      <pubDate>Fri, 23 Oct 2026 16:00:00 +0900</pubDate>
+      <pubDate>Fri, 23 Oct 2026 17:30:00 +0900</pubDate>
       <description>День был полным, а поле подписи молчит. Как достать историю: сначала проговорить, а потом позволить нескольким вопросам найти настоящий момент.</description>
     </item>
   </channel>

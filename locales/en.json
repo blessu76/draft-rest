@@ -1,6 +1,6 @@
 {
   "meta_title": "draft() — Say it. Get your story.",
-  "meta_desc": "A private AI that turns your messy spoken words into a finished, shareable story. You talk — draft() shapes it into something people actually read. Your words stay yours: never sold.",
+  "meta_desc": "A private AI that turns your messy spoken words into a finished, shareable story. You talk — draft() shapes it into something people actually read. Your words stay yours: never sold, never used to train.",
   "hero_comment": "// what happened today?",
   "hero_h1": "Say it. Get your story.",
   "hero_sub": "You talk. draft() shapes it into something people actually read.",
@@ -39,8 +39,8 @@
   "cr_fmt3": "YouTube script",
   "cr_comment2": "// same story, different room",
   "priv_h2": "Your rough thoughts stay private.",
-  "priv_lede": "The messy version, the honest version, the 11pm version — they stay yours. You decide what's kept and what's shared; nothing is ever sold.",
-  "priv1": "Your words are yours — never sold.",
+  "priv_lede": "The messy version, the honest version, the 11pm version — they stay yours. You decide what's kept and what's shared; nothing is ever sold or used to train.",
+  "priv1": "Your words are yours — never sold, never used to train.",
   "priv2": "You decide what's kept, and what's deleted.",
   "priv3": "Only the finished story is shared — when you choose to.",
   "price_comment": "// pricing",
@@ -82,5 +82,14 @@
   "view_in": "View in English",
   "blog_copy": "Copy",
   "blog_copied": "Copied",
-  "close": "Close"
+  "close": "Close",
+  "ld_section": "Writing guides",
+  "ld_topic": "Storytelling",
+  "ld_keywords": "storytelling, writing tips, voice to text, AI writing, draft()",
+  "meta_desc_short": "A private AI that turns your messy spoken words into a finished, shareable story. You talk — draft() shapes it. Your words stay yours: never sold.",
+  "blog_title": "Blog — draft(): notes on writing your first line",
+  "blog_page": "Page {n}",
+  "blog_newer": "Newer posts",
+  "blog_older": "Older posts",
+  "blog_pages": "Page"
 }

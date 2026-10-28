@@ -3,7 +3,7 @@ title: Latihan bicara 30 detik: pilih satu adegan dari hari ini
 description: Kalau menjelaskan seluruh harimu bikin buntu, pilih satu adegan saja. Latihan sederhana untuk mengeluarkan bahan cerita dalam tiga puluh detik.
 date: 2026-10-24
 slug: thirty-second-practice
-draft: true
+published: 2026-10-24T16:00:00+09:00
 ---
 
 Pernahkah ditanya "gimana harimu?" dan yang keluar hanya "biasa saja"? Kalau mencoba menjelaskan satu hari penuh, kamu tak tahu harus mulai dari mana. Cerita tidak dimulai dari sehari. Cerita dimulai dari satu adegan.

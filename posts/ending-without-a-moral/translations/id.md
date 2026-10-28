@@ -1,9 +1,9 @@
 ---
 title: Cara menutup dengan gema, bukan pelajaran moral
 description: Saat tergoda menutup dengan "dan saat itulah aku sadar betapa berharganya". Tiga cara membuang pelajaran dan menutup dengan adegan, lengkap dengan contoh.
-date: 2026-10-26
 slug: ending-without-a-moral
-draft: true
+date: 2026-10-26
+published: 2026-10-26T17:15:00+09:00
 ---
 
 Banyak cerita bagus rusak di baris terakhirnya, misalnya "dan aku belajar betapa berharganya kebaikan kecil". Memang benar, tetapi kalimat itu merampas bagian yang seharusnya dirasakan pembaca sendiri.

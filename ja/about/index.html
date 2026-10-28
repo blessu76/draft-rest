@@ -9,6 +9,7 @@
 <meta name="author" content="ipe Studio">
 <meta name="theme-color" content="#FAF7F0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FAF7F0'/%3E%3Ctext x='14' y='22' font-family='ui-monospace,Menlo,monospace' font-size='16' font-weight='500' fill='%231B1F27' text-anchor='middle'%3Ed()%3C/text%3E%3Crect x='23' y='10' width='2.4' height='12' fill='%235F7D5F'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://draft.ipe.rest/ja/about/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/">
@@ -58,42 +59,41 @@
   "description": "ipe Studioのdraft()は、話すことから始める物語アプリです。同じ「Draft」という名前の他のアプリとの違いをご案内します。",
   "mainEntity": {
     "@type": "MobileApplication",
+    "@id": "https://draft.ipe.rest/#app",
     "name": "draft()",
     "alternateName": "draft",
     "url": "https://draft.ipe.rest/",
-    "operatingSystem": "iOS, Android",
+    "operatingSystem": "iOS",
     "applicationCategory": "ProductivityApplication",
     "applicationSubCategory": "Writing / Storytelling",
-    "description": "とりとめのない話し言葉を、完成された共有できる物語に変えるプライベートAI。あなたは話すだけ — draft()が、人が実際に読む文章へと仕立てます。あなたの言葉はあなたのもの：売らない。",
+    "description": "とりとめのない話し言葉を、完成された共有できる物語に変えるプライベートAI。あなたは話すだけ — draft()が、人が実際に読む文章へと仕立てます。あなたの言葉はあなたのもの：売らない、学習にも使わない。",
     "inLanguage": "ja",
-    "image": "https://draft.ipe.rest/og-image.png",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://draft.ipe.rest/og-image.png",
+      "width": 1200,
+      "height": 630
+    },
     "disambiguatingDescription": "「Draft」という名前を使うアプリやツールは数多くあります。このサイトのdraft()は別の製品で、ipe Studioが作った、話すことから始める物語アプリです。30秒ほど話し、やさしい質問2〜3個に答えると、つかみ、展開、山場、振り返り、締めくくりを備えた物語が仕上がります。あなたの言葉は、ずっとあなたのものです。",
     "author": {
-      "@type": "Organization",
-      "name": "ipe Studio",
-      "url": "https://ipe.rest"
+      "@id": "https://ipe.rest/#organization"
     },
     "publisher": {
-      "@type": "Organization",
-      "name": "ipe Studio",
-      "url": "https://ipe.rest"
+      "@id": "https://ipe.rest/#organization"
     }
   },
   "publisher": {
     "@type": "Organization",
-    "name": "ipe Studio",
-    "url": "https://ipe.rest"
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png",
+      "width": 512,
+      "height": 512
+    }
   }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@type": "Organization",
-  "name": "ipe Studio",
-  "url": "https://ipe.rest",
-  "@context": "https://schema.org",
-  "slogan": "when the process finally rests",
-  "brand": "ipe()"
 }
 </script>
 <script type="application/ld+json">
@@ -119,14 +119,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=71cb568d">
+<link rel="stylesheet" href="/assets/site.css?v=0631d48e">
 <noscript><style>.reveal{opacity:1;transform:none}.demo-raw{display:none}.demo-clean{display:block}</style></noscript>
 <!-- Cloudflare Web Analytics (cookieless, no PII) -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d4506883dbd42d4b65644a4e72f05da"}'></script>
 </head>
 <body>
 <a class="skip-link" href="#main">本文へスキップ</a>
-<nav class="toplink" aria-label="draft()"><a href="/ja/">draft()</a><span aria-hidden="true">/</span><a href="/ja/blog/">ブログ</a><span aria-hidden="true">/</span><a href="/ja/faq/">FAQ</a></nav>
+<nav class="toplink" aria-label="draft()"><a href="/ja/">draft()</a><span aria-hidden="true">/</span><a href="/ja/blog/">ブログ</a></nav>
 <label class="langsel" aria-label="Language">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
   <select id="lang" aria-label="Language" data-path="about/" data-en="/about/">
@@ -155,11 +155,7 @@
   </section>
   <section class="sec">
     <h2>私たちのアプリの見分け方</h2>
-    <ul><li>公式サイト：draft.ipe.rest — このサイトです。</li><li>制作：ipe Studio — <a href="https://ipe.rest" rel="noopener">ipe.rest</a>。</li><li>名前はかっこ付きのdraft()で、「an ipe studio app」と表示されます。</li><li>プラットフォーム：iOS・Android（準備中）。</li></ul>
-  </section>
-  <section class="sec">
-    <h2>さらに詳しく</h2>
-    <p><a href="/ja/faq/">FAQ</a>や<a href="/ja/privacy/">プライバシー</a>のページをご覧ください。</p>
+    <ul><li>公式サイト：draft.ipe.rest — このサイトです。</li><li>制作：ipe Studio — <a href="https://ipe.rest" rel="noopener">ipe.rest</a>。</li><li>名前はかっこ付きのdraft()で、「an ipe studio app」と表示されます。</li><li>プラットフォーム：iOS（準備中）。</li></ul>
   </section>
   </div>
 </main>
@@ -169,10 +165,8 @@
     <div class="comment foot-sign">// when the process finally rests</div>
     <nav class="foot-links" aria-label="Footer">
       <a href="/ja/blog/">ブログ</a>
-      <a href="/ja/faq/">FAQ</a>
       <a href="/ja/about/">概要</a>
       <a href="/ja/privacy/">プライバシー</a>
-      <a href="/ja/faq/#support">サポート</a>
     </nav>
     <div class="foot-studio">an ipe studio app</div>
     <nav class="foot-langs" aria-label="Languages">
@@ -191,6 +185,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=71cb568d"></script>
+<script src="/assets/site.js?v=0631d48e" defer></script>
 </body>
 </html>

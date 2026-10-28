@@ -7,12 +7,40 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Finding a story in &quot;nothing really happened today&quot;</title>
+      <link>https://draft.ipe.rest/en/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Even a day with nothing special in it holds a story. Three questions that fish something worth telling out of an ordinary day, with an example.</description>
+    </item>
+    <item>
+      <title>How to end on an echo instead of a moral</title>
+      <link>https://draft.ipe.rest/en/blog/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/ending-without-a-moral/</guid>
+      <pubDate>Mon, 26 Oct 2026 17:15:00 +0900</pubDate>
+      <description>When you&#x27;re tempted to close with &quot;and that&#x27;s when I realized how precious it is.&quot; Three ways to cut the lesson and end on a scene instead, with examples.</description>
+    </item>
+    <item>
+      <title>One first line can save a story: how to write a hook</title>
+      <link>https://draft.ipe.rest/en/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>Posts that open with explanation are hard to finish. Three ways to write a first line that starts in the middle of a scene, with examples.</description>
+    </item>
+    <item>
+      <title>A 30-second speaking drill: pick just one scene from today</title>
+      <link>https://draft.ipe.rest/en/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>If explaining your whole day makes you freeze, pick a single scene instead. A simple drill for pulling the raw material of a story out in thirty seconds.</description>
+    </item>
     <item>
       <title>Stuck at the blank caption box? Say it out loud instead</title>
       <link>https://draft.ipe.rest/en/blog/blank-caption-box/</link>
       <guid isPermaLink="true">https://draft.ipe.rest/en/blog/blank-caption-box/</guid>
-      <pubDate>Fri, 23 Oct 2026 16:00:00 +0900</pubDate>
+      <pubDate>Fri, 23 Oct 2026 17:30:00 +0900</pubDate>
       <description>You had a whole day, but the caption box gives you nothing. Here&#x27;s how to get the story out by talking first, then letting a few questions find the real moment.</description>
     </item>
   </channel>

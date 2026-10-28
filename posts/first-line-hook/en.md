@@ -3,7 +3,7 @@ title: One first line can save a story: how to write a hook
 description: Posts that open with explanation are hard to finish. Three ways to write a first line that starts in the middle of a scene, with examples.
 date: 2026-10-25
 slug: first-line-hook
-draft: true
+published: 2026-10-25T16:53:00+09:00
 ---
 
 Someone scrolling decides on the first line whether to keep reading. That's why the first sentence of a story, the hook, matters. It doesn't have to be grand. Simply dropping into the middle of a scene changes the whole piece.

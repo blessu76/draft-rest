@@ -3,7 +3,7 @@ title: Menemukan cerita dari "hari ini tidak ada apa-apa"
 description: Hari yang tak istimewa pun menyimpan cerita. Tiga pertanyaan untuk menjaring sesuatu yang layak diceritakan dari hari biasa, lengkap dengan contoh.
 date: 2026-10-27
 slug: nothing-happened-today
-draft: true
+published: 2026-10-27T16:00:00+09:00
 ---
 
 "Hari ini tidak ada apa-apa." Hari-hari ketika kalimat ini paling sering keluar justru hari yang paling banyak menyimpan cerita. Hari tanpa peristiwa besar bukan berarti hari tanpa cerita. Artinya hanya mata untuk hal-hal kecil belum menyala.

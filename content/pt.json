@@ -1,57 +1,7 @@
 {
-  "nav_faq": "FAQ",
   "nav_about": "Sobre",
   "updated_label": "Última atualização",
   "updated": "2026-10-23",
-  "faq": {
-    "title": "Perguntas frequentes — draft()",
-    "desc": "Respostas sobre o draft(): o que é, quem faz, como funciona, privacidade, preço e situação do lançamento.",
-    "comment": "// perguntas, respondidas",
-    "h1": "Perguntas frequentes",
-    "items": [
-      [
-        "O que é o draft()?",
-        "O draft() é um app de IA privado que transforma o que você diz em voz alta em uma história pronta para compartilhar. Você fala por cerca de trinta segundos, o draft() faz duas ou três perguntas gentis e dá forma às suas palavras: gancho, desenvolvimento, ponto alto, reflexão e fecho."
-      ],
-      [
-        "Quem faz o draft()?",
-        "O draft() é um app da ipe Studio, o estúdio por trás do ipe(). O site principal é [ipe.rest](https://ipe.rest); este site, draft.ipe.rest, é o site oficial do draft()."
-      ],
-      [
-        "O draft() é o mesmo que outros apps chamados Draft?",
-        "Não. Vários apps e ferramentas compartilham o nome “Draft”. O draft() — escrito com parênteses — é um app de narrativa que começa pela voz, feito pela ipe Studio. Veja em [Sobre](/about/) como distingui-los."
-      ],
-      [
-        "Como funciona?",
-        "Três turnos. É só falar — divagar e deixar frases pela metade não tem problema. O draft() faz algumas perguntas para achar o momento verdadeiro. Depois você recebe uma história pronta, do gancho ao fecho, para publicar."
-      ],
-      [
-        "Em quais dispositivos funciona?",
-        "O draft() é um app para iOS e Android."
-      ],
-      [
-        "Já está disponível?",
-        "O draft() ainda está sendo preparado para iOS e Android. Vamos anunciar o lançamento na App Store neste site. Até lá, considere que o app ainda não foi lançado."
-      ],
-      [
-        "Quanto vai custar?",
-        "Uma assinatura mensal (indicada como US$ 2,99 por mês) dá histórias ilimitadas. O preço será confirmado no lançamento; preços e condições finais aparecem na App Store. O teste grátis de 3 dias exige o cadastro de uma forma de pagamento e, ao terminar, converte-se automaticamente em assinatura paga. {free_note}"
-      ],
-      [
-        "Quais idiomas são suportados?",
-        "Este site está disponível em 11 idiomas: English, 한국어, 日本語, 中文, Español, Português, Bahasa Indonesia, Русский, Tiếng Việt, Français, Deutsch. Os idiomas do app serão confirmados no lançamento."
-      ],
-      [
-        "Minhas palavras são privadas?",
-        "Suas palavras são suas — nunca vendidas. Se elas serão usadas para treinar será confirmado antes do lançamento e publicado neste site. Você decide o que fica guardado e o que é apagado, e só a história pronta é compartilhada, quando você escolher. Os detalhes estão na página de [Privacidade](/privacy/)."
-      ],
-      [
-        "Como consigo ajuda?",
-        "Vamos publicar um contato de suporte nesta página quando o app for lançado. Até lá, as páginas deste site são o lugar para respostas."
-      ]
-    ],
-    "free_note": "A página inicial mostra uma forma gratuita de experimentar — três histórias prontas, sem conta. Depois do teste não há recursos gratuitos."
-  },
   "about": {
     "title": "Sobre o draft() — e como ele difere de outros apps Draft",
     "desc": "O draft(), da ipe Studio, é um app de narrativa que começa pela voz. Como ele se diferencia de outros apps com o nome Draft.",
@@ -70,13 +20,7 @@
           "Site oficial: draft.ipe.rest — este site.",
           "Criador: ipe Studio — [ipe.rest](https://ipe.rest).",
           "O nome se escreve draft(), com parênteses, e vem marcado como “an ipe studio app”.",
-          "Plataforma: iOS e Android, em preparação."
-        ]
-      },
-      {
-        "h": "Saiba mais",
-        "p": [
-          "Leia as [FAQ](/faq/) ou a página de [Privacidade](/privacy/)."
+          "Plataforma: iOS, em preparação."
         ]
       }
     ]

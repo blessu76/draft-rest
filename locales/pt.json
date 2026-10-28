@@ -1,6 +1,6 @@
 {
   "meta_title": "draft() — Diga. E tenha a sua história.",
-  "meta_desc": "Uma IA privada que transforma suas palavras faladas e desordenadas em uma história pronta e compartilhável. Você fala — draft() dá a ela a forma de algo que as pessoas realmente leem. Suas palavras são suas: nunca vendidas.",
+  "meta_desc": "Uma IA privada que transforma suas palavras faladas e desordenadas em uma história pronta e compartilhável. Você fala — draft() dá a ela a forma de algo que as pessoas realmente leem. Suas palavras são suas: nunca vendidas, nunca usadas para treinar.",
   "hero_comment": "// o que aconteceu hoje?",
   "hero_h1": "Diga. E tenha a sua história.",
   "hero_sub": "Você fala. draft() dá a isso a forma de algo que as pessoas realmente leem.",
@@ -39,8 +39,8 @@
   "cr_fmt3": "Roteiro do YouTube",
   "cr_comment2": "// mesma história, outra sala",
   "priv_h2": "Seus pensamentos em bruto continuam privados.",
-  "priv_lede": "A versão desordenada, a honesta, a das 23h — continuam suas. Você decide o que é guardado e o que é compartilhado; nada é vendido.",
-  "priv1": "Suas palavras são suas — nunca vendidas.",
+  "priv_lede": "A versão desordenada, a honesta, a das 23h — continuam suas. Você decide o que é guardado e o que é compartilhado; nada é vendido nem usado para treinar.",
+  "priv1": "Suas palavras são suas — nunca vendidas, nunca usadas para treinar.",
   "priv2": "Você decide o que é guardado e o que é apagado.",
   "priv3": "Só a história pronta é compartilhada — quando você escolhe.",
   "price_comment": "// preços",
@@ -82,5 +82,14 @@
   "view_in": "Ver em português",
   "blog_copy": "Copiar",
   "blog_copied": "Copiado",
-  "close": "Fechar"
+  "close": "Fechar",
+  "ld_section": "Guias de escrita",
+  "ld_topic": "Contar histórias",
+  "ld_keywords": "narrativa, dicas de escrita, voz para texto, escrita com IA, draft()",
+  "meta_desc_short": "Uma IA privada que transforma sua fala desordenada em história pronta para compartilhar. Você fala, o draft() dá forma. Suas palavras são suas: nunca vendidas.",
+  "blog_title": "Blog — draft(): notas para escrever sua primeira linha",
+  "blog_page": "Página {n}",
+  "blog_newer": "Mais recentes",
+  "blog_older": "Mais antigos",
+  "blog_pages": "Página"
 }

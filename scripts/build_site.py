@@ -5,9 +5,9 @@ Reads   src/home_body.html          home page body template ({{key}} = locale st
         locales/<lang>.json         per-language strings (11 languages, en is the fallback)
 Writes  index.html                  the English page; also x-default and hreflang "en" (single English body)
         <lang>/index.html           one static page per other language (ko ja zh es pt id ru vi fr de)
+        about/ privacy/             English content pages (root-level); <lang>/about|privacy/ for the others — texts in content/<lang>.json
         en/index.html               redirect stub -> / (noindex, canonical /; not in the sitemap)
         404.html                    not-found page (noindex)
-        faq/ about/ privacy/        English content pages (root-level); <lang>/faq|about|privacy/ for the others — texts in content/<lang>.json
         sitemap.xml                 every page with hreflang alternates, real lastmod
         llms.txt                    "Languages" list between <!-- pages:llms:start --> / <!-- pages:llms:end -->
         assets/*.css|js are NOT generated; their ?v= is a hash of the files (cache busting).
@@ -25,8 +25,10 @@ import hashlib
 import html
 import json
 import re
+import struct
 import subprocess
 import sys
+import unicodedata
 from pathlib import Path
 
 SITE = "https://draft.ipe.rest"
@@ -50,10 +52,10 @@ FONTS = ("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,30
          "&family=Inter:wght@300;400;500;600&display=swap")
 # Root-only script (runs before paint). ?lang=xx (any case, other query params kept) -> that language's page;
 # else a language the visitor picked earlier (localStorage draft_lang) -> that page. No browser-language redirect.
-LEGACY_REDIRECT = ("(function(){try{var C='%s',R=new RegExp('^('+C+')$'),q=new URLSearchParams(location.search),l=(q.get('lang')||'').toLowerCase();"
+LEGACY_REDIRECT = ("(function(){try{var C='%s',q=new URLSearchParams(location.search),l=(q.get('lang')||'').toLowerCase();"
                    "function go(c){q.delete('lang');var s=q.toString();location.replace((c==='en'?'/':'/'+c+'/')+(s?'?'+s:'')+location.hash);}"
-                   "if(l&&R.test(l)){try{localStorage.setItem('draft_lang',l);}catch(e){}go(l);return;}"
-                   "var v=localStorage.getItem('draft_lang');if(v&&v!=='en'&&R.test(v))go(v);"
+                   "if(l&&new RegExp('^('+C+')$').test(l)){go(l);return;}"
+                   "if(!q.has('lang')){var v=localStorage.getItem('draft_lang');if(v&&v!=='en'&&new RegExp('^('+C+')$').test(v))go(v);}"
                    "}catch(e){}})();" % "|".join(CODES))
 def esc(s):
     return html.escape(str(s), quote=True)
@@ -64,7 +66,7 @@ def home_path(lang):
     return "/" if lang in (None, DEFAULT_LANG) else "/%s/" % lang
 
 
-PAGES = ("faq", "about", "privacy")  # content pages; English lives at /<page>/, the others at /<lang>/<page>/
+PAGES = ("about", "privacy")  # content pages; English lives at /<page>/, the others at /<lang>/<page>/
 
 
 def page_path(lang, slug):
@@ -72,7 +74,7 @@ def page_path(lang, slug):
 
 
 def lang_path(lang, path=""):
-    """Site path of `lang`'s version of the page whose language-less path is `path` ('' = home, 'blog/', 'faq/', ...)."""
+    """Site path of `lang`'s version of the page whose language-less path is `path` ('' = home, 'blog/', 'about/', ...)."""
     if not path:
         return home_path(lang)
     if path.strip("/") in PAGES:
@@ -92,18 +94,13 @@ def load_locales(root):
         out[c] = json.loads((Path(root) / "locales" / (c + ".json")).read_text(encoding="utf-8"))
         content = Path(root) / "content" / (c + ".json")
         if content.is_file():  # nav labels live next to the page texts
-            d = json.loads(content.read_text(encoding="utf-8"))
-            out[c].update({k: d[k] for k in ("nav_faq", "nav_about") if k in d})
+            out[c].update({k: v for k, v in json.loads(content.read_text(encoding="utf-8")).items() if k.startswith("nav_")})
     return out
 
 
 def load_content(root):
-    """content/<lang>.json -> {lang: {faq|about|privacy: {...}, updated, updated_label}}"""
-    out = {c: json.loads((Path(root) / "content" / (c + ".json")).read_text(encoding="utf-8")) for c in CODES}
-    for d in out.values():  # faq.free_note = the one place that says what is free; answers reference it as {free_note}
-        note = d["faq"].get("free_note", "")
-        d["faq"]["items"] = [[q, a.replace("{free_note}", note)] for q, a in d["faq"]["items"]]
-    return out
+    """content/<lang>.json -> {lang: {about|privacy: {...}, updated, updated_label}}"""
+    return {c: json.loads((Path(root) / "content" / (c + ".json")).read_text(encoding="utf-8")) for c in CODES}
 
 
 def tr(locales, lang, key):
@@ -115,6 +112,7 @@ def asset_version(root):
     h = hashlib.sha1()
     for n in ("site.css", "site.js"):
         h.update((Path(root) / "assets" / n).read_bytes())
+    h.update((Path(root) / LOCALTIME_JS).read_bytes())  # inlined into blog pages: a new module bumps ?v=
     return h.hexdigest()[:8]
 
 
@@ -148,19 +146,28 @@ def home_cluster():
     return d
 
 
+# Organization hub lives on the parent site (https://ipe.rest/#organization); every page here references it by @id.
+ORG_ID = "https://ipe.rest/#organization"
+WEBSITE_ID = SITE + "/#website"
+APP_ID = SITE + "/#app"
+ORG_REF = {"@type": "Organization", "@id": ORG_ID, "name": "ipe()", "url": "https://ipe.rest/"}  # author
+# Square icon on the parent site; 512x512 checked against the live file (it is not in this repo, so the size cannot be read here).
+ORG = dict(ORG_REF, logo={"@type": "ImageObject", "url": "https://ipe.rest/icon-512.png", "width": 512, "height": 512})  # publisher
+
+
 def jsonld(locales, lang, url):
     desc = tr(locales, lang, "meta_desc")
-    publisher = {"@type": "Organization", "name": "ipe Studio", "url": "https://ipe.rest"}
+    publisher = {"@id": ORG_ID}
     graph = [
-        {"@type": "MobileApplication", "name": "draft()", "alternateName": "draft", "url": url,
-         "operatingSystem": "iOS, Android", "applicationCategory": "ProductivityApplication",
+        {"@type": "MobileApplication", "@id": APP_ID, "name": "draft()", "alternateName": "draft", "url": url,
+         "operatingSystem": "iOS", "applicationCategory": "ProductivityApplication",
          "applicationSubCategory": "Writing / Storytelling", "description": desc, "inLanguage": lang,
          "image": SITE + "/og-image.png",
          "offers": [{"@type": "Offer", "price": "0", "priceCurrency": "USD", "name": tr(locales, lang, "plan1_name")},
                     {"@type": "Offer", "price": "2.99", "priceCurrency": "USD", "name": tr(locales, lang, "plan2_name")}],
-         "publisher": publisher},
-        {"@type": "Organization", "name": "ipe Studio", "url": "https://ipe.rest", "slogan": "when the process finally rests", "brand": "ipe()"},
-        {"@type": "WebSite", "name": "draft()", "url": page_url(None), "inLanguage": lang, "publisher": publisher},
+         "publisher": publisher, "author": publisher},
+        dict(ORG, slogan="when the process finally rests", brand="ipe()"),
+        {"@type": "WebSite", "@id": WEBSITE_ID, "name": "draft()", "url": page_url(None), "publisher": publisher},
     ]
     body = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2).replace("</", "<\\/")
     return '<script type="application/ld+json">\n%s\n</script>' % body
@@ -187,6 +194,7 @@ def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website
 <meta name="author" content="ipe Studio">
 <meta name="theme-color" content="#FAF7F0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FAF7F0'/%3E%3Ctext x='14' y='22' font-family='ui-monospace,Menlo,monospace' font-size='16' font-weight='500' fill='%231B1F27' text-anchor='middle'%3Ed()%3C/text%3E%3Crect x='23' y='10' width='2.4' height='12' fill='%235F7D5F'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 {canon}<meta name="robots" content="{robots}">
 {alts}{rss}<meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="draft()">
@@ -247,34 +255,64 @@ def home_ld(locales, lang, url):
 def chrome(locales, lang, path="", blog=False):
     """Shared page furniture: top-left links, language select, footer pieces."""
     base = home_path(lang)
-    cur = lambda p: ' aria-current="page"' if path.strip("/") == p else ""
+    blog_href = "/%s/blog/" % lang
     top = '<nav class="toplink" aria-label="draft()"><a href="%s">draft()</a>' % base
     foot = []
     if blog:
-        blog_href = "/%s/blog/" % lang
         top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (blog_href, ' aria-current="page"' if path.startswith("blog") else "", esc(tr(locales, lang, "nav_blog")))
         foot.append('<a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog"))))
-    top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (page_path(lang, "faq"), cur("faq"), esc(tr(locales, lang, "nav_faq")))
     top += "</nav>"
-    foot += ['<a href="%s">%s</a>' % (page_path(lang, "faq"), esc(tr(locales, lang, "nav_faq"))),
-             '<a href="%s">%s</a>' % (page_path(lang, "about"), esc(tr(locales, lang, "nav_about"))),
-             '<a href="%s">%s</a>' % (page_path(lang, "privacy"), esc(tr(locales, lang, "foot_privacy"))),
-             '<a href="%s#support">%s</a>' % (page_path(lang, "faq"), esc(tr(locales, lang, "foot_support")))]
+    foot += ['<a href="%s">%s</a>' % (page_path(lang, "about"), esc(tr(locales, lang, "nav_about"))),
+             '<a href="%s">%s</a>' % (page_path(lang, "privacy"), esc(tr(locales, lang, "foot_privacy")))]
     return {"LANGSEL": lang_select(lang, path), "FOOTLANGS": foot_langs(lang, path), "FOOTLINKS": "\n      ".join(foot), "TOPLINK": top}
 
 
-def render_home(root, locales, lang, version, blog=False):
+HOME_CARDS = 3  # newest posts shown on the home page
+
+
+def blog_cards_html(locales, lang, posts, numbers=None):
+    """Home 'field notes' section: the newest HOME_CARDS published posts of `lang`; empty string (no section) without posts."""
+    if not posts:
+        return ""
+    cards = "\n".join(f"""        <li class="bcard reveal">
+          <p class="comment">// {no_label(numbers[p['slug']]) + ' · ' if numbers else ''}{time_tag(p['date'])}</p>
+          <h3><a class="bcard-link" href="/{lang}/blog/{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h3>
+          <p class="bcard-ex">{esc(p['langs'][lang]['description'])}</p>
+          <span class="bcard-more" aria-hidden="true">{esc(tr(locales, lang, 'blog_read'))} &rarr;</span>
+        </li>""" for p in posts[:HOME_CARDS])
+    return f"""<!-- 1.5 · BLOG (cards generated by scripts/build_site.py; section omitted until the first post) -->
+<section class="blognotes" aria-labelledby="blognotes-h">
+  <div class="wrap-wide">
+    <div class="comment reveal">{esc(tr(locales, lang, 'blog_comment'))}</div>
+    <h2 class="reveal" id="blognotes-h">{esc(tr(locales, lang, 'blog_h1'))}</h2>
+    <p class="lede reveal">{esc(tr(locales, lang, 'blog_sub'))}</p>
+    <ol class="bcards">
+{cards}
+    </ol>
+    <p class="blog-all"><a class="btn-line" href="/{lang}/blog/">{esc(tr(locales, lang, 'blog_back'))} &rarr;</a></p>
+  </div>
+</section>
+"""
+
+
+def render_home(root, locales, lang, version, blog=False, posts=()):
+    numbers = post_numbers(posts)
     tpl = (Path(root) / "src" / "home_body.html").read_text(encoding="utf-8")
     url = page_url(lang)
-    body = render_template(tpl, locales, lang, chrome(locales, lang, "", blog))
+    extra = chrome(locales, lang, "", blog)
+    extra["BLOGCARDS"] = blog_cards_html(locales, lang, posts, numbers)
+    body = render_template(tpl, locales, lang, extra)
     root_page = lang == DEFAULT_LANG
     if root_page:
         hint = {c: [tr(locales, c, "view_in"), tr(locales, c, "close")] for c in CODES if c != DEFAULT_LANG}
         body += '\n<div id="langhint" hidden data-langs=\'%s\'></div>' % json.dumps(hint, ensure_ascii=False, separators=(",", ":")).replace("'", "&#39;")
-    h = head(locales, lang, version, url, tr(locales, lang, "meta_title"), tr(locales, lang, "meta_desc"), home_cluster(),
+    h = head(locales, lang, version, url, tr(locales, lang, "meta_title"), tr(locales, lang, "meta_desc_short"), home_cluster(),
              home_ld(locales, lang, url), extra='<meta name="keywords" content="%s">\n' % esc(KEYWORDS),
              legacy=LEGACY_REDIRECT if root_page else "", feed=blog_feed_url(lang) if blog else None, og_desc=tr(locales, lang, "hero_sub"))
-    return h + body + f'\n<script src="/assets/site.js?v={version}"></script>\n</body>\n</html>\n'
+    local = ""
+    if "data-ipe-time" in body:
+        local = "<script>" + (Path(root) / LOCALTIME_JS).read_bytes().decode("utf-8") + "</script>\n"
+    return h + body + f'\n<script src="/assets/site.js?v={version}" defer></script>\n' + local + "</body>\n</html>\n"
 
 
 def render_en_stub(version):
@@ -312,7 +350,7 @@ def render_404(version):
 {links}
   </ul>
 </main>
-<script src="/assets/site.js?v={version}"></script>
+<script src="/assets/site.js?v={version}" defer></script>
 </body>
 </html>
 """
@@ -321,18 +359,58 @@ def render_404(version):
 # ---------------------------------------------------------------- blog
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 REQUIRED = ("title", "description", "date", "slug")
+PUBLISHED_REQUIRED_FROM = dt.date(2026, 10, 24)  # posts dated on/after this day must carry `published` (publish_post.py stamps it)
 
 
 def blog_feed_url(lang):
     return "%s/%s/blog/feed.xml" % (SITE, lang)
 
 
-def blog_list_url(lang):
-    return "%s/%s/blog/" % (SITE, lang)
+LIST_PAGE_SIZE = 10  # posts per blog list page (Davy 10-27: never more than 10)
+
+
+def blog_list_url(lang, page=1):
+    """Page 1 keeps the plain /<lang>/blog/ URL; later pages live at /<lang>/blog/page/<n>/ (there is no /page/1/)."""
+    return "%s/%s/blog/" % (SITE, lang) + ("page/%d/" % page if page > 1 else "")
+
+
+def page_count(n_posts):
+    return max(1, -(-n_posts // LIST_PAGE_SIZE))
+
+
+def post_numbers(posts):
+    """{slug: n}: the oldest published post is No. 1 (published ascending, slug breaks ties); later posts never renumber earlier ones."""
+    ordered = sorted(posts, key=lambda p: (when_key(p["date"]), p["slug"]))
+    return {p["slug"]: i + 1 for i, p in enumerate(ordered)}
+
+
+def no_label(n):
+    return '<span class="j-no">No. %d</span>' % n
 
 
 def post_url(lang, slug):
     return "%s/%s/blog/%s/" % (SITE, lang, slug)
+
+
+def parse_when(v, allow_time=True):
+    """YYYY-MM-DD -> date; with a time and an explicit UTC offset -> aware datetime in KST (seconds dropped)."""
+    if len(v) == 10:
+        return dt.date.fromisoformat(v)
+    if not allow_time:
+        raise ValueError(v)
+    w = dt.datetime.fromisoformat(v)
+    if w.tzinfo is None:
+        raise ValueError("time needs an offset: " + v)
+    return w.astimezone(KST).replace(second=0, microsecond=0)
+
+
+def when_iso(w):
+    """machine form: date -> 2026-10-24 · datetime -> 2026-10-24T16:00:00+09:00"""
+    return w.isoformat() if not isinstance(w, dt.datetime) else w.isoformat(timespec="seconds")
+
+
+def when_key(w):
+    return (w.date(), w.timetz()) if isinstance(w, dt.datetime) else (w, dt.time(0, 0, tzinfo=KST))
 
 
 def parse_post_file(path):
@@ -358,18 +436,26 @@ def parse_post_file(path):
         raise ValueError("missing front matter: " + ", ".join(missing))
     if not SLUG_RE.match(meta["slug"]):
         raise ValueError("slug must match [a-z0-9-]+: %r" % meta["slug"])
-    for k in ("date", "updated"):
+    if meta["slug"] == "page":
+        raise ValueError("slug 'page' is reserved (list paging lives at /blog/page/N/)")
+    for k in ("date", "updated", "published"):
         if meta.get(k):
             try:
-                meta["_" + k] = dt.date.fromisoformat(meta[k])
+                meta["_" + k] = parse_when(meta[k], allow_time=(k != "date"))
             except ValueError:
-                raise ValueError("%s must be YYYY-MM-DD: %r" % (k, meta[k]))
+                raise ValueError("%s must be %s: %r" % (k, "YYYY-MM-DD" if k == "date" else "YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS+09:00", meta[k]))
+    pub = meta.get("_published")
+    if pub is not None:
+        if not isinstance(pub, dt.datetime):
+            raise ValueError("published needs a time: YYYY-MM-DDTHH:MM:SS+09:00, got %r" % meta["published"])
+        if "_date" in meta and pub.date() != meta["_date"]:
+            raise ValueError("published %s (KST) is not on `date` %s" % (meta["published"], meta["date"]))
     meta["draft"] = str(meta.get("draft", "false")).lower() in ("true", "yes", "1")
     meta["_body"] = text[end + 4:].lstrip("\n")
     return meta
 
 
-def load_posts(root, drafts=False):
+def load_posts(root):
     """-> (posts, errors). posts: [{slug, date, updated, draft, langs: {lang: meta}}] newest first, drafts skipped.
     Layout: posts/<slug>/ko.md (canonical) + en.md + translations/<lang>.md  — every published post needs all 11 languages."""
     base = Path(root) / "posts"
@@ -395,14 +481,28 @@ def load_posts(root, drafts=False):
             continue
         if len(draft_flags) > 1:
             errors.append("%s: `draft` differs between languages" % d.name)
-        if not drafts and all(m["draft"] for m in langs.values()):
+        if all(m["draft"] for m in langs.values()):
             continue
+        for c, m in langs.items():
+            if len(m["description"]) > DESC_MAX:
+                errors.append("%s/%s: description is %d chars (max %d: it is the meta, og and JSON-LD description)" % (d.name, c, len(m["description"]), DESC_MAX))
         missing = [c for c in CODES if c not in langs]
         if missing:
             errors.append("%s: missing languages: %s" % (d.name, ", ".join(missing)))
         dates = {m["date"] for m in langs.values()}
         if len(dates) > 1:
             errors.append("%s: `date` differs between languages" % d.name)
+        pubs = {m.get("published", "") for m in langs.values()}
+        if len(pubs) > 1:
+            errors.append("%s: `published` differs between languages" % d.name)
+        if "" in pubs and any("_date" in m and m["_date"] >= PUBLISHED_REQUIRED_FROM for m in langs.values()):
+            errors.append("%s: `published` is required for posts dated %s or later (run scripts/publish_post.py)" % (d.name, PUBLISHED_REQUIRED_FROM))
+        for pub in pubs - {""}:
+            try:
+                if parse_when(pub) > dt.datetime.now(KST) + dt.timedelta(minutes=1):
+                    errors.append("%s: `published` %s is in the future (stamp it at publish time, not before)" % (d.name, pub))
+            except ValueError:
+                pass  # reported per file by parse_post_file
         if "ko" in langs:
             ko_len = len(langs["ko"]["_body"].strip())
             if not 1100 <= ko_len <= 1900:
@@ -410,9 +510,10 @@ def load_posts(root, drafts=False):
         any_m = next(iter(langs.values()))
         if "_date" not in any_m:
             continue
-        posts.append({"slug": d.name, "date": any_m["_date"], "updated": max((m.get("_updated") or m["_date"]) for m in langs.values()),
+        when = any_m.get("_published") or any_m["_date"]
+        posts.append({"slug": d.name, "date": when, "updated": max((m.get("_updated") or when for m in langs.values()), key=when_key),
                       "langs": langs})
-    posts.sort(key=lambda p: (p["date"], p["slug"]), reverse=True)
+    posts.sort(key=lambda p: (when_key(p["date"]), p["slug"]), reverse=True)
     return posts, errors
 
 
@@ -497,8 +598,22 @@ def markdown(src):
     return "\n".join(out)
 
 
+LOCALTIME_JS = "shared/ipe-localtime.js"  # company-wide module (ipe-rest c466827, v2), copied byte for byte, inlined before </body>
+
+
+def time_tag(d):
+    """<time> for a publish time. datetime (KST) -> static 'YYYY-MM-DD HH:MM KST' that ipe-localtime.js shows in the viewer's zone;
+    date only -> plain date (no time to convert)."""
+    if not isinstance(d, dt.datetime):
+        return f'<time datetime="{when_iso(d)}">{fmt_date(d)}</time>'
+    text = fmt_date(d) + " KST"
+    return f'<time datetime="{d.strftime("%Y-%m-%dT%H:%M")}+09:00" data-ipe-time title="{text}">{text}</time>'
+
+
 def fmt_date(d):
-    return "%04d-%02d-%02d" % (d.year, d.month, d.day)
+    """shown form: date -> 2026-10-24 · datetime (KST) -> 2026-10-24 16:00 (HH:MM, two digits, no seconds)"""
+    base = "%04d-%02d-%02d" % (d.year, d.month, d.day)
+    return base + " %02d:%02d" % (d.hour, d.minute) if isinstance(d, dt.datetime) else base
 
 
 def post_cluster(slug):
@@ -507,21 +622,80 @@ def post_cluster(slug):
     return d
 
 
-def list_cluster():
-    d = {c: blog_list_url(c) for c in CODES}
-    d["x-default"] = blog_list_url("en")
+def list_cluster(page=1):
+    d = {c: blog_list_url(c, page) for c in CODES}
+    d["x-default"] = blog_list_url("en", page)
     return d
 
 
-ORG = {"@type": "Organization", "name": "ipe Studio", "url": "https://ipe.rest"}
+
+
+def image_size(path):
+    """(width, height) of a PNG/JPEG file, read from its header."""
+    b = Path(path).read_bytes()
+    if b[:8] == b"\x89PNG\r\n\x1a\n":
+        return struct.unpack(">II", b[16:24])
+    if b[:2] == b"\xff\xd8":
+        i = 2
+        while i + 9 < len(b):
+            if b[i] != 0xFF:
+                i += 1
+                continue
+            m = b[i + 1]
+            if 0xC0 <= m <= 0xCF and m not in (0xC4, 0xC8, 0xCC):
+                h, w = struct.unpack(">HH", b[i + 5:i + 9])
+                return w, h
+            i += 2 + struct.unpack(">H", b[i + 2:i + 4])[0]
+    raise BuildError("cannot read image size of %s (PNG/JPEG only)" % path)
+
+
+def image_object(root, rel):
+    w, h = image_size(Path(root) / rel)
+    return {"@type": "ImageObject", "url": SITE + "/" + rel, "width": w, "height": h}
+
+
+def word_count(html_body, lang):
+    """Words of the post text; ja/zh have no spaces, so count characters (letters/digits, no punctuation or spaces) instead."""
+    text = html.unescape(re.sub(r"<[^>]+>", " ", html_body))
+    if lang in ("ja", "zh"):
+        return sum(1 for ch in text if unicodedata.category(ch)[0] in "LN")
+    return len(text.split())
+
+
+def post_ld_extras(locales, lang, m):
+    """keywords / articleSection / about: from the post's own front matter when set, else the per-language defaults in locales."""
+    about = [x.strip() for x in m.get("about", "").split("|") if x.strip()][:2] or [tr(locales, lang, "ld_topic")]
+    return {"keywords": m.get("keywords") or tr(locales, lang, "ld_keywords"),
+            "articleSection": m.get("section") or tr(locales, lang, "ld_section"),
+            "about": [{"@type": "Thing", "name": n} for n in about]}
+
+
+def article_id(lang, slug):
+    return post_url(lang, slug) + "#article"
+
+
+def translation_links(post, lang):
+    """English is the original: it lists the other languages as workTranslation; each of them points back with translationOfWork."""
+    def ref(c):
+        return {"@type": "BlogPosting", "@id": article_id(c, post["slug"]), "url": post_url(c, post["slug"]),
+                "headline": post["langs"][c]["title"], "inLanguage": c}
+    if lang == DEFAULT_LANG:
+        return {"workTranslation": [ref(c) for c in CODES if c != DEFAULT_LANG]}
+    return {"translationOfWork": ref(DEFAULT_LANG)}
+
+
+def blog_id(lang):
+    return blog_list_url(lang) + "#blog"
 
 
 def ld_script(obj):
     return '<script type="application/ld+json">\n%s\n</script>' % json.dumps(obj, ensure_ascii=False, indent=2).replace("</", "<\\/")
 
 
-def breadcrumb(locales, lang, post=None):
+def breadcrumb(locales, lang, post=None, page=1):
     items = [("draft()", page_url(lang)), (tr(locales, lang, "nav_blog"), blog_list_url(lang))]
+    if page > 1:
+        items.append((tr(locales, lang, "blog_page").format(n=page), blog_list_url(lang, page)))
     if post:
         items.append((post["title"], post_url(lang, post["slug"])))
     return {"@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -532,25 +706,42 @@ def page_shell(root, locales, lang, version, *, url, title, desc, cluster, ld, m
     ch = chrome(locales, lang, path, True)
     skip = '<a class="skip-link" href="#main">%s</a>\n' % esc(tr(locales, lang, "skip"))
     foot = render_template((Path(root) / "src" / "blog_footer.html").read_text(encoding="utf-8"), locales, lang, ch)
+    local = ""
+    if "data-ipe-time" in main:
+        local = "<script>" + (Path(root) / LOCALTIME_JS).read_bytes().decode("utf-8") + "</script>\n"
     return (head(locales, lang, version, url, title, desc, cluster, ld, og_type=og_type, feed=blog_feed_url(lang))
             + skip + ch["TOPLINK"] + "\n" + ch["LANGSEL"] + "\n" + main + "\n" + foot
-            + f'\n<script src="/assets/site.js?v={version}"></script>\n</body>\n</html>\n')
+            + f'\n<script src="/assets/site.js?v={version}" defer></script>\n' + local + "</body>\n</html>\n")
 
 
-def render_post(root, locales, version, post, lang):
+TITLE_MAX = 60
+DESC_MAX = 160
+
+
+def post_title(title):
+    """<title> of a post: '<headline> — draft()', but without the suffix when that would pass TITLE_MAX characters (the h1 is untouched)."""
+    full = "%s — draft()" % title
+    return full if len(full) <= TITLE_MAX else title
+
+
+def render_post(root, locales, version, post, lang, number=None):
     m = post["langs"][lang]
     url = post_url(lang, post["slug"])
-    updated = m.get("_updated") or m["_date"]
+    when = post["date"]
+    updated = m.get("_updated") or when
     body = markdown(m["_body"])
-    data = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": m["title"], "description": m["description"],
-            "datePublished": m["_date"].isoformat(), "dateModified": updated.isoformat(), "inLanguage": lang,
-            "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url, "image": SITE + "/og-image.png",
-            "author": ORG, "publisher": ORG, "isPartOf": {"@type": "Blog", "name": "draft() Blog", "url": blog_list_url(lang)}}
+    data = {"@context": "https://schema.org", "@type": "BlogPosting", "@id": article_id(lang, post["slug"]),
+            "headline": m["title"], "description": m["description"],
+            "datePublished": when_iso(when), "dateModified": when_iso(updated), "inLanguage": lang,
+            "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url, "image": image_object(root, "og-image.png"),
+            "wordCount": word_count(body, lang), **post_ld_extras(locales, lang, m),
+            "author": ORG_REF, "publisher": ORG, "isPartOf": {"@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang)},
+            **translation_links(post, lang)}
     ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang, {"title": m["title"], "slug": post["slug"]}))
     extra_langs = " · ".join('<a href="%s" hreflang="%s" lang="%s">%s</a>' % (post_url(c, post["slug"]), c, c, esc(NAMES[c])) for c in CODES if c != lang)
     main = f"""<main id="main" class="post-wrap">
   <article class="post">
-    <p class="comment"><time datetime="{m['_date'].isoformat()}">// {fmt_date(m['_date'])}</time></p>
+    <p class="comment">// {no_label(number) + ' · ' if number else ''}{time_tag(when)}</p>
     <h1>{esc(m['title'])}</h1>
     <p class="post-desc">{esc(m['description'])}</p>
     <div class="prose" data-copy="{esc(tr(locales, lang, 'blog_copy'))}" data-copied="{esc(tr(locales, lang, 'blog_copied'))}">
@@ -560,7 +751,7 @@ def render_post(root, locales, version, post, lang):
       <span class="comment">{esc(tr(locales, lang, 'cta_comment'))}</span>
       <h2>{esc(tr(locales, lang, 'hero_h1'))}</h2>
       <p>{esc(tr(locales, lang, 'hero_sub'))}</p>
-      <a class="btn" href="#">{APPLE}<span>{esc(tr(locales, lang, 'cta_download'))}</span></a>
+      <span class="btn" aria-disabled="true">{APPLE}<span>{esc(tr(locales, lang, 'cta_download'))}</span></span>
     </aside>
     <nav class="post-foot" aria-label="Blog">
       <a href="{blog_list_url(lang).replace(SITE, '')}">&larr; {esc(tr(locales, lang, 'blog_back'))}</a>
@@ -568,24 +759,52 @@ def render_post(root, locales, version, post, lang):
     </nav>
   </article>
 </main>"""
-    return page_shell(root, locales, lang, version, url=url, title="%s — draft()" % m["title"], desc=m["description"],
+    return page_shell(root, locales, lang, version, url=url, title=post_title(m["title"]), desc=m["description"],
                       cluster=post_cluster(post["slug"]), ld=ld, main=main, path="blog/%s/" % post["slug"], og_type="article")
 
 
-def render_list(root, locales, version, posts, lang):
-    url = blog_list_url(lang)
-    title = "%s — draft()" % tr(locales, lang, "nav_blog")
+def render_list(root, locales, version, posts, lang, page=1, numbers=None):
+    """One page of the blog list (newest first, LIST_PAGE_SIZE per page). `posts` is the full list; page 1 = /<lang>/blog/, n>1 = /<lang>/blog/page/<n>/."""
+    numbers = numbers or post_numbers(posts)
+    pages_total = page_count(len(posts))
+    shown = posts[(page - 1) * LIST_PAGE_SIZE:page * LIST_PAGE_SIZE]
+    url = blog_list_url(lang, page)
+    title = tr(locales, lang, "blog_title")
+    page_label = tr(locales, lang, "blog_page").format(n=page)
     desc = tr(locales, lang, "blog_sub")
+    if page > 1:
+        title = "%s · %s" % (title, page_label)
+        desc = "%s · %s" % (desc, page_label)
     items = "\n".join(f"""      <li>
-        <p class="comment"><time datetime="{p['date'].isoformat()}">// {fmt_date(p['date'])}</time></p>
+        <p class="comment">// {no_label(numbers[p['slug']])} · {time_tag(p['date'])}</p>
         <h2><a href="/{lang}/blog/{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h2>
         <p>{esc(p['langs'][lang]['description'])}</p>
         <a class="more" href="/{lang}/blog/{p['slug']}/" aria-label="{esc(tr(locales, lang, 'blog_read'))}: {esc(p['langs'][lang]['title'])}">{esc(tr(locales, lang, 'blog_read'))} &rarr;</a>
-      </li>""" for p in posts)
-    data = {"@context": "https://schema.org", "@type": "Blog", "name": "draft() Blog", "url": url, "inLanguage": lang, "publisher": ORG,
-            "blogPost": [{"@type": "BlogPosting", "headline": p["langs"][lang]["title"], "url": post_url(lang, p["slug"]),
-                          "datePublished": p["date"].isoformat(), "inLanguage": lang} for p in posts]}
-    ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang))
+      </li>""" for p in shown)
+    data = {"@context": "https://schema.org", "@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang), "inLanguage": lang,
+            "isPartOf": {"@id": WEBSITE_ID}, "publisher": ORG, "author": ORG_REF,
+            "blogPost": [{"@type": "BlogPosting", "@id": post_url(lang, p["slug"]) + "#article", "headline": p["langs"][lang]["title"], "url": post_url(lang, p["slug"]),
+                          "datePublished": when_iso(p["date"]), "inLanguage": lang} for p in shown],
+            "mainEntity": {"@type": "ItemList", "numberOfItems": len(shown),
+                           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": post_url(lang, p["slug"]),
+                                                "item": {"@id": post_url(lang, p["slug"]) + "#article"}}
+                                               for i, p in enumerate(shown)]}}
+    ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang, page=page))
+    pager = ""
+    if pages_total > 1:
+        def rel(n):
+            return blog_list_url(lang, n).replace(SITE, "")
+        prev = '<a class="pg-step" rel="prev" href="%s">&larr; %s</a>' % (rel(page - 1), esc(tr(locales, lang, "blog_newer"))) if page > 1 else ""
+        nxt = '<a class="pg-step" rel="next" href="%s">%s &rarr;</a>' % (rel(page + 1), esc(tr(locales, lang, "blog_older"))) if page < pages_total else ""
+        nums = " ".join('<span class="pg-num" aria-current="page">%d</span>' % n if n == page else
+                        '<a class="pg-num" href="%s" aria-label="%s">%d</a>' % (rel(n), esc(tr(locales, lang, "blog_page").format(n=n)), n)
+                        for n in range(1, pages_total + 1))
+        pager = f"""
+  <nav class="pager" aria-label="{esc(tr(locales, lang, 'blog_pages'))}">
+    {prev}
+    <span class="pg-nums">{nums}</span>
+    {nxt}
+  </nav>"""
     main = f"""<main id="main" class="post-wrap">
   <header class="blog-head">
     <p class="comment">{esc(tr(locales, lang, 'blog_comment'))}</p>
@@ -594,13 +813,11 @@ def render_list(root, locales, version, posts, lang):
   </header>
   <ol class="blog-list">
 {items}
-  </ol>
+  </ol>{pager}
   <p class="blog-rss"><a href="/{lang}/blog/feed.xml">{esc(tr(locales, lang, 'blog_rss'))}</a></p>
 </main>"""
-    return page_shell(root, locales, lang, version, url=url, title=title, desc=desc, cluster=list_cluster(), ld=ld, main=main, path="blog/")
+    return page_shell(root, locales, lang, version, url=url, title=title, desc=desc, cluster=list_cluster(page), ld=ld, main=main, path="blog/page/%d/" % page if page > 1 else "blog/")
 
-
-# ---------------------------------------------------------------- content pages (faq / about / privacy)
 def content_url(lang, slug):
     return SITE + page_path(lang, slug)
 
@@ -613,53 +830,36 @@ def content_cluster(slug):
 
 def plain(text):
     """Markdown-ish inline text -> plain text (for JSON-LD)."""
-    text = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r"\1", text)
-    return text.replace("**", "").replace("*", "")
-
-
-def fill_links(text, lang):
-    return text.replace("](/faq/)", "](%s)" % page_path(lang, "faq")).replace("](/about/)", "](%s)" % page_path(lang, "about")) \
-               .replace("](/privacy/)", "](%s)" % page_path(lang, "privacy"))
+    return re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r"\1", text).replace("**", "").replace("*", "")
 
 
 def render_content_page(root, locales, content, version, slug, lang):
     c = content[lang]
     pg = c[slug]
     url = content_url(lang, slug)
-    if slug == "faq":
-        body = "\n".join('    <section class="qa"><h2 id="%s">%s</h2>\n      <p>%s</p></section>' % (
-            "support" if i == len(pg["items"]) - 1 else "q%d" % (i + 1), esc(q), inline(fill_links(a, lang))) for i, (q, a) in enumerate(pg["items"]))
-    else:
-        parts = []
-        for sec in pg["sections"]:
-            h = '    <h2>%s</h2>' % esc(sec["h"])
-            ps = "".join("\n    <p>%s</p>" % inline(fill_links(t, lang)) for t in sec.get("p", []))
-            ul = "\n    <ul>%s</ul>" % "".join("<li>%s</li>" % inline(fill_links(t, lang)) for t in sec["li"]) if sec.get("li") else ""
-            parts.append('  <section class="sec">\n%s%s%s\n  </section>' % (h, ps, ul))
-        body = "\n".join(parts)
+    parts = []
+    for sec in pg["sections"]:
+        h = '    <h2>%s</h2>' % esc(sec["h"])
+        ps = "".join("\n    <p>%s</p>" % inline(t) for t in sec.get("p", []))
+        ul = "\n    <ul>%s</ul>" % "".join("<li>%s</li>" % inline(t) for t in sec["li"]) if sec.get("li") else ""
+        parts.append('  <section class="sec">\n%s%s%s\n  </section>' % (h, ps, ul))
+    body = "\n".join(parts)
     stamp = ""
     if slug == "privacy":
         stamp = '\n    <p class="comment"><time datetime="%s">// %s: %s</time></p>' % (c["updated"], esc(c["updated_label"]), c["updated"])
     crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "draft()", "item": page_url(lang)},
         {"@type": "ListItem", "position": 2, "name": pg["h1"], "item": url}]}
-    lds = []
-    if slug == "faq":
-        lds.append({"@context": "https://schema.org", "@type": "FAQPage", "url": url, "inLanguage": lang, "name": pg["h1"],
-                    "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in pg["items"]]})
-    elif slug == "about":
-        org = {"@type": "Organization", "name": "ipe Studio", "url": "https://ipe.rest"}
-        app = {"@type": "MobileApplication", "name": "draft()", "alternateName": "draft", "url": page_url(None), "operatingSystem": "iOS, Android",
+    if slug == "about":
+        app = {"@type": "MobileApplication", "@id": APP_ID, "name": "draft()", "alternateName": "draft", "url": page_url(None), "operatingSystem": "iOS",
                "applicationCategory": "ProductivityApplication", "applicationSubCategory": "Writing / Storytelling",
-               "description": tr(locales, lang, "meta_desc"), "inLanguage": lang, "image": SITE + "/og-image.png",
-               "disambiguatingDescription": plain(pg["sections"][0]["p"][0]), "author": org, "publisher": org}
-        lds.append({"@context": "https://schema.org", "@type": "AboutPage", "url": url, "inLanguage": lang, "name": pg["h1"],
-                    "description": pg["desc"], "mainEntity": app, "publisher": org})
-        lds.append(dict(org, **{"@context": "https://schema.org", "slogan": "when the process finally rests", "brand": "ipe()"}))
+               "description": tr(locales, lang, "meta_desc"), "inLanguage": lang, "image": image_object(root, "og-image.png"),
+               "disambiguatingDescription": plain(pg["sections"][0]["p"][0]), "author": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}}
+        main_ld = {"@context": "https://schema.org", "@type": "AboutPage", "url": url, "inLanguage": lang, "name": pg["h1"],
+                   "description": pg["desc"], "mainEntity": app, "publisher": ORG}
     else:
-        lds.append({"@context": "https://schema.org", "@type": "WebPage", "url": url, "inLanguage": lang, "name": pg["h1"],
-                    "description": pg["desc"], "dateModified": c["updated"], "publisher": ORG})
-    lds.append(crumbs)
+        main_ld = {"@context": "https://schema.org", "@type": "WebPage", "url": url, "inLanguage": lang, "name": pg["h1"],
+                   "description": pg["desc"], "dateModified": c["updated"], "publisher": ORG}
     main = f"""<main id="main" class="post-wrap">
   <header class="blog-head">
     <p class="comment">{esc(pg['comment'])}</p>
@@ -670,11 +870,13 @@ def render_content_page(root, locales, content, version, slug, lang):
   </div>
 </main>"""
     return page_shell(root, locales, lang, version, url=url, title=pg["title"], desc=pg["desc"], cluster=content_cluster(slug),
-                      ld="\n".join(ld_script(x) for x in lds), main=main, path="%s/" % slug)
+                      ld=ld_script(main_ld) + "\n" + ld_script(crumbs), main=main, path="%s/" % slug)
 
 
 def rfc822(d):
-    return dt.datetime(d.year, d.month, d.day, 16, 0, tzinfo=KST).strftime("%a, %d %b %Y %H:%M:%S +0900")
+    if not isinstance(d, dt.datetime):
+        d = dt.datetime(d.year, d.month, d.day, 16, 0, tzinfo=KST)
+    return d.strftime("%a, %d %b %Y %H:%M:%S +0900")
 
 
 def render_feed(locales, posts, lang):
@@ -705,11 +907,15 @@ def render_llms_blog(posts):
     lines = ["## Blog",
              "Short guides on turning what you say into a story people actually read. New posts regularly, each in 11 languages. "
              "Feed: %s · Index: %s" % (blog_feed_url("en"), blog_list_url("en")),
-             "Blog index per language: " + ", ".join("[%s](%s)" % (c, blog_list_url(c)) for c in CODES), ""]
+             "Blog index per language: " + ", ".join("[%s](%s)" % (c, blog_list_url(c)) for c in CODES)]
+    if page_count(len(posts)) > 1:  # older posts: /<lang>/blog/page/<n>/
+        lines.append("Older posts (index pages 2+): " + "; ".join(
+            "%s: %s" % (c, ", ".join("[%d](%s)" % (n, blog_list_url(c, n)) for n in range(2, page_count(len(posts)) + 1))) for c in CODES))
+    lines.append("")
     for p in posts:
         en = p["langs"]["en"]
         others = ", ".join("[%s](%s)" % (c, post_url(c, p["slug"])) for c in CODES if c != "en")
-        lines.append("- [%s](%s) — %s (%s). Other languages: %s" % (en["title"], post_url("en", p["slug"]), en["description"], p["date"].isoformat(), others))
+        lines.append("- [%s](%s) — %s (%s). Other languages: %s" % (en["title"], post_url("en", p["slug"]), en["description"], when_iso(p["date"]), others))
     return "\n".join(lines) + "\n"
 
 
@@ -736,7 +942,7 @@ def render_llms_pages():
     for c, n, _ in LANGS:
         if c != DEFAULT_LANG:
             lines.append("- [%s](%s) — %s" % (n, page_url(c), c))
-    names = {"faq": "FAQ", "about": "About (how draft() differs from other Draft apps)", "privacy": "Privacy"}
+    names = {"about": "About (how draft() differs from other Draft apps)", "privacy": "Privacy"}
     for slug in PAGES:
         lines.append("")
         lines.append("## %s" % names[slug])
@@ -767,32 +973,45 @@ def build(root):
         raise BuildError("\n  ".join(errors))
     content = load_content(root)
     blog = bool(posts)
-    out = {"index.html": render_home(root, locales, DEFAULT_LANG, version, blog=blog),
+    out = {"index.html": render_home(root, locales, DEFAULT_LANG, version, blog=blog, posts=posts),
            "en/index.html": render_en_stub(version), "404.html": render_404(version)}
     src_date = git_date(root, ["src", "assets", "locales/en.json"])
     cluster = home_cluster()
+    if posts:  # the home page lists the newest posts, so its lastmod moves with them
+        src_date = max(src_date, when_iso(max((p["updated"] for p in posts), key=when_key))[:10])
     pages = [(page_url(None), src_date, "1.0", "monthly", cluster)]
     for c in CODES:
         if c == DEFAULT_LANG:
             continue  # served from the root; /en/ is a stub that stays out of the sitemap
-        out["%s/index.html" % c] = render_home(root, locales, c, version, blog=blog)
-        pages.append((page_url(c), git_date(root, ["src", "assets", "locales/%s.json" % c]), "0.9", "monthly", cluster))
+        out["%s/index.html" % c] = render_home(root, locales, c, version, blog=blog, posts=posts)
+        lm = git_date(root, ["src", "assets", "locales/%s.json" % c])
+        if posts:
+            lm = max(lm, src_date)
+        pages.append((page_url(c), lm, "0.9", "monthly", cluster))
     if blog:
-        newest = max(p["updated"] for p in posts).isoformat()
+        newest = when_iso(max((p["updated"] for p in posts), key=when_key))
+        numbers = post_numbers(posts)
         for c in CODES:
-            out["%s/blog/index.html" % c] = render_list(root, locales, version, posts, c)
             out["%s/blog/feed.xml" % c] = render_feed(locales, posts, c)
-            pages.append((blog_list_url(c), newest, "0.7", "daily", list_cluster()))
+            for n in range(1, page_count(len(posts)) + 1):
+                out["%s/blog/index.html" % c if n == 1 else "%s/blog/page/%d/index.html" % (c, n)] = render_list(root, locales, version, posts, c, n, numbers)
+                pages.append((blog_list_url(c, n), newest, "0.7" if n == 1 else "0.5", "daily", list_cluster(n)))
         for p in posts:
             for c in CODES:
-                out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c)
-                pages.append((post_url(c, p["slug"]), p["langs"][c].get("updated") or p["langs"][c]["date"], "0.6", "monthly", post_cluster(p["slug"])))
-    prio = {"faq": "0.8", "about": "0.8", "privacy": "0.4"}
+                out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]])
+                pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
+    prio = {"about": "0.8", "privacy": "0.4"}
     for slug in PAGES:
         for c in CODES:
             out[page_path(c, slug).strip("/") + "/index.html"] = render_content_page(root, locales, content, version, slug, c)
             pages.append((content_url(c, slug), git_date(root, ["src", "assets", "content/%s.json" % c]), prio[slug], "monthly", content_cluster(slug)))
-    pages = [(u, d.isoformat() if hasattr(d, "isoformat") else d, pr, fq, cl) for u, d, pr, fq, cl in pages]
+    want = min(HOME_CARDS, len(posts))
+    for c in CODES:
+        rel = "index.html" if c == DEFAULT_LANG else "%s/index.html" % c
+        got = out[rel].count('class="bcard ')
+        if got != want:
+            raise BuildError("%s: home shows %d blog cards, expected %d" % (rel, got, want))
+    pages = [(u, when_iso(d) if hasattr(d, "isoformat") else d, pr, fq, cl) for u, d, pr, fq, cl in pages]
     out["sitemap.xml"] = render_sitemap(root, pages)
     llms = (root / "llms.txt").read_text(encoding="utf-8")
     llms = replace_between(llms, "<!-- pages:llms:start -->", "<!-- pages:llms:end -->", render_llms_pages(), "llms.txt")
@@ -821,17 +1040,9 @@ def strip_lastmod(s):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--root", default=str(Path(__file__).resolve().parent.parent), help="site root (default: this repo)")
-    ap.add_argument("--validate-drafts", action="store_true", help="also validate draft posts (all languages, length, slug) and exit")
     ap.add_argument("--check", action="store_true", help="write nothing; exit 1 if posts are invalid or files on disk differ from the build")
     a = ap.parse_args(argv)
     root = Path(a.root).resolve()
-    if a.validate_drafts:
-        posts, errors = load_posts(root, drafts=True)
-        if errors:
-            print("build_site: draft errors\n  " + "\n  ".join(errors), file=sys.stderr)
-            return 1
-        print("build_site: OK — %d post(s) incl. drafts validated" % len(posts))
-        return 0
     try:
         files = build(root)
     except BuildError as ex:

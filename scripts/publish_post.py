@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Publish a queued post: drop `draft: true` from all language files and (optionally) set the date.
+"""Publish a queued post: drop `draft: true` from all language files and stamp the real publish time.
 
-    python3 scripts/publish_post.py <slug> [--date YYYY-MM-DD]
-    then: python3 scripts/build_site.py && python3 scripts/check_sitemap.py && python3 -m unittest discover -s tests
+    python3 scripts/publish_post.py <slug> [--at 2026-10-24T16:00:00+09:00]
+    then: python3 scripts/build_site.py && python3 scripts/build_site.py --check && python3 scripts/check_sitemap.py && python3 -m unittest discover -s tests
 
-Date defaults to today (KST). It must not be in the future (check_sitemap rejects future lastmod).
+Sets `date` (KST day) and `published` (KST, e.g. 2026-10-24T16:00:00+09:00) in every language file — default: now (KST).
+Run it right before the commit that is pushed to main; if the push slips, re-run scripts/stamp_published.py.
+Validates every file first and writes nothing if any file is bad. A future time is refused.
 """
 import argparse
 import datetime as dt
@@ -21,8 +23,8 @@ def post_files(root, slug):
     return [f for f in [d / "ko.md", d / "en.md"] + sorted((d / "translations").glob("*.md")) if f.is_file()]
 
 
-def rewrite(f, text, date):
-    """Return the new text of one post file (draft flag removed, date set) or raise ValueError — never writes."""
+def rewrite(text, when):
+    """New text of one post file (draft flag removed, date + published set) or ValueError — never writes."""
     text = text.replace("\r\n", "\n")
     if not text.startswith("---\n"):
         raise ValueError("bad front matter (must start with ---)")
@@ -31,43 +33,44 @@ def rewrite(f, text, date):
         raise ValueError("front matter is not closed with ---")
     if not re.search(r"^date:.*$", head, flags=re.M):
         raise ValueError("no `date:` line in front matter")
-    head = re.sub(r"^draft:.*\n?", "", head, flags=re.M)
-    head = re.sub(r"^date:.*$", "date: " + date, head, flags=re.M)
-    return "---\n" + head.rstrip("\n") + "\n---" + rest
+    head = re.sub(r"^(draft|published):.*\n?", "", head, flags=re.M)
+    head = re.sub(r"^date:.*$", "date: " + when.date().isoformat(), head, flags=re.M)
+    head = head.rstrip("\n") + "\npublished: " + when.isoformat(timespec="seconds")
+    return "---\n" + head + "\n---" + rest
 
 
-def publish(root, slug, date):
+def publish(root, slug, when=None):
     """Validate every language file first; write only if all of them are fine (no partial publish)."""
+    when = (when or dt.datetime.now(KST)).astimezone(KST).replace(second=0, microsecond=0)
     files = post_files(root, slug)
     if not files:
         raise SystemExit("no files for slug %r under posts/" % slug)
-    try:
-        dt.date.fromisoformat(date)
-    except ValueError:
-        raise SystemExit("--date must be YYYY-MM-DD, got %r" % date)
-    if dt.date.fromisoformat(date) > dt.datetime.now(KST).date():
-        raise SystemExit("--date %s is in the future (check_sitemap rejects future lastmod)" % date)
+    if when > dt.datetime.now(KST) + dt.timedelta(minutes=1):
+        raise SystemExit("--at %s is in the future (stamp the real publish time)" % when.isoformat())
     new, errors = {}, []
     for f in files:
         try:
-            new[f] = rewrite(f, f.read_text(encoding="utf-8"), date)
+            new[f] = rewrite(f.read_text(encoding="utf-8"), when)
         except ValueError as ex:
             errors.append("%s: %s" % (f, ex))
     if errors:
         raise SystemExit("publish_post: nothing written\n  " + "\n  ".join(errors))
     for f, text in new.items():
         f.write_text(text, encoding="utf-8")
-    return files
+    return files, when.isoformat(timespec="seconds")
 
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("slug")
-    ap.add_argument("--date", default=dt.datetime.now(KST).date().isoformat())
+    ap.add_argument("--at", help="ISO time with offset (default: now, KST)")
     ap.add_argument("--root", default=str(ROOT))
     a = ap.parse_args(argv)
-    files = publish(a.root, a.slug, a.date)
-    print("publish_post: %s -> %d files, date %s, draft flag removed" % (a.slug, len(files), a.date))
+    when = dt.datetime.fromisoformat(a.at) if a.at else None
+    if when is not None and when.tzinfo is None:
+        raise SystemExit("--at needs an offset, e.g. +09:00")
+    files, iso = publish(a.root, a.slug, when)
+    print("publish_post: %s -> %d files, published %s, draft flag removed" % (a.slug, len(files), iso))
     return 0
 
 

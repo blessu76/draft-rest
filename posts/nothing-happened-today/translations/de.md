@@ -1,9 +1,9 @@
 ---
 title: Eine Geschichte in „heute ist nichts passiert“ finden
-description: Auch ein Tag ohne etwas Besonderes birgt eine Geschichte. Drei Fragen, mit denen du aus einem gewöhnlichen Tag etwas Erzählenswertes herausfischst, mit einem Beispiel.
+description: Auch ein Tag ohne Besonderes birgt eine Geschichte. Drei Fragen, mit denen du aus einem gewöhnlichen Tag Erzählenswertes fischst, mit Beispiel.
 date: 2026-10-27
 slug: nothing-happened-today
-draft: true
+published: 2026-10-27T16:00:00+09:00
 ---
 
 „Heute ist nichts passiert.“ An den Tagen, an denen dieser Satz am häufigsten fällt, stecken die meisten Geschichten. Ein Tag ohne großes Ereignis ist kein Tag ohne Geschichte. Es heißt nur, dass der Blick für die kleinen Dinge noch nicht eingeschaltet ist.

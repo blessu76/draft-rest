@@ -1,9 +1,9 @@
 ---
 title: Une première phrase peut sauver une histoire : écrire une accroche
-description: Les textes qui s'ouvrent sur une explication se terminent rarement. Trois façons d'écrire une première phrase qui démarre au milieu d'une scène, avec des exemples.
+description: Les textes qui s'ouvrent sur une explication se terminent rarement. Trois façons d'écrire une première phrase qui démarre en pleine scène, avec exemples.
 date: 2026-10-25
 slug: first-line-hook
-draft: true
+published: 2026-10-25T16:53:00+09:00
 ---
 
 Celui qui fait défiler son écran décide dès la première ligne s'il continue à lire. C'est pourquoi la première phrase d'une histoire, l'accroche, compte. Elle n'a pas besoin d'être grandiose. Se jeter au milieu d'une scène suffit à changer le texte.

@@ -3,7 +3,7 @@ title: Como achar uma história em "hoje não aconteceu nada"
 description: Até um dia sem nada de especial guarda uma história. Três perguntas para pescar algo que valha contar num dia comum, com um exemplo.
 date: 2026-10-27
 slug: nothing-happened-today
-draft: true
+published: 2026-10-27T16:00:00+09:00
 ---
 
 "Hoje não aconteceu nada." Os dias em que mais sai essa frase são os dias com mais histórias escondidas. Um dia sem grande acontecimento não é um dia sem história. Só significa que o olhar para as coisas pequenas ainda não ligou.

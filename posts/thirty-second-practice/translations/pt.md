@@ -3,7 +3,7 @@ title: Um exercício de 30 segundos: escolha só uma cena de hoje
 description: Se tentar explicar o dia inteiro te trava, escolha uma única cena. Um exercício simples para tirar, em trinta segundos, a matéria-prima de uma história.
 date: 2026-10-24
 slug: thirty-second-practice
-draft: true
+published: 2026-10-24T16:00:00+09:00
 ---
 
 Já te perguntaram "como foi seu dia?" e só saiu um "normal"? Quando você tenta explicar um dia inteiro, não sabe por onde começar. Uma história não começa com um dia. Começa com uma cena.

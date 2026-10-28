@@ -7,13 +7,41 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Fri, 23 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Cómo encontrar una historia en &quot;hoy no pasó nada&quot;</title>
+      <link>https://draft.ipe.rest/es/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Incluso un día sin nada especial guarda una historia. Tres preguntas para pescar algo que merezca contarse en un día corriente, con un ejemplo.</description>
+    </item>
+    <item>
+      <title>Cómo terminar con un eco en lugar de una moraleja</title>
+      <link>https://draft.ipe.rest/es/blog/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/ending-without-a-moral/</guid>
+      <pubDate>Mon, 26 Oct 2026 17:15:00 +0900</pubDate>
+      <description>Cuando sientes la tentación de cerrar con &quot;y entonces me di cuenta de lo valioso que es&quot;. Tres formas de quitar la lección y terminar con una escena.</description>
+    </item>
+    <item>
+      <title>Una primera línea puede salvar una historia: cómo escribir un gancho</title>
+      <link>https://draft.ipe.rest/es/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>Los textos que empiezan con una explicación cuesta terminarlos. Tres formas de escribir una primera línea que arranca en mitad de una escena, con ejemplos.</description>
+    </item>
+    <item>
+      <title>Un ejercicio de 30 segundos: elige solo una escena de hoy</title>
+      <link>https://draft.ipe.rest/es/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Si intentar explicar todo tu día te bloquea, elige una sola escena. Un ejercicio sencillo para sacar en treinta segundos la materia prima de una historia.</description>
+    </item>
     <item>
       <title>¿Te quedaste en blanco ante la casilla del pie de foto? Dilo en voz alta</title>
       <link>https://draft.ipe.rest/es/blog/blank-caption-box/</link>
       <guid isPermaLink="true">https://draft.ipe.rest/es/blog/blank-caption-box/</guid>
-      <pubDate>Fri, 23 Oct 2026 16:00:00 +0900</pubDate>
-      <description>Tuviste un día entero, pero la casilla del pie de foto no te da nada. Cómo sacar la historia hablando primero y dejando que unas pocas preguntas encuentren el momento real.</description>
+      <pubDate>Fri, 23 Oct 2026 17:30:00 +0900</pubDate>
+      <description>Tuviste un día entero, pero el pie de foto sigue vacío. Cómo sacar la historia: primero hablar y dejar que unas pocas preguntas encuentren el momento real.</description>
     </item>
   </channel>
 </rss>

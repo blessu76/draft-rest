@@ -7,13 +7,41 @@
     <atom:link href="https://draft.ipe.rest/fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>De courts guides pour transformer ce que vous dites en une histoire que l&#x27;on lit vraiment, par l&#x27;équipe de draft().</description>
     <language>fr</language>
-    <lastBuildDate>Fri, 23 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Trouver une histoire dans « aujourd&#x27;hui, il ne s&#x27;est rien passé »</title>
+      <link>https://draft.ipe.rest/fr/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Même une journée sans rien de spécial renferme une histoire. Trois questions pour repêcher de quoi raconter dans une journée ordinaire, avec un exemple.</description>
+    </item>
+    <item>
+      <title>Finir sur un écho plutôt que sur une morale</title>
+      <link>https://draft.ipe.rest/fr/blog/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/ending-without-a-moral/</guid>
+      <pubDate>Mon, 26 Oct 2026 17:15:00 +0900</pubDate>
+      <description>Quand on est tenté de conclure par « et c&#x27;est là que j&#x27;ai compris combien c&#x27;est précieux ». Trois façons de retirer la leçon et de finir sur une scène.</description>
+    </item>
+    <item>
+      <title>Une première phrase peut sauver une histoire : écrire une accroche</title>
+      <link>https://draft.ipe.rest/fr/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>Les textes qui s&#x27;ouvrent sur une explication se terminent rarement. Trois façons d&#x27;écrire une première phrase qui démarre en pleine scène, avec exemples.</description>
+    </item>
+    <item>
+      <title>Exercice de 30 secondes : ne choisissez qu&#x27;une seule scène d&#x27;aujourd&#x27;hui</title>
+      <link>https://draft.ipe.rest/fr/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Si raconter toute votre journée vous bloque, choisissez une seule scène. Un exercice simple pour sortir en trente secondes la matière d&#x27;une histoire.</description>
+    </item>
     <item>
       <title>Bloqué devant la zone de légende vide ? Dites-le à voix haute</title>
       <link>https://draft.ipe.rest/fr/blog/blank-caption-box/</link>
       <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/blank-caption-box/</guid>
-      <pubDate>Fri, 23 Oct 2026 16:00:00 +0900</pubDate>
-      <description>Vous avez eu une journée entière, mais la zone de légende ne donne rien. Comment sortir l&#x27;histoire en parlant d&#x27;abord, puis en laissant quelques questions trouver le vrai moment.</description>
+      <pubDate>Fri, 23 Oct 2026 17:30:00 +0900</pubDate>
+      <description>Une journée entière, mais la zone de légende reste vide. Comment sortir l&#x27;histoire : parler d&#x27;abord, puis laisser quelques questions trouver le vrai moment.</description>
     </item>
   </channel>
 </rss>

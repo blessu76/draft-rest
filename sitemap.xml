@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://draft.ipe.rest/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -40,7 +40,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/zh/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -76,7 +76,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -94,7 +94,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -112,7 +112,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -130,7 +130,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ru/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -148,7 +148,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -166,7 +166,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -184,7 +184,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -202,7 +202,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/en/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -220,7 +220,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -238,7 +238,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -256,7 +256,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/zh/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -274,7 +274,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -292,7 +292,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -310,7 +310,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -328,7 +328,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ru/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -346,7 +346,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -364,7 +364,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -382,7 +382,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/blog/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -399,8 +399,800 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/"/>
   </url>
   <url>
+    <loc>https://draft.ipe.rest/en/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ko/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ja/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/zh/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/es/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/pt/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/id/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ru/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/vi/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/fr/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/de/blog/nothing-happened-today/</loc>
+    <lastmod>2026-10-27T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/nothing-happened-today/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/nothing-happened-today/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/en/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ko/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ja/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/zh/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/es/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/pt/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/id/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ru/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/vi/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/fr/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/de/blog/ending-without-a-moral/</loc>
+    <lastmod>2026-10-26T17:15:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/ending-without-a-moral/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/ending-without-a-moral/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/en/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ko/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ja/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/zh/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/es/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/pt/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/id/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ru/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/vi/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/fr/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/de/blog/first-line-hook/</loc>
+    <lastmod>2026-10-25T16:53:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/first-line-hook/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/first-line-hook/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/en/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ko/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ja/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/zh/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/es/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/pt/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/id/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ru/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/vi/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/fr/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/de/blog/thirty-second-practice/</loc>
+    <lastmod>2026-10-24T16:00:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/thirty-second-practice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/thirty-second-practice/"/>
+  </url>
+  <url>
     <loc>https://draft.ipe.rest/en/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -418,7 +1210,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -436,7 +1228,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -454,7 +1246,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/zh/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -472,7 +1264,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -490,7 +1282,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -508,7 +1300,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -526,7 +1318,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ru/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -544,7 +1336,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -562,7 +1354,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -580,7 +1372,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/blog/blank-caption-box/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-23T17:30:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
@@ -597,206 +1389,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/blank-caption-box/"/>
   </url>
   <url>
-    <loc>https://draft.ipe.rest/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/ko/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/ja/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/zh/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/es/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/pt/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/id/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/ru/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/vi/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/fr/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/de/faq/</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/faq/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/faq/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/faq/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/faq/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/faq/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/faq/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/faq/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/faq/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/faq/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/faq/"/>
-  </url>
-  <url>
     <loc>https://draft.ipe.rest/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -814,7 +1408,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -832,7 +1426,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -850,7 +1444,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/zh/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -868,7 +1462,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -886,7 +1480,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -904,7 +1498,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -922,7 +1516,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ru/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -940,7 +1534,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -958,7 +1552,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -976,7 +1570,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/about/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -994,7 +1588,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
@@ -1012,7 +1606,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
@@ -1030,7 +1624,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
@@ -1048,7 +1642,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/zh/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
@@ -1066,7 +1660,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
@@ -1084,7 +1678,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
@@ -1102,7 +1696,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
@@ -1120,7 +1714,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ru/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
@@ -1138,7 +1732,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
@@ -1156,7 +1750,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
@@ -1174,7 +1768,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/privacy/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>

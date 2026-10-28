@@ -7,13 +7,41 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Fri, 23 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Eine Geschichte in „heute ist nichts passiert“ finden</title>
+      <link>https://draft.ipe.rest/de/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Auch ein Tag ohne Besonderes birgt eine Geschichte. Drei Fragen, mit denen du aus einem gewöhnlichen Tag Erzählenswertes fischst, mit Beispiel.</description>
+    </item>
+    <item>
+      <title>Mit einem Nachklang enden statt mit einer Moral</title>
+      <link>https://draft.ipe.rest/de/blog/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/ending-without-a-moral/</guid>
+      <pubDate>Mon, 26 Oct 2026 17:15:00 +0900</pubDate>
+      <description>Wenn du versucht bist, mit „und da erkannte ich, wie kostbar das ist“ zu schließen. Drei Wege, die Lehre zu streichen und mit einer Szene zu enden.</description>
+    </item>
+    <item>
+      <title>Ein erster Satz kann eine Geschichte retten: So schreibst du einen Aufhänger</title>
+      <link>https://draft.ipe.rest/de/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>Texte, die mit einer Erklärung beginnen, liest man selten zu Ende. Drei Wege zu einem ersten Satz, der mitten in einer Szene einsetzt, mit Beispielen.</description>
+    </item>
+    <item>
+      <title>30-Sekunden-Übung: Wähle nur eine Szene von heute</title>
+      <link>https://draft.ipe.rest/de/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Blockiert dich der Versuch, den ganzen Tag zu erklären, wähle eine einzige Szene. Eine einfache Übung: das Rohmaterial einer Geschichte in dreißig Sekunden.</description>
+    </item>
     <item>
       <title>Vor dem leeren Bildunterschrift-Feld festgefahren? Sag es erst laut</title>
       <link>https://draft.ipe.rest/de/blog/blank-caption-box/</link>
       <guid isPermaLink="true">https://draft.ipe.rest/de/blog/blank-caption-box/</guid>
-      <pubDate>Fri, 23 Oct 2026 16:00:00 +0900</pubDate>
-      <description>Du hattest einen ganzen Tag, aber das Feld für die Bildunterschrift bleibt leer. So holst du die Geschichte heraus: erst sprechen, dann ein paar Fragen den echten Moment finden lassen.</description>
+      <pubDate>Fri, 23 Oct 2026 17:30:00 +0900</pubDate>
+      <description>Ein ganzer Tag, aber die Bildunterschrift bleibt leer. So holst du die Geschichte heraus: erst sprechen, dann Fragen den echten Moment finden lassen.</description>
     </item>
   </channel>
 </rss>

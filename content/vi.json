@@ -1,57 +1,7 @@
 {
-  "nav_faq": "FAQ",
   "nav_about": "Giới thiệu",
   "updated_label": "Cập nhật lần cuối",
   "updated": "2026-10-23",
-  "faq": {
-    "title": "Câu hỏi thường gặp — draft()",
-    "desc": "Giải đáp về draft(): là gì, ai làm ra, cách hoạt động, quyền riêng tư, giá và tình trạng phát hành.",
-    "comment": "// câu hỏi, có câu trả lời",
-    "h1": "Câu hỏi thường gặp",
-    "items": [
-      [
-        "draft() là gì?",
-        "draft() là ứng dụng AI riêng tư biến những gì bạn nói thành một câu chuyện hoàn chỉnh, sẵn sàng để chia sẻ. Bạn nói khoảng ba mươi giây, draft() hỏi hai hoặc ba câu nhẹ nhàng, rồi chắp lời bạn thành câu chuyện: mở đầu, diễn tiến, cao trào, suy ngẫm và kết."
-      ],
-      [
-        "Ai làm ra draft()?",
-        "draft() là ứng dụng của ipe Studio, studio đứng sau ipe(). Trang chủ chung là [ipe.rest](https://ipe.rest); trang này, draft.ipe.rest, là trang chính thức của draft()."
-      ],
-      [
-        "draft() có giống các ứng dụng khác tên Draft không?",
-        "Không. Có vài ứng dụng và công cụ dùng tên “Draft”. draft() — viết có dấu ngoặc — là ứng dụng kể chuyện bắt đầu từ giọng nói, do ipe Studio làm. Xem trang [Giới thiệu](/about/) để biết cách phân biệt."
-      ],
-      [
-        "Nó hoạt động thế nào?",
-        "Ba lượt. Cứ nói — nói lan man hay bỏ dở câu cũng không sao. draft() hỏi vài câu để tìm ra khoảnh khắc thật sự. Rồi bạn nhận được câu chuyện hoàn chỉnh, từ mở đầu đến kết, sẵn sàng đăng."
-      ],
-      [
-        "Chạy trên thiết bị nào?",
-        "draft() là ứng dụng iOS và Android."
-      ],
-      [
-        "Hiện đã có thể dùng chưa?",
-        "draft() vẫn đang được chuẩn bị cho iOS và Android. Chúng tôi sẽ thông báo việc phát hành trên App Store tại trang này. Cho đến lúc đó, hãy xem như ứng dụng chưa phát hành."
-      ],
-      [
-        "Giá bao nhiêu?",
-        "Gói đăng ký hằng tháng (hiển thị $2,99/tháng) cho phép tạo truyện không giới hạn. Giá sẽ được xác nhận khi ra mắt; giá và điều khoản cuối cùng hiển thị trên App Store. Dùng thử miễn phí 3 ngày yêu cầu đăng ký phương thức thanh toán, và khi hết thời gian dùng thử sẽ tự động chuyển thành gói đăng ký trả phí. {free_note}"
-      ],
-      [
-        "Hỗ trợ những ngôn ngữ nào?",
-        "Trang web này có 11 ngôn ngữ: English, 한국어, 日本語, 中文, Español, Português, Bahasa Indonesia, Русский, Tiếng Việt, Français, Deutsch. Ngôn ngữ ứng dụng hỗ trợ sẽ được xác nhận khi ra mắt."
-      ],
-      [
-        "Lời của tôi có được giữ riêng tư không?",
-        "Lời của bạn là của bạn — không bao giờ bị bán. Việc có dùng để huấn luyện hay không sẽ được xác nhận trước khi ra mắt và công bố trên trang này. Bạn quyết định giữ gì và xóa gì, và chỉ câu chuyện hoàn chỉnh mới được chia sẻ, khi bạn chọn. Chi tiết ở trang [Quyền riêng tư](/privacy/)."
-      ],
-      [
-        "Tôi nhận trợ giúp ở đâu?",
-        "Chúng tôi sẽ đăng thông tin liên hệ hỗ trợ tại trang này khi ứng dụng ra mắt. Đến lúc đó, các trang trên website này là nơi giải đáp."
-      ]
-    ],
-    "free_note": "Trang chủ giới thiệu cách dùng thử miễn phí — ba câu chuyện hoàn chỉnh, không cần tài khoản. Sau khi dùng thử kết thúc không có tính năng miễn phí nào."
-  },
   "about": {
     "title": "Về draft() — và khác gì các ứng dụng Draft khác",
     "desc": "draft() của ipe Studio là ứng dụng kể chuyện bắt đầu từ giọng nói. Điểm khác so với các ứng dụng khác cùng tên Draft.",
@@ -70,13 +20,7 @@
           "Trang chính thức: draft.ipe.rest — chính là trang này.",
           "Nhà phát triển: ipe Studio — [ipe.rest](https://ipe.rest).",
           "Tên viết là draft(), có dấu ngoặc, kèm dòng “an ipe studio app”.",
-          "Nền tảng: iOS và Android, đang chuẩn bị."
-        ]
-      },
-      {
-        "h": "Tìm hiểu thêm",
-        "p": [
-          "Đọc [FAQ](/faq/) hoặc trang [Quyền riêng tư](/privacy/)."
+          "Nền tảng: iOS, đang chuẩn bị."
         ]
       }
     ]

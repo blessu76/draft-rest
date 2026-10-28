@@ -1,6 +1,6 @@
 {
   "meta_title": "draft() — Ucapkan. Dapatkan ceritamu.",
-  "meta_desc": "AI privat yang mengubah ucapan berantakanmu menjadi cerita yang selesai dan siap dibagikan. Kamu bicara — draft() membentuknya menjadi sesuatu yang benar-benar dibaca orang. Kata-katamu milikmu: tak pernah dijual.",
+  "meta_desc": "AI privat yang mengubah ucapan berantakanmu menjadi cerita yang selesai dan siap dibagikan. Kamu bicara — draft() membentuknya menjadi sesuatu yang benar-benar dibaca orang. Kata-katamu milikmu: tak pernah dijual, tak pernah dipakai untuk melatih.",
   "hero_comment": "// apa yang terjadi hari ini?",
   "hero_h1": "Ucapkan. Dapatkan ceritamu.",
   "hero_sub": "Kamu bicara. draft() membentuknya menjadi sesuatu yang benar-benar dibaca orang.",
@@ -39,8 +39,8 @@
   "cr_fmt3": "Naskah YouTube",
   "cr_comment2": "// cerita yang sama, ruang yang berbeda",
   "priv_h2": "Pikiran kasarmu tetap privat.",
-  "priv_lede": "Versi yang berantakan, versi yang jujur, versi pukul 11 malam — semuanya tetap milikmu. Kamu yang menentukan apa yang disimpan dan apa yang dibagikan; tak ada yang dijual.",
-  "priv1": "Kata-katamu milikmu — tak pernah dijual.",
+  "priv_lede": "Versi yang berantakan, versi yang jujur, versi pukul 11 malam — semuanya tetap milikmu. Kamu yang menentukan apa yang disimpan dan apa yang dibagikan; tak ada yang dijual atau dipakai untuk melatih apa pun.",
+  "priv1": "Kata-katamu milikmu — tak pernah dijual, tak pernah dipakai untuk melatih.",
   "priv2": "Kamu yang menentukan apa yang disimpan, dan apa yang dihapus.",
   "priv3": "Hanya cerita yang selesai yang dibagikan — saat kamu memilih membagikannya.",
   "price_comment": "// harga",
@@ -82,5 +82,14 @@
   "view_in": "Lihat dalam Bahasa Indonesia",
   "blog_copy": "Salin",
   "blog_copied": "Disalin",
-  "close": "Tutup"
+  "close": "Tutup",
+  "ld_section": "Panduan menulis",
+  "ld_topic": "Bercerita",
+  "ld_keywords": "bercerita, tips menulis, suara ke teks, menulis dengan AI, draft()",
+  "meta_desc_short": "AI privat yang mengubah ucapan berantakanmu menjadi cerita siap dibagikan. Kamu bicara, draft() membentuknya. Kata-katamu milikmu: tak pernah dijual.",
+  "blog_title": "Blog — draft(): catatan menulis kalimat pertama",
+  "blog_page": "Halaman {n}",
+  "blog_newer": "Lebih baru",
+  "blog_older": "Lebih lama",
+  "blog_pages": "Halaman"
 }

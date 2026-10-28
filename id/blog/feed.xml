@@ -7,13 +7,41 @@
     <atom:link href="https://draft.ipe.rest/id/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Fri, 23 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Menemukan cerita dari &quot;hari ini tidak ada apa-apa&quot;</title>
+      <link>https://draft.ipe.rest/id/blog/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/nothing-happened-today/</guid>
+      <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Hari yang tak istimewa pun menyimpan cerita. Tiga pertanyaan untuk menjaring sesuatu yang layak diceritakan dari hari biasa, lengkap dengan contoh.</description>
+    </item>
+    <item>
+      <title>Cara menutup dengan gema, bukan pelajaran moral</title>
+      <link>https://draft.ipe.rest/id/blog/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/ending-without-a-moral/</guid>
+      <pubDate>Mon, 26 Oct 2026 17:15:00 +0900</pubDate>
+      <description>Saat tergoda menutup dengan &quot;dan saat itulah aku sadar betapa berharganya&quot;. Tiga cara membuang pelajaran dan menutup dengan adegan, lengkap dengan contoh.</description>
+    </item>
+    <item>
+      <title>Satu kalimat pembuka bisa menyelamatkan cerita: cara menulis hook</title>
+      <link>https://draft.ipe.rest/id/blog/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/first-line-hook/</guid>
+      <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
+      <description>Tulisan yang dibuka dengan penjelasan sulit dibaca sampai habis. Tiga cara menulis kalimat pertama yang langsung di tengah adegan, lengkap dengan contoh.</description>
+    </item>
+    <item>
+      <title>Latihan bicara 30 detik: pilih satu adegan dari hari ini</title>
+      <link>https://draft.ipe.rest/id/blog/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/thirty-second-practice/</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Kalau menjelaskan seluruh harimu bikin buntu, pilih satu adegan saja. Latihan sederhana untuk mengeluarkan bahan cerita dalam tiga puluh detik.</description>
+    </item>
     <item>
       <title>Buntu di depan kotak keterangan yang kosong? Ucapkan saja dulu</title>
       <link>https://draft.ipe.rest/id/blog/blank-caption-box/</link>
       <guid isPermaLink="true">https://draft.ipe.rest/id/blog/blank-caption-box/</guid>
-      <pubDate>Fri, 23 Oct 2026 16:00:00 +0900</pubDate>
-      <description>Hari ini panjang, tetapi kotak keterangan tak memberimu apa-apa. Begini cara mengeluarkan ceritanya: bicara dulu, lalu biarkan beberapa pertanyaan menemukan momen yang sebenarnya.</description>
+      <pubDate>Fri, 23 Oct 2026 17:30:00 +0900</pubDate>
+      <description>Harimu panjang, tapi kotak keterangan tetap kosong. Begini cara mengeluarkan ceritanya: bicara dulu, lalu biarkan beberapa pertanyaan menemukan momen nyata.</description>
     </item>
   </channel>
 </rss>

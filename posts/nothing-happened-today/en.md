@@ -3,7 +3,7 @@ title: Finding a story in "nothing really happened today"
 description: Even a day with nothing special in it holds a story. Three questions that fish something worth telling out of an ordinary day, with an example.
 date: 2026-10-27
 slug: nothing-happened-today
-draft: true
+published: 2026-10-27T16:00:00+09:00
 ---
 
 "Nothing really happened today." The days when that sentence comes out most are the days with the most stories hiding in them. A day without a big event isn't a day without a story. It just means the eye for small things hasn't switched on yet.

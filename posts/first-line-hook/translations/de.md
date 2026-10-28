@@ -3,7 +3,7 @@ title: Ein erster Satz kann eine Geschichte retten: So schreibst du einen Aufhä
 description: Texte, die mit einer Erklärung beginnen, liest man selten zu Ende. Drei Wege zu einem ersten Satz, der mitten in einer Szene einsetzt, mit Beispielen.
 date: 2026-10-25
 slug: first-line-hook
-draft: true
+published: 2026-10-25T16:53:00+09:00
 ---
 
 Wer durch den Feed scrollt, entscheidet in der ersten Zeile, ob er weiterliest. Deshalb ist der erste Satz einer Geschichte, der Aufhänger, so wichtig. Er muss nicht großartig sein. Schon der Sprung mitten in eine Szene verändert den ganzen Text.

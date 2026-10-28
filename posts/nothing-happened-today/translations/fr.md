@@ -1,9 +1,9 @@
 ---
 title: Trouver une histoire dans « aujourd'hui, il ne s'est rien passé »
-description: Même une journée sans rien de spécial renferme une histoire. Trois questions pour repêcher quelque chose qui vaille d'être raconté dans une journée ordinaire, avec un exemple.
+description: Même une journée sans rien de spécial renferme une histoire. Trois questions pour repêcher de quoi raconter dans une journée ordinaire, avec un exemple.
 date: 2026-10-27
 slug: nothing-happened-today
-draft: true
+published: 2026-10-27T16:00:00+09:00
 ---
 
 « Aujourd'hui, il ne s'est rien passé. » Les jours où cette phrase revient le plus sont ceux où se cachent le plus d'histoires. Une journée sans grand événement n'est pas une journée sans histoire. Cela veut seulement dire que l'œil pour les petites choses n'est pas encore allumé.

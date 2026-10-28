@@ -3,7 +3,7 @@ title: Un ejercicio de 30 segundos: elige solo una escena de hoy
 description: Si intentar explicar todo tu día te bloquea, elige una sola escena. Un ejercicio sencillo para sacar en treinta segundos la materia prima de una historia.
 date: 2026-10-24
 slug: thirty-second-practice
-draft: true
+published: 2026-10-24T16:00:00+09:00
 ---
 
 ¿Alguna vez te preguntaron "¿qué tal tu día?" y lo único que te salió fue "bien"? Si intentas explicar un día entero, no sabes por dónde empezar. Una historia no empieza con un día. Empieza con una escena.

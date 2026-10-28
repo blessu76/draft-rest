@@ -3,7 +3,7 @@ title: Bài tập nói 30 giây: chỉ chọn một cảnh của hôm nay
 description: Nếu cố kể cả ngày khiến bạn đứng hình, hãy chỉ chọn một cảnh. Một bài tập đơn giản để lấy nguyên liệu câu chuyện ra trong ba mươi giây.
 date: 2026-10-24
 slug: thirty-second-practice
-draft: true
+published: 2026-10-24T16:00:00+09:00
 ---
 
 Có bao giờ ai đó hỏi "hôm nay thế nào?" mà bạn chỉ đáp được "bình thường"? Khi cố giải thích cả một ngày, bạn không biết bắt đầu từ đâu. Một câu chuyện không bắt đầu từ một ngày. Nó bắt đầu từ một cảnh.

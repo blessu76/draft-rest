@@ -3,7 +3,7 @@ title: A 30-second speaking drill: pick just one scene from today
 description: If explaining your whole day makes you freeze, pick a single scene instead. A simple drill for pulling the raw material of a story out in thirty seconds.
 date: 2026-10-24
 slug: thirty-second-practice
-draft: true
+published: 2026-10-24T16:00:00+09:00
 ---
 
 Has someone asked "How was your day?" and all you could say was "fine"? Try to explain a whole day and you won't know where to start. A story doesn't begin with a day. It begins with one scene.
