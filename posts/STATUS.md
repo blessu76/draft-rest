@@ -14,6 +14,14 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 Queued dates are placeholders; `publish_post.py` stamps the real date and time. Facts about draft() are limited to what the site states
 (talk ~30 s → 2–3 gentle questions → story hook/rising/peak/reflection/close; privacy; no claims about release or formats).
 
+## Before a post goes into the queue
+
+```
+python3 scripts/check_queue.py [<slug>]        # all 11 languages, description <= 160, ko body 1,100~1,900, front matter — the same limits as the build (shared constants in build_site.py)
+```
+
+Run it on every new draft before committing it to the queue; fix until it prints OK.
+
 ## Publish one post (daily, ~16:00 KST)
 
 ```
