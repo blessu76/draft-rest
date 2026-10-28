@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 15:58:00 +0900</lastBuildDate>
+    <item>
+      <title>짧은 이야기에는 한 사람만 세워 보세요</title>
+      <link>https://draft.ipe.rest/ko/blog/one-person-in-focus/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/one-person-in-focus/</guid>
+      <pubDate>Wed, 28 Oct 2026 15:58:00 +0900</pubDate>
+      <description>사람이 많으면 이야기는 흐려집니다. 한 사람을 고르고 그 사람에 대한 작은 질문 세 개를 던져 보세요. 예시와 함께 정리했습니다.</description>
+    </item>
     <item>
       <title>&quot;오늘은 별일 없었는데&quot;에서 이야기를 찾는 법</title>
       <link>https://draft.ipe.rest/ko/blog/nothing-happened-today/</link>

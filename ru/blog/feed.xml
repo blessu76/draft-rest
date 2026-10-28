@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 15:58:00 +0900</lastBuildDate>
+    <item>
+      <title>Поставьте в центр короткой истории одного человека</title>
+      <link>https://draft.ipe.rest/ru/blog/one-person-in-focus/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/one-person-in-focus/</guid>
+      <pubDate>Wed, 28 Oct 2026 15:58:00 +0900</pubDate>
+      <description>Когда в истории толпа, она расплывается. Выберите одного человека, задайте о нём три маленьких вопроса и дайте лицо короткой истории. С примером.</description>
+    </item>
     <item>
       <title>Как найти историю в «сегодня ничего не произошло»</title>
       <link>https://draft.ipe.rest/ru/blog/nothing-happened-today/</link>

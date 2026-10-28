@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 15:58:00 +0900</lastBuildDate>
+    <item>
+      <title>Stell einen einzigen Menschen in die Mitte einer Kurzgeschichte</title>
+      <link>https://draft.ipe.rest/de/blog/one-person-in-focus/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/one-person-in-focus/</guid>
+      <pubDate>Wed, 28 Oct 2026 15:58:00 +0900</pubDate>
+      <description>Zu viele Leute machen eine Geschichte unscharf. Wähle eine Person, stelle drei kleine Fragen zu ihr und gib deiner Kurzgeschichte ein Gesicht.</description>
+    </item>
     <item>
       <title>Eine Geschichte in „heute ist nichts passiert“ finden</title>
       <link>https://draft.ipe.rest/de/blog/nothing-happened-today/</link>
