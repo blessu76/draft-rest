@@ -132,7 +132,11 @@ def main(argv=None):
         raise SystemExit("--at needs an offset, e.g. +09:00")
     files, iso = publish(a.root, a.slug, when)
     print("publish_post: %s -> %d files, published %s, draft flag removed" % (a.slug, len(files), iso))
-    warns = lint_post(a.root, a.slug)
+    try:
+        warns = lint_post(a.root, a.slug)
+    except Exception as ex:  # lint is advisory: the post is already published, so nothing here may change the exit code
+        print("publish_post: WARN lint skipped (%s: %s)" % (type(ex).__name__, ex), file=sys.stderr)
+        return 0
     for w in warns:
         print("publish_post: WARN " + w, file=sys.stderr)
     if warns:

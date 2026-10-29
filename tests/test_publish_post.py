@@ -6,6 +6,7 @@ import shutil
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -159,6 +160,26 @@ class Lint(unittest.TestCase):
         self.assertIn("WARN q-one/en: body is 100 words (< 300)", err.getvalue())
         self.assertIn("published anyway", err.getvalue())
         self.assertNotIn("draft", self.file("q-one", "en").read_text(encoding="utf-8").split("---")[1])  # it really published
+
+    def test_cli_survives_a_lint_crash(self):
+        write_post(self.dir, "q-one", extra="draft: true\n")
+        out, err = io.StringIO(), io.StringIO()
+        for exc in (UnicodeDecodeError("utf-8", b"\xff", 0, 1, "bad"), KeyError("title"), RuntimeError("boom")):
+            with mock.patch.object(publish_post, "lint_post", side_effect=exc), contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+                code = publish_post.main(["q-one", "--root", str(self.dir), "--at", (dt.datetime.now(KST) - dt.timedelta(minutes=5)).isoformat()])
+            self.assertEqual(code, 0)
+        self.assertIn("draft flag removed", out.getvalue())
+        self.assertIn("WARN lint skipped", err.getvalue())
+        self.assertEqual(err.getvalue().count("\n"), 3)  # one WARN line per crash
+
+    def test_lint_crash_in_a_foreign_post_file_does_not_fail_publishing(self):
+        write_post(self.dir, "q-one", extra="draft: true\n")
+        write_post(self.dir, "q-two")
+        self.file("q-two", "en").write_bytes(b"---\n\xff\xfe\n---\n")  # not UTF-8
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            code = publish_post.main(["q-one", "--root", str(self.dir), "--at", (dt.datetime.now(KST) - dt.timedelta(minutes=5)).isoformat()])
+        self.assertEqual(code, 0)
 
     def test_cli_is_quiet_when_nothing_to_warn_about(self):
         write_post(self.dir, "q-one", extra="draft: true\n")
