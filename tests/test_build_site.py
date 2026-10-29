@@ -1037,6 +1037,64 @@ def html_unescape(s):
     return html.unescape(s)
 
 
+class BlogPostingAudit(unittest.TestCase):
+    """SEO guide P0-8: every published post page (all posts x 11 languages) carries a complete BlogPosting node."""
+
+    REQUIRED = ("@id", "headline", "description", "datePublished", "dateModified", "inLanguage", "mainEntityOfPage", "url",
+                "image", "author", "publisher", "isPartOf", "wordCount", "keywords", "articleSection")
+    ISO = re.compile(r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\+09:00$")
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+        cls.posts, _ = build_site.load_posts(ROOT)
+
+    def pages(self):
+        for p in self.posts:
+            for c in build_site.CODES:
+                yield p, c, self.files["%s/blog/%s/index.html" % (c, p["slug"])]
+
+    def test_there_are_posts_to_audit(self):
+        self.assertGreaterEqual(len(list(self.pages())), 11)
+
+    def test_required_fields_publisher_and_dates_on_every_page(self):
+        import datetime as dt
+        import html as htmllib
+        now = dt.datetime.now(build_site.KST)
+        for p, c, page in self.pages():
+            where = "%s/%s" % (c, p["slug"])
+            d = ld_of(page, "BlogPosting")
+            for k in self.REQUIRED:
+                self.assertTrue(d.get(k), "%s: missing %s" % (where, k))
+            self.assertEqual(d["publisher"]["@id"], HUB, where)
+            self.assertEqual(d["author"]["@id"], HUB, where)
+            self.assertEqual(d["inLanguage"], c, where)
+            self.assertEqual(d["url"], build_site.post_url(c, p["slug"]), where)
+            self.assertEqual(d["mainEntityOfPage"]["@id"], d["url"], where)
+            for k in ("datePublished", "dateModified"):
+                self.assertRegex(d[k], self.ISO, "%s: %s" % (where, k))
+                self.assertLessEqual(dt.datetime.fromisoformat(d[k]), now, "%s: %s is in the future" % (where, k))
+            self.assertLessEqual(d["datePublished"], d["dateModified"], where)
+            title = htmllib.unescape(re.search(r"<title>(.*?)</title>", page, re.S).group(1))
+            self.assertIn(d["headline"], title, "%s: headline is not part of <title>" % where)
+            self.assertIsInstance(d["wordCount"], int, where)
+            self.assertGreater(d["wordCount"], 0, where)
+
+    def test_translation_links_and_breadcrumb_on_every_page(self):
+        for p, c, page in self.pages():
+            where = "%s/%s" % (c, p["slug"])
+            d = ld_of(page, "BlogPosting")
+            if c == build_site.DEFAULT_LANG:
+                self.assertEqual(len(d["workTranslation"]), len(build_site.CODES) - 1, where)
+                self.assertNotIn("translationOfWork", d, where)
+            else:
+                self.assertEqual(d["translationOfWork"]["@id"], build_site.article_id("en", p["slug"]), where)
+                self.assertNotIn("workTranslation", d, where)
+            crumb = ld_of(page, "BreadcrumbList")["itemListElement"]
+            self.assertEqual([x["position"] for x in crumb], [1, 2, 3], where)
+            self.assertEqual(crumb[-1]["item"], d["url"], where)
+
+
 class DescriptionLimit(unittest.TestCase):
     def test_too_long_post_description_fails_the_build(self):
         with tempfile.TemporaryDirectory() as tmp:
