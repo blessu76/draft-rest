@@ -28,6 +28,22 @@ Con un giro:
 
 La espera es la misma, pero un par de guantes la parte en antes y después.
 
+## Otro ejemplo: una llamada
+
+> Llamé a mi hermana para decirle que había aceptado el trabajo. Dijo que vale.
+
+Con un giro:
+
+> Llamé a mi hermana para decirle que había aceptado el trabajo, esperando que se alegrara. Se quedó callada un segundo. «O sea que de verdad te vas». Había sonreído todo el camino a casa, y dejé de hacerlo. No se me había ocurrido qué significaba la noticia para ella.
+
+Aquí el giro es algo que se nota. Nadie grita ni llora, y aun así la escena cambia de rumbo en una sola línea.
+
+## Preguntas que ayudan a encontrarlo
+
+- ¿Cuándo dejó de ser cierto el sentimiento del principio de la escena?
+- ¿Qué sabes al final que no sabías al principio?
+- Si borraras una frase y la escena quedara plana, ¿cuál sería? Esa frase es tu giro.
+
 ## Tropiezos habituales
 
 - **Hacer el giro demasiado grande.** «Todo cambió» cuesta creerlo. Un cambio pequeño suena más honesto.
@@ -41,3 +57,5 @@ Cuando hablas unos treinta segundos, suelen aparecer palabras como «pero», «e
 ## Prueba esto hoy
 
 Elige una escena de hoy y escríbela en dos frases: cómo se sentía antes y cómo se sentía después. Lo que haya entre esas dos frases es tu giro.
+
+Después lee en voz alta tus dos frases. Si la segunda pudiera ocupar el lugar de la primera sin cambiar nada, todavía no hay giro. Busca de nuevo el momento que queda entre ambas.

@@ -28,6 +28,22 @@ Com uma virada:
 
 A espera é a mesma, mas um par de luvas a divide em antes e depois.
 
+## Outro exemplo: uma ligação
+
+> Liguei para minha irmã para dizer que tinha aceitado o emprego. Ela disse tudo bem.
+
+Com uma virada:
+
+> Liguei para minha irmã para dizer que tinha aceitado o emprego, esperando que ela comemorasse. Ela ficou calada por um segundo. «Então você vai mesmo se mudar.» Eu tinha sorrido o caminho todo até em casa, e parei. Nunca me ocorreu o que a notícia significava para ela.
+
+Aqui a virada é algo percebido. Ninguém grita nem chora, e mesmo assim a cena muda de rumo em uma única linha.
+
+## Perguntas que ajudam a encontrá-la
+
+- Quando o sentimento do começo da cena deixou de ser verdade?
+- O que você sabe no fim que não sabia no começo?
+- Se você apagasse uma frase e a cena ficasse plana, qual seria? Essa frase é a sua virada.
+
 ## Tropeços comuns
 
 - **Fazer a virada grande demais.** «Tudo mudou» é difícil de acreditar. Uma mudança pequena soa mais honesta.
@@ -41,3 +57,5 @@ Quando você fala por cerca de trinta segundos, palavras como «mas», «então�
 ## Experimente hoje
 
 Escolha uma cena de hoje e escreva em duas frases: como era antes e como ficou depois. O que estiver entre essas duas frases é a sua virada.
+
+Depois leia em voz alta as suas duas frases. Se a segunda pudesse ocupar o lugar da primeira sem mudar nada, ainda não há virada. Procure de novo o momento que fica entre elas.

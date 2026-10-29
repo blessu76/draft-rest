@@ -28,6 +28,22 @@ Khi có bước ngoặt:
 
 Thời gian chờ vẫn vậy, nhưng một đôi găng tay chia nó thành trước và sau.
 
+## Một ví dụ khác: cuộc gọi điện thoại
+
+> Tôi gọi cho chị gái để nói rằng tôi đã nhận công việc. Chị bảo ừ.
+
+Khi có bước ngoặt:
+
+> Tôi gọi cho chị gái để nói rằng tôi đã nhận công việc, đinh ninh chị sẽ reo lên mừng. Chị im lặng một lúc. "Vậy là em đi thật." Suốt quãng đường về nhà tôi đã cười, và giờ nụ cười tắt. Tôi chưa từng nghĩ tin này có ý nghĩa gì với chị.
+
+Ở đây bước ngoặt là điều được nhận ra. Không ai hét lên hay khóc, vậy mà cảnh vẫn đổi hướng chỉ trong một dòng.
+
+## Những câu hỏi giúp bạn tìm ra nó
+
+- Cảm xúc ở đầu cảnh thôi đúng từ lúc nào?
+- Cuối cảnh bạn biết điều gì mà đầu cảnh bạn chưa biết?
+- Nếu xóa một câu mà cảnh trở nên phẳng, đó là câu nào? Câu ấy chính là bước ngoặt của bạn.
+
 ## Những vướng mắc thường gặp
 
 - **Làm bước ngoặt quá lớn.** "Mọi thứ đã thay đổi" khó khiến người ta tin. Một thay đổi nhỏ nghe thật hơn.
@@ -41,3 +57,5 @@ Khi bạn nói khoảng ba mươi giây, những từ như "nhưng", "rồi", "b
 ## Thử ngay hôm nay
 
 Chọn một cảnh hôm nay và viết thành hai câu: cảm giác trước và cảm giác sau. Thứ nằm giữa hai câu ấy chính là bước ngoặt của bạn.
+
+Sau đó hãy đọc to hai câu của bạn. Nếu đặt câu thứ hai vào chỗ câu thứ nhất mà chẳng có gì đổi khác, nghĩa là chưa có bước ngoặt. Hãy tìm lại khoảnh khắc nằm giữa hai câu.

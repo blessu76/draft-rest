@@ -28,6 +28,22 @@ Avec un tournant :
 
 L'attente est la même, mais une paire de gants la coupe en un avant et un après.
 
+## Un autre exemple : un coup de téléphone
+
+> J'ai appelé ma sœur pour lui dire que j'avais accepté le poste. Elle a dit d'accord.
+
+Avec un tournant :
+
+> J'ai appelé ma sœur pour lui dire que j'avais accepté le poste, persuadé qu'elle allait se réjouir. Elle est restée silencieuse une seconde. « Donc tu déménages vraiment. » J'avais souri pendant tout le trajet du retour, et j'ai cessé. Je n'avais jamais pensé à ce que cette nouvelle signifiait pour elle.
+
+Ici, le tournant est une chose remarquée. Personne ne crie ni ne pleure, et pourtant la scène change de direction en une seule ligne.
+
+## Des questions pour le trouver
+
+- Quand le sentiment du début de la scène a-t-il cessé d'être vrai ?
+- Que savez-vous à la fin que vous ignoriez au début ?
+- Si vous supprimiez une phrase et que la scène devenait plate, laquelle serait-ce ? Cette phrase est votre tournant.
+
 ## Les pièges courants
 
 - **Faire le tournant trop grand.** « Tout a changé » est difficile à croire. Un petit déplacement paraît plus honnête.
@@ -41,3 +57,5 @@ Quand vous parlez environ trente secondes, des mots comme « mais », « puis »
 ## À essayer aujourd'hui
 
 Choisissez une scène d'aujourd'hui et écrivez-la en deux phrases : comment c'était avant, comment c'était après. Ce qui se trouve entre ces deux phrases est votre tournant.
+
+Lisez ensuite vos deux phrases à voix haute. Si la seconde pouvait prendre la place de la première sans rien changer, il n'y a pas encore de tournant. Cherchez à nouveau le moment qui se trouve entre les deux.

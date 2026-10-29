@@ -28,6 +28,22 @@ Dengan titik balik:
 
 Menunggunya sama, tetapi sepasang sarung tangan membaginya menjadi sebelum dan sesudah.
 
+## Contoh lain: sebuah telepon
+
+> Aku menelepon kakakku untuk bilang aku sudah menerima pekerjaan itu. Dia bilang oke.
+
+Dengan titik balik:
+
+> Aku menelepon kakakku untuk bilang aku sudah menerima pekerjaan itu, mengira dia akan bersorak. Dia diam sejenak. "Jadi kamu benar-benar pindah." Sepanjang jalan pulang aku tersenyum, dan sekarang senyumku hilang. Aku belum pernah memikirkan apa arti kabar itu baginya.
+
+Di sini titik baliknya adalah sesuatu yang disadari. Tak ada yang berteriak atau menangis, namun arah adegan berubah hanya dalam satu baris.
+
+## Pertanyaan yang membantu menemukannya
+
+- Kapan perasaan di awal adegan berhenti menjadi benar?
+- Apa yang kamu tahu di akhir tetapi belum kamu tahu di awal?
+- Jika kamu menghapus satu kalimat dan adegan menjadi datar, kalimat yang mana? Kalimat itulah titik balikmu.
+
 ## Hambatan yang umum
 
 - **Membuat titik balik terlalu besar.** "Semuanya berubah" sulit dipercaya. Perubahan kecil terasa lebih jujur.
@@ -41,3 +57,5 @@ Saat kamu bercerita sekitar tiga puluh detik, kata seperti "tapi", "lalu", dan "
 ## Coba hari ini
 
 Pilih satu adegan hari ini dan tulis dalam dua kalimat: bagaimana rasanya sebelum, dan bagaimana rasanya sesudah. Apa pun yang ada di antara dua kalimat itu adalah titik balikmu.
+
+Lalu bacakan dua kalimatmu dengan suara keras. Kalau kalimat kedua bisa ditaruh di tempat kalimat pertama tanpa mengubah apa pun, berarti belum ada titik balik. Carilah lagi momen yang ada di antara keduanya.

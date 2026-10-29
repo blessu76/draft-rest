@@ -28,6 +28,22 @@ Mit Wendepunkt:
 
 Das Warten ist dasselbe, aber ein Paar Handschuhe teilt es in ein Vorher und ein Nachher.
 
+## Noch ein Beispiel: ein Anruf
+
+> Ich rief meine Schwester an und sagte, dass ich den Job angenommen hatte. Sie sagte: „Okay.“
+
+Mit Wendepunkt:
+
+> Ich rief meine Schwester an und sagte, dass ich den Job angenommen hatte, und rechnete mit Jubel. Sie schwieg einen Moment. „Du ziehst also wirklich weg.“ Den ganzen Heimweg hatte ich gelächelt, und jetzt hörte ich auf. Ich hatte nie darüber nachgedacht, was die Nachricht für sie bedeutete.
+
+Hier ist der Wendepunkt etwas Bemerktes. Niemand schreit oder weint, und trotzdem ändert die Szene in einer einzigen Zeile ihre Richtung.
+
+## Fragen, die beim Finden helfen
+
+- Wann hörte das Gefühl vom Anfang der Szene auf, wahr zu sein?
+- Was weißt du am Ende, das du am Anfang nicht wusstest?
+- Wenn du einen Satz streichst und die Szene flach wird, welcher Satz wäre das? Dieser Satz ist dein Wendepunkt.
+
 ## Häufige Stolpersteine
 
 - **Den Wendepunkt zu groß machen.** „Alles änderte sich“ glaubt man schwer. Eine kleine Verschiebung wirkt ehrlicher.
@@ -41,3 +57,5 @@ Wenn du etwa dreißig Sekunden sprichst, tauchen oft Wörter wie „aber“, „
 ## Probier es heute aus
 
 Wähle eine Szene von heute und schreibe sie in zwei Sätzen: wie es sich vorher anfühlte und wie nachher. Was zwischen diesen beiden Sätzen liegt, ist dein Wendepunkt.
+
+Lies dann deine beiden Sätze laut vor. Wenn der zweite an die Stelle des ersten treten könnte, ohne dass sich etwas ändert, gibt es noch keinen Wendepunkt. Suche den Moment zwischen beiden noch einmal.

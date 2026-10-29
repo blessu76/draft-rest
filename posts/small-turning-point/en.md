@@ -28,6 +28,22 @@ With a turn:
 
 The wait is the same, but one pair of gloves splits it into before and after.
 
+## Another example: a phone call
+
+> I called my sister to say I'd taken the job. She said okay.
+
+With a turn:
+
+> I called my sister to say I'd taken the job, expecting her to cheer. She was quiet for a second. "So you're really moving." I had been smiling all the way home, and I stopped. It had not occurred to me what the news meant for her.
+
+Here the turn is a thing noticed. Nobody shouts or cries, and the scene still changes direction in a single line.
+
+## Questions that help you find it
+
+- When did the feeling at the start of the scene stop being true?
+- What do you know at the end that you didn't know at the start?
+- If you deleted one sentence and the scene went flat, which sentence was it? That one is your turn.
+
 ## Common stumbling blocks
 
 - **Making the turn too big.** "Everything changed" is hard to believe. A small shift reads as more honest.
@@ -41,3 +57,5 @@ When you talk for about thirty seconds, words like "but," "then" and "suddenly" 
 ## Try this today
 
 Pick one scene from today and write it in two sentences: how it felt before, and how it felt after. Whatever sits between those two sentences is your turn.
+
+Then read your two sentences aloud. If the second one could swap places with the first without changing anything, there is no turn yet. Look again for the moment that sits between them.
