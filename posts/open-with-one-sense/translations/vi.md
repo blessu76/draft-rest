@@ -1,9 +1,9 @@
 ---
 title: Mở một cảnh bằng một giác quan duy nhất
 description: Bắt đầu từ điều nhìn thấy thì dễ nhưng phẳng. Ba cách mở cảnh bằng một âm thanh, mùi hương hoặc xúc giác, kèm ví dụ.
-date: 2026-10-28
+date: 2026-10-29
 slug: open-with-one-sense
-draft: true
+published: 2026-10-29T16:12:00+09:00
 ---
 
 Phần lớn các cảnh bắt đầu từ điều ta nhìn thấy. "Chiều mưa, tôi ngồi trong quán cà phê." Đó là cách mở dễ nhất, và thường cũng là phẳng nhất. Hãy mở cùng cảnh ấy bằng một âm thanh, mùi hương hay xúc giác, người đọc sẽ vào trong cảnh chỉ sau một câu.

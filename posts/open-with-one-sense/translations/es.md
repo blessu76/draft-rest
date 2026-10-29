@@ -1,9 +1,9 @@
 ---
 title: Abre una escena con un solo sentido
 description: Empezar por lo que viste resulta fácil pero plano. Tres formas de abrir una escena con un sonido, un olor o un tacto, con un ejemplo.
-date: 2026-10-28
+date: 2026-10-29
 slug: open-with-one-sense
-draft: true
+published: 2026-10-29T16:12:00+09:00
 ---
 
 La mayoría de las escenas empiezan por lo que vimos. «Era una tarde de lluvia y estaba sentado en un café». Es la apertura más fácil y, a menudo, la más plana. Abre la misma escena con un solo sonido, olor o tacto y quien lee estará dentro en una frase.

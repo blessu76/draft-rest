@@ -1,9 +1,9 @@
 ---
 title: Buka sebuah adegan dengan satu indra saja
 description: Memulai dari apa yang terlihat itu mudah tetapi datar. Tiga cara membuka adegan dengan satu suara, bau, atau sentuhan, lengkap dengan contoh.
-date: 2026-10-28
+date: 2026-10-29
 slug: open-with-one-sense
-draft: true
+published: 2026-10-29T16:12:00+09:00
 ---
 
 Kebanyakan adegan dimulai dari apa yang terlihat. "Sore itu hujan dan aku duduk di sebuah kafe." Itu pembukaan yang paling mudah, dan sering kali paling datar. Buka adegan yang sama dengan satu suara, bau, atau sentuhan, dan pembaca sudah berada di dalamnya dalam satu kalimat.

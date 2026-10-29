@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Wed, 28 Oct 2026 15:58:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 16:12:00 +0900</lastBuildDate>
+    <item>
+      <title>Откройте сцену одним чувством</title>
+      <link>https://draft.ipe.rest/ru/blog/open-with-one-sense/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/open-with-one-sense/</guid>
+      <pubDate>Thu, 29 Oct 2026 16:12:00 +0900</pubDate>
+      <description>Начинать с увиденного легко, но выходит плоско. Три способа открыть сцену звуком, запахом или прикосновением, с примером.</description>
+    </item>
     <item>
       <title>Поставьте в центр короткой истории одного человека</title>
       <link>https://draft.ipe.rest/ru/blog/one-person-in-focus/</link>

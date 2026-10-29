@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 28 Oct 2026 15:58:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 16:12:00 +0900</lastBuildDate>
+    <item>
+      <title>場面は、ひとつの感覚で開いてみましょう</title>
+      <link>https://draft.ipe.rest/ja/blog/open-with-one-sense/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/blog/open-with-one-sense/</guid>
+      <pubDate>Thu, 29 Oct 2026 16:12:00 +0900</pubDate>
+      <description>見たものから始めると平板になりがちです。音・におい・手触りのどれかひとつで場面を開く三つの方法を、例といっしょにまとめました。</description>
+    </item>
     <item>
       <title>短い話には、ひとりだけ立たせてみましょう</title>
       <link>https://draft.ipe.rest/ja/blog/one-person-in-focus/</link>

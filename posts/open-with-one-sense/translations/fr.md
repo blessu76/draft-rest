@@ -1,9 +1,9 @@
 ---
 title: Ouvrez une scène avec un seul sens
 description: Commencer par ce qu'on a vu est facile mais plat. Trois façons d'ouvrir une scène par un son, une odeur ou un toucher, avec un exemple.
-date: 2026-10-28
+date: 2026-10-29
 slug: open-with-one-sense
-draft: true
+published: 2026-10-29T16:12:00+09:00
 ---
 
 La plupart des scènes commencent par ce que l'on a vu. « C'était un soir de pluie et j'étais assis dans un café. » C'est l'ouverture la plus facile, et souvent la plus plate. Ouvrez la même scène avec un seul son, une odeur ou un toucher, et le lecteur y est en une phrase.

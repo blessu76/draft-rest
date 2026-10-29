@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Wed, 28 Oct 2026 15:58:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 16:12:00 +0900</lastBuildDate>
+    <item>
+      <title>用一种感官来开启一个场景</title>
+      <link>https://draft.ipe.rest/zh/blog/open-with-one-sense/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/open-with-one-sense/</guid>
+      <pubDate>Thu, 29 Oct 2026 16:12:00 +0900</pubDate>
+      <description>从看到的东西写起，容易平淡。用声音、气味或触感中的一种来开场，三种方法，附例子。</description>
+    </item>
     <item>
       <title>短故事里，只让一个人站在中间</title>
       <link>https://draft.ipe.rest/zh/blog/one-person-in-focus/</link>
