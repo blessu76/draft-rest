@@ -71,6 +71,8 @@ def check_queue(root, slugs=None):
 
 
 def scan(root, slugs=None):
+    """-> (checked slugs, errors, warnings). Without slugs only queued drafts are scanned; naming slugs explicitly also checks
+    already published posts against the floor (verify mode)."""
     base = Path(root) / "posts"
     dirs = [base / s for s in slugs] if slugs else sorted(d for d in base.iterdir() if d.is_dir())
     errors, checked, warnings = [], [], []

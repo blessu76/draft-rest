@@ -33,7 +33,6 @@ CJK_LANGS = ("ko", "ja", "zh")  # no word spaces: size is counted in characters,
 # latin = words (en es pt id ru vi fr de); cjk = characters without whitespace (ko ja zh). ko's floor is build_site.KO_BODY_MIN (raw chars).
 BODY_TARGET = {"latin": 400, "cjk": 800}
 BODY_FLOOR = {"latin": 300, "cjk": 600}
-FLOOR_TAG = "floor)"  # every floor message ends with "(< N floor)"
 TITLE_MAX = {"latin": 60, "cjk": 40}  # rendered <title>
 DESC_MAX = {"latin": 160, "cjk": 110}
 
@@ -84,15 +83,43 @@ def _kind(lang):
     return "cjk" if lang in CJK_LANGS else "latin"
 
 
+def visible_text(body):
+    """Markdown body -> the text a reader sees: no fenced code blocks, images, link URLs (the link text stays), HTML tags,
+    heading / quote / list markers (incl. '1.' numbers), horizontal rules or emphasis marks. (build_site.markdown()/word_count() are
+    not reused: the build keeps code blocks and counts punctuation differently; the length lint wants the prose only.)"""
+    lines, in_code = [], False
+    for line in body.split("\n"):
+        st = line.strip()
+        if st.startswith("```"):
+            in_code = not in_code
+            continue
+        if in_code or re.match(r"^(-{3,}|\*{3,}|_{3,})$", st):
+            continue
+        st = re.sub(r"^(>\s*)+", "", st)
+        st = re.sub(r"^(#{1,6}\s+|[-*+]\s+|\d+[.)]\s+)", "", st)
+        lines.append(st)
+    t = "\n".join(lines)
+    t = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", t)
+    t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", t)
+    t = re.sub(r"<[^>]+>", " ", t)
+    return t.replace("*", "").replace("`", "")
+
+
 def body_size(body, lang):
-    """(count, unit): visible characters (no whitespace) for ko/ja/zh, else words (tokens without a letter or digit, like '##' or '>', do not count)."""
+    """(count, unit) of the visible text (see visible_text): characters without whitespace for ko/ja/zh, else words
+    (tokens without a letter or digit, like a stray '-' or '&', do not count)."""
+    text = visible_text(body)
     if lang in CJK_LANGS:
-        return len(re.sub(r"\s", "", body)), "chars"
-    return sum(1 for t in body.split() if any(unicodedata.category(ch)[0] in "LN" for ch in t)), "words"
+        return len(re.sub(r"\s", "", text)), "chars"
+    return sum(1 for t in text.split() if any(unicodedata.category(ch)[0] in "LN" for ch in t)), "words"
+
+
+class FloorWarning(str):
+    """A below-the-floor message (a plain str otherwise): is_floor_warning() tells floor from target by type, not by wording."""
 
 
 def body_length_findings(slug, langs):
-    """(floor_msgs, target_msgs) for {lang: parsed post file}. Below the floor -> floor_msgs; floor <= n < target -> target_msgs.
+    """(floor_msgs, target_msgs) for {lang: parsed post file}. Below the floor -> floor_msgs (FloorWarning); floor <= n < target -> target_msgs.
     ko has no floor here (build_site.KO_BODY_MIN, an error in the build, owns it) - only the 800-character target."""
     floor, target = [], []
     for lang, m in sorted(langs.items()):
@@ -100,14 +127,14 @@ def body_length_findings(slug, langs):
         kind = _kind(lang)
         where = "%s/%s" % (slug, lang)
         if lang != "ko" and n < BODY_FLOOR[kind]:
-            floor.append("%s: body is %d %s (< %d floor)" % (where, n, unit, BODY_FLOOR[kind]))
+            floor.append(FloorWarning("%s: body is %d %s (< %d floor)" % (where, n, unit, BODY_FLOOR[kind])))
         elif n < BODY_TARGET[kind]:
             target.append("%s: body is %d %s (< %d target)" % (where, n, unit, BODY_TARGET[kind]))
     return floor, target
 
 
 def is_floor_warning(w):
-    return w.endswith(FLOOR_TAG)
+    return isinstance(w, FloorWarning)
 
 
 def _norm_title(t):
