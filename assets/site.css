@@ -390,6 +390,8 @@
   .nf-langs{list-style:none;display:flex;flex-wrap:wrap;gap:4px 8px;font-family:var(--mono);font-size:14px;}
   .nf-langs a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:8px;color:var(--ink-soft);text-decoration:none;background:var(--card);}
   .nf-langs a:hover{border-color:var(--sage);color:var(--ink);}
+  .nf-blog{margin:0 0 20px;font-family:var(--mono);font-size:14px;}
+  .nf-blog a{display:inline-flex;align-items:center;min-height:44px;color:var(--sage);}
 
   /* ---------- content pages (about / privacy) ---------- */
   .page-body{margin-top:8px;}

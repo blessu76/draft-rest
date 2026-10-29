@@ -344,8 +344,9 @@ def render_404(version):
   <header class="blog-head">
     <p class="comment">// 404</p>
     <h1>Page not found</h1>
-    <p class="post-desc">That page doesn't exist, or it has moved. Pick a language to start from the home page.</p>
+    <p class="post-desc">That page doesn't exist, or it has moved. Pick a language to start from the home page, or read the blog.</p>
   </header>
+  <p class="nf-blog"><a href="/en/blog/">Read the blog &rarr;</a></p>
   <ul class="nf-langs">
 {links}
   </ul>

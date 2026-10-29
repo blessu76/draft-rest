@@ -71,6 +71,12 @@ class Pages(unittest.TestCase):
             self.assertIn('href="%s"' % build_site.home_path(c), t)
         self.assertNotIn("<loc>https://draft.ipe.rest/404", self.files["sitemap.xml"])
 
+    def test_404_links_to_the_blog_list(self):
+        t = self.files["404.html"]
+        self.assertIn('<a href="/en/blog/">', t)
+        self.assertIn("/en/blog/index.html", {"/" + k for k in self.files})
+        self.assertEqual(t.count('href="/en/blog/"'), 1)
+
     def test_og_locale_alternates_and_short_og_description(self):
         loc = build_site.load_locales(ROOT)
         t = self.files["ko/index.html"]
