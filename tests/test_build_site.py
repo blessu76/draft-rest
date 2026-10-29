@@ -1137,11 +1137,16 @@ class PostMoreLinks(unittest.TestCase):
         self.assertIn('rel="next"', oldest)
 
     def test_related_is_the_latest_three_other_posts_in_the_same_language(self):
-        for p in self.posts:
+        for i, p in enumerate(self.posts):
+            skip = {p["slug"]} | {self.posts[j]["slug"] for j in (i - 1, i + 1) if 0 <= j < len(self.posts)}
             for c in build_site.CODES:
-                want = ["/%s/blog/%s/" % (c, q["slug"]) for q in self.posts if q["slug"] != p["slug"]][:3]
-                self.assertEqual(self.hrefs(self.page(c, p["slug"]), "post-related"), want, "%s/%s" % (c, p["slug"]))
-                self.assertNotIn("/blog/%s/" % p["slug"], "".join(self.hrefs(self.page(c, p["slug"]), "post-related")))
+                want = ["/%s/blog/%s/" % (c, q["slug"]) for q in self.posts if q["slug"] not in skip][:3]
+                got = self.hrefs(self.page(c, p["slug"]), "post-related")
+                self.assertEqual(got, want, "%s/%s" % (c, p["slug"]))
+                adj = self.hrefs(self.page(c, p["slug"]), "post-adj")
+                self.assertFalse(set(got) & set(adj), "%s/%s related repeats previous/next" % (c, p["slug"]))
+                self.assertNotIn("/blog/%s/" % p["slug"], "".join(got))
+        self.assertEqual(len(self.hrefs(self.page("en", self.posts[0]["slug"]), "post-related")), min(3, len(self.posts) - 2))
 
     def test_labels_and_titles_are_in_the_page_language(self):
         loc = build_site.load_locales(ROOT)
@@ -1149,7 +1154,8 @@ class PostMoreLinks(unittest.TestCase):
             page = self.page(c, self.posts[1]["slug"])
             for k in ("post_prev", "post_next", "post_related"):
                 self.assertIn(loc[c][k], page, "%s %s" % (c, k))
-            self.assertIn(">%s</a>" % build_site.esc(self.posts[0]["langs"][c]["title"]), page)
+            self.assertIn('<span class="adj-title">%s</span>' % build_site.esc(self.posts[0]["langs"][c]["title"]), page)  # posts[0] is the next post of posts[1]
+            self.assertIn(">%s</a>" % build_site.esc(self.posts[3]["langs"][c]["title"]), page)  # posts[3] is the first related link of posts[1]
         self.assertNotEqual(loc["ko"]["post_prev"], loc["en"]["post_prev"])  # translated, not the English fallback
 
     def test_block_sits_between_cta_and_post_foot(self):
@@ -1194,7 +1200,15 @@ class PostMoreLinksSmall(unittest.TestCase):
         self.assertNotIn('rel="prev"', a)
         self.assertIn('rel="prev" href="/en/blog/a-post/"', b)
         self.assertNotIn('rel="next"', b)
-        self.assertEqual(PostMoreLinks.hrefs(a, "post-related"), ["/en/blog/b-post/"])
+        self.assertEqual(PostMoreLinks.hrefs(a, "post-related"), [])  # the only other post is already the next link
+        self.assertNotIn("post-related", a)
+
+    def test_three_posts_related_fills_with_next_latest(self):
+        for n, t in (("a-post", "09:00:00"), ("b-post", "10:00:00"), ("c-post", "11:00:00"), ("d-post", "12:00:00")):
+            write_post(self.dir, n, extra="published: 2026-10-01T%s+09:00\n" % t)
+        b = build_site.build(self.dir)["en/blog/b-post/index.html"]  # prev a, next c -> only d is left
+        self.assertEqual(PostMoreLinks.hrefs(b, "post-adj"), ["/en/blog/a-post/", "/en/blog/c-post/"])
+        self.assertEqual(PostMoreLinks.hrefs(b, "post-related"), ["/en/blog/d-post/"])
 
     def test_draft_posts_are_never_linked(self):
         write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")

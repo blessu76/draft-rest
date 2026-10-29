@@ -736,11 +736,11 @@ def post_title(title):
     return full if len(full) <= TITLE_MAX else title
 
 
-RELATED_POSTS = 3  # latest posts (same language, this one excluded) listed under every post
+RELATED_POSTS = 3  # latest posts (same language, this one and its previous/next excluded) listed under every post
 
 
 def post_more_html(locales, lang, post, posts):
-    """Bottom-of-post internal links: previous (older) / next (newer) post, then the latest RELATED_POSTS posts in the same language.
+    """Bottom-of-post internal links: previous (older) / next (newer) post, then the latest RELATED_POSTS other posts in the same language (not this one, not previous/next).
     `posts` is the full published list, newest first. Returns '' when there is no other post."""
     slugs = [p["slug"] for p in posts]
     if post["slug"] not in slugs:
@@ -763,7 +763,8 @@ def post_more_html(locales, lang, post, posts):
         if newer:
             out += "      " + adj(newer, "next", "post_next") + "\n"
         out += "    </nav>\n"
-    latest = [p for p in posts if p["slug"] != post["slug"]][:RELATED_POSTS]
+    skip = {post["slug"]} | {p["slug"] for p in (older, newer) if p}  # already linked above: fill with the next latest posts instead
+    latest = [p for p in posts if p["slug"] not in skip][:RELATED_POSTS]
     if latest:
         items = "\n".join('        <li><a href="%s">%s</a></li>' % (href(p), esc(p["langs"][lang]["title"])) for p in latest)
         out += ('    <section class="post-related" aria-labelledby="related-h">\n      <h2 id="related-h">%s</h2>\n      <ul>\n%s\n      </ul>\n    </section>\n'
