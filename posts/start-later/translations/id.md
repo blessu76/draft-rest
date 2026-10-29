@@ -28,6 +28,12 @@ Dengan memotong pemanasan dan mulai dari tengah:
 
 "Sabtu pagi" hilang, dan tidak terasa kurang. Kalau memang penting, bisa disebutkan nanti dalam satu baris.
 
+## Mengembalikan konteks dalam satu kalimat
+
+Memulai lebih lambat bukan berarti membuang konteks selamanya. Setelah beberapa baris pertama, satu kalimat pendek cukup untuk memberi pembaca apa yang mereka perlukan, misalnya "Hari itu Sabtu, dan aku datang ke pasar hanya untuk melihat-lihat." Katakan sekali saja dengan lugas, lalu lanjutkan. Pembaca jauh lebih mudah memaafkan penjelasan yang datang terlambat daripada pembukaan yang lambat.
+
+Setelah menambahkan baris konteks itu, baca lagi tiga kalimat pertama. Jika orang asing bisa menjawab "siapa yang ada di sini dan apa yang sedang terjadi?", berarti potongannya sudah pas.
+
 ## Batu sandungan yang umum
 
 - **Memotong terlalu banyak sampai pembaca tersesat.** Hal penting seperti siapa dan di mana sebaiknya menyusul dalam satu atau dua baris.

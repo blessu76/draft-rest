@@ -30,6 +30,10 @@ Dengan detail:
 
 Kata "kecewa" tidak muncul sama sekali, tetapi gerakan terakhir itu menunjukkannya. Membalik ponsel mengatakan perasaan itu menggantikanmu.
 
+## Berlaku juga untuk perasaan yang menyenangkan
+
+Cara yang sama berlaku untuk perasaan senang. Alih-alih "aku sangat gembira", tulis "aku menaiki tangga dua anak tangga sekaligus". Alih-alih "aku merasa kesepian", tulis "aku memanaskan makan malam dua kali dan tidak menyentuh keduanya". Apa pun perasaannya, cari satu jejak yang ditinggalkannya pada tubuhmu atau pada sesuatu di depanmu.
+
 ## Di mana meletakkan detail itu
 
 Letakkan di dekat saat perasaan itu paling kuat. Di akhir paragraf, pembaca bisa berhenti sejenak dan meresapi perasaannya; di tengah paragraf, detail lewat dengan wajar mengikuti alur. Apa pun pilihanmu, jangan menyusulinya dengan penjelasan panjang. Biarkan detail yang berbicara dan mundurlah satu langkah.
