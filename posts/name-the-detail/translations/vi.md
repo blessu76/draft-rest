@@ -30,6 +30,10 @@ Với một chi tiết:
 
 Từ "tủi thân" không hề xuất hiện, nhưng động tác cuối cùng đã cho thấy tất cả. Việc úp điện thoại xuống nói thay cảm xúc.
 
+## Cũng dùng được cho cảm xúc vui
+
+Cách này cũng dùng được cho những cảm xúc vui. Thay vì "tôi rất háo hức", hãy viết "tôi chạy lên cầu thang, mỗi bước hai bậc", và thay vì "tôi thấy cô đơn", hãy viết "tôi hâm bữa tối hai lần mà không ăn nổi một thìa". Dù là cảm xúc gì, chỉ cần tìm một dấu vết nó để lại trên cơ thể bạn hoặc trên thứ gì đó trước mặt bạn.
+
 ## Đặt chi tiết ở đâu
 
 Hãy đặt nó gần khoảnh khắc cảm xúc mạnh nhất. Ở cuối đoạn, người đọc có thể dừng một nhịp để thấm cảm xúc ấy; ở giữa đoạn, nó lướt qua tự nhiên theo mạch truyện. Dù chọn cách nào, đừng nối theo sau bằng một lời giải thích dài. Hãy để chi tiết lên tiếng và lùi lại một bước.

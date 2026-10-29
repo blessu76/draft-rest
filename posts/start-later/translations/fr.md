@@ -28,6 +28,12 @@ En coupant l'échauffement et en commençant au milieu :
 
 « Un samedi matin » a disparu et il ne manque pas. Si cela compte, cela peut venir plus tard en une seule ligne.
 
+## Rendre l'essentiel en une ligne
+
+Commencer tard ne veut pas dire jeter le contexte pour toujours. Une fois les premières lignes passées, une courte phrase peut donner au lecteur ce dont il a besoin. Par exemple : « C'était un samedi, et j'étais seulement sorti pour flâner. » Dites-le une fois, simplement, et poursuivez. Le lecteur pardonne bien plus facilement une explication tardive qu'un début lent.
+
+Une fois la ligne de contexte ajoutée, relisez les trois premières phrases. Si quelqu'un qui découvre le texte peut répondre à « qui est là, et que se passe-t-il ? », vous avez coupé juste ce qu'il fallait.
+
 ## Les écueils fréquents
 
 - **Couper tant que le lecteur se perd.** L'essentiel, comme qui et où, doit suivre en une ou deux lignes.

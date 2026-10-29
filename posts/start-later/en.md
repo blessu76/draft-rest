@@ -28,6 +28,12 @@ Cut the warm-up and start in the middle:
 
 "Saturday morning" is gone and you don't miss it. If it matters, it can come later in a single line.
 
+## Hand back the essentials in one line
+
+Starting late doesn't mean throwing the background away for good. Once the first few lines have passed, one short sentence can give the reader what they need. For example: "It was Saturday, and I'd only come out to look around." Say it once, plainly, and move on. Readers forgive an explanation that arrives late far more easily than a slow start.
+
+After you add the background line, reread the first three sentences. If a stranger could answer "who is here, and what is happening?", you cut just the right amount.
+
 ## Common stumbling blocks
 
 - **Cutting so much the reader gets lost.** Essentials like who and where should follow in a line or two.

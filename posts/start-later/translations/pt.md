@@ -28,6 +28,12 @@ Cortando o aquecimento e começando no meio:
 
 "Manhã de sábado" sumiu e ninguém sente falta. Se for importante, pode vir depois em uma única linha.
 
+## Devolver o essencial em uma linha
+
+Começar tarde não significa jogar o contexto fora para sempre. Passadas as primeiras linhas, uma frase curta pode dar ao leitor o que ele precisa. Por exemplo: "Era sábado, e eu só tinha saído para dar uma volta." Diga uma vez, com simplicidade, e siga em frente. O leitor perdoa muito mais facilmente uma explicação que chega tarde do que um começo lento.
+
+Depois de acrescentar a linha de contexto, releia as três primeiras frases. Se alguém que nunca viu o texto consegue responder "quem está aqui e o que está acontecendo?", você cortou na medida certa.
+
 ## Tropeços comuns
 
 - **Cortar tanto que o leitor se perde.** O essencial, como quem e onde, deve vir em uma ou duas linhas logo em seguida.

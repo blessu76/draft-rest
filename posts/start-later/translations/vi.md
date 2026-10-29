@@ -28,6 +28,12 @@ Cắt đoạn khởi động và bắt đầu từ giữa:
 
 "Sáng thứ Bảy" mất đi mà không thấy tiếc. Nếu quan trọng, có thể thêm sau bằng một dòng.
 
+## Trả lại thông tin cần thiết trong một dòng
+
+Bắt đầu muộn không có nghĩa là vứt bỏ bối cảnh mãi mãi. Sau vài dòng đầu, chỉ cần một câu ngắn là có thể trao cho người đọc điều họ cần. Chẳng hạn: "Hôm đó là thứ Bảy, tôi ra ngoài chỉ để đi dạo xem sao." Nói một lần, giản dị, rồi đi tiếp. Người đọc dễ tha thứ cho lời giải thích đến muộn hơn nhiều so với một phần mở đầu chậm chạp.
+
+Sau khi thêm dòng bối cảnh, hãy đọc lại ba câu đầu. Nếu một người lạ trả lời được "ai đang ở đây và chuyện gì đang xảy ra?", bạn đã cắt vừa đủ.
+
 ## Những vấp váp thường gặp
 
 - **Cắt nhiều đến mức người đọc lạc đường.** Những thông tin thiết yếu như ai và ở đâu nên được nói tiếp ngay trong một hai dòng.

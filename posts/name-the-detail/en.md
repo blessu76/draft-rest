@@ -30,6 +30,10 @@ With a detail:
 
 "Left out" never appears, yet the last gesture shows it. Turning the phone over says the feeling for you.
 
+## It works for good feelings too
+
+The same method works for happy feelings. Instead of "I was thrilled," write "I took the stairs two at a time," and instead of "I was lonely," write "I heated dinner twice and couldn't eat a bite." Whatever the feeling, look for one trace it left on your body or on something in front of you.
+
 ## Where to put the detail
 
 Place it close to the moment the feeling was strongest. At the end of a paragraph, it lets the reader pause and sit with the feeling; in the middle, it brushes past naturally as the story moves. Either way, don't follow it with a long explanation. Let the detail speak and step back.

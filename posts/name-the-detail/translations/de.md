@@ -30,6 +30,10 @@ Mit einem Detail:
 
 „Gekränkt" kommt nie vor, und doch zeigt es die letzte Geste. Das Umdrehen des Handys sagt das Gefühl für dich.
 
+## Das gilt auch für schöne Gefühle
+
+Dieselbe Methode funktioniert auch bei freudigen Gefühlen. Statt „Ich war aufgeregt" schreib „Ich nahm die Treppe zwei Stufen auf einmal", und statt „Ich war einsam" schreib „Ich wärmte das Abendessen zweimal auf und bekam keinen Bissen hinunter". Egal, um welches Gefühl es geht: Such eine Spur, die es an deinem Körper oder an etwas vor dir hinterlassen hat.
+
 ## Wohin mit dem Detail
 
 Setz es in die Nähe des Moments, in dem das Gefühl am stärksten war. Am Ende eines Absatzes lässt es die Leserin kurz innehalten und beim Gefühl bleiben; mittendrin streift es im Fluss der Geschichte natürlich vorbei. In beiden Fällen solltest du keine lange Erklärung nachschieben. Lass das Detail sprechen und tritt einen Schritt zurück.

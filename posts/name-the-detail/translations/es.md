@@ -30,6 +30,10 @@ Con un detalle:
 
 Nunca aparece "me dolió", pero el último gesto lo muestra. Dar la vuelta al móvil dice el sentimiento por ti.
 
+## También sirve para las emociones alegres
+
+El mismo método funciona con los sentimientos alegres. En lugar de "estaba emocionado", escribe "subí las escaleras de dos en dos", y en lugar de "me sentía solo", escribe "calenté la cena dos veces y no pude probar bocado". Sea cual sea el sentimiento, busca una huella que haya dejado en tu cuerpo o en algo que tengas delante.
+
 ## Dónde poner el detalle
 
 Ponlo cerca del momento en que el sentimiento fue más fuerte. Al final de un párrafo, deja que quien lee haga una pausa y se quede con la emoción; en medio, pasa de largo con naturalidad dentro del relato. En cualquier caso, no lo sigas de una explicación larga. Deja que el detalle hable y da un paso atrás.

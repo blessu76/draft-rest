@@ -30,6 +30,10 @@ Com um detalhe:
 
 "Chateado" nunca aparece, mas o último gesto mostra. Virar o celular diz o sentimento por você.
 
+## Vale também para sentimentos alegres
+
+O mesmo método funciona para sentimentos alegres. Em vez de "fiquei empolgado", escreva "subi a escada de dois em dois degraus", e em vez de "me senti sozinho", escreva "esquentei o jantar duas vezes e não consegui comer nada". Seja qual for o sentimento, procure um vestígio que ele deixou no seu corpo ou em algo diante de você.
+
 ## Onde colocar o detalhe
 
 Coloque-o perto do momento em que o sentimento foi mais forte. No fim de um parágrafo, ele deixa o leitor fazer uma pausa e ficar com a emoção; no meio, passa com naturalidade dentro da história. De qualquer jeito, não o siga com uma explicação longa. Deixe o detalhe falar e dê um passo para trás.

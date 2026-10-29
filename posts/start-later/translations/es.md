@@ -28,6 +28,12 @@ Quitando el calentamiento y empezando en mitad de la escena:
 
 "Mañana de sábado" ha desaparecido y no se echa de menos. Si importa, puede venir después en una sola línea.
 
+## Devolver lo imprescindible en una línea
+
+Empezar tarde no significa tirar el contexto para siempre. Pasadas las primeras líneas, una frase corta puede darle a quien lee lo que necesita. Por ejemplo: "Era sábado, y solo había salido a dar una vuelta." Dilo una vez, con sencillez, y sigue adelante. Quien lee perdona mucho más fácilmente una explicación que llega tarde que un comienzo lento.
+
+Después de añadir esa línea de contexto, vuelve a leer las tres primeras frases. Si un desconocido puede responder "¿quién está aquí y qué está pasando?", has recortado lo justo.
+
 ## Tropiezos habituales
 
 - **Recortar tanto que quien lee se pierde.** Lo imprescindible, como quién y dónde, debería llegar en una o dos líneas a continuación.

@@ -30,6 +30,10 @@ Avec un détail :
 
 « De la peine » n'apparaît jamais, et pourtant le dernier geste le montre. Retourner le téléphone dit le sentiment à votre place.
 
+## Cela vaut aussi pour les sentiments joyeux
+
+La même méthode vaut pour les sentiments joyeux. Au lieu de « j'étais ravi », écrivez « j'ai monté l'escalier quatre à quatre », et au lieu de « je me sentais seul », écrivez « j'ai réchauffé le dîner deux fois sans réussir à avaler une bouchée ». Quel que soit le sentiment, cherchez une trace qu'il a laissée sur votre corps ou sur un objet devant vous.
+
 ## Où placer le détail
 
 Placez-le près du moment où le sentiment était le plus fort. À la fin d'un paragraphe, il laisse le lecteur faire une pause et rester avec l'émotion ; au milieu, il passe naturellement dans le fil du récit. Dans les deux cas, ne le faites pas suivre d'une longue explication. Laissez le détail parler et reculez d'un pas.

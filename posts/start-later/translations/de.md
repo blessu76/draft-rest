@@ -28,6 +28,12 @@ Ohne Warmup, mitten in der Szene:
 
 „Samstagmorgen" ist verschwunden, und man vermisst es nicht. Wenn es wichtig ist, kann es später in einer Zeile folgen.
 
+## Das Nötige in einer Zeile zurückgeben
+
+Später zu beginnen heißt nicht, den Hintergrund für immer wegzuwerfen. Nach den ersten Zeilen kann ein kurzer Satz der Leserin geben, was sie braucht. Zum Beispiel: „Es war Samstag, und ich war nur zum Bummeln unterwegs." Sag es einmal, schlicht, und geh weiter. Eine Erklärung, die spät kommt, verzeiht die Leserin viel leichter als einen langsamen Anfang.
+
+Lies nach der Hintergrundzeile die ersten drei Sätze noch einmal. Wenn ein Fremder „Wer ist hier, und was geschieht?" beantworten kann, hast du genau richtig gekürzt.
+
 ## Häufige Stolpersteine
 
 - **So viel streichen, dass die Leserin sich verirrt.** Das Nötigste, etwa wer und wo, sollte in ein, zwei Zeilen folgen.
