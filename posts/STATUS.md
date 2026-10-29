@@ -12,6 +12,9 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 6 | 2026-10-28 | `one-person-in-focus` | Put one person at the center of a short story | queued (draft) |
 | 7 | 2026-10-29 | `open-with-one-sense` | Open a scene with a single sense (sound, smell or touch) | queued (draft) |
 | 8 | 2026-10-30 | `small-turning-point` | Look for the small turn inside a scene | queued (draft) |
+| 9 | 2026-10-31 | `name-the-detail` | Write one concrete detail instead of naming the feeling | queued (draft) |
+| 10 | 2026-11-01 | `start-later` | Cut the warm-up paragraph and start mid-scene | queued (draft) |
+| 11 | 2026-11-02 | `one-line-they-said` | Keep one line someone said, word for word | queued (draft) |
 
 Queued dates are placeholders; `publish_post.py` stamps the real date and time. Facts about draft() are limited to what the site states
 (talk ~30 s → 2–3 gentle questions → story hook/rising/peak/reflection/close; privacy; no claims about release or formats).
