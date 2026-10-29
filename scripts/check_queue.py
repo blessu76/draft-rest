@@ -7,7 +7,9 @@
 For each post: all 11 languages present, front matter parses, slug == folder name, `draft` identical in all files,
 `date:` line present (publish_post.py needs it), no `published` stamp on a draft, description <= build_site.DESC_MAX,
 ko body inside build_site.KO_BODY_MIN..MAX, and publish_post.rewrite() accepts every file. The length rules come from
-build_site.length_problems(), so this check and the build can never disagree. Exit 1 when anything is wrong.
+build_site.length_problems(), so this check and the build can never disagree. Body length (publish_post.BODY_FLOOR/BODY_TARGET):
+below the floor (latin 300 words, ja/zh 600 chars) is an ERROR, below the target (400 words / 800 chars, ko too) is a WARN line
+and does not change the exit code. Exit 1 when anything is wrong. The build itself does not check these (published posts may be short).
 """
 import argparse
 import datetime as dt
@@ -48,13 +50,30 @@ def check_post(post_dir):
     for c, m in langs.items():
         if m["draft"] and m.get("published"):
             errors.append("%s/%s: a draft must not carry `published` (publish_post.py stamps it at publish time)" % (name, c))
-    return errors + build_site.length_problems(name, langs)
+    return errors + build_site.length_problems(name, langs) + publish_post.body_length_findings(name, langs)[0]
+
+
+def post_warnings(post_dir):
+    """-> body-below-target warnings for one posts/<slug>/ folder (unreadable files are skipped: check_post reports them)."""
+    name, langs = Path(post_dir).name, {}
+    for c in build_site.CODES:
+        f = Path(post_dir) / (c + ".md" if c in ("ko", "en") else "translations/%s.md" % c)
+        try:
+            langs[c] = build_site.parse_post_file(f)
+        except (ValueError, OSError):
+            pass
+    return publish_post.body_length_findings(name, langs)[1]
 
 
 def check_queue(root, slugs=None):
+    checked, errors, _ = scan(root, slugs)
+    return checked, errors
+
+
+def scan(root, slugs=None):
     base = Path(root) / "posts"
     dirs = [base / s for s in slugs] if slugs else sorted(d for d in base.iterdir() if d.is_dir())
-    errors, checked = [], []
+    errors, checked, warnings = [], [], []
     for d in dirs:
         if not d.is_dir():
             errors.append("%s: no such post folder" % d.name)
@@ -68,7 +87,8 @@ def check_queue(root, slugs=None):
                 pass  # broken ko.md: let check_post report it
         checked.append(d.name)
         errors.extend(check_post(d))
-    return checked, errors
+        warnings.extend(post_warnings(d))
+    return checked, errors, warnings
 
 
 def main(argv=None):
@@ -76,7 +96,9 @@ def main(argv=None):
     ap.add_argument("slugs", nargs="*")
     ap.add_argument("--root", default=str(ROOT))
     a = ap.parse_args(argv)
-    checked, errors = check_queue(a.root, a.slugs)
+    checked, errors, warnings = scan(a.root, a.slugs)
+    for w in warnings:
+        print("check_queue: WARN " + w)
     if errors:
         print("check_queue: %d problem(s)" % len(errors))
         for e in errors:
