@@ -91,5 +91,8 @@
   "blog_page": "Página {n}",
   "blog_newer": "Más recientes",
   "blog_older": "Más antiguas",
+  "post_prev": "Entrada anterior",
+  "post_next": "Entrada siguiente",
+  "post_related": "Últimas entradas",
   "blog_pages": "Página"
 }

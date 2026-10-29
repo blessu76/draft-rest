@@ -91,5 +91,8 @@
   "blog_page": "Trang {n}",
   "blog_newer": "Mới hơn",
   "blog_older": "Cũ hơn",
+  "post_prev": "Bài trước",
+  "post_next": "Bài sau",
+  "post_related": "Bài viết mới nhất",
   "blog_pages": "Trang"
 }

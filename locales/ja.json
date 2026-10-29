@@ -91,5 +91,8 @@
   "blog_page": "ページ {n}",
   "blog_newer": "新しい記事",
   "blog_older": "古い記事",
+  "post_prev": "前の記事",
+  "post_next": "次の記事",
+  "post_related": "最新の記事",
   "blog_pages": "ページ"
 }

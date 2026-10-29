@@ -91,5 +91,8 @@
   "blog_page": "페이지 {n}",
   "blog_newer": "최신 글",
   "blog_older": "이전 글",
+  "post_prev": "이전 글",
+  "post_next": "다음 글",
+  "post_related": "최신 글",
   "blog_pages": "페이지"
 }

@@ -91,5 +91,8 @@
   "blog_page": "Страница {n}",
   "blog_newer": "Новее",
   "blog_older": "Старее",
+  "post_prev": "Предыдущая запись",
+  "post_next": "Следующая запись",
+  "post_related": "Свежие записи",
   "blog_pages": "Страница"
 }

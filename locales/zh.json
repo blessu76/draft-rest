@@ -91,5 +91,8 @@
   "blog_page": "页 {n}",
   "blog_newer": "较新文章",
   "blog_older": "较早文章",
+  "post_prev": "上一篇",
+  "post_next": "下一篇",
+  "post_related": "最新文章",
   "blog_pages": "分页"
 }
