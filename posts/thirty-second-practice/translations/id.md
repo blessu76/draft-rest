@@ -4,6 +4,7 @@ description: Kalau menjelaskan seluruh harimu bikin buntu, pilih satu adegan saj
 date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00
+updated: 2026-10-30T16:32:00+09:00
 ---
 
 Pernahkah ditanya "gimana harimu?" dan yang keluar hanya "biasa saja"? Kalau mencoba menjelaskan satu hari penuh, kamu tak tahu harus mulai dari mana. Cerita tidak dimulai dari sehari. Cerita dimulai dari satu adegan.
@@ -26,11 +27,29 @@ Contohnya:
 
 Ketiganya ada, dan tak masalah kalau kata-katanya berantakan di tengah jalan.
 
+Hari yang tenang pun boleh. Kamu tidak perlu kejadian dramatis.
+
+> Aku duduk di meja setelah makan siang, jendelanya terbuka. Entah di mana, lonceng angin terus berbunyi. Aku sempat berpikir, mau duduk di kursi ini sedikit lebih lama.
+
+Tempat, kejadian kecil, perasaan. Itu sudah adegan yang utuh.
+
+## Cara menjalankan latihannya
+
+1. **Setel pengatur waktu tiga puluh detik.** Ponsel saja cukup.
+2. **Ucapkan dengan suara.** Saat menulis, kita terus menyunting; saat berbicara, kita terus maju. Ruangan sepi atau berjalan kaki sama baiknya.
+3. **Berhenti saat waktunya habis.** Bahkan di tengah kalimat. Tujuannya mengeluarkan bahan, bukan memolesnya.
+4. **Jangan diulang.** Satu percobaan ya satu percobaan. Besok kamu dapat adegan baru.
+
+## Satu baris lagi, kalau masih ada waktu
+
+Kalau masih ada waktu, tambahkan satu baris saja. Jangan memanjangkan ceritanya; satu detail kecil sudah cukup, misalnya siapa yang berdiri di dekatmu atau suara apa yang terdengar. Pada adegan minimarket tadi, bisa begini: "Payung basah seseorang menetes di dekat pintu." Satu baris itu membuat adegannya jauh lebih hidup.
+
 ## Kesalahan yang sering terjadi
 
 - **Memulai dengan penjelasan.** "Sebenarnya aku sering ke toko itu, jadi…" membuat adegannya muncul terlambat. Mulailah dari kejadiannya.
 - **Buru-buru menarik pelajaran.** Satu baris perasaan sudah cukup. Pertanyaan akan menuntunmu ke kesimpulan nanti.
 - **Berhenti untuk mengulang.** Kalau tersandung, jangan mulai dari awal. Teruskan saja.
+- **Memilih adegan yang terlalu besar.** "Liburanku ke Jeju" itu seminggu penuh. Coba "semenit menunggu di gerbang keberangkatan bandara".
 
 ## Berlatih dengan draft()
 

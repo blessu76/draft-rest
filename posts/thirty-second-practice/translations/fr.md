@@ -4,6 +4,7 @@ description: Si raconter toute votre journée vous bloque, choisissez une seule 
 date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00
+updated: 2026-10-30T16:32:00+09:00
 ---
 
 On vous a déjà demandé « comment était ta journée ? » et vous n'avez su répondre que « bof » ? Quand on essaie d'expliquer une journée entière, on ne sait pas par où commencer. Une histoire ne commence pas par une journée. Elle commence par une scène.
@@ -26,11 +27,29 @@ Par exemple :
 
 Les trois éléments sont là, et peu importe si les mots se brouillent en chemin.
 
+Une journée calme convient aussi. Nul besoin d'un événement dramatique.
+
+> J'étais à mon bureau après le déjeuner, la fenêtre ouverte. Un carillon tintait sans arrêt quelque part tout près. Je me suis dit que je pourrais rester un peu plus longtemps sur cette chaise.
+
+Un lieu, un tout petit événement, un ressenti. C'est déjà une scène complète.
+
+## Comment faire l'exercice
+
+1. **Réglez un minuteur sur trente secondes.** Votre téléphone suffit.
+2. **Dites-le à voix haute.** En écrivant, on retouche sans cesse ; en parlant, on avance. Une pièce calme ou une promenade fonctionnent aussi bien.
+3. **Arrêtez-vous quand le minuteur s'arrête.** Même au milieu d'une phrase. Le but est de sortir la matière, pas de la polir.
+4. **Ne le rejouez pas.** Un essai, c'est un essai. Demain, vous aurez une nouvelle scène.
+
+## Une ligne de plus, s'il reste du temps
+
+S'il vous reste encore du temps, ajoutez seulement une ligne. N'étirez pas l'histoire ; un petit détail suffit, comme qui se tenait près de vous ou quel bruit on entendait. Dans la scène de la supérette, cela pourrait être : « Le parapluie mouillé de quelqu'un gouttait près de la porte. » Cette seule ligne rend la scène bien plus vivante.
+
 ## Les faux pas courants
 
 - **Commencer par une explication.** « En fait je vais souvent dans ce magasin, donc… » repousse la scène. Commencez par ce qui s'est passé.
 - **Se précipiter vers une morale.** Une ligne de ressenti suffit. Les questions vous mèneront à une conclusion plus tard.
 - **S'arrêter pour recommencer.** Si vous butez, ne reprenez pas à zéro. Continuez.
+- **Choisir une scène trop grande.** « Mon voyage à Jeju », c'est une semaine entière. Essayez plutôt « la minute passée à attendre à la porte d'embarquement ».
 
 ## S'exercer avec draft()
 
