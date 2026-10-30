@@ -11,6 +11,7 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 5 | 2026-10-27 | `nothing-happened-today` | Finding a story in "nothing happened" | published (main) |
 | 6 | 2026-10-28 | `one-person-in-focus` | Put one person at the center of a short story | published (main) |
 | 7 | 2026-10-29 | `open-with-one-sense` | Open a scene with a single sense (sound, smell or touch) | published (main) |
+| 8 | 2026-10-30 | `small-turning-point` | Look for the small turn inside a scene | published (main) |
 
 Queued dates are placeholders; `publish_post.py` stamps the real date and time. Facts about draft() are limited to what the site states
 (talk ~30 s → 2–3 gentle questions → story hook/rising/peak/reflection/close; privacy; no claims about release or formats).

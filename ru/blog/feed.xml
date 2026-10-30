@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Thu, 29 Oct 2026 23:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Найдите маленький поворот внутри сцены</title>
+      <link>https://draft.ipe.rest/ru/blog/small-turning-point/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/small-turning-point/</guid>
+      <pubDate>Fri, 30 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Сцена с хорошими деталями всё равно бывает плоской, если в ней ничего не сдвигается. Три вида маленького поворота, даже крошечного, с примером.</description>
+    </item>
     <item>
       <title>Откройте сцену одним чувством</title>
       <link>https://draft.ipe.rest/ru/blog/open-with-one-sense/</link>

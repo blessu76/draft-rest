@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Thu, 29 Oct 2026 23:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Busca el pequeño giro dentro de una escena</title>
+      <link>https://draft.ipe.rest/es/blog/small-turning-point/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/small-turning-point/</guid>
+      <pubDate>Fri, 30 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Una escena con buenos detalles puede seguir plana si nada cambia en ella. Tres tipos de giro pequeño, incluso diminuto, con un ejemplo.</description>
+    </item>
     <item>
       <title>Abre una escena con un solo sentido</title>
       <link>https://draft.ipe.rest/es/blog/open-with-one-sense/</link>

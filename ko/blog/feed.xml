@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 29 Oct 2026 23:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>장면 안에서 작은 전환점을 찾아 보세요</title>
+      <link>https://draft.ipe.rest/ko/blog/small-turning-point/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/small-turning-point/</guid>
+      <pubDate>Fri, 30 Oct 2026 16:00:00 +0900</pubDate>
+      <description>디테일이 좋아도 밋밋한 장면에는 전환점이 없습니다. 아주 작아도 되는 전환점 세 가지를 예시와 함께 정리했습니다.</description>
+    </item>
     <item>
       <title>장면은 감각 하나로 열어 보세요</title>
       <link>https://draft.ipe.rest/ko/blog/open-with-one-sense/</link>

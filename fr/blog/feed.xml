@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>De courts guides pour transformer ce que vous dites en une histoire que l&#x27;on lit vraiment, par l&#x27;équipe de draft().</description>
     <language>fr</language>
-    <lastBuildDate>Thu, 29 Oct 2026 23:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Cherchez le petit tournant à l&#x27;intérieur d&#x27;une scène</title>
+      <link>https://draft.ipe.rest/fr/blog/small-turning-point/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/small-turning-point/</guid>
+      <pubDate>Fri, 30 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Une scène aux beaux détails reste plate si rien n&#x27;y bascule. Trois sortes de petits tournants, même minuscules, avec un exemple.</description>
+    </item>
     <item>
       <title>Ouvrez une scène avec un seul sens</title>
       <link>https://draft.ipe.rest/fr/blog/open-with-one-sense/</link>

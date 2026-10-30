@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Oct 2026 23:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Look for the small turn inside a scene</title>
+      <link>https://draft.ipe.rest/en/blog/small-turning-point/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/small-turning-point/</guid>
+      <pubDate>Fri, 30 Oct 2026 16:00:00 +0900</pubDate>
+      <description>A scene with good details can still feel flat if nothing shifts in it. Three kinds of small turn, tiny ones included, with an example.</description>
+    </item>
     <item>
       <title>Open a scene with a single sense</title>
       <link>https://draft.ipe.rest/en/blog/open-with-one-sense/</link>
