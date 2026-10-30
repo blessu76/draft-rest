@@ -9,9 +9,9 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 3 | 2026-10-25 | `first-line-hook` | One first line can save a story (hook) | published (main) |
 | 4 | 2026-10-26 | `ending-without-a-moral` | End on an echo, not a moral | published (main) |
 | 5 | 2026-10-27 | `nothing-happened-today` | Finding a story in "nothing happened" | published (main) |
-| 6 | 2026-10-28 | `one-person-in-focus` | Put one person at the center of a short story | queued (draft) |
-| 7 | 2026-10-29 | `open-with-one-sense` | Open a scene with a single sense (sound, smell or touch) | queued (draft) |
-| 8 | 2026-10-30 | `small-turning-point` | Look for the small turn inside a scene | queued (draft) |
+| 6 | 2026-10-28 | `one-person-in-focus` | Put one person at the center of a short story | published (main) |
+| 7 | 2026-10-29 | `open-with-one-sense` | Open a scene with a single sense (sound, smell or touch) | published (main) |
+| 8 | 2026-10-30 | `small-turning-point` | Look for the small turn inside a scene | published (main) |
 | 9 | 2026-10-31 | `name-the-detail` | Write one concrete detail instead of naming the feeling | queued (draft) |
 | 10 | 2026-11-01 | `start-later` | Cut the warm-up paragraph and start mid-scene | queued (draft) |
 | 11 | 2026-11-02 | `one-line-they-said` | Keep one line someone said, word for word | queued (draft) |

@@ -7,7 +7,28 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>在场景里找一个小小的转折点</title>
+      <link>https://draft.ipe.rest/zh/blog/small-turning-point/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/small-turning-point/</guid>
+      <pubDate>Fri, 30 Oct 2026 16:00:00 +0900</pubDate>
+      <description>细节再好，没有转折的场景也会平淡。三种可以很微小的转折点，附例子。</description>
+    </item>
+    <item>
+      <title>用一种感官来开启一个场景</title>
+      <link>https://draft.ipe.rest/zh/blog/open-with-one-sense/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/open-with-one-sense/</guid>
+      <pubDate>Thu, 29 Oct 2026 16:12:00 +0900</pubDate>
+      <description>从看到的东西写起，容易平淡。用声音、气味或触感中的一种来开场，三种方法，附例子。</description>
+    </item>
+    <item>
+      <title>短故事里，只让一个人站在中间</title>
+      <link>https://draft.ipe.rest/zh/blog/one-person-in-focus/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/one-person-in-focus/</guid>
+      <pubDate>Wed, 28 Oct 2026 15:58:00 +0900</pubDate>
+      <description>人物一多，故事就会变模糊。选定一个人，再问关于他的三个小问题。附上例子，教你给短故事一张清晰的脸。</description>
+    </item>
     <item>
       <title>从&quot;今天没什么事&quot;里找到故事</title>
       <link>https://draft.ipe.rest/zh/blog/nothing-happened-today/</link>

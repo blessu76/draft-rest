@@ -1,9 +1,9 @@
 ---
 title: Cari titik balik kecil di dalam sebuah adegan
 description: Adegan dengan detail bagus tetap bisa datar jika tak ada yang bergeser. Tiga jenis titik balik kecil, bahkan yang sangat kecil, dengan contoh.
-date: 2026-10-28
+date: 2026-10-30
 slug: small-turning-point
-draft: true
+published: 2026-10-30T16:00:00+09:00
 ---
 
 Ada adegan yang detailnya bagus tetapi tetap terbaca datar. Yang kurang biasanya titik balik: saat sesuatu bergeser, sekecil apa pun. Titik balik tidak harus dramatis. Suasana hati yang berubah, keputusan kecil, atau menyadari sesuatu yang selama ini terlewat sudah cukup.

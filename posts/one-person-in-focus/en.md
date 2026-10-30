@@ -3,7 +3,7 @@ title: Put one person at the center of a short story
 description: A story with a crowd in it goes blurry. Pick one person, ask three small questions about them, and give your short story a face. With an example.
 date: 2026-10-28
 slug: one-person-in-focus
-draft: true
+published: 2026-10-28T15:58:00+09:00
 ---
 
 Short stories usually go blurry for one reason: too many people are standing in them. "We had a team dinner and everyone was laughing and talking" is true, but the reader can't see anyone. Pick one person and the picture comes into focus.

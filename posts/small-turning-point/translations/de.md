@@ -1,9 +1,9 @@
 ---
 title: Suche den kleinen Wendepunkt in einer Szene
 description: Eine Szene mit guten Details bleibt flach, wenn sich nichts verschiebt. Drei Arten kleiner, auch winziger Wendepunkte, mit Beispiel.
-date: 2026-10-28
+date: 2026-10-30
 slug: small-turning-point
-draft: true
+published: 2026-10-30T16:00:00+09:00
 ---
 
 Manche Szenen haben gute Details und lesen sich trotzdem flach. Was fehlt, ist meist ein Wendepunkt: ein Moment, in dem sich etwas verschoben hat, und sei es nur ein wenig. Ein Wendepunkt muss nicht dramatisch sein. Eine Stimmung, die kippt, eine kleine Entscheidung oder etwas, das du plötzlich bemerkst, genügt.

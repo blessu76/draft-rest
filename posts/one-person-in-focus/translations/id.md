@@ -3,7 +3,7 @@ title: Tempatkan satu orang di tengah cerita pendek
 description: Terlalu banyak orang membuat cerita kabur. Pilih satu orang, ajukan tiga pertanyaan kecil tentangnya, dan beri wajah pada cerita pendekmu. Dengan contoh.
 date: 2026-10-28
 slug: one-person-in-focus
-draft: true
+published: 2026-10-28T15:58:00+09:00
 ---
 
 Cerita pendek biasanya kabur karena satu alasan: terlalu banyak orang di dalamnya. "Kami makan malam bersama tim, semua tertawa dan mengobrol" itu benar, tetapi pembaca tidak melihat siapa pun. Pilih satu orang, dan gambarnya langsung jelas.

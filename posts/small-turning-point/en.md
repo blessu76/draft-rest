@@ -1,9 +1,9 @@
 ---
 title: Look for the small turn inside a scene
 description: A scene with good details can still feel flat if nothing shifts in it. Three kinds of small turn, tiny ones included, with an example.
-date: 2026-10-28
+date: 2026-10-30
 slug: small-turning-point
-draft: true
+published: 2026-10-30T16:00:00+09:00
 ---
 
 Some scenes have good details and still read flat. What's missing is usually a turn: a moment where something shifted, even slightly. A turn doesn't have to be dramatic. A mood changing, a small decision, or noticing something you hadn't is enough.

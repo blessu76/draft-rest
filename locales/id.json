@@ -91,5 +91,8 @@
   "blog_page": "Halaman {n}",
   "blog_newer": "Lebih baru",
   "blog_older": "Lebih lama",
+  "post_prev": "Tulisan sebelumnya",
+  "post_next": "Tulisan berikutnya",
+  "post_related": "Tulisan terbaru",
   "blog_pages": "Halaman"
 }

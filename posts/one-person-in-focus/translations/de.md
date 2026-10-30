@@ -3,7 +3,7 @@ title: Stell einen einzigen Menschen in die Mitte einer Kurzgeschichte
 description: Zu viele Leute machen eine Geschichte unscharf. Wähle eine Person, stelle drei kleine Fragen zu ihr und gib deiner Kurzgeschichte ein Gesicht.
 date: 2026-10-28
 slug: one-person-in-focus
-draft: true
+published: 2026-10-28T15:58:00+09:00
 ---
 
 Kurze Geschichten werden meist aus einem Grund unscharf: Es stehen zu viele Menschen darin. „Wir waren mit dem Team essen, alle haben gelacht und geredet“ stimmt, aber die Lesenden sehen niemanden. Wähle eine Person, und das Bild wird scharf.

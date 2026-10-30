@@ -1,9 +1,9 @@
 ---
 title: Procure a pequena virada dentro de uma cena
 description: Uma cena com bons detalhes ainda pode ficar plana se nada muda nela. Três tipos de virada pequena, até minúscula, com exemplo.
-date: 2026-10-28
+date: 2026-10-30
 slug: small-turning-point
-draft: true
+published: 2026-10-30T16:00:00+09:00
 ---
 
 Algumas cenas têm bons detalhes e mesmo assim ficam planas. O que costuma faltar é uma virada: um momento em que algo mudou, ainda que pouco. A virada não precisa ser dramática. Basta o humor mudar, uma pequena decisão ou perceber algo que você não tinha percebido.

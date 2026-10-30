@@ -71,6 +71,12 @@ class Pages(unittest.TestCase):
             self.assertIn('href="%s"' % build_site.home_path(c), t)
         self.assertNotIn("<loc>https://draft.ipe.rest/404", self.files["sitemap.xml"])
 
+    def test_404_links_to_the_blog_list(self):
+        t = self.files["404.html"]
+        self.assertIn('<a href="/en/blog/">', t)
+        self.assertIn("/en/blog/index.html", {"/" + k for k in self.files})
+        self.assertEqual(t.count('href="/en/blog/"'), 1)
+
     def test_og_locale_alternates_and_short_og_description(self):
         loc = build_site.load_locales(ROOT)
         t = self.files["ko/index.html"]
@@ -1035,6 +1041,179 @@ def html_unescape_free(s):
 def html_unescape(s):
     import html
     return html.unescape(s)
+
+
+class BlogPostingAudit(unittest.TestCase):
+    """SEO guide P0-8: every published post page (all posts x 11 languages) carries a complete BlogPosting node."""
+
+    REQUIRED = ("@id", "headline", "description", "datePublished", "dateModified", "inLanguage", "mainEntityOfPage", "url",
+                "image", "author", "publisher", "isPartOf", "wordCount", "keywords", "articleSection")
+    ISO = re.compile(r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\+09:00$")
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+        cls.posts, _ = build_site.load_posts(ROOT)
+
+    def pages(self):
+        for p in self.posts:
+            for c in build_site.CODES:
+                yield p, c, self.files["%s/blog/%s/index.html" % (c, p["slug"])]
+
+    def test_there_are_posts_to_audit(self):
+        self.assertGreaterEqual(len(list(self.pages())), 11)
+
+    def test_required_fields_publisher_and_dates_on_every_page(self):
+        import datetime as dt
+        import html as htmllib
+        now = dt.datetime.now(build_site.KST)
+        for p, c, page in self.pages():
+            where = "%s/%s" % (c, p["slug"])
+            d = ld_of(page, "BlogPosting")
+            for k in self.REQUIRED:
+                self.assertTrue(d.get(k), "%s: missing %s" % (where, k))
+            self.assertEqual(d["publisher"]["@id"], HUB, where)
+            self.assertEqual(d["author"]["@id"], HUB, where)
+            self.assertEqual(d["inLanguage"], c, where)
+            self.assertEqual(d["url"], build_site.post_url(c, p["slug"]), where)
+            self.assertEqual(d["mainEntityOfPage"]["@id"], d["url"], where)
+            for k in ("datePublished", "dateModified"):
+                self.assertRegex(d[k], self.ISO, "%s: %s" % (where, k))
+                self.assertLessEqual(dt.datetime.fromisoformat(d[k]), now, "%s: %s is in the future" % (where, k))
+            self.assertLessEqual(d["datePublished"], d["dateModified"], where)
+            title = htmllib.unescape(re.search(r"<title>(.*?)</title>", page, re.S).group(1))
+            self.assertIn(d["headline"], title, "%s: headline is not part of <title>" % where)
+            self.assertIsInstance(d["wordCount"], int, where)
+            self.assertGreater(d["wordCount"], 0, where)
+
+    def test_translation_links_and_breadcrumb_on_every_page(self):
+        for p, c, page in self.pages():
+            where = "%s/%s" % (c, p["slug"])
+            d = ld_of(page, "BlogPosting")
+            if c == build_site.DEFAULT_LANG:
+                self.assertEqual(len(d["workTranslation"]), len(build_site.CODES) - 1, where)
+                self.assertNotIn("translationOfWork", d, where)
+            else:
+                self.assertEqual(d["translationOfWork"]["@id"], build_site.article_id("en", p["slug"]), where)
+                self.assertNotIn("workTranslation", d, where)
+            crumb = ld_of(page, "BreadcrumbList")["itemListElement"]
+            self.assertEqual([x["position"] for x in crumb], [1, 2, 3], where)
+            self.assertEqual(crumb[-1]["item"], d["url"], where)
+
+
+class PostMoreLinks(unittest.TestCase):
+    """SEO guide P1-1: previous / next post and the latest 3 posts (same language) under every post."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+        cls.posts, _ = build_site.load_posts(ROOT)  # newest first
+
+    def page(self, c, slug):
+        return self.files["%s/blog/%s/index.html" % (c, slug)]
+
+    @staticmethod
+    def hrefs(page, cls):
+        m = re.search(r'<(nav|section) class="%s".*?</\1>' % cls, page, re.S)
+        return re.findall(r'href="([^"]+)"', m.group(0)) if m else []
+
+    def test_repo_has_enough_posts_to_exercise_this(self):
+        self.assertGreaterEqual(len(self.posts), 4)
+
+    def test_prev_next_follow_publication_order_in_every_language(self):
+        for i, p in enumerate(self.posts):
+            for c in build_site.CODES:
+                want = []
+                if i + 1 < len(self.posts):
+                    want.append("/%s/blog/%s/" % (c, self.posts[i + 1]["slug"]))  # older = previous
+                if i > 0:
+                    want.append("/%s/blog/%s/" % (c, self.posts[i - 1]["slug"]))  # newer = next
+                self.assertEqual(self.hrefs(self.page(c, p["slug"]), "post-adj"), want, "%s/%s" % (c, p["slug"]))
+        newest = self.page("en", self.posts[0]["slug"])
+        oldest = self.page("en", self.posts[-1]["slug"])
+        self.assertNotIn('rel="next"', newest)
+        self.assertIn('rel="prev"', newest)
+        self.assertNotIn('rel="prev"', oldest)
+        self.assertIn('rel="next"', oldest)
+
+    def test_related_is_the_latest_three_other_posts_in_the_same_language(self):
+        for i, p in enumerate(self.posts):
+            skip = {p["slug"]} | {self.posts[j]["slug"] for j in (i - 1, i + 1) if 0 <= j < len(self.posts)}
+            for c in build_site.CODES:
+                want = ["/%s/blog/%s/" % (c, q["slug"]) for q in self.posts if q["slug"] not in skip][:3]
+                got = self.hrefs(self.page(c, p["slug"]), "post-related")
+                self.assertEqual(got, want, "%s/%s" % (c, p["slug"]))
+                adj = self.hrefs(self.page(c, p["slug"]), "post-adj")
+                self.assertFalse(set(got) & set(adj), "%s/%s related repeats previous/next" % (c, p["slug"]))
+                self.assertNotIn("/blog/%s/" % p["slug"], "".join(got))
+        self.assertEqual(len(self.hrefs(self.page("en", self.posts[0]["slug"]), "post-related")), min(3, len(self.posts) - 2))
+
+    def test_labels_and_titles_are_in_the_page_language(self):
+        loc = build_site.load_locales(ROOT)
+        for c in build_site.CODES:
+            page = self.page(c, self.posts[1]["slug"])
+            for k in ("post_prev", "post_next", "post_related"):
+                self.assertIn(loc[c][k], page, "%s %s" % (c, k))
+            self.assertIn('<span class="adj-title">%s</span>' % build_site.esc(self.posts[0]["langs"][c]["title"]), page)  # posts[0] is the next post of posts[1]
+            self.assertIn(">%s</a>" % build_site.esc(self.posts[3]["langs"][c]["title"]), page)  # posts[3] is the first related link of posts[1]
+        self.assertNotEqual(loc["ko"]["post_prev"], loc["en"]["post_prev"])  # translated, not the English fallback
+
+    def test_block_sits_between_cta_and_post_foot(self):
+        t = self.page("en", self.posts[1]["slug"])
+        self.assertLess(t.index('class="post-cta"'), t.index('class="post-adj"'))
+        self.assertLess(t.index('class="post-related"'), t.index('class="post-foot"'))
+        self.assertEqual(t.count('class="post-related"'), 1)
+
+    def test_css_wraps_long_titles_and_stacks_on_small_screens(self):
+        css = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")
+        self.assertRegex(css, r"\.post-adj\{display:flex;flex-direction:column")  # one column below 640px
+        self.assertRegex(css, r"\.post-adj \.adj-title\{[^}]*overflow-wrap:anywhere")
+        self.assertRegex(css, r"\.post-related a\{[^}]*overflow-wrap:anywhere")
+        self.assertRegex(css, r"\.post-adj a\{[^}]*min-width:0")
+        self.assertRegex(css, r"@media \(min-width:640px\)\{\.post-adj\{flex-direction:row")  # row only on wide screens
+
+
+class PostMoreLinksSmall(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.dir = Path(self.tmp.name)
+        shutil.copytree(ROOT / "locales", self.dir / "locales")
+        for n in ("src", "assets", "content", "shared"):
+            if (ROOT / n).is_dir():
+                shutil.copytree(ROOT / n, self.dir / n)
+        for n in ("llms.txt", "og-image.png"):
+            shutil.copy(ROOT / n, self.dir / n)
+
+    def test_single_post_has_no_extra_links(self):
+        write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
+        t = build_site.build(self.dir)["ko/blog/a-post/index.html"]
+        self.assertNotIn("post-adj", t)
+        self.assertNotIn("post-related", t)
+
+    def test_two_posts_link_each_other_only(self):
+        write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
+        write_post(self.dir, "b-post", extra="published: 2026-10-01T10:30:00+09:00\n")
+        f = build_site.build(self.dir)
+        a, b = f["en/blog/a-post/index.html"], f["en/blog/b-post/index.html"]
+        self.assertIn('rel="next" href="/en/blog/b-post/"', a)
+        self.assertNotIn('rel="prev"', a)
+        self.assertIn('rel="prev" href="/en/blog/a-post/"', b)
+        self.assertNotIn('rel="next"', b)
+        self.assertEqual(PostMoreLinks.hrefs(a, "post-related"), [])  # the only other post is already the next link
+        self.assertNotIn("post-related", a)
+
+    def test_three_posts_related_fills_with_next_latest(self):
+        for n, t in (("a-post", "09:00:00"), ("b-post", "10:00:00"), ("c-post", "11:00:00"), ("d-post", "12:00:00")):
+            write_post(self.dir, n, extra="published: 2026-10-01T%s+09:00\n" % t)
+        b = build_site.build(self.dir)["en/blog/b-post/index.html"]  # prev a, next c -> only d is left
+        self.assertEqual(PostMoreLinks.hrefs(b, "post-adj"), ["/en/blog/a-post/", "/en/blog/c-post/"])
+        self.assertEqual(PostMoreLinks.hrefs(b, "post-related"), ["/en/blog/d-post/"])
+
+    def test_draft_posts_are_never_linked(self):
+        write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
+        write_post(self.dir, "z-draft", extra="draft: true\n")
+        self.assertNotIn("z-draft", build_site.build(self.dir)["en/blog/a-post/index.html"])
 
 
 class DescriptionLimit(unittest.TestCase):

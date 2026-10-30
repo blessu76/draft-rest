@@ -7,7 +7,28 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Look for the small turn inside a scene</title>
+      <link>https://draft.ipe.rest/en/blog/small-turning-point/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/small-turning-point/</guid>
+      <pubDate>Fri, 30 Oct 2026 16:00:00 +0900</pubDate>
+      <description>A scene with good details can still feel flat if nothing shifts in it. Three kinds of small turn, tiny ones included, with an example.</description>
+    </item>
+    <item>
+      <title>Open a scene with a single sense</title>
+      <link>https://draft.ipe.rest/en/blog/open-with-one-sense/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/open-with-one-sense/</guid>
+      <pubDate>Thu, 29 Oct 2026 16:12:00 +0900</pubDate>
+      <description>Starting with what you saw is easy but flat. Three ways to open a scene with one sound, smell or touch instead, with an example.</description>
+    </item>
+    <item>
+      <title>Put one person at the center of a short story</title>
+      <link>https://draft.ipe.rest/en/blog/one-person-in-focus/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/one-person-in-focus/</guid>
+      <pubDate>Wed, 28 Oct 2026 15:58:00 +0900</pubDate>
+      <description>A story with a crowd in it goes blurry. Pick one person, ask three small questions about them, and give your short story a face. With an example.</description>
+    </item>
     <item>
       <title>Finding a story in &quot;nothing really happened today&quot;</title>
       <link>https://draft.ipe.rest/en/blog/nothing-happened-today/</link>

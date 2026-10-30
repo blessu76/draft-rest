@@ -3,7 +3,7 @@ title: Coloque uma só pessoa no centro de uma história curta
 description: Com gente demais, a história fica borrada. Escolha uma pessoa, faça três perguntas pequenas sobre ela e dê um rosto à sua história curta. Com exemplo.
 date: 2026-10-28
 slug: one-person-in-focus
-draft: true
+published: 2026-10-28T15:58:00+09:00
 ---
 
 Histórias curtas costumam ficar desfocadas por um único motivo: há gente demais nelas. «Jantamos com a equipe e todo mundo ria e conversava» é verdade, mas quem lê não enxerga ninguém. Escolha uma pessoa e a imagem ganha foco.

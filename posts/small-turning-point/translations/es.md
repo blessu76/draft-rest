@@ -1,9 +1,9 @@
 ---
 title: Busca el pequeño giro dentro de una escena
 description: Una escena con buenos detalles puede seguir plana si nada cambia en ella. Tres tipos de giro pequeño, incluso diminuto, con un ejemplo.
-date: 2026-10-28
+date: 2026-10-30
 slug: small-turning-point
-draft: true
+published: 2026-10-30T16:00:00+09:00
 ---
 
 Algunas escenas tienen buenos detalles y aun así resultan planas. Lo que suele faltar es un giro: un momento en que algo cambió, aunque sea un poco. Un giro no tiene que ser dramático. Basta con que cambie el ánimo, con una pequeña decisión o con notar algo que antes no habías notado.

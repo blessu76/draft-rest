@@ -1,9 +1,9 @@
 ---
 title: Open a scene with a single sense
 description: Starting with what you saw is easy but flat. Three ways to open a scene with one sound, smell or touch instead, with an example.
-date: 2026-10-28
+date: 2026-10-29
 slug: open-with-one-sense
-draft: true
+published: 2026-10-29T16:12:00+09:00
 ---
 
 Most scenes begin with what we saw. "It was a rainy evening and I was sitting in a café." That is the easiest opening, and often the flattest. Open the same scene with a single sound, smell or touch and the reader is inside it in one sentence.

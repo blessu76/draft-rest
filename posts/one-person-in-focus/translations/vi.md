@@ -3,7 +3,7 @@ title: Đặt một người duy nhất vào giữa câu chuyện ngắn
 description: Nhiều người quá thì câu chuyện nhòe đi. Hãy chọn một người, hỏi ba câu nhỏ về họ và cho câu chuyện ngắn một gương mặt. Có ví dụ minh họa.
 date: 2026-10-28
 slug: one-person-in-focus
-draft: true
+published: 2026-10-28T15:58:00+09:00
 ---
 
 Câu chuyện ngắn thường nhòe đi vì một lý do: có quá nhiều người trong đó. "Cả nhóm đi ăn tối, ai cũng cười nói vui vẻ" là thật, nhưng người đọc không thấy ai cả. Chỉ cần chọn một người, bức tranh sẽ rõ nét.

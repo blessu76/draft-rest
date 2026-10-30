@@ -344,8 +344,9 @@ def render_404(version):
   <header class="blog-head">
     <p class="comment">// 404</p>
     <h1>Page not found</h1>
-    <p class="post-desc">That page doesn't exist, or it has moved. Pick a language to start from the home page.</p>
+    <p class="post-desc">That page doesn't exist, or it has moved. Pick a language to start from the home page, or read the blog.</p>
   </header>
+  <p class="nf-blog"><a href="/en/blog/">Read the blog &rarr;</a></p>
   <ul class="nf-langs">
 {links}
   </ul>
@@ -735,7 +736,43 @@ def post_title(title):
     return full if len(full) <= TITLE_MAX else title
 
 
-def render_post(root, locales, version, post, lang, number=None):
+RELATED_POSTS = 3  # latest posts (same language, this one and its previous/next excluded) listed under every post
+
+
+def post_more_html(locales, lang, post, posts):
+    """Bottom-of-post internal links: previous (older) / next (newer) post, then the latest RELATED_POSTS other posts in the same language (not this one, not previous/next).
+    `posts` is the full published list, newest first. Returns '' when there is no other post."""
+    slugs = [p["slug"] for p in posts]
+    if post["slug"] not in slugs:
+        return ""
+    i = slugs.index(post["slug"])
+
+    def href(p):
+        return "/%s/blog/%s/" % (lang, p["slug"])
+
+    def adj(p, rel, key):
+        return ('<a class="adj-%s" rel="%s" href="%s"><span class="comment">%s</span>'
+                '<span class="adj-title">%s</span></a>' % (rel, rel, href(p), esc(tr(locales, lang, key)), esc(p["langs"][lang]["title"])))
+    older = posts[i + 1] if i + 1 < len(posts) else None
+    newer = posts[i - 1] if i > 0 else None
+    out = ""
+    if older or newer:
+        out += '    <nav class="post-adj" aria-label="%s">\n' % esc(tr(locales, lang, "post_prev") + " / " + tr(locales, lang, "post_next"))
+        if older:
+            out += "      " + adj(older, "prev", "post_prev") + "\n"
+        if newer:
+            out += "      " + adj(newer, "next", "post_next") + "\n"
+        out += "    </nav>\n"
+    skip = {post["slug"]} | {p["slug"] for p in (older, newer) if p}  # already linked above: fill with the next latest posts instead
+    latest = [p for p in posts if p["slug"] not in skip][:RELATED_POSTS]
+    if latest:
+        items = "\n".join('        <li><a href="%s">%s</a></li>' % (href(p), esc(p["langs"][lang]["title"])) for p in latest)
+        out += ('    <section class="post-related" aria-labelledby="related-h">\n      <h2 id="related-h">%s</h2>\n      <ul>\n%s\n      </ul>\n    </section>\n'
+                % (esc(tr(locales, lang, "post_related")), items))
+    return out
+
+
+def render_post(root, locales, version, post, lang, number=None, posts=()):
     m = post["langs"][lang]
     url = post_url(lang, post["slug"])
     when = post["date"]
@@ -764,7 +801,7 @@ def render_post(root, locales, version, post, lang, number=None):
       <p>{esc(tr(locales, lang, 'hero_sub'))}</p>
       <span class="btn" aria-disabled="true">{APPLE}<span>{esc(tr(locales, lang, 'cta_download'))}</span></span>
     </aside>
-    <nav class="post-foot" aria-label="Blog">
+{post_more_html(locales, lang, post, posts)}    <nav class="post-foot" aria-label="Blog">
       <a href="{blog_list_url(lang).replace(SITE, '')}">&larr; {esc(tr(locales, lang, 'blog_back'))}</a>
       <p class="post-langs"><span class="comment">{esc(tr(locales, lang, 'blog_langs'))}</span><br>{extra_langs}</p>
     </nav>
@@ -1009,7 +1046,7 @@ def build(root):
                 pages.append((blog_list_url(c, n), newest, "0.7" if n == 1 else "0.5", "daily", list_cluster(n)))
         for p in posts:
             for c in CODES:
-                out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]])
+                out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]], posts)
                 pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
     prio = {"about": "0.8", "privacy": "0.4"}
     for slug in PAGES:

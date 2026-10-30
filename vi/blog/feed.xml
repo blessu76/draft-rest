@@ -7,7 +7,28 @@
     <atom:link href="https://draft.ipe.rest/vi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Tue, 27 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Tìm bước ngoặt nhỏ bên trong một cảnh</title>
+      <link>https://draft.ipe.rest/vi/blog/small-turning-point/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/small-turning-point/</guid>
+      <pubDate>Fri, 30 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Cảnh có chi tiết hay vẫn có thể phẳng nếu không có gì dịch chuyển. Ba loại bước ngoặt nhỏ, kể cả rất nhỏ, kèm ví dụ.</description>
+    </item>
+    <item>
+      <title>Mở một cảnh bằng một giác quan duy nhất</title>
+      <link>https://draft.ipe.rest/vi/blog/open-with-one-sense/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/open-with-one-sense/</guid>
+      <pubDate>Thu, 29 Oct 2026 16:12:00 +0900</pubDate>
+      <description>Bắt đầu từ điều nhìn thấy thì dễ nhưng phẳng. Ba cách mở cảnh bằng một âm thanh, mùi hương hoặc xúc giác, kèm ví dụ.</description>
+    </item>
+    <item>
+      <title>Đặt một người duy nhất vào giữa câu chuyện ngắn</title>
+      <link>https://draft.ipe.rest/vi/blog/one-person-in-focus/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/one-person-in-focus/</guid>
+      <pubDate>Wed, 28 Oct 2026 15:58:00 +0900</pubDate>
+      <description>Nhiều người quá thì câu chuyện nhòe đi. Hãy chọn một người, hỏi ba câu nhỏ về họ và cho câu chuyện ngắn một gương mặt. Có ví dụ minh họa.</description>
+    </item>
     <item>
       <title>Tìm câu chuyện trong &quot;hôm nay chẳng có gì&quot;</title>
       <link>https://draft.ipe.rest/vi/blog/nothing-happened-today/</link>

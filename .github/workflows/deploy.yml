@@ -55,6 +55,12 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      # Tell IndexNow (Bing, Naver, Yandex) about pages changed today (KST) + sitemap.xml. Must never break a deploy that already went out.
+      - name: IndexNow — ping changed URLs
+        if: success()
+        continue-on-error: true
+        run: python3 scripts/indexnow.py --changed-today || echo "::warning::IndexNow ping failed (the deploy itself is fine)"
+
       - name: Notify Slack — success
         if: success() && env.SLACK_BOT_TOKEN != ''
         env:

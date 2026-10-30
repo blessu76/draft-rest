@@ -3,7 +3,7 @@ title: Mettez une seule personne au centre d'un récit court
 description: Avec trop de monde, le récit devient flou. Choisissez une personne, posez trois petites questions sur elle et donnez un visage à votre histoire.
 date: 2026-10-28
 slug: one-person-in-focus
-draft: true
+published: 2026-10-28T15:58:00+09:00
 ---
 
 Un récit court devient flou, le plus souvent, pour une seule raison : il y a trop de monde dedans. « On a dîné avec l'équipe, tout le monde riait et parlait » est vrai, mais le lecteur ne voit personne. Choisissez une personne et l'image devient nette.

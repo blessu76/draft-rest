@@ -1,9 +1,9 @@
 ---
 title: Eröffne eine Szene mit einem einzigen Sinn
 description: Mit dem Gesehenen zu beginnen ist leicht, aber flach. Drei Wege, eine Szene mit einem Geräusch, Geruch oder einer Berührung zu öffnen, mit Beispiel.
-date: 2026-10-28
+date: 2026-10-29
 slug: open-with-one-sense
-draft: true
+published: 2026-10-29T16:12:00+09:00
 ---
 
 Die meisten Szenen beginnen mit dem, was wir gesehen haben. „Es war ein regnerischer Abend, und ich saß in einem Café.“ Das ist der einfachste Anfang und oft der flachste. Eröffne dieselbe Szene mit einem einzigen Geräusch, Geruch oder einer Berührung, und die Lesenden sind in einem Satz mittendrin.

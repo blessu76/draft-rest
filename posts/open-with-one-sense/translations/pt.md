@@ -1,9 +1,9 @@
 ---
 title: Abra uma cena com um único sentido
 description: Começar pelo que se viu é fácil, mas fica plano. Três formas de abrir uma cena com um som, um cheiro ou um toque, com exemplo.
-date: 2026-10-28
+date: 2026-10-29
 slug: open-with-one-sense
-draft: true
+published: 2026-10-29T16:12:00+09:00
 ---
 
 A maioria das cenas começa pelo que vimos. «Era uma tarde de chuva e eu estava sentado num café». É a abertura mais fácil e, muitas vezes, a mais plana. Abra a mesma cena com um único som, cheiro ou toque e quem lê entra nela numa frase.

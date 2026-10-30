@@ -1,9 +1,9 @@
 ---
 title: Tìm bước ngoặt nhỏ bên trong một cảnh
 description: Cảnh có chi tiết hay vẫn có thể phẳng nếu không có gì dịch chuyển. Ba loại bước ngoặt nhỏ, kể cả rất nhỏ, kèm ví dụ.
-date: 2026-10-28
+date: 2026-10-30
 slug: small-turning-point
-draft: true
+published: 2026-10-30T16:00:00+09:00
 ---
 
 Có những cảnh chi tiết rất hay mà đọc vẫn thấy phẳng. Điều thiếu thường là một bước ngoặt: khoảnh khắc có điều gì đó dịch chuyển, dù chỉ chút ít. Bước ngoặt không cần kịch tính. Tâm trạng đổi khác, một quyết định nhỏ, hay nhận ra điều trước đây chưa để ý là đủ.

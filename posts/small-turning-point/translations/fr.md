@@ -1,9 +1,9 @@
 ---
 title: Cherchez le petit tournant à l'intérieur d'une scène
 description: Une scène aux beaux détails reste plate si rien n'y bascule. Trois sortes de petits tournants, même minuscules, avec un exemple.
-date: 2026-10-28
+date: 2026-10-30
 slug: small-turning-point
-draft: true
+published: 2026-10-30T16:00:00+09:00
 ---
 
 Certaines scènes ont de beaux détails et se lisent pourtant à plat. Ce qui manque, c'est souvent un tournant : un moment où quelque chose a basculé, même légèrement. Un tournant n'a pas à être dramatique. Une humeur qui change, une petite décision ou le fait de remarquer ce qu'on n'avait pas vu suffisent.
