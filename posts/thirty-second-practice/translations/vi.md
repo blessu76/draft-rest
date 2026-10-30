@@ -4,6 +4,7 @@ description: Nếu cố kể cả ngày khiến bạn đứng hình, hãy chỉ 
 date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00
+updated: 2026-10-30T16:32:00+09:00
 ---
 
 Có bao giờ ai đó hỏi "hôm nay thế nào?" mà bạn chỉ đáp được "bình thường"? Khi cố giải thích cả một ngày, bạn không biết bắt đầu từ đâu. Một câu chuyện không bắt đầu từ một ngày. Nó bắt đầu từ một cảnh.
@@ -26,11 +27,29 @@ Ví dụ:
 
 Đủ cả ba điều, và giữa chừng lời có lộn xộn cũng chẳng sao.
 
+Một ngày yên ả cũng được. Bạn không cần một sự kiện kịch tính.
+
+> Sau bữa trưa mình ngồi ở bàn, cửa sổ mở. Đâu đó gần đây chuông gió cứ reo mãi. Mình nghĩ, mình có thể ngồi thêm một lát trên chiếc ghế này.
+
+Nơi chốn, một việc rất nhỏ, một cảm xúc. Vậy vẫn là một cảnh trọn vẹn.
+
+## Cách thực hiện bài tập
+
+1. **Đặt hẹn giờ ba mươi giây.** Điện thoại là đủ.
+2. **Nói thành tiếng.** Khi viết, bạn cứ sửa liên tục; khi nói, bạn cứ tiến lên. Một căn phòng yên tĩnh hay một buổi đi dạo đều được.
+3. **Dừng khi hết giờ.** Dù đang giữa câu. Mục đích là lấy nguyên liệu ra, không phải gọt giũa nó.
+4. **Đừng phát lại.** Một lần là một lần. Ngày mai bạn sẽ có một cảnh mới.
+
+## Thêm một dòng nữa, nếu còn thời gian
+
+Nếu vẫn còn thời gian, hãy thêm đúng một dòng. Đừng kéo dài câu chuyện; một chi tiết nhỏ là đủ, như ai đứng gần đó hay nghe thấy âm thanh gì. Với cảnh ở cửa hàng tiện lợi, có thể là: "Chiếc ô ướt của ai đó đang nhỏ nước bên cửa." Chỉ một dòng ấy thôi cũng làm cảnh sống động hơn nhiều.
+
 ## Những lỗi hay gặp
 
 - **Mở đầu bằng giải thích.** "Thật ra mình hay đến cửa hàng đó lắm, nên…" làm cảnh chính đến quá muộn. Hãy bắt đầu từ chuyện đã xảy ra.
 - **Vội rút ra bài học.** Một dòng cảm xúc là đủ. Các câu hỏi sẽ dẫn bạn đến kết luận sau.
 - **Dừng lại để nói lại.** Nếu vấp, đừng làm lại từ đầu. Cứ nói tiếp.
+- **Chọn cảnh quá lớn.** "Chuyến đi Jeju của mình" là cả một tuần. Hãy thử "một phút chờ ở cổng lên máy bay".
 
 ## Luyện tập với draft()
 

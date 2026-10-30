@@ -4,6 +4,7 @@ description: If explaining your whole day makes you freeze, pick a single scene 
 date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00
+updated: 2026-10-30T16:32:00+09:00
 ---
 
 Has someone asked "How was your day?" and all you could say was "fine"? Try to explain a whole day and you won't know where to start. A story doesn't begin with a day. It begins with one scene.
@@ -26,11 +27,29 @@ For example:
 
 All three are there, and it doesn't matter if the words get messy along the way.
 
+A quiet day works too. You don't need a dramatic event.
+
+> I was at my desk after lunch with the window open. A wind chime somewhere nearby kept ringing. I remember thinking I could stay in that chair a little longer.
+
+Place, a tiny event, a feeling. That's still a whole scene.
+
+## How to run the drill
+
+1. **Set a timer for thirty seconds.** Your phone will do.
+2. **Say it out loud.** Writing lets you edit as you go; speaking keeps you moving forward. A quiet room or a walk both work.
+3. **Stop when the timer stops.** Even in the middle of a sentence. The point is to get the material out, not to polish it.
+4. **Don't replay it.** One try is one try. Tomorrow you get a new scene.
+
+## One more line, if there's time
+
+If you still have time left, add just one more line. Don't stretch the story; a small detail is enough, like who was standing nearby or what sound you could hear. In the convenience store scene it might be: "Somebody's wet umbrella was dripping by the door." That one line makes the scene far more vivid.
+
 ## Common slip-ups
 
 - **Starting with explanation.** "I actually go to that store a lot, so…" pushes the scene far down. Start with what happened.
 - **Rushing to a lesson.** One line of feeling is enough. The questions will lead you to a conclusion later.
 - **Stopping to redo it.** If you stumble, don't restart. Just keep going.
+- **Picking a scene that's too big.** "My trip to Jeju" is a whole week. Try "the minute I waited at the airport gate" instead.
 
 ## Practicing with draft()
 

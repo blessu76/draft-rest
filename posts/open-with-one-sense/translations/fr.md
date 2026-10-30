@@ -4,6 +4,7 @@ description: Commencer par ce qu'on a vu est facile mais plat. Trois façons d'o
 date: 2026-10-29
 slug: open-with-one-sense
 published: 2026-10-29T16:12:00+09:00
+updated: 2026-10-30T16:30:35+09:00
 ---
 
 La plupart des scènes commencent par ce que l'on a vu. « C'était un soir de pluie et j'étais assis dans un café. » C'est l'ouverture la plus facile, et souvent la plus plate. Ouvrez la même scène avec un seul son, une odeur ou un toucher, et le lecteur y est en une phrase.
@@ -12,6 +13,8 @@ La plupart des scènes commencent par ce que l'on a vu. « C'était un soir de p
 
 Empiler couleur, lumière, musique et odeur d'un coup alourdit la première ligne. Un sens bien choisi dit au lecteur où il se trouve, et il complète le reste lui-même.
 
+Dans la vie, c'est pareil. En entrant dans une pièce inconnue, nous remarquons d'abord une seule chose : le tic-tac d'une horloge, l'odeur du pain, le froid d'une poignée de porte. Le reste vient après. Si votre première phrase suit cet ordre, le lecteur le reconnaît et vous fait confiance dès les premiers mots.
+
 ## Trois façons de choisir
 
 1. **Le son : qu'entendiez-vous les yeux fermés ?** Une cuillère contre une soucoupe, un train au loin, des pantoufles dans le couloir.
@@ -19,6 +22,8 @@ Empiler couleur, lumière, musique et odeur d'un coup alourdit la première lign
 3. **Le toucher : qu'est-ce que votre peau a remarqué en premier ?** Une rampe froide, une tasse chaude, une manche trop longue.
 
 Ne choisissez pas le sens qui sonne le plus poétique. Choisissez celui que vous avez ressenti en premier à cet instant.
+
+Si vous hésitez, rejouez la scène dans votre tête, lentement, comme des images dont on aurait coupé le visuel. Demandez-vous : qu'ai-je entendu avant de regarder autour de moi ? Qu'a senti ma peau avant que je lève les yeux ? Ce qui surgit en premier est généralement le plus honnête. Même les détails les plus ordinaires conviennent : ils sonnent juste précisément parce qu'ils ne sont pas inventés.
 
 ## Exemple : un café sous la pluie
 
@@ -29,6 +34,8 @@ Ouvert par un seul sens :
 > La cuillère tintait sans cesse contre la soucoupe. Dehors, la pluie s'était mise à tambouriner sur l'auvent. Je remuais encore un café déjà bien mélangé.
 
 Rien de ce qui se voit n'a été mentionné, et pourtant le lecteur est déjà assis dans ce café.
+
+Essayez la même scène avec une odeur : « Le café sentait le parapluie mouillé et le pain chaud. » Ou avec un toucher : « La tasse était si chaude que je la tenais à deux mains. » Chaque version a son caractère, mais toutes fonctionnent de la même façon : d'abord un détail, et seulement ensuite le reste du monde. Placez les versions côte à côte et vous verrez laquelle se rapproche le plus de ce que vous avez réellement vécu.
 
 ## Les pièges courants
 
@@ -42,4 +49,9 @@ Quand vous parlez environ trente secondes de ce moment et que draft() pose ses q
 
 ## À essayer aujourd'hui
 
-Pensez à un endroit où vous étiez il y a un instant. Fermez les yeux et demandez-vous ce que vous pouviez entendre. Écrivez ce son comme première phrase de la scène.
+1. Pensez à un endroit où vous étiez il y a un instant.
+2. Fermez les yeux et demandez-vous ce que vous pouviez entendre.
+3. Écrivez ce son comme première phrase de la scène.
+4. Ajoutez seulement ensuite, en une ou deux phrases, où vous étiez et ce qui se passait.
+
+Inutile d'obtenir une phrase parfaite du premier coup. Une seule ligne que vous avez envie de prolonger suffit. Demain, refaites l'exercice avec une odeur ou un toucher et observez comment l'ouverture change.

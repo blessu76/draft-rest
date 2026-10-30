@@ -4,6 +4,7 @@ description: Si intentar explicar todo tu día te bloquea, elige una sola escena
 date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00
+updated: 2026-10-30T16:32:00+09:00
 ---
 
 ¿Alguna vez te preguntaron "¿qué tal tu día?" y lo único que te salió fue "bien"? Si intentas explicar un día entero, no sabes por dónde empezar. Una historia no empieza con un día. Empieza con una escena.
@@ -26,11 +27,29 @@ Por ejemplo:
 
 Están las tres cosas, y no importa si por el camino las palabras se desordenan.
 
+Un día tranquilo también sirve. No hace falta un suceso dramático.
+
+> Estaba en mi escritorio después de comer, con la ventana abierta. En algún lugar cercano sonaban sin parar unas campanillas de viento. Pensé que podía quedarme un poco más en esa silla.
+
+Lugar, un hecho diminuto, un sentimiento. Sigue siendo una escena completa.
+
+## Cómo hacer el ejercicio
+
+1. **Pon un temporizador de treinta segundos.** Vale el móvil.
+2. **Dilo en voz alta.** Al escribir vas corrigiendo sobre la marcha; al hablar, sigues avanzando. Una habitación tranquila o un paseo sirven por igual.
+3. **Para cuando termine el temporizador.** Incluso a mitad de frase. Se trata de sacar el material, no de pulirlo.
+4. **No lo repitas.** Un intento es un intento. Mañana tendrás una escena nueva.
+
+## Una línea más, si sobra tiempo
+
+Si todavía te sobra tiempo, añade solo una línea más. No alargues la historia; basta un detalle pequeño, como quién estaba cerca o qué sonido se oía. En la escena de la tienda podría ser: "El paraguas mojado de alguien goteaba junto a la puerta". Esa sola línea hace la escena mucho más viva.
+
 ## Tropiezos comunes
 
 - **Empezar con explicaciones.** "En realidad voy mucho a esa tienda, así que…" aleja la escena. Empieza por lo que pasó.
 - **Apresurarte a sacar una lección.** Una línea de sentimiento basta. Las preguntas te llevarán a una conclusión más tarde.
 - **Parar para repetirlo.** Si te trabas, no empieces de nuevo. Sigue adelante.
+- **Elegir una escena demasiado grande.** "Mi viaje a Jeju" es una semana entera. Prueba con "el minuto que esperé en la puerta de embarque".
 
 ## Practicar con draft()
 
