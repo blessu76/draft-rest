@@ -3,7 +3,7 @@ title: Escribe un detalle, no el nombre del sentimiento
 description: En vez de escribir "estaba triste", escribe algo que viste. El sentimiento llega sin explicarlo. Tres preguntas para elegir un detalle, con un ejemplo.
 date: 2026-10-31
 slug: name-the-detail
-draft: true
+published: 2026-10-31T16:00:00+09:00
 ---
 
 Palabras como "feliz", "triste" o "solo" son fáciles de escribir. Pero quien lee no se imagina ninguna escena con ellas. Si cambias el nombre del sentimiento por un detalle concreto, quien lee lo siente sin que se lo expliques.

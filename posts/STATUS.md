@@ -12,7 +12,7 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 6 | 2026-10-28 | `one-person-in-focus` | Put one person at the center of a short story | published (main) |
 | 7 | 2026-10-29 | `open-with-one-sense` | Open a scene with a single sense (sound, smell or touch) | published (main) |
 | 8 | 2026-10-30 | `small-turning-point` | Look for the small turn inside a scene | published (main) |
-| 9 | 2026-10-31 | `name-the-detail` | Write one concrete detail instead of naming the feeling | queued (draft) |
+| 9 | 2026-10-31 | `name-the-detail` | Write one concrete detail instead of naming the feeling | published (main) |
 | 10 | 2026-11-01 | `start-later` | Cut the warm-up paragraph and start mid-scene | queued (draft) |
 | 11 | 2026-11-02 | `one-line-they-said` | Keep one line someone said, word for word | queued (draft) |
 | 12 | 2026-11-03 | `read-it-aloud` | Read it aloud once and fix only where you stumble | queued (draft) |

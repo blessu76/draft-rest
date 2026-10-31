@@ -3,7 +3,7 @@ title: Name one detail instead of naming the feeling
 description: Instead of writing "I was upset," write one thing you could see. The feeling comes through unexplained. Three questions for picking a detail, with an example.
 date: 2026-10-31
 slug: name-the-detail
-draft: true
+published: 2026-10-31T16:00:00+09:00
 ---
 
 Words like "happy," "upset" and "lonely" are easy to write. But a reader can't picture anything from them. Swap the feeling's name for one concrete detail, and the reader feels it without being told.

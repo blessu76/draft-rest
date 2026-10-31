@@ -3,7 +3,7 @@ title: Escreva um detalhe concreto no lugar do nome do sentimento
 description: Em vez de escrever "fiquei triste", escreva algo que você viu. O sentimento chega sem explicação. Três perguntas para escolher um detalhe, com um exemplo.
 date: 2026-10-31
 slug: name-the-detail
-draft: true
+published: 2026-10-31T16:00:00+09:00
 ---
 
 Palavras como "feliz", "triste" e "sozinho" são fáceis de escrever. Mas quem lê não consegue imaginar cena nenhuma a partir delas. Troque o nome do sentimento por um detalhe concreto e o leitor sente sem que você precise explicar.

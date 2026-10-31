@@ -3,7 +3,7 @@ title: Tulis satu detail konkret, bukan nama perasaannya
 description: Daripada menulis "aku sedih", tulis satu hal yang kamu lihat. Perasaan tersampaikan tanpa dijelaskan. Tiga pertanyaan memilih detail, plus contoh.
 date: 2026-10-31
 slug: name-the-detail
-draft: true
+published: 2026-10-31T16:00:00+09:00
 ---
 
 Kata seperti "senang", "sedih", atau "kesepian" mudah ditulis. Tetapi pembaca tidak bisa membayangkan adegan apa pun dari kata-kata itu. Kalau nama perasaan kamu ganti dengan satu detail konkret, pembaca akan merasakannya sendiri tanpa perlu dijelaskan.

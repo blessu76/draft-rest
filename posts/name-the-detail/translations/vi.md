@@ -3,7 +3,7 @@ title: Hãy viết một chi tiết cụ thể thay vì gọi tên cảm xúc
 description: Thay vì viết "tôi buồn", hãy viết một điều bạn đã thấy. Cảm xúc tự truyền đi mà không cần giải thích. Ba câu hỏi chọn chi tiết, kèm ví dụ.
 date: 2026-10-31
 slug: name-the-detail
-draft: true
+published: 2026-10-31T16:00:00+09:00
 ---
 
 Những từ như "vui", "buồn", "cô đơn" rất dễ viết. Nhưng người đọc không hình dung ra cảnh nào từ chúng. Nếu đổi tên cảm xúc thành một chi tiết cụ thể, người đọc sẽ tự cảm nhận được mà bạn không cần giải thích.

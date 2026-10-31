@@ -3,7 +3,7 @@ title: Écrivez un détail concret plutôt que le nom du sentiment
 description: Au lieu d'écrire « j'étais triste », écrivez ce que vous avez vu. Le sentiment passe sans explication. Trois questions pour choisir un détail, et un exemple.
 date: 2026-10-31
 slug: name-the-detail
-draft: true
+published: 2026-10-31T16:00:00+09:00
 ---
 
 Des mots comme « heureux », « triste » ou « seul » sont faciles à écrire. Mais le lecteur ne voit aucune scène en les lisant. Remplacez le nom du sentiment par un détail concret, et le lecteur le ressent sans qu'on le lui explique.

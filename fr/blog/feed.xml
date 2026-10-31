@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>De courts guides pour transformer ce que vous dites en une histoire que l&#x27;on lit vraiment, par l&#x27;équipe de draft().</description>
     <language>fr</language>
-    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Écrivez un détail concret plutôt que le nom du sentiment</title>
+      <link>https://draft.ipe.rest/fr/blog/name-the-detail/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/name-the-detail/</guid>
+      <pubDate>Sat, 31 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Au lieu d&#x27;écrire « j&#x27;étais triste », écrivez ce que vous avez vu. Le sentiment passe sans explication. Trois questions pour choisir un détail, et un exemple.</description>
+    </item>
     <item>
       <title>Cherchez le petit tournant à l&#x27;intérieur d&#x27;une scène</title>
       <link>https://draft.ipe.rest/fr/blog/small-turning-point/</link>

@@ -3,7 +3,7 @@ title: Schreib ein konkretes Detail statt den Namen des Gefühls
 description: Statt „ich war traurig" schreib auf, was du gesehen hast. Das Gefühl kommt auch ohne Erklärung an. Drei Fragen zur Wahl eines Details, mit Beispiel.
 date: 2026-10-31
 slug: name-the-detail
-draft: true
+published: 2026-10-31T16:00:00+09:00
 ---
 
 Wörter wie „glücklich", „traurig" oder „einsam" lassen sich leicht schreiben. Aber die Leserin sieht dabei keine Szene vor sich. Ersetz den Namen des Gefühls durch ein konkretes Detail, und sie fühlt es, ohne dass du es erklärst.
