@@ -58,7 +58,7 @@
         "li": [
           "Visits are also counted with Cloudflare Web Analytics, which is cookieless and does not collect personal data.",
           "Fonts load from Google Fonts, so your browser contacts Google’s font servers.",
-          "Your language choice, and whether you closed the language hint, are remembered in your browser only (local storage) and are never sent to us.",
+          "Your language choice is remembered in your browser only (local storage) and is never sent to us. Until you choose, the home page follows your browser’s language setting.",
           "To opt out, block or delete cookies in your browser settings, or use Google’s [Analytics opt-out add-on](https://tools.google.com/dlpage/gaoptout). The site works the same without them.",
           "There are no accounts on this site, and it collects no forms or personal details."
         ],

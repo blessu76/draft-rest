@@ -106,13 +106,59 @@ class Pages(unittest.TestCase):
             if c != "en":
                 self.assertNotIn("location.replace", self.files["%s/index.html" % c])
 
-    def test_root_has_language_hint_but_no_auto_redirect_on_browser_language(self):
-        root = self.files["index.html"]
-        self.assertIn('id="langhint"', root)
-        self.assertNotIn("navigator.language", build_site.LEGACY_REDIRECT)
-        self.assertIn("draft_lang", build_site.LEGACY_REDIRECT)
-        self.assertIn("toLowerCase", build_site.LEGACY_REDIRECT)
-        self.assertNotIn('id="langhint"', self.files["ko/index.html"])
+    def test_root_language_rule_url_then_saved_then_browser_then_english(self):
+        """REACH_PROCESS language rule at "/": 1 ?lang= -> 2 localStorage draft_lang -> 3 navigator.languages -> 4 English."""
+        js = build_site.LEGACY_REDIRECT
+        self.assertIn("location.replace", self.files["index.html"])
+        self.assertIn("navigator.languages", js)
+        self.assertIn("navigator.language", js)  # single-value fallback
+        self.assertIn("split('-')[0]", js)  # ko-KR -> ko, zh-TW -> zh
+        # order: ?lang= (q.get) before the saved choice (getItem) before the browser list (navigator.languages)
+        self.assertLess(js.index("q.get('lang')"), js.index("getItem('draft_lang')"))
+        self.assertLess(js.index("getItem('draft_lang')"), js.index("navigator.languages"))
+        # only an explicit pick is stored (?lang=); the browser-language redirect never writes
+        self.assertEqual(js.count("setItem"), 1)
+        self.assertLess(js.index("setItem"), js.index("getItem"))
+        # English is a stay, not a redirect (single English body at "/")
+        self.assertIn("if(c!=='en')go(c);return;", js)
+        self.assertIn("if(v!=='en')go(v);return;", js)
+        self.assertNotIn("go('en')", js)
+        # the old "view in <language>" hint is gone: the root now decides the language itself
+        self.assertNotIn('id="langhint"', self.files["index.html"])
+        self.assertNotIn("langhint", (ROOT / "assets" / "site.js").read_text(encoding="utf-8"))
+
+    def test_links_to_other_ipe_sites_carry_the_page_language(self):
+        """REACH_PROCESS rule 2: ipe.rest has /<lang>/ homes (not vi) -> path; elsewhere ?lang=xx; English stays plain."""
+        L = build_site.ipe_link
+        self.assertEqual(L("https://ipe.rest", "en"), "https://ipe.rest")
+        self.assertEqual(L("https://ipe.rest", None), "https://ipe.rest")
+        self.assertEqual(L("https://ipe.rest", "ko"), "https://ipe.rest/ko/")
+        self.assertEqual(L("https://ipe.rest/", "fr"), "https://ipe.rest/fr/")
+        self.assertEqual(L("https://ipe.rest", "vi"), "https://ipe.rest/?lang=vi")
+        self.assertEqual(L("https://play.ipe.rest/", "ja"), "https://play.ipe.rest/?lang=ja")
+        self.assertEqual(L("https://ipe.rest/about/#x", "de"), "https://ipe.rest/about/?lang=de#x")
+        self.assertEqual(L("https://ipe.rest/?a=1", "de"), "https://ipe.rest/?a=1&lang=de")
+        self.assertEqual(L("https://ipe.rest/?lang=ko", "de"), "https://ipe.rest/?lang=ko")
+        for url in ("https://draft.ipe.rest/ko/", "https://example.com/", "https://notipe.rest/", "https://ipe.rest.evil.com/", "/ko/"):
+            self.assertEqual(L(url, "ko"), url)
+        for c in build_site.CODES:
+            # the "Maker" link of every generated page points at ipe.rest in that page's language
+            want = build_site.ipe_link("https://ipe.rest", c)
+            for rel in (build_site.page_path(c, "about").strip("/") + "/index.html",):
+                self.assertIn('href="%s"' % want, self.files[rel], rel)
+        self.assertIn('href="https://ipe.rest/ko/"', self.files["ko/about/index.html"])
+        self.assertIn('href="https://ipe.rest"', self.files["about/index.html"])
+        self.assertIn('href="https://ipe.rest/?lang=vi"', self.files["vi/about/index.html"])
+
+    def test_language_rule_script_only_on_root(self):
+        """Language pages, content pages, posts and the 404 carry their language in the URL: no redirect script there."""
+        for rel, text in self.files.items():
+            if not rel.endswith(".html") or rel == "index.html":
+                continue
+            if rel == "en/index.html":  # stub: stores en, then forwards to /
+                continue
+            self.assertNotIn("navigator.languages", text, rel)
+            self.assertNotIn("location.replace", text, rel)
 
     def test_legacy_redirect_covers_all_languages(self):
         m = re.search(r"var C='([^']*)'", build_site.LEGACY_REDIRECT)

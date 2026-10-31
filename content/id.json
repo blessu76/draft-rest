@@ -58,7 +58,7 @@
         "li": [
           "Kunjungan juga dihitung dengan Cloudflare Web Analytics, yang tanpa cookie dan tidak mengumpulkan data pribadi.",
           "Font dimuat dari Google Fonts, sehingga browsermu terhubung ke server font Google.",
-          "Pilihan bahasamu, dan apakah kamu menutup petunjuk bahasa, hanya diingat di browsermu (penyimpanan lokal) dan tidak pernah dikirim ke kami.",
+          "Pilihan bahasamu hanya diingat di browsermu (penyimpanan lokal) dan tidak pernah dikirim ke kami. Sebelum kamu memilih, beranda mengikuti pengaturan bahasa browsermu.",
           "Untuk menolak, blokir atau hapus cookie di pengaturan browsermu, atau gunakan [add-on penolakan Google Analytics](https://tools.google.com/dlpage/gaoptout). Situs tetap berfungsi sama tanpa cookie tersebut.",
           "Situs ini tidak punya akun dan tidak mengumpulkan formulir maupun data pribadi."
         ],

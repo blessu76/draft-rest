@@ -58,7 +58,7 @@
         "li": [
           "Besuche werden außerdem mit Cloudflare Web Analytics gezählt, das ohne Cookies arbeitet und keine personenbezogenen Daten erfasst.",
           "Schriften werden von Google Fonts geladen, daher verbindet sich dein Browser mit den Schriftservern von Google.",
-          "Deine Sprachwahl und ob du den Sprachhinweis geschlossen hast, werden nur in deinem Browser (lokaler Speicher) gemerkt und nie an uns gesendet.",
+          "Deine Sprachwahl wird nur in deinem Browser (lokaler Speicher) gemerkt und nie an uns gesendet. Solange du keine wählst, folgt die Startseite der Sprache deines Browsers.",
           "Zum Widerspruch blockiere oder lösche Cookies in den Browsereinstellungen oder nutze das [Browser-Add-on zur Deaktivierung von Google Analytics](https://tools.google.com/dlpage/gaoptout). Die Website funktioniert ohne sie genauso.",
           "Diese Seite hat keine Konten und erfasst weder Formulare noch persönliche Angaben."
         ],

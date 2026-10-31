@@ -58,7 +58,7 @@
         "li": [
           "Les visites sont aussi comptées avec Cloudflare Web Analytics, sans cookie et sans collecte de données personnelles.",
           "Les polices se chargent depuis Google Fonts : votre navigateur contacte donc les serveurs de polices de Google.",
-          "Votre choix de langue, et le fait d’avoir fermé l’invite de langue, sont mémorisés uniquement dans votre navigateur (stockage local) et ne nous sont jamais envoyés.",
+          "Votre choix de langue est mémorisé uniquement dans votre navigateur (stockage local) et ne nous est jamais envoyé. Tant que vous n’en avez pas choisi, la page d’accueil suit la langue de votre navigateur.",
           "Pour vous y opposer, bloquez ou supprimez les cookies dans les réglages de votre navigateur, ou utilisez le [module de désactivation de Google Analytics](https://tools.google.com/dlpage/gaoptout). Le site fonctionne de la même façon sans eux.",
           "Ce site n’a pas de comptes et ne collecte ni formulaires ni données personnelles."
         ],
