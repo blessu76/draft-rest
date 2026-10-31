@@ -1,7 +1,7 @@
 {
   "nav_about": "Über",
   "updated_label": "Zuletzt aktualisiert",
-  "updated": "2026-10-23",
+  "updated": "2026-11-01",
   "about": {
     "title": "Über draft() — anders als andere Draft-Apps",
     "desc": "draft() von ipe Studio ist eine Erzähl-App, die bei der Stimme beginnt. Wie sie sich von anderen Apps mit dem Namen Draft unterscheidet.",
@@ -27,7 +27,7 @@
   },
   "privacy": {
     "title": "Datenschutz — draft()",
-    "desc": "Wie draft() und draft.ipe.rest mit deinen Daten umgehen: unser Versprechen, was noch festgelegt wird und wie diese Website funktioniert.",
+    "desc": "Wie draft() und draft.ipe.rest mit deinen Daten umgehen: unser Versprechen, was noch festgelegt wird und wie diese Website funktioniert, einschließlich der Besuchsstatistik.",
     "comment": "// Datenschutz, klar gesagt",
     "h1": "Datenschutz",
     "sections": [
@@ -56,11 +56,15 @@
       {
         "h": "Auf dieser Website",
         "li": [
-          "Es werden keine Cookies gesetzt.",
-          "Besuche werden mit Cloudflare Web Analytics gezählt, das ohne Cookies arbeitet und keine personenbezogenen Daten erfasst.",
+          "Besuche werden außerdem mit Cloudflare Web Analytics gezählt, das ohne Cookies arbeitet und keine personenbezogenen Daten erfasst.",
           "Schriften werden von Google Fonts geladen, daher verbindet sich dein Browser mit den Schriftservern von Google.",
           "Deine Sprachwahl und ob du den Sprachhinweis geschlossen hast, werden nur in deinem Browser (lokaler Speicher) gemerkt und nie an uns gesendet.",
+          "Zum Widerspruch blockiere oder lösche Cookies in den Browsereinstellungen oder nutze das [Browser-Add-on zur Deaktivierung von Google Analytics](https://tools.google.com/dlpage/gaoptout). Die Website funktioniert ohne sie genauso.",
           "Diese Seite hat keine Konten und erfasst weder Formulare noch persönliche Angaben."
+        ],
+        "p": [
+          "Dieser Abschnitt betrifft nur diese Website. Was die App erfasst, steht oben im App-Abschnitt.",
+          "Wir nutzen Google Analytics 4, um zu sehen, welche Seiten gelesen werden. Es erfasst Seitenaufrufe, die Seite, von der du kommst, Browser- und Gerätetyp, einen ungefähren Standort (Land oder Stadt) und Klicks auf Links, die unsere Website verlassen (nur die Linkadresse). Es setzt Cookies in deinem Browser (etwa `_ga`, das bis zu zwei Jahre bestehen kann), um Besuche zu unterscheiden. Wir fragen in der Analyse weder nach deinem Namen noch nach deiner E-Mail-Adresse und können dich darüber nicht identifizieren. Google verarbeitet diese Daten in unserem Auftrag, auch auf Servern außerhalb Koreas."
         ]
       },
       {
