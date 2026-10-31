@@ -64,13 +64,42 @@ KEYWORDS = "storytelling app, AI writing, voice to text, story generator, creato
 APPLE = '<svg class="apple-glyph" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>'
 FONTS = ("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400"
          "&family=Inter:wght@300;400;500;600&display=swap")
-# Root-only script (runs before paint). ?lang=xx (any case, other query params kept) -> that language's page;
-# else a language the visitor picked earlier (localStorage draft_lang) -> that page. No browser-language redirect.
-LEGACY_REDIRECT = ("(function(){try{var C='%s',q=new URLSearchParams(location.search),l=(q.get('lang')||'').toLowerCase();"
+# Root-only script (runs before paint). Company-wide language rule (REACH_PROCESS, Davy 2026-11-01), only at "/":
+#  1. ?lang=xx (any case, other query params kept) -> that language's page, and remember it (an explicit pick);
+#     an unsupported ?lang= is ignored and 2-4 decide.
+#  2. a language the visitor picked earlier (localStorage draft_lang) -> that page.
+#  3. navigator.languages in order, first supported match (ko-KR -> ko, zh-TW -> zh) -> that page. Not stored: only picks are.
+#  4. nothing matches (or English matches first) -> stay on the English root.
+# Language pages (/ko/ ...), content pages and posts carry their language in the URL (rule 1) and never redirect.
+LEGACY_REDIRECT = ("(function(){try{var C='%s',q=new URLSearchParams(location.search),l=(q.get('lang')||'').toLowerCase(),"
+                   "ok=function(c){return !!c&&new RegExp('^('+C+')$').test(c)};"
                    "function go(c){q.delete('lang');var s=q.toString();location.replace((c==='en'?'/':'/'+c+'/')+(s?'?'+s:'')+location.hash);}"
-                   "if(l&&new RegExp('^('+C+')$').test(l)){go(l);return;}"
-                   "if(!q.has('lang')){var v=localStorage.getItem('draft_lang');if(v&&v!=='en'&&new RegExp('^('+C+')$').test(v))go(v);}"
+                   "if(ok(l)){try{localStorage.setItem('draft_lang',l)}catch(e){}"
+                   "if(l==='en'){q.delete('lang');var r=q.toString();history.replaceState(null,'','/'+(r?'?'+r:'')+location.hash);}else go(l);return;}"
+                   "var v=null;try{v=localStorage.getItem('draft_lang')}catch(e){}"
+                   "if(ok(v)){if(v!=='en')go(v);return;}"
+                   "var p=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];"
+                   "for(var i=0;i<p.length;i++){var c=String(p[i]).toLowerCase().split('-')[0];if(ok(c)){if(c!=='en')go(c);return;}}"
                    "}catch(e){}})();" % "|".join(CODES))
+# Sites that leave this one for another ipe site hand over the current language (REACH_PROCESS rule 2). ipe.rest has
+# static /<lang>/ home pages for these languages (checked live 2026-11-01; no vi); anywhere else -> "?lang=xx" on the page.
+# English (and no language) stays the plain URL.
+IPE_HOME_LANGS = ("ko", "ja", "zh", "es", "pt", "id", "ru", "fr", "de")
+
+
+def ipe_link(url, lang):
+    """URL of another ipe site (ipe.rest, *.ipe.rest) in `lang`; any other URL is returned unchanged."""
+    m = re.match(r"^(https://)((?:[a-z0-9-]+\.)*ipe\.rest)(/[^?#]*)?(\?[^#]*)?(#.*)?$", url)
+    if not m or lang in (None, DEFAULT_LANG) or lang not in CODES or m.group(2) == "draft.ipe.rest":
+        return url
+    scheme, host, path, query, frag = m.group(1), m.group(2), m.group(3) or "", m.group(4) or "", m.group(5) or ""
+    if host == "ipe.rest" and path in ("", "/") and not query and lang in IPE_HOME_LANGS:
+        return "%s%s/%s/%s" % (scheme, host, lang, frag)
+    if "lang=" in query:
+        return url
+    return "%s%s%s%slang=%s%s" % (scheme, host, path or "/", query + "&" if query else "?", lang, frag)
+
+
 def esc(s):
     return html.escape(str(s), quote=True)
 
@@ -318,9 +347,6 @@ def render_home(root, locales, lang, version, blog=False, posts=()):
     extra["BLOGCARDS"] = blog_cards_html(locales, lang, posts, numbers)
     body = render_template(tpl, locales, lang, extra)
     root_page = lang == DEFAULT_LANG
-    if root_page:
-        hint = {c: [tr(locales, c, "view_in"), tr(locales, c, "close")] for c in CODES if c != DEFAULT_LANG}
-        body += '\n<div id="langhint" hidden data-langs=\'%s\'></div>' % json.dumps(hint, ensure_ascii=False, separators=(",", ":")).replace("'", "&#39;")
     h = head(locales, lang, version, url, tr(locales, lang, "meta_title"), tr(locales, lang, "meta_desc_short"), home_cluster(),
              home_ld(locales, lang, url), extra='<meta name="keywords" content="%s">\n' % esc(KEYWORDS),
              legacy=LEGACY_REDIRECT if root_page else "", feed=blog_feed_url(lang) if blog else None, og_desc=tr(locales, lang, "hero_sub"))
@@ -545,7 +571,7 @@ def load_posts(root):
     return posts, errors
 
 
-def inline(text):
+def inline(text, lang=None):
     parts = re.split(r"(`[^`]+`)", text)
     out = []
     for p in parts:
@@ -558,6 +584,7 @@ def inline(text):
             u = html.unescape(m.group(2)).strip()
             if not re.match(r"^(https?://|/|#|mailto:)", u):
                 u = "#"
+            u = ipe_link(u, lang)
             ext = u.startswith("http") and not u.startswith(SITE)
             return '<a href="%s"%s>%s</a>' % (esc(u), ' rel="noopener"' if ext else "", m.group(1))
         t = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", link, t)
@@ -567,12 +594,12 @@ def inline(text):
     return "".join(out)
 
 
-def markdown(src):
+def markdown(src, lang=None):
     lines, out, para, i = src.split("\n"), [], [], 0
 
     def flush():
         if para:
-            out.append("<p>%s</p>" % inline(" ".join(x.strip() for x in para)))
+            out.append("<p>%s</p>" % inline(" ".join(x.strip() for x in para), lang))
             para.clear()
     while i < len(lines):
         st = lines[i].strip()
@@ -593,7 +620,7 @@ def markdown(src):
         if m:
             flush()
             lvl = {1: 2, 2: 2, 3: 3, 4: 4}[len(m.group(1))]
-            out.append("<h%d>%s</h%d>" % (lvl, inline(m.group(2)), lvl))
+            out.append("<h%d>%s</h%d>" % (lvl, inline(m.group(2), lang), lvl))
             i += 1
             continue
         if re.match(r"^(-{3,}|\*{3,})$", st):
@@ -607,7 +634,7 @@ def markdown(src):
             while i < len(lines) and lines[i].strip().startswith(">"):
                 q.append(lines[i].strip()[1:].strip())
                 i += 1
-            out.append("<blockquote><p>%s</p></blockquote>" % inline(" ".join(q)))
+            out.append("<blockquote><p>%s</p></blockquote>" % inline(" ".join(q), lang))
             continue
         if re.match(r"^[-*+]\s+", st) or re.match(r"^\d+[.)]\s+", st):
             flush()
@@ -618,7 +645,7 @@ def markdown(src):
                 items.append(re.sub(pat, "", lines[i].strip()))
                 i += 1
             tag = "ol" if ordered else "ul"
-            out.append("<%s>%s</%s>" % (tag, "".join("<li>%s</li>" % inline(x) for x in items), tag))
+            out.append("<%s>%s</%s>" % (tag, "".join("<li>%s</li>" % inline(x, lang) for x in items), tag))
             continue
         para.append(lines[i])
         i += 1
@@ -792,7 +819,7 @@ def render_post(root, locales, version, post, lang, number=None, posts=()):
     url = post_url(lang, post["slug"])
     when = post["date"]
     updated = m.get("_updated") or when
-    body = markdown(m["_body"])
+    body = markdown(m["_body"], lang)
     data = {"@context": "https://schema.org", "@type": "BlogPosting", "@id": article_id(lang, post["slug"]),
             "headline": m["title"], "description": m["description"],
             "datePublished": when_iso(when), "dateModified": when_iso(updated), "inLanguage": lang,
@@ -903,8 +930,8 @@ def render_content_page(root, locales, content, version, slug, lang):
     parts = []
     for sec in pg["sections"]:
         h = '    <h2>%s</h2>' % esc(sec["h"])
-        ps = "".join("\n    <p>%s</p>" % inline(t) for t in sec.get("p", []))
-        ul = "\n    <ul>%s</ul>" % "".join("<li>%s</li>" % inline(t) for t in sec["li"]) if sec.get("li") else ""
+        ps = "".join("\n    <p>%s</p>" % inline(t, lang) for t in sec.get("p", []))
+        ul = "\n    <ul>%s</ul>" % "".join("<li>%s</li>" % inline(t, lang) for t in sec["li"]) if sec.get("li") else ""
         parts.append('  <section class="sec">\n%s%s%s\n  </section>' % (h, ps, ul))
     body = "\n".join(parts)
     stamp = ""

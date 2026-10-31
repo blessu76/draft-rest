@@ -58,7 +58,7 @@
         "li": [
           "As visitas também são contadas com o Cloudflare Web Analytics, que não usa cookies nem coleta dados pessoais.",
           "As fontes são carregadas do Google Fonts, então seu navegador se conecta aos servidores de fontes do Google.",
-          "Seu idioma escolhido, e se você fechou o aviso de idioma, ficam guardados só no seu navegador (armazenamento local) e nunca são enviados a nós.",
+          "Seu idioma escolhido fica guardado só no seu navegador (armazenamento local) e nunca é enviado a nós. Enquanto você não escolher, a página inicial segue o idioma do seu navegador.",
           "Para não participar, bloqueie ou apague os cookies nas configurações do navegador ou use o [complemento de desativação do Google Analytics](https://tools.google.com/dlpage/gaoptout). O site funciona do mesmo jeito sem eles.",
           "Este site não tem contas e não coleta formulários nem dados pessoais."
         ],

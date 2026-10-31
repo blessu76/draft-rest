@@ -386,17 +386,6 @@
   .copy-btn.done{color:var(--sage);}
   .copy-btn.done .copy-msg{opacity:1;}
 
-  /* ---------- root: "view in <language>" hint (never auto-redirects) ---------- */
-  .langhint{position:fixed;top:60px;left:50%;transform:translateX(-50%);z-index:49;max-width:calc(100vw - 24px);
-    display:inline-flex;align-items:center;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
-    border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:12.5px;}
-  .langhint[hidden]{display:none;}
-  .langhint a{color:var(--ink);text-decoration:none;padding:0 6px 0 16px;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap;}
-  .langhint a:hover{color:var(--sage);}
-  .langhint button{width:44px;height:44px;border:0;background:transparent;color:var(--gray);font-size:18px;line-height:1;cursor:pointer;border-radius:50%;}
-  .langhint button:hover{color:var(--ink);}
-  @media (max-width:640px){.langhint{top:54px;}}
-
   /* ---------- 404 ---------- */
   .nf-langs{list-style:none;display:flex;flex-wrap:wrap;gap:4px 8px;font-family:var(--mono);font-size:14px;}
   .nf-langs a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:8px;color:var(--ink-soft);text-decoration:none;background:var(--card);}
