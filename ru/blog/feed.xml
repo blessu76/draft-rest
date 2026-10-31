@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Вместо названия чувства запишите одну конкретную деталь</title>
+      <link>https://draft.ipe.rest/ru/blog/name-the-detail/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/name-the-detail/</guid>
+      <pubDate>Sat, 31 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Вместо «мне было грустно» напишите, что вы увидели. Чувство дойдёт без объяснений. Три вопроса, чтобы выбрать деталь, и пример.</description>
+    </item>
     <item>
       <title>Найдите маленький поворот внутри сцены</title>
       <link>https://draft.ipe.rest/ru/blog/small-turning-point/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Name one detail instead of naming the feeling</title>
+      <link>https://draft.ipe.rest/en/blog/name-the-detail/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/name-the-detail/</guid>
+      <pubDate>Sat, 31 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Instead of writing &quot;I was upset,&quot; write one thing you could see. The feeling comes through unexplained. Three questions for picking a detail, with an example.</description>
+    </item>
     <item>
       <title>Look for the small turn inside a scene</title>
       <link>https://draft.ipe.rest/en/blog/small-turning-point/</link>

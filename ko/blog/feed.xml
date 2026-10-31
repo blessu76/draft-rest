@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>감정 이름 대신 구체적인 디테일 하나를 적어 보세요</title>
+      <link>https://draft.ipe.rest/ko/blog/name-the-detail/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/name-the-detail/</guid>
+      <pubDate>Sat, 31 Oct 2026 16:00:00 +0900</pubDate>
+      <description>속상했다고 쓰는 대신 눈에 보인 것 하나를 적으면 감정을 설명하지 않아도 전해집니다. 디테일을 고르는 세 가지 질문을 예시와 함께 정리했습니다.</description>
+    </item>
     <item>
       <title>장면 안에서 작은 전환점을 찾아 보세요</title>
       <link>https://draft.ipe.rest/ko/blog/small-turning-point/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/id/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Fri, 30 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Tulis satu detail konkret, bukan nama perasaannya</title>
+      <link>https://draft.ipe.rest/id/blog/name-the-detail/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/name-the-detail/</guid>
+      <pubDate>Sat, 31 Oct 2026 16:00:00 +0900</pubDate>
+      <description>Daripada menulis &quot;aku sedih&quot;, tulis satu hal yang kamu lihat. Perasaan tersampaikan tanpa dijelaskan. Tiga pertanyaan memilih detail, plus contoh.</description>
+    </item>
     <item>
       <title>Cari titik balik kecil di dalam sebuah adegan</title>
       <link>https://draft.ipe.rest/id/blog/small-turning-point/</link>
