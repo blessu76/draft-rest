@@ -1,7 +1,7 @@
 {
   "nav_about": "Sobre",
   "updated_label": "Última atualização",
-  "updated": "2026-10-23",
+  "updated": "2026-11-01",
   "about": {
     "title": "Sobre o draft() — e como ele difere de outros apps Draft",
     "desc": "O draft(), da ipe Studio, é um app de narrativa que começa pela voz. Como ele se diferencia de outros apps com o nome Draft.",
@@ -27,7 +27,7 @@
   },
   "privacy": {
     "title": "Privacidade — draft()",
-    "desc": "Como o draft() e o draft.ipe.rest tratam seus dados: o que prometemos, o que ainda está sendo definido e como este site funciona.",
+    "desc": "Como o draft() e o draft.ipe.rest tratam seus dados: o que prometemos, o que ainda está sendo definido e como este site funciona, incluindo as estatísticas de visitas.",
     "comment": "// privacidade, sem rodeios",
     "h1": "Privacidade",
     "sections": [
@@ -56,11 +56,15 @@
       {
         "h": "Neste site",
         "li": [
-          "Nenhum cookie é definido.",
-          "As visitas são contadas com o Cloudflare Web Analytics, que não usa cookies nem coleta dados pessoais.",
+          "As visitas também são contadas com o Cloudflare Web Analytics, que não usa cookies nem coleta dados pessoais.",
           "As fontes são carregadas do Google Fonts, então seu navegador se conecta aos servidores de fontes do Google.",
           "Seu idioma escolhido, e se você fechou o aviso de idioma, ficam guardados só no seu navegador (armazenamento local) e nunca são enviados a nós.",
+          "Para não participar, bloqueie ou apague os cookies nas configurações do navegador ou use o [complemento de desativação do Google Analytics](https://tools.google.com/dlpage/gaoptout). O site funciona do mesmo jeito sem eles.",
           "Este site não tem contas e não coleta formulários nem dados pessoais."
+        ],
+        "p": [
+          "Esta seção trata apenas deste site. O que o app coleta está descrito na seção do app, acima.",
+          "Usamos o Google Analytics 4 para ver quais páginas são lidas. Ele registra visualizações de página, a página de onde você veio, o tipo de navegador e de dispositivo, uma localização aproximada (país ou cidade) e cliques em links que saem do nosso site (apenas o endereço do link). Ele define cookies no seu navegador (como o `_ga`, que pode durar até dois anos) para distinguir as visitas. Nas estatísticas, não pedimos seu nome nem seu e-mail e não conseguimos identificar você por elas. O Google processa esses dados em nosso nome, o que pode incluir servidores fora da Coreia."
         ]
       },
       {

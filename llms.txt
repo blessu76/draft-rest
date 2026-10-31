@@ -9,6 +9,7 @@
 - Signature flow: talk → a few questions → a finished story (hook · rising · peak · reflection · close)
 - Formats: one-tap reshaping for an Instagram caption, a LinkedIn post, or a YouTube script
 - Privacy: your words stay yours — never sold, never used to train; you decide what's kept and what's deleted, and only the finished story is shared, when you choose to
+- Website analytics: the website (not the app) collects basic visit statistics through Google Analytics (uses cookies) and Cloudflare Web Analytics (cookieless); details on the privacy page
 - Pricing: free (3 finished stories); subscription $2.99/month for unlimited
 - Website: https://draft.ipe.rest
 - Maker: ipe Studio (brand ipe(), motto "when the process finally rests"), https://ipe.rest

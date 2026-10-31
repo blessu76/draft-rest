@@ -1,7 +1,7 @@
 {
   "nav_about": "Giới thiệu",
   "updated_label": "Cập nhật lần cuối",
-  "updated": "2026-10-23",
+  "updated": "2026-11-01",
   "about": {
     "title": "Về draft() — và khác gì các ứng dụng Draft khác",
     "desc": "draft() của ipe Studio là ứng dụng kể chuyện bắt đầu từ giọng nói. Điểm khác so với các ứng dụng khác cùng tên Draft.",
@@ -27,7 +27,7 @@
   },
   "privacy": {
     "title": "Quyền riêng tư — draft()",
-    "desc": "Cách draft() và draft.ipe.rest xử lý dữ liệu của bạn: cam kết của chúng tôi, điều còn đang chốt và cách trang web này hoạt động.",
+    "desc": "Cách draft() và draft.ipe.rest xử lý dữ liệu của bạn: cam kết của chúng tôi, điều còn đang chốt và cách trang web này hoạt động, gồm cả thống kê lượt truy cập.",
     "comment": "// quyền riêng tư, nói thẳng",
     "h1": "Quyền riêng tư",
     "sections": [
@@ -56,11 +56,15 @@
       {
         "h": "Trên trang web này",
         "li": [
-          "Không đặt cookie nào.",
-          "Lượt truy cập được đếm bằng Cloudflare Web Analytics, không dùng cookie và không thu thập dữ liệu cá nhân.",
+          "Lượt truy cập cũng được đếm bằng Cloudflare Web Analytics, không dùng cookie và không thu thập dữ liệu cá nhân.",
           "Phông chữ được tải từ Google Fonts, nên trình duyệt của bạn kết nối tới máy chủ phông chữ của Google.",
           "Ngôn ngữ bạn chọn, và việc bạn đã đóng gợi ý ngôn ngữ hay chưa, chỉ được nhớ trong trình duyệt của bạn (bộ nhớ cục bộ) và không bao giờ gửi cho chúng tôi.",
+          "Để từ chối, hãy chặn hoặc xóa cookie trong cài đặt trình duyệt, hoặc dùng [tiện ích tắt theo dõi của Google Analytics](https://tools.google.com/dlpage/gaoptout). Trang vẫn hoạt động như cũ khi không có cookie.",
           "Trang này không có tài khoản và không thu thập biểu mẫu hay thông tin cá nhân."
+        ],
+        "p": [
+          "Phần này chỉ nói về trang web này. Những gì ứng dụng thu thập được nêu ở phần về ứng dụng phía trên.",
+          "Chúng tôi dùng Google Analytics 4 để biết trang nào được đọc. Công cụ này ghi lại lượt xem trang, trang bạn đến từ đó, loại trình duyệt và thiết bị, vị trí gần đúng (quốc gia hoặc thành phố) và các lượt nhấp vào liên kết dẫn ra ngoài trang của chúng tôi (chỉ địa chỉ liên kết). Nó đặt cookie trong trình duyệt của bạn (như `_ga`, có thể kéo dài tới hai năm) để phân biệt các lượt truy cập. Trong phân tích, chúng tôi không yêu cầu tên hay email của bạn và không thể nhận ra bạn từ đó. Google xử lý dữ liệu này thay mặt chúng tôi, có thể bao gồm các máy chủ ngoài Hàn Quốc."
         ]
       },
       {

@@ -1,7 +1,7 @@
 {
   "nav_about": "About",
   "updated_label": "Last updated",
-  "updated": "2026-10-23",
+  "updated": "2026-11-01",
   "about": {
     "title": "About draft() — and how it differs from other Draft apps",
     "desc": "draft() by ipe Studio is a voice-first storytelling app. How it differs from other apps that share the name Draft.",
@@ -27,7 +27,7 @@
   },
   "privacy": {
     "title": "Privacy — draft()",
-    "desc": "How draft() and draft.ipe.rest handle your data: what we promise, what is still being finalized, and how this website works.",
+    "desc": "How draft() and draft.ipe.rest handle your data: what we promise, what is still being finalized, and how this website works, including its visit statistics.",
     "comment": "// privacy, plainly",
     "h1": "Privacy",
     "sections": [
@@ -56,11 +56,15 @@
       {
         "h": "On this website",
         "li": [
-          "No cookies are set.",
-          "Visits are counted with Cloudflare Web Analytics, which is cookieless and does not collect personal data.",
+          "Visits are also counted with Cloudflare Web Analytics, which is cookieless and does not collect personal data.",
           "Fonts load from Google Fonts, so your browser contacts Google’s font servers.",
           "Your language choice, and whether you closed the language hint, are remembered in your browser only (local storage) and are never sent to us.",
+          "To opt out, block or delete cookies in your browser settings, or use Google’s [Analytics opt-out add-on](https://tools.google.com/dlpage/gaoptout). The site works the same without them.",
           "There are no accounts on this site, and it collects no forms or personal details."
+        ],
+        "p": [
+          "This section is only about this website. What the app collects is covered in the app section above.",
+          "We use Google Analytics 4 to see which pages are read. It records page views, the page you came from, your browser and device type, an approximate location (country or city) and clicks on links that leave our site (the link address only). It sets cookies in your browser (such as `_ga`, which can last up to two years) to tell visits apart. We do not ask for your name or email in analytics, and we cannot identify you from it. Google processes this data on our behalf, which can include servers outside Korea."
         ]
       },
       {

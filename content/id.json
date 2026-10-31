@@ -1,7 +1,7 @@
 {
   "nav_about": "Tentang",
   "updated_label": "Terakhir diperbarui",
-  "updated": "2026-10-23",
+  "updated": "2026-11-01",
   "about": {
     "title": "Tentang draft() — dan bedanya dengan aplikasi Draft lain",
     "desc": "draft() dari ipe Studio adalah aplikasi bercerita yang dimulai dari suara. Apa bedanya dengan aplikasi lain yang memakai nama Draft.",
@@ -27,7 +27,7 @@
   },
   "privacy": {
     "title": "Privasi — draft()",
-    "desc": "Bagaimana draft() dan draft.ipe.rest menangani datamu: janji kami, hal yang masih difinalkan, dan cara kerja situs web ini.",
+    "desc": "Bagaimana draft() dan draft.ipe.rest menangani datamu: janji kami, hal yang masih difinalkan, dan cara kerja situs web ini, termasuk statistik kunjungannya.",
     "comment": "// privasi, apa adanya",
     "h1": "Privasi",
     "sections": [
@@ -56,11 +56,15 @@
       {
         "h": "Di situs web ini",
         "li": [
-          "Tidak ada cookie yang dipasang.",
-          "Kunjungan dihitung dengan Cloudflare Web Analytics, yang tanpa cookie dan tidak mengumpulkan data pribadi.",
+          "Kunjungan juga dihitung dengan Cloudflare Web Analytics, yang tanpa cookie dan tidak mengumpulkan data pribadi.",
           "Font dimuat dari Google Fonts, sehingga browsermu terhubung ke server font Google.",
           "Pilihan bahasamu, dan apakah kamu menutup petunjuk bahasa, hanya diingat di browsermu (penyimpanan lokal) dan tidak pernah dikirim ke kami.",
+          "Untuk menolak, blokir atau hapus cookie di pengaturan browsermu, atau gunakan [add-on penolakan Google Analytics](https://tools.google.com/dlpage/gaoptout). Situs tetap berfungsi sama tanpa cookie tersebut.",
           "Situs ini tidak punya akun dan tidak mengumpulkan formulir maupun data pribadi."
+        ],
+        "p": [
+          "Bagian ini hanya membahas situs web ini. Data yang dikumpulkan aplikasi dijelaskan di bagian aplikasi di atas.",
+          "Kami memakai Google Analytics 4 untuk melihat halaman mana yang dibaca. Alat ini mencatat tampilan halaman, halaman asalmu, jenis browser dan perangkat, perkiraan lokasi (negara atau kota), serta klik pada tautan yang keluar dari situs kami (hanya alamat tautannya). Alat ini memasang cookie di browsermu (seperti `_ga`, yang bisa bertahan hingga dua tahun) untuk membedakan kunjungan. Dalam analitik kami tidak meminta nama atau emailmu, dan kami tidak dapat mengenalimu lewat data itu. Google memproses data ini atas nama kami, yang bisa mencakup server di luar Korea."
         ]
       },
       {
