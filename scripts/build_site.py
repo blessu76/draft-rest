@@ -1004,7 +1004,7 @@ def render_feed(locales, posts, lang):
 
 def render_llms_blog(posts):
     lines = ["## Blog",
-             "Short guides on turning what you say into a story people actually read. New posts regularly, each in 11 languages. "
+             "Short guides on turning what you say into a story people actually read. New posts regularly, each in 13 languages. "
              "Feed: %s · Index: %s" % (blog_feed_url("en"), blog_list_url("en")),
              "Blog index per language: " + ", ".join("[%s](%s)" % (c, blog_list_url(c)) for c in CODES)]
     if page_count(len(posts)) > 1:  # older posts: /<lang>/blog/page/<n>/

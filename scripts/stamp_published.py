@@ -3,7 +3,7 @@
 
     python3 scripts/stamp_published.py <slug> [--at 2026-10-24T16:00:00+09:00]
 
-Sets `date` (KST day) and `published` (KST, e.g. 2026-10-24T16:00:00+09:00) in all 11 language files of
+Sets `date` (KST day) and `published` (KST, e.g. 2026-10-24T16:00:00+09:00) in all 13 language files of
 posts/<slug>/ to the same value (default: now). Never pre-stamp a planned time — if the push slips, re-run it.
 Then: python3 scripts/build_site.py && python3 scripts/build_site.py --check && python3 scripts/check_sitemap.py
 """
