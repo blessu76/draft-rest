@@ -4,7 +4,7 @@
     python3 scripts/check_queue.py              # every post under posts/ that is a draft
     python3 scripts/check_queue.py <slug> ...   # only those slugs (draft or not)
 
-For each post: all 11 languages present, front matter parses, slug == folder name, `draft` identical in all files,
+For each post: all 13 languages present, front matter parses, slug == folder name, `draft` identical in all files,
 `date:` line present (publish_post.py needs it), no `published` stamp on a draft, description <= build_site.DESC_MAX,
 ko body inside build_site.KO_BODY_MIN..MAX, and publish_post.rewrite() accepts every file. The length rules come from
 build_site.length_problems(), so this check and the build can never disagree. Body length (publish_post.BODY_FLOOR/BODY_TARGET):
