@@ -13,8 +13,8 @@
     --gray:#8A909B;       /* faint mono labels */
     --line:rgba(27,31,39,.12);         /* hairline on light */
     --line-dark:rgba(245,240,232,.10); /* hairline inside dark terminal */
-    --mono:'JetBrains Mono',ui-monospace,monospace;
-    --sans:'Inter',system-ui,sans-serif;
+    --mono:'JetBrains Mono','Noto Sans Arabic','Noto Sans Devanagari',ui-monospace,monospace;
+    --sans:'Inter','Noto Sans Arabic','Noto Sans Devanagari',system-ui,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -399,3 +399,23 @@
   .page-body .sec h2{font-size:clamp(18px,3.4vw,21px);margin:34px 0 10px;scroll-margin-top:72px;}
   .page-body .sec:first-child h2{margin-top:6px;}
   .page-body .sec p{margin-bottom:14px;}
+
+  /* ---------- right-to-left (ar): <html dir="rtl"> ---------- */
+  [dir=rtl] .hero-demo,[dir=rtl] .bcards,[dir=rtl] .ppoints,[dir=rtl] .plans{text-align:right;}
+  [dir=rtl] .cursor{margin-left:0;margin-right:2px;}
+  [dir=rtl] .plan-price span{margin-left:0;margin-right:4px;}
+  [dir=rtl] .langsel{right:auto;left:16px;}
+  [dir=rtl] .toplink{left:auto;right:16px;}
+  @media (max-width:640px){[dir=rtl] .langsel{left:12px;right:auto;}[dir=rtl] .toplink{right:12px;left:auto;}}
+  [dir=rtl] .langsel select{padding-right:0;padding-left:2px;}
+  [dir=rtl] .pg-step[rel=next]{margin-left:0;margin-right:auto;}
+  [dir=rtl] .adj-next{text-align:left;}
+  [dir=rtl] .post-adj .adj-next:only-child{margin-left:0;margin-right:auto;}
+  [dir=rtl] .prose blockquote{padding-right:22px;padding-left:56px;}
+  [dir=rtl] .copy-btn{right:auto;left:6px;}
+  [dir=rtl] .copy-btn .copy-msg{right:auto;left:46px;}
+  [dir=rtl] .skip-link{left:auto;right:-999px;}
+  [dir=rtl] .skip-link:focus{left:auto;right:12px;}
+  /* code, numbers and the Latin brand mark stay left-to-right */
+  [dir=rtl] pre,[dir=rtl] code,[dir=rtl] .j-no,[dir=rtl] .plan-price,[dir=rtl] .foot-mark,[dir=rtl] .logo{direction:ltr;unicode-bidi:isolate;}
+  [dir=rtl] pre{text-align:left;}
