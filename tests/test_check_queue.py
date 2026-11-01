@@ -91,13 +91,13 @@ class CheckQueue(unittest.TestCase):
     def test_body_floor_is_an_error_target_is_a_warning(self):
         write(self.dir, "q-floor", words=299)
         _, errors, warnings = check_queue.scan(self.dir)
-        self.assertEqual(len(errors), 8, errors)  # en es pt id ru vi fr de
+        self.assertEqual(len(errors), 10, errors)  # en es pt id ru vi fr de ar hi
         self.assertIn("q-floor/ru: body is 299 words (< 300 floor)", errors)
         shutil.rmtree(self.dir / "posts")
         write(self.dir, "q-mid", words=300)
         _, errors, warnings = check_queue.scan(self.dir)
         self.assertEqual(errors, [])
-        self.assertEqual(len(warnings), 8, warnings)
+        self.assertEqual(len(warnings), 10, warnings)
         self.assertIn("q-mid/ru: body is 300 words (< 400 target)", warnings)
         shutil.rmtree(self.dir / "posts")
         write(self.dir, "q-full", words=400)
@@ -142,7 +142,7 @@ class CheckQueue(unittest.TestCase):
         queue_floor = [e for e in self.run_check()[1] if "floor" in e]
         lint_floor = [w for w in lint_post(self.dir, "q-share") if "floor" in w]
         self.assertEqual(queue_floor, lint_floor)
-        self.assertEqual(len(queue_floor), 8)
+        self.assertEqual(len(queue_floor), 10)
 
     def test_real_queue_in_this_repo_is_clean(self):
         _, errors = check_queue.check_queue(ROOT)

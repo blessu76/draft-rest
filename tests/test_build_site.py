@@ -13,9 +13,10 @@ import check_sitemap  # noqa: E402
 
 
 class Locales(unittest.TestCase):
-    def test_eleven_languages_with_en_as_fallback(self):
-        self.assertEqual(len(build_site.CODES), 11)
+    def test_thirteen_languages_with_en_as_fallback(self):
+        self.assertEqual(len(build_site.CODES), 13)
         self.assertEqual(build_site.CODES[0], "en")
+        self.assertEqual(set(build_site.CODES), set("en ko ja zh es pt id ru vi fr de ar hi".split()))  # ipe.rest's 12 + vi
 
     def test_every_language_has_every_english_key(self):
         loc = build_site.load_locales(ROOT)
@@ -81,7 +82,7 @@ class Pages(unittest.TestCase):
         loc = build_site.load_locales(ROOT)
         t = self.files["ko/index.html"]
         self.assertIn('<meta property="og:locale" content="ko_KR">', t)
-        self.assertEqual(len(re.findall(r'property="og:locale:alternate"', t)), 10)
+        self.assertEqual(len(re.findall(r'property="og:locale:alternate"', t)), 12)
         self.assertNotIn('og:locale:alternate" content="ko_KR"', t)
         og = re.search(r'property="og:description" content="([^"]*)"', t).group(1)
         meta = re.search(r'name="description" content="([^"]*)"', t).group(1)
@@ -93,12 +94,12 @@ class Pages(unittest.TestCase):
             lang = rel.split("/")[0] if "/" in rel else None
             url = build_site.page_url(lang)
             self.assertIn('<link rel="canonical" href="%s">' % url, text, rel)
-            self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', text)), 12, rel)
+            self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', text)), 14, rel)
             self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/"', text, rel)
             self.assertNotIn("?lang=", text.replace(build_site.LEGACY_REDIRECT, ""), rel)
             self.assertNotIn("data-i18n", text, rel)
             self.assertNotIn("{{", text, rel)
-            self.assertIn('<html lang="%s">' % (lang or "en"), text, rel)
+            self.assertIn('<html lang="%s"%s>' % (lang or "en", ' dir="rtl"' if lang == "ar" else ""), text, rel)
 
     def test_only_root_has_legacy_redirect(self):
         self.assertIn("location.replace", self.files["index.html"])
@@ -135,6 +136,8 @@ class Pages(unittest.TestCase):
         self.assertEqual(L("https://ipe.rest", "ko"), "https://ipe.rest/ko/")
         self.assertEqual(L("https://ipe.rest/", "fr"), "https://ipe.rest/fr/")
         self.assertEqual(L("https://ipe.rest", "vi"), "https://ipe.rest/?lang=vi")
+        self.assertEqual(L("https://ipe.rest", "ar"), "https://ipe.rest/ar/")
+        self.assertEqual(L("https://ipe.rest", "hi"), "https://ipe.rest/hi/")
         self.assertEqual(L("https://play.ipe.rest/", "ja"), "https://play.ipe.rest/?lang=ja")
         self.assertEqual(L("https://ipe.rest/about/#x", "de"), "https://ipe.rest/about/?lang=de#x")
         self.assertEqual(L("https://ipe.rest/?a=1", "de"), "https://ipe.rest/?a=1&lang=de")
@@ -193,6 +196,67 @@ class Pages(unittest.TestCase):
         for c in build_site.CODES:
             self.assertIn("(%s)" % build_site.page_url(c), self.files["llms.txt"])
         self.assertNotIn("One post per day", self.files["llms.txt"])
+
+
+class ArabicHindi(unittest.TestCase):
+    """ar (right-to-left) and hi (Devanagari) are first-class languages: pages, hreflang, selector, fonts, RTL rules."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.files = build_site.build(ROOT)
+
+    def test_only_arabic_is_rtl(self):
+        self.assertEqual(build_site.RTL, ("ar",))
+        for rel, text in self.files.items():
+            if not rel.endswith(".html"):
+                continue
+            m = re.search(r"<html lang=\"([a-z]+)\"( dir=\"rtl\")?>", text)
+            if m is None:
+                continue
+            self.assertEqual(m.group(2) is not None, m.group(1) == "ar", rel)
+
+    def test_pages_exist_for_both_languages_in_every_section(self):
+        for c in ("ar", "hi"):
+            for rel in ("%s/index.html" % c, "%s/about/index.html" % c, "%s/privacy/index.html" % c,
+                        "%s/blog/index.html" % c, "%s/blog/feed.xml" % c):
+                self.assertIn(rel, self.files, rel)
+        self.assertIn('<html lang="ar" dir="rtl">', self.files["ar/index.html"])
+        self.assertIn('<html lang="hi">', self.files["hi/index.html"])
+
+    def test_hreflang_selector_and_sitemap_list_them(self):
+        home = self.files["index.html"]
+        for c, locale in (("ar", "ar_AR"), ("hi", "hi_IN")):
+            self.assertIn('hreflang="%s" href="%s"' % (c, build_site.page_url(c)), home)
+            self.assertIn('<option value="%s">' % c, home)
+            self.assertIn('content="%s"' % locale, self.files["fr/index.html"])  # og:locale:alternate
+            self.assertIn("<loc>%s</loc>" % build_site.page_url(c), self.files["sitemap.xml"])
+            self.assertIn("(%s)" % build_site.page_url(c), self.files["llms.txt"])
+
+    def test_noto_fonts_only_on_the_pages_that_need_them(self):
+        self.assertIn("Noto+Sans+Arabic", self.files["ar/index.html"])
+        self.assertNotIn("Noto+Sans+Devanagari", self.files["ar/index.html"])
+        self.assertIn("Noto+Sans+Devanagari", self.files["hi/index.html"])
+        self.assertNotIn("Noto+Sans", self.files["de/index.html"])
+        css = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")
+        self.assertIn("'Noto Sans Arabic'", css)
+        self.assertIn("'Noto Sans Devanagari'", css)
+
+    def test_css_has_rtl_rules_and_keeps_code_ltr(self):
+        css = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")
+        self.assertIn("[dir=rtl] .langsel", css)
+        self.assertIn("[dir=rtl] .copy-btn", css)
+        self.assertRegex(css, r"\[dir=rtl\] pre,[^{]*\{direction:ltr")
+
+    def test_language_rule_script_knows_ar_and_hi(self):
+        self.assertIn("ar|hi", build_site.LEGACY_REDIRECT)
+
+    def test_blog_posts_in_both_languages(self):
+        posts, errors = build_site.load_posts(ROOT)
+        self.assertEqual(errors, [])
+        for p in posts:
+            for c in ("ar", "hi"):
+                self.assertIn(c, p["langs"], p["slug"])
+                self.assertIn("%s/blog/%s/index.html" % (c, p["slug"]), self.files)
 
 
 class InternalLinks(unittest.TestCase):
@@ -256,7 +320,7 @@ class Blog(unittest.TestCase):
 
     def test_post_has_hreflang_group_and_x_default_en(self):
         t = self.files["ko/blog/blank-caption-box/index.html"]
-        self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', t)), 12)
+        self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', t)), 14)
         self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/en/blog/blank-caption-box/"', t)
         self.assertIn('<link rel="canonical" href="https://draft.ipe.rest/ko/blog/blank-caption-box/">', t)
         self.assertIn('"@type": "BlogPosting"', t)
@@ -414,7 +478,7 @@ class PublishedTime(unittest.TestCase):
 
 
 PAGER_LABEL = {"en": "Page", "ko": "페이지", "ja": "ページ", "zh": "分页", "es": "Página", "pt": "Página",
-               "id": "Halaman", "ru": "Страница", "vi": "Trang", "fr": "Page", "de": "Seite"}
+               "id": "Halaman", "ru": "Страница", "vi": "Trang", "fr": "Page", "de": "Seite", "ar": "الصفحة", "hi": "पृष्ठ"}
 PAGE_WORD = dict(PAGER_LABEL, zh="页")  # title/description word; only zh differs from the aria-label
 
 
@@ -892,7 +956,7 @@ class JsonLd(unittest.TestCase):
             self.assertNotIn("translationOfWork", en)
             want = {"https://draft.ipe.rest/%s/blog/%s/#article" % (c, slug) for c in build_site.CODES if c != "en"}
             self.assertEqual({x["@id"] for x in en["workTranslation"]}, want)
-            self.assertEqual(len(en["workTranslation"]), 10)
+            self.assertEqual(len(en["workTranslation"]), 12)
             for c in build_site.CODES:
                 if c == "en":
                     continue
@@ -981,7 +1045,7 @@ class SeoFixes(unittest.TestCase):
                 t = self.files[rel]
                 url = build_site.content_url(c, slug)
                 self.assertIn('<link rel="canonical" href="%s">' % url, t)
-                self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', t)), 12, rel)
+                self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', t)), 14, rel)
                 self.assertIn("<loc>%s</loc>" % url, self.files["sitemap.xml"])
                 home = self.files["index.html" if c == "en" else "%s/index.html" % c]
                 self.assertIn('href="%s"' % build_site.page_path(c, slug), home, "%s footer link to %s" % (c, slug))
@@ -1021,7 +1085,7 @@ class SeoFixes(unittest.TestCase):
             self.assertLessEqual(len(t), 60, c)
             self.assertGreater(len(t), 20, c)
             seen.add(t)
-        self.assertEqual(len(seen), 11)
+        self.assertEqual(len(seen), 13)
 
     def test_home_description_lengths(self):
         for c in build_site.CODES:
@@ -1090,7 +1154,7 @@ def html_unescape(s):
 
 
 class BlogPostingAudit(unittest.TestCase):
-    """SEO guide P0-8: every published post page (all posts x 11 languages) carries a complete BlogPosting node."""
+    """SEO guide P0-8: every published post page (all posts x 13 languages) carries a complete BlogPosting node."""
 
     REQUIRED = ("@id", "headline", "description", "datePublished", "dateModified", "inLanguage", "mainEntityOfPage", "url",
                 "image", "author", "publisher", "isPartOf", "wordCount", "keywords", "articleSection")
@@ -1107,7 +1171,7 @@ class BlogPostingAudit(unittest.TestCase):
                 yield p, c, self.files["%s/blog/%s/index.html" % (c, p["slug"])]
 
     def test_there_are_posts_to_audit(self):
-        self.assertGreaterEqual(len(list(self.pages())), 11)
+        self.assertGreaterEqual(len(list(self.pages())), 13)
 
     def test_required_fields_publisher_and_dates_on_every_page(self):
         import datetime as dt
