@@ -2,9 +2,9 @@
 """Build draft.ipe.rest — no dependencies (Python 3.8+ stdlib only).
 
 Reads   src/home_body.html          home page body template ({{key}} = locale string, {{key|attr}} = for attributes)
-        locales/<lang>.json         per-language strings (11 languages, en is the fallback)
+        locales/<lang>.json         per-language strings (13 languages, en is the fallback)
 Writes  index.html                  the English page; also x-default and hreflang "en" (single English body)
-        <lang>/index.html           one static page per other language (ko ja zh es pt id ru vi fr de)
+        <lang>/index.html           one static page per other language (ko ja zh es pt id ru vi fr de ar hi)
         about/ privacy/             English content pages (root-level); <lang>/about|privacy/ for the others — texts in content/<lang>.json
         en/index.html               redirect stub -> / (noindex, canonical /; not in the sitemap)
         404.html                    not-found page (noindex)
@@ -56,7 +56,9 @@ LANGS = [
     ("en", "English", "en_US"), ("ko", "한국어", "ko_KR"), ("ja", "日本語", "ja_JP"), ("zh", "中文", "zh_CN"),
     ("es", "Español", "es_ES"), ("pt", "Português", "pt_BR"), ("id", "Bahasa Indonesia", "id_ID"),
     ("ru", "Русский", "ru_RU"), ("vi", "Tiếng Việt", "vi_VN"), ("fr", "Français", "fr_FR"), ("de", "Deutsch", "de_DE"),
+    ("ar", "العربية", "ar_AR"), ("hi", "हिन्दी", "hi_IN"),
 ]
+RTL = ("ar",)  # right-to-left languages: <html dir="rtl"> (assets/site.css has the [dir=rtl] rules)
 CODES = [c for c, _, _ in LANGS]
 NAMES = {c: n for c, n, _ in LANGS}
 LOCALE = {c: l for c, _, l in LANGS}
@@ -64,6 +66,12 @@ KEYWORDS = "storytelling app, AI writing, voice to text, story generator, creato
 APPLE = '<svg class="apple-glyph" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>'
 FONTS = ("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400"
          "&family=Inter:wght@300;400;500;600&display=swap")
+# Arabic / Devanagari glyphs are not in Inter or JetBrains Mono: those pages also load a Noto face (site.css lists it after Inter)
+EXTRA_FONTS = {"ar": "&family=Noto+Sans+Arabic:wght@300;400;500;600", "hi": "&family=Noto+Sans+Devanagari:wght@300;400;500;600"}
+
+
+def fonts_url(lang):
+    return FONTS.replace("&display=swap", EXTRA_FONTS.get(lang, "") + "&display=swap")
 # Root-only script (runs before paint). Company-wide language rule (REACH_PROCESS, Davy 2026-11-01), only at "/":
 #  1. ?lang=xx (any case, other query params kept) -> that language's page, and remember it (an explicit pick);
 #     an unsupported ?lang= is ignored and 2-4 decide.
@@ -82,9 +90,9 @@ LEGACY_REDIRECT = ("(function(){try{var C='%s',q=new URLSearchParams(location.se
                    "for(var i=0;i<p.length;i++){var c=String(p[i]).toLowerCase().split('-')[0];if(ok(c)){if(c!=='en')go(c);return;}}"
                    "}catch(e){}})();" % "|".join(CODES))
 # Sites that leave this one for another ipe site hand over the current language (REACH_PROCESS rule 2). ipe.rest has
-# static /<lang>/ home pages for these languages (checked live 2026-11-01; no vi); anywhere else -> "?lang=xx" on the page.
+# static /<lang>/ home pages for these languages (checked live 2026-11-01 incl. ar, hi; no vi); anywhere else -> "?lang=xx" on the page.
 # English (and no language) stays the plain URL.
-IPE_HOME_LANGS = ("ko", "ja", "zh", "es", "pt", "id", "ru", "fr", "de")
+IPE_HOME_LANGS = ("ko", "ja", "zh", "es", "pt", "id", "ru", "fr", "de", "ar", "hi")
 
 
 def ipe_link(url, lang):
@@ -225,9 +233,10 @@ def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website
     canon = '<link rel="canonical" href="%s">\n' % esc(url) if url else ""
     og_url = '<meta property="og:url" content="%s">\n' % esc(url) if url else ""
     alts = alternates(cluster) + "\n" if cluster else ""
+    dir_attr = ' dir="rtl"' if lang in RTL else ""
     og_alt = "".join('<meta property="og:locale:alternate" content="%s">\n' % LOCALE[c] for c in CODES if c != lang)
     return f"""<!DOCTYPE html>
-<html lang="{lang}">
+<html lang="{lang}"{dir_attr}>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -255,7 +264,7 @@ def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website
 {extra}{ld}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="{FONTS}" rel="stylesheet">
+<link href="{fonts_url(lang)}" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css?v={version}">
 <noscript><style>.reveal{{opacity:1;transform:none}}.demo-raw{{display:none}}.demo-clean{{display:block}}</style></noscript>
 <!-- Cloudflare Web Analytics (cookieless, no PII) -->
@@ -517,7 +526,7 @@ def length_problems(name, langs):
 
 def load_posts(root):
     """-> (posts, errors). posts: [{slug, date, updated, draft, langs: {lang: meta}}] newest first, drafts skipped.
-    Layout: posts/<slug>/ko.md (canonical) + en.md + translations/<lang>.md  — every published post needs all 11 languages."""
+    Layout: posts/<slug>/ko.md (canonical) + en.md + translations/<lang>.md  — every published post needs all 13 languages."""
     base = Path(root) / "posts"
     posts, errors = [], []
     if not base.is_dir():
