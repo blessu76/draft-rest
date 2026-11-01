@@ -246,6 +246,7 @@ class ArabicHindi(unittest.TestCase):
         self.assertIn("[dir=rtl] .langsel", css)
         self.assertIn("[dir=rtl] .copy-btn", css)
         self.assertRegex(css, r"\[dir=rtl\] pre,[^{]*\{direction:ltr")
+        self.assertRegex(css, r"\[dir=rtl\] \.wordmark,[^{]*\[dir=rtl\] \.toplink a:first-child[^{]*\{direction:ltr")  # draft() must not flip to ()draft
 
     def test_language_rule_script_knows_ar_and_hi(self):
         self.assertIn("ar|hi", build_site.LEGACY_REDIRECT)

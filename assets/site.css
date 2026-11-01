@@ -402,7 +402,6 @@
 
   /* ---------- right-to-left (ar): <html dir="rtl"> ---------- */
   [dir=rtl] .hero-demo,[dir=rtl] .bcards,[dir=rtl] .ppoints,[dir=rtl] .plans{text-align:right;}
-  [dir=rtl] .cursor{margin-left:0;margin-right:2px;}
   [dir=rtl] .plan-price span{margin-left:0;margin-right:4px;}
   [dir=rtl] .langsel{right:auto;left:16px;}
   [dir=rtl] .toplink{left:auto;right:16px;}
@@ -417,5 +416,5 @@
   [dir=rtl] .skip-link{left:auto;right:-999px;}
   [dir=rtl] .skip-link:focus{left:auto;right:12px;}
   /* code, numbers and the Latin brand mark stay left-to-right */
-  [dir=rtl] pre,[dir=rtl] code,[dir=rtl] .j-no,[dir=rtl] .plan-price,[dir=rtl] .foot-mark,[dir=rtl] .logo{direction:ltr;unicode-bidi:isolate;}
+  [dir=rtl] pre,[dir=rtl] code,[dir=rtl] .j-no,[dir=rtl] .plan-price,[dir=rtl] .foot-mark,[dir=rtl] .logo,[dir=rtl] .wordmark,[dir=rtl] .toplink a:first-child{direction:ltr;unicode-bidi:isolate;}
   [dir=rtl] pre{text-align:left;}
