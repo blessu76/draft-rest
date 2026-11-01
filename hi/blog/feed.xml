@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/hi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>आप जो बोलते हैं उसे ऐसी कहानी में बदलने के छोटे गाइड जिसे लोग सच में पढ़ें — draft() की टीम की ओर से।</description>
     <language>hi</language>
-    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>वार्म-अप काट दीजिए, दृश्य के बीच से शुरू कीजिए</title>
+      <link>https://draft.ipe.rest/hi/blog/start-later/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/hi/blog/start-later/</guid>
+      <pubDate>Sun, 01 Nov 2026 16:01:00 +0900</pubDate>
+      <description>मौसम और समय से शुरुआत करने के बजाय वहाँ से शुरू करें जहाँ कुछ पहले से घट रहा हो। शुरुआती बिंदु खोजने के तीन तरीके, एक उदाहरण के साथ।</description>
+    </item>
     <item>
       <title>भावना का नाम लिखने के बजाय एक ब्योरा लिखिए</title>
       <link>https://draft.ipe.rest/hi/blog/name-the-detail/</link>

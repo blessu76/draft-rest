@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Cut the warm-up and start in the middle of the scene</title>
+      <link>https://draft.ipe.rest/en/blog/start-later/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/start-later/</guid>
+      <pubDate>Sun, 01 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Instead of opening with the weather and the time, start where something is already happening. Three ways to find your starting point, with an example.</description>
+    </item>
     <item>
       <title>Name one detail instead of naming the feeling</title>
       <link>https://draft.ipe.rest/en/blog/name-the-detail/</link>

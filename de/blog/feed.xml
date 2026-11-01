@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Streich das Warmup und starte mitten in der Szene</title>
+      <link>https://draft.ipe.rest/de/blog/start-later/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/start-later/</guid>
+      <pubDate>Sun, 01 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Statt mit Wetter und Uhrzeit zu beginnen, fang dort an, wo schon etwas passiert. Drei Wege, deinen Startpunkt zu finden, mit Beispiel.</description>
+    </item>
     <item>
       <title>Schreib ein konkretes Detail statt den Namen des Gefühls</title>
       <link>https://draft.ipe.rest/de/blog/name-the-detail/</link>
