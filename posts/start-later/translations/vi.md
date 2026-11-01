@@ -3,7 +3,7 @@ title: Cắt đoạn khởi động, bắt đầu ngay giữa khung cảnh
 description: Thay vì mở đầu bằng thời tiết và giờ giấc, hãy bắt đầu từ lúc có chuyện đang xảy ra. Ba cách tìm điểm bắt đầu, kèm ví dụ.
 date: 2026-11-01
 slug: start-later
-draft: true
+published: 2026-11-01T16:01:00+09:00
 ---
 
 Khi bắt đầu viết, hầu như ai cũng khởi động trước: mấy giờ thức dậy, thời tiết ra sao, đã đi đâu, tất cả theo thứ tự. Người viết cần khoảng thời gian ấy, nhưng với người đọc thì đó là lúc phải chờ câu chuyện bắt đầu. Nếu cắt đoạn khởi động và bắt đầu ngay giữa khung cảnh, bài viết sẽ nhẹ hẳn đi.

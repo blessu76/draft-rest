@@ -3,7 +3,7 @@ title: Cut the warm-up and start in the middle of the scene
 description: Instead of opening with the weather and the time, start where something is already happening. Three ways to find your starting point, with an example.
 date: 2026-11-01
 slug: start-later
-draft: true
+published: 2026-11-01T16:01:00+09:00
 ---
 
 Most of us warm up when we start writing. What time we woke up, what the weather was like, where we went: we write it all in order. The writer needs that time, but for the reader it is time spent waiting for the story to begin. Cut the warm-up and start in the middle of the scene, and the piece gets lighter at once.

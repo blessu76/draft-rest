@@ -3,7 +3,7 @@ title: Coupez l'échauffement et commencez au milieu de la scène
 description: Plutôt que d'ouvrir sur la météo et l'heure, commencez là où il se passe déjà quelque chose. Trois façons de trouver votre point de départ, avec un exemple.
 date: 2026-11-01
 slug: start-later
-draft: true
+published: 2026-11-01T16:01:00+09:00
 ---
 
 Presque tout le monde s'échauffe en commençant à écrire : l'heure du réveil, le temps qu'il faisait, l'endroit où l'on est allé, le tout dans l'ordre. Celui qui écrit a besoin de ce temps, mais pour le lecteur, c'est du temps passé à attendre que l'histoire démarre. Si vous coupez ce paragraphe d'échauffement et commencez au milieu de la scène, le texte s'allège aussitôt.

@@ -3,7 +3,7 @@ title: Potong pemanasan, mulai dari tengah adegan
 description: Daripada membuka dengan cuaca dan jam, mulailah dari saat sesuatu sudah terjadi. Tiga cara menemukan titik mulai, lengkap dengan contoh.
 date: 2026-11-01
 slug: start-later
-draft: true
+published: 2026-11-01T16:01:00+09:00
 ---
 
 Hampir semua orang melakukan pemanasan saat mulai menulis: jam berapa bangun, bagaimana cuacanya, ke mana pergi, semuanya ditulis berurutan. Penulis memang butuh waktu itu, tetapi bagi pembaca itu adalah waktu menunggu cerita dimulai. Kalau paragraf pemanasan dipotong dan tulisan dimulai dari tengah adegan, tulisan langsung terasa lebih ringan.

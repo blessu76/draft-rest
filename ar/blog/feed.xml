@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ar/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>أدلة قصيرة لتحويل ما تقوله إلى قصة يحب الناس قراءتها — من الفريق الذي يقف وراء draft().</description>
     <language>ar</language>
-    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>احذف الإحماء وابدأ من منتصف المشهد</title>
+      <link>https://draft.ipe.rest/ar/blog/start-later/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/blog/start-later/</guid>
+      <pubDate>Sun, 01 Nov 2026 16:01:00 +0900</pubDate>
+      <description>بدل أن تفتتح بالطقس والوقت، ابدأ من اللحظة التي يجري فيها شيء ما. ثلاث طرق لإيجاد نقطة البداية مع مثال.</description>
+    </item>
     <item>
       <title>اكتب تفصيلًا واحدًا بدل أن تسمّي الشعور</title>
       <link>https://draft.ipe.rest/ar/blog/name-the-detail/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Уберите разминку и начните с середины сцены</title>
+      <link>https://draft.ipe.rest/ru/blog/start-later/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/start-later/</guid>
+      <pubDate>Sun, 01 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Вместо погоды и времени в начале начните с того момента, когда что-то уже происходит. Три способа найти точку старта и пример.</description>
+    </item>
     <item>
       <title>Вместо названия чувства запишите одну конкретную деталь</title>
       <link>https://draft.ipe.rest/ru/blog/name-the-detail/</link>

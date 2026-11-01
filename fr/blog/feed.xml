@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>De courts guides pour transformer ce que vous dites en une histoire que l&#x27;on lit vraiment, par l&#x27;équipe de draft().</description>
     <language>fr</language>
-    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Coupez l&#x27;échauffement et commencez au milieu de la scène</title>
+      <link>https://draft.ipe.rest/fr/blog/start-later/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/start-later/</guid>
+      <pubDate>Sun, 01 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Plutôt que d&#x27;ouvrir sur la météo et l&#x27;heure, commencez là où il se passe déjà quelque chose. Trois façons de trouver votre point de départ, avec un exemple.</description>
+    </item>
     <item>
       <title>Écrivez un détail concret plutôt que le nom du sentiment</title>
       <link>https://draft.ipe.rest/fr/blog/name-the-detail/</link>

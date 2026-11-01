@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Sat, 31 Oct 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>剪掉铺垫段落，从场景中间开始写</title>
+      <link>https://draft.ipe.rest/zh/blog/start-later/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/start-later/</guid>
+      <pubDate>Sun, 01 Nov 2026 16:01:00 +0900</pubDate>
+      <description>别再用天气和时间说明慢慢开头，从已经发生着什么的那一刻写起。三种找到开头位置的方法，附例子。</description>
+    </item>
     <item>
       <title>别写感受的名字，写下一个具体的细节</title>
       <link>https://draft.ipe.rest/zh/blog/name-the-detail/</link>

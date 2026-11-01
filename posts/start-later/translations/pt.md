@@ -3,7 +3,7 @@ title: Corte o aquecimento e comece no meio da cena
 description: Em vez de abrir com o tempo e a hora, comece onde algo já está acontecendo. Três formas de achar o seu ponto de partida, com um exemplo.
 date: 2026-11-01
 slug: start-later
-draft: true
+published: 2026-11-01T16:01:00+09:00
 ---
 
 Quase todo mundo se aquece ao começar a escrever: a que horas acordou, como estava o tempo, aonde foi, tudo em ordem. Quem escreve precisa desse tempo, mas para quem lê é tempo de espera até a história começar. Se você cortar esse parágrafo de aquecimento e começar no meio da cena, o texto fica mais leve na hora.

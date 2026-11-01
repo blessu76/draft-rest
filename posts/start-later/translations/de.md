@@ -3,7 +3,7 @@ title: Streich das Warmup und starte mitten in der Szene
 description: Statt mit Wetter und Uhrzeit zu beginnen, fang dort an, wo schon etwas passiert. Drei Wege, deinen Startpunkt zu finden, mit Beispiel.
 date: 2026-11-01
 slug: start-later
-draft: true
+published: 2026-11-01T16:01:00+09:00
 ---
 
 Fast alle wärmen sich beim Schreiben erst auf: wann man aufgestanden ist, wie das Wetter war, wohin man ging, alles schön der Reihe nach. Wer schreibt, braucht diese Zeit, aber für die Leserin ist es Wartezeit, bis die Geschichte beginnt. Streichst du den Warmup-Absatz und startest mitten in der Szene, wird der Text sofort leichter.
