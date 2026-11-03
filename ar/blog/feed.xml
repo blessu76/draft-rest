@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ar/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>أدلة قصيرة لتحويل ما تقوله إلى قصة يحب الناس قراءتها — من الفريق الذي يقف وراء draft().</description>
     <language>ar</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>احتفظ بجملة واحدة قالها أحدهم، كما قالها تمامًا</title>
+      <link>https://draft.ipe.rest/ar/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>التلخيص يُضيّع الصوت، وجملة واحدة بنصّها تحفظه. ثلاث طرق لاختيار الجملة، مع مثال وعثرات شائعة.</description>
+    </item>
     <item>
       <title>احذف الإحماء وابدأ من منتصف المشهد</title>
       <link>https://draft.ipe.rest/ar/blog/start-later/</link>

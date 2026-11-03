@@ -612,9 +612,14 @@ class NumberingAndPaging(unittest.TestCase):
         self.assertNotIn('class="pager"', files["en/blog/index.html"])
         self.assertNotIn("/page/", files["sitemap.xml"])
 
-    def test_repo_today_has_no_second_page(self):
+    def test_repo_today_has_only_the_pages_it_needs(self):
         files = build_site.build(ROOT)
-        self.assertEqual([r for r in files if "/blog/page/" in r], [])
+        posts, _ = build_site.load_posts(ROOT)
+        pages = -(-len(posts) // build_site.LIST_PAGE_SIZE)
+        for c in build_site.CODES:
+            extra = sorted(r for r in files if r.startswith("%s/blog/page/" % c) and r.endswith("/index.html"))
+            want = ["%s/blog/page/%d/index.html" % (c, n) for n in range(2, pages + 1)]
+            self.assertEqual(extra, want, c)
 
 
 class StageSite(unittest.TestCase):
@@ -846,7 +851,7 @@ class JsonLd(unittest.TestCase):
             self.assertEqual(blog["author"], AUTHOR)
             items = blog["mainEntity"]["itemListElement"]
             shown = re.findall(r'<li>\s*<p class="comment">.*?<h2><a href="(/%s/blog/[^"]+/)"' % c, html, re.S)
-            self.assertEqual(len(items), len(self.posts))
+            self.assertEqual(len(items), min(len(self.posts), build_site.LIST_PAGE_SIZE))
             self.assertEqual(len(items), len(shown))
             self.assertEqual([i["position"] for i in items], list(range(1, len(items) + 1)))
             self.assertEqual([i["url"] for i in items], ["https://draft.ipe.rest" + u for u in shown])

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>누군가 한 말 한 줄을 그대로 살려 보세요</title>
+      <link>https://draft.ipe.rest/ko/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>요약하면 사라지는 목소리가 한 줄의 말에는 남아 있습니다. 그대로 살릴 말을 고르는 세 가지 기준과 예시, 걸림돌을 정리했습니다.</description>
+    </item>
     <item>
       <title>준비 문단은 잘라 내고 장면 한가운데서 시작해 보세요</title>
       <link>https://draft.ipe.rest/ko/blog/start-later/</link>

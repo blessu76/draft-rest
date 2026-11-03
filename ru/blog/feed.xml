@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>Сохраните одну фразу, сказанную кем-то, как она прозвучала</title>
+      <link>https://draft.ipe.rest/ru/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>Пересказ теряет голос, а одна дословная фраза его хранит. Три критерия выбора фразы, пример и частые ошибки.</description>
+    </item>
     <item>
       <title>Уберите разминку и начните с середины сцены</title>
       <link>https://draft.ipe.rest/ru/blog/start-later/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>Keep one line someone said, exactly as they said it</title>
+      <link>https://draft.ipe.rest/en/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>A summary loses the voice, but one line of what someone said keeps it. Three ways to choose the line, with an example and common stumbling blocks.</description>
+    </item>
     <item>
       <title>Cut the warm-up and start in the middle of the scene</title>
       <link>https://draft.ipe.rest/en/blog/start-later/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/hi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>आप जो बोलते हैं उसे ऐसी कहानी में बदलने के छोटे गाइड जिसे लोग सच में पढ़ें — draft() की टीम की ओर से।</description>
     <language>hi</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>किसी की कही एक पंक्ति ज्यों की त्यों रखिए</title>
+      <link>https://draft.ipe.rest/hi/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/hi/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>सारांश आवाज़ खो देता है, पर किसी की कही एक पंक्ति उसे बचा लेती है। पंक्ति चुनने के तीन तरीके, एक उदाहरण और आम अड़चनें।</description>
+    </item>
     <item>
       <title>वार्म-अप काट दीजिए, दृश्य के बीच से शुरू कीजिए</title>
       <link>https://draft.ipe.rest/hi/blog/start-later/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/pt/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guias curtos para transformar o que você fala em uma história que as pessoas realmente leem, da equipe do draft().</description>
     <language>pt</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>Guarde, do jeito que foi dita, uma frase de alguém</title>
+      <link>https://draft.ipe.rest/pt/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/pt/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>O resumo perde a voz, mas uma frase dita a mantém. Três critérios para escolher a frase, com um exemplo e os tropeços mais comuns.</description>
+    </item>
     <item>
       <title>Corte o aquecimento e comece no meio da cena</title>
       <link>https://draft.ipe.rest/pt/blog/start-later/</link>
