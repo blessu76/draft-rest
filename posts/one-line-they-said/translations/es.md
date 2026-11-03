@@ -1,9 +1,9 @@
 ---
 title: Conserva tal cual una frase que alguien dijo
 description: Un resumen pierde la voz, pero una frase dicha la conserva. Tres criterios para elegirla, con un ejemplo y los tropiezos más comunes.
-date: 2026-11-02
+date: 2026-11-03
 slug: one-line-they-said
-draft: true
+published: 2026-11-03T20:03:00+09:00
 ---
 
 Compara "mamá dijo que había estado preocupada" con la frase que tu madre dijo de verdad, y se ve enseguida cuál lleva su voz. Cuando resumes lo que alguien dijo, el contenido se queda, pero la voz se va. Conserva tal cual una frase que te marcó, y esa persona estará de pie dentro de la escena.

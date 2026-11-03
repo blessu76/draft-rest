@@ -1,9 +1,9 @@
 ---
 title: Guarde, do jeito que foi dita, uma frase de alguém
 description: O resumo perde a voz, mas uma frase dita a mantém. Três critérios para escolher a frase, com um exemplo e os tropeços mais comuns.
-date: 2026-11-02
+date: 2026-11-03
 slug: one-line-they-said
-draft: true
+published: 2026-11-03T20:03:00+09:00
 ---
 
 Compare "minha mãe disse que tinha ficado preocupada" com a frase que ela realmente disse, e fica claro qual das duas carrega a voz dela. Quando você resume o que alguém disse, o conteúdo fica, mas a voz some. Guarde do jeito que foi dita uma frase marcante, e aquela pessoa passa a estar de pé dentro da cena.

@@ -1,9 +1,9 @@
 ---
 title: Giữ nguyên một câu ai đó đã nói, đúng như họ nói
 description: Tóm tắt làm mất giọng nói, còn một câu nguyên văn thì giữ được. Ba tiêu chí chọn câu, kèm ví dụ và những vấp váp thường gặp.
-date: 2026-11-02
+date: 2026-11-03
 slug: one-line-they-said
-draft: true
+published: 2026-11-03T20:03:00+09:00
 ---
 
 Hãy so "mẹ nói mẹ đã lo" với câu mẹ thật sự đã nói, bạn sẽ thấy ngay câu nào mang giọng của mẹ. Khi tóm tắt lời ai đó, nội dung còn lại nhưng giọng nói mất đi. Giữ nguyên một câu đáng nhớ đúng như đã nói, người ấy sẽ đứng ngay trong khung cảnh.

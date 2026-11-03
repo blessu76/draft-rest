@@ -1,9 +1,9 @@
 ---
 title: Pertahankan satu kalimat ucapan seseorang apa adanya
 description: Ringkasan menghilangkan suara, tetapi satu kalimat ucapan menyimpannya. Tiga kriteria memilih kalimat, lengkap dengan contoh dan jebakan umum.
-date: 2026-11-02
+date: 2026-11-03
 slug: one-line-they-said
-draft: true
+published: 2026-11-03T20:03:00+09:00
 ---
 
 Bandingkan "Ibu bilang ia khawatir" dengan kalimat yang benar-benar diucapkan ibumu, dan jelas mana yang membawa suaranya. Saat kamu meringkas ucapan seseorang, isinya tinggal, tetapi suaranya hilang. Pertahankan satu kalimat berkesan apa adanya, dan orang itu akan berdiri di dalam adegan.

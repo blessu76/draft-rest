@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>De courts guides pour transformer ce que vous dites en une histoire que l&#x27;on lit vraiment, par l&#x27;équipe de draft().</description>
     <language>fr</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>Gardez telle quelle une phrase que quelqu&#x27;un a dite</title>
+      <link>https://draft.ipe.rest/fr/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>Un résumé perd la voix, une phrase dite la garde. Trois critères pour la choisir, avec un exemple et les écueils les plus fréquents.</description>
+    </item>
     <item>
       <title>Coupez l&#x27;échauffement et commencez au milieu de la scène</title>
       <link>https://draft.ipe.rest/fr/blog/start-later/</link>

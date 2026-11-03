@@ -1,9 +1,9 @@
 ---
 title: Behalte einen Satz, den jemand gesagt hat, so, wie er fiel
 description: Eine Zusammenfassung verliert die Stimme, ein wörtlicher Satz bewahrt sie. Drei Kriterien für die Wahl, mit Beispiel und häufigen Stolpersteinen.
-date: 2026-11-02
+date: 2026-11-03
 slug: one-line-they-said
-draft: true
+published: 2026-11-03T20:03:00+09:00
 ---
 
 Vergleich „Mama sagte, sie habe sich Sorgen gemacht" mit dem Satz, den deine Mutter wirklich gesagt hat, und du siehst sofort, welcher ihre Stimme trägt. Wer zusammenfasst, was jemand gesagt hat, behält den Inhalt, verliert aber die Stimme. Behältst du einen eindrücklichen Satz so, wie er fiel, steht dieser Mensch in der Szene.

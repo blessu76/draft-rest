@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>把别人说的那句话，原样留下来</title>
+      <link>https://draft.ipe.rest/zh/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>概括会让声音消失，而一句原话能把它留住。三个挑选原话的标准，附例子和常见的绊脚石。</description>
+    </item>
     <item>
       <title>剪掉铺垫段落，从场景中间开始写</title>
       <link>https://draft.ipe.rest/zh/blog/start-later/</link>

@@ -1,9 +1,9 @@
 ---
 title: Gardez telle quelle une phrase que quelqu'un a dite
 description: Un résumé perd la voix, une phrase dite la garde. Trois critères pour la choisir, avec un exemple et les écueils les plus fréquents.
-date: 2026-11-02
+date: 2026-11-03
 slug: one-line-they-said
-draft: true
+published: 2026-11-03T20:03:00+09:00
 ---
 
 Comparez « maman a dit qu'elle s'était inquiétée » et la phrase que votre mère a vraiment prononcée : on voit tout de suite laquelle porte sa voix. Quand on résume ce que quelqu'un a dit, le contenu reste, mais la voix s'en va. Gardez telle quelle une phrase marquante, et cette personne se tient debout dans la scène.

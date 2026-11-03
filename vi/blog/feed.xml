@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/vi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>Giữ nguyên một câu ai đó đã nói, đúng như họ nói</title>
+      <link>https://draft.ipe.rest/vi/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>Tóm tắt làm mất giọng nói, còn một câu nguyên văn thì giữ được. Ba tiêu chí chọn câu, kèm ví dụ và những vấp váp thường gặp.</description>
+    </item>
     <item>
       <title>Cắt đoạn khởi động, bắt đầu ngay giữa khung cảnh</title>
       <link>https://draft.ipe.rest/vi/blog/start-later/</link>

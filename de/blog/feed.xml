@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>Behalte einen Satz, den jemand gesagt hat, so, wie er fiel</title>
+      <link>https://draft.ipe.rest/de/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>Eine Zusammenfassung verliert die Stimme, ein wörtlicher Satz bewahrt sie. Drei Kriterien für die Wahl, mit Beispiel und häufigen Stolpersteinen.</description>
+    </item>
     <item>
       <title>Streich das Warmup und starte mitten in der Szene</title>
       <link>https://draft.ipe.rest/de/blog/start-later/</link>

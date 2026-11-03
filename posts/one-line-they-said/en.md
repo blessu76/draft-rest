@@ -1,9 +1,9 @@
 ---
 title: Keep one line someone said, exactly as they said it
 description: A summary loses the voice, but one line of what someone said keeps it. Three ways to choose the line, with an example and common stumbling blocks.
-date: 2026-11-02
+date: 2026-11-03
 slug: one-line-they-said
-draft: true
+published: 2026-11-03T20:03:00+09:00
 ---
 
 Compare "Mom said she had been worried" with the line your mother actually said, and it's clear which one carries her voice. When you summarize what someone said, the content stays but the voice goes. Keep one memorable line exactly as it was said, and that person stands in the scene.

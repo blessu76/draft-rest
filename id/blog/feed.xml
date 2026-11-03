@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/id/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Sun, 01 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <item>
+      <title>Pertahankan satu kalimat ucapan seseorang apa adanya</title>
+      <link>https://draft.ipe.rest/id/blog/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/one-line-they-said/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
+      <description>Ringkasan menghilangkan suara, tetapi satu kalimat ucapan menyimpannya. Tiga kriteria memilih kalimat, lengkap dengan contoh dan jebakan umum.</description>
+    </item>
     <item>
       <title>Potong pemanasan, mulai dari tengah adegan</title>
       <link>https://draft.ipe.rest/id/blog/start-later/</link>
