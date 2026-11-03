@@ -18,6 +18,7 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 12 | 2026-11-03 | `read-it-aloud` | Read it aloud once and fix only where you stumble | queued (draft) |
 | 13 | 2026-11-04 | `let-it-rest` | Leave it overnight, then change just one thing | queued (draft) |
 | 14 | 2026-11-05 | `stop-mid-sentence` | Stop while you still know the next line, and leave a note | queued (draft) |
+| 15 | 2026-11-06 | `rough-first-version` | Let the first version be rough and finish it | queued (draft) |
 
 Queued dates are placeholders; `publish_post.py` stamps the real date and time. Facts about draft() are limited to what the site states
 (talk ~30 s → 2–3 gentle questions → story hook/rising/peak/reflection/close; privacy; no claims about release or formats).
