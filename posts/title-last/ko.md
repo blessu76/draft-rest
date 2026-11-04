@@ -1,7 +1,7 @@
 ---
 title: 제목은 다 쓴 뒤에 붙이세요
 description: 제목부터 정하면 글이 막힙니다. 다 쓴 뒤 글에서 제목을 건져 내는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.
-date: 2026-11-08
+date: 2026-11-09
 slug: title-last
 draft: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: La première version peut être brouillonne
 description: Vouloir bien écrire dès la première ligne bloque la main. Trois étapes pour terminer une première version brouillonne, avec un exemple et des écueils.
-date: 2026-11-06
+date: 2026-11-07
 slug: rough-first-version
 draft: true
 ---

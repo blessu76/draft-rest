@@ -1,7 +1,7 @@
 ---
 title: Dê o título só no fim
 description: Escolher o título primeiro pode travar o texto. Três passos para achá-lo depois de terminar, com um exemplo e os tropeços mais comuns.
-date: 2026-11-08
+date: 2026-11-09
 slug: title-last
 draft: true
 ---

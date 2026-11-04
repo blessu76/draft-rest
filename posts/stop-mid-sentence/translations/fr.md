@@ -1,7 +1,7 @@
 ---
 title: Arrêtez-vous tant que vous savez encore ce qui vient ensuite
 description: S'arrêter dans une impasse complique demain. Arrêtez-vous quand vous connaissez la ligne suivante, laissez une note : reprendre sera facile. Trois étapes.
-date: 2026-11-05
+date: 2026-11-06
 slug: stop-mid-sentence
 draft: true
 ---

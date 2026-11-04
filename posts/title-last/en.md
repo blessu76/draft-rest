@@ -1,7 +1,7 @@
 ---
 title: Write the title last
 description: Picking a title first can stall a piece. Three steps to find the title after you finish, with an example and common stumbling blocks.
-date: 2026-11-08
+date: 2026-11-09
 slug: title-last
 draft: true
 ---

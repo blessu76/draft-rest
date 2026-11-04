@@ -1,7 +1,7 @@
 ---
 title: Hãy viết cho một người, đừng viết cho tất cả mọi người
 description: Viết cho tất cả mọi người khiến câu chữ mơ hồ. Ba bước chọn một người đọc và viết cho họ, kèm ví dụ và những vướng mắc thường gặp.
-date: 2026-11-07
+date: 2026-11-08
 slug: write-to-one-reader
 draft: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: Menulislah untuk satu orang, bukan untuk semua orang
 description: Menulis untuk semua orang membuat kata-kata jadi kabur. Tiga langkah memilih satu pembaca dan menulis untuknya, lengkap dengan contoh dan kendala umum.
-date: 2026-11-07
+date: 2026-11-08
 slug: write-to-one-reader
 draft: true
 ---

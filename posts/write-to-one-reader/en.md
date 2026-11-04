@@ -1,7 +1,7 @@
 ---
 title: Write to one person, not to everyone
 description: Writing for everyone makes the words go vague. Three steps to pick one reader and write to them, with an example and common stumbling blocks.
-date: 2026-11-07
+date: 2026-11-08
 slug: write-to-one-reader
 draft: true
 ---

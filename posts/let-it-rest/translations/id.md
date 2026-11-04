@@ -1,7 +1,7 @@
 ---
 title: Diamkan semalam, lalu ubah satu hal saja
 description: Tepat setelah menulis, kamu membaca apa yang kamu maksud. Tiga langkah mendiamkan tulisan semalam dan mengubah satu hal saja, lengkap dengan contoh.
-date: 2026-11-04
+date: 2026-11-05
 slug: let-it-rest
 draft: true
 ---

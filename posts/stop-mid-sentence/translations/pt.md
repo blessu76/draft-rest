@@ -1,7 +1,7 @@
 ---
 title: Pare enquanto ainda sabe o que vem depois
 description: Parar num beco sem saída dificulta o dia seguinte. Pare quando souber a próxima linha, deixe uma nota e recomeçar fica fácil. Três passos e um exemplo.
-date: 2026-11-05
+date: 2026-11-06
 slug: stop-mid-sentence
 draft: true
 ---

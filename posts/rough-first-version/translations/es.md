@@ -1,7 +1,7 @@
 ---
 title: La primera versión puede ser tosca
 description: Querer escribir bien desde la primera línea paraliza la mano. Tres pasos para terminar una primera versión tosca, con un ejemplo y tropiezos comunes.
-date: 2026-11-06
+date: 2026-11-07
 slug: rough-first-version
 draft: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: Lass es über Nacht ruhen und ändere nur eine Sache
 description: Direkt nach dem Schreiben liest du, was du meintest. Drei Schritte, einen Text über Nacht ruhen zu lassen und nur eine Sache zu ändern, mit Beispiel.
-date: 2026-11-04
+date: 2026-11-05
 slug: let-it-rest
 draft: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: Escribe para una persona, no para todos
 description: Escribir para todos vuelve vagas las palabras. Tres pasos para elegir a un lector y escribirle a él, con un ejemplo y tropiezos comunes.
-date: 2026-11-07
+date: 2026-11-08
 slug: write-to-one-reader
 draft: true
 ---

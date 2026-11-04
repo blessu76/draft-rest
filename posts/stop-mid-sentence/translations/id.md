@@ -1,7 +1,7 @@
 ---
 title: Berhentilah selagi kamu masih tahu apa yang berikutnya
 description: Berhenti di jalan buntu membuat esok sulit. Berhentilah saat tahu baris berikutnya, tinggalkan catatan, dan memulai lagi jadi mudah. Tiga langkah dan contoh.
-date: 2026-11-05
+date: 2026-11-06
 slug: stop-mid-sentence
 draft: true
 ---

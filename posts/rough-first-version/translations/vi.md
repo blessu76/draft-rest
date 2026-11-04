@@ -1,7 +1,7 @@
 ---
 title: Bản nháp đầu tiên cứ thô cũng được
 description: Muốn viết hay ngay từ dòng đầu sẽ khiến tay khựng lại. Ba bước để viết xong bản nháp thô đầu tiên, kèm ví dụ và những vướng mắc thường gặp.
-date: 2026-11-06
+date: 2026-11-07
 slug: rough-first-version
 draft: true
 ---

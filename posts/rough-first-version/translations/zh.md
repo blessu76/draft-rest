@@ -1,7 +1,7 @@
 ---
 title: 第一稿粗糙一点也没关系
 description: 一开始就想写好，笔反而会停住。把粗糙的第一稿写完的三个步骤，附例子和常见的绊脚石。
-date: 2026-11-06
+date: 2026-11-07
 slug: rough-first-version
 draft: true
 ---

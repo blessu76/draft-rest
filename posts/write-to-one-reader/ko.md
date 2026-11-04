@@ -1,7 +1,7 @@
 ---
 title: 모두가 아니라 한 사람에게 쓰세요
 description: 모두를 위해 쓰면 문장이 흐려집니다. 한 사람을 정해 그에게 쓰는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.
-date: 2026-11-07
+date: 2026-11-08
 slug: write-to-one-reader
 draft: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: Để qua đêm rồi chỉ sửa một điều
 description: Ngay sau khi viết, bạn đọc điều mình định nói. Ba bước để bài viết nghỉ qua đêm và chỉ sửa một điều, kèm ví dụ và những vấp váp thường gặp.
-date: 2026-11-04
+date: 2026-11-05
 slug: let-it-rest
 draft: true
 ---

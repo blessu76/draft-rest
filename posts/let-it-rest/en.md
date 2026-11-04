@@ -1,7 +1,7 @@
 ---
 title: Leave it overnight, then change just one thing
 description: Right after writing, you read what you meant. Three steps to let a piece rest overnight and change only one thing, with an example.
-date: 2026-11-04
+date: 2026-11-05
 slug: let-it-rest
 draft: true
 ---

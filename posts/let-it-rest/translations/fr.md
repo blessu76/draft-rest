@@ -1,7 +1,7 @@
 ---
 title: Laissez reposer une nuit, puis ne changez qu'une chose
 description: Juste après avoir écrit, on lit ce qu'on voulait dire. Trois étapes pour laisser un texte reposer une nuit et ne changer qu'une chose, avec un exemple.
-date: 2026-11-04
+date: 2026-11-05
 slug: let-it-rest
 draft: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: Beri judul setelah selesai menulis
 description: Menentukan judul lebih dulu bisa membuat tulisan macet. Tiga langkah menemukan judul setelah selesai, dengan contoh dan jebakan yang umum.
-date: 2026-11-08
+date: 2026-11-09
 slug: title-last
 draft: true
 ---

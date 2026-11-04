@@ -1,7 +1,7 @@
 ---
 title: 趁着还知道下一句，就停下来
 description: 在写不下去的地方停笔，明天会很难开头。趁还知道下一句就停下，留一条便条，再开头就容易了。三个步骤，附例子。
-date: 2026-11-05
+date: 2026-11-06
 slug: stop-mid-sentence
 draft: true
 ---

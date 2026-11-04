@@ -1,7 +1,7 @@
 ---
 title: 첫 판은 거칠어도 괜찮습니다
 description: 처음부터 잘 쓰려 하면 손이 멈춥니다. 거친 첫 판을 끝까지 쓰는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.
-date: 2026-11-06
+date: 2026-11-07
 slug: rough-first-version
 draft: true
 ---

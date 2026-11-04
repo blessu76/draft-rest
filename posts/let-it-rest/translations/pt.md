@@ -1,7 +1,7 @@
 ---
 title: Deixe descansar uma noite e mude só uma coisa
 description: Logo depois de escrever, você lê o que queria dizer. Três passos para deixar um texto descansar uma noite e mudar só uma coisa, com um exemplo.
-date: 2026-11-04
+date: 2026-11-05
 slug: let-it-rest
 draft: true
 ---

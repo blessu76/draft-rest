@@ -1,7 +1,7 @@
 ---
 title: The first version is allowed to be rough
 description: Trying to write well from the first line stalls your hand. Three steps to finish a rough first version, with an example and common stumbling blocks.
-date: 2026-11-06
+date: 2026-11-07
 slug: rough-first-version
 draft: true
 ---

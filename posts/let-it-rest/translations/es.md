@@ -1,7 +1,7 @@
 ---
 title: Déjalo reposar una noche y cambia solo una cosa
 description: Justo después de escribir lees lo que querías decir. Tres pasos para dejar un texto reposar una noche y cambiar solo una cosa, con un ejemplo.
-date: 2026-11-04
+date: 2026-11-05
 slug: let-it-rest
 draft: true
 ---

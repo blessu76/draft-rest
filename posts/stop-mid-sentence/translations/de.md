@@ -1,7 +1,7 @@
 ---
 title: Hör auf, solange du noch weißt, was als Nächstes kommt
 description: Wer in einer Sackgasse aufhört, hat es morgen schwer. Hör auf, wenn du die nächste Zeile kennst, und lass eine Notiz da: Der Neustart wird leicht.
-date: 2026-11-05
+date: 2026-11-06
 slug: stop-mid-sentence
 draft: true
 ---

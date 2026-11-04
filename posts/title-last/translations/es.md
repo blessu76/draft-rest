@@ -1,7 +1,7 @@
 ---
 title: Ponle el título al final
 description: Elegir el título primero puede bloquear un texto. Tres pasos para encontrarlo cuando termines, con un ejemplo y los tropiezos más comunes.
-date: 2026-11-08
+date: 2026-11-09
 slug: title-last
 draft: true
 ---

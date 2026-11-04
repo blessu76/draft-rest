@@ -1,7 +1,7 @@
 ---
 title: 不要写给所有人,写给一个人
 description: 写给所有人,文字就会变得模糊。选定一位读者并写给他的三个步骤,附示例和常见的绊脚石。
-date: 2026-11-07
+date: 2026-11-08
 slug: write-to-one-reader
 draft: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: Hãy dừng lại khi bạn vẫn còn biết điều gì đến tiếp theo
 description: Dừng ở ngõ cụt làm ngày mai khó bắt đầu. Dừng khi còn biết dòng kế tiếp, để lại một ghi chú, và bắt đầu lại sẽ dễ. Ba bước kèm ví dụ.
-date: 2026-11-05
+date: 2026-11-06
 slug: stop-mid-sentence
 draft: true
 ---

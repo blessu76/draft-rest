@@ -1,7 +1,7 @@
 ---
 title: Schreiben Sie für einen Menschen, nicht für alle
 description: Wer für alle schreibt, macht die Worte vage. Drei Schritte, einen Leser zu wählen und für ihn zu schreiben, mit Beispiel und typischen Stolpersteinen.
-date: 2026-11-07
+date: 2026-11-08
 slug: write-to-one-reader
 draft: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: Stop while you still know what comes next
 description: Stopping at a dead end makes tomorrow hard. Stop when you know the next line, leave a note, and restarting gets easy. Three steps, with an example.
-date: 2026-11-05
+date: 2026-11-06
 slug: stop-mid-sentence
 draft: true
 ---

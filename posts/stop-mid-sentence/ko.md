@@ -1,7 +1,7 @@
 ---
 title: 다음 줄을 아는 채로 멈추세요
 description: 막다른 곳에서 멈추면 내일 시작이 어렵습니다. 다음 줄을 아는 채로 멈추고 메모를 남기는 세 단계와 예시, 걸림돌을 정리했습니다.
-date: 2026-11-05
+date: 2026-11-06
 slug: stop-mid-sentence
 draft: true
 ---

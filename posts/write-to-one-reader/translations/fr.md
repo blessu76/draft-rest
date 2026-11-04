@@ -1,7 +1,7 @@
 ---
 title: Écrivez à une personne, pas à tout le monde
 description: Écrire pour tout le monde rend les mots flous. Trois étapes pour choisir un lecteur et lui écrire, avec un exemple et les écueils courants.
-date: 2026-11-07
+date: 2026-11-08
 slug: write-to-one-reader
 draft: true
 ---

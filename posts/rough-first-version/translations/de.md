@@ -1,7 +1,7 @@
 ---
 title: Die erste Fassung darf grob sein
 description: Wer ab der ersten Zeile gut schreiben will, bremst die Hand. Drei Schritte, eine grobe erste Fassung zu beenden, mit Beispiel und typischen Stolpersteinen.
-date: 2026-11-06
+date: 2026-11-07
 slug: rough-first-version
 draft: true
 ---

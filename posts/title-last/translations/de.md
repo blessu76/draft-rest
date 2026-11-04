@@ -1,7 +1,7 @@
 ---
 title: Den Titel erst am Ende finden
 description: Wer den Titel zuerst wählt, kommt oft ins Stocken. Drei Schritte, den Titel nach dem Schreiben zu finden, mit Beispiel und häufigen Stolpersteinen.
-date: 2026-11-08
+date: 2026-11-09
 slug: title-last
 draft: true
 ---

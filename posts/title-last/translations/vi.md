@@ -1,7 +1,7 @@
 ---
 title: Đặt tiêu đề sau khi viết xong
 description: Chọn tiêu đề trước có thể làm bài viết bị tắc. Ba bước tìm tiêu đề sau khi viết xong, kèm ví dụ và những vướng mắc thường gặp.
-date: 2026-11-08
+date: 2026-11-09
 slug: title-last
 draft: true
 ---

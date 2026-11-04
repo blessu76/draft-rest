@@ -1,7 +1,7 @@
 ---
 title: Draf pertama boleh kasar
 description: Ingin menulis bagus sejak baris pertama justru menghentikan tangan. Tiga langkah menyelesaikan draf pertama yang kasar, dengan contoh dan hambatan umum.
-date: 2026-11-06
+date: 2026-11-07
 slug: rough-first-version
 draft: true
 ---

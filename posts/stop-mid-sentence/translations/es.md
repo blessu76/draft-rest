@@ -1,7 +1,7 @@
 ---
 title: Para mientras aún sepas qué viene después
 description: Parar en un callejón sin salida complica el día siguiente. Para cuando sepas la próxima línea, deja una nota y retomar será fácil. Tres pasos y un ejemplo.
-date: 2026-11-05
+date: 2026-11-06
 slug: stop-mid-sentence
 draft: true
 ---

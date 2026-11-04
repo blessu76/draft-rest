@@ -1,7 +1,7 @@
 ---
 title: Donnez le titre à la fin
 description: Choisir le titre d'abord peut bloquer un texte. Trois étapes pour le trouver une fois fini, avec un exemple et les écueils courants.
-date: 2026-11-08
+date: 2026-11-09
 slug: title-last
 draft: true
 ---
