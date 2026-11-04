@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <item>
+      <title>Lies es einmal laut vor und ändere nur, wo du stolperst</title>
+      <link>https://draft.ipe.rest/de/blog/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>Die Augen verzeihen, was der Mund nicht verzeiht. Drei Schritte, einen kurzen Text laut zu lesen, Stolperstellen zu markieren und nur diese zu ändern.</description>
+    </item>
     <item>
       <title>Behalte einen Satz, den jemand gesagt hat, so, wie er fiel</title>
       <link>https://draft.ipe.rest/de/blog/one-line-they-said/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <item>
+      <title>Read it aloud once, then fix only where you stumble</title>
+      <link>https://draft.ipe.rest/en/blog/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>Your eyes forgive what your mouth won&#x27;t. Three steps for reading a short piece aloud, marking where you stumble, and fixing only those spots.</description>
+    </item>
     <item>
       <title>Keep one line someone said, exactly as they said it</title>
       <link>https://draft.ipe.rest/en/blog/one-line-they-said/</link>

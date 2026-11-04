@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <item>
+      <title>声に出して一度読み、引っかかる所だけ直しましょう</title>
+      <link>https://draft.ipe.rest/ja/blog/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/blog/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>目は見逃しても、口は引っかかります。短い文章を声に出して読み、引っかかる所に印をつけ、そこだけ直す三つの手順をまとめました。</description>
+    </item>
     <item>
       <title>誰かが言ったひとことを、そのまま生かしてみましょう</title>
       <link>https://draft.ipe.rest/ja/blog/one-line-they-said/</link>

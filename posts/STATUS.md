@@ -14,6 +14,8 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 8 | 2026-10-30 | `small-turning-point` | Look for the small turn inside a scene | published (main) |
 | 9 | 2026-10-31 | `name-the-detail` | Write one concrete detail instead of naming the feeling | published (main) |
 | 10 | 2026-11-01 | `start-later` | Cut the warm-up paragraph and start mid-scene | published (main) |
+| 11 | 2026-11-03 | `one-line-they-said` | Keep one line someone said, word for word | published (main) — 2026-11-03 20:07 (9243dc0) |
+| 12 | 2026-11-04 | `read-it-aloud` | Read it aloud once and fix only where you stumble | published (main) |
 
 Queued dates are placeholders; `publish_post.py` stamps the real date and time. Facts about draft() are limited to what the site states
 (talk ~30 s → 2–3 gentle questions → story hook/rising/peak/reflection/close; privacy; no claims about release or formats).

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/hi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>आप जो बोलते हैं उसे ऐसी कहानी में बदलने के छोटे गाइड जिसे लोग सच में पढ़ें — draft() की टीम की ओर से।</description>
     <language>hi</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <item>
+      <title>एक बार ज़ोर से पढ़िए, फिर सिर्फ़ वहीं सुधारिए जहाँ ज़ुबान अटके</title>
+      <link>https://draft.ipe.rest/hi/blog/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/hi/blog/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>आँखें माफ़ कर देती हैं, ज़ुबान नहीं। छोटी रचना को ज़ोर से पढ़ने, अटकने की जगहें चिह्नित करने और सिर्फ़ उन्हें सुधारने के तीन चरण।</description>
+    </item>
     <item>
       <title>किसी की कही एक पंक्ति ज्यों की त्यों रखिए</title>
       <link>https://draft.ipe.rest/hi/blog/one-line-they-said/</link>
