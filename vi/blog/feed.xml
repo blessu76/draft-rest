@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/vi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <item>
+      <title>Đọc to một lần, chỉ sửa chỗ vấp</title>
+      <link>https://draft.ipe.rest/vi/blog/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>Mắt bỏ qua được, miệng thì không. Ba bước đọc to một bài ngắn, đánh dấu chỗ vấp và chỉ sửa đúng những chỗ ấy.</description>
+    </item>
     <item>
       <title>Giữ nguyên một câu ai đó đã nói, đúng như họ nói</title>
       <link>https://draft.ipe.rest/vi/blog/one-line-they-said/</link>

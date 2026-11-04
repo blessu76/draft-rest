@@ -1,9 +1,9 @@
 ---
 title: Léelo en voz alta una vez y corrige solo donde tropieces
 description: Los ojos perdonan lo que la boca no. Tres pasos para leer un texto corto en voz alta, marcar dónde tropiezas y corregir solo esos puntos.
-date: 2026-11-03
+date: 2026-11-04
 slug: read-it-aloud
-draft: true
+published: 2026-11-04T16:02:00+09:00
 ---
 
 Cuando escribes unas líneas y las lees en silencio, casi siempre parecen estar bien. Léelas en voz alta y, en algún punto, te quedas sin aire, oyes la misma palabra dos veces o te sorprendes saltándote una sin querer. Los ojos perdonan; la boca no. Leer en voz alta una vez es la edición más ligera que existe: no hay reglas nuevas que aprender, solo tu oído.

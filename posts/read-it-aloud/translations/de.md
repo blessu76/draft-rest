@@ -1,9 +1,9 @@
 ---
 title: Lies es einmal laut vor und ändere nur, wo du stolperst
 description: Die Augen verzeihen, was der Mund nicht verzeiht. Drei Schritte, einen kurzen Text laut zu lesen, Stolperstellen zu markieren und nur diese zu ändern.
-date: 2026-11-03
+date: 2026-11-04
 slug: read-it-aloud
-draft: true
+published: 2026-11-04T16:02:00+09:00
 ---
 
 Wenn du ein paar Zeilen schreibst und sie still liest, wirken sie meistens in Ordnung. Lies dieselben Zeilen laut, und irgendwo geht dir die Luft aus, du hörst dasselbe Wort zweimal oder bemerkst, dass du ungewollt ein Wort übersprungen hast. Die Augen verzeihen, der Mund nicht. Einmal laut zu lesen ist die leichteste Überarbeitung, die es gibt: keine neuen Regeln, nur dein Gehör.

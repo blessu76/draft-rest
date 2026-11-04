@@ -1,9 +1,9 @@
 ---
 title: Lisez à voix haute une fois, ne corrigez que les accrocs
 description: Les yeux pardonnent ce que la bouche ne pardonne pas. Trois étapes pour lire un texte court à voix haute, marquer les accrocs et ne corriger que ceux-là.
-date: 2026-11-03
+date: 2026-11-04
 slug: read-it-aloud
-draft: true
+published: 2026-11-04T16:02:00+09:00
 ---
 
 Quand vous écrivez quelques lignes et que vous les relisez en silence, elles semblent presque toujours correctes. Lisez les mêmes lignes à voix haute, et quelque part vous manquez de souffle, vous entendez deux fois le même mot, ou vous vous surprenez à en sauter un sans le vouloir. Les yeux pardonnent ; la bouche, non. Lire à voix haute une fois est la retouche la plus légère qui soit : aucune règle nouvelle à apprendre, seulement votre oreille.

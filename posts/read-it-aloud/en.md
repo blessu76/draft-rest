@@ -1,9 +1,9 @@
 ---
 title: Read it aloud once, then fix only where you stumble
 description: Your eyes forgive what your mouth won't. Three steps for reading a short piece aloud, marking where you stumble, and fixing only those spots.
-date: 2026-11-03
+date: 2026-11-04
 slug: read-it-aloud
-draft: true
+published: 2026-11-04T16:02:00+09:00
 ---
 
 After you write a few lines and read them silently, they usually look fine. Read the same lines aloud, and somewhere you run out of breath, hear the same word twice, or catch yourself skipping a word without meaning to. The eyes forgive; the mouth doesn't. Reading aloud once is the lightest edit there is: no new rules to learn, just your ear.

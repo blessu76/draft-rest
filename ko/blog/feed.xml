@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <item>
+      <title>소리 내어 한 번 읽고, 걸리는 곳만 고쳐 보세요</title>
+      <link>https://draft.ipe.rest/ko/blog/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>눈은 넘어가도 입은 걸립니다. 짧은 글을 소리 내어 읽으며 걸리는 곳에 표시하고, 그 자리만 고치는 세 단계를 정리했습니다.</description>
+    </item>
     <item>
       <title>누군가 한 말 한 줄을 그대로 살려 보세요</title>
       <link>https://draft.ipe.rest/ko/blog/one-line-they-said/</link>

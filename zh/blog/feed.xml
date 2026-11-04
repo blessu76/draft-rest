@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <item>
+      <title>出声读一遍，只改读着卡壳的地方</title>
+      <link>https://draft.ipe.rest/zh/blog/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>眼睛会放过的地方，嘴巴不会。把一段短文出声读一遍，在卡壳处做记号，只修改那些地方的三个步骤。</description>
+    </item>
     <item>
       <title>把别人说的那句话，原样留下来</title>
       <link>https://draft.ipe.rest/zh/blog/one-line-they-said/</link>

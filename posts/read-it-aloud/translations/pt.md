@@ -1,9 +1,9 @@
 ---
 title: Leia em voz alta uma vez e corrija só onde tropeçar
 description: Os olhos perdoam o que a boca não perdoa. Três passos para ler um texto curto em voz alta, marcar onde você tropeça e corrigir só esses pontos.
-date: 2026-11-03
+date: 2026-11-04
 slug: read-it-aloud
-draft: true
+published: 2026-11-04T16:02:00+09:00
 ---
 
 Quando você escreve algumas linhas e lê em silêncio, quase sempre parecem estar boas. Leia as mesmas linhas em voz alta e, em algum ponto, falta o fôlego, você ouve a mesma palavra duas vezes ou percebe que pulou uma sem querer. Os olhos perdoam; a boca não. Ler em voz alta uma vez é a revisão mais leve que existe: nenhuma regra nova para aprender, só o seu ouvido.

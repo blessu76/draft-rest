@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/id/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <item>
+      <title>Baca keras-keras sekali, perbaiki hanya yang tersandung</title>
+      <link>https://draft.ipe.rest/id/blog/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>Mata memaafkan apa yang tidak dimaafkan mulut. Tiga langkah membaca tulisan pendek keras-keras, menandai yang tersandung, dan memperbaikinya.</description>
+    </item>
     <item>
       <title>Pertahankan satu kalimat ucapan seseorang apa adanya</title>
       <link>https://draft.ipe.rest/id/blog/one-line-they-said/</link>
