@@ -26,7 +26,7 @@ Vor der Änderung:
 
 Laut gelesen geht die Luft etwa bei „in Eile" aus. Teile dort, wo du atmen würdest:
 
-> An jenem Morgen stieg ich in den Aufzug. Die Person von nebenan war schon da, mit einer kleinen Papiertüte, in der etwas Warmes war. Der Nachbar wirkte immer beschäftigt, und wir hatten nie wirklich miteinander gesprochen.
+> An jenem Morgen stieg ich in den Aufzug. Die Person von nebenan war schon da, mit einer kleinen Papiertüte, in der etwas Warmes war. Die Person wirkte immer beschäftigt, und wir hatten nie wirklich miteinander gesprochen.
 
 Nichts Neues kam hinzu. Nur die Stellen zum Atmen sind gewandert, und das Lesetempo wurde natürlich.
 
