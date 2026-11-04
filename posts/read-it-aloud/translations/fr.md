@@ -22,11 +22,11 @@ En lecture silencieuse, les yeux courent devant et comblent seuls les trous. À 
 
 Avant la correction :
 
-> Quand je suis monté dans l'ascenseur ce matin-là, j'ai remarqué ma voisine, qui avait toujours l'air pressée et à qui je n'avais jamais vraiment parlé, debout avec un petit sac en papier qui semblait contenir quelque chose de chaud.
+> Quand je suis monté dans l'ascenseur ce matin-là, j'ai remarqué mon voisin, qui avait toujours l'air pressé et à qui je n'avais jamais vraiment parlé, debout avec un petit sac en papier qui semblait contenir quelque chose de chaud.
 
 À voix haute, le souffle manque vers « l'air pressée ». Coupez là où vous respireriez :
 
-> Je suis monté dans l'ascenseur ce matin-là. Ma voisine y était déjà, avec un petit sac en papier contenant quelque chose de chaud. Elle avait toujours l'air occupée, et nous ne nous étions jamais vraiment parlé.
+> Je suis monté dans l'ascenseur ce matin-là. Mon voisin y était déjà, avec un petit sac en papier contenant quelque chose de chaud. Il avait toujours l'air occupé, et nous ne nous étions jamais vraiment parlé.
 
 Rien de nouveau n'a été ajouté. Seuls les endroits où respirer ont bougé, et le rythme de lecture est devenu naturel.
 

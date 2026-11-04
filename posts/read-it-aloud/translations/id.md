@@ -26,7 +26,7 @@ Sebelum diperbaiki:
 
 Kalau dibaca keras, napas habis sekitar "terburu-buru". Pecah di tempat kamu akan menarik napas:
 
-> Aku naik lift pagi itu. Tetanggaku sudah ada di sana, memegang kantong kertas kecil berisi sesuatu yang hangat. Dia selalu tampak sibuk, dan kami belum pernah benar-benar bicara.
+> Aku naik lift pagi itu. Tetanggaku sudah ada di sana, memegang kantong kertas kecil berisi sesuatu yang hangat. Tetanggaku selalu tampak sibuk, dan kami belum pernah benar-benar bicara.
 
 Tidak ada yang ditambahkan. Hanya tempat bernapas yang bergeser, dan kecepatan membaca menjadi wajar.
 

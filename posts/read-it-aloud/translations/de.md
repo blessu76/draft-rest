@@ -22,11 +22,11 @@ Beim stillen Lesen laufen die Augen voraus und füllen Lücken von selbst. Laut 
 
 Vor der Änderung:
 
-> Als ich an jenem Morgen in den Aufzug stieg, bemerkte ich meine Nachbarin, die immer in Eile zu sein schien und mit der ich nie wirklich gesprochen hatte, wie sie dort stand und eine kleine Papiertüte hielt, in der etwas Warmes zu sein schien.
+> Als ich an jenem Morgen in den Aufzug stieg, bemerkte ich die Person von nebenan, die immer in Eile zu sein schien und mit der ich nie wirklich gesprochen hatte, wie sie dort stand und eine kleine Papiertüte hielt, in der etwas Warmes zu sein schien.
 
 Laut gelesen geht die Luft etwa bei „in Eile" aus. Teile dort, wo du atmen würdest:
 
-> An jenem Morgen stieg ich in den Aufzug. Meine Nachbarin war schon da, mit einer kleinen Papiertüte, in der etwas Warmes war. Sie wirkte immer beschäftigt, und wir hatten nie wirklich miteinander gesprochen.
+> An jenem Morgen stieg ich in den Aufzug. Die Person von nebenan war schon da, mit einer kleinen Papiertüte, in der etwas Warmes war. Der Nachbar wirkte immer beschäftigt, und wir hatten nie wirklich miteinander gesprochen.
 
 Nichts Neues kam hinzu. Nur die Stellen zum Atmen sind gewandert, und das Lesetempo wurde natürlich.
 

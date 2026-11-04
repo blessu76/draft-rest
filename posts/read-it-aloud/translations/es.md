@@ -22,11 +22,11 @@ Cuando lees en silencio, los ojos corren por delante y rellenan los huecos por s
 
 Antes del arreglo:
 
-> Cuando subí al ascensor aquella mañana, vi a mi vecina, que siempre parecía tener prisa y con quien nunca había hablado de verdad, de pie con una pequeña bolsa de papel que parecía llevar algo caliente dentro.
+> Cuando subí al ascensor aquella mañana, vi a mi vecino, que siempre parecía tener prisa y con quien nunca había hablado de verdad, de pie con una pequeña bolsa de papel que parecía llevar algo caliente dentro.
 
 Leído en voz alta, te quedas sin aire hacia "tener prisa". Pártelo donde respirarías:
 
-> Subí al ascensor aquella mañana. Mi vecina ya estaba allí, con una pequeña bolsa de papel con algo caliente dentro. Siempre parecía ocupada y nunca habíamos hablado de verdad.
+> Subí al ascensor aquella mañana. Mi vecino ya estaba allí, con una pequeña bolsa de papel con algo caliente dentro. Siempre parecía ocupada y nunca habíamos hablado de verdad.
 
 No se añadió nada nuevo. Solo cambiaron de sitio los lugares donde respirar, y el ritmo de lectura se volvió natural.
 

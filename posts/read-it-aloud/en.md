@@ -26,7 +26,7 @@ Before the fix:
 
 Read aloud, you run out of breath around "in a hurry". Split it where you would breathe:
 
-> I got on the elevator that morning. My neighbor was already there, holding a small paper bag with something warm in it. She always looked busy, and we had never really talked.
+> I got on the elevator that morning. My neighbor was already there, holding a small paper bag with something warm in it. The neighbor always looked busy, and we had never really talked.
 
 Nothing new was added. Only the places to breathe moved, and the pace of reading became natural.
 

@@ -22,11 +22,11 @@ Na leitura silenciosa, os olhos correm à frente e preenchem as lacunas sozinhos
 
 Antes do conserto:
 
-> Quando entrei no elevador naquela manhã, notei minha vizinha, que sempre parecia estar com pressa e com quem eu nunca tinha conversado de verdade, parada ali com uma pequena sacola de papel que parecia ter algo quente dentro.
+> Quando entrei no elevador naquela manhã, notei meu vizinho, que sempre parecia estar com pressa e com quem eu nunca tinha conversado de verdade, parada ali com uma pequena sacola de papel que parecia ter algo quente dentro.
 
 Em voz alta, o fôlego acaba perto de "com pressa". Divida onde você respiraria:
 
-> Entrei no elevador naquela manhã. Minha vizinha já estava lá, com uma pequena sacola de papel com algo quente dentro. Ela sempre parecia ocupada, e nunca tínhamos conversado de verdade.
+> Entrei no elevador naquela manhã. Meu vizinho já estava lá, com uma pequena sacola de papel com algo quente dentro. Ele sempre parecia ocupado, e nunca tínhamos conversado de verdade.
 
 Nada novo foi acrescentado. Só mudaram os lugares de respirar, e o ritmo da leitura ficou natural.
 

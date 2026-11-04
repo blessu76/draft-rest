@@ -26,7 +26,7 @@ Trước khi sửa:
 
 Đọc to thì hơi bắt đầu hết quanh chỗ "vội vã". Hãy tách ở nơi bạn sẽ lấy hơi:
 
-> Sáng hôm ấy tôi bước vào thang máy. Người hàng xóm đã ở đó, cầm một chiếc túi giấy nhỏ đựng thứ gì đó còn ấm. Cô ấy lúc nào cũng có vẻ bận, và chúng tôi chưa bao giờ thật sự trò chuyện.
+> Sáng hôm ấy tôi bước vào thang máy. Người hàng xóm đã ở đó, cầm một chiếc túi giấy nhỏ đựng thứ gì đó còn ấm. Người hàng xóm lúc nào cũng có vẻ bận, và chúng tôi chưa bao giờ thật sự trò chuyện.
 
 Không thêm gì mới cả. Chỉ có chỗ lấy hơi dịch đi, và nhịp đọc trở nên tự nhiên.
 
