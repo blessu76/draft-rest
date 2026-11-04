@@ -1,5 +1,7 @@
 """SEO baseline regressions: the head meta, canonical / hreflang, sitemap and robots.txt of the generated site.
 Only what the site already satisfies is checked (the build in memory, like test_ga4.py).
+Known and not checked yet: the es/pt/fr/de privacy page descriptions (and their og / twitter copies) are 167-173
+characters, over the 160 limit; add a length check only with an explicit allow-list for those four pages.
 Run: python3 -m unittest discover -s tests"""
 import html
 import re
@@ -130,7 +132,9 @@ class SeoBaseline(unittest.TestCase):
         self.assertIn("Sitemap: %s/sitemap.xml" % SITE, robots)
 
     def test_committed_sitemap_and_static_files_exist(self):
-        self.assertEqual((ROOT / "sitemap.xml").read_text(encoding="utf-8"), self.sitemap)
+        committed = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        # <lastmod> follows the build date (today for uncommitted files), so it is left out of the comparison
+        self.assertEqual(build_site.strip_lastmod(committed), build_site.strip_lastmod(self.sitemap))
         for name in ("robots.txt", "llms.txt", "404.html", "og-image.png", "favicon.ico"):
             self.assertTrue((ROOT / name).is_file(), name)
 
