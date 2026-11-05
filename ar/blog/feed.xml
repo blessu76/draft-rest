@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ar/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>أدلة قصيرة لتحويل ما تقوله إلى قصة يحب الناس قراءتها — من الفريق الذي يقف وراء draft().</description>
     <language>ar</language>
-    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>اتركه ليلة كاملة، ثم غيّر شيئًا واحدًا فقط</title>
+      <link>https://draft.ipe.rest/ar/blog/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/blog/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>بعد الكتابة مباشرة تقرأ ما قصدته. ثلاث خطوات لترك النص يستريح ليلة وتغيير شيء واحد فقط، مع مثال.</description>
+    </item>
     <item>
       <title>اقرأه بصوت عالٍ مرة واحدة، ثم أصلح مواضع التعثر فقط</title>
       <link>https://draft.ipe.rest/ar/blog/read-it-aloud/</link>

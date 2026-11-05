@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Déjalo reposar una noche y cambia solo una cosa</title>
+      <link>https://draft.ipe.rest/es/blog/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Justo después de escribir lees lo que querías decir. Tres pasos para dejar un texto reposar una noche y cambiar solo una cosa, con un ejemplo.</description>
+    </item>
     <item>
       <title>Léelo en voz alta una vez y corrige solo donde tropieces</title>
       <link>https://draft.ipe.rest/es/blog/read-it-aloud/</link>
