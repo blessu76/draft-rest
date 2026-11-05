@@ -3,7 +3,7 @@ title: Lass es über Nacht ruhen und ändere nur eine Sache
 description: Direkt nach dem Schreiben liest du, was du meintest. Drei Schritte, einen Text über Nacht ruhen zu lassen und nur eine Sache zu ändern, mit Beispiel.
 date: 2026-11-05
 slug: let-it-rest
-draft: true
+published: 2026-11-05T16:01:00+09:00
 ---
 
 In dem Moment, in dem du mit dem Schreiben fertig bist, kommen oft zwei Gefühle zugleich: Es ist perfekt, oder es ist ein Desaster. Beide entstehen, weil du noch mitten im Text steckst. Direkt nach dem Schreiben liest du, was du meintest. Nach einer Nacht liest du, was tatsächlich auf der Seite steht. Über Nacht ruhen zu lassen ist kein Aufschieben; es ist eine Möglichkeit, eine Version von dir, die ein Stück entfernt steht, zur Leserin werden zu lassen.

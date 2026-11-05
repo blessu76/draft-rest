@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/hi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>आप जो बोलते हैं उसे ऐसी कहानी में बदलने के छोटे गाइड जिसे लोग सच में पढ़ें — draft() की टीम की ओर से।</description>
     <language>hi</language>
-    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>इसे रात भर छोड़ दीजिए, फिर सिर्फ़ एक चीज़ बदलिए</title>
+      <link>https://draft.ipe.rest/hi/blog/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/hi/blog/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>लिखने के तुरंत बाद आप वह पढ़ते हैं जो आप कहना चाहते थे। रचना को रात भर रखकर सिर्फ़ एक चीज़ बदलने के तीन चरण, एक उदाहरण के साथ।</description>
+    </item>
     <item>
       <title>एक बार ज़ोर से पढ़िए, फिर सिर्फ़ वहीं सुधारिए जहाँ ज़ुबान अटके</title>
       <link>https://draft.ipe.rest/hi/blog/read-it-aloud/</link>

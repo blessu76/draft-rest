@@ -16,7 +16,7 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 10 | 2026-11-01 | `start-later` | Cut the warm-up paragraph and start mid-scene | published (main) |
 | 11 | 2026-11-03 | `one-line-they-said` | Keep one line someone said, word for word | published (main) — 2026-11-03 20:07 (9243dc0) |
 | 12 | 2026-11-04 | `read-it-aloud` | Read it aloud once and fix only where you stumble | published (main) |
-| 13 | 2026-11-05 | `let-it-rest` | Leave it overnight, then change just one thing | queued (draft) |
+| 13 | 2026-11-05 | `let-it-rest` | Leave it overnight, then change just one thing | published (main) |
 | 14 | 2026-11-06 | `stop-mid-sentence` | Stop while you still know the next line, and leave a note | queued (draft) |
 | 15 | 2026-11-07 | `rough-first-version` | Let the first version be rough and finish it | queued (draft) |
 | 16 | 2026-11-08 | `write-to-one-reader` | Write to one real reader, not to everyone | queued (draft) |

@@ -3,7 +3,7 @@ title: Diamkan semalam, lalu ubah satu hal saja
 description: Tepat setelah menulis, kamu membaca apa yang kamu maksud. Tiga langkah mendiamkan tulisan semalam dan mengubah satu hal saja, lengkap dengan contoh.
 date: 2026-11-05
 slug: let-it-rest
-draft: true
+published: 2026-11-05T16:01:00+09:00
 ---
 
 Begitu selesai menulis, sering kali dua perasaan datang bersamaan: ini sempurna, atau ini berantakan. Keduanya muncul karena kamu masih berada di dalam tulisan itu. Tepat setelah menulis, kamu membaca apa yang kamu maksud. Setelah semalam, kamu membaca apa yang sebenarnya tertulis di halaman. Mendiamkan semalam bukan menunda; itu cara agar dirimu yang berdiri agak jauh bisa menjadi pembacanya.

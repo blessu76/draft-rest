@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Lass es über Nacht ruhen und ändere nur eine Sache</title>
+      <link>https://draft.ipe.rest/de/blog/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Direkt nach dem Schreiben liest du, was du meintest. Drei Schritte, einen Text über Nacht ruhen zu lassen und nur eine Sache zu ändern, mit Beispiel.</description>
+    </item>
     <item>
       <title>Lies es einmal laut vor und ändere nur, wo du stolperst</title>
       <link>https://draft.ipe.rest/de/blog/read-it-aloud/</link>

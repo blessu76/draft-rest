@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Wed, 04 Nov 2026 16:02:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>放一夜再看，只改一个地方</title>
+      <link>https://draft.ipe.rest/zh/blog/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>刚写完时，你读到的是自己想表达的。让文章放一夜、只改一个地方的三个步骤，附例子和常见的绊脚石。</description>
+    </item>
     <item>
       <title>出声读一遍，只改读着卡壳的地方</title>
       <link>https://draft.ipe.rest/zh/blog/read-it-aloud/</link>

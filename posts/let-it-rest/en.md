@@ -3,7 +3,7 @@ title: Leave it overnight, then change just one thing
 description: Right after writing, you read what you meant. Three steps to let a piece rest overnight and change only one thing, with an example.
 date: 2026-11-05
 slug: let-it-rest
-draft: true
+published: 2026-11-05T16:01:00+09:00
 ---
 
 The moment you finish writing, two feelings often arrive together: it's perfect, or it's a mess. Both come from still being inside it. Right after writing, you read what you meant. After a night, you read what is actually on the page. Leaving it overnight isn't putting it off; it's a way of letting a version of you, standing at a distance, become the reader.

@@ -3,7 +3,7 @@ title: Deixe descansar uma noite e mude só uma coisa
 description: Logo depois de escrever, você lê o que queria dizer. Três passos para deixar um texto descansar uma noite e mudar só uma coisa, com um exemplo.
 date: 2026-11-05
 slug: let-it-rest
-draft: true
+published: 2026-11-05T16:01:00+09:00
 ---
 
 No momento em que você termina de escrever, muitas vezes chegam dois sentimentos juntos: está perfeito, ou está uma bagunça. Os dois vêm de ainda estar dentro do texto. Logo depois de escrever, você lê o que queria dizer. Depois de uma noite, lê o que realmente está na página. Deixar descansar uma noite não é adiar; é um jeito de fazer uma versão sua, a certa distância, virar leitora.
