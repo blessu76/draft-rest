@@ -8,7 +8,7 @@ import hashlib
 import shutil
 from pathlib import Path
 
-from . import ASSETS, __version__
+from . import ASSET_REV, ASSETS
 from .localtime import time_tag
 from .seo import esc
 
@@ -25,7 +25,7 @@ def inline_css():
 
 
 def css_version():
-    return "%s-%s" % (__version__, hashlib.sha256(CSS.read_bytes()).hexdigest()[:8])
+    return "%s-%s" % (ASSET_REV, hashlib.sha256(CSS.read_bytes()).hexdigest()[:8])
 
 
 def copy_css(dest_dir, url_prefix="/assets/"):
