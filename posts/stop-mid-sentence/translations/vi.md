@@ -3,7 +3,7 @@ title: Hãy dừng lại khi bạn vẫn còn biết điều gì đến tiếp t
 description: Dừng ở ngõ cụt làm ngày mai khó bắt đầu. Dừng khi còn biết dòng kế tiếp, để lại một ghi chú, và bắt đầu lại sẽ dễ. Ba bước kèm ví dụ.
 date: 2026-11-06
 slug: stop-mid-sentence
-draft: true
+published: 2026-11-06T16:01:00+09:00
 ---
 
 Người ta hay nói phần khó nhất của việc viết là bắt đầu, nhưng bắt đầu khó đến đâu còn tùy hôm qua bạn dừng ở chỗ nào. Một bài bạn đóng lại khi đang bí, không còn gì để nói, sẽ giống như một màn hình trống khi mở lại. Một bài bạn bỏ lại khi vẫn còn biết điều gì đến tiếp theo thì viết tiếp được ngay khi mở ra. Cố ý dừng sớm một chút không phải là lười biếng; đó là món quà nhỏ dành cho chính bạn của ngày mai.

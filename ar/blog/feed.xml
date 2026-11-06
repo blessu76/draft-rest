@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ar/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>أدلة قصيرة لتحويل ما تقوله إلى قصة يحب الناس قراءتها — من الفريق الذي يقف وراء draft().</description>
     <language>ar</language>
-    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>توقّف وأنت ما زلت تعرف ما يأتي بعد ذلك</title>
+      <link>https://draft.ipe.rest/ar/blog/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/blog/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>التوقف عند طريق مسدود يصعّب الغد. توقّف حين تعرف السطر التالي واترك ملاحظة، فيسهل الاستئناف. ثلاث خطوات مع مثال.</description>
+    </item>
     <item>
       <title>اتركه ليلة كاملة، ثم غيّر شيئًا واحدًا فقط</title>
       <link>https://draft.ipe.rest/ar/blog/let-it-rest/</link>

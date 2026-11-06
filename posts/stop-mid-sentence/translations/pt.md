@@ -3,7 +3,7 @@ title: Pare enquanto ainda sabe o que vem depois
 description: Parar num beco sem saída dificulta o dia seguinte. Pare quando souber a próxima linha, deixe uma nota e recomeçar fica fácil. Três passos e um exemplo.
 date: 2026-11-06
 slug: stop-mid-sentence
-draft: true
+published: 2026-11-06T16:01:00+09:00
 ---
 
 Costuma-se dizer que a parte mais difícil de escrever é começar, mas o quão difícil é começar depende de onde você parou ontem. Um texto que você fechou travado, sem mais nada a dizer, parece uma tela em branco quando é aberto de novo. Um texto que você deixou enquanto ainda sabia o que vinha depois é retomado assim que você o abre. Parar um pouco mais cedo de propósito não é preguiça; é um pequeno presente para o você de amanhã.

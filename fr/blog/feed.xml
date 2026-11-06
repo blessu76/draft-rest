@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>De courts guides pour transformer ce que vous dites en une histoire que l&#x27;on lit vraiment, par l&#x27;équipe de draft().</description>
     <language>fr</language>
-    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Arrêtez-vous tant que vous savez encore ce qui vient ensuite</title>
+      <link>https://draft.ipe.rest/fr/blog/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>S&#x27;arrêter dans une impasse complique demain. Arrêtez-vous quand vous connaissez la ligne suivante, laissez une note : reprendre sera facile. Trois étapes.</description>
+    </item>
     <item>
       <title>Laissez reposer une nuit, puis ne changez qu&#x27;une chose</title>
       <link>https://draft.ipe.rest/fr/blog/let-it-rest/</link>

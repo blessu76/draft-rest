@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Остановитесь, пока ещё знаете, что будет дальше</title>
+      <link>https://draft.ipe.rest/ru/blog/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Остановка в тупике усложняет завтрашний день. Остановитесь, пока знаете следующую строку, оставьте заметку — и продолжить будет легко. Три шага и пример.</description>
+    </item>
     <item>
       <title>Оставьте текст на ночь и измените только одно</title>
       <link>https://draft.ipe.rest/ru/blog/let-it-rest/</link>

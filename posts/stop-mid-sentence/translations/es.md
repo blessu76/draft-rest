@@ -3,7 +3,7 @@ title: Para mientras aún sepas qué viene después
 description: Parar en un callejón sin salida complica el día siguiente. Para cuando sepas la próxima línea, deja una nota y retomar será fácil. Tres pasos y un ejemplo.
 date: 2026-11-06
 slug: stop-mid-sentence
-draft: true
+published: 2026-11-06T16:01:00+09:00
 ---
 
 Se suele decir que lo más difícil de escribir es empezar, pero lo difícil que sea empezar depende de dónde te detuviste ayer. Un texto que cerraste atascado, sin nada más que decir, se siente como una pantalla en blanco cuando lo abres de nuevo. Un texto que dejaste mientras aún sabías qué venía después se retoma en cuanto lo abres. Parar un poco antes a propósito no es pereza; es un pequeño regalo para el tú de mañana.

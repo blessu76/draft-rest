@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/vi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Hãy dừng lại khi bạn vẫn còn biết điều gì đến tiếp theo</title>
+      <link>https://draft.ipe.rest/vi/blog/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Dừng ở ngõ cụt làm ngày mai khó bắt đầu. Dừng khi còn biết dòng kế tiếp, để lại một ghi chú, và bắt đầu lại sẽ dễ. Ba bước kèm ví dụ.</description>
+    </item>
     <item>
       <title>Để qua đêm rồi chỉ sửa một điều</title>
       <link>https://draft.ipe.rest/vi/blog/let-it-rest/</link>

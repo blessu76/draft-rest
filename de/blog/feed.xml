@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Hör auf, solange du noch weißt, was als Nächstes kommt</title>
+      <link>https://draft.ipe.rest/de/blog/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Wer in einer Sackgasse aufhört, hat es morgen schwer. Hör auf, wenn du die nächste Zeile kennst, und lass eine Notiz da: Der Neustart wird leicht.</description>
+    </item>
     <item>
       <title>Lass es über Nacht ruhen und ändere nur eine Sache</title>
       <link>https://draft.ipe.rest/de/blog/let-it-rest/</link>

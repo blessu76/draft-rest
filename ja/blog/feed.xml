@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>次に来る言葉がわかっているうちに止めましょう</title>
+      <link>https://draft.ipe.rest/ja/blog/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/blog/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>行き詰まったまま閉じると、明日の書き始めが重くなります。次の一行がわかるうちに止めてメモを残す三つの手順を、例と一緒にまとめました。</description>
+    </item>
     <item>
       <title>ひと晩寝かせてから、ひとつだけ直しましょう</title>
       <link>https://draft.ipe.rest/ja/blog/let-it-rest/</link>

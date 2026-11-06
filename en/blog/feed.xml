@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Stop while you still know what comes next</title>
+      <link>https://draft.ipe.rest/en/blog/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Stopping at a dead end makes tomorrow hard. Stop when you know the next line, leave a note, and restarting gets easy. Three steps, with an example.</description>
+    </item>
     <item>
       <title>Leave it overnight, then change just one thing</title>
       <link>https://draft.ipe.rest/en/blog/let-it-rest/</link>

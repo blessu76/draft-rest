@@ -3,7 +3,7 @@ title: Berhentilah selagi kamu masih tahu apa yang berikutnya
 description: Berhenti di jalan buntu membuat esok sulit. Berhentilah saat tahu baris berikutnya, tinggalkan catatan, dan memulai lagi jadi mudah. Tiga langkah dan contoh.
 date: 2026-11-06
 slug: stop-mid-sentence
-draft: true
+published: 2026-11-06T16:01:00+09:00
 ---
 
 Orang sering bilang bagian tersulit dari menulis adalah memulai, tetapi sesulit apa memulai itu bergantung pada di mana kamu berhenti kemarin. Tulisan yang kamu tutup saat buntu, tanpa ada lagi yang bisa dikatakan, terasa seperti layar kosong ketika dibuka kembali. Tulisan yang kamu tinggalkan selagi masih tahu apa yang berikutnya langsung bisa dilanjutkan begitu dibuka. Berhenti sedikit lebih awal dengan sengaja bukan kemalasan; itu hadiah kecil untuk dirimu esok hari.
