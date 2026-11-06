@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>다음 줄을 아는 채로 멈추세요</title>
+      <link>https://draft.ipe.rest/ko/blog/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>막다른 곳에서 멈추면 내일 시작이 어렵습니다. 다음 줄을 아는 채로 멈추고 메모를 남기는 세 단계와 예시, 걸림돌을 정리했습니다.</description>
+    </item>
     <item>
       <title>하룻밤 묵혀 두고, 딱 하나만 고쳐 보세요</title>
       <link>https://draft.ipe.rest/ko/blog/let-it-rest/</link>

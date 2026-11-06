@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Thu, 05 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Para mientras aún sepas qué viene después</title>
+      <link>https://draft.ipe.rest/es/blog/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Parar en un callejón sin salida complica el día siguiente. Para cuando sepas la próxima línea, deja una nota y retomar será fácil. Tres pasos y un ejemplo.</description>
+    </item>
     <item>
       <title>Déjalo reposar una noche y cambia solo una cosa</title>
       <link>https://draft.ipe.rest/es/blog/let-it-rest/</link>
