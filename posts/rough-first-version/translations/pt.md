@@ -3,7 +3,7 @@ title: A primeira versão pode ser tosca
 description: Querer escrever bem desde a primeira linha trava a mão. Três passos para terminar uma primeira versão tosca, com um exemplo e tropeços comuns.
 date: 2026-11-07
 slug: rough-first-version
-draft: true
+published: 2026-11-07T16:01:00+09:00
 ---
 
 Você escreve uma primeira frase, apaga, escreve de novo, apaga de novo, e de repente passou uma hora. Quando você tenta escrever bem desde o começo, o julgamento chega antes da escrita. O trabalho de uma primeira versão não é ser boa; é existir, até o fim. Um texto tosco que chega ao fim pode ser consertado. Um texto abandonado no meio não tem nada para consertar.

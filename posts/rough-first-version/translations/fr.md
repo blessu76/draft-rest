@@ -3,7 +3,7 @@ title: La première version peut être brouillonne
 description: Vouloir bien écrire dès la première ligne bloque la main. Trois étapes pour terminer une première version brouillonne, avec un exemple et des écueils.
 date: 2026-11-07
 slug: rough-first-version
-draft: true
+published: 2026-11-07T16:01:00+09:00
 ---
 
 Vous écrivez une première phrase, vous l'effacez, vous la réécrivez, vous l'effacez encore, et soudain une heure a passé. Quand on essaie de bien écrire dès le départ, le jugement arrive avant les mots. Le travail d'une première version n'est pas d'être bonne, mais d'exister jusqu'au bout. Un texte brouillon qui arrive à la fin peut être corrigé. Un texte abandonné à mi-chemin n'a rien à corriger.

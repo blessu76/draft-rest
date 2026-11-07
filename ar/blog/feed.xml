@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ar/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>أدلة قصيرة لتحويل ما تقوله إلى قصة يحب الناس قراءتها — من الفريق الذي يقف وراء draft().</description>
     <language>ar</language>
-    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>لا بأس أن تكون المسوّدة الأولى خشنة</title>
+      <link>https://draft.ipe.rest/ar/blog/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/blog/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>الرغبة في الكتابة الجيدة من السطر الأول توقف اليد. ثلاث خطوات لإنهاء مسوّدة أولى خشنة، مع مثال والعقبات الشائعة.</description>
+    </item>
     <item>
       <title>توقّف وأنت ما زلت تعرف ما يأتي بعد ذلك</title>
       <link>https://draft.ipe.rest/ar/blog/stop-mid-sentence/</link>

@@ -3,7 +3,7 @@ title: Bản nháp đầu tiên cứ thô cũng được
 description: Muốn viết hay ngay từ dòng đầu sẽ khiến tay khựng lại. Ba bước để viết xong bản nháp thô đầu tiên, kèm ví dụ và những vướng mắc thường gặp.
 date: 2026-11-07
 slug: rough-first-version
-draft: true
+published: 2026-11-07T16:01:00+09:00
 ---
 
 Bạn viết câu đầu tiên, xóa đi, viết lại, lại xóa, rồi bỗng một tiếng đã trôi qua. Khi cố viết hay ngay từ đầu, sự đánh giá đến trước chữ nghĩa. Việc của bản nháp đầu tiên không phải là hay, mà là tồn tại đến cuối cùng. Một bài thô đã đến được cuối thì sửa được. Một bài bỏ dở giữa chừng thì chẳng có gì để sửa.

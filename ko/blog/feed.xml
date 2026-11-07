@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>첫 판은 거칠어도 괜찮습니다</title>
+      <link>https://draft.ipe.rest/ko/blog/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>처음부터 잘 쓰려 하면 손이 멈춥니다. 거친 첫 판을 끝까지 쓰는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.</description>
+    </item>
     <item>
       <title>다음 줄을 아는 채로 멈추세요</title>
       <link>https://draft.ipe.rest/ko/blog/stop-mid-sentence/</link>

@@ -3,7 +3,7 @@ title: Die erste Fassung darf grob sein
 description: Wer ab der ersten Zeile gut schreiben will, bremst die Hand. Drei Schritte, eine grobe erste Fassung zu beenden, mit Beispiel und typischen Stolpersteinen.
 date: 2026-11-07
 slug: rough-first-version
-draft: true
+published: 2026-11-07T16:01:00+09:00
 ---
 
 Sie schreiben einen ersten Satz, löschen ihn, schreiben ihn neu, löschen ihn wieder, und plötzlich ist eine Stunde vergangen. Wer von Anfang an gut schreiben will, bekommt das Urteil vor dem Text. Die Aufgabe einer ersten Fassung ist nicht, gut zu sein, sondern bis zum Ende zu existieren. Ein grober Text, der das Ende erreicht, lässt sich verbessern. Ein auf halbem Weg aufgegebener Text hat nichts, was man verbessern könnte.

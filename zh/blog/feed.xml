@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>第一稿粗糙一点也没关系</title>
+      <link>https://draft.ipe.rest/zh/blog/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>一开始就想写好，笔反而会停住。把粗糙的第一稿写完的三个步骤，附例子和常见的绊脚石。</description>
+    </item>
     <item>
       <title>趁着还知道下一句，就停下来</title>
       <link>https://draft.ipe.rest/zh/blog/stop-mid-sentence/</link>
