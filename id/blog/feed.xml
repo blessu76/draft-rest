@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/id/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Draf pertama boleh kasar</title>
+      <link>https://draft.ipe.rest/id/blog/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Ingin menulis bagus sejak baris pertama justru menghentikan tangan. Tiga langkah menyelesaikan draf pertama yang kasar, dengan contoh dan hambatan umum.</description>
+    </item>
     <item>
       <title>Berhentilah selagi kamu masih tahu apa yang berikutnya</title>
       <link>https://draft.ipe.rest/id/blog/stop-mid-sentence/</link>

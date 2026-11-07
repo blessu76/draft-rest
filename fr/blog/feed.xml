@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>De courts guides pour transformer ce que vous dites en une histoire que l&#x27;on lit vraiment, par l&#x27;équipe de draft().</description>
     <language>fr</language>
-    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>La première version peut être brouillonne</title>
+      <link>https://draft.ipe.rest/fr/blog/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/blog/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Vouloir bien écrire dès la première ligne bloque la main. Trois étapes pour terminer une première version brouillonne, avec un exemple et des écueils.</description>
+    </item>
     <item>
       <title>Arrêtez-vous tant que vous savez encore ce qui vient ensuite</title>
       <link>https://draft.ipe.rest/fr/blog/stop-mid-sentence/</link>

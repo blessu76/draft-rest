@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Первый вариант может быть черновым</title>
+      <link>https://draft.ipe.rest/ru/blog/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Желание писать хорошо с первой строки останавливает руку. Три шага, чтобы дописать черновой первый вариант, с примером и частыми препятствиями.</description>
+    </item>
     <item>
       <title>Остановитесь, пока ещё знаете, что будет дальше</title>
       <link>https://draft.ipe.rest/ru/blog/stop-mid-sentence/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>La primera versión puede ser tosca</title>
+      <link>https://draft.ipe.rest/es/blog/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Querer escribir bien desde la primera línea paraliza la mano. Tres pasos para terminar una primera versión tosca, con un ejemplo y tropiezos comunes.</description>
+    </item>
     <item>
       <title>Para mientras aún sepas qué viene después</title>
       <link>https://draft.ipe.rest/es/blog/stop-mid-sentence/</link>

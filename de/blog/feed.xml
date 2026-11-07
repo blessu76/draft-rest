@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Die erste Fassung darf grob sein</title>
+      <link>https://draft.ipe.rest/de/blog/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Wer ab der ersten Zeile gut schreiben will, bremst die Hand. Drei Schritte, eine grobe erste Fassung zu beenden, mit Beispiel und typischen Stolpersteinen.</description>
+    </item>
     <item>
       <title>Hör auf, solange du noch weißt, was als Nächstes kommt</title>
       <link>https://draft.ipe.rest/de/blog/stop-mid-sentence/</link>

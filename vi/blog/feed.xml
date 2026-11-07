@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/vi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Fri, 06 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Bản nháp đầu tiên cứ thô cũng được</title>
+      <link>https://draft.ipe.rest/vi/blog/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Muốn viết hay ngay từ dòng đầu sẽ khiến tay khựng lại. Ba bước để viết xong bản nháp thô đầu tiên, kèm ví dụ và những vướng mắc thường gặp.</description>
+    </item>
     <item>
       <title>Hãy dừng lại khi bạn vẫn còn biết điều gì đến tiếp theo</title>
       <link>https://draft.ipe.rest/vi/blog/stop-mid-sentence/</link>
