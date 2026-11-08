@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/id/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Menulislah untuk satu orang, bukan untuk semua orang</title>
+      <link>https://draft.ipe.rest/id/blog/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Menulis untuk semua orang membuat kata-kata jadi kabur. Tiga langkah memilih satu pembaca dan menulis untuknya, lengkap dengan contoh dan kendala umum.</description>
+    </item>
     <item>
       <title>Draf pertama boleh kasar</title>
       <link>https://draft.ipe.rest/id/blog/rough-first-version/</link>

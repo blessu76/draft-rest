@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Write to one person, not to everyone</title>
+      <link>https://draft.ipe.rest/en/blog/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Writing for everyone makes the words go vague. Three steps to pick one reader and write to them, with an example and common stumbling blocks.</description>
+    </item>
     <item>
       <title>The first version is allowed to be rough</title>
       <link>https://draft.ipe.rest/en/blog/rough-first-version/</link>

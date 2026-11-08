@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/hi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>आप जो बोलते हैं उसे ऐसी कहानी में बदलने के छोटे गाइड जिसे लोग सच में पढ़ें — draft() की टीम की ओर से।</description>
     <language>hi</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>सबके लिए नहीं, एक इंसान के लिए लिखिए</title>
+      <link>https://draft.ipe.rest/hi/blog/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/hi/blog/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>सबके लिए लिखने से शब्द धुंधले हो जाते हैं। एक पाठक चुनकर उसके लिए लिखने के तीन कदम, उदाहरण और आम अड़चनों के साथ।</description>
+    </item>
     <item>
       <title>पहला संस्करण खुरदुरा हो तो भी चलेगा</title>
       <link>https://draft.ipe.rest/hi/blog/rough-first-version/</link>
