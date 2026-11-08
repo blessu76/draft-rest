@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>不要写给所有人,写给一个人</title>
+      <link>https://draft.ipe.rest/zh/blog/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>写给所有人,文字就会变得模糊。选定一位读者并写给他的三个步骤,附示例和常见的绊脚石。</description>
+    </item>
     <item>
       <title>第一稿粗糙一点也没关系</title>
       <link>https://draft.ipe.rest/zh/blog/rough-first-version/</link>

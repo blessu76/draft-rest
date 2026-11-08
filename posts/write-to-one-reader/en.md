@@ -3,7 +3,7 @@ title: Write to one person, not to everyone
 description: Writing for everyone makes the words go vague. Three steps to pick one reader and write to them, with an example and common stumbling blocks.
 date: 2026-11-08
 slug: write-to-one-reader
-draft: true
+published: 2026-11-08T16:01:00+09:00
 ---
 
 When you try to write for everyone, the words go vague. You add a little explanation for this reader and a little politeness for that one, and the piece ends up belonging to nobody. A short piece reads best when it is written to one person. Picking a single reader doesn't shrink your audience; it gives your sentences something to lean on.

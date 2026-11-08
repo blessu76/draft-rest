@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/vi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Hãy viết cho một người, đừng viết cho tất cả mọi người</title>
+      <link>https://draft.ipe.rest/vi/blog/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Viết cho tất cả mọi người khiến câu chữ mơ hồ. Ba bước chọn một người đọc và viết cho họ, kèm ví dụ và những vướng mắc thường gặp.</description>
+    </item>
     <item>
       <title>Bản nháp đầu tiên cứ thô cũng được</title>
       <link>https://draft.ipe.rest/vi/blog/rough-first-version/</link>

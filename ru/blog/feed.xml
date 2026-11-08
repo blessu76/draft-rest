@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Пишите одному человеку, а не всем</title>
+      <link>https://draft.ipe.rest/ru/blog/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Если писать для всех, слова расплываются. Три шага, чтобы выбрать одного читателя и писать ему, с примером и частыми трудностями.</description>
+    </item>
     <item>
       <title>Первый вариант может быть черновым</title>
       <link>https://draft.ipe.rest/ru/blog/rough-first-version/</link>

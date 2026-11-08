@@ -3,7 +3,7 @@ title: Menulislah untuk satu orang, bukan untuk semua orang
 description: Menulis untuk semua orang membuat kata-kata jadi kabur. Tiga langkah memilih satu pembaca dan menulis untuknya, lengkap dengan contoh dan kendala umum.
 date: 2026-11-08
 slug: write-to-one-reader
-draft: true
+published: 2026-11-08T16:01:00+09:00
 ---
 
 Saat Anda mencoba menulis untuk semua orang, kata-kata menjadi kabur. Anda menambah sedikit penjelasan untuk pembaca ini dan sedikit kesopanan untuk pembaca itu, lalu tulisannya akhirnya tidak menjadi milik siapa pun. Tulisan pendek paling enak dibaca bila ditulis untuk satu orang. Memilih satu pembaca tidak mengurangi pembaca Anda; itu memberi kalimat Anda sesuatu untuk bersandar.

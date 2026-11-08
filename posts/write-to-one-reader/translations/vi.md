@@ -3,7 +3,7 @@ title: Hãy viết cho một người, đừng viết cho tất cả mọi ngư�
 description: Viết cho tất cả mọi người khiến câu chữ mơ hồ. Ba bước chọn một người đọc và viết cho họ, kèm ví dụ và những vướng mắc thường gặp.
 date: 2026-11-08
 slug: write-to-one-reader
-draft: true
+published: 2026-11-08T16:01:00+09:00
 ---
 
 Khi cố viết cho tất cả mọi người, câu chữ trở nên mơ hồ. Bạn thêm chút giải thích cho người đọc này và chút lịch sự cho người đọc kia, rồi bài viết cuối cùng không thuộc về ai cả. Một bài ngắn đọc hay nhất khi được viết cho một người. Chọn một người đọc không làm bạn mất độc giả; nó cho câu văn của bạn một chỗ để tựa vào.

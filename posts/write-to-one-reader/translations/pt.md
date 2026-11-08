@@ -3,7 +3,7 @@ title: Escreva para uma pessoa, não para todos
 description: Escrever para todos deixa as palavras vagas. Três passos para escolher um leitor e escrever para ele, com exemplo e tropeços comuns.
 date: 2026-11-08
 slug: write-to-one-reader
-draft: true
+published: 2026-11-08T16:01:00+09:00
 ---
 
 Quando você tenta escrever para todos, as palavras ficam vagas. Você acrescenta um pouco de explicação para este leitor e um pouco de cortesia para aquele, e o texto acaba não pertencendo a ninguém. Um texto curto é lido melhor quando é escrito para uma pessoa. Escolher um único leitor não diminui seu público; dá às suas frases algo em que se apoiar.

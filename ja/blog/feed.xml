@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>みんなではなく、一人に向けて書きましょう</title>
+      <link>https://draft.ipe.rest/ja/blog/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/blog/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>みんなに向けて書くと言葉がぼやけます。一人の読者を決めてその人に書く三つの手順を、例とよくあるつまずきと一緒にまとめました。</description>
+    </item>
     <item>
       <title>最初の版は荒くてもかまいません</title>
       <link>https://draft.ipe.rest/ja/blog/rough-first-version/</link>

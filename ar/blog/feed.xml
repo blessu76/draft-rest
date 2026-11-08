@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ar/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>أدلة قصيرة لتحويل ما تقوله إلى قصة يحب الناس قراءتها — من الفريق الذي يقف وراء draft().</description>
     <language>ar</language>
-    <lastBuildDate>Sat, 07 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>اكتب لشخص واحد، لا للجميع</title>
+      <link>https://draft.ipe.rest/ar/blog/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/blog/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>الكتابة للجميع تجعل الكلمات غامضة. ثلاث خطوات لاختيار قارئ واحد والكتابة له، مع مثال والعقبات الشائعة.</description>
+    </item>
     <item>
       <title>لا بأس أن تكون المسوّدة الأولى خشنة</title>
       <link>https://draft.ipe.rest/ar/blog/rough-first-version/</link>
