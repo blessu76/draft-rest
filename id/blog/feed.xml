@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/id/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Beri judul setelah selesai menulis</title>
+      <link>https://draft.ipe.rest/id/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Menentukan judul lebih dulu bisa membuat tulisan macet. Tiga langkah menemukan judul setelah selesai, dengan contoh dan jebakan yang umum.</description>
+    </item>
+    <item>
+      <title>Mulai cerita dari satu tempat</title>
+      <link>https://draft.ipe.rest/id/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Bingung mau menulis apa? Mulailah dari tempat kejadiannya. Tiga langkah membuka tulisan dengan satu tempat kecil, dengan contoh dan jebakan yang umum.</description>
+    </item>
     <item>
       <title>Menulislah untuk satu orang, bukan untuk semua orang</title>
       <link>https://draft.ipe.rest/id/blog/write-to-one-reader/</link>

@@ -1,9 +1,9 @@
 ---
 title: Đặt tiêu đề sau khi viết xong
 description: Chọn tiêu đề trước có thể làm bài viết bị tắc. Ba bước tìm tiêu đề sau khi viết xong, kèm ví dụ và những vướng mắc thường gặp.
-date: 2026-11-09
+date: 2026-11-10
 slug: title-last
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 Bạn đã bao giờ ngồi rất lâu trước ô tiêu đề chưa? Đặt tên cho một bài chưa viết vốn đã khó, và điều đó là bình thường. Tiêu đề cần bạn biết bài viết rốt cuộc trở thành gì. Với một bài ngắn, thường dễ hơn nếu viết tiêu đề sau cùng. Hãy viết trước, rồi để bài viết đã xong cho bạn biết tên của nó.

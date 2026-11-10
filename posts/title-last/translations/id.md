@@ -1,9 +1,9 @@
 ---
 title: Beri judul setelah selesai menulis
 description: Menentukan judul lebih dulu bisa membuat tulisan macet. Tiga langkah menemukan judul setelah selesai, dengan contoh dan jebakan yang umum.
-date: 2026-11-09
+date: 2026-11-10
 slug: title-last
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 Pernahkah Anda terdiam lama di depan kotak judul? Memberi nama pada tulisan yang belum ditulis memang sulit, dan itu wajar. Judul butuh kita tahu tulisan itu akhirnya menjadi apa. Untuk tulisan pendek, biasanya lebih mudah menulis judul paling akhir. Tulislah dulu, lalu biarkan tulisan yang sudah jadi memberi tahu namanya.

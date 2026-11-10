@@ -3,7 +3,7 @@ title: Comece sua história por um único lugar
 description: Não sabe o que escrever? Comece por onde acontece. Três passos para abrir um texto com um lugar pequeno, com um exemplo e os tropeços mais comuns.
 date: 2026-11-10
 slug: start-from-a-place
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 Você ainda não sabe sobre o que é a sua história? Comece pelo lugar onde ela acontece. Um lugar é mais fácil de descrever do que um sentimento, e guarda em silêncio as pessoas, os sons e os pequenos acontecimentos que formam uma história. Escolha um lugar e deixe que ele leve você para dentro do texto.

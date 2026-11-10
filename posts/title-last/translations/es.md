@@ -1,9 +1,9 @@
 ---
 title: Ponle el título al final
 description: Elegir el título primero puede bloquear un texto. Tres pasos para encontrarlo cuando termines, con un ejemplo y los tropiezos más comunes.
-date: 2026-11-09
+date: 2026-11-10
 slug: title-last
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 ¿Alguna vez te has quedado mucho rato frente a la casilla del título? Ponerle nombre a un texto que aún no has escrito es difícil, y es normal. Un título necesita que sepas en qué se convirtió el texto. En un texto corto, suele ser más fácil escribir el título al final. Escribe primero y deja que el texto terminado te diga cómo se llama.

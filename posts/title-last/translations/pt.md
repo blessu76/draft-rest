@@ -1,9 +1,9 @@
 ---
 title: Dê o título só no fim
 description: Escolher o título primeiro pode travar o texto. Três passos para achá-lo depois de terminar, com um exemplo e os tropeços mais comuns.
-date: 2026-11-09
+date: 2026-11-10
 slug: title-last
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 Você já passou muito tempo diante da caixa do título? Dar nome a um texto que ainda não foi escrito é difícil, e isso é normal. Um título precisa que você saiba no que o texto se transformou. Em um texto curto, costuma ser mais fácil escrever o título por último. Escreva primeiro e deixe o texto pronto dizer como se chama.

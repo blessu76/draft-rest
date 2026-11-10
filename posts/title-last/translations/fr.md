@@ -1,9 +1,9 @@
 ---
 title: Donnez le titre à la fin
 description: Choisir le titre d'abord peut bloquer un texte. Trois étapes pour le trouver une fois fini, avec un exemple et les écueils courants.
-date: 2026-11-09
+date: 2026-11-10
 slug: title-last
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 Vous est-il déjà arrivé de rester longtemps devant la case du titre ? Nommer un texte qu'on n'a pas encore écrit est difficile, et c'est normal. Un titre demande de savoir en quoi le texte s'est transformé. Pour un texte court, il est souvent plus simple d'écrire le titre en dernier. Écrivez d'abord, et laissez le texte terminé vous dire son nom.

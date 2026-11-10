@@ -3,7 +3,7 @@ title: Commencez votre histoire par un seul lieu
 description: Vous ne savez pas quoi écrire ? Partez du lieu où tout se passe. Trois étapes pour ouvrir un texte avec un petit lieu, avec exemple et écueils courants.
 date: 2026-11-10
 slug: start-from-a-place
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 Vous ne savez pas encore de quoi parlera votre histoire ? Partez de l'endroit où elle se passe. Un lieu est plus facile à décrire qu'un sentiment, et il garde en silence les personnes, les sons et les petits événements dont est faite une histoire. Choisissez un lieu et laissez-le vous conduire dans le texte.

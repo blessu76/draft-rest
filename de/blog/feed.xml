@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Den Titel erst am Ende finden</title>
+      <link>https://draft.ipe.rest/de/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Wer den Titel zuerst wählt, kommt oft ins Stocken. Drei Schritte, den Titel nach dem Schreiben zu finden, mit Beispiel und häufigen Stolpersteinen.</description>
+    </item>
+    <item>
+      <title>Beginnen Sie Ihre Geschichte an einem einzigen Ort</title>
+      <link>https://draft.ipe.rest/de/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Worüber schreiben? Beginnen Sie dort, wo es geschieht. Drei Schritte, einen Text mit einem kleinen Ort zu eröffnen, mit Beispiel und Stolpersteinen.</description>
+    </item>
     <item>
       <title>Schreiben Sie für einen Menschen, nicht für alle</title>
       <link>https://draft.ipe.rest/de/blog/write-to-one-reader/</link>

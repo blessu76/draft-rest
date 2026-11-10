@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>제목은 다 쓴 뒤에 붙이세요</title>
+      <link>https://draft.ipe.rest/ko/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>제목부터 정하면 글이 막힙니다. 다 쓴 뒤 글에서 제목을 건져 내는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.</description>
+    </item>
+    <item>
+      <title>장소 하나에서 이야기를 시작하세요</title>
+      <link>https://draft.ipe.rest/ko/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>무슨 이야기를 쓸지 막막하다면 장소부터 정해 보세요. 작은 장소 하나로 글을 여는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.</description>
+    </item>
     <item>
       <title>모두가 아니라 한 사람에게 쓰세요</title>
       <link>https://draft.ipe.rest/ko/blog/write-to-one-reader/</link>

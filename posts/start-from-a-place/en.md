@@ -3,7 +3,7 @@ title: Start your story from one place
 description: Not sure what to write about? Start with where it happens. Three steps to open a piece with one small place, with an example and common stumbling blocks.
 date: 2026-11-10
 slug: start-from-a-place
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 Not sure what your story is about yet? Start with where it happens. A place is easier to describe than a feeling, and it quietly holds the people, the sounds and the small events that make a story. Pick one place, and let it lead you into the piece.

@@ -1,9 +1,9 @@
 ---
 title: Den Titel erst am Ende finden
 description: Wer den Titel zuerst wählt, kommt oft ins Stocken. Drei Schritte, den Titel nach dem Schreiben zu finden, mit Beispiel und häufigen Stolpersteinen.
-date: 2026-11-09
+date: 2026-11-10
 slug: title-last
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 Haben Sie schon einmal lange vor dem Titelfeld gesessen? Einem Text einen Namen zu geben, den es noch nicht gibt, ist schwer, und das ist normal. Ein Titel setzt voraus, dass man weiß, was aus dem Text geworden ist. Bei einem kurzen Text ist es meist leichter, den Titel zuletzt zu schreiben. Schreiben Sie zuerst, und lassen Sie den fertigen Text seinen Namen verraten.

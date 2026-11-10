@@ -3,7 +3,7 @@ title: Mulai cerita dari satu tempat
 description: Bingung mau menulis apa? Mulailah dari tempat kejadiannya. Tiga langkah membuka tulisan dengan satu tempat kecil, dengan contoh dan jebakan yang umum.
 date: 2026-11-10
 slug: start-from-a-place
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 Belum tahu cerita Anda tentang apa? Mulailah dari tempat kejadiannya. Tempat lebih mudah digambarkan daripada perasaan, dan diam-diam menyimpan orang, bunyi, dan kejadian kecil yang membentuk sebuah cerita. Pilih satu tempat, lalu biarkan tempat itu membawa Anda masuk ke dalam tulisan.

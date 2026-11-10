@@ -3,7 +3,7 @@ title: Bắt đầu câu chuyện từ một nơi chốn
 description: Chưa biết viết gì? Hãy bắt đầu từ nơi mọi việc xảy ra. Ba bước mở bài bằng một nơi nhỏ, kèm ví dụ và những vướng mắc thường gặp.
 date: 2026-11-10
 slug: start-from-a-place
-draft: true
+published: 2026-11-10T20:00:00+09:00
 ---
 
 Bạn vẫn chưa biết câu chuyện của mình nói về điều gì? Hãy bắt đầu từ nơi mọi việc xảy ra. Một nơi chốn dễ miêu tả hơn một cảm xúc, và nó lặng lẽ chứa những con người, âm thanh cùng những sự việc nhỏ làm nên một câu chuyện. Chọn một nơi, rồi để nơi ấy dẫn bạn vào bài viết.

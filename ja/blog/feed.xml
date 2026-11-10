@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>タイトルは書き終えてからつけましょう</title>
+      <link>https://draft.ipe.rest/ja/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>先にタイトルを決めると手が止まります。書き終えた文章からタイトルを見つける三つの手順を、例とよくあるつまずきと一緒にまとめました。</description>
+    </item>
+    <item>
+      <title>場所ひとつから物語を始めましょう</title>
+      <link>https://draft.ipe.rest/ja/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>何を書くか迷ったら、まず場所から。小さな場所ひとつで文章を始める三つの手順を、例とよくあるつまずきと一緒にまとめました。</description>
+    </item>
     <item>
       <title>みんなではなく、一人に向けて書きましょう</title>
       <link>https://draft.ipe.rest/ja/blog/write-to-one-reader/</link>
