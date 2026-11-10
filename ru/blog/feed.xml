@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Название — в самом конце</title>
+      <link>https://draft.ipe.rest/ru/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Если выбрать название заранее, текст может застопориться. Три шага, как найти его после написания, с примером и частыми ошибками.</description>
+    </item>
+    <item>
+      <title>Начните историю с одного места</title>
+      <link>https://draft.ipe.rest/ru/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Не знаете, о чём писать? Начните с того, где всё происходит. Три шага, как открыть текст одним маленьким местом, с примером и частыми ошибками.</description>
+    </item>
     <item>
       <title>Пишите одному человеку, а не всем</title>
       <link>https://draft.ipe.rest/ru/blog/write-to-one-reader/</link>

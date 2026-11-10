@@ -20,6 +20,8 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 14 | 2026-11-06 | `stop-mid-sentence` | Stop while you still know the next line, and leave a note | published (main) |
 | 15 | 2026-11-07 | `rough-first-version` | Let the first version be rough and finish it | published (main) |
 | 16 | 2026-11-08 | `write-to-one-reader` | Write to one real reader, not to everyone | published (main) |
+| 17 | 2026-11-09 | `title-last` | Write the title last | published (main) — 2026-11-10 20:00 (late; bot rate limit) |
+| 18 | 2026-11-10 | `start-from-a-place` | Start your story from one place | published (main) — 2026-11-10 20:00 |
 
 Queued dates are placeholders; `publish_post.py` stamps the real date and time. Facts about draft() are limited to what the site states
 (talk ~30 s → 2–3 gentle questions → story hook/rising/peak/reflection/close; privacy; no claims about release or formats).

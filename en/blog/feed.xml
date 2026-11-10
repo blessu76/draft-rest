@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Write the title last</title>
+      <link>https://draft.ipe.rest/en/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Picking a title first can stall a piece. Three steps to find the title after you finish, with an example and common stumbling blocks.</description>
+    </item>
+    <item>
+      <title>Start your story from one place</title>
+      <link>https://draft.ipe.rest/en/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Not sure what to write about? Start with where it happens. Three steps to open a piece with one small place, with an example and common stumbling blocks.</description>
+    </item>
     <item>
       <title>Write to one person, not to everyone</title>
       <link>https://draft.ipe.rest/en/blog/write-to-one-reader/</link>

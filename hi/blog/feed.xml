@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/hi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>आप जो बोलते हैं उसे ऐसी कहानी में बदलने के छोटे गाइड जिसे लोग सच में पढ़ें — draft() की टीम की ओर से।</description>
     <language>hi</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>शीर्षक सबसे अंत में दीजिए</title>
+      <link>https://draft.ipe.rest/hi/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/hi/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>पहले शीर्षक चुनने से लिखना अटक सकता है। लिखने के बाद शीर्षक खोजने के तीन चरण, उदाहरण और आम अड़चनों के साथ।</description>
+    </item>
+    <item>
+      <title>कहानी की शुरुआत एक जगह से कीजिए</title>
+      <link>https://draft.ipe.rest/hi/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/hi/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>क्या लिखें, समझ न आ रहा हो तो वहाँ से शुरू कीजिए जहाँ सब हुआ। एक छोटी जगह से रचना खोलने के तीन चरण, उदाहरण और आम अड़चनों के साथ।</description>
+    </item>
     <item>
       <title>सबके लिए नहीं, एक इंसान के लिए लिखिए</title>
       <link>https://draft.ipe.rest/hi/blog/write-to-one-reader/</link>

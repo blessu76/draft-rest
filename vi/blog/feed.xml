@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/vi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Đặt tiêu đề sau khi viết xong</title>
+      <link>https://draft.ipe.rest/vi/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Chọn tiêu đề trước có thể làm bài viết bị tắc. Ba bước tìm tiêu đề sau khi viết xong, kèm ví dụ và những vướng mắc thường gặp.</description>
+    </item>
+    <item>
+      <title>Bắt đầu câu chuyện từ một nơi chốn</title>
+      <link>https://draft.ipe.rest/vi/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Chưa biết viết gì? Hãy bắt đầu từ nơi mọi việc xảy ra. Ba bước mở bài bằng một nơi nhỏ, kèm ví dụ và những vướng mắc thường gặp.</description>
+    </item>
     <item>
       <title>Hãy viết cho một người, đừng viết cho tất cả mọi người</title>
       <link>https://draft.ipe.rest/vi/blog/write-to-one-reader/</link>

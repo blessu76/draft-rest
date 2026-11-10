@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>写完之后，再起标题</title>
+      <link>https://draft.ipe.rest/zh/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>先定标题往往会卡住。写完后再从文章里找出标题的三个步骤，附带示例和常见的绊脚石。</description>
+    </item>
+    <item>
+      <title>从一个地方开始你的故事</title>
+      <link>https://draft.ipe.rest/zh/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>不知道写什么时，先从地点写起。用一个小地方开篇的三个步骤，附带示例和常见的绊脚石。</description>
+    </item>
     <item>
       <title>不要写给所有人,写给一个人</title>
       <link>https://draft.ipe.rest/zh/blog/write-to-one-reader/</link>

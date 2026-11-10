@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/ar/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>أدلة قصيرة لتحويل ما تقوله إلى قصة يحب الناس قراءتها — من الفريق الذي يقف وراء draft().</description>
     <language>ar</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>ضع العنوان بعد أن تنتهي من الكتابة</title>
+      <link>https://draft.ipe.rest/ar/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>اختيار العنوان أولًا قد يعطّل الكتابة. ثلاث خطوات لإيجاد العنوان بعد الانتهاء، مع مثال والعقبات الشائعة.</description>
+    </item>
+    <item>
+      <title>ابدأ قصتك من مكان واحد</title>
+      <link>https://draft.ipe.rest/ar/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>لا تدري عمّ تكتب؟ ابدأ من المكان الذي جرى فيه كل شيء. ثلاث خطوات لافتتاح نص بمكان صغير، مع مثال والعقبات الشائعة.</description>
+    </item>
     <item>
       <title>اكتب لشخص واحد، لا للجميع</title>
       <link>https://draft.ipe.rest/ar/blog/write-to-one-reader/</link>

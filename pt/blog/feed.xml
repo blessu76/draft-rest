@@ -7,7 +7,21 @@
     <atom:link href="https://draft.ipe.rest/pt/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guias curtos para transformar o que você fala em uma história que as pessoas realmente leem, da equipe do draft().</description>
     <language>pt</language>
-    <lastBuildDate>Sun, 08 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Dê o título só no fim</title>
+      <link>https://draft.ipe.rest/pt/blog/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/pt/blog/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Escolher o título primeiro pode travar o texto. Três passos para achá-lo depois de terminar, com um exemplo e os tropeços mais comuns.</description>
+    </item>
+    <item>
+      <title>Comece sua história por um único lugar</title>
+      <link>https://draft.ipe.rest/pt/blog/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/pt/blog/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Não sabe o que escrever? Comece por onde acontece. Três passos para abrir um texto com um lugar pequeno, com um exemplo e os tropeços mais comuns.</description>
+    </item>
     <item>
       <title>Escreva para uma pessoa, não para todos</title>
       <link>https://draft.ipe.rest/pt/blog/write-to-one-reader/</link>
