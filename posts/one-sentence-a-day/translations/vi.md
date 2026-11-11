@@ -3,7 +3,7 @@ title: Viết một câu mỗi ngày để câu chuyện dần tích lại
 description: Không có thời gian viết? Hãy khép lại mỗi ngày bằng một câu về nơi bạn đã ở và điều gì đã đổi thay. Ba bước, một ví dụ và những vướng mắc thường gặp.
 date: 2026-11-11
 slug: one-sentence-a-day
-draft: true
+published: 2026-11-11T16:49:00+09:00
 ---
 
 Bạn nghĩ mình không có thời gian để viết truyện? Hãy thử khép lại mỗi ngày bằng một câu duy nhất. Một câu mất chưa đến một phút, nhưng sau vài tuần bạn có một chồng nhỏ những khoảnh khắc có thật, và bất kỳ khoảnh khắc nào cũng có thể lớn thành một câu chuyện khi đến lúc.

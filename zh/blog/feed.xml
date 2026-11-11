@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <item>
+      <title>用一天一句的日记，慢慢积攒故事</title>
+      <link>https://draft.ipe.rest/zh/blog/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>没时间写故事？试着每天用一句话收尾：你在哪里，什么发生了变化。三个步骤、一个示例和常见的卡点。</description>
+    </item>
     <item>
       <title>写完之后，再起标题</title>
       <link>https://draft.ipe.rest/zh/blog/title-last/</link>

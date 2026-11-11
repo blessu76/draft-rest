@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <item>
+      <title>一日一文の日記で、物語のたねをためよう</title>
+      <link>https://draft.ipe.rest/ja/blog/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/blog/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>物語を書く時間がないなら、一日を一文で閉じてみましょう。どこにいて何が変わったかだけを書く三つのステップと例、つまずきやすい点を紹介します。</description>
+    </item>
     <item>
       <title>タイトルは書き終えてからつけましょう</title>
       <link>https://draft.ipe.rest/ja/blog/title-last/</link>

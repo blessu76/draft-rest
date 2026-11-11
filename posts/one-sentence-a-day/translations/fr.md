@@ -3,7 +3,7 @@ title: Écrivez une phrase par jour et laissez les histoires s'accumuler
 description: Pas le temps d'écrire ? Clôturez chaque journée par une phrase : où vous étiez, ce qui a changé. Trois étapes, un exemple et les écueils courants.
 date: 2026-11-11
 slug: one-sentence-a-day
-draft: true
+published: 2026-11-11T16:49:00+09:00
 ---
 
 Vous pensez ne pas avoir le temps d'écrire des histoires ? Essayez de clore chaque journée par une seule phrase. Une phrase prend moins d'une minute, mais au bout de quelques semaines vous détenez un petit tas de moments réels, et n'importe lequel peut grandir en histoire le moment venu.

@@ -3,7 +3,7 @@ title: Keep a one-sentence diary and let stories pile up
 description: No time to write? Close each day with one sentence about where you were and what shifted. Three steps, an example, and common stumbling blocks.
 date: 2026-11-11
 slug: one-sentence-a-day
-draft: true
+published: 2026-11-11T16:49:00+09:00
 ---
 
 Think you don't have time to write stories? Try closing each day with a single sentence. One sentence takes less than a minute, yet after a few weeks you hold a small pile of real moments, and any one of them can grow into a story when you are ready.

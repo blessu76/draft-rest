@@ -3,7 +3,7 @@ title: Ein Satz pro Tag: So sammeln sich Geschichten an
 description: Keine Zeit zum Schreiben? Beenden Sie jeden Tag mit einem Satz: wo Sie waren, was sich verschob. Drei Schritte, ein Beispiel, typische Stolpersteine.
 date: 2026-11-11
 slug: one-sentence-a-day
-draft: true
+published: 2026-11-11T16:49:00+09:00
 ---
 
 Haben Sie das Gefühl, keine Zeit für Geschichten zu haben? Versuchen Sie, jeden Tag mit einem einzigen Satz abzuschließen. Ein Satz dauert weniger als eine Minute, doch nach einigen Wochen liegt ein kleiner Stapel echter Momente vor Ihnen, und jeder davon kann zur Geschichte werden, wenn die Zeit dafür gekommen ist.

@@ -3,7 +3,7 @@ title: Escreva uma frase por dia e deixe as histórias se acumularem
 description: Sem tempo para escrever? Feche cada dia com uma única frase sobre onde você estava e o que mudou. Três passos, um exemplo e os tropeços mais comuns.
 date: 2026-11-11
 slug: one-sentence-a-day
-draft: true
+published: 2026-11-11T16:49:00+09:00
 ---
 
 Acha que não tem tempo para escrever histórias? Experimente fechar cada dia com uma única frase. Uma frase leva menos de um minuto, mas, depois de algumas semanas, você tem uma pequena pilha de momentos reais, e qualquer um deles pode crescer até virar uma história quando chegar a hora.

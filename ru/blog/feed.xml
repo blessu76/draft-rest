@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <item>
+      <title>Одно предложение в день: пусть истории накапливаются</title>
+      <link>https://draft.ipe.rest/ru/blog/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/blog/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>Нет времени писать? Закрывайте каждый день одним предложением о том, где вы были и что сдвинулось. Три шага, пример и частые препятствия.</description>
+    </item>
     <item>
       <title>Название — в самом конце</title>
       <link>https://draft.ipe.rest/ru/blog/title-last/</link>

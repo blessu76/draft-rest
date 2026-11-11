@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/hi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>आप जो बोलते हैं उसे ऐसी कहानी में बदलने के छोटे गाइड जिसे लोग सच में पढ़ें — draft() की टीम की ओर से।</description>
     <language>hi</language>
-    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <item>
+      <title>रोज़ एक वाक्य लिखें और कहानियों को जमा होने दें</title>
+      <link>https://draft.ipe.rest/hi/blog/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/hi/blog/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>लिखने का समय नहीं मिलता? हर दिन को एक वाक्य से समेटें: आप कहाँ थे और क्या बदला। तीन कदम, एक उदाहरण और आम अड़चनें।</description>
+    </item>
     <item>
       <title>शीर्षक सबसे अंत में दीजिए</title>
       <link>https://draft.ipe.rest/hi/blog/title-last/</link>
