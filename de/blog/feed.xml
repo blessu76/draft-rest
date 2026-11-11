@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <item>
+      <title>Ein Satz pro Tag: So sammeln sich Geschichten an</title>
+      <link>https://draft.ipe.rest/de/blog/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>Keine Zeit zum Schreiben? Beenden Sie jeden Tag mit einem Satz: wo Sie waren, was sich verschob. Drei Schritte, ein Beispiel, typische Stolpersteine.</description>
+    </item>
     <item>
       <title>Den Titel erst am Ende finden</title>
       <link>https://draft.ipe.rest/de/blog/title-last/</link>

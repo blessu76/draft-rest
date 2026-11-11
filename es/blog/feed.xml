@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Tue, 10 Nov 2026 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <item>
+      <title>Escribe una frase al día y deja que se acumulen las historias</title>
+      <link>https://draft.ipe.rest/es/blog/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>¿Sin tiempo para escribir? Cierra cada día con una sola frase sobre dónde estabas y qué cambió. Tres pasos, un ejemplo y los tropiezos habituales.</description>
+    </item>
     <item>
       <title>Ponle el título al final</title>
       <link>https://draft.ipe.rest/es/blog/title-last/</link>
