@@ -8,6 +8,9 @@
     python3 -m ipe_web_kit.vendor update ~/Developer/draft-rest --tag v0.1.1     # 올림 · 내림 모두
     # 웹에서(시험 · CI — 네트워크 · 토큰 없이):
     python3 vendor/ipe_web_kit/vendor.py verify .
+    # 앱 repo 에도 같은 복사본(릴리즈노트 도구) — 놓을 자리를 --into 로(마지막 폴더 이름은 ipe_web_kit):
+    python3 -m ipe_web_kit.vendor install ~/Developer/draft-app --tag v0.4.0 --into tool/ipe_web_kit
+    python3 tool/ipe_web_kit/vendor.py verify . --into tool/ipe_web_kit
 
 킷 repo 는 비공개라 웹 CI 가 submodule 로 받으려면 토큰이 든다 — 그래서 복사본을 커밋한다(ipe-localtime 바이트 사본 ·
 앱 킷 packages/ipe_kit 복사와 같은 방식). 복사본은 고치지 않는다: 바꿀 것은 킷에서 고쳐 새 태그로 다시 install.
@@ -29,6 +32,17 @@ STAMP = "KIT_VERSION"
 MANIFEST = "MANIFEST.sha256"
 SKIP_DIRS = {"__pycache__"}
 TAG_RE = re.compile(r"^v(\d+)\.(\d+)\.(\d+)$")
+DEFAULT_INTO = "vendor/" + PKG
+
+
+def _target(web_root, into=None):
+    """복사본이 놓일 폴더 — 기본 vendor/ipe_web_kit. into 는 repo 안 상대 경로(마지막 폴더 이름은 ipe_web_kit · .. 금지)."""
+    into = (into or DEFAULT_INTO).strip()
+    into = into if into.startswith("/") else into.rstrip("/")
+    parts = Path(into).parts
+    if not parts or Path(into).is_absolute() or ".." in parts or parts[-1] != PKG:
+        raise SystemExit("--into must be a relative path inside the repo whose last folder is %s (got %r)" % (PKG, into))
+    return Path(web_root).joinpath(*parts)
 
 
 def _files(pkg_dir):
@@ -97,9 +111,9 @@ def list_tags(kit_repo=None):
             for t in tags(kit_repo)]
 
 
-def current(web_root):
+def current(web_root, into=None):
     """웹이 쓰는 'tag 커밋' (정본: vendor/ipe_web_kit/KIT_VERSION) — 없으면 None."""
-    f = Path(web_root) / "vendor" / PKG / STAMP
+    f = _target(web_root, into) / STAMP
     return f.read_text(encoding="utf-8").strip() if f.is_file() else None
 
 
@@ -108,9 +122,9 @@ def _snapshot(pkg_dir):
     return {f: hashlib.sha256((pkg_dir / f).read_bytes()).hexdigest() for f in _files(pkg_dir)} if pkg_dir.is_dir() else {}
 
 
-def status(web_root, kit_repo=None):
+def status(web_root, kit_repo=None, into=None):
     """(웹 태그 or None, 최신 태그 or None, 글 한 줄)."""
-    cur = current(web_root)
+    cur = current(web_root, into)
     all_tags = tags(kit_repo)
     latest = all_tags[-1] if all_tags else None
     using = cur.split()[0] if cur else None
@@ -125,12 +139,12 @@ def status(web_root, kit_repo=None):
     return using, latest, msg
 
 
-def update(web_root, tag, kit_repo=None):
+def update(web_root, tag, kit_repo=None, into=None):
     """install 로 tag 를 받되 바뀐 파일을 센다. 돌려주는 값: (이전 stamp or None, 새 stamp, 요약 줄 목록)."""
-    pkg = Path(web_root) / "vendor" / PKG
-    before_stamp = current(web_root)
+    pkg = _target(web_root, into)
+    before_stamp = current(web_root, into)
     before = _snapshot(pkg)
-    new_stamp = install(web_root, tag, kit_repo)
+    new_stamp = install(web_root, tag, kit_repo, into)
     after = _snapshot(pkg)
     lines = []
     for n in sorted(set(before) | set(after)):
@@ -143,13 +157,13 @@ def update(web_root, tag, kit_repo=None):
     return before_stamp, new_stamp, lines
 
 
-def install(web_root, tag, kit_repo=None):
+def install(web_root, tag, kit_repo=None, into=None):
     """kit_repo 의 tag 를 web_root/vendor/ipe_web_kit/ 로(통째 교체). 돌려주는 값: 'v0.1.0 <커밋>'."""
     kit_repo = Path(kit_repo or Path(__file__).resolve().parent.parent)
     _check_tag(kit_repo, tag)
     commit = _git(kit_repo, "rev-list", "-n", "1", "refs/tags/" + tag)
     data = _git(kit_repo, "archive", "--format=tar", tag, PKG, binary=True)
-    target = Path(web_root) / "vendor" / PKG
+    target = _target(web_root, into)
     with tempfile.TemporaryDirectory() as tmp:
         with tarfile.open(fileobj=io.BytesIO(data)) as tar:
             for m in tar.getmembers():
@@ -167,11 +181,11 @@ def install(web_root, tag, kit_repo=None):
     return stamp.strip()
 
 
-def verify(web_root):
+def verify(web_root, into=None):
     """고쳐진 · 빠진 · 더해진 파일과 버전 어긋남을 글 목록으로 돌려준다. 비면 그대로다."""
-    pkg_dir = Path(web_root) / "vendor" / PKG
+    pkg_dir = _target(web_root, into)
     if not (pkg_dir / MANIFEST).is_file() or not (pkg_dir / STAMP).is_file():
-        return ["vendor/%s: %s or %s missing — run install" % (PKG, STAMP, MANIFEST)]
+        return ["%s: %s or %s missing — run install" % (pkg_dir.relative_to(web_root).as_posix(), STAMP, MANIFEST)]
     want = {}
     for line in (pkg_dir / MANIFEST).read_text(encoding="utf-8").splitlines():
         digest, _, name = line.partition("  ")
@@ -199,36 +213,40 @@ def main(argv=None):
     i.add_argument("web_root")
     i.add_argument("--tag", required=True)
     i.add_argument("--kit", default=None, help="kit repo (default: the repo this file is in)")
+    i.add_argument("--into", default=None, help="where inside the repo (default vendor/ipe_web_kit)")
     sub.add_parser("list", help="kit tags with one CHANGELOG line each").add_argument("--kit", default=None)
     u = sub.add_parser("update", help="replace <web>/vendor/ipe_web_kit with another tag (up or down)")
     u.add_argument("web_root")
     u.add_argument("--tag", required=True)
     u.add_argument("--kit", default=None)
+    u.add_argument("--into", default=None)
     st = sub.add_parser("status", help="tag the web uses vs latest kit tag")
     st.add_argument("web_root", nargs="?", default=os.getcwd())
     st.add_argument("--kit", default=None)
+    st.add_argument("--into", default=None)
     v = sub.add_parser("verify", help="check <web>/vendor/ipe_web_kit against its manifest")
     v.add_argument("web_root", nargs="?", default=os.getcwd())
+    v.add_argument("--into", default=None)
     a = ap.parse_args(argv)
     if a.cmd == "install":
-        print("installed " + install(a.web_root, a.tag, a.kit))
+        print("installed " + install(a.web_root, a.tag, a.kit, a.into))
         return 0
     if a.cmd == "list":
         for t, c, line in list_tags(a.kit):
             print("%s  %s  %s" % (t, c, line))
         return 0
     if a.cmd == "status":
-        using, latest, msg = status(a.web_root, a.kit)
+        using, latest, msg = status(a.web_root, a.kit, a.into)
         print(msg)
         return 0 if using == latest else 2
     if a.cmd == "update":
-        old, new, lines = update(a.web_root, a.tag, a.kit)
+        old, new, lines = update(a.web_root, a.tag, a.kit, a.into)
         print("updated %s -> %s" % (old.split()[0] if old else "(none)", new))
         for l in lines:
             print("  " + l)
         print("  %d file(s) differ" % len(lines))
         return 0
-    problems = verify(a.web_root)
+    problems = verify(a.web_root, a.into)
     for p in problems:
         print(p, file=sys.stderr)
     print("ipe_web_kit vendor: " + ("OK" if not problems else "%d problem(s)" % len(problems)))
