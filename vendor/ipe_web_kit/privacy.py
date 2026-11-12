@@ -35,7 +35,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from . import ASSETS
+from . import ASSETS, languages
 from .seo import esc
 
 DATA = Path(__file__).resolve().parent / "data"
@@ -44,7 +44,11 @@ TEXT_JSON = DATA / "privacy_text.json"
 JS = ASSETS / "ipe-privacy-age.js"
 PRIVACY_REV = "1"   # JS 자산 개정 — ?v= 글자
 
-LANGS = ("en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id")
+# 번역 문구·나라 이름이 실제로 들어 있는 옛 12개 코드(데이터 파일의 키). th·vi·tr·zh-Hant 는 아직 없어 en 문구로 보인다(text_lang).
+TEXT_LANGS = ("en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id")
+# 사이트 langs 의 기본·권장(kit-0029 공통 12개). 종료 언어(zh-Hans·ru·ar·hi)와 옛 코드 zh·pt 는 문구가 남아 있어 계속 받는다(옛 설정이 깨지지 않게) — 코드는 있는 그대로 둔다.
+LANGS = languages.SUPPORTED
+ACCEPTED = languages.SUPPORTED + languages.ENDED + tuple(languages.LEGACY_TAGS)
 RTL = ("ar",)
 DEFAULT_AGE = 18    # 데이터에 없는 나라 — 인도·대만 등이 사실상 18세라 16세는 가장 엄격한 기준이 아니다. 사이트 설정 defaultAge 로 바꿀 수 있다
 TEXT_NUMBERS_OK = {"30", "500", "3"}   # 템플릿에 남겨도 되는 숫자(닉네임·댓글 길이 · 신고 3회 · 리전 이름) — 나이 숫자는 허용 안 함
@@ -163,7 +167,7 @@ def validate_countries(data):
         if not _conservative(d):
             errs.append(p + "consent_age must be >= legal_age + 1")
         names = d.get("names")
-        if not isinstance(names, dict) or set(names) != set(LANGS) or not all(names.values()):
+        if not isinstance(names, dict) or set(names) != set(TEXT_LANGS) or not all(names.values()):
             errs.append(p + "names must have all 12 languages")
         for sk, sv in (d.get("subdivisions") or {}).items():
             if not SUB_RE.match(sk) or not isinstance(sv, dict) or not _age_ok(sv.get("consent_age")) \
@@ -175,14 +179,14 @@ def validate_countries(data):
 def validate_texts(data):
     errs = []
     for k in ("labels", "body", "country"):
-        if set(data.get(k, {})) != set(LANGS):
+        if set(data.get(k, {})) != set(TEXT_LANGS):
             errs.append("%s must have all 12 languages" % k)
     if errs:
         return errs
     lkeys = set(data["labels"]["en"])
     n = len(data["body"]["en"])
     kinds = [b[0] for b in data["body"]["en"]]
-    for lang in LANGS:
+    for lang in TEXT_LANGS:
         if set(data["labels"][lang]) != lkeys:
             errs.append("%s: label keys differ from en" % lang)
         if [b[0] for b in data["body"][lang]] != kinds or len(data["body"][lang]) != n:
@@ -263,8 +267,8 @@ class SiteConfig:
             feats[k] = v
         self.features = feats
         langs = list(langs)
-        if not langs or len(set(langs)) != len(langs) or set(langs) - set(LANGS):
-            raise ValueError("langs must be distinct and from %s: %r" % (" ".join(LANGS), langs))
+        if not langs or len(set(langs)) != len(langs) or set(langs) - set(ACCEPTED):
+            raise ValueError("langs must be distinct and from %s: %r" % (" ".join(ACCEPTED), langs))
         self.langs = langs
         for k, v, lo, hi in (("retentionYears", retention_years, 1, 10), ("hiddenDeleteDays", hidden_delete_days, 1, 365),
                              ("deleteRequestDays", delete_request_days, 1, 30), ("defaultAge", default_age, 13, 21)):
@@ -362,6 +366,12 @@ def _age_cell(d, lab):
     return esc(s)
 
 
+def text_lang(lang):
+    """사이트 언어 태그 → 번역 문구가 있는 키(zh-Hans→zh · pt-BR→pt). 문구가 없는 언어(th·vi·tr·zh-Hant)는 en."""
+    key = languages.legacy_code(lang)
+    return key if key in TEXT_LANGS else languages.DEFAULT
+
+
 def _country_block(cfg, lang):
     t, lab = texts()["country"][lang], texts()["labels"][lang]
     cs = countries()
@@ -392,9 +402,10 @@ def render_section(cfg, lang):
         return ""
     if lang not in cfg.langs:
         raise ValueError("lang %r is not in this site's privacy langs" % (lang,))
-    lab = texts()["labels"][lang]
-    body = texts()["body"][lang]
-    out = ['<section class="ipe-pp" lang="%s" dir="%s">' % (lang, "rtl" if lang in RTL else "ltr")]
+    tl = text_lang(lang)   # 문구가 없으면 en — lang·dir 속성도 실제 문구 언어로
+    lab = texts()["labels"][tl]
+    body = texts()["body"][tl]
+    out = ['<section class="ipe-pp" lang="%s" dir="%s">' % (lang if tl == languages.legacy_code(lang) else tl, "rtl" if tl in RTL else "ltr")]
     if not cfg.legal_reviewed:
         out.append('<p class="ipe-pp__warn ipe-pp__draft" role="note">%s</p>' % esc(lab["legal_pending"]))
     out.append('<p class="ipe-pp__who">%s</p>' % _inline(lab["operator_line"], cfg))
@@ -405,7 +416,7 @@ def render_section(cfg, lang):
             out.append("<ul>%s</ul>" % "".join(items))
             items = []
         if i == last:
-            out.append(_country_block(cfg, lang))
+            out.append(_country_block(cfg, tl))
         if kind == "h":
             out.append('<h2 class="ipe-pp__h">%s</h2>' % _inline(text, cfg))
         elif kind == "li":
@@ -439,13 +450,14 @@ def render_page(cfg, lang, href=lambda lang: "../%s/" % lang):
     sec = render_section(cfg, lang)
     if not sec:
         return ""
-    title = "%s — %s" % (texts()["labels"][lang]["title"], cfg.service)
+    tl = text_lang(lang)
+    title = "%s — %s" % (texts()["labels"][tl]["title"], cfg.service)
     nav = "".join('<a href="%s" hreflang="%s"%s>%s</a>' % (esc(href(l)), l, ' aria-current="page"' if l == lang else "", l)
                   for l in cfg.langs)
     return ('<!doctype html><html lang="%s" dir="%s"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s'
             'body{margin:0;background:var(--ipe-bg,#fff)}</style></head><body><nav class="ipe-pp__langs">%s</nav>%s'
-            '</body></html>\n' % (lang, "rtl" if lang in RTL else "ltr", esc(title), CSS, nav, sec))
+            '</body></html>\n' % (lang if tl == languages.legacy_code(lang) else tl, "rtl" if tl in RTL else "ltr", esc(title), CSS, nav, sec))
 
 
 def build(cfg, outdir):

@@ -683,6 +683,43 @@ def _fetch_config(web):
     return cfg
 
 
+LINK_IGNORED_DEFAULT = ("vendor", "node_modules")
+_SECRET_NAME = re.compile(r"(^\.env($|\.)|\.env$|\.(key|pem|p12|pfx)$|^id_(rsa|dsa|ecdsa|ed25519)|secret|credential)", re.I)
+
+
+def _link_ignored(web, wt, extra=()):
+    """웹 작업 트리의 gitignore 된 설치물은 새 worktree 에 따라오지 않는다 — build·check 가 쓰므로 **허용 목록**만 원본으로 심볼릭 링크를 건다
+    (기본 vendor·node_modules + 웹 `ipe_release.json` 의 `link_ignored` 목록). .env·*.key·*.pem 같은 비밀 이름과 repo 밖을 가리키는 경로(절대·..)는
+    목록에 있어도 거부한다. gitignore 된 경로·원본에 있는 경로만, 이미 worktree 에 있으면 건드리지 않는다.
+    ⚠️ 링크 동안 build·check 가 그 폴더에 쓰면 원본이 바뀐다. 돌려주는 값: 만든 링크(끝나면 `_unlink`)."""
+    made = []
+    for rel in list(LINK_IGNORED_DEFAULT) + [str(x) for x in (extra or ())]:
+        rel = rel.strip().strip("/")
+        parts = rel.split("/")
+        if not rel or rel.startswith("/") or ".." in parts or ".git" in parts or any(_SECRET_NAME.search(x) for x in parts):
+            continue
+        src, dst = Path(web) / rel, Path(wt) / rel
+        if dst.exists() or dst.is_symlink() or not src.exists():
+            continue
+        if _git(web, "check-ignore", "-q", rel + "/" if src.is_dir() else rel, check=False).returncode != 0:
+            continue
+        try:
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            os.symlink(str(src.resolve()), str(dst))
+            made.append(dst)
+        except OSError:
+            continue
+    return made
+
+
+def _unlink(links):
+    for l in links:
+        try:
+            os.unlink(str(l))
+        except OSError:
+            pass
+
+
 def _allowed(path, patterns):
     return any(fnmatch.fnmatch(path, p) for p in patterns)
 
@@ -702,11 +739,15 @@ def _publish_once(note, web_dir, cfg, app, dry_run, clock=None):
         if not merge(site, note):
             return PublishResult("PUBLISHED", note.build, {"web": "noop"})
         dump_site(site, wt / cfg["releases_file"], cfg["style"])
-        for step in ("build", "check"):
-            if cfg.get(step):
-                ok, out = _run_shell(cfg[step], wt)
-                if not ok:
-                    return PublishResult("PENDING", note.build, {"reason": "check" if step == "check" else "build"})
+        links = _link_ignored(web, wt, cfg.get("link_ignored")) if (cfg.get("build") or cfg.get("check")) else []
+        try:
+            for step in ("build", "check"):
+                if cfg.get(step):
+                    ok, out = _run_shell(cfg[step], wt)
+                    if not ok:
+                        return PublishResult("PENDING", note.build, {"reason": "check" if step == "check" else "build"})
+        finally:
+            _unlink(links)
         changed = [l[3:].strip().strip('"') for l in _git(wt, "status", "--porcelain", "--untracked-files=all").stdout.splitlines()]
         bad = [c for c in changed if not _allowed(c, cfg["commit_paths"])]
         if bad:

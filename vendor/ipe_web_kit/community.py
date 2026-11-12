@@ -29,7 +29,7 @@ import sys
 import warnings
 from pathlib import Path
 
-from . import ASSETS
+from . import ASSETS, languages
 from .seo import esc
 
 CSS = ASSETS / "ipe-community.css"
@@ -43,8 +43,12 @@ PLACEHOLDER = "REPLACE"
 # 정본: _ipe/site/community-firebase-web-config.json
 FIREBASE = {"projectId": 'ipe-web-engage', "apiKey": 'AIzaSyBc_WT9ePfFkeocoBulH-N56qmENMtJp1M'}
 
-# 위젯이 글자를 가진 언어(ipe-community.js 의 T) — 사이트 langs 는 이 안에서 고른다.
-LANGS = ("en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id")
+# 위젯 문구(ipe-community.js 의 T)가 있는 언어 — 옛 12개 코드 그대로. th·vi·tr·zh-Hant 는 아직 번역이 없어 위젯이 en 문구로 보인다.
+TEXT_LANGS = ("en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id")
+# 사이트 langs 의 기본·권장(kit-0029 공통 12개). 종료 언어(zh-Hans·ru·ar·hi)와 옛 코드 zh·pt 는 문구가 남아 있어
+# 계속 받는다(옛 설정·이미 배포된 firestore.rules·옛 위젯이 깨지지 않게) — 코드는 바꿔 쓰지 않고 있는 그대로 둔다.
+LANGS = languages.SUPPORTED
+ACCEPTED = languages.SUPPORTED + languages.ENDED + tuple(languages.LEGACY_TAGS)
 FEATURES = ("comments", "likes", "reports")
 HIDE_AT = 3          # 신고 몇 번이면 자동 숨김(기본)
 MIN_GAP = 30         # 같은 브라우저 두 댓글 사이 최소 초(기본)
@@ -65,7 +69,7 @@ class SiteConfig:
     (kit-0003) 신고만 따로 끄는 길은 없다. 옛 `features` 는 하위 호환: 하나라도 true 면 세트 ON(+경고) · 모두 false 면 OFF.
 
     firebase: {"projectId", "apiKey"} — 비우면 킷의 공유 프로젝트(FIREBASE). 켰는데 자리표시(REPLACE)면 ValueError.
-    langs: 위젯 언어(LANGS 안에서) · banned_extra: 이 사이트만의 금칙어(기본 목록에 더함).
+    langs: 위젯 언어(ACCEPTED 안에서 — 기본 LANGS) · banned_extra: 이 사이트만의 금칙어(기본 목록에 더함).
     hide_at · min_gap: 규칙(firebase/sites.json)과 같은 값이어야 한다.
     """
 
@@ -100,8 +104,8 @@ class SiteConfig:
         feats = dict.fromkeys(FEATURES, enabled)
         self.features = feats
         langs = list(langs)
-        if not langs or len(set(langs)) != len(langs) or set(langs) - set(LANGS):
-            raise ValueError("langs must be distinct and from %s: %r" % (" ".join(LANGS), langs))
+        if not langs or len(set(langs)) != len(langs) or set(langs) - set(ACCEPTED):
+            raise ValueError("langs must be distinct and from %s: %r" % (" ".join(ACCEPTED), langs))
         self.langs = langs
         words = []
         for w in banned_extra:
