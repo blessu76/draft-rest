@@ -11,13 +11,3 @@
 .ipe-studio a:hover,.ipe-studio a:focus-visible{color:var(--ipe-accent);border-bottom-color:currentColor}
 .ipe-studio__ver{font-family:var(--ipe-font-mono);letter-spacing:0}
 .ipe-studio__sep{opacity:.6}
-
-/* release_card — 릴리스 노트 카드(id = 앵커 1.0.0-73) */
-.ipe-rel{margin:0 0 var(--ipe-gap);padding:var(--ipe-gap);background:var(--ipe-surface);color:var(--ipe-text);
-  border:1px solid var(--ipe-line);border-radius:var(--ipe-radius);font-family:var(--ipe-font-sans);scroll-margin-top:72px}
-.ipe-rel:target{border-color:var(--ipe-accent);box-shadow:0 0 0 2px var(--ipe-accent)}
-.ipe-rel__head{margin:0;font-size:1rem;line-height:1.4}
-.ipe-rel__build{font-family:var(--ipe-font-mono);color:var(--ipe-accent)}
-.ipe-rel__at{margin:4px 0 8px;font-size:.8125rem;color:var(--ipe-muted)}
-.ipe-rel ul{margin:0;padding-inline-start:1.2em}
-.ipe-rel li{margin:2px 0;line-height:1.6}
