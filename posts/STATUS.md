@@ -24,6 +24,12 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 18 | 2026-11-10 | `start-from-a-place` | Start your story from one place | published (main) — 2026-11-10 20:00 |
 | 19 | 2026-11-11 | `one-sentence-a-day` | Close each day with one sentence: where you were and what shifted | published (main) |
 | 20 | 2026-11-12 | `what-you-didnt-say` | Write the one line you did not say | published (main) |
+| 21 | 2026-11-13 | `pin-the-hour` | Pin one time of day to your scene | queued (draft) |
+| 22 | 2026-11-14 | `one-object-on-the-table` | Let one object in the scene do the talking | queued (draft) |
+| 23 | 2026-11-15 | `one-small-want` | Give the person in your scene one small want | queued (draft) |
+| 24 | 2026-11-16 | `verb-over-adjective` | Swap one adjective for an action | queued (draft) |
+| 25 | 2026-11-17 | `one-small-slip` | Leave one small slip in your scene | queued (draft) |
+| 26 | 2026-11-18 | `the-way-between` | Write the short way between two places | queued (draft) |
 
 Queued dates are placeholders; `publish_post.py` stamps the real date and time. Facts about draft() are limited to what the site states
 (talk ~30 s → 2–3 gentle questions → story hook/rising/peak/reflection/close; privacy; no claims about release or formats).
