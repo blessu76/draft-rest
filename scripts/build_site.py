@@ -33,6 +33,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "vendor"))
 from ipe_web_kit import languages as kit_lang  # noqa: E402  language list, ended languages, tags, names (same pinned kit)
+from ipe_web_kit import releases as kit_releases  # noqa: E402  release notes (content/releases.json) → page cards
 from ipe_web_kit import ui as kit_ui  # noqa: E402  web kit (vendor/ipe_web_kit, pinned tag) — footer studio line + its CSS
 
 SITE = "https://draft.ipe.rest"
@@ -56,11 +57,11 @@ KST = dt.timezone(dt.timedelta(hours=9))
 DEFAULT_LANG = "en"
 
 # folder code (URL segment, locales/<code>.json), native name, og:locale
-LANGS = [
-    ("en", "English", "en_US"), ("ko", "한국어", "ko_KR"), ("ja", "日本語", "ja_JP"), ("zh", "中文", "zh_CN"),
-    ("zh-Hant", "繁體中文", "zh_TW"), ("es", "Español", "es_ES"), ("pt", "Português", "pt_BR"), ("id", "Bahasa Indonesia", "id_ID"),
-    ("ru", "Русский", "ru_RU"), ("vi", "Tiếng Việt", "vi_VN"), ("fr", "Français", "fr_FR"), ("de", "Deutsch", "de_DE"),
-    ("ar", "العربية", "ar_AR"), ("hi", "हिन्दी", "hi_IN"), ("th", "ไทย", "th_TH"), ("tr", "Türkçe", "tr_TR"),
+LANGS = [  # the selector and footer follow this order (kit order for the live languages, then the ended ones)
+    ("en", "English", "en_US"), ("ko", "한국어", "ko_KR"), ("ja", "日本語", "ja_JP"), ("zh-Hant", "繁體中文", "zh_TW"),
+    ("es", "Español", "es_ES"), ("pt", "Português", "pt_BR"), ("fr", "Français", "fr_FR"), ("de", "Deutsch", "de_DE"),
+    ("id", "Bahasa Indonesia", "id_ID"), ("th", "ไทย", "th_TH"), ("vi", "Tiếng Việt", "vi_VN"), ("tr", "Türkçe", "tr_TR"),
+    ("zh", "中文", "zh_CN"), ("ru", "Русский", "ru_RU"), ("ar", "العربية", "ar_AR"), ("hi", "हिन्दी", "hi_IN"),
 ]
 RTL = ("ar",)  # right-to-left languages: <html dir="rtl"> (assets/site.css has the [dir=rtl] rules)
 CODES = [c for c, _, _ in LANGS]  # every folder that is built (ended languages keep their pages and URLs)
@@ -78,7 +79,7 @@ def tag(lang):
 
 
 def page_codes(slug):
-    return CODES if slug == "about" else privacy_codes()
+    return privacy_codes() if slug == "privacy" else CODES
 
 
 def privacy_codes():
@@ -151,7 +152,7 @@ def home_path(lang):
     return "/" if lang in (None, DEFAULT_LANG) else "/%s/" % lang
 
 
-PAGES = ("about", "privacy")  # content pages; English lives at /<page>/, the others at /<lang>/<page>/
+PAGES = ("about", "privacy", "releases")  # content pages; English lives at /<page>/, the others at /<lang>/<page>/
 
 
 def page_path(lang, slug):
@@ -356,8 +357,11 @@ def chrome(locales, lang, path="", blog=False):
     if blog and lang in BLOG_CODES:
         top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (blog_href, ' aria-current="page"' if path.startswith("blog") else "", esc(tr(locales, lang, "nav_blog")))
         foot.append('<a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog"))))
+    rel_current = ' aria-current="page"' if path.strip("/") == "releases" else ""
+    top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (page_path(lang, "releases"), rel_current, esc(tr(locales, lang, "nav_releases")))
     top += "</nav>"
-    foot += ['<a href="%s">%s</a>' % (page_path(lang, "about"), esc(tr(locales, lang, "nav_about"))),
+    foot += ['<a href="%s">%s</a>' % (page_path(lang, "releases"), esc(tr(locales, lang, "nav_releases"))),
+             '<a href="%s">%s</a>' % (page_path(lang, "about"), esc(tr(locales, lang, "nav_about"))),
              '<a href="%s">%s</a>' % (page_path(privacy_lang(lang), "privacy"), esc(tr(locales, lang, "foot_privacy")))]
     studio = kit_ui.studio_line(label=None, studio=tr(locales, lang, "foot_studio"))  # links to ipe.rest; looks from --ipe-* (site.css)
     return {"LANGSEL": lang_select(lang, path), "FOOTLANGS": foot_langs(lang, path), "FOOTLINKS": "\n      ".join(foot), "TOPLINK": top,
@@ -1017,6 +1021,29 @@ def render_content_page(root, locales, content, version, slug, lang):
                       ld=ld_script(main_ld) + "\n" + ld_script(crumbs), main=main, path="%s/" % slug)
 
 
+def render_releases_page(root, locales, content, site, version, lang):
+    c = content[lang]
+    pg = c["releases"]
+    url = content_url(lang, "releases")
+    body = kit_releases.cards_html(site, tag(lang), {"en_first": pg["en_first"]})
+    main_ld = {"@context": "https://schema.org", "@type": "WebPage", "url": url, "inLanguage": tag(lang), "name": pg["h1"],
+               "description": pg["desc"], "dateModified": c["updated"], "publisher": ORG}
+    crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "draft()", "item": page_url(lang)},
+        {"@type": "ListItem", "position": 2, "name": pg["h1"], "item": url}]}
+    main = f"""<main id="main" class="post-wrap">
+  <header class="blog-head">
+    <p class="comment">{esc(pg['comment'])}</p>
+    <h1>{esc(pg['h1'])}</h1>
+  </header>
+  <div class="ipe-rels">
+{body}
+  </div>
+</main>"""
+    return page_shell(root, locales, lang, version, url=url, title=pg["title"], desc=pg["desc"], cluster=content_cluster("releases"),
+                      ld=ld_script(main_ld) + "\n" + ld_script(crumbs), main=main, path="releases/")
+
+
 def rfc822(d):
     if not isinstance(d, dt.datetime):
         d = dt.datetime(d.year, d.month, d.day, 16, 0, tzinfo=KST)
@@ -1086,7 +1113,7 @@ def render_llms_pages():
     for c, n, _ in LANGS:
         if c in LISTED and c != DEFAULT_LANG:
             lines.append("- [%s](%s) — %s" % (n, page_url(c), tag(c)))
-    names = {"about": "About (how draft() differs from other Draft apps)", "privacy": "Privacy"}
+    names = {"about": "About (how draft() differs from other Draft apps)", "privacy": "Privacy", "releases": "Release notes"}
     for slug in PAGES:
         lines.append("")
         lines.append("## %s" % names[slug])
@@ -1149,12 +1176,19 @@ def build(root):
                 out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]], posts)
                 if c in BLOG_LISTED:
                     pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
-    prio = {"about": "0.8", "privacy": "0.4"}
+    prio = {"about": "0.8", "privacy": "0.4", "releases": "0.7"}
+    site = kit_releases.load_site(root / "content" / "releases.json")
     for slug in PAGES:
         for c in page_codes(slug):
-            out[page_path(c, slug).strip("/") + "/index.html"] = render_content_page(root, locales, content, version, slug, c)
+            if slug == "releases":
+                html_text = render_releases_page(root, locales, content, site, version, c)
+                src = ["content/releases.json", "content/%s.json" % c]
+            else:
+                html_text = render_content_page(root, locales, content, version, slug, c)
+                src = ["src", "assets", "content/%s.json" % c]
+            out[page_path(c, slug).strip("/") + "/index.html"] = html_text
             if c in LISTED:
-                pages.append((content_url(c, slug), git_date(root, ["src", "assets", "content/%s.json" % c]), prio[slug], "monthly", content_cluster(slug)))
+                pages.append((content_url(c, slug), git_date(root, src), prio[slug], "monthly", content_cluster(slug)))
     want = min(HOME_CARDS, len(posts))
     for c in CODES:
         rel = "index.html" if c == DEFAULT_LANG else "%s/index.html" % c

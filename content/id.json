@@ -74,5 +74,13 @@
         ]
       }
     ]
+  },
+  "nav_releases": "Catatan rilis",
+  "releases": {
+    "title": "draft() Catatan rilis",
+    "desc": "Perubahan di setiap build draft().",
+    "comment": "// perubahan di setiap build",
+    "h1": "Catatan rilis",
+    "en_first": "Beberapa catatan ditampilkan dalam bahasa Inggris dulu"
   }
 }

@@ -1,0 +1,168 @@
+{
+  "releases": [
+    {
+      "schema": "ipe.release-note/1",
+      "id": "0.10.0-44",
+      "version": "0.10.0",
+      "build": "44",
+      "status": "testflight",
+      "date": "2026-11-12",
+      "notes": {
+        "ko": [
+          "이제 12개 언어로 앱을 쓸 수 있어요. 설정에서 언어를 고르세요.",
+          "번체 중국어·태국어·튀르키예어가 새로 들어왔고 프랑스어·독일어도 다 채웠어요. 번역은 AI 초안이에요.",
+          "이야기를 만드는 AI도 선택한 언어로 질문해요.",
+          "이전에 간체 중국어·러시아어를 골랐다면 영어로 바뀌어요."
+        ],
+        "en": [
+          "The app now speaks 12 languages. Pick yours in Settings.",
+          "Traditional Chinese, Thai and Turkish are new, and French and German are now complete. Translations are AI drafts.",
+          "The story AI now asks its questions in your chosen language.",
+          "If you had picked Simplified Chinese or Russian, the app switches to English."
+        ],
+        "ja": [
+          "アプリが12言語に対応しました。設定で言語を選んでください。",
+          "繁体字中国語・タイ語・トルコ語が新しく加わり、フランス語・ドイツ語も全文が揃いました。翻訳はAIによる下書きです。",
+          "ストーリーを作るAIも、選んだ言語で質問するようになりました。",
+          "以前に簡体字中国語やロシア語を選んでいた場合、アプリは英語に切り替わります。"
+        ],
+        "zh-Hant": [
+          "應用程式現在支援 12 種語言。請在設定中選擇你的語言。",
+          "新增繁體中文、泰文和土耳其文，法文與德文的翻譯也已全部完成。翻譯為 AI 草稿。",
+          "用來創作故事的 AI 也會用你選的語言提問。",
+          "如果先前選了簡體中文或俄文，應用程式會改為英文。"
+        ],
+        "es": [
+          "La app ya está disponible en 12 idiomas. Elige el tuyo en Ajustes.",
+          "Se añaden chino tradicional, tailandés y turco, y el francés y el alemán ya están completos. Las traducciones son borradores de IA.",
+          "La IA que crea historias también hace sus preguntas en el idioma que elijas.",
+          "Si antes elegiste chino simplificado o ruso, la app cambiará al inglés."
+        ],
+        "pt-BR": [
+          "O app agora está em 12 idiomas. Escolha o seu em Configurações.",
+          "Chegaram o chinês tradicional, o tailandês e o turco, e o francês e o alemão agora estão completos. As traduções são rascunhos de IA.",
+          "A IA de histórias também faz as perguntas no idioma escolhido.",
+          "Se você tinha escolhido chinês simplificado ou russo, o app passa para o inglês."
+        ],
+        "fr": [
+          "L'app est maintenant disponible en 12 langues. Choisissez la vôtre dans les réglages.",
+          "Le chinois traditionnel, le thaï et le turc arrivent, et le français et l'allemand sont désormais complets. Les traductions sont des ébauches de l'IA.",
+          "L'IA qui crée les histoires pose aussi ses questions dans la langue choisie.",
+          "Si vous aviez choisi le chinois simplifié ou le russe, l'app passe à l'anglais."
+        ],
+        "de": [
+          "Die App gibt es jetzt in 12 Sprachen. Wähle deine in den Einstellungen.",
+          "Traditionelles Chinesisch, Thai und Türkisch sind neu, und Französisch und Deutsch sind jetzt vollständig. Die Übersetzungen sind KI-Entwürfe.",
+          "Die KI für Geschichten stellt ihre Fragen jetzt in deiner gewählten Sprache.",
+          "Wenn du Vereinfachtes Chinesisch oder Russisch gewählt hattest, wechselt die App zu Englisch."
+        ],
+        "id": [
+          "Aplikasi ini sekarang tersedia dalam 12 bahasa. Pilih bahasamu di Pengaturan.",
+          "Bahasa Mandarin tradisional, Thailand, dan Turki kini tersedia, dan bahasa Prancis serta Jerman sudah lengkap. Terjemahannya adalah draf AI.",
+          "AI pembuat cerita juga mengajukan pertanyaannya dalam bahasa yang kamu pilih.",
+          "Jika sebelumnya memilih Mandarin sederhana atau Rusia, aplikasi akan beralih ke bahasa Inggris."
+        ],
+        "th": [
+          "แอปรองรับ 12 ภาษาแล้ว เลือกภาษาที่ต้องการได้ในการตั้งค่า",
+          "เพิ่มภาษาจีนตัวเต็ม ไทย และตุรกีแล้ว ส่วนฝรั่งเศสและเยอรมันแปลครบแล้วด้วย คำแปลเป็นฉบับร่างจาก AI",
+          "AI ที่ช่วยสร้างเรื่องราวจะถามคำถามเป็นภาษาที่คุณเลือกด้วย",
+          "หากเคยเลือกภาษาจีนตัวย่อหรือรัสเซีย แอปจะเปลี่ยนเป็นภาษาอังกฤษ"
+        ],
+        "vi": [
+          "Ứng dụng giờ hỗ trợ 12 ngôn ngữ. Chọn ngôn ngữ của bạn trong Cài đặt.",
+          "Đã thêm tiếng Trung phồn thể, tiếng Thái và tiếng Thổ Nhĩ Kỳ; tiếng Pháp và tiếng Đức cũng đã đầy đủ. Bản dịch là bản nháp do AI tạo.",
+          "AI tạo câu chuyện cũng đặt câu hỏi bằng ngôn ngữ bạn chọn.",
+          "Nếu trước đây bạn chọn tiếng Trung giản thể hoặc tiếng Nga, ứng dụng sẽ chuyển sang tiếng Anh."
+        ],
+        "tr": [
+          "Uygulama artık 12 dilde. Dilinizi Ayarlar'dan seçin.",
+          "Geleneksel Çince, Tayca ve Türkçe yeni eklendi; Fransızca ve Almanca da tamamlandı. Çeviriler yapay zekâ taslağıdır.",
+          "Hikâye yazan yapay zekâ da sorularını seçtiğiniz dilde sorar.",
+          "Daha önce Basitleştirilmiş Çince veya Rusça seçtiyseniz uygulama İngilizceye geçer."
+        ]
+      }
+    },
+    {
+      "schema": "ipe.release-note/1",
+      "id": "0.10.0-43",
+      "version": "0.10.0",
+      "build": "43",
+      "status": "testflight",
+      "date": "2026-11-11",
+      "notes": {
+        "ko": [
+          "설정의 정보 화면에 릴리즈 노트 메뉴를 더했어요. 빌드마다 무엇이 바뀌었는지 볼 수 있어요.",
+          "인터넷에 연결되지 않아도 앱에 담긴 최근 노트를 볼 수 있어요.",
+          "저장해 둔 설정은 그대로 이어져요.",
+          "수정: 저장된 테마나 날씨 설정을 읽지 못해도 멈추지 않고 기본값으로 돌아가요."
+        ],
+        "en": [
+          "Added a Release notes entry to the About section in Settings, so you can see what changed in each build.",
+          "The latest notes are bundled in the app, so you can read them even when you're offline.",
+          "Your saved settings carry over as they were.",
+          "Fixed: If a saved theme or weather setting can't be read, the app now falls back to its default instead of failing."
+        ],
+        "ja": [
+          "設定の「アプリについて」にリリースノートを追加しました。ビルドごとの変更点が見られます。",
+          "最新のノートはアプリに含まれているので、オフラインでも読めます。",
+          "保存した設定はそのまま引き継がれます。",
+          "修正: 保存されたテーマや天気の設定を読めなくても、停止せず初期値に戻るようになりました。"
+        ],
+        "zh-Hant": [
+          "設定的「關於」頁面新增了「版本說明」，可以看到每個版本的變更。",
+          "最新的說明已內建在應用程式中，離線時也能閱讀。",
+          "你儲存的設定會照原樣保留。",
+          "修正：如果無法讀取已儲存的主題或天氣設定，應用程式會改用預設值，不再當機。"
+        ],
+        "es": [
+          "En Ajustes, dentro de Acerca de, se añadió Notas de la versión para ver qué cambió en cada compilación.",
+          "Las notas más recientes vienen dentro de la app, así que puedes leerlas sin conexión.",
+          "Tus ajustes guardados se mantienen tal como estaban.",
+          "Corregido: si no se puede leer un tema o un ajuste del tiempo guardado, la app usa el valor predeterminado en lugar de fallar."
+        ],
+        "pt-BR": [
+          "Em Configurações, na seção Sobre, foi adicionada a entrada Notas da versão para ver o que mudou em cada build.",
+          "As notas mais recentes ficam no próprio app, então você pode lê-las mesmo offline.",
+          "Suas configurações salvas continuam como estavam.",
+          "Corrigido: se um tema ou uma configuração de clima salva não puder ser lida, o app volta ao padrão em vez de travar."
+        ],
+        "fr": [
+          "Une entrée Notes de version a été ajoutée à la section À propos des réglages, pour voir ce qui change à chaque build.",
+          "Les dernières notes sont intégrées à l'app, vous pouvez donc les lire même hors ligne.",
+          "Vos réglages enregistrés sont conservés tels quels.",
+          "Corrigé : si un thème ou un réglage météo enregistré ne peut pas être lu, l'app revient à la valeur par défaut au lieu de planter."
+        ],
+        "de": [
+          "In den Einstellungen unter Info gibt es jetzt einen Eintrag Versionshinweise, damit du siehst, was sich in jedem Build geändert hat.",
+          "Die neuesten Hinweise sind in der App enthalten, du kannst sie also auch offline lesen.",
+          "Deine gespeicherten Einstellungen bleiben unverändert erhalten.",
+          "Behoben: Lässt sich ein gespeichertes Design oder eine Wettereinstellung nicht lesen, greift die App auf den Standard zurück, statt abzubrechen."
+        ],
+        "id": [
+          "Di Pengaturan, bagian Tentang, ada menu Catatan rilis baru untuk melihat perubahan di tiap build.",
+          "Catatan terbaru sudah ada di dalam aplikasi, jadi bisa dibaca meski tidak terhubung internet.",
+          "Pengaturan yang tersimpan tetap terbawa seperti semula.",
+          "Diperbaiki: Jika tema atau pengaturan cuaca yang tersimpan tidak bisa dibaca, aplikasi kembali ke bawaan dan tidak berhenti."
+        ],
+        "th": [
+          "เพิ่มเมนูบันทึกการอัปเดตในส่วนเกี่ยวกับของการตั้งค่า เพื่อดูว่าแต่ละบิลด์เปลี่ยนอะไรไปบ้าง",
+          "บันทึกล่าสุดอยู่ในแอปแล้ว จึงอ่านได้แม้ไม่มีอินเทอร์เน็ต",
+          "การตั้งค่าที่บันทึกไว้จะคงอยู่เหมือนเดิม",
+          "แก้ไข: หากอ่านธีมหรือการตั้งค่าสภาพอากาศที่บันทึกไว้ไม่ได้ แอปจะกลับไปใช้ค่าเริ่มต้นแทนการหยุดทำงาน"
+        ],
+        "vi": [
+          "Đã thêm mục Ghi chú phát hành vào phần Giới thiệu trong Cài đặt, để bạn xem thay đổi của từng bản dựng.",
+          "Ghi chú mới nhất được đóng gói sẵn trong ứng dụng, nên bạn vẫn đọc được khi ngoại tuyến.",
+          "Cài đặt đã lưu của bạn vẫn giữ nguyên.",
+          "Đã sửa: Nếu không đọc được chủ đề hoặc cài đặt thời tiết đã lưu, ứng dụng sẽ dùng mặc định thay vì dừng lại."
+        ],
+        "tr": [
+          "Ayarlar'daki Hakkında bölümüne Sürüm notları eklendi; her derlemede neyin değiştiğini görebilirsiniz.",
+          "En son notlar uygulamanın içinde geldiği için internet bağlantısı olmadan da okunabilir.",
+          "Kayıtlı ayarlarınız olduğu gibi korunur.",
+          "Düzeltme: Kayıtlı bir tema veya hava durumu ayarı okunamazsa uygulama takılmak yerine varsayılana döner."
+        ]
+      }
+    }
+  ]
+}

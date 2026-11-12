@@ -24,5 +24,13 @@
         ]
       }
     ]
+  },
+  "nav_releases": "Sürüm notları",
+  "releases": {
+    "title": "draft() Sürüm notları",
+    "desc": "draft() her derlemesinde neyin değiştiğini gösterir.",
+    "comment": "// derleme derleme neyin değiştiği",
+    "h1": "Sürüm notları",
+    "en_first": "Bazı notlar önce İngilizce gösterilir"
   }
 }

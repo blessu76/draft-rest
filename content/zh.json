@@ -74,5 +74,13 @@
         ]
       }
     ]
+  },
+  "nav_releases": "版本说明",
+  "releases": {
+    "title": "draft() 版本说明",
+    "desc": "每个 draft() 版本的变更内容。",
+    "comment": "// 每个版本的变更",
+    "h1": "版本说明",
+    "en_first": "部分内容会先以英文显示"
   }
 }
