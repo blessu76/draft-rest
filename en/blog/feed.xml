@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Write the one line you didn&#x27;t say</title>
+      <link>https://draft.ipe.rest/en/blog/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Some moments hold a sentence you never said. Write it down in three steps, with an example and common stumbling blocks.</description>
+    </item>
     <item>
       <title>Keep a one-sentence diary and let stories pile up</title>
       <link>https://draft.ipe.rest/en/blog/one-sentence-a-day/</link>

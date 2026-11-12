@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/hi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>आप जो बोलते हैं उसे ऐसी कहानी में बदलने के छोटे गाइड जिसे लोग सच में पढ़ें — draft() की टीम की ओर से।</description>
     <language>hi</language>
-    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>वह एक पंक्ति लिखिए जो आपने नहीं कही</title>
+      <link>https://draft.ipe.rest/hi/blog/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/hi/blog/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>कुछ पलों में एक ऐसी बात रह जाती है जो कभी कही नहीं गई। उसे तीन चरणों में लिखिए, उदाहरण और आम अड़चनों के साथ।</description>
+    </item>
     <item>
       <title>रोज़ एक वाक्य लिखें और कहानियों को जमा होने दें</title>
       <link>https://draft.ipe.rest/hi/blog/one-sentence-a-day/</link>

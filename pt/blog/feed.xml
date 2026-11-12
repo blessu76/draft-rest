@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/pt/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guias curtos para transformar o que você fala em uma história que as pessoas realmente leem, da equipe do draft().</description>
     <language>pt</language>
-    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Escreva a frase que você não disse</title>
+      <link>https://draft.ipe.rest/pt/blog/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/pt/blog/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Alguns momentos guardam uma frase que nunca foi dita. Escreva-a em três passos, com um exemplo e os tropeços mais comuns.</description>
+    </item>
     <item>
       <title>Escreva uma frase por dia e deixe as histórias se acumularem</title>
       <link>https://draft.ipe.rest/pt/blog/one-sentence-a-day/</link>
