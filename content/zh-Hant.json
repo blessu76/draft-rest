@@ -24,13 +24,5 @@
         ]
       }
     ]
-  },
-  "nav_releases": "版本說明",
-  "releases": {
-    "title": "draft() 版本說明",
-    "desc": "整理 draft() 每個版本的變更內容。",
-    "comment": "// 每個版本的變更",
-    "h1": "版本說明",
-    "en_first": "部分內容會先以英文顯示"
   }
 }

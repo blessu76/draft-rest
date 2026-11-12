@@ -74,13 +74,5 @@
         ]
       }
     ]
-  },
-  "nav_releases": "Notes de version",
-  "releases": {
-    "title": "draft() Notes de version",
-    "desc": "Ce qui a changé à chaque build de draft().",
-    "comment": "// ce qui a changé, build après build",
-    "h1": "Notes de version",
-    "en_first": "Certaines notes sont d'abord affichées en anglais"
   }
 }

@@ -74,13 +74,5 @@
         ]
       }
     ]
-  },
-  "nav_releases": "Release notes",
-  "releases": {
-    "title": "draft() Release notes",
-    "desc": "What changed in each draft() build: new features, fixes and languages.",
-    "comment": "// what changed, build by build",
-    "h1": "Release notes",
-    "en_first": "Some notes are shown in English first"
   }
 }

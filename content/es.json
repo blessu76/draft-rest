@@ -74,13 +74,5 @@
         ]
       }
     ]
-  },
-  "nav_releases": "Notas de la versión",
-  "releases": {
-    "title": "draft() Notas de la versión",
-    "desc": "Qué cambió en cada compilación de draft().",
-    "comment": "// qué cambió, compilación a compilación",
-    "h1": "Notas de la versión",
-    "en_first": "Algunas notas se muestran primero en inglés"
   }
 }

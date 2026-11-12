@@ -74,13 +74,5 @@
         ]
       }
     ]
-  },
-  "nav_releases": "Ghi chú phát hành",
-  "releases": {
-    "title": "draft() Ghi chú phát hành",
-    "desc": "Những thay đổi trong từng bản dựng của draft().",
-    "comment": "// thay đổi qua từng bản dựng",
-    "h1": "Ghi chú phát hành",
-    "en_first": "Một số ghi chú hiển thị bằng tiếng Anh trước"
   }
 }

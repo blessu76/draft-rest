@@ -39,9 +39,6 @@ One static page per language (all describe the same app):
 
 ## Privacy
 [en](https://draft.ipe.rest/privacy/), [ko](https://draft.ipe.rest/ko/privacy/), [ja](https://draft.ipe.rest/ja/privacy/), [es](https://draft.ipe.rest/es/privacy/), [pt](https://draft.ipe.rest/pt/privacy/), [fr](https://draft.ipe.rest/fr/privacy/), [de](https://draft.ipe.rest/de/privacy/), [id](https://draft.ipe.rest/id/privacy/), [vi](https://draft.ipe.rest/vi/privacy/)
-
-## Release notes
-[en](https://draft.ipe.rest/releases/), [ko](https://draft.ipe.rest/ko/releases/), [ja](https://draft.ipe.rest/ja/releases/), [zh-Hant](https://draft.ipe.rest/zh-Hant/releases/), [es](https://draft.ipe.rest/es/releases/), [pt](https://draft.ipe.rest/pt/releases/), [fr](https://draft.ipe.rest/fr/releases/), [de](https://draft.ipe.rest/de/releases/), [id](https://draft.ipe.rest/id/releases/), [th](https://draft.ipe.rest/th/releases/), [vi](https://draft.ipe.rest/vi/releases/), [tr](https://draft.ipe.rest/tr/releases/)
 <!-- pages:llms:end -->
 
 <!-- blog:llms:start -->

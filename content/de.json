@@ -74,13 +74,5 @@
         ]
       }
     ]
-  },
-  "nav_releases": "Versionshinweise",
-  "releases": {
-    "title": "draft() Versionshinweise",
-    "desc": "Was sich in jedem Build von draft() geändert hat.",
-    "comment": "// was sich in jedem Build geändert hat",
-    "h1": "Versionshinweise",
-    "en_first": "Einige Hinweise werden zuerst auf Englisch angezeigt"
   }
 }
