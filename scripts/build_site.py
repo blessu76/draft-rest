@@ -32,6 +32,7 @@ import unicodedata
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "vendor"))
+from ipe_web_kit import languages as kit_lang  # noqa: E402  language list, ended languages, tags, names (same pinned kit)
 from ipe_web_kit import ui as kit_ui  # noqa: E402  web kit (vendor/ipe_web_kit, pinned tag) — footer studio line + its CSS
 
 SITE = "https://draft.ipe.rest"
@@ -54,23 +55,47 @@ GA_SNIPPET = (
 KST = dt.timezone(dt.timedelta(hours=9))
 DEFAULT_LANG = "en"
 
-# code, native name, og:locale
+# folder code (URL segment, locales/<code>.json), native name, og:locale
 LANGS = [
     ("en", "English", "en_US"), ("ko", "한국어", "ko_KR"), ("ja", "日本語", "ja_JP"), ("zh", "中文", "zh_CN"),
-    ("es", "Español", "es_ES"), ("pt", "Português", "pt_BR"), ("id", "Bahasa Indonesia", "id_ID"),
+    ("zh-Hant", "繁體中文", "zh_TW"), ("es", "Español", "es_ES"), ("pt", "Português", "pt_BR"), ("id", "Bahasa Indonesia", "id_ID"),
     ("ru", "Русский", "ru_RU"), ("vi", "Tiếng Việt", "vi_VN"), ("fr", "Français", "fr_FR"), ("de", "Deutsch", "de_DE"),
-    ("ar", "العربية", "ar_AR"), ("hi", "हिन्दी", "hi_IN"),
+    ("ar", "العربية", "ar_AR"), ("hi", "हिन्दी", "hi_IN"), ("th", "ไทย", "th_TH"), ("tr", "Türkçe", "tr_TR"),
 ]
 RTL = ("ar",)  # right-to-left languages: <html dir="rtl"> (assets/site.css has the [dir=rtl] rules)
-CODES = [c for c, _, _ in LANGS]
+CODES = [c for c, _, _ in LANGS]  # every folder that is built (ended languages keep their pages and URLs)
+TAG = {"pt": "pt-BR", "zh": "zh-Hans"}  # folder code -> kit language tag (html lang, hreflang, inLanguage)
+LISTED = [c for c in CODES if not kit_lang.is_ended(TAG.get(c, c))]  # selector, footer, hreflang, sitemap, llms
+BLOG_CODES = ("en", "ko", "ja", "zh", "es", "pt", "id", "ru", "vi", "fr", "de", "ar", "hi")  # the languages posts are written in
+BLOG_LISTED = [c for c in BLOG_CODES if c in LISTED]
+NO_PRIVACY = ("zh-Hant", "th", "tr")  # legal pages stay ko/en: these link to the English privacy page instead
 NAMES = {c: n for c, n, _ in LANGS}
 LOCALE = {c: l for c, _, l in LANGS}
+
+
+def tag(lang):
+    return TAG.get(lang, lang)
+
+
+def page_codes(slug):
+    return CODES if slug == "about" else privacy_codes()
+
+
+def privacy_codes():
+    return [c for c in CODES if c not in NO_PRIVACY]
+
+
+def privacy_lang(lang):
+    return DEFAULT_LANG if lang in NO_PRIVACY else lang
+
+
 KEYWORDS = "storytelling app, AI writing, voice to text, story generator, creator tool, journaling, caption writer, private AI, privacy, draft, ipe"
 APPLE = '<svg class="apple-glyph" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>'
 FONTS = ("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400"
          "&family=Inter:wght@300;400;500;600&display=swap")
-# Arabic / Devanagari glyphs are not in Inter or JetBrains Mono: those pages also load a Noto face (site.css lists it after Inter)
-EXTRA_FONTS = {"ar": "&family=Noto+Sans+Arabic:wght@300;400;500;600", "hi": "&family=Noto+Sans+Devanagari:wght@300;400;500;600"}
+# Arabic / Devanagari / Thai glyphs are not in Inter or JetBrains Mono: those pages also load a Noto face (site.css lists it after Inter)
+EXTRA_FONTS = {"ar": "&family=Noto+Sans+Arabic:wght@300;400;500;600", "hi": "&family=Noto+Sans+Devanagari:wght@300;400;500;600",
+               "th": "&family=Noto+Sans+Thai:wght@300;400;500;600"}
 
 
 def fonts_url(lang):
@@ -82,16 +107,22 @@ def fonts_url(lang):
 #  3. navigator.languages in order, first supported match (ko-KR -> ko, zh-TW -> zh) -> that page. Not stored: only picks are.
 #  4. nothing matches (or English matches first) -> stay on the English root.
 # Language pages (/ko/ ...), content pages and posts carry their language in the URL (rule 1) and never redirect.
-LEGACY_REDIRECT = ("(function(){try{var C='%s',q=new URLSearchParams(location.search),l=(q.get('lang')||'').toLowerCase(),"
-                   "ok=function(c){return !!c&&new RegExp('^('+C+')$').test(c)};"
+LEGACY_MAP = {}  # lowercase folder code or kit tag (and regional aliases) -> folder code, listed languages only
+for _c in LISTED:
+    LEGACY_MAP[_c.lower()] = _c
+    LEGACY_MAP[tag(_c).lower()] = _c
+LEGACY_MAP.update({"zh-tw": "zh-Hant", "zh-hk": "zh-Hant", "zh-mo": "zh-Hant"})
+LEGACY_REDIRECT = ("(function(){try{var M=" + json.dumps(LEGACY_MAP, sort_keys=True) + ","
+                   "pick=function(s){s=String(s||'').toLowerCase();return M[s]||M[s.split('-')[0]]||null;},"
+                   "q=new URLSearchParams(location.search),l=pick(q.get('lang'));"
                    "function go(c){q.delete('lang');var s=q.toString();location.replace((c==='en'?'/':'/'+c+'/')+(s?'?'+s:'')+location.hash);}"
-                   "if(ok(l)){try{localStorage.setItem('draft_lang',l)}catch(e){}"
+                   "if(l){try{localStorage.setItem('draft_lang',l)}catch(e){}"
                    "if(l==='en'){q.delete('lang');var r=q.toString();history.replaceState(null,'','/'+(r?'?'+r:'')+location.hash);}else go(l);return;}"
                    "var v=null;try{v=localStorage.getItem('draft_lang')}catch(e){}"
-                   "if(ok(v)){if(v!=='en')go(v);return;}"
+                   "var sv=pick(v);if(sv){if(sv!=='en')go(sv);return;}"
                    "var p=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];"
-                   "for(var i=0;i<p.length;i++){var c=String(p[i]).toLowerCase().split('-')[0];if(ok(c)){if(c!=='en')go(c);return;}}"
-                   "}catch(e){}})();" % "|".join(CODES))
+                   "for(var i=0;i<p.length;i++){var c=pick(p[i]);if(c){if(c!=='en')go(c);return;}}"
+                   "}catch(e){}})();")
 # Sites that leave this one for another ipe site hand over the current language (REACH_PROCESS rule 2). ipe.rest has
 # static /<lang>/ home pages for these languages (checked live 2026-11-01 incl. ar, hi; no vi); anywhere else -> "?lang=xx" on the page.
 # English (and no language) stays the plain URL.
@@ -132,7 +163,9 @@ def lang_path(lang, path=""):
     if not path:
         return home_path(lang)
     if path.strip("/") in PAGES:
-        return page_path(lang, path.strip("/"))
+        return page_path(privacy_lang(lang) if path.strip("/") == "privacy" else lang, path.strip("/"))
+    if path.split("/")[0] == "blog" and lang not in BLOG_CODES:
+        return home_path(lang)
     return "/%s/%s" % (lang, path)
 
 
@@ -189,13 +222,13 @@ def git_date(root, paths):
 # ---------------------------------------------------------------- page chrome
 def alternates(lang_urls):
     """hreflang <link> block for a cluster: {lang: url} + x-default."""
-    rows = ['<link rel="alternate" hreflang="%s" href="%s">' % (l, esc(u)) for l, u in lang_urls.items() if l != "x-default"]
+    rows = ['<link rel="alternate" hreflang="%s" href="%s">' % (tag(l), esc(u)) for l, u in lang_urls.items() if l != "x-default"]
     rows.append('<link rel="alternate" hreflang="x-default" href="%s">' % esc(lang_urls["x-default"]))
     return "\n".join(rows)
 
 
 def home_cluster():
-    d = {c: page_url(c) for c in CODES}  # en -> /
+    d = {c: page_url(c) for c in LISTED}  # en -> /
     d["x-default"] = page_url(None)
     return d
 
@@ -215,7 +248,7 @@ def jsonld(locales, lang, url):
     graph = [
         {"@type": "MobileApplication", "@id": APP_ID, "name": "draft()", "alternateName": "draft", "url": url,
          "operatingSystem": "iOS", "applicationCategory": "ProductivityApplication",
-         "applicationSubCategory": "Writing / Storytelling", "description": desc, "inLanguage": lang,
+         "applicationSubCategory": "Writing / Storytelling", "description": desc, "inLanguage": tag(lang),
          "image": SITE + "/og-image.png",
          "offers": [{"@type": "Offer", "price": "0", "priceCurrency": "USD", "name": tr(locales, lang, "plan1_name")},
                     {"@type": "Offer", "price": "2.99", "priceCurrency": "USD", "name": tr(locales, lang, "plan2_name")}],
@@ -237,9 +270,9 @@ def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website
     og_url = '<meta property="og:url" content="%s">\n' % esc(url) if url else ""
     alts = alternates(cluster) + "\n" if cluster else ""
     dir_attr = ' dir="rtl"' if lang in RTL else ""
-    og_alt = "".join('<meta property="og:locale:alternate" content="%s">\n' % LOCALE[c] for c in CODES if c != lang)
+    og_alt = "".join('<meta property="og:locale:alternate" content="%s">\n' % LOCALE[c] for c in LISTED if c != lang)
     return f"""<!DOCTYPE html>
-<html lang="{lang}"{dir_attr}>
+<html lang="{tag(lang)}"{dir_attr}>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -279,19 +312,24 @@ def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website
 """
 
 
+def shown_langs(lang):
+    """Selector and footer entries: the listed languages, plus the current page's own language if it is ended."""
+    return [(c, n) for c, n, _ in LANGS if c in LISTED or c == lang]
+
+
 def lang_select(lang, path=""):
-    opts = "\n".join('    <option value="%s"%s>%s</option>' % (c, " selected" if c == lang else "", esc(n)) for c, n, _ in LANGS)
+    opts = "\n".join('    <option value="%s"%s>%s</option>' % (c, " selected" if c == lang else "", esc(n)) for c, n in shown_langs(lang))
     return f"""<label class="langsel" aria-label="Language">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
-  <select id="lang" aria-label="Language" data-path="{path}" data-en="{lang_path(DEFAULT_LANG, path)}">
+  <select id="lang" aria-label="Language" data-path="{path}" data-en="{lang_path(DEFAULT_LANG, path)}" data-blog="{",".join(BLOG_CODES)}">
 {opts}
   </select>
 </label>"""
 
 
 def foot_langs(lang, path=""):
-    links = ['<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (lang_path(c, path), c, c, ' aria-current="page"' if c == lang else "", esc(n))
-             for c, n, _ in LANGS]
+    links = ['<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (lang_path(c, path), tag(c), tag(c), ' aria-current="page"' if c == lang else "", esc(n))
+             for c, n in shown_langs(lang)]
     return '<nav class="foot-langs" aria-label="Languages">\n      %s\n    </nav>' % "\n      ".join(links)
 
 
@@ -315,12 +353,12 @@ def chrome(locales, lang, path="", blog=False):
     blog_href = "/%s/blog/" % lang
     top = '<nav class="toplink" aria-label="draft()"><a href="%s">draft()</a>' % base
     foot = []
-    if blog:
+    if blog and lang in BLOG_CODES:
         top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (blog_href, ' aria-current="page"' if path.startswith("blog") else "", esc(tr(locales, lang, "nav_blog")))
         foot.append('<a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog"))))
     top += "</nav>"
     foot += ['<a href="%s">%s</a>' % (page_path(lang, "about"), esc(tr(locales, lang, "nav_about"))),
-             '<a href="%s">%s</a>' % (page_path(lang, "privacy"), esc(tr(locales, lang, "foot_privacy")))]
+             '<a href="%s">%s</a>' % (page_path(privacy_lang(lang), "privacy"), esc(tr(locales, lang, "foot_privacy")))]
     studio = kit_ui.studio_line(label=None, studio=tr(locales, lang, "foot_studio"))  # links to ipe.rest; looks from --ipe-* (site.css)
     return {"LANGSEL": lang_select(lang, path), "FOOTLANGS": foot_langs(lang, path), "FOOTLINKS": "\n      ".join(foot), "TOPLINK": top,
             "STUDIO": studio}
@@ -393,7 +431,7 @@ def render_en_stub(version):
 
 
 def render_404(version):
-    links = "\n".join('    <li><a href="%s" lang="%s">%s</a></li>' % (home_path(c), c, esc(n)) for c, n, _ in LANGS)
+    links = "\n".join('    <li><a href="%s" lang="%s">%s</a></li>' % (home_path(c), tag(c), esc(n)) for c, n in shown_langs(None))
     h = head({}, "en", version, None, "404 — draft()", "Page not found.", None, "", robots="noindex, follow")
     return h + f"""<nav class="toplink" aria-label="draft()"><a href="/">draft()</a></nav>
 <main id="main" class="post-wrap">
@@ -420,7 +458,7 @@ PUBLISHED_REQUIRED_FROM = dt.date(2026, 10, 24)  # posts dated on/after this day
 
 
 def blog_feed_url(lang):
-    return "%s/%s/blog/feed.xml" % (SITE, lang)
+    return "%s/%s/blog/feed.xml" % (SITE, lang) if lang in BLOG_CODES else None
 
 
 LIST_PAGE_SIZE = 10  # posts per blog list page (Davy 10-27: never more than 10)
@@ -539,7 +577,7 @@ def load_posts(root):
         return posts, errors
     for d in sorted(x for x in base.iterdir() if x.is_dir()):
         langs, draft_flags = {}, set()
-        for c in CODES:
+        for c in BLOG_CODES:
             f = d / (c + ".md") if c in ("ko", "en") else d / "translations" / (c + ".md")
             if not f.is_file():
                 continue
@@ -559,7 +597,7 @@ def load_posts(root):
         if all(m["draft"] for m in langs.values()):
             continue
         errors.extend(length_problems(d.name, langs))
-        missing = [c for c in CODES if c not in langs]
+        missing = [c for c in BLOG_CODES if c not in langs]
         if missing:
             errors.append("%s: missing languages: %s" % (d.name, ", ".join(missing)))
         dates = {m["date"] for m in langs.values()}
@@ -688,13 +726,13 @@ def fmt_date(d):
 
 
 def post_cluster(slug):
-    d = {c: post_url(c, slug) for c in CODES}
+    d = {c: post_url(c, slug) for c in BLOG_LISTED}
     d["x-default"] = post_url("en", slug)
     return d
 
 
 def list_cluster(page=1):
-    d = {c: blog_list_url(c, page) for c in CODES}
+    d = {c: blog_list_url(c, page) for c in BLOG_LISTED}
     d["x-default"] = blog_list_url("en", page)
     return d
 
@@ -749,9 +787,9 @@ def translation_links(post, lang):
     """English is the original: it lists the other languages as workTranslation; each of them points back with translationOfWork."""
     def ref(c):
         return {"@type": "BlogPosting", "@id": article_id(c, post["slug"]), "url": post_url(c, post["slug"]),
-                "headline": post["langs"][c]["title"], "inLanguage": c}
+                "headline": post["langs"][c]["title"], "inLanguage": tag(c)}
     if lang == DEFAULT_LANG:
-        return {"workTranslation": [ref(c) for c in CODES if c != DEFAULT_LANG]}
+        return {"workTranslation": [ref(c) for c in BLOG_LISTED if c != DEFAULT_LANG]}
     return {"translationOfWork": ref(DEFAULT_LANG)}
 
 
@@ -838,13 +876,13 @@ def render_post(root, locales, version, post, lang, number=None, posts=()):
     body = markdown(m["_body"], lang)
     data = {"@context": "https://schema.org", "@type": "BlogPosting", "@id": article_id(lang, post["slug"]),
             "headline": m["title"], "description": m["description"],
-            "datePublished": when_iso(when), "dateModified": when_iso(updated), "inLanguage": lang,
+            "datePublished": when_iso(when), "dateModified": when_iso(updated), "inLanguage": tag(lang),
             "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url, "image": image_object(root, "og-image.png"),
             "wordCount": word_count(body, lang), **post_ld_extras(locales, lang, m),
             "author": ORG_REF, "publisher": ORG, "isPartOf": {"@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang)},
             **translation_links(post, lang)}
     ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang, {"title": m["title"], "slug": post["slug"]}))
-    extra_langs = " · ".join('<a href="%s" hreflang="%s" lang="%s">%s</a>' % (post_url(c, post["slug"]), c, c, esc(NAMES[c])) for c in CODES if c != lang)
+    extra_langs = " · ".join('<a href="%s" hreflang="%s" lang="%s">%s</a>' % (post_url(c, post["slug"]), tag(c), tag(c), esc(NAMES[c])) for c in BLOG_LISTED if c != lang)
     main = f"""<main id="main" class="post-wrap">
   <article class="post">
     <p class="comment">// {no_label(number) + ' · ' if number else ''}{time_tag(when)}</p>
@@ -887,10 +925,10 @@ def render_list(root, locales, version, posts, lang, page=1, numbers=None):
         <p>{esc(p['langs'][lang]['description'])}</p>
         <a class="more" href="/{lang}/blog/{p['slug']}/" aria-label="{esc(tr(locales, lang, 'blog_read'))}: {esc(p['langs'][lang]['title'])}">{esc(tr(locales, lang, 'blog_read'))} &rarr;</a>
       </li>""" for p in shown)
-    data = {"@context": "https://schema.org", "@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang), "inLanguage": lang,
+    data = {"@context": "https://schema.org", "@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang), "inLanguage": tag(lang),
             "isPartOf": {"@id": WEBSITE_ID}, "publisher": ORG, "author": ORG_REF,
             "blogPost": [{"@type": "BlogPosting", "@id": post_url(lang, p["slug"]) + "#article", "headline": p["langs"][lang]["title"], "url": post_url(lang, p["slug"]),
-                          "datePublished": when_iso(p["date"]), "inLanguage": lang} for p in shown],
+                          "datePublished": when_iso(p["date"]), "inLanguage": tag(lang)} for p in shown],
             "mainEntity": {"@type": "ItemList", "numberOfItems": len(shown),
                            "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": post_url(lang, p["slug"]),
                                                 "item": {"@id": post_url(lang, p["slug"]) + "#article"}}
@@ -929,7 +967,7 @@ def content_url(lang, slug):
 
 
 def content_cluster(slug):
-    d = {c: content_url(c, slug) for c in CODES}
+    d = {c: content_url(c, slug) for c in page_codes(slug) if c in LISTED}
     d["x-default"] = content_url(DEFAULT_LANG, slug)
     return d
 
@@ -959,12 +997,12 @@ def render_content_page(root, locales, content, version, slug, lang):
     if slug == "about":
         app = {"@type": "MobileApplication", "@id": APP_ID, "name": "draft()", "alternateName": "draft", "url": page_url(None), "operatingSystem": "iOS",
                "applicationCategory": "ProductivityApplication", "applicationSubCategory": "Writing / Storytelling",
-               "description": tr(locales, lang, "meta_desc"), "inLanguage": lang, "image": image_object(root, "og-image.png"),
+               "description": tr(locales, lang, "meta_desc"), "inLanguage": tag(lang), "image": image_object(root, "og-image.png"),
                "disambiguatingDescription": plain(pg["sections"][0]["p"][0]), "author": {"@id": ORG_ID}, "publisher": {"@id": ORG_ID}}
-        main_ld = {"@context": "https://schema.org", "@type": "AboutPage", "url": url, "inLanguage": lang, "name": pg["h1"],
+        main_ld = {"@context": "https://schema.org", "@type": "AboutPage", "url": url, "inLanguage": tag(lang), "name": pg["h1"],
                    "description": pg["desc"], "mainEntity": app, "publisher": ORG}
     else:
-        main_ld = {"@context": "https://schema.org", "@type": "WebPage", "url": url, "inLanguage": lang, "name": pg["h1"],
+        main_ld = {"@context": "https://schema.org", "@type": "WebPage", "url": url, "inLanguage": tag(lang), "name": pg["h1"],
                    "description": pg["desc"], "dateModified": c["updated"], "publisher": ORG}
     main = f"""<main id="main" class="post-wrap">
   <header class="blog-head">
@@ -1001,7 +1039,7 @@ def render_feed(locales, posts, lang):
     <link>{blog_list_url(lang)}</link>
     <atom:link href="{blog_feed_url(lang)}" rel="self" type="application/rss+xml"/>
     <description>{esc(tr(locales, lang, 'blog_sub'))}</description>
-    <language>{lang}</language>
+    <language>{tag(lang)}</language>
     <lastBuildDate>{rfc822(posts[0]['updated'])}</lastBuildDate>
 {items}
   </channel>
@@ -1013,14 +1051,14 @@ def render_llms_blog(posts):
     lines = ["## Blog",
              "Short guides on turning what you say into a story people actually read. New posts regularly, each in 13 languages. "
              "Feed: %s · Index: %s" % (blog_feed_url("en"), blog_list_url("en")),
-             "Blog index per language: " + ", ".join("[%s](%s)" % (c, blog_list_url(c)) for c in CODES)]
+             "Blog index per language: " + ", ".join("[%s](%s)" % (c, blog_list_url(c)) for c in BLOG_LISTED)]
     if page_count(len(posts)) > 1:  # older posts: /<lang>/blog/page/<n>/
         lines.append("Older posts (index pages 2+): " + "; ".join(
-            "%s: %s" % (c, ", ".join("[%d](%s)" % (n, blog_list_url(c, n)) for n in range(2, page_count(len(posts)) + 1))) for c in CODES))
+            "%s: %s" % (c, ", ".join("[%d](%s)" % (n, blog_list_url(c, n)) for n in range(2, page_count(len(posts)) + 1))) for c in BLOG_LISTED))
     lines.append("")
     for p in posts:
         en = p["langs"]["en"]
-        others = ", ".join("[%s](%s)" % (c, post_url(c, p["slug"])) for c in CODES if c != "en")
+        others = ", ".join("[%s](%s)" % (c, post_url(c, p["slug"])) for c in BLOG_LISTED if c != "en")
         lines.append("- [%s](%s) — %s (%s). Other languages: %s" % (en["title"], post_url("en", p["slug"]), en["description"], when_iso(p["date"]), others))
     return "\n".join(lines) + "\n"
 
@@ -1032,7 +1070,7 @@ def render_sitemap(root, pages):
     for url, lastmod, prio, freq, cluster in pages:
         links = ""
         if cluster:
-            links = "".join('    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>\n' % (l, esc(u))
+            links = "".join('    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>\n' % (tag(l), esc(u))
                             for l, u in cluster.items() if l != "x-default")
             links += '    <xhtml:link rel="alternate" hreflang="x-default" href="%s"/>\n' % esc(cluster["x-default"])
         rows.append("  <url>\n    <loc>%s</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n%s  </url>"
@@ -1046,13 +1084,13 @@ def render_llms_pages():
     lines = ["## Languages", "One static page per language (all describe the same app):", ""]
     lines.append("- [English (default)](%s) — en, x-default" % page_url(None))
     for c, n, _ in LANGS:
-        if c != DEFAULT_LANG:
-            lines.append("- [%s](%s) — %s" % (n, page_url(c), c))
+        if c in LISTED and c != DEFAULT_LANG:
+            lines.append("- [%s](%s) — %s" % (n, page_url(c), tag(c)))
     names = {"about": "About (how draft() differs from other Draft apps)", "privacy": "Privacy"}
     for slug in PAGES:
         lines.append("")
         lines.append("## %s" % names[slug])
-        lines.append(", ".join("[%s](%s)" % (c, content_url(c, slug)) for c in CODES))
+        lines.append(", ".join("[%s](%s)" % (c, content_url(c, slug)) for c in page_codes(slug) if c in LISTED))
     return "\n".join(lines) + "\n"
 
 
@@ -1089,7 +1127,10 @@ def build(root):
     for c in CODES:
         if c == DEFAULT_LANG:
             continue  # served from the root; /en/ is a stub that stays out of the sitemap
-        out["%s/index.html" % c] = render_home(root, locales, c, version, blog=blog, posts=posts)
+        has_blog = blog and c in BLOG_CODES
+        out["%s/index.html" % c] = render_home(root, locales, c, version, blog=has_blog, posts=posts if has_blog else ())
+        if c not in LISTED:
+            continue
         lm = git_date(root, ["src", "assets", "locales/%s.json" % c])
         if posts:
             lm = max(lm, src_date)
@@ -1097,26 +1138,30 @@ def build(root):
     if blog:
         newest = when_iso(max((p["updated"] for p in posts), key=when_key))
         numbers = post_numbers(posts)
-        for c in CODES:
+        for c in BLOG_CODES:
             out["%s/blog/feed.xml" % c] = render_feed(locales, posts, c)
             for n in range(1, page_count(len(posts)) + 1):
                 out["%s/blog/index.html" % c if n == 1 else "%s/blog/page/%d/index.html" % (c, n)] = render_list(root, locales, version, posts, c, n, numbers)
-                pages.append((blog_list_url(c, n), newest, "0.7" if n == 1 else "0.5", "daily", list_cluster(n)))
+                if c in BLOG_LISTED:
+                    pages.append((blog_list_url(c, n), newest, "0.7" if n == 1 else "0.5", "daily", list_cluster(n)))
         for p in posts:
-            for c in CODES:
+            for c in BLOG_CODES:
                 out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]], posts)
-                pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
+                if c in BLOG_LISTED:
+                    pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
     prio = {"about": "0.8", "privacy": "0.4"}
     for slug in PAGES:
-        for c in CODES:
+        for c in page_codes(slug):
             out[page_path(c, slug).strip("/") + "/index.html"] = render_content_page(root, locales, content, version, slug, c)
-            pages.append((content_url(c, slug), git_date(root, ["src", "assets", "content/%s.json" % c]), prio[slug], "monthly", content_cluster(slug)))
+            if c in LISTED:
+                pages.append((content_url(c, slug), git_date(root, ["src", "assets", "content/%s.json" % c]), prio[slug], "monthly", content_cluster(slug)))
     want = min(HOME_CARDS, len(posts))
     for c in CODES:
         rel = "index.html" if c == DEFAULT_LANG else "%s/index.html" % c
+        expected = want if blog and c in BLOG_CODES else 0
         got = out[rel].count('class="bcard ')
-        if got != want:
-            raise BuildError("%s: home shows %d blog cards, expected %d" % (rel, got, want))
+        if got != expected:
+            raise BuildError("%s: home shows %d blog cards, expected %d" % (rel, got, expected))
     pages = [(u, when_iso(d) if hasattr(d, "isoformat") else d, pr, fq, cl) for u, d, pr, fq, cl in pages]
     out["sitemap.xml"] = render_sitemap(root, pages)
     llms = (root / "llms.txt").read_text(encoding="utf-8")

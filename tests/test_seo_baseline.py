@@ -16,6 +16,7 @@ import build_site  # noqa: E402
 
 SITE = build_site.SITE
 CODES = set(build_site.CODES)
+ENDED = CODES - set(build_site.LISTED)
 
 
 def tag(page, pattern):
@@ -76,7 +77,7 @@ class SeoBaseline(unittest.TestCase):
             lang = tag(p, r'<html lang="(.*?)"')
             self.assertTrue(lang, rel)
             if folder in CODES:
-                self.assertEqual(lang, folder, rel)
+                self.assertEqual(lang, build_site.tag(folder), rel)
             else:  # site-wide pages (home, about, privacy) are the default language
                 self.assertIn(lang, CODES, rel)
 
@@ -97,19 +98,24 @@ class SeoBaseline(unittest.TestCase):
             self.assertEqual(len(re.findall(r"<h1[ >]", p)), 1, rel)
             self.assertIn('<meta name="viewport" content="width=device-width, initial-scale=1.0">', p, rel)
 
-    def test_hreflang_covers_every_language_and_x_default(self):
+    def test_hreflang_lists_only_listed_languages_and_x_default(self):
+        listed = {build_site.tag(c) for c in build_site.LISTED}
         for rel, p in self.pages.items():
-            langs = re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="https://draft\.ipe\.rest/[^"]*">', p)
-            self.assertEqual(sorted(langs), sorted(CODES | {"x-default"}), rel)
+            folder = rel.split("/")[0]
+            own = {build_site.tag(folder)} if folder in ENDED else set()
+            langs = set(re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="https://draft\.ipe\.rest/[^"]*">', p))
+            self.assertIn("x-default", langs, rel)
+            self.assertLessEqual(langs - {"x-default"}, listed | own, rel)
 
     def test_every_indexable_page_has_structured_data(self):
         for rel, p in self.pages.items():
             self.assertIn('<script type="application/ld+json">', p, rel)
 
-    def test_sitemap_lists_exactly_the_indexable_pages(self):
+    def test_sitemap_lists_exactly_the_listed_language_pages(self):
         locs = re.findall(r"<loc>(.*?)</loc>", self.sitemap)
         self.assertEqual(len(locs), len(set(locs)))
-        self.assertEqual(set(locs), {canonical_of(p) for p in self.pages.values()})
+        expected = {canonical_of(p) for rel, p in self.pages.items() if rel.split("/")[0] not in ENDED}
+        self.assertEqual(set(locs), expected)
 
     def test_noindex_pages_are_never_in_the_sitemap(self):
         locs = set(re.findall(r"<loc>(.*?)</loc>", self.sitemap))

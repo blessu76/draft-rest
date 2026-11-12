@@ -48,7 +48,7 @@ class Ga4(unittest.TestCase):
             self.assertNotIn(GA_ID, (ROOT / rel).read_text(encoding="utf-8"))
 
     def test_privacy_website_section_matches_the_tracking(self):
-        for c in build_site.CODES:
+        for c in build_site.privacy_codes():
             rel = "privacy/index.html" if c == "en" else "%s/privacy/index.html" % c
             with self.subTest(c):
                 t = self.html[rel]
@@ -60,7 +60,7 @@ class Ga4(unittest.TestCase):
 
     def test_app_sections_are_untouched(self):
         # the privacy page is shared with the app: only section 3 (the website) may mention the site's analytics
-        for c in build_site.CODES:
+        for c in build_site.privacy_codes():
             sections = json.loads((ROOT / "content" / ("%s.json" % c)).read_text(encoding="utf-8"))["privacy"]["sections"]
             self.assertEqual(len(sections), 4, c)
             for i in (0, 1, 3):

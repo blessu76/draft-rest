@@ -13,8 +13,8 @@
     --gray:#8A909B;       /* faint mono labels */
     --line:rgba(27,31,39,.12);         /* hairline on light */
     --line-dark:rgba(245,240,232,.10); /* hairline inside dark terminal */
-    --mono:'JetBrains Mono','Noto Sans Arabic','Noto Sans Devanagari',ui-monospace,monospace;
-    --sans:'Inter','Noto Sans Arabic','Noto Sans Devanagari',system-ui,sans-serif;
+    --mono:'JetBrains Mono','Noto Sans Arabic','Noto Sans Devanagari','Noto Sans Thai',ui-monospace,monospace;
+    --sans:'Inter','Noto Sans Arabic','Noto Sans Devanagari','Noto Sans Thai',system-ui,sans-serif;
   }
   /* web kit theme (vendor/ipe_web_kit · assets/ipe-kit.css): kit pieces read only --ipe-*; unset tokens use the kit defaults */
   :root{

@@ -1,6 +1,6 @@
 {
   "meta_title": "draft() — Söyle, hikâyeni al.",
-  "meta_desc": "Dağınık konuşmalarını bitmiş, paylaşılabilir bir hikâyeye dönüştüren özel bir yapay zekâ. Konuşursun — draft() onu insanların gerçekten okuyacağı bir şeye çevirir. Sözlerin senin olarak kalır: asla satılmaz, asla model eğitiminde kullanılmaz.",
+  "meta_desc": "Dağınık konuşmalarını bitmiş, paylaşılabilir bir hikâyeye dönüştüren özel bir yapay zekâ. Konuşursun, draft() onu okunmaya değer bir şeye çevirir. Sözlerin senin: asla satılmaz, model eğitiminde kullanılmaz.",
   "hero_comment": "// bugün ne oldu?",
   "hero_h1": "Söyle, hikâyeni al.",
   "hero_sub": "Konuşursun. draft() onu insanların gerçekten okuyacağı bir hâle getirir.",
@@ -86,7 +86,7 @@
   "ld_section": "Yazma rehberleri",
   "ld_topic": "Hikâye anlatımı",
   "ld_keywords": "hikâye anlatımı, yazma ipuçları, sesten metne, yapay zekâ ile yazma, draft()",
-  "meta_desc_short": "Dağınık konuşmalarını bitmiş, paylaşılabilir bir hikâyeye dönüştüren özel bir yapay zekâ. Konuşursun, draft() biçimlendirir. Sözlerin senin kalır: asla satılmaz.",
+  "meta_desc_short": "Dağınık konuşmalarını bitmiş, paylaşılabilir bir hikâyeye dönüştüren özel bir yapay zekâ. Konuşursun, draft() biçimlendirir. Sözlerin senin: asla satılmaz.",
   "blog_title": "Blog — draft(): ilk cümleni yazmak üzerine notlar",
   "blog_page": "Sayfa {n}",
   "blog_newer": "Daha yeni yazılar",
