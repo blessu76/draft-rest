@@ -1,0 +1,28 @@
+{
+  "nav_about": "Hakkında",
+  "updated_label": "Son güncelleme",
+  "updated": "2026-11-01",
+  "about": {
+    "title": "draft() hakkında — diğer Draft uygulamalarından farkı",
+    "desc": "ipe Studio'nun draft() uygulaması, sese dayalı bir hikâye anlatma uygulamasıdır. Aynı adı taşıyan diğer Draft uygulamalarından nasıl farklı olduğunu açıklar.",
+    "comment": "// diğer Draft değil",
+    "h1": "ipe Studio'dan draft()",
+    "sections": [
+      {
+        "h": "Bir ad, birden çok uygulama",
+        "p": [
+          "Birçok uygulama ve araç “Draft” adını kullanıyor. Bu sitedeki draft() ise farklı bir ürün: ipe Studio tarafından yapılmış, sese dayalı bir hikâye anlatma uygulaması. Yaklaşık otuz saniye konuşursun, iki üç nazik soruyu yanıtlarsın ve kanca, yükseliş, doruk, yansıma ve kapanıştan oluşan bitmiş bir hikâye elde edersin. Sözlerin yine senin olarak kalır."
+        ]
+      },
+      {
+        "h": "Bizim olduğunu nasıl anlarsın",
+        "li": [
+          "Resmî site: draft.ipe.rest — bu site.",
+          "Geliştirici: ipe Studio — [ipe.rest](https://ipe.rest).",
+          "Ad, parantezli olarak draft() biçiminde yazılır ve “an ipe studio app” ibaresiyle işaretlenir.",
+          "Platform: iOS, hazırlık aşamasında."
+        ]
+      }
+    ]
+  }
+}
