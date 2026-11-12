@@ -16,6 +16,14 @@
     --mono:'JetBrains Mono','Noto Sans Arabic','Noto Sans Devanagari',ui-monospace,monospace;
     --sans:'Inter','Noto Sans Arabic','Noto Sans Devanagari',system-ui,sans-serif;
   }
+  /* web kit theme (vendor/ipe_web_kit · assets/ipe-kit.css): kit pieces read only --ipe-*; unset tokens use the kit defaults */
+  :root{
+    --ipe-muted:#A8AEB8;
+    --ipe-line:var(--line);
+    --ipe-accent:var(--gold-deep);
+    --ipe-font-sans:var(--sans);
+    --ipe-font-mono:var(--mono);
+  }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
@@ -255,7 +263,7 @@
   .foot-links{margin-top:28px;display:flex;flex-wrap:wrap;gap:4px 24px;justify-content:center;font-size:13px;color:var(--gray);}
   .foot-links a{text-decoration:none;transition:color .3s;}
   .foot-links a:hover{color:var(--ink);}
-  .foot-studio{margin-top:26px;font-size:12px;letter-spacing:.06em;color:#A8AEB8;}
+  .ipe-studio{margin-top:26px;letter-spacing:.06em;}
 
   /* ---------- language selector (minimal, mono, top-right) ---------- */
   .langsel{

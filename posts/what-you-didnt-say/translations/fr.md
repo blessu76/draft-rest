@@ -3,7 +3,7 @@ title: Écrivez la phrase que vous n'avez pas dite
 description: Certains moments gardent une phrase jamais prononcée. Écrivez-la en trois étapes, avec un exemple et les écueils fréquents.
 date: 2026-11-12
 slug: what-you-didnt-say
-draft: true
+published: 2026-11-12T16:01:00+09:00
 ---
 
 Vous est-il déjà arrivé de répondre « ça va » en sentant qu'une autre phrase se tenait juste derrière ? Beaucoup de moments qui valent la peine d'être écrits contiennent une ligne comme celle-là : quelque chose que l'on a presque dit, puis avalé. La phrase non dite est souvent la plus sincère de la journée, et elle peut donner son centre à un texte court. Vous n'avez à la dire à personne. Il suffit de l'écrire une fois.

@@ -3,7 +3,7 @@ title: Hãy viết câu bạn đã không nói ra
 description: Có những khoảnh khắc giữ lại một câu chưa từng nói. Viết nó ra qua ba bước, kèm ví dụ và những chỗ dễ vấp thường gặp.
 date: 2026-11-12
 slug: what-you-didnt-say
-draft: true
+published: 2026-11-12T16:01:00+09:00
 ---
 
 Bạn đã bao giờ đáp "tôi ổn" mà cảm thấy ngay sau đó còn một câu khác đang nấp chưa? Nhiều khoảnh khắc đáng viết có một dòng như vậy, điều bạn suýt nói rồi lại nuốt xuống. Câu không nói ra thường là câu chân thật nhất trong ngày, và nó có thể trở thành trung tâm của một bài viết ngắn. Bạn không cần nói với ai cả. Bạn chỉ cần viết nó ra một lần.

@@ -27,7 +27,7 @@ class Locales(unittest.TestCase):
     def test_template_keys_exist(self):
         loc = build_site.load_locales(ROOT)
         tpl = (ROOT / "src" / "home_body.html").read_text(encoding="utf-8")
-        reserved = {"LANGSEL", "FOOTLANGS", "FOOTLINKS", "TOPLINK", "BLOGCARDS"}
+        reserved = {"LANGSEL", "FOOTLANGS", "FOOTLINKS", "TOPLINK", "BLOGCARDS", "STUDIO"}
         for k in set(re.findall(r"\{\{(\w+)", tpl)) - reserved:
             self.assertIn(k, loc["en"], k)
 
@@ -401,7 +401,7 @@ class PublishedTime(unittest.TestCase):
         self.dir = Path(self.tmp.name)
         self.shutil = __import__("shutil")
         self.shutil.copytree(ROOT / "locales", self.dir / "locales")
-        for n in ("src", "assets", "content", "shared"):
+        for n in ("src", "assets", "content", "vendor"):
             if (ROOT / n).is_dir():
                 self.shutil.copytree(ROOT / n, self.dir / n)
         for n in ("llms.txt", "og-image.png"):
@@ -493,7 +493,7 @@ class NumberingAndPaging(unittest.TestCase):
         self.addCleanup(tmp.cleanup)
         d = Path(tmp.name)
         shutil.copytree(ROOT / "locales", d / "locales")
-        for name in ("src", "assets", "content", "shared"):
+        for name in ("src", "assets", "content", "vendor"):
             if (ROOT / name).is_dir():
                 shutil.copytree(ROOT / name, d / name)
         for name in ("llms.txt", "og-image.png", "robots.txt"):
@@ -703,12 +703,12 @@ class LocalTime(unittest.TestCase):
 
     def test_copy_matches_canonical_hash(self):
         import hashlib
-        data = (ROOT / "shared" / "ipe-localtime.js").read_bytes()
+        data = (ROOT / build_site.LOCALTIME_JS).read_bytes()
         self.assertEqual(hashlib.sha256(data).hexdigest(), self.SHA256)
         self.assertEqual(len(data), 1639)
 
     def test_build_inlines_module_bytes_before_body_end(self):
-        js = (ROOT / "shared" / "ipe-localtime.js").read_bytes().decode("utf-8")
+        js = (ROOT / build_site.LOCALTIME_JS).read_bytes().decode("utf-8")
         self.assertTrue(self.pages)
         for rel, html in self.pages.items():
             self.assertIn("<script>" + js + "</script>\n</body>", html, rel)
@@ -779,7 +779,7 @@ class HomeCards(unittest.TestCase):
 
     def test_times_are_kst_convertible_and_module_inlined_once(self):
         import hashlib
-        js = (ROOT / "shared" / "ipe-localtime.js").read_bytes()
+        js = (ROOT / build_site.LOCALTIME_JS).read_bytes()
         for c in build_site.CODES:
             h = self.home(c)
             self.assertIn("<script>" + js.decode("utf-8") + "</script>\n</body>", h, c)
@@ -980,7 +980,7 @@ class JsonLdPostFields(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.dir = Path(self.tmp.name)
         shutil.copytree(ROOT / "locales", self.dir / "locales")
-        for n in ("src", "assets", "content", "shared"):
+        for n in ("src", "assets", "content", "vendor"):
             if (ROOT / n).is_dir():
                 shutil.copytree(ROOT / n, self.dir / n)
         for n in ("llms.txt", "og-image.png"):
@@ -1295,7 +1295,7 @@ class PostMoreLinksSmall(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.dir = Path(self.tmp.name)
         shutil.copytree(ROOT / "locales", self.dir / "locales")
-        for n in ("src", "assets", "content", "shared"):
+        for n in ("src", "assets", "content", "vendor"):
             if (ROOT / n).is_dir():
                 shutil.copytree(ROOT / n, self.dir / n)
         for n in ("llms.txt", "og-image.png"):
@@ -1337,7 +1337,7 @@ class DescriptionLimit(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             d = Path(tmp)
             shutil.copytree(ROOT / "locales", d / "locales")
-            for n in ("src", "assets", "content", "shared"):
+            for n in ("src", "assets", "content", "vendor"):
                 shutil.copytree(ROOT / n, d / n)
             for n in ("llms.txt", "og-image.png"):
                 shutil.copy(ROOT / n, d / n)

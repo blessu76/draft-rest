@@ -3,7 +3,7 @@ title: Escreva a frase que você não disse
 description: Alguns momentos guardam uma frase que nunca foi dita. Escreva-a em três passos, com um exemplo e os tropeços mais comuns.
 date: 2026-11-12
 slug: what-you-didnt-say
-draft: true
+published: 2026-11-12T16:01:00+09:00
 ---
 
 Você já respondeu «estou bem» e sentiu que logo atrás havia outra frase? Muitos momentos que valem ser escritos têm uma linha assim: algo que quase foi dito e acabou engolido. A frase não dita costuma ser a mais sincera do dia e pode dar um centro a um texto curto. Você não precisa dizê-la a ninguém. Só precisa escrevê-la uma vez.

@@ -39,7 +39,7 @@ class PublishPost(unittest.TestCase):
         self.assertRegex(iso, r"^\d{4}-\d\d-\d\dT\d\d:\d\d:00\+09:00$")
 
     def test_default_time_is_now_kst_and_result_builds(self):
-        for n in ("src", "assets", "locales", "content", "shared"):
+        for n in ("src", "assets", "locales", "content", "vendor"):
             if (ROOT / n).is_dir():
                 shutil.copytree(ROOT / n, self.dir / n)
         for n in ("llms.txt", "og-image.png"):

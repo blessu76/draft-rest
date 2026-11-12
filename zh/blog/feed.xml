@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>把你说的话变成别人真正会读的故事——来自 draft() 团队的简短指南。</description>
     <language>zh</language>
-    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>写下那句没能说出口的话</title>
+      <link>https://draft.ipe.rest/zh/blog/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh/blog/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>有些时刻会留下一句没说出口的话。用三个步骤把它写下来，并附有示例和常见的卡点。</description>
+    </item>
     <item>
       <title>用一天一句的日记，慢慢积攒故事</title>
       <link>https://draft.ipe.rest/zh/blog/one-sentence-a-day/</link>

@@ -3,7 +3,7 @@ title: Tulis satu kalimat yang tidak sempat Anda ucapkan
 description: Ada momen yang menyisakan kalimat yang tak pernah terucap. Tulis dalam tiga langkah, lengkap dengan contoh dan kendala yang umum.
 date: 2026-11-12
 slug: what-you-didnt-say
-draft: true
+published: 2026-11-12T16:01:00+09:00
 ---
 
 Pernahkah Anda menjawab "saya baik-baik saja" sambil merasa ada kalimat lain yang bersembunyi tepat di belakangnya? Banyak momen yang layak ditulis punya satu baris seperti itu, sesuatu yang hampir Anda ucapkan lalu Anda telan lagi. Kalimat yang tak terucap sering menjadi kalimat paling jujur hari itu, dan bisa menjadi pusat sebuah tulisan pendek. Anda tidak perlu mengatakannya kepada siapa pun. Anda hanya perlu menuliskannya sekali.

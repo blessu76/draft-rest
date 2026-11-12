@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Schreiben Sie den Satz, den Sie nicht gesagt haben</title>
+      <link>https://draft.ipe.rest/de/blog/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Manche Momente bergen einen Satz, der nie fiel. Schreiben Sie ihn in drei Schritten auf, mit Beispiel und häufigen Stolpersteinen.</description>
+    </item>
     <item>
       <title>Ein Satz pro Tag: So sammeln sich Geschichten an</title>
       <link>https://draft.ipe.rest/de/blog/one-sentence-a-day/</link>

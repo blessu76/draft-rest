@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/vi/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Wed, 11 Nov 2026 16:49:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Hãy viết câu bạn đã không nói ra</title>
+      <link>https://draft.ipe.rest/vi/blog/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/blog/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Có những khoảnh khắc giữ lại một câu chưa từng nói. Viết nó ra qua ba bước, kèm ví dụ và những chỗ dễ vấp thường gặp.</description>
+    </item>
     <item>
       <title>Viết một câu mỗi ngày để câu chuyện dần tích lại</title>
       <link>https://draft.ipe.rest/vi/blog/one-sentence-a-day/</link>
