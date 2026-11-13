@@ -40,7 +40,7 @@ class Pages(unittest.TestCase):
     @property
     def home(self):
         return {k: v for k, v in self.files.items()
-                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES)}
+                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES + build_site.LEGAL)}
 
     @property
     def indexed_home(self):
@@ -188,7 +188,7 @@ class Pages(unittest.TestCase):
 
     def test_assets_are_cache_busted(self):
         for rel, text in self.files.items():
-            if rel.endswith("index.html") and rel != "en/index.html":
+            if rel.endswith("index.html") and rel != "en/index.html" and "http-equiv=\"refresh\"" not in text:
                 self.assertRegex(text, r'/assets/site\.css\?v=[0-9a-f]{8}"')
                 self.assertRegex(text, r'/assets/site\.js\?v=[0-9a-f]{8}"')
 
@@ -1044,7 +1044,23 @@ class SeoFixes(unittest.TestCase):
             self.assertIn('class="btn" aria-disabled="true"', post, c)
             self.assertNotIn('<a class="btn"', post, c)
 
-    def test_about_and_privacy_pages_in_every_language(self):
+    def test_legal_paths_forward_to_ipe_rest(self):
+        for c in build_site.CODES:
+            home = self.files["index.html" if c == "en" else "%s/index.html" % c]
+            self.assertIn('href="%s"' % build_site.legal_url(c, "privacy"), home, c)
+            for slug in build_site.LEGAL:
+                rel = build_site.page_path(c, slug).strip("/") + "/index.html"
+                t = self.files[rel]
+                target = build_site.legal_url(c, slug)
+                self.assertIn('<meta http-equiv="refresh" content="0; url=%s">' % target, t, rel)
+                self.assertIn('<link rel="canonical" href="%s">' % target, t, rel)
+                self.assertIn('<meta name="robots" content="noindex,follow">', t, rel)
+                self.assertIn('<a href="%s">' % target, t, rel)
+                self.assertIn('<html lang="%s"' % c, t, rel)
+        self.assertNotIn("/privacy/", self.files["sitemap.xml"])
+        self.assertNotIn("/terms/", self.files["sitemap.xml"])
+
+    def test_about_pages_in_every_language(self):
         for slug in build_site.PAGES:
             for c in build_site.CODES:
                 rel = ("%s/index.html" % slug) if c == "en" else "%s/%s/index.html" % (c, slug)

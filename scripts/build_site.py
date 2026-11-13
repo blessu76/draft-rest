@@ -5,7 +5,8 @@ Reads   src/home_body.html          home page body template ({{key}} = locale st
         locales/<lang>.json         per-language strings (13 languages, en is the fallback)
 Writes  index.html                  the English page; also x-default and hreflang "en" (single English body)
         <lang>/index.html           one static page per other language (ko ja zh es pt id ru vi fr de ar hi)
-        about/ privacy/             English content pages (root-level); <lang>/about|privacy/ for the others — texts in content/<lang>.json
+        about/                      English content page (root-level); <lang>/about/ for the others — texts in content/<lang>.json
+        privacy/ terms/             forwarding pages -> ipe.rest/{ko,en}/legal/… (root and every language; noindex, not in the sitemap)
         en/index.html               redirect stub -> / (noindex, canonical /; not in the sitemap)
         404.html                    not-found page (noindex)
         sitemap.xml                 every page with hreflang alternates, real lastmod
@@ -117,11 +118,17 @@ def home_path(lang):
     return "/" if lang in (None, DEFAULT_LANG) else "/%s/" % lang
 
 
-PAGES = ("about", "privacy")  # content pages; English lives at /<page>/, the others at /<lang>/<page>/
+PAGES = ("about",)  # content pages; English lives at /<page>/, the others at /<lang>/<page>/
+LEGAL = ("privacy", "terms")  # the legal pages live on ipe.rest; these paths only forward there
+LEGAL_TITLE = {"privacy": "Privacy — draft()", "terms": "Terms — draft()"}
 
 
 def page_path(lang, slug):
     return "/%s/" % slug if lang == DEFAULT_LANG else "/%s/%s/" % (lang, slug)
+
+
+def legal_url(lang, slug):
+    return "https://ipe.rest/%s/legal/%s/" % ("ko" if lang == "ko" else "en", slug)
 
 
 def lang_path(lang, path=""):
@@ -316,7 +323,7 @@ def chrome(locales, lang, path="", blog=False):
         foot.append('<a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog"))))
     top += "</nav>"
     foot += ['<a href="%s">%s</a>' % (page_path(lang, "about"), esc(tr(locales, lang, "nav_about"))),
-             '<a href="%s">%s</a>' % (page_path(lang, "privacy"), esc(tr(locales, lang, "foot_privacy")))]
+             '<a href="%s">%s</a>' % (legal_url(lang, "privacy"), esc(tr(locales, lang, "foot_privacy")))]
     return {"LANGSEL": lang_select(lang, path), "FOOTLANGS": foot_langs(lang, path), "FOOTLINKS": "\n      ".join(foot), "TOPLINK": top}
 
 
@@ -384,6 +391,14 @@ def render_en_stub(version):
 </body>
 </html>
 """
+
+
+def render_legal_redirect(version, lang, slug):
+    """/privacy/ /terms/ (and /<lang>/…) -> ipe.rest's legal page: a forward that stays out of the index and the sitemap."""
+    target = legal_url(lang, slug)
+    h = head({}, lang, version, target, LEGAL_TITLE[slug], "Moved to ipe.rest.", None, "", robots="noindex,follow",
+             extra='<meta http-equiv="refresh" content="0; url=%s">\n' % esc(target))
+    return h + f'<p><a href="{esc(target)}">{esc(target)}</a></p>\n</body>\n</html>\n'
 
 
 def render_404(version):
@@ -1041,11 +1056,14 @@ def render_llms_pages():
     for c, n, _ in LANGS:
         if c != DEFAULT_LANG:
             lines.append("- [%s](%s) — %s" % (n, page_url(c), c))
-    names = {"about": "About (how draft() differs from other Draft apps)", "privacy": "Privacy"}
+    names = {"about": "About (how draft() differs from other Draft apps)"}
     for slug in PAGES:
         lines.append("")
         lines.append("## %s" % names[slug])
         lines.append(", ".join("[%s](%s)" % (c, content_url(c, slug)) for c in CODES))
+    lines.append("")
+    lines.append("## Privacy")
+    lines.append(", ".join("[%s](%s)" % (c, legal_url(c, "privacy")) for c in CODES))
     return "\n".join(lines) + "\n"
 
 
@@ -1099,11 +1117,12 @@ def build(root):
             for c in CODES:
                 out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]], posts)
                 pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
-    prio = {"about": "0.8", "privacy": "0.4"}
-    for slug in PAGES:
+    for c in CODES:
+        out[page_path(c, "about").strip("/") + "/index.html"] = render_content_page(root, locales, content, version, "about", c)
+        pages.append((content_url(c, "about"), git_date(root, ["src", "assets", "content/%s.json" % c]), "0.8", "monthly", content_cluster("about")))
+    for slug in LEGAL:
         for c in CODES:
-            out[page_path(c, slug).strip("/") + "/index.html"] = render_content_page(root, locales, content, version, slug, c)
-            pages.append((content_url(c, slug), git_date(root, ["src", "assets", "content/%s.json" % c]), prio[slug], "monthly", content_cluster(slug)))
+            out[page_path(c, slug).strip("/") + "/index.html"] = render_legal_redirect(version, c, slug)
     want = min(HOME_CARDS, len(posts))
     for c in CODES:
         rel = "index.html" if c == DEFAULT_LANG else "%s/index.html" % c

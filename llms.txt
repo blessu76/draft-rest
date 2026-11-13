@@ -9,7 +9,7 @@
 - Signature flow: talk → a few questions → a finished story (hook · rising · peak · reflection · close)
 - Formats: one-tap reshaping for an Instagram caption, a LinkedIn post, or a YouTube script
 - Privacy: your words stay yours — never sold, never used to train; you decide what's kept and what's deleted, and only the finished story is shared, when you choose to
-- Website analytics: the website (not the app) collects basic visit statistics through Google Analytics (uses cookies) and Cloudflare Web Analytics (cookieless); details on the privacy page
+- Website analytics: the website (not the app) collects basic visit statistics through Google Analytics (uses cookies) and Cloudflare Web Analytics (cookieless); details in the privacy policy (https://ipe.rest/en/legal/privacy/)
 - Pricing: free (3 finished stories); subscription $2.99/month for unlimited
 - Website: https://draft.ipe.rest
 - Maker: ipe Studio (brand ipe(), motto "when the process finally rests"), https://ipe.rest
@@ -39,7 +39,7 @@ One static page per language (all describe the same app):
 [en](https://draft.ipe.rest/about/), [ko](https://draft.ipe.rest/ko/about/), [ja](https://draft.ipe.rest/ja/about/), [zh](https://draft.ipe.rest/zh/about/), [es](https://draft.ipe.rest/es/about/), [pt](https://draft.ipe.rest/pt/about/), [id](https://draft.ipe.rest/id/about/), [ru](https://draft.ipe.rest/ru/about/), [vi](https://draft.ipe.rest/vi/about/), [fr](https://draft.ipe.rest/fr/about/), [de](https://draft.ipe.rest/de/about/), [ar](https://draft.ipe.rest/ar/about/), [hi](https://draft.ipe.rest/hi/about/)
 
 ## Privacy
-[en](https://draft.ipe.rest/privacy/), [ko](https://draft.ipe.rest/ko/privacy/), [ja](https://draft.ipe.rest/ja/privacy/), [zh](https://draft.ipe.rest/zh/privacy/), [es](https://draft.ipe.rest/es/privacy/), [pt](https://draft.ipe.rest/pt/privacy/), [id](https://draft.ipe.rest/id/privacy/), [ru](https://draft.ipe.rest/ru/privacy/), [vi](https://draft.ipe.rest/vi/privacy/), [fr](https://draft.ipe.rest/fr/privacy/), [de](https://draft.ipe.rest/de/privacy/), [ar](https://draft.ipe.rest/ar/privacy/), [hi](https://draft.ipe.rest/hi/privacy/)
+[en](https://ipe.rest/en/legal/privacy/), [ko](https://ipe.rest/ko/legal/privacy/), [ja](https://ipe.rest/en/legal/privacy/), [zh](https://ipe.rest/en/legal/privacy/), [es](https://ipe.rest/en/legal/privacy/), [pt](https://ipe.rest/en/legal/privacy/), [id](https://ipe.rest/en/legal/privacy/), [ru](https://ipe.rest/en/legal/privacy/), [vi](https://ipe.rest/en/legal/privacy/), [fr](https://ipe.rest/en/legal/privacy/), [de](https://ipe.rest/en/legal/privacy/), [ar](https://ipe.rest/en/legal/privacy/), [hi](https://ipe.rest/en/legal/privacy/)
 <!-- pages:llms:end -->
 
 <!-- blog:llms:start -->
