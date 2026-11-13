@@ -45,7 +45,7 @@ class Pages(unittest.TestCase):
     @property
     def home(self):
         return {k: v for k, v in self.files.items()
-                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES)}
+                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES + build_site.LEGAL)}
 
     @property
     def indexed_home(self):
@@ -195,7 +195,7 @@ class Pages(unittest.TestCase):
 
     def test_assets_are_cache_busted(self):
         for rel, text in self.files.items():
-            if rel.endswith("index.html") and rel != "en/index.html":
+            if rel.endswith("index.html") and rel != "en/index.html" and 'http-equiv="refresh"' not in text:
                 self.assertRegex(text, r'/assets/site\.css\?v=[0-9a-f]{8}"')
                 self.assertRegex(text, r'/assets/site\.js\?v=[0-9a-f]{8}"')
 
@@ -926,7 +926,7 @@ class JsonLd(unittest.TestCase):
 
     def test_about_titles_within_60(self):
         for c in build_site.BLOG_CODES:
-            for slug in ("about", "privacy"):
+            for slug in build_site.PAGES:
                 t = html_unescape(re.search(r"<title>(.*?)</title>", self.files[build_site.page_path(c, slug).strip("/") + "/index.html"]).group(1))
                 self.assertLessEqual(len(t), 60, (c, slug, len(t)))
 
@@ -1053,7 +1053,26 @@ class SeoFixes(unittest.TestCase):
             self.assertIn('class="btn" aria-disabled="true"', post, c)
             self.assertNotIn('<a class="btn"', post, c)
 
-    def test_about_and_privacy_pages_in_every_language(self):
+    def test_legal_paths_forward_to_ipe_rest(self):
+        for c in build_site.CODES:
+            for slug in build_site.LEGAL:
+                rel = build_site.page_path(c, slug).strip("/") + "/index.html"
+                t = self.files[rel]
+                target = build_site.legal_url(c, slug)
+                self.assertIn('<meta http-equiv="refresh" content="0; url=%s">' % target, t, rel)
+                self.assertIn('<link rel="canonical" href="%s">' % target, t, rel)
+                self.assertIn('<meta name="robots" content="noindex,follow">', t, rel)
+                self.assertIn('<a href="%s">' % target, t, rel)
+                self.assertIn('<html lang="%s"' % build_site.tag(c), t, rel)
+        for c in build_site.LISTED:
+            home = self.files["index.html" if c == "en" else "%s/index.html" % c]
+            self.assertIn('href="%s"' % build_site.legal_url(c, "privacy"), home, c)
+        self.assertEqual(build_site.legal_url("ko", "privacy"), "https://ipe.rest/ko/legal/privacy/")
+        self.assertEqual(build_site.legal_url("ja", "terms"), "https://ipe.rest/en/legal/terms/")
+        self.assertNotIn("/privacy/", self.files["sitemap.xml"])
+        self.assertNotIn("/terms/", self.files["sitemap.xml"])
+
+    def test_about_pages_in_every_language(self):
         for slug in build_site.PAGES:
             for c in [x for x in build_site.page_codes(slug) if x in build_site.LISTED]:
                 rel = ("%s/index.html" % slug) if c == "en" else "%s/%s/index.html" % (c, slug)
@@ -1125,7 +1144,7 @@ class SeoFixes(unittest.TestCase):
         self.assertEqual((ROOT / "favicon.ico").read_bytes()[:4], b"\x00\x00\x01\x00")
         import stage_site
         names = {p.as_posix() for p in stage_site.public_files(ROOT)}
-        self.assertTrue({"apple-touch-icon.png", "favicon.ico", "about/index.html", "privacy/index.html", "ko/about/index.html"} <= names)
+        self.assertTrue({"apple-touch-icon.png", "favicon.ico", "about/index.html", "privacy/index.html", "terms/index.html", "ko/about/index.html"} <= names)
 
     def test_render_blocking_resources_are_tamed(self):
         """10-26 perf: fonts swap + preconnect, site.js deferred; the inline localtime script stays where it is."""

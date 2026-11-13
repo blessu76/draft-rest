@@ -38,7 +38,7 @@ One static page per language (all describe the same app):
 [en](https://draft.ipe.rest/about/), [ko](https://draft.ipe.rest/ko/about/), [ja](https://draft.ipe.rest/ja/about/), [zh-Hant](https://draft.ipe.rest/zh-Hant/about/), [es](https://draft.ipe.rest/es/about/), [pt](https://draft.ipe.rest/pt/about/), [fr](https://draft.ipe.rest/fr/about/), [de](https://draft.ipe.rest/de/about/), [id](https://draft.ipe.rest/id/about/), [th](https://draft.ipe.rest/th/about/), [vi](https://draft.ipe.rest/vi/about/), [tr](https://draft.ipe.rest/tr/about/)
 
 ## Privacy
-[en](https://draft.ipe.rest/privacy/), [ko](https://draft.ipe.rest/ko/privacy/), [ja](https://draft.ipe.rest/ja/privacy/), [es](https://draft.ipe.rest/es/privacy/), [pt](https://draft.ipe.rest/pt/privacy/), [fr](https://draft.ipe.rest/fr/privacy/), [de](https://draft.ipe.rest/de/privacy/), [id](https://draft.ipe.rest/id/privacy/), [vi](https://draft.ipe.rest/vi/privacy/)
+[en](https://ipe.rest/en/legal/privacy/), [ko](https://ipe.rest/ko/legal/privacy/), [ja](https://ipe.rest/en/legal/privacy/), [zh-Hant](https://ipe.rest/en/legal/privacy/), [es](https://ipe.rest/en/legal/privacy/), [pt](https://ipe.rest/en/legal/privacy/), [fr](https://ipe.rest/en/legal/privacy/), [de](https://ipe.rest/en/legal/privacy/), [id](https://ipe.rest/en/legal/privacy/), [th](https://ipe.rest/en/legal/privacy/), [vi](https://ipe.rest/en/legal/privacy/), [tr](https://ipe.rest/en/legal/privacy/)
 <!-- pages:llms:end -->
 
 <!-- blog:llms:start -->

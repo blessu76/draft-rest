@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://draft.ipe.rest/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -61,7 +61,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/zh-Hant/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -99,7 +99,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -137,7 +137,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -156,7 +156,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -175,7 +175,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/th/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -194,7 +194,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -213,7 +213,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/tr/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -3400,7 +3400,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3419,7 +3419,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3438,7 +3438,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3457,7 +3457,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/zh-Hant/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3476,7 +3476,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3495,7 +3495,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3514,7 +3514,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3533,7 +3533,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3552,7 +3552,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3571,7 +3571,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/th/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3590,7 +3590,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3609,7 +3609,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/tr/about/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/about/"/>
@@ -3625,149 +3625,5 @@
     <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/about/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://draft.ipe.rest/tr/about/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/about/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/privacy/</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/privacy/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/ko/privacy/</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/privacy/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/ja/privacy/</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/privacy/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/es/privacy/</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/privacy/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/pt/privacy/</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/privacy/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/fr/privacy/</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/privacy/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/de/privacy/</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/privacy/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/id/privacy/</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/privacy/"/>
-  </url>
-  <url>
-    <loc>https://draft.ipe.rest/vi/privacy/</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/privacy/"/>
   </url>
 </urlset>

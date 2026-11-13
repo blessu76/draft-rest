@@ -35,7 +35,7 @@ class Ga4(unittest.TestCase):
                 self.assertLess(text.index(GA_ID), text.index("</head>"))
 
     def test_page_kinds_are_covered(self):
-        for rel in ("index.html", "ko/index.html", "404.html", "about/index.html", "privacy/index.html", "de/privacy/index.html",
+        for rel in ("index.html", "ko/index.html", "404.html", "about/index.html", "privacy/index.html", "de/privacy/index.html", "terms/index.html",
                     "ko/blog/index.html", "en/blog/blank-caption-box/index.html"):
             self.assertIn(rel, self.html)
             self.assertEqual(self.html[rel].count(GA_ID), 1, rel)
@@ -49,14 +49,12 @@ class Ga4(unittest.TestCase):
 
     def test_privacy_website_section_matches_the_tracking(self):
         for c in build_site.privacy_codes():
-            rel = "privacy/index.html" if c == "en" else "%s/privacy/index.html" % c
             with self.subTest(c):
-                t = self.html[rel]
+                t = json.dumps(json.loads((ROOT / "content" / ("%s.json" % c)).read_text(encoding="utf-8"))["privacy"], ensure_ascii=False)
                 self.assertIn("Google Analytics", t)
                 self.assertIn("_ga", t)
                 self.assertIn(OPTOUT, t)
                 self.assertIn("Cloudflare", t)
-                self.assertIn("2026-11-01", t)
 
     def test_app_sections_are_untouched(self):
         # the privacy page is shared with the app: only section 3 (the website) may mention the site's analytics
