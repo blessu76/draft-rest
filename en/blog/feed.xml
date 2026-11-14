@@ -3,85 +3,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>draft() Blog</title>
-    <link>https://draft.ipe.rest/en/blog/</link>
-    <atom:link href="https://draft.ipe.rest/en/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://draft.ipe.rest/journal/</link>
+    <atom:link href="https://draft.ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
     <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
     <item>
       <title>Keep one line someone said, exactly as they said it</title>
-      <link>https://draft.ipe.rest/en/blog/one-line-they-said/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/one-line-they-said/</guid>
+      <link>https://draft.ipe.rest/journal/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/one-line-they-said/</guid>
       <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
       <description>A summary loses the voice, but one line of what someone said keeps it. Three ways to choose the line, with an example and common stumbling blocks.</description>
     </item>
     <item>
       <title>Cut the warm-up and start in the middle of the scene</title>
-      <link>https://draft.ipe.rest/en/blog/start-later/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/start-later/</guid>
+      <link>https://draft.ipe.rest/journal/start-later/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/start-later/</guid>
       <pubDate>Sun, 01 Nov 2026 16:01:00 +0900</pubDate>
       <description>Instead of opening with the weather and the time, start where something is already happening. Three ways to find your starting point, with an example.</description>
     </item>
     <item>
       <title>Name one detail instead of naming the feeling</title>
-      <link>https://draft.ipe.rest/en/blog/name-the-detail/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/name-the-detail/</guid>
+      <link>https://draft.ipe.rest/journal/name-the-detail/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/name-the-detail/</guid>
       <pubDate>Sat, 31 Oct 2026 16:00:00 +0900</pubDate>
       <description>Instead of writing &quot;I was upset,&quot; write one thing you could see. The feeling comes through unexplained. Three questions for picking a detail, with an example.</description>
     </item>
     <item>
       <title>Look for the small turn inside a scene</title>
-      <link>https://draft.ipe.rest/en/blog/small-turning-point/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/small-turning-point/</guid>
+      <link>https://draft.ipe.rest/journal/small-turning-point/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/small-turning-point/</guid>
       <pubDate>Fri, 30 Oct 2026 16:00:00 +0900</pubDate>
       <description>A scene with good details can still feel flat if nothing shifts in it. Three kinds of small turn, tiny ones included, with an example.</description>
     </item>
     <item>
       <title>Open a scene with a single sense</title>
-      <link>https://draft.ipe.rest/en/blog/open-with-one-sense/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/open-with-one-sense/</guid>
+      <link>https://draft.ipe.rest/journal/open-with-one-sense/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/open-with-one-sense/</guid>
       <pubDate>Thu, 29 Oct 2026 16:12:00 +0900</pubDate>
       <description>Starting with what you saw is easy but flat. Three ways to open a scene with one sound, smell or touch instead, with an example.</description>
     </item>
     <item>
       <title>Put one person at the center of a short story</title>
-      <link>https://draft.ipe.rest/en/blog/one-person-in-focus/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/one-person-in-focus/</guid>
+      <link>https://draft.ipe.rest/journal/one-person-in-focus/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/one-person-in-focus/</guid>
       <pubDate>Wed, 28 Oct 2026 15:58:00 +0900</pubDate>
       <description>A story with a crowd in it goes blurry. Pick one person, ask three small questions about them, and give your short story a face. With an example.</description>
     </item>
     <item>
       <title>Finding a story in &quot;nothing really happened today&quot;</title>
-      <link>https://draft.ipe.rest/en/blog/nothing-happened-today/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/nothing-happened-today/</guid>
+      <link>https://draft.ipe.rest/journal/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/nothing-happened-today/</guid>
       <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
       <description>Even a day with nothing special in it holds a story. Three questions that fish something worth telling out of an ordinary day, with an example.</description>
     </item>
     <item>
       <title>How to end on an echo instead of a moral</title>
-      <link>https://draft.ipe.rest/en/blog/ending-without-a-moral/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/ending-without-a-moral/</guid>
+      <link>https://draft.ipe.rest/journal/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/ending-without-a-moral/</guid>
       <pubDate>Mon, 26 Oct 2026 17:15:00 +0900</pubDate>
       <description>When you&#x27;re tempted to close with &quot;and that&#x27;s when I realized how precious it is.&quot; Three ways to cut the lesson and end on a scene instead, with examples.</description>
     </item>
     <item>
       <title>One first line can save a story: how to write a hook</title>
-      <link>https://draft.ipe.rest/en/blog/first-line-hook/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/first-line-hook/</guid>
+      <link>https://draft.ipe.rest/journal/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/first-line-hook/</guid>
       <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
       <description>Posts that open with explanation are hard to finish. Three ways to write a first line that starts in the middle of a scene, with examples.</description>
     </item>
     <item>
       <title>A 30-second speaking drill: pick just one scene from today</title>
-      <link>https://draft.ipe.rest/en/blog/thirty-second-practice/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/thirty-second-practice/</guid>
+      <link>https://draft.ipe.rest/journal/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/thirty-second-practice/</guid>
       <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
       <description>If explaining your whole day makes you freeze, pick a single scene instead. A simple drill for pulling the raw material of a story out in thirty seconds.</description>
     </item>
     <item>
       <title>Stuck at the blank caption box? Say it out loud instead</title>
-      <link>https://draft.ipe.rest/en/blog/blank-caption-box/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/en/blog/blank-caption-box/</guid>
+      <link>https://draft.ipe.rest/journal/blank-caption-box/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/blank-caption-box/</guid>
       <pubDate>Fri, 23 Oct 2026 17:30:00 +0900</pubDate>
       <description>You had a whole day, but the caption box gives you nothing. Here&#x27;s how to get the story out by talking first, then letting a few questions find the real moment.</description>
     </item>

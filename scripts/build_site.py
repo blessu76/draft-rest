@@ -13,7 +13,7 @@ Writes  index.html                  the English page; also x-default and hreflan
         llms.txt                    "Languages" list between <!-- pages:llms:start --> / <!-- pages:llms:end -->
         assets/*.css|js are NOT generated; their ?v= is a hash of the files (cache busting).
 
-        <lang>/blog/index.html, feed.xml, <slug>/index.html   from posts/<slug>/{ko,en}.md + translations/<lang>.md
+        journal/ (en) and <lang>/journal/: index.html, feed.xml, <slug>/index.html   from posts/<slug>/{ko,en}.md + translations/<lang>.md
 
 Usage:
     python3 scripts/build_site.py            # build into this repo
@@ -118,6 +118,21 @@ def home_path(lang):
     return "/" if lang in (None, DEFAULT_LANG) else "/%s/" % lang
 
 
+def journal_path(lang):
+    """Site path of a language's journal (the blog). English lives at /journal/, the others at /<lang>/journal/ (same pattern as the content pages)."""
+    return "/journal/" if lang == DEFAULT_LANG else "/%s/journal/" % lang
+
+
+def journal_rel(lang):
+    """Folder (relative to the site root, no slashes at the ends) that holds a language's generated journal."""
+    return journal_path(lang).strip("/")
+
+
+def legacy_blog_rel(lang):
+    """The journal used to be /<lang>/blog/ (every language, English too); those URLs stay alive as forwarding stubs."""
+    return "%s/blog" % lang
+
+
 PAGES = ("about",)  # content pages; English lives at /<page>/, the others at /<lang>/<page>/
 LEGAL = ("privacy", "terms")  # the legal pages live on ipe.rest; these paths only forward there
 LEGAL_TITLE = {"privacy": "Privacy — draft()", "terms": "Terms — draft()"}
@@ -132,11 +147,14 @@ def legal_url(lang, slug):
 
 
 def lang_path(lang, path=""):
-    """Site path of `lang`'s version of the page whose language-less path is `path` ('' = home, 'blog/', 'about/', ...)."""
+    """Site path of `lang`'s version of the page whose language-less path is `path` ('' = home, 'journal/', 'about/', ...)."""
     if not path:
         return home_path(lang)
     if path.strip("/") in PAGES:
         return page_path(lang, path.strip("/"))
+    if path.strip("/").split("/")[0] == "journal":
+        rest = path.strip("/")[len("journal"):].strip("/")
+        return journal_path(lang) + (rest + "/" if rest else "")
     return "/%s/%s" % (lang, path)
 
 
@@ -234,7 +252,7 @@ def jsonld(locales, lang, url):
 def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website", extra="", legacy="", feed=None, og_desc=None,
          robots="index, follow, max-image-preview:large"):
     """<head> shared by every page. cluster = {lang: url, 'x-default': url}; ld = ready <script ld+json> blocks."""
-    rss = '<link rel="alternate" type="application/rss+xml" title="draft() Blog" href="%s">\n' % esc(feed) if feed else ""
+    rss = '<link rel="alternate" type="application/rss+xml" title="draft() Journal" href="%s">\n' % esc(feed) if feed else ""
     legacy = '<script>%s</script>\n' % legacy if legacy else ""
     og_desc = og_desc or desc
     canon = '<link rel="canonical" href="%s">\n' % esc(url) if url else ""
@@ -315,11 +333,11 @@ def home_ld(locales, lang, url):
 def chrome(locales, lang, path="", blog=False):
     """Shared page furniture: top-left links, language select, footer pieces."""
     base = home_path(lang)
-    blog_href = "/%s/blog/" % lang
+    blog_href = journal_path(lang)
     top = '<nav class="toplink" aria-label="draft()"><a href="%s">draft()</a>' % base
     foot = []
     if blog:
-        top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (blog_href, ' aria-current="page"' if path.startswith("blog") else "", esc(tr(locales, lang, "nav_blog")))
+        top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (blog_href, ' aria-current="page"' if path.startswith("journal") else "", esc(tr(locales, lang, "nav_blog")))
         foot.append('<a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog"))))
     top += "</nav>"
     foot += ['<a href="%s">%s</a>' % (page_path(lang, "about"), esc(tr(locales, lang, "nav_about"))),
@@ -336,7 +354,7 @@ def blog_cards_html(locales, lang, posts, numbers=None):
         return ""
     cards = "\n".join(f"""        <li class="bcard reveal">
           <p class="comment">// {no_label(numbers[p['slug']]) + ' · ' if numbers else ''}{time_tag(p['date'])}</p>
-          <h3><a class="bcard-link" href="/{lang}/blog/{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h3>
+          <h3><a class="bcard-link" href="{journal_path(lang)}{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h3>
           <p class="bcard-ex">{esc(p['langs'][lang]['description'])}</p>
           <span class="bcard-more" aria-hidden="true">{esc(tr(locales, lang, 'blog_read'))} &rarr;</span>
         </li>""" for p in posts[:HOME_CARDS])
@@ -349,7 +367,7 @@ def blog_cards_html(locales, lang, posts, numbers=None):
     <ol class="bcards">
 {cards}
     </ol>
-    <p class="blog-all"><a class="btn-line" href="/{lang}/blog/">{esc(tr(locales, lang, 'blog_back'))} &rarr;</a></p>
+    <p class="blog-all"><a class="btn-line" href="{journal_path(lang)}">{esc(tr(locales, lang, 'blog_back'))} &rarr;</a></p>
   </div>
 </section>
 """
@@ -401,6 +419,13 @@ def render_legal_redirect(version, lang, slug):
     return h + f'<p><a href="{esc(target)}">{esc(target)}</a></p>\n</body>\n</html>\n'
 
 
+def render_journal_redirect(version, lang, target):
+    """An old /<lang>/blog/... address -> its journal address: canonical + instant refresh, kept out of the index and the sitemap."""
+    h = head({}, lang, version, target, "draft() Journal", "Moved.", None, "", robots="noindex,follow",
+             extra='<meta http-equiv="refresh" content="0; url=%s">\n' % esc(target))
+    return h + f'<p><a href="{esc(target)}">{esc(target)}</a></p>\n</body>\n</html>\n'
+
+
 def render_404(version):
     links = "\n".join('    <li><a href="%s" lang="%s">%s</a></li>' % (home_path(c), c, esc(n)) for c, n, _ in LANGS)
     h = head({}, "en", version, None, "404 — draft()", "Page not found.", None, "", robots="noindex, follow")
@@ -409,9 +434,9 @@ def render_404(version):
   <header class="blog-head">
     <p class="comment">// 404</p>
     <h1>Page not found</h1>
-    <p class="post-desc">That page doesn't exist, or it has moved. Pick a language to start from the home page, or read the blog.</p>
+    <p class="post-desc">That page doesn't exist, or it has moved. Pick a language to start from the home page, or read the journal.</p>
   </header>
-  <p class="nf-blog"><a href="/en/blog/">Read the blog &rarr;</a></p>
+  <p class="nf-blog"><a href="/journal/">Read the journal &rarr;</a></p>
   <ul class="nf-langs">
 {links}
   </ul>
@@ -429,15 +454,15 @@ PUBLISHED_REQUIRED_FROM = dt.date(2026, 10, 24)  # posts dated on/after this day
 
 
 def blog_feed_url(lang):
-    return "%s/%s/blog/feed.xml" % (SITE, lang)
+    return SITE + journal_path(lang) + "feed.xml"
 
 
 LIST_PAGE_SIZE = 10  # posts per blog list page (Davy 10-27: never more than 10)
 
 
 def blog_list_url(lang, page=1):
-    """Page 1 keeps the plain /<lang>/blog/ URL; later pages live at /<lang>/blog/page/<n>/ (there is no /page/1/)."""
-    return "%s/%s/blog/" % (SITE, lang) + ("page/%d/" % page if page > 1 else "")
+    """Page 1 keeps the plain journal URL (/journal/, /<lang>/journal/); later pages live under page/<n>/ (there is no /page/1/)."""
+    return SITE + journal_path(lang) + ("page/%d/" % page if page > 1 else "")
 
 
 def page_count(n_posts):
@@ -455,7 +480,7 @@ def no_label(n):
 
 
 def post_url(lang, slug):
-    return "%s/%s/blog/%s/" % (SITE, lang, slug)
+    return SITE + journal_path(lang) + slug + "/"
 
 
 def parse_when(v, allow_time=True):
@@ -503,7 +528,7 @@ def parse_post_file(path):
     if not SLUG_RE.match(meta["slug"]):
         raise ValueError("slug must match [a-z0-9-]+: %r" % meta["slug"])
     if meta["slug"] == "page":
-        raise ValueError("slug 'page' is reserved (list paging lives at /blog/page/N/)")
+        raise ValueError("slug 'page' is reserved (list paging lives at /journal/page/N/)")
     for k in ("date", "updated", "published"):
         if meta.get(k):
             try:
@@ -814,7 +839,7 @@ def post_more_html(locales, lang, post, posts):
     i = slugs.index(post["slug"])
 
     def href(p):
-        return "/%s/blog/%s/" % (lang, p["slug"])
+        return "%s%s/" % (journal_path(lang), p["slug"])
 
     def adj(p, rel, key):
         return ('<a class="adj-%s" rel="%s" href="%s"><span class="comment">%s</span>'
@@ -849,7 +874,7 @@ def render_post(root, locales, version, post, lang, number=None, posts=()):
             "datePublished": when_iso(when), "dateModified": when_iso(updated), "inLanguage": lang,
             "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "url": url, "image": image_object(root, "og-image.png"),
             "wordCount": word_count(body, lang), **post_ld_extras(locales, lang, m),
-            "author": ORG_REF, "publisher": ORG, "isPartOf": {"@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang)},
+            "author": ORG_REF, "publisher": ORG, "isPartOf": {"@type": "Blog", "@id": blog_id(lang), "name": "draft() Journal", "url": blog_list_url(lang)},
             **translation_links(post, lang)}
     ld = ld_script(data) + "\n" + ld_script(breadcrumb(locales, lang, {"title": m["title"], "slug": post["slug"]}))
     extra_langs = " · ".join('<a href="%s" hreflang="%s" lang="%s">%s</a>' % (post_url(c, post["slug"]), c, c, esc(NAMES[c])) for c in CODES if c != lang)
@@ -874,11 +899,11 @@ def render_post(root, locales, version, post, lang, number=None, posts=()):
   </article>
 </main>"""
     return page_shell(root, locales, lang, version, url=url, title=post_title(m["title"]), desc=m["description"],
-                      cluster=post_cluster(post["slug"]), ld=ld, main=main, path="blog/%s/" % post["slug"], og_type="article")
+                      cluster=post_cluster(post["slug"]), ld=ld, main=main, path="journal/%s/" % post["slug"], og_type="article")
 
 
 def render_list(root, locales, version, posts, lang, page=1, numbers=None):
-    """One page of the blog list (newest first, LIST_PAGE_SIZE per page). `posts` is the full list; page 1 = /<lang>/blog/, n>1 = /<lang>/blog/page/<n>/."""
+    """One page of the blog list (newest first, LIST_PAGE_SIZE per page). `posts` is the full list; page 1 = the journal root, n>1 = page/<n>/."""
     numbers = numbers or post_numbers(posts)
     pages_total = page_count(len(posts))
     shown = posts[(page - 1) * LIST_PAGE_SIZE:page * LIST_PAGE_SIZE]
@@ -891,11 +916,11 @@ def render_list(root, locales, version, posts, lang, page=1, numbers=None):
         desc = "%s · %s" % (desc, page_label)
     items = "\n".join(f"""      <li>
         <p class="comment">// {no_label(numbers[p['slug']])} · {time_tag(p['date'])}</p>
-        <h2><a href="/{lang}/blog/{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h2>
+        <h2><a href="{journal_path(lang)}{p['slug']}/">{esc(p['langs'][lang]['title'])}</a></h2>
         <p>{esc(p['langs'][lang]['description'])}</p>
-        <a class="more" href="/{lang}/blog/{p['slug']}/" aria-label="{esc(tr(locales, lang, 'blog_read'))}: {esc(p['langs'][lang]['title'])}">{esc(tr(locales, lang, 'blog_read'))} &rarr;</a>
+        <a class="more" href="{journal_path(lang)}{p['slug']}/" aria-label="{esc(tr(locales, lang, 'blog_read'))}: {esc(p['langs'][lang]['title'])}">{esc(tr(locales, lang, 'blog_read'))} &rarr;</a>
       </li>""" for p in shown)
-    data = {"@context": "https://schema.org", "@type": "Blog", "@id": blog_id(lang), "name": "draft() Blog", "url": blog_list_url(lang), "inLanguage": lang,
+    data = {"@context": "https://schema.org", "@type": "Blog", "@id": blog_id(lang), "name": "draft() Journal", "url": blog_list_url(lang), "inLanguage": lang,
             "isPartOf": {"@id": WEBSITE_ID}, "publisher": ORG, "author": ORG_REF,
             "blogPost": [{"@type": "BlogPosting", "@id": post_url(lang, p["slug"]) + "#article", "headline": p["langs"][lang]["title"], "url": post_url(lang, p["slug"]),
                           "datePublished": when_iso(p["date"]), "inLanguage": lang} for p in shown],
@@ -928,9 +953,9 @@ def render_list(root, locales, version, posts, lang, page=1, numbers=None):
   <ol class="blog-list">
 {items}
   </ol>{pager}
-  <p class="blog-rss"><a href="/{lang}/blog/feed.xml">{esc(tr(locales, lang, 'blog_rss'))}</a></p>
+  <p class="blog-rss"><a href="{journal_path(lang)}feed.xml">{esc(tr(locales, lang, 'blog_rss'))}</a></p>
 </main>"""
-    return page_shell(root, locales, lang, version, url=url, title=title, desc=desc, cluster=list_cluster(page), ld=ld, main=main, path="blog/page/%d/" % page if page > 1 else "blog/")
+    return page_shell(root, locales, lang, version, url=url, title=title, desc=desc, cluster=list_cluster(page), ld=ld, main=main, path="journal/page/%d/" % page if page > 1 else "journal/")
 
 def content_url(lang, slug):
     return SITE + page_path(lang, slug)
@@ -1022,7 +1047,7 @@ def render_llms_blog(posts):
              "Short guides on turning what you say into a story people actually read. New posts regularly, each in 13 languages. "
              "Feed: %s · Index: %s" % (blog_feed_url("en"), blog_list_url("en")),
              "Blog index per language: " + ", ".join("[%s](%s)" % (c, blog_list_url(c)) for c in CODES)]
-    if page_count(len(posts)) > 1:  # older posts: /<lang>/blog/page/<n>/
+    if page_count(len(posts)) > 1:  # older posts: <journal>/page/<n>/
         lines.append("Older posts (index pages 2+): " + "; ".join(
             "%s: %s" % (c, ", ".join("[%d](%s)" % (n, blog_list_url(c, n)) for n in range(2, page_count(len(posts)) + 1))) for c in CODES))
     lines.append("")
@@ -1109,13 +1134,18 @@ def build(root):
         newest = when_iso(max((p["updated"] for p in posts), key=when_key))
         numbers = post_numbers(posts)
         for c in CODES:
-            out["%s/blog/feed.xml" % c] = render_feed(locales, posts, c)
+            j = journal_rel(c)
+            feed = render_feed(locales, posts, c)
+            out["%s/feed.xml" % j] = feed
+            out["%s/feed.xml" % legacy_blog_rel(c)] = feed  # feed readers that subscribed to the old address keep working
             for n in range(1, page_count(len(posts)) + 1):
-                out["%s/blog/index.html" % c if n == 1 else "%s/blog/page/%d/index.html" % (c, n)] = render_list(root, locales, version, posts, c, n, numbers)
+                out["%s/index.html" % j if n == 1 else "%s/page/%d/index.html" % (j, n)] = render_list(root, locales, version, posts, c, n, numbers)
+                out["%s/index.html" % legacy_blog_rel(c) if n == 1 else "%s/page/%d/index.html" % (legacy_blog_rel(c), n)] = render_journal_redirect(version, c, blog_list_url(c, n))
                 pages.append((blog_list_url(c, n), newest, "0.7" if n == 1 else "0.5", "daily", list_cluster(n)))
         for p in posts:
             for c in CODES:
-                out["%s/blog/%s/index.html" % (c, p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]], posts)
+                out["%s/%s/index.html" % (journal_rel(c), p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]], posts)
+                out["%s/%s/index.html" % (legacy_blog_rel(c), p["slug"])] = render_journal_redirect(version, c, post_url(c, p["slug"]))
                 pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
     for c in CODES:
         out[page_path(c, "about").strip("/") + "/index.html"] = render_content_page(root, locales, content, version, "about", c)
@@ -1130,6 +1160,8 @@ def build(root):
         if got != want:
             raise BuildError("%s: home shows %d blog cards, expected %d" % (rel, got, want))
     pages = [(u, when_iso(d) if hasattr(d, "isoformat") else d, pr, fq, cl) for u, d, pr, fq, cl in pages]
+    if blog:
+        out["feed.xml"] = out["journal/feed.xml"]  # the default feed address: the English journal feed
     out["sitemap.xml"] = render_sitemap(root, pages)
     llms = (root / "llms.txt").read_text(encoding="utf-8")
     llms = replace_between(llms, "<!-- pages:llms:start -->", "<!-- pages:llms:end -->", render_llms_pages(), "llms.txt")
@@ -1140,8 +1172,7 @@ def build(root):
 def stale_generated(root, files):
     """Generated blog files on disk that the current build no longer produces (e.g. an unpublished post)."""
     stale = []
-    for c in CODES:
-        d = Path(root) / c / "blog"
+    for d in [Path(root) / journal_rel(c) for c in CODES] + [Path(root) / legacy_blog_rel(c) for c in CODES]:
         if not d.is_dir():
             continue
         for f in d.rglob("*"):

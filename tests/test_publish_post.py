@@ -48,7 +48,7 @@ class PublishPost(unittest.TestCase):
         _, iso = publish_post.publish(self.dir, "q-one")
         posts, errors = build_site.load_posts(self.dir)
         self.assertEqual((len(posts), errors), (1, []))
-        self.assertIn(">%s %s KST</time>" % (iso[:10], iso[11:16]), build_site.build(self.dir)["en/blog/q-one/index.html"])
+        self.assertIn(">%s %s KST</time>" % (iso[:10], iso[11:16]), build_site.build(self.dir)["journal/q-one/index.html"])
 
     def test_bad_file_writes_nothing(self):
         write_post(self.dir, "q-one", extra="draft: true\n")
