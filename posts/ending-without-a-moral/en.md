@@ -4,6 +4,7 @@ description: When you're tempted to close with "and that's when I realized how p
 slug: ending-without-a-moral
 date: 2026-10-26
 published: 2026-10-26T17:15:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Plenty of good stories get spoiled by their last line, something like "and I learned how precious small kindnesses are." It's true, but it takes away the part the reader was going to feel for themselves.

@@ -3,148 +3,148 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>draft() Blog</title>
-    <link>https://draft.ipe.rest/id/blog/</link>
-    <atom:link href="https://draft.ipe.rest/id/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://draft.ipe.rest/id/journal/</link>
+    <atom:link href="https://draft.ipe.rest/id/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
     <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
     <item>
       <title>Tulis satu kalimat yang tidak sempat Anda ucapkan</title>
-      <link>https://draft.ipe.rest/id/blog/what-you-didnt-say/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/what-you-didnt-say/</guid>
+      <link>https://draft.ipe.rest/id/journal/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/what-you-didnt-say/</guid>
       <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
       <description>Ada momen yang menyisakan kalimat yang tak pernah terucap. Tulis dalam tiga langkah, lengkap dengan contoh dan kendala yang umum.</description>
     </item>
     <item>
       <title>Tulis satu kalimat sehari, biarkan cerita menumpuk</title>
-      <link>https://draft.ipe.rest/id/blog/one-sentence-a-day/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/one-sentence-a-day/</guid>
+      <link>https://draft.ipe.rest/id/journal/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/one-sentence-a-day/</guid>
       <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
       <description>Tidak sempat menulis? Tutup setiap hari dengan satu kalimat tentang di mana Anda berada dan apa yang berubah. Tiga langkah, satu contoh, dan hambatan umum.</description>
     </item>
     <item>
       <title>Beri judul setelah selesai menulis</title>
-      <link>https://draft.ipe.rest/id/blog/title-last/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/title-last/</guid>
+      <link>https://draft.ipe.rest/id/journal/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/title-last/</guid>
       <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
       <description>Menentukan judul lebih dulu bisa membuat tulisan macet. Tiga langkah menemukan judul setelah selesai, dengan contoh dan jebakan yang umum.</description>
     </item>
     <item>
       <title>Mulai cerita dari satu tempat</title>
-      <link>https://draft.ipe.rest/id/blog/start-from-a-place/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/start-from-a-place/</guid>
+      <link>https://draft.ipe.rest/id/journal/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/start-from-a-place/</guid>
       <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
       <description>Bingung mau menulis apa? Mulailah dari tempat kejadiannya. Tiga langkah membuka tulisan dengan satu tempat kecil, dengan contoh dan jebakan yang umum.</description>
     </item>
     <item>
       <title>Menulislah untuk satu orang, bukan untuk semua orang</title>
-      <link>https://draft.ipe.rest/id/blog/write-to-one-reader/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/write-to-one-reader/</guid>
+      <link>https://draft.ipe.rest/id/journal/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/write-to-one-reader/</guid>
       <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
       <description>Menulis untuk semua orang membuat kata-kata jadi kabur. Tiga langkah memilih satu pembaca dan menulis untuknya, lengkap dengan contoh dan kendala umum.</description>
     </item>
     <item>
       <title>Draf pertama boleh kasar</title>
-      <link>https://draft.ipe.rest/id/blog/rough-first-version/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/rough-first-version/</guid>
+      <link>https://draft.ipe.rest/id/journal/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/rough-first-version/</guid>
       <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
       <description>Ingin menulis bagus sejak baris pertama justru menghentikan tangan. Tiga langkah menyelesaikan draf pertama yang kasar, dengan contoh dan hambatan umum.</description>
     </item>
     <item>
       <title>Berhentilah selagi kamu masih tahu apa yang berikutnya</title>
-      <link>https://draft.ipe.rest/id/blog/stop-mid-sentence/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/stop-mid-sentence/</guid>
+      <link>https://draft.ipe.rest/id/journal/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/stop-mid-sentence/</guid>
       <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
       <description>Berhenti di jalan buntu membuat esok sulit. Berhentilah saat tahu baris berikutnya, tinggalkan catatan, dan memulai lagi jadi mudah. Tiga langkah dan contoh.</description>
     </item>
     <item>
       <title>Diamkan semalam, lalu ubah satu hal saja</title>
-      <link>https://draft.ipe.rest/id/blog/let-it-rest/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/let-it-rest/</guid>
+      <link>https://draft.ipe.rest/id/journal/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/let-it-rest/</guid>
       <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
       <description>Tepat setelah menulis, kamu membaca apa yang kamu maksud. Tiga langkah mendiamkan tulisan semalam dan mengubah satu hal saja, lengkap dengan contoh.</description>
     </item>
     <item>
       <title>Baca keras-keras sekali, perbaiki hanya yang tersandung</title>
-      <link>https://draft.ipe.rest/id/blog/read-it-aloud/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/read-it-aloud/</guid>
+      <link>https://draft.ipe.rest/id/journal/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/read-it-aloud/</guid>
       <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
       <description>Mata memaafkan apa yang tidak dimaafkan mulut. Tiga langkah membaca tulisan pendek keras-keras, menandai yang tersandung, dan memperbaikinya.</description>
     </item>
     <item>
       <title>Pertahankan satu kalimat ucapan seseorang apa adanya</title>
-      <link>https://draft.ipe.rest/id/blog/one-line-they-said/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/one-line-they-said/</guid>
+      <link>https://draft.ipe.rest/id/journal/one-line-they-said/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/one-line-they-said/</guid>
       <pubDate>Tue, 03 Nov 2026 20:03:00 +0900</pubDate>
       <description>Ringkasan menghilangkan suara, tetapi satu kalimat ucapan menyimpannya. Tiga kriteria memilih kalimat, lengkap dengan contoh dan jebakan umum.</description>
     </item>
     <item>
       <title>Potong pemanasan, mulai dari tengah adegan</title>
-      <link>https://draft.ipe.rest/id/blog/start-later/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/start-later/</guid>
+      <link>https://draft.ipe.rest/id/journal/start-later/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/start-later/</guid>
       <pubDate>Sun, 01 Nov 2026 16:01:00 +0900</pubDate>
       <description>Daripada membuka dengan cuaca dan jam, mulailah dari saat sesuatu sudah terjadi. Tiga cara menemukan titik mulai, lengkap dengan contoh.</description>
     </item>
     <item>
       <title>Tulis satu detail konkret, bukan nama perasaannya</title>
-      <link>https://draft.ipe.rest/id/blog/name-the-detail/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/name-the-detail/</guid>
+      <link>https://draft.ipe.rest/id/journal/name-the-detail/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/name-the-detail/</guid>
       <pubDate>Sat, 31 Oct 2026 16:00:00 +0900</pubDate>
       <description>Daripada menulis &quot;aku sedih&quot;, tulis satu hal yang kamu lihat. Perasaan tersampaikan tanpa dijelaskan. Tiga pertanyaan memilih detail, plus contoh.</description>
     </item>
     <item>
       <title>Cari titik balik kecil di dalam sebuah adegan</title>
-      <link>https://draft.ipe.rest/id/blog/small-turning-point/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/small-turning-point/</guid>
+      <link>https://draft.ipe.rest/id/journal/small-turning-point/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/small-turning-point/</guid>
       <pubDate>Fri, 30 Oct 2026 16:00:00 +0900</pubDate>
       <description>Adegan dengan detail bagus tetap bisa datar jika tak ada yang bergeser. Tiga jenis titik balik kecil, bahkan yang sangat kecil, dengan contoh.</description>
     </item>
     <item>
       <title>Buka sebuah adegan dengan satu indra saja</title>
-      <link>https://draft.ipe.rest/id/blog/open-with-one-sense/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/open-with-one-sense/</guid>
+      <link>https://draft.ipe.rest/id/journal/open-with-one-sense/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/open-with-one-sense/</guid>
       <pubDate>Thu, 29 Oct 2026 16:12:00 +0900</pubDate>
       <description>Memulai dari apa yang terlihat itu mudah tetapi datar. Tiga cara membuka adegan dengan satu suara, bau, atau sentuhan, lengkap dengan contoh.</description>
     </item>
     <item>
       <title>Tempatkan satu orang di tengah cerita pendek</title>
-      <link>https://draft.ipe.rest/id/blog/one-person-in-focus/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/one-person-in-focus/</guid>
+      <link>https://draft.ipe.rest/id/journal/one-person-in-focus/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/one-person-in-focus/</guid>
       <pubDate>Wed, 28 Oct 2026 15:58:00 +0900</pubDate>
       <description>Terlalu banyak orang membuat cerita kabur. Pilih satu orang, ajukan tiga pertanyaan kecil tentangnya, dan beri wajah pada cerita pendekmu. Dengan contoh.</description>
     </item>
     <item>
       <title>Menemukan cerita dari &quot;hari ini tidak ada apa-apa&quot;</title>
-      <link>https://draft.ipe.rest/id/blog/nothing-happened-today/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/nothing-happened-today/</guid>
+      <link>https://draft.ipe.rest/id/journal/nothing-happened-today/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/nothing-happened-today/</guid>
       <pubDate>Tue, 27 Oct 2026 16:00:00 +0900</pubDate>
       <description>Hari yang tak istimewa pun menyimpan cerita. Tiga pertanyaan untuk menjaring sesuatu yang layak diceritakan dari hari biasa, lengkap dengan contoh.</description>
     </item>
     <item>
       <title>Cara menutup dengan gema, bukan pelajaran moral</title>
-      <link>https://draft.ipe.rest/id/blog/ending-without-a-moral/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/ending-without-a-moral/</guid>
+      <link>https://draft.ipe.rest/id/journal/ending-without-a-moral/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/ending-without-a-moral/</guid>
       <pubDate>Mon, 26 Oct 2026 17:15:00 +0900</pubDate>
       <description>Saat tergoda menutup dengan &quot;dan saat itulah aku sadar betapa berharganya&quot;. Tiga cara membuang pelajaran dan menutup dengan adegan, lengkap dengan contoh.</description>
     </item>
     <item>
       <title>Satu kalimat pembuka bisa menyelamatkan cerita: cara menulis hook</title>
-      <link>https://draft.ipe.rest/id/blog/first-line-hook/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/first-line-hook/</guid>
+      <link>https://draft.ipe.rest/id/journal/first-line-hook/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/first-line-hook/</guid>
       <pubDate>Sun, 25 Oct 2026 16:53:00 +0900</pubDate>
       <description>Tulisan yang dibuka dengan penjelasan sulit dibaca sampai habis. Tiga cara menulis kalimat pertama yang langsung di tengah adegan, lengkap dengan contoh.</description>
     </item>
     <item>
       <title>Latihan bicara 30 detik: pilih satu adegan dari hari ini</title>
-      <link>https://draft.ipe.rest/id/blog/thirty-second-practice/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/thirty-second-practice/</guid>
+      <link>https://draft.ipe.rest/id/journal/thirty-second-practice/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/thirty-second-practice/</guid>
       <pubDate>Sat, 24 Oct 2026 16:00:00 +0900</pubDate>
       <description>Kalau menjelaskan seluruh harimu bikin buntu, pilih satu adegan saja. Latihan sederhana untuk mengeluarkan bahan cerita dalam tiga puluh detik.</description>
     </item>
     <item>
       <title>Buntu di depan kotak keterangan yang kosong? Ucapkan saja dulu</title>
-      <link>https://draft.ipe.rest/id/blog/blank-caption-box/</link>
-      <guid isPermaLink="true">https://draft.ipe.rest/id/blog/blank-caption-box/</guid>
+      <link>https://draft.ipe.rest/id/journal/blank-caption-box/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/blank-caption-box/</guid>
       <pubDate>Fri, 23 Oct 2026 17:30:00 +0900</pubDate>
       <description>Harimu panjang, tapi kotak keterangan tetap kosong. Begini cara mengeluarkan ceritanya: bicara dulu, lalu biarkan beberapa pertanyaan menemukan momen nyata.</description>
     </item>

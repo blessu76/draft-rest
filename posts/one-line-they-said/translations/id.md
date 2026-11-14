@@ -4,6 +4,7 @@ description: Ringkasan menghilangkan suara, tetapi satu kalimat ucapan menyimpan
 date: 2026-11-03
 slug: one-line-they-said
 published: 2026-11-03T20:03:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Bandingkan "Ibu bilang ia khawatir" dengan kalimat yang benar-benar diucapkan ibumu, dan jelas mana yang membawa suaranya. Saat kamu meringkas ucapan seseorang, isinya tinggal, tetapi suaranya hilang. Pertahankan satu kalimat berkesan apa adanya, dan orang itu akan berdiri di dalam adegan.

@@ -4,6 +4,7 @@ description: Bạn có cả một ngày để kể, nhưng ô chú thích vẫn 
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box
+copy_review: legacy-2026-11-14
 ---
 
 Cả ngày bạn có bao nhiêu chuyện để kể, vậy mà mở ô chú thích ra thì chỉ có con trỏ nhấp nháy. Chữ không đến không phải vì bạn viết dở. Bạn chỉ bắt đầu từ chỗ khó nhất: trang giấy trống.

@@ -9,7 +9,7 @@ Run it right before the commit that is pushed to main; if the push slips, re-run
 Validates every file first and writes nothing if any file is bad. A future time is refused.
 
 After publishing it prints SEO warnings (never an error, the exit code stays 0): body shorter than the target (latin/cyrillic
-400 words, CJK ko/ja/zh 800 characters without spaces), rendered <title> longer than 60 (CJK 40) characters, description longer
+400 words, CJK ko/ja/zh-Hant/th 800 characters without spaces), rendered <title> longer than 60 (CJK 40) characters, description longer
 than 160 (CJK 110), and a title that another post already uses in the same language. A body below the FLOOR (300 words; ja/zh
 600 characters) additionally prints a loud banner - the post is still published (a length problem must never drop the 16:00 post);
 scripts/check_queue.py is where a floor breach is an error (before the post goes into the queue). A shared image is NOT warned
@@ -28,9 +28,10 @@ import build_site  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 KST = dt.timezone(dt.timedelta(hours=9))
 
-CJK_LANGS = ("ko", "ja", "zh")  # no word spaces: size is counted in characters, and the title/description limits are tighter
+CJK_LANGS = ("ko", "ja", "zh-Hant")  # no word spaces: size is counted in characters, and the title/description limits are tighter
+CHAR_BODY_LANGS = CJK_LANGS + ("th",)  # th has spaces only between phrases: body size in characters, but title/description keep the latin limits
 # Body length (Davy 2026-10-29): target = warning, floor = error for NEW posts (check_queue.py) but only a banner at publish time.
-# latin = words (en es pt id ru vi fr de); cjk = characters without whitespace (ko ja zh). ko's floor is build_site.KO_BODY_MIN (raw chars).
+# latin = words (en es pt-BR id tr vi fr de); cjk = characters without whitespace (ko ja zh-Hant th). ko's floor is build_site.KO_BODY_MIN (raw chars).
 BODY_TARGET = {"latin": 400, "cjk": 800}
 BODY_FLOOR = {"latin": 300, "cjk": 600}
 TITLE_MAX = {"latin": 60, "cjk": 40}  # rendered <title>
@@ -106,10 +107,10 @@ def visible_text(body):
 
 
 def body_size(body, lang):
-    """(count, unit) of the visible text (see visible_text): characters without whitespace for ko/ja/zh, else words
+    """(count, unit) of the visible text (see visible_text): characters without whitespace for ko/ja/zh-Hant/th, else words
     (tokens without a letter or digit, like a stray '-' or '&', do not count)."""
     text = visible_text(body)
-    if lang in CJK_LANGS:
+    if lang in CHAR_BODY_LANGS:
         return len(re.sub(r"\s", "", text)), "chars"
     return sum(1 for t in text.split() if any(unicodedata.category(ch)[0] in "LN" for ch in t)), "words"
 
@@ -124,7 +125,7 @@ def body_length_findings(slug, langs):
     floor, target = [], []
     for lang, m in sorted(langs.items()):
         n, unit = body_size(m["_body"], lang)
-        kind = _kind(lang)
+        kind = "cjk" if lang in CHAR_BODY_LANGS else "latin"
         where = "%s/%s" % (slug, lang)
         if lang != "ko" and n < BODY_FLOOR[kind]:
             floor.append(FloorWarning("%s: body is %d %s (< %d floor)" % (where, n, unit, BODY_FLOOR[kind])))

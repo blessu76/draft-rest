@@ -4,6 +4,7 @@ description: Không có thời gian viết? Hãy khép lại mỗi ngày bằng 
 date: 2026-11-11
 slug: one-sentence-a-day
 published: 2026-11-11T16:49:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Bạn nghĩ mình không có thời gian để viết truyện? Hãy thử khép lại mỗi ngày bằng một câu duy nhất. Một câu mất chưa đến một phút, nhưng sau vài tuần bạn có một chồng nhỏ những khoảnh khắc có thật, và bất kỳ khoảnh khắc nào cũng có thể lớn thành một câu chuyện khi đến lúc.

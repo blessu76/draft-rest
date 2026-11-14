@@ -4,6 +4,7 @@ description: Tidak sempat menulis? Tutup setiap hari dengan satu kalimat tentang
 date: 2026-11-11
 slug: one-sentence-a-day
 published: 2026-11-11T16:49:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Merasa tidak punya waktu untuk menulis cerita? Coba tutup setiap hari dengan satu kalimat. Satu kalimat tidak sampai semenit, tetapi setelah beberapa minggu Anda punya tumpukan kecil momen nyata, dan salah satunya bisa tumbuh menjadi cerita saat waktunya tiba.

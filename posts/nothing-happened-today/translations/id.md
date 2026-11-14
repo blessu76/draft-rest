@@ -4,6 +4,7 @@ description: Hari yang tak istimewa pun menyimpan cerita. Tiga pertanyaan untuk 
 date: 2026-10-27
 slug: nothing-happened-today
 published: 2026-10-27T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 "Hari ini tidak ada apa-apa." Hari-hari ketika kalimat ini paling sering keluar justru hari yang paling banyak menyimpan cerita. Hari tanpa peristiwa besar bukan berarti hari tanpa cerita. Artinya hanya mata untuk hal-hal kecil belum menyala.

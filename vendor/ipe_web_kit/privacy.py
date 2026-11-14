@@ -35,7 +35,7 @@ import shutil
 import sys
 from pathlib import Path
 
-from . import ASSETS, languages
+from . import ASSETS, languages, langswitch
 from .seo import esc
 
 DATA = Path(__file__).resolve().parent / "data"
@@ -440,8 +440,8 @@ CSS = """.ipe-pp{max-width:var(--ipe-max,960px);margin:0 auto;padding:var(--ipe-
 .ipe-pp__table tbody th{font-weight:500}
 .ipe-pp__unv{display:inline-block;padding:0 6px;border-radius:999px;background:rgba(201,138,0,.15);color:#8a5d00;font-size:.75rem;font-weight:500}
 .ipe-pp a{color:var(--ipe-accent,#2f5d50)}
-.ipe-pp__langs{display:flex;flex-wrap:wrap;gap:4px 10px;max-width:var(--ipe-max,960px);margin:0 auto;padding:var(--ipe-gap,16px) var(--ipe-gap,16px) 0;font-family:var(--ipe-font-sans,system-ui,sans-serif);font-size:.8125rem}
-.ipe-pp__langs a{color:var(--ipe-muted,#6b6b6b)}.ipe-pp__langs a[aria-current]{color:var(--ipe-text,#1a1a1a);font-weight:600}
+.ipe-pp__top{max-width:var(--ipe-max,960px);margin:0 auto;padding:var(--ipe-gap,16px) var(--ipe-gap,16px) 0}
+"""+langswitch.CSS+"""
 @media (max-width:420px){.ipe-pp__table th,.ipe-pp__table td{padding:6px 8px}}"""
 
 
@@ -452,11 +452,10 @@ def render_page(cfg, lang, href=lambda lang: "../%s/" % lang):
         return ""
     tl = text_lang(lang)
     title = "%s — %s" % (texts()["labels"][tl]["title"], cfg.service)
-    nav = "".join('<a href="%s" hreflang="%s"%s>%s</a>' % (esc(href(l)), l, ' aria-current="page"' if l == lang else "", l)
-                  for l in cfg.langs)
+    nav = langswitch.select_html(lang, href, cfg.langs)
     return ('<!doctype html><html lang="%s" dir="%s"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s'
-            'body{margin:0;background:var(--ipe-bg,#fff)}</style></head><body><nav class="ipe-pp__langs">%s</nav>%s'
+            'body{margin:0;background:var(--ipe-bg,#fff)}</style></head><body><div class="ipe-pp__top">%s</div>%s'
             '</body></html>\n' % (lang if tl == languages.legacy_code(lang) else tl, "rtl" if tl in RTL else "ltr", esc(title), CSS, nav, sec))
 
 

@@ -4,6 +4,7 @@ description: Posts that open with explanation are hard to finish. Three ways to 
 date: 2026-10-25
 slug: first-line-hook
 published: 2026-10-25T16:53:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Someone scrolling decides on the first line whether to keep reading. That's why the first sentence of a story, the hook, matters. It doesn't have to be grand. Simply dropping into the middle of a scene changes the whole piece.

@@ -1,20 +1,10 @@
 (function () {
   'use strict';
-  // language selector -> language page (static /<lang>/ addresses)
-  var sel = document.getElementById('lang');
-  if (sel) {
-    sel.addEventListener('change', function () {
-      try { localStorage.setItem('draft_lang', this.value); } catch (e) {}
-      var path = this.getAttribute('data-path') || '';
-      var blogLangs = (this.getAttribute('data-blog') || '').split(',');
-      if (path.split('/')[0] === 'blog' && blogLangs.indexOf(this.value) < 0) path = '';
-      location.href = this.value === 'en' ? (this.getAttribute('data-en') || '/') : '/' + this.value + '/' + path;
-    });
-  }
+  // the top language select is the kit's (ipe-lang-select, inline onchange stores ipe_lang and navigates)
   // an explicit language link click is a choice too (otherwise the root would send the visitor straight back)
   document.querySelectorAll('.foot-langs a[hreflang]').forEach(function (a) {
     a.addEventListener('click', function () {
-      try { localStorage.setItem('draft_lang', a.getAttribute('hreflang')); } catch (e) {}
+      try { localStorage.setItem('ipe_lang', a.getAttribute('hreflang')); } catch (e) {}
     });
   });
   // blog: example-message cards get a copy button

@@ -4,6 +4,7 @@ description: Auch ein Tag ohne Besonderes birgt eine Geschichte. Drei Fragen, mi
 date: 2026-10-27
 slug: nothing-happened-today
 published: 2026-10-27T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 „Heute ist nichts passiert.“ An den Tagen, an denen dieser Satz am häufigsten fällt, stecken die meisten Geschichten. Ein Tag ohne großes Ereignis ist kein Tag ohne Geschichte. Es heißt nur, dass der Blick für die kleinen Dinge noch nicht eingeschaltet ist.

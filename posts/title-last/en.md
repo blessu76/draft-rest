@@ -4,6 +4,7 @@ description: Picking a title first can stall a piece. Three steps to find the ti
 date: 2026-11-10
 slug: title-last
 published: 2026-11-10T20:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Have you ever sat at the title box for a long time? Naming a piece you haven't written yet is hard, and that makes sense. A title needs you to know what the piece turned out to be. For a short piece, it is usually easier to write the title last. Write first, and let the finished piece tell you its name.

@@ -4,6 +4,7 @@ description: Ngay sau khi viết, bạn đọc điều mình định nói. Ba b�
 date: 2026-11-05
 slug: let-it-rest
 published: 2026-11-05T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Ngay khi viết xong, thường có hai cảm giác cùng đến: hoàn hảo, hoặc là một mớ hỗn độn. Cả hai đều xuất phát từ việc bạn vẫn còn đang ở bên trong bài viết. Ngay sau khi viết, bạn đọc điều mình định nói. Sau một đêm, bạn đọc điều thật sự có trên trang giấy. Để qua đêm không phải là trì hoãn; đó là cách để một phiên bản của bạn, đứng ở xa hơn một chút, trở thành người đọc.

@@ -4,6 +4,7 @@ description: No time to write? Close each day with one sentence about where you 
 date: 2026-11-11
 slug: one-sentence-a-day
 published: 2026-11-11T16:49:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Think you don't have time to write stories? Try closing each day with a single sentence. One sentence takes less than a minute, yet after a few weeks you hold a small pile of real moments, and any one of them can grow into a story when you are ready.

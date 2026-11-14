@@ -1,4 +1,5 @@
 import contextlib
+import datetime as dt
 import io
 import shutil
 import sys
@@ -11,7 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import build_site  # noqa: E402
 import check_queue  # noqa: E402
 
-FM = "---\ntitle: T %s\ndescription: %s\ndate: 2026-10-28\nslug: %s\n%s---\n\n%s\n"
+FM = "---\ntitle: T %s\ndescription: %s\ndate: 2026-10-28\ncopy_review: legacy-2026-11-14\nslug: %s\n%s---\n\n%s\n"
 
 
 def write(root, slug, desc=None, ko_len=1400, extra="draft: true\n", skip=(), slug_in_file=None, words=400, cjk=800):
@@ -20,7 +21,7 @@ def write(root, slug, desc=None, ko_len=1400, extra="draft: true\n", skip=(), sl
             continue
         f = Path(root) / "posts" / slug / (c + ".md" if c in ("ko", "en") else "translations/%s.md" % c)
         f.parent.mkdir(parents=True, exist_ok=True)
-        body = "가" * ko_len if c == "ko" else "字" * cjk if c in ("ja", "zh") else "word " * words
+        body = "가" * ko_len if c == "ko" else "字" * cjk if c in ("ja", "zh-Hant", "th") else "word " * words
         d = (desc or {}).get(c, "short description " + c)
         f.write_text(FM % (c, d, slug_in_file or slug, extra, body), encoding="utf-8")
 
@@ -91,14 +92,14 @@ class CheckQueue(unittest.TestCase):
     def test_body_floor_is_an_error_target_is_a_warning(self):
         write(self.dir, "q-floor", words=299)
         _, errors, warnings = check_queue.scan(self.dir)
-        self.assertEqual(len(errors), 10, errors)  # en es pt id ru vi fr de ar hi
-        self.assertIn("q-floor/ru: body is 299 words (< 300 floor)", errors)
+        self.assertEqual(len(errors), 8, errors)  # en es pt-BR id vi fr de tr (th counts characters, like ja)
+        self.assertIn("q-floor/tr: body is 299 words (< 300 floor)", errors)
         shutil.rmtree(self.dir / "posts")
         write(self.dir, "q-mid", words=300)
         _, errors, warnings = check_queue.scan(self.dir)
         self.assertEqual(errors, [])
-        self.assertEqual(len(warnings), 10, warnings)
-        self.assertIn("q-mid/ru: body is 300 words (< 400 target)", warnings)
+        self.assertEqual(len(warnings), 8, warnings)
+        self.assertIn("q-mid/tr: body is 300 words (< 400 target)", warnings)
         shutil.rmtree(self.dir / "posts")
         write(self.dir, "q-full", words=400)
         self.assertEqual(check_queue.scan(self.dir), (["q-full"], [], []))
@@ -106,12 +107,12 @@ class CheckQueue(unittest.TestCase):
     def test_cjk_floor_and_ko_target(self):
         write(self.dir, "q-cjk", cjk=599)
         _, errors, _ = check_queue.scan(self.dir)
-        self.assertEqual(sorted(e.split(":")[0] for e in errors), ["q-cjk/ja", "q-cjk/zh"])
+        self.assertEqual(sorted(e.split(":")[0] for e in errors), ["q-cjk/ja", "q-cjk/th", "q-cjk/zh-Hant"])
         shutil.rmtree(self.dir / "posts")
         write(self.dir, "q-cjk", cjk=600, ko_len=build_site.KO_BODY_MIN)  # ko at the build minimum (1,100 chars) is already above the 800-char target
         _, errors, warnings = check_queue.scan(self.dir)
         self.assertEqual(errors, [])
-        self.assertEqual(sorted(w.split(":")[0] for w in warnings), ["q-cjk/ja", "q-cjk/zh"])
+        self.assertEqual(sorted(w.split(":")[0] for w in warnings), ["q-cjk/ja", "q-cjk/th", "q-cjk/zh-Hant"])
 
     def test_main_prints_warnings_and_exits_by_errors_only(self):
         write(self.dir, "q-mid", words=350)
@@ -142,7 +143,26 @@ class CheckQueue(unittest.TestCase):
         queue_floor = [e for e in self.run_check()[1] if "floor" in e]
         lint_floor = [w for w in lint_post(self.dir, "q-share") if "floor" in w]
         self.assertEqual(queue_floor, lint_floor)
-        self.assertEqual(len(queue_floor), 10)
+        self.assertEqual(len(queue_floor), 8)
+
+    def test_copy_review_rules(self):
+        """Posts dated 2026-11-15+ need `copy_review: iris` + date in every language; older ones the legacy tag (Matt 2026-11-14)."""
+        mk = lambda d, **kw: {"_date": d, **kw}
+        P = build_site.copy_review_problems
+        old = dt.date(2026, 11, 14)
+        new = dt.date(2026, 11, 15)
+        self.assertEqual(P("s", {"en": mk(old, copy_review="legacy-2026-11-14")}), [])
+        self.assertEqual(P("s", {"en": mk(old, copy_review="iris")}), [])
+        self.assertEqual(len(P("s", {"en": mk(old)})), 1)
+        self.assertEqual(len(P("s", {"en": mk(new, copy_review="legacy-2026-11-14")})), 1)  # the exception never covers a new post
+        self.assertEqual(len(P("s", {"en": mk(new)})), 1)
+        self.assertEqual(len(P("s", {"en": mk(new, copy_review="iris")})), 1)  # date missing
+        self.assertEqual(P("s", {"en": mk(new, copy_review="iris", copy_review_date="2026-11-15")}), [])
+
+    def test_every_post_in_the_repo_has_a_copy_review_mark(self):
+        for d in sorted((ROOT / "posts").iterdir()):
+            if d.is_dir():
+                self.assertEqual([e for e in check_queue.check_post(d) if "copy_review" in e], [], d.name)
 
     def test_real_queue_in_this_repo_is_clean(self):
         _, errors = check_queue.check_queue(ROOT)

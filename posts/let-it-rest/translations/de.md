@@ -4,6 +4,7 @@ description: Direkt nach dem Schreiben liest du, was du meintest. Drei Schritte,
 date: 2026-11-05
 slug: let-it-rest
 published: 2026-11-05T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 In dem Moment, in dem du mit dem Schreiben fertig bist, kommen oft zwei Gefühle zugleich: Es ist perfekt, oder es ist ein Desaster. Beide entstehen, weil du noch mitten im Text steckst. Direkt nach dem Schreiben liest du, was du meintest. Nach einer Nacht liest du, was tatsächlich auf der Seite steht. Über Nacht ruhen zu lassen ist kein Aufschieben; es ist eine Möglichkeit, eine Version von dir, die ein Stück entfernt steht, zur Leserin werden zu lassen.

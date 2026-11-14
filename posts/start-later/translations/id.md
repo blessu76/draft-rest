@@ -4,6 +4,7 @@ description: Daripada membuka dengan cuaca dan jam, mulailah dari saat sesuatu s
 date: 2026-11-01
 slug: start-later
 published: 2026-11-01T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Hampir semua orang melakukan pemanasan saat mulai menulis: jam berapa bangun, bagaimana cuacanya, ke mana pergi, semuanya ditulis berurutan. Penulis memang butuh waktu itu, tetapi bagi pembaca itu adalah waktu menunggu cerita dimulai. Kalau paragraf pemanasan dipotong dan tulisan dimulai dari tengah adegan, tulisan langsung terasa lebih ringan.

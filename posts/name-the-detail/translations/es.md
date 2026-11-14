@@ -4,6 +4,7 @@ description: En vez de escribir "estaba triste", escribe algo que viste. El sent
 date: 2026-10-31
 slug: name-the-detail
 published: 2026-10-31T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Palabras como "feliz", "triste" o "solo" son fáciles de escribir. Pero quien lee no se imagina ninguna escena con ellas. Si cambias el nombre del sentimiento por un detalle concreto, quien lee lo siente sin que se lo expliques.

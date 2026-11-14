@@ -13,6 +13,9 @@ GA_ID = "G-XG4BH800J0"
 OPTOUT = "https://tools.google.com/dlpage/gaoptout"
 
 
+PRIVACY_CODES = [c for c in build_site.CODES if "privacy" in json.loads((ROOT / "content" / ("%s.json" % c)).read_text(encoding="utf-8"))]  # th/tr/zh-Hant: legal pages live on ipe.rest only
+
+
 class Ga4(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -25,8 +28,8 @@ class Ga4(unittest.TestCase):
     def test_every_generated_page_has_the_snippet_exactly_once(self):
         self.assertGreater(len(self.html), 100)
         for rel, text in self.html.items():
-            if rel == "en/index.html":  # instant redirect stub to / (noindex): the target page counts the visit
-                self.assertNotIn(GA_ID, text)
+            if 'http-equiv="refresh"' in text or rel == "en/index.html":  # instant redirect stub (noindex): the target page counts the visit
+                self.assertLessEqual(text.count(GA_ID), 1)  # kit stubs carry none; our own forwarding pages keep their one snippet
                 continue
             with self.subTest(rel):
                 self.assertEqual(text.count(GA_ID), 1)
@@ -36,7 +39,7 @@ class Ga4(unittest.TestCase):
 
     def test_page_kinds_are_covered(self):
         for rel in ("index.html", "ko/index.html", "404.html", "about/index.html", "privacy/index.html", "de/privacy/index.html", "terms/index.html",
-                    "ko/blog/index.html", "en/blog/blank-caption-box/index.html"):
+                    "ko/journal/index.html", "journal/blank-caption-box/index.html"):
             self.assertIn(rel, self.html)
             self.assertEqual(self.html[rel].count(GA_ID), 1, rel)
 
@@ -48,7 +51,7 @@ class Ga4(unittest.TestCase):
             self.assertNotIn(GA_ID, (ROOT / rel).read_text(encoding="utf-8"))
 
     def test_privacy_website_section_matches_the_tracking(self):
-        for c in build_site.privacy_codes():
+        for c in PRIVACY_CODES:
             with self.subTest(c):
                 t = json.dumps(json.loads((ROOT / "content" / ("%s.json" % c)).read_text(encoding="utf-8"))["privacy"], ensure_ascii=False)
                 self.assertIn("Google Analytics", t)
@@ -58,7 +61,7 @@ class Ga4(unittest.TestCase):
 
     def test_app_sections_are_untouched(self):
         # the privacy page is shared with the app: only section 3 (the website) may mention the site's analytics
-        for c in build_site.privacy_codes():
+        for c in PRIVACY_CODES:
             sections = json.loads((ROOT / "content" / ("%s.json" % c)).read_text(encoding="utf-8"))["privacy"]["sections"]
             self.assertEqual(len(sections), 4, c)
             for i in (0, 1, 3):

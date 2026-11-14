@@ -4,7 +4,7 @@
     python3 scripts/stage_site.py [--root DIR] [--out DIR]
 
 Whitelist: root files (index.html, 404.html, CNAME, .nojekyll, robots.txt, sitemap.xml, llms.txt, og-image.png,
-the IndexNow key file <32 hex>.txt), assets/, the language folders (en ko ja zh es pt id ru vi fr de) and the English content-page folders (about) and the legal forwarding folders (privacy terms).
+the IndexNow key file <32 hex>.txt), assets/, the language folders (en ko ja zh-Hant es pt-BR id th tr vi fr de) and the English content-page folders (about) and the legal forwarding folders (privacy terms).
 Everything else (scripts/ tests/ posts/ locales/ src/ .github/ manuscripts, STATUS.md, ...) stays out.
 Standard library only.
 """
@@ -30,7 +30,7 @@ def public_files(root):
     out += [Path(p.name) for p in root.iterdir() if p.is_file() and KEY_RE.match(p.name)]
     if (root / "assets").is_dir():
         out += [f.relative_to(root) for f in sorted((root / "assets").rglob("*")) if f.is_file()]
-    for c in list(CODES) + list(PAGES) + list(LEGAL):  # PAGES / LEGAL = the English folders at the root
+    for c in list(CODES) + list(PAGES) + list(LEGAL) + ["journal"]:  # journal / PAGES / LEGAL = the English folders at the root
         d = root / c
         if d.is_dir():
             out += [f.relative_to(root) for f in sorted(d.rglob("*")) if f.is_file() and f.suffix in PUBLIC_EXT]

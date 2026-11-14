@@ -4,6 +4,7 @@ description: Tuviste un día entero, pero el pie de foto sigue vacío. Cómo sac
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box
+copy_review: legacy-2026-11-14
 ---
 
 Tuviste un día lleno de cosas que contar y ahora miras el cursor parpadeante de la casilla del pie de foto. Las palabras no faltan porque escribas mal. Empezaste por lo más difícil: la página en blanco.

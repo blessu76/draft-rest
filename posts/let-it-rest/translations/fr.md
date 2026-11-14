@@ -4,6 +4,7 @@ description: Juste après avoir écrit, on lit ce qu'on voulait dire. Trois éta
 date: 2026-11-05
 slug: let-it-rest
 published: 2026-11-05T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Au moment où vous finissez d'écrire, deux sentiments arrivent souvent ensemble : c'est parfait, ou c'est un désastre. Les deux viennent du fait d'être encore dans le texte. Juste après avoir écrit, vous lisez ce que vous vouliez dire. Après une nuit, vous lisez ce qui est vraiment sur la page. Laisser reposer une nuit, ce n'est pas remettre à plus tard ; c'est une façon de laisser une version de vous, placée à distance, devenir le lecteur.

@@ -5,6 +5,7 @@ date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00
 updated: 2026-10-30T16:32:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Hat dich jemand gefragt „Wie war dein Tag?“, und mehr als „ganz okay“ kam nicht heraus? Wer einen ganzen Tag erklären will, weiß nicht, wo er anfangen soll. Eine Geschichte beginnt nicht mit einem Tag. Sie beginnt mit einer Szene.

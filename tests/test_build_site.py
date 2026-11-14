@@ -13,15 +13,17 @@ import check_sitemap  # noqa: E402
 
 
 class Locales(unittest.TestCase):
-    def test_sixteen_languages_with_en_as_fallback(self):
-        self.assertEqual(len(build_site.CODES), 16)
+    def test_twelve_languages_with_en_as_fallback(self):
+        self.assertEqual(len(build_site.CODES), 12)
         self.assertEqual(build_site.CODES[0], "en")
-        self.assertEqual(set(build_site.CODES), set("en ko ja zh zh-Hant es pt id ru vi fr de ar hi th tr".split()))
+        self.assertEqual(set(build_site.CODES), set("en ko ja zh-Hant es pt-BR fr de id th vi tr".split()))
 
-    def test_ended_languages_are_kept_as_files_but_not_listed(self):
-        self.assertEqual(set(build_site.CODES) - set(build_site.LISTED), {"ru", "ar", "hi", "zh"})
+    def test_ended_languages_are_redirect_stubs_not_listed(self):
+        self.assertEqual(set(build_site.CODES), set(build_site.LISTED))
         self.assertTrue(set(build_site.BLOG_LISTED) <= set(build_site.LISTED))
-        self.assertEqual(set(build_site.NO_PRIVACY), {"zh-Hant", "th", "tr"})
+        self.assertEqual(set(build_site.LEGACY_LANGS), {"pt", "zh", "ar", "hi", "ru"})
+        for c in build_site.LEGACY_LANGS:
+            self.assertNotIn(c, build_site.CODES)
 
     def test_every_language_has_every_english_key(self):
         loc = build_site.load_locales(ROOT)
@@ -45,7 +47,7 @@ class Pages(unittest.TestCase):
     @property
     def home(self):
         return {k: v for k, v in self.files.items()
-                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES + build_site.LEGAL)}
+                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES + build_site.LEGAL + ("journal",) + build_site.LEGACY_LANGS)}
 
     @property
     def indexed_home(self):
@@ -79,9 +81,9 @@ class Pages(unittest.TestCase):
 
     def test_404_links_to_the_blog_list(self):
         t = self.files["404.html"]
-        self.assertIn('<a href="/en/blog/">', t)
-        self.assertIn("/en/blog/index.html", {"/" + k for k in self.files})
-        self.assertEqual(t.count('href="/en/blog/"'), 1)
+        self.assertIn('<a href="/journal/">', t)
+        self.assertIn("/journal/index.html", {"/" + k for k in self.files})
+        self.assertEqual(t.count('href="/journal/"'), 1)
 
     def test_og_locale_alternates_and_short_og_description(self):
         loc = build_site.load_locales(ROOT)
@@ -101,78 +103,65 @@ class Pages(unittest.TestCase):
             self.assertIn('<link rel="canonical" href="%s">' % url, text, rel)
             self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', text)), len(build_site.LISTED) + 1, rel)
             self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/"', text, rel)
-            self.assertNotIn("?lang=", text.replace(build_site.LEGACY_REDIRECT, ""), rel)
+            self.assertNotIn("?lang=", text, rel)
             self.assertNotIn("data-i18n", text, rel)
             self.assertNotIn("{{", text, rel)
-            self.assertIn('<html lang="%s"%s>' % (build_site.tag(lang) if lang else "en", ' dir="rtl"' if lang == "ar" else ""), text, rel)
+            self.assertIn('<html lang="%s"%s>' % (build_site.tag(lang) if lang else "en", ""), text, rel)
 
-    def test_only_root_has_legacy_redirect(self):
-        self.assertIn("location.replace", self.files["index.html"])
-        for c in build_site.CODES:
-            if c != "en":
-                self.assertNotIn("location.replace", self.files["%s/index.html" % c])
+    def test_only_root_has_language_detection(self):
+        """Kit v0.7.2: the root carries the redirecting ipe-lang.js (data-redirect); every other page only the select."""
+        self.assertIn("data-redirect", self.files["index.html"])
+        self.assertRegex(self.files["index.html"], r'/assets/ipe-lang\.js\?v=[0-9a-f]+')
+        for rel, text in self.files.items():
+            if not rel.endswith(".html") or rel == "index.html" or 'http-equiv="refresh"' in text:
+                continue
+            self.assertNotIn("data-redirect", text, rel)
 
-    def test_root_language_rule_url_then_saved_then_browser_then_english(self):
-        """REACH_PROCESS language rule at "/": 1 ?lang= -> 2 localStorage draft_lang -> 3 navigator.languages -> 4 English."""
-        js = build_site.LEGACY_REDIRECT
-        self.assertIn("location.replace", self.files["index.html"])
-        self.assertIn("navigator.languages", js)
-        self.assertIn("navigator.language", js)  # single-value fallback
-        self.assertIn("split('-')[0]", js)  # ko-KR -> ko, zh-TW -> zh
-        # order: ?lang= (q.get) before the saved choice (getItem) before the browser list (navigator.languages)
-        self.assertLess(js.index("q.get('lang')"), js.index("getItem('draft_lang')"))
-        self.assertLess(js.index("getItem('draft_lang')"), js.index("navigator.languages"))
-        # only an explicit pick is stored (?lang=); the browser-language redirect never writes
-        self.assertEqual(js.count("setItem"), 1)
-        self.assertLess(js.index("setItem"), js.index("getItem"))
-        # English is a stay, not a redirect (single English body at "/")
-        self.assertIn("if(c!=='en')go(c);return;", js)
-        self.assertIn("if(sv!=='en')go(sv);return;", js)
-        self.assertNotIn("go('en')", js)
-        # the old "view in <language>" hint is gone: the root now decides the language itself
-        self.assertNotIn('id="langhint"', self.files["index.html"])
+    def test_top_language_select_on_every_page(self):
+        for rel, text in self.indexed_home.items():
+            lang = rel.split("/")[0] if "/" in rel else "en"
+            self.assertIn('id="ipe-lang-select"', text, rel)
+            self.assertEqual(len(re.findall(r"<option ", text.split('id="ipe-lang-select"')[1].split("</select>")[0])), 12, rel)
+
+    def test_root_language_rule_saved_then_browser_then_english(self):
+        js = (ROOT / "assets" / "ipe-lang.js").read_text(encoding="utf-8")
+        self.assertIn("ipe_lang", js)
+        self.assertIn("nav.languages", js)
+        self.assertLess(js.index("stored()"), js.index("nav.languages"))
+        self.assertIn("ipe_lang", (ROOT / "assets" / "site.js").read_text(encoding="utf-8"))
+        self.assertNotIn("draft_lang", self.files["index.html"])
         self.assertNotIn("langhint", (ROOT / "assets" / "site.js").read_text(encoding="utf-8"))
 
-    def test_links_to_other_ipe_sites_carry_the_page_language(self):
-        """REACH_PROCESS rule 2: ipe.rest has /<lang>/ homes (not vi) -> path; elsewhere ?lang=xx; English stays plain."""
-        L = build_site.ipe_link
-        self.assertEqual(L("https://ipe.rest", "en"), "https://ipe.rest")
-        self.assertEqual(L("https://ipe.rest", None), "https://ipe.rest")
-        self.assertEqual(L("https://ipe.rest", "ko"), "https://ipe.rest/ko/")
-        self.assertEqual(L("https://ipe.rest/", "fr"), "https://ipe.rest/fr/")
-        self.assertEqual(L("https://ipe.rest", "vi"), "https://ipe.rest/?lang=vi")
-        self.assertEqual(L("https://ipe.rest", "ar"), "https://ipe.rest/ar/")
-        self.assertEqual(L("https://ipe.rest", "hi"), "https://ipe.rest/hi/")
-        self.assertEqual(L("https://play.ipe.rest/", "ja"), "https://play.ipe.rest/?lang=ja")
-        self.assertEqual(L("https://ipe.rest/about/#x", "de"), "https://ipe.rest/about/?lang=de#x")
-        self.assertEqual(L("https://ipe.rest/?a=1", "de"), "https://ipe.rest/?a=1&lang=de")
-        self.assertEqual(L("https://ipe.rest/?lang=ko", "de"), "https://ipe.rest/?lang=ko")
-        for url in ("https://draft.ipe.rest/ko/", "https://example.com/", "https://notipe.rest/", "https://ipe.rest.evil.com/", "/ko/"):
-            self.assertEqual(L(url, "ko"), url)
+    def test_footer_has_terms_link_but_nav_does_not(self):
         for c in build_site.CODES:
-            # the "Maker" link of every generated page points at ipe.rest in that page's language
-            want = build_site.ipe_link("https://ipe.rest", c)
-            for rel in (build_site.page_path(c, "about").strip("/") + "/index.html",):
-                self.assertIn('href="%s"' % want, self.files[rel], rel)
-        self.assertIn('href="https://ipe.rest/ko/"', self.files["ko/about/index.html"])
-        self.assertIn('href="https://ipe.rest"', self.files["about/index.html"])
-        self.assertIn('href="https://ipe.rest/?lang=vi"', self.files["vi/about/index.html"])
+            rel = "index.html" if c == "en" else "%s/index.html" % c
+            text = self.files[rel]
+            url = build_site.legal_url(c, "terms")
+            foot = text[text.index("<footer"):]
+            self.assertIn('href="%s"' % url, foot, rel)
+            self.assertNotIn(url, text[:text.index("<footer")], rel)
 
-    def test_language_rule_script_only_on_root(self):
-        """Language pages, content pages, posts and the 404 carry their language in the URL: no redirect script there."""
-        for rel, text in self.files.items():
-            if not rel.endswith(".html") or rel == "index.html":
-                continue
-            if rel == "en/index.html":  # stub: stores en, then forwards to /
-                continue
-            self.assertNotIn("navigator.languages", text, rel)
-            self.assertNotIn("location.replace", text, rel)
+    def test_journal_nav_label_in_every_language(self):
+        loc = build_site.load_locales(ROOT)
+        for c in build_site.CODES:
+            self.assertTrue(loc[c]["nav_journal"], c)
+            self.assertNotIn("blog_title_old", loc[c])
+        self.assertEqual(loc["en"]["nav_journal"], "Journal")
 
-    def test_legacy_redirect_covers_all_languages(self):
-        for c in build_site.LISTED:
-            self.assertIn('"%s": "%s"' % (c.lower(), c), build_site.LEGACY_REDIRECT, c)
-        for c in ("ar", "hi", "ru", "zh"):
-            self.assertNotIn('"%s": ' % c, build_site.LEGACY_REDIRECT, c)
+    def test_old_blog_urls_are_noindex_meta_refresh_stubs(self):
+        t = self.files["en/blog/index.html"]
+        self.assertIn('http-equiv="refresh"', t)
+        self.assertIn('rel="canonical"', t)
+        self.assertIn("noindex,follow", t)
+        self.assertIn("/journal/", t)
+        self.assertIn("journal/index.html", self.files)
+
+    def test_ended_language_stubs_point_to_the_new_language(self):
+        for old, new in (("pt", "pt-BR"), ("zh", "zh-Hant"), ("ar", "en"), ("hi", "en"), ("ru", "en")):
+            t = self.files["%s/index.html" % old]
+            self.assertIn('http-equiv="refresh"', t, old)
+            self.assertIn("noindex", t, old)
+            self.assertNotIn("<loc>%s</loc>" % build_site.page_url(old), self.files["sitemap.xml"])
 
     def test_language_page_uses_its_own_strings(self):
         loc = build_site.load_locales(ROOT)
@@ -205,67 +194,48 @@ class Pages(unittest.TestCase):
         self.assertNotIn("One post per day", self.files["llms.txt"])
 
 
-class ArabicHindi(unittest.TestCase):
-    """ar (right-to-left) and hi (Devanagari) are first-class languages: pages, hreflang, selector, fonts, RTL rules."""
+class EndedLanguages(unittest.TestCase):
+    """ar/hi/ru end support (redirect to en), pt -> pt-BR, zh -> zh-Hant; th and tr are new full languages."""
 
     @classmethod
     def setUpClass(cls):
         cls.files = build_site.build(ROOT)
 
-    def test_only_arabic_is_rtl(self):
-        self.assertEqual(build_site.RTL, ("ar",))
+    def test_no_rtl_and_no_dir_attribute(self):
+        self.assertEqual(build_site.RTL, ())
         for rel, text in self.files.items():
-            if not rel.endswith(".html"):
-                continue
-            m = re.search(r"<html lang=\"([a-z]+)\"( dir=\"rtl\")?>", text)
-            if m is None:
-                continue
-            self.assertEqual(m.group(2) is not None, m.group(1) == "ar", rel)
+            if rel.endswith(".html"):
+                self.assertNotIn(' dir="rtl"', text, rel)
 
-    def test_pages_exist_for_both_languages_in_every_section(self):
-        for c in ("ar", "hi"):
-            for rel in ("%s/index.html" % c, "%s/about/index.html" % c, "%s/privacy/index.html" % c,
-                        "%s/blog/index.html" % c, "%s/blog/feed.xml" % c):
+    def test_new_languages_have_every_section(self):
+        for c in ("th", "tr", "zh-Hant", "pt-BR"):
+            for rel in ("%s/index.html" % c, "%s/about/index.html" % c, "%s/privacy/index.html" % c, "%s/terms/index.html" % c,
+                        "%s/index.html" % build_site.journal_rel(c), "%s/feed.xml" % build_site.journal_rel(c)):
                 self.assertIn(rel, self.files, rel)
-        self.assertIn('<html lang="ar" dir="rtl">', self.files["ar/index.html"])
-        self.assertIn('<html lang="hi">', self.files["hi/index.html"])
+        self.assertIn('<html lang="th">', self.files["th/index.html"])
+        self.assertIn('<html lang="zh-Hant">', self.files["zh-Hant/index.html"])
 
-    def test_ended_languages_are_kept_but_not_listed(self):
+    def test_ended_languages_are_not_listed_anywhere(self):
         home = self.files["index.html"]
-        for c, locale in (("ar", "ar_AR"), ("hi", "hi_IN")):
-            self.assertNotIn('hreflang="%s" href="%s"' % (c, build_site.page_url(c)), home)
-            self.assertNotIn('<option value="%s">' % c, home)
-            self.assertNotIn('content="%s"' % locale, self.files["fr/index.html"])
-            self.assertNotIn("<loc>%s</loc>" % build_site.page_url(c), self.files["sitemap.xml"])
+        for c in build_site.LEGACY_LANGS:
+            self.assertNotIn('hreflang="%s"' % c, home)
+            self.assertNotIn('<option value="%s"' % c, home)
+            self.assertNotIn("/%s/" % c, self.files["sitemap.xml"])
             self.assertNotIn("(%s)" % build_site.page_url(c), self.files["llms.txt"])
 
-    def test_noto_fonts_only_on_the_pages_that_need_them(self):
-        self.assertIn("Noto+Sans+Arabic", self.files["ar/index.html"])
-        self.assertNotIn("Noto+Sans+Devanagari", self.files["ar/index.html"])
-        self.assertIn("Noto+Sans+Devanagari", self.files["hi/index.html"])
-        self.assertNotIn("Noto+Sans", self.files["de/index.html"])
-        css = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")
-        self.assertIn("'Noto Sans Arabic'", css)
-        self.assertIn("'Noto Sans Devanagari'", css)
+    def test_sitemap_has_no_leaks_per_kit(self):
+        import sys as _s
+        _s.path.insert(0, str(ROOT / "vendor"))
+        from ipe_web_kit import redirects
+        self.assertEqual(list(redirects.sitemap_leaks(self.files["sitemap.xml"])), [])
 
-    def test_css_has_rtl_rules_and_keeps_code_ltr(self):
-        css = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")
-        self.assertIn("[dir=rtl] .langsel", css)
-        self.assertIn("[dir=rtl] .copy-btn", css)
-        self.assertRegex(css, r"\[dir=rtl\] pre,[^{]*\{direction:ltr")
-        self.assertRegex(css, r"\[dir=rtl\] \.wordmark,[^{]*\[dir=rtl\] \.toplink a:first-child[^{]*\{direction:ltr")  # draft() must not flip to ()draft
-
-    def test_language_rule_script_does_not_send_ended_languages_anywhere(self):
-        self.assertNotIn('"ar": ', build_site.LEGACY_REDIRECT)
-        self.assertNotIn('"hi": ', build_site.LEGACY_REDIRECT)
-
-    def test_blog_posts_in_both_languages(self):
+    def test_every_post_in_every_language(self):
         posts, errors = build_site.load_posts(ROOT)
         self.assertEqual(errors, [])
         for p in posts:
-            for c in ("ar", "hi"):
+            for c in build_site.CODES:
                 self.assertIn(c, p["langs"], p["slug"])
-                self.assertIn("%s/blog/%s/index.html" % (c, p["slug"]), self.files)
+                self.assertIn("%s/%s/index.html" % (build_site.journal_rel(c), p["slug"]), self.files)
 
 
 class InternalLinks(unittest.TestCase):
@@ -303,10 +273,10 @@ class InternalLinks(unittest.TestCase):
     def test_root_blog_link_points_to_english_blog(self):
         root = self.files["index.html"]
         self.assertNotIn('href="/blog/"', root)
-        self.assertIn('href="/en/blog/"', root)
+        self.assertIn('href="/journal/"', root)
 
 
-POST_FM = "---\ntitle: %s\ndescription: d %s\ndate: 2026-10-01\nslug: %s\n%s---\n\n%s\n"
+POST_FM = "---\ntitle: %s\ndescription: d %s\ndate: 2026-10-01\ncopy_review: legacy-2026-11-14\nslug: %s\n%s---\n\n%s\n"
 
 
 def write_post(root, slug, langs=None, body=None, extra="", slug_in_file=None):
@@ -324,28 +294,28 @@ class Blog(unittest.TestCase):
 
     def test_every_language_has_list_feed_and_post(self):
         for c in build_site.BLOG_CODES:
-            for rel in ("%s/blog/index.html" % c, "%s/blog/feed.xml" % c, "%s/blog/blank-caption-box/index.html" % c):
+            for rel in ("%s/index.html" % build_site.journal_rel(c), "%s/feed.xml" % build_site.journal_rel(c), "%s/blank-caption-box/index.html" % build_site.journal_rel(c)):
                 self.assertIn(rel, self.files)
 
     def test_post_has_hreflang_group_and_x_default_en(self):
-        t = self.files["ko/blog/blank-caption-box/index.html"]
+        t = self.files["ko/journal/blank-caption-box/index.html"]
         self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', t)), len(build_site.BLOG_LISTED) + 1)
-        self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/en/blog/blank-caption-box/"', t)
-        self.assertIn('<link rel="canonical" href="https://draft.ipe.rest/ko/blog/blank-caption-box/">', t)
+        self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/journal/blank-caption-box/"', t)
+        self.assertIn('<link rel="canonical" href="https://draft.ipe.rest/ko/journal/blank-caption-box/">', t)
         self.assertIn('"@type": "BlogPosting"', t)
 
     def test_feed_is_valid_xml(self):
         import xml.etree.ElementTree as ET
         for c in build_site.BLOG_CODES:
-            ch = ET.fromstring(self.files["%s/blog/feed.xml" % c].split("?>", 1)[1]).find("channel")
+            ch = ET.fromstring(self.files["%s/feed.xml" % build_site.journal_rel(c)].split("?>", 1)[1]).find("channel")
             self.assertEqual(ch.find("language").text, build_site.tag(c))
             self.assertEqual(len(ch.findall("item")), len(build_site.load_posts(ROOT)[0]))
             self.assertGreaterEqual(len(ch.findall("item")), 1)
 
     def test_home_links_to_blog_and_blog_is_in_sitemap_and_llms(self):
-        self.assertIn('href="/ko/blog/"', self.files["ko/index.html"])
-        self.assertIn("https://draft.ipe.rest/ko/blog/blank-caption-box/", self.files["sitemap.xml"])
-        self.assertIn("(https://draft.ipe.rest/en/blog/blank-caption-box/)", self.files["llms.txt"])
+        self.assertIn('href="/ko/journal/"', self.files["ko/index.html"])
+        self.assertIn("https://draft.ipe.rest/ko/journal/blank-caption-box/", self.files["sitemap.xml"])
+        self.assertIn("(https://draft.ipe.rest/journal/blank-caption-box/)", self.files["llms.txt"])
 
     def test_first_post_ko_length(self):
         posts, errors = build_site.load_posts(ROOT)
@@ -423,24 +393,24 @@ class PublishedTime(unittest.TestCase):
     def test_nine_past_nine_is_zero_padded_and_has_no_seconds(self):
         f = self.build_with("2026-10-01T09:09:45+09:00")
         for c in build_site.BLOG_CODES:
-            for rel in ("%s/blog/a-post/index.html" % c, "%s/blog/index.html" % c):
+            for rel in ("%s/a-post/index.html" % build_site.journal_rel(c), "%s/index.html" % build_site.journal_rel(c)):
                 self.assertIn(">2026-10-01 09:09 KST</time>", f[rel])
                 self.assertNotIn("09:09:", re.sub(r"<time datetime=[^>]*>", "", f[rel]).replace("T09:09:00+09:00", ""))
-        post = f["en/blog/a-post/index.html"]
+        post = f["journal/a-post/index.html"]
         self.assertIn('<time datetime="2026-10-01T09:09+09:00" data-ipe-time title="2026-10-01 09:09 KST">', post)
         self.assertIn('"datePublished": "2026-10-01T09:09:00+09:00"', post)
         self.assertIn('"dateModified": "2026-10-01T09:09:00+09:00"', post)
         self.assertIn("<lastmod>2026-10-01T09:09:00+09:00</lastmod>", f["sitemap.xml"])
-        self.assertIn("Thu, 01 Oct 2026 09:09:00 +0900", f["en/blog/feed.xml"])
+        self.assertIn("Thu, 01 Oct 2026 09:09:00 +0900", f["journal/feed.xml"])
 
     def test_other_offsets_are_converted_to_kst(self):
         f = self.build_with("2026-09-30T23:30:00+00:00")  # 08:30 KST on 10-01
-        self.assertIn(">2026-10-01 08:30 KST</time>", f["en/blog/a-post/index.html"])
-        self.assertIn('datetime="2026-10-01T08:30+09:00"', f["en/blog/a-post/index.html"])
+        self.assertIn(">2026-10-01 08:30 KST</time>", f["journal/a-post/index.html"])
+        self.assertIn('datetime="2026-10-01T08:30+09:00"', f["journal/a-post/index.html"])
 
     def test_post_without_published_shows_date_only(self):
         f = self.build_with(None)
-        post = f["en/blog/a-post/index.html"]
+        post = f["journal/a-post/index.html"]
         self.assertIn('<time datetime="2026-10-01">2026-10-01</time>', post)
         self.assertIn('// <span class="j-no">No. 1</span> · <time datetime="2026-10-01">', post)
         self.assertIn('"datePublished": "2026-10-01"', post)
@@ -481,14 +451,14 @@ class PublishedTime(unittest.TestCase):
         self.assertEqual(build_site.fmt_date(posts[0]["date"]), "2026-10-03 09:09")
 
     def test_first_post_uses_its_recorded_deploy_time(self):
-        post = build_site.build(ROOT)["en/blog/blank-caption-box/index.html"]
+        post = build_site.build(ROOT)["journal/blank-caption-box/index.html"]
         self.assertIn(">2026-10-23 17:30 KST</time>", post)
         self.assertIn('"datePublished": "2026-10-23T17:30:00+09:00"', post)
 
 
-PAGER_LABEL = {"en": "Page", "ko": "페이지", "ja": "ページ", "zh": "分页", "es": "Página", "pt": "Página",
-               "id": "Halaman", "ru": "Страница", "vi": "Trang", "fr": "Page", "de": "Seite", "ar": "الصفحة", "hi": "पृष्ठ"}
-PAGE_WORD = dict(PAGER_LABEL, zh="页")  # title/description word; only zh differs from the aria-label
+PAGER_LABEL = {"en": "Page", "ko": "페이지", "ja": "ページ", "zh-Hant": "頁", "es": "Página", "pt-BR": "Página",
+               "id": "Halaman", "th": "หน้า", "vi": "Trang", "fr": "Page", "de": "Seite", "tr": "Sayfa"}
+PAGE_WORD = dict(PAGER_LABEL, **{"zh-Hant": "第"})  # unused by the title check below; zh-Hant writes "第 2 頁"
 
 
 class NumberingAndPaging(unittest.TestCase):
@@ -521,18 +491,18 @@ class NumberingAndPaging(unittest.TestCase):
     def test_page_split_ten_and_rest(self):
         files = self.build(self.N)
         for c in build_site.BLOG_CODES:
-            self.assertEqual(files["%s/blog/index.html" % c].count('<li>\n        <p class="comment">'), 10)
-            self.assertEqual(files["%s/blog/page/2/index.html" % c].count('<li>\n        <p class="comment">'), 2)
-            self.assertNotIn("%s/blog/page/3/index.html" % c, files)
+            self.assertEqual(files["%s/index.html" % build_site.journal_rel(c)].count('<li>\n        <p class="comment">'), 10)
+            self.assertEqual(files["%s/page/2/index.html" % build_site.journal_rel(c)].count('<li>\n        <p class="comment">'), 2)
+            self.assertNotIn("%s/page/3/index.html" % build_site.journal_rel(c), files)
 
     def test_page_one_url_unchanged_and_no_page_one_file(self):
         files = self.build(self.N)
         for c in build_site.BLOG_CODES:
-            self.assertNotIn("%s/blog/page/1/index.html" % c, files)
-            html = files["%s/blog/index.html" % c]
-            self.assertIn('<link rel="canonical" href="https://draft.ipe.rest/%s/blog/">' % c, html)
+            self.assertNotIn("%s/page/1/index.html" % build_site.journal_rel(c), files)
+            html = files["%s/index.html" % build_site.journal_rel(c)]
+            self.assertIn('<link rel="canonical" href="https://draft.ipe.rest%s">' % build_site.journal_path(c), html)
             self.assertNotIn("/page/1/", html)
-            self.assertIn('href="/%s/blog/page/2/"' % c, html)
+            self.assertIn('href="%spage/2/"' % build_site.journal_path(c), html)
         sm = files["sitemap.xml"]
         self.assertNotIn("/page/1/", sm)
 
@@ -540,24 +510,25 @@ class NumberingAndPaging(unittest.TestCase):
         files = self.build(self.N)
         loc = build_site.load_locales(ROOT)
         for c in build_site.BLOG_CODES:
-            html = files["%s/blog/page/2/index.html" % c]
-            url = "https://draft.ipe.rest/%s/blog/page/2/" % c
+            html = files["%s/page/2/index.html" % build_site.journal_rel(c)]
+            url = "https://draft.ipe.rest%spage/2/" % build_site.journal_path(c)
             self.assertIn('<link rel="canonical" href="%s">' % url, html)
             title = re.search(r"<title>(.*?)</title>", html).group(1)
-            word = PAGE_WORD[c]
-            self.assertTrue(title.endswith(" · %s 2" % word), title)
+            word = PAGER_LABEL[c]
+            suffix = " · " + loc[c]["blog_page"].format(n=2)
+            self.assertTrue(title.endswith(suffix), title)
             desc = re.search(r'<meta name="description" content="(.*?)">', html).group(1)
-            self.assertTrue(desc.endswith(" · %s 2" % word), desc)
-            self.assertIn('<a class="pg-step" rel="prev" href="/%s/blog/">' % c, html)
+            self.assertTrue(desc.endswith(suffix), desc)
+            self.assertIn('<a class="pg-step" rel="prev" href="%s">' % build_site.journal_path(c), html)
             self.assertNotIn('rel="next"', html)
             self.assertIn('<span class="pg-num" aria-current="page">2</span>', html)
-            self.assertIn('<a class="pg-num" href="/%s/blog/" aria-label="%s 1">1</a>' % (c, word), html)
+            self.assertIn('<a class="pg-num" href="%s" aria-label="%s">1</a>' % (build_site.journal_path(c), loc[c]["blog_page"].format(n=1)), html)
             for o in build_site.BLOG_LISTED:
-                self.assertIn('hreflang="%s" href="https://draft.ipe.rest/%s/blog/page/2/"' % (build_site.tag(o), o), html)
-            self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/en/blog/page/2/"', html)
-            page1 = files["%s/blog/index.html" % c]
+                self.assertIn('hreflang="%s" href="https://draft.ipe.rest%spage/2/"' % (build_site.tag(o), build_site.journal_path(o)), html)
+            self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/journal/page/2/"', html)
+            page1 = files["%s/index.html" % build_site.journal_rel(c)]
             self.assertNotIn(" %s 2" % word, re.search(r"<title>(.*?)</title>", page1).group(1))
-            self.assertIn('<a class="pg-step" rel="next" href="/%s/blog/page/2/">' % c, page1)
+            self.assertIn('<a class="pg-step" rel="next" href="%spage/2/">' % build_site.journal_path(c), page1)
             self.assertIn('<span class="pg-num" aria-current="page">1</span>', page1)
             self.assertIn('<nav class="pager" aria-label="%s">' % PAGER_LABEL[c], page1)
             self.assertIn('<nav class="pager" aria-label="%s">' % PAGER_LABEL[c], html)
@@ -567,7 +538,7 @@ class NumberingAndPaging(unittest.TestCase):
         files = build_site.build(root)
         sm = files["sitemap.xml"]
         for c in build_site.BLOG_LISTED:
-            self.assertIn("<loc>https://draft.ipe.rest/%s/blog/page/2/</loc>" % c, sm)
+            self.assertIn("<loc>https://draft.ipe.rest%spage/2/</loc>" % build_site.journal_path(c), sm)
         for rel, text in files.items():  # the checker wants every sitemap URL built on disk
             f = root / rel
             f.parent.mkdir(parents=True, exist_ok=True)
@@ -576,8 +547,8 @@ class NumberingAndPaging(unittest.TestCase):
 
     def test_item_list_covers_only_the_page_in_page_order(self):
         files = self.build(self.N)
-        for page, want in (("blog", 10), ("blog/page/2", 2)):
-            html = files["en/%s/index.html" % page]
+        for page, want in (("journal", 10), ("journal/page/2", 2)):
+            html = files["%s/index.html" % page]
             il = ld_of(html, "Blog")["mainEntity"]
             self.assertEqual(il["numberOfItems"], want)
             self.assertEqual([x["position"] for x in il["itemListElement"]], list(range(1, want + 1)))
@@ -586,13 +557,13 @@ class NumberingAndPaging(unittest.TestCase):
     def test_numbers_oldest_is_one_same_in_every_language_drafts_excluded(self):
         files = self.build(self.N)
         for c in build_site.BLOG_CODES:
-            self.assertIn("No. 1</span>", files["%s/blog/page/2/index.html" % c])
-            oldest = files["%s/blog/post-%02d/index.html" % (c, self.N)]
-            newest = files["%s/blog/post-01/index.html" % c]
+            self.assertIn("No. 1</span>", files["%s/page/2/index.html" % build_site.journal_rel(c)])
+            oldest = files["%s/post-%02d/index.html" % (build_site.journal_rel(c), self.N)]
+            newest = files["%s/post-01/index.html" % build_site.journal_rel(c)]
             self.assertIn('<span class="j-no">No. 1</span>', oldest)
             self.assertIn('<span class="j-no">No. %d</span>' % self.N, newest)  # draft did not take a number
-            self.assertNotIn("No. %d</span>" % (self.N + 1), files["%s/blog/index.html" % c])
-            self.assertNotIn("unpublished-draft", files["%s/blog/index.html" % c])
+            self.assertNotIn("No. %d</span>" % (self.N + 1), files["%s/index.html" % build_site.journal_rel(c)])
+            self.assertNotIn("unpublished-draft", files["%s/index.html" % build_site.journal_rel(c)])
 
     def test_home_cards_carry_the_same_numbers(self):
         files = self.build(self.N)
@@ -616,8 +587,8 @@ class NumberingAndPaging(unittest.TestCase):
 
     def test_few_posts_make_no_second_page(self):
         files = self.build(5)
-        self.assertEqual([r for r in files if "/blog/page/" in r], [])
-        self.assertNotIn('class="pager"', files["en/blog/index.html"])
+        self.assertEqual([r for r in files if "/page/" in r and "/blog/" not in r], [])
+        self.assertNotIn('class="pager"', files["journal/index.html"])
         self.assertNotIn("/page/", files["sitemap.xml"])
 
     def test_repo_today_has_only_the_pages_it_needs(self):
@@ -625,8 +596,8 @@ class NumberingAndPaging(unittest.TestCase):
         posts, _ = build_site.load_posts(ROOT)
         pages = -(-len(posts) // build_site.LIST_PAGE_SIZE)
         for c in build_site.BLOG_CODES:
-            extra = sorted(r for r in files if r.startswith("%s/blog/page/" % c) and r.endswith("/index.html"))
-            want = ["%s/blog/page/%d/index.html" % (c, n) for n in range(2, pages + 1)]
+            extra = sorted(r for r in files if r.startswith("%s/page/" % build_site.journal_rel(c)) and r.endswith("/index.html"))
+            want = ["%s/page/%d/index.html" % (build_site.journal_rel(c), n) for n in range(2, pages + 1)]
             self.assertEqual(extra, want, c)
 
 
@@ -636,7 +607,7 @@ class StageSite(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             files = {f.as_posix() for f in stage_site.stage(ROOT, tmp)}
             for must in ("index.html", "404.html", "CNAME", ".nojekyll", "robots.txt", "sitemap.xml", "llms.txt", "og-image.png",
-                         "assets/site.css", "assets/site.js", "ko/index.html", "en/index.html", "ko/blog/feed.xml"):
+                         "assets/site.css", "assets/site.js", "ko/index.html", "en/index.html", "ko/journal/feed.xml"):
                 self.assertIn(must, files)
             self.assertTrue(any(re.match(r"^[0-9a-f]{32}\.txt$", f) for f in files), "IndexNow key file")
             for f in files:
@@ -707,7 +678,7 @@ class LocalTime(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.files = build_site.build(ROOT)
-        cls.pages = {k: v for k, v in cls.files.items() if re.match(r"^[a-z]{2}/blog/.+\.html$", k)}
+        cls.pages = {k: v for k, v in cls.files.items() if re.match(r"^(?:[a-z]{2}/)?journal/.+\.html$", k)}
 
     def test_copy_matches_canonical_hash(self):
         import hashlib
@@ -757,7 +728,7 @@ class HomeCards(unittest.TestCase):
         want = [p["slug"] for p in self.posts][:3]
         self.assertTrue(want)
         for c in build_site.BLOG_CODES:
-            got = [re.search(r'href="/%s/blog/([^/"]+)/"' % c, x).group(1) for x in self.cards(c)]
+            got = [re.search(r'href="%s([^/"]+)/"' % build_site.journal_path(c), x).group(1) for x in self.cards(c)]
             self.assertEqual(got, want, c)
             self.assertLessEqual(len(got), 3, c)
             for slug, x in zip(want, self.cards(c)):
@@ -769,12 +740,12 @@ class HomeCards(unittest.TestCase):
         newest = self.posts[0]["slug"]
         self.assertEqual(build_site.when_key(self.posts[0]["date"]), max(build_site.when_key(p["date"]) for p in self.posts))
         for c in build_site.BLOG_CODES:
-            self.assertIn("/%s/blog/%s/" % (c, newest), self.cards(c)[0], c)
+            self.assertIn("%s%s/" % (build_site.journal_path(c), newest), self.cards(c)[0], c)
 
     def test_see_all_link_and_no_unpublished(self):
         drafts = {d.name for d in (ROOT / "posts").iterdir() if d.is_dir()} - {p["slug"] for p in self.posts}
         for c in build_site.BLOG_CODES:
-            self.assertIn('class="btn-line" href="/%s/blog/"' % c, self.home(c), c)
+            self.assertIn('class="btn-line" href="%s"' % build_site.journal_path(c), self.home(c), c)
             for slug in drafts:
                 self.assertNotIn(slug, self.home(c), c)
 
@@ -840,25 +811,25 @@ class JsonLd(unittest.TestCase):
     def test_post_publisher_author_and_blog_ids(self):
         for c in build_site.BLOG_CODES:
             for p in self.posts:
-                d = ld_of(self.files["%s/blog/%s/index.html" % (c, p["slug"])], "BlogPosting")
+                d = ld_of(self.files["%s/%s/index.html" % (build_site.journal_rel(c), p["slug"])], "BlogPosting")
                 pub = d["publisher"]
                 self.assertEqual(pub["@id"], HUB)
                 self.assertEqual(pub["name"], "ipe()")
                 self.assertEqual(pub["logo"]["url"], "https://ipe.rest/icon-512.png")
                 self.assertEqual(d["author"], AUTHOR)
-                self.assertEqual(d["isPartOf"]["@id"], "https://draft.ipe.rest/%s/blog/#blog" % c)
+                self.assertEqual(d["isPartOf"]["@id"], "https://draft.ipe.rest%s#blog" % build_site.journal_path(c))
 
     def test_list_blog_itemlist_and_ids(self):
         for c in build_site.BLOG_CODES:
-            html = self.files["%s/blog/index.html" % c]
+            html = self.files["%s/index.html" % build_site.journal_rel(c)]
             blog = ld_of(html, "Blog")
-            self.assertEqual(blog["@id"], "https://draft.ipe.rest/%s/blog/#blog" % c)
+            self.assertEqual(blog["@id"], "https://draft.ipe.rest%s#blog" % build_site.journal_path(c))
             self.assertEqual(blog["isPartOf"], {"@id": "https://draft.ipe.rest/#website"})
             self.assertEqual(blog["publisher"]["@id"], HUB)
             self.assertEqual(blog["publisher"]["logo"]["url"], "https://ipe.rest/icon-512.png")
             self.assertEqual(blog["author"], AUTHOR)
             items = blog["mainEntity"]["itemListElement"]
-            shown = re.findall(r'<li>\s*<p class="comment">.*?<h2><a href="(/%s/blog/[^"]+/)"' % c, html, re.S)
+            shown = re.findall(r'<li>\s*<p class="comment">.*?<h2><a href="(%s[^"]+/)"' % build_site.journal_path(c), html, re.S)
             self.assertEqual(len(items), min(len(self.posts), build_site.LIST_PAGE_SIZE))
             self.assertEqual(len(items), len(shown))
             self.assertEqual([i["position"] for i in items], list(range(1, len(items) + 1)))
@@ -917,7 +888,7 @@ class JsonLd(unittest.TestCase):
 
     def test_blog_list_items_reference_article_ids(self):
         for c in build_site.BLOG_CODES:
-            html = self.files["%s/blog/index.html" % c]
+            html = self.files["%s/index.html" % build_site.journal_rel(c)]
             blog = ld_of(html, "Blog")
             for it in blog["mainEntity"]["itemListElement"]:
                 self.assertEqual(it["item"], {"@id": it["url"] + "#article"})
@@ -931,7 +902,7 @@ class JsonLd(unittest.TestCase):
                 self.assertLessEqual(len(t), 60, (c, slug, len(t)))
 
     def article(self, c, slug):
-        return ld_of(self.files["%s/blog/%s/index.html" % (c, slug)], "BlogPosting")
+        return ld_of(self.files["%s/%s/index.html" % (build_site.journal_rel(c), slug)], "BlogPosting")
 
     def test_image_is_imageobject_with_real_file_size(self):
         w, h = build_site.image_size(ROOT / "og-image.png")
@@ -946,7 +917,8 @@ class JsonLd(unittest.TestCase):
         self.assertEqual(build_site.word_count("<p>One two  three</p><p>four</p>", "en"), 4)
         self.assertEqual(build_site.word_count("<p>첫 줄이 이야기를 살립니다</p>", "ko"), 4)  # space-delimited: words
         self.assertEqual(build_site.word_count("<p>最初の、ひと文。 A1</p>", "ja"), 8)  # characters; spaces and punctuation excluded
-        self.assertEqual(build_site.word_count("<p>第一句，很重要。</p>", "zh"), 6)
+        self.assertEqual(build_site.word_count("<p>第一句，很重要。</p>", "zh-Hant"), 6)
+        self.assertEqual(build_site.word_count("<p>วันนี้ ฝนตก</p>", "th"), 7)  # th: letters/digits only (combining marks and spaces excluded)
         self.assertEqual(build_site.word_count("<p>a &amp; b</p>", "en"), 3)
 
     def test_post_has_wordcount_keywords_section_about_per_language(self):
@@ -966,16 +938,16 @@ class JsonLd(unittest.TestCase):
         for p in self.posts:
             slug = p["slug"]
             en = self.article("en", slug)
-            self.assertEqual(en["@id"], "https://draft.ipe.rest/en/blog/%s/#article" % slug)
+            self.assertEqual(en["@id"], "https://draft.ipe.rest/journal/%s/#article" % slug)
             self.assertNotIn("translationOfWork", en)
-            want = {"https://draft.ipe.rest/%s/blog/%s/#article" % (c, slug) for c in build_site.BLOG_LISTED if c != "en"}
+            want = {"https://draft.ipe.rest%s%s/#article" % (build_site.journal_path(c), slug) for c in build_site.BLOG_LISTED if c != "en"}
             self.assertEqual({x["@id"] for x in en["workTranslation"]}, want)
             self.assertEqual(len(en["workTranslation"]), len(build_site.BLOG_LISTED) - 1)
             for c in build_site.BLOG_CODES:
                 if c == "en":
                     continue
                 d = self.article(c, slug)
-                self.assertEqual(d["@id"], "https://draft.ipe.rest/%s/blog/%s/#article" % (c, slug))
+                self.assertEqual(d["@id"], "https://draft.ipe.rest%s%s/#article" % (build_site.journal_path(c), slug))
                 self.assertEqual(d["translationOfWork"]["@id"], en["@id"])
                 self.assertEqual(d["translationOfWork"]["inLanguage"], "en")
                 self.assertNotIn("workTranslation", d)
@@ -999,8 +971,8 @@ class JsonLdPostFields(unittest.TestCase):
         write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
         write_post(self.dir, "b-post", extra="published: 2026-10-01T10:00:00+09:00\nupdated: 2026-10-20T11:30:00+09:00\n")
         f = build_site.build(self.dir)
-        a = ld_of(f["ko/blog/a-post/index.html"], "BlogPosting")
-        b = ld_of(f["ko/blog/b-post/index.html"], "BlogPosting")
+        a = ld_of(f["ko/journal/a-post/index.html"], "BlogPosting")
+        b = ld_of(f["ko/journal/b-post/index.html"], "BlogPosting")
         self.assertEqual(a["dateModified"], a["datePublished"])
         self.assertEqual(b["datePublished"], "2026-10-01T10:00:00+09:00")
         self.assertEqual(b["dateModified"], "2026-10-20T11:30:00+09:00")
@@ -1009,14 +981,14 @@ class JsonLdPostFields(unittest.TestCase):
         write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
         write_post(self.dir, "z-draft", extra="draft: true\n")
         f = build_site.build(self.dir)
-        urls = [i["url"] for i in ld_of(f["ko/blog/index.html"], "Blog")["mainEntity"]["itemListElement"]]
-        self.assertEqual(urls, ["https://draft.ipe.rest/ko/blog/a-post/"])
-        self.assertNotIn("z-draft", f["ko/blog/index.html"])
+        urls = [i["url"] for i in ld_of(f["ko/journal/index.html"], "Blog")["mainEntity"]["itemListElement"]]
+        self.assertEqual(urls, ["https://draft.ipe.rest/ko/journal/a-post/"])
+        self.assertNotIn("z-draft", f["ko/journal/index.html"])
 
 
     def test_front_matter_overrides_keywords_section_about(self):
         write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\nkeywords: alpha, beta\nsection: Craft\nabout: Hooks | Openings | Extra\n")
-        d = ld_of(build_site.build(self.dir)["ko/blog/a-post/index.html"], "BlogPosting")
+        d = ld_of(build_site.build(self.dir)["ko/journal/a-post/index.html"], "BlogPosting")
         self.assertEqual(d["keywords"], "alpha, beta")
         self.assertEqual(d["articleSection"], "Craft")
         self.assertEqual([a["name"] for a in d["about"]], ["Hooks", "Openings"])
@@ -1049,7 +1021,7 @@ class SeoFixes(unittest.TestCase):
             self.assertEqual(home.count('class="btn" aria-disabled="true"'), 3, c)  # two store buttons + community
             self.assertGreaterEqual(home.count("<span>%s</span>" % html_unescape_free(self.loc[c]["cta_download"])), 2, c)
             self.assertIn("<span>%s</span>" % html_unescape_free(self.loc[c]["comm_cta"]), home, c)
-            post = self.files["%s/blog/%s/index.html" % (c, self.posts[0]["slug"])]
+            post = self.files["%s/%s/index.html" % (build_site.journal_rel(c), self.posts[0]["slug"])]
             self.assertIn('class="btn" aria-disabled="true"', post, c)
             self.assertNotIn('<a class="btn"', post, c)
 
@@ -1068,7 +1040,8 @@ class SeoFixes(unittest.TestCase):
             home = self.files["index.html" if c == "en" else "%s/index.html" % c]
             self.assertIn('href="%s"' % build_site.legal_url(c, "privacy"), home, c)
         self.assertEqual(build_site.legal_url("ko", "privacy"), "https://ipe.rest/ko/legal/privacy/")
-        self.assertEqual(build_site.legal_url("ja", "terms"), "https://ipe.rest/en/legal/terms/")
+        self.assertEqual(build_site.legal_url("ja", "terms"), "https://ipe.rest/ja/legal/terms/")
+        self.assertEqual(build_site.legal_url("zh-Hant", "terms"), "https://ipe.rest/zh-Hant/legal/terms/")
         self.assertNotIn("/privacy/", self.files["sitemap.xml"])
         self.assertNotIn("/terms/", self.files["sitemap.xml"])
 
@@ -1090,7 +1063,7 @@ class SeoFixes(unittest.TestCase):
     def test_content_pages_say_nothing_about_price_or_free(self):
         for c in build_site.BLOG_CODES:
             d = build_site.load_content(ROOT)[c]
-            text = json.dumps({k: d[k] for k in ("about", "privacy")}, ensure_ascii=False)
+            text = json.dumps({k: d[k] for k in ("about",) + (("privacy",) if "privacy" in d else ())}, ensure_ascii=False)
             self.assertNotRegex(text, r"[$€¥]|USD|\d+[.,]\d{2}\s", c)
             self.assertNotRegex(text.lower(), FREE_WORDS, c)
 
@@ -1106,7 +1079,7 @@ class SeoFixes(unittest.TestCase):
         self.assertEqual(len(build_site.post_title("x" * 50)), 60)
         for c in build_site.BLOG_CODES:
             for p in self.posts:
-                t = self.files["%s/blog/%s/index.html" % (c, p["slug"])]
+                t = self.files["%s/%s/index.html" % (build_site.journal_rel(c), p["slug"])]
                 head = p["langs"][c]["title"]
                 self.assertEqual(html_unescape(self.title(t)), build_site.post_title(head))
                 self.assertIn("<h1>%s</h1>" % build_site.esc(head), t)
@@ -1114,17 +1087,17 @@ class SeoFixes(unittest.TestCase):
     def test_blog_list_title_is_descriptive_per_language(self):
         seen = set()
         for c in build_site.BLOG_CODES:
-            t = html_unescape(self.title(self.files["%s/blog/index.html" % c]))
+            t = html_unescape(self.title(self.files["%s/index.html" % build_site.journal_rel(c)]))
             self.assertEqual(t, self.loc[c]["blog_title"])
             self.assertLessEqual(len(t), 60, c)
             self.assertGreater(len(t), 20, c)
             seen.add(t)
-        self.assertEqual(len(seen), 13)
+        self.assertEqual(len(seen), 12)
 
     def test_home_description_lengths(self):
         for c in build_site.BLOG_CODES:
             d = self.loc[c]["meta_desc_short"]
-            self.assertLessEqual(len(d), 100 if c in ("ko", "ja", "zh") else 160, c)
+            self.assertLessEqual(len(d), 100 if c in ("ko", "ja", "zh-Hant") else 160, c)
             home = self.files["index.html" if c == "en" else "%s/index.html" % c]
             self.assertIn('<meta name="description" content="%s">' % build_site.esc(d), home)
 
@@ -1135,7 +1108,7 @@ class SeoFixes(unittest.TestCase):
 
     def test_touch_icon_and_favicon(self):
         for rel, t in self.pages().items():
-            if rel == "en/index.html":  # redirect stub, no <head> furniture
+            if 'http-equiv="refresh"' in t:  # redirect stub, no <head> furniture
                 continue
             self.assertIn('<link rel="apple-touch-icon" href="/apple-touch-icon.png">', t, rel)
         png = (ROOT / "apple-touch-icon.png").read_bytes()
@@ -1148,7 +1121,7 @@ class SeoFixes(unittest.TestCase):
 
     def test_render_blocking_resources_are_tamed(self):
         """10-26 perf: fonts swap + preconnect, site.js deferred; the inline localtime script stays where it is."""
-        samples = ["index.html", "ko/index.html", "en/blog/index.html", "ko/blog/%s/index.html" % self.posts[0]["slug"], "about/index.html"]
+        samples = ["index.html", "ko/index.html", "journal/index.html", "ko/journal/%s/index.html" % self.posts[0]["slug"], "about/index.html"]
         for rel in samples:
             t = self.files[rel]
             self.assertRegex(t, r'<script src="/assets/site\.js\?v=[0-9a-f]{8}" defer></script>', rel)
@@ -1159,7 +1132,7 @@ class SeoFixes(unittest.TestCase):
             self.assertTrue(font and "display=swap" in font.group(1), rel)
             self.assertLess(t.index("fonts.googleapis.com"), t.index("/assets/site.css"), rel)
             self.assertIn('href="/assets/site.css?v=', t, rel)
-        post = self.files["ko/blog/%s/index.html" % self.posts[0]["slug"]]
+        post = self.files["ko/journal/%s/index.html" % self.posts[0]["slug"]]
         self.assertIn("<script>", post[post.index("</footer>"):])  # inline localtime, after the footer, not deferred
         self.assertLess(post.index("</footer>"), post.rindex("<script>"))
 
@@ -1202,7 +1175,7 @@ class BlogPostingAudit(unittest.TestCase):
     def pages(self):
         for p in self.posts:
             for c in build_site.BLOG_CODES:
-                yield p, c, self.files["%s/blog/%s/index.html" % (c, p["slug"])]
+                yield p, c, self.files["%s/%s/index.html" % (build_site.journal_rel(c), p["slug"])]
 
     def test_there_are_posts_to_audit(self):
         self.assertGreaterEqual(len(list(self.pages())), 13)
@@ -1254,7 +1227,7 @@ class PostMoreLinks(unittest.TestCase):
         cls.posts, _ = build_site.load_posts(ROOT)  # newest first
 
     def page(self, c, slug):
-        return self.files["%s/blog/%s/index.html" % (c, slug)]
+        return self.files["%s/%s/index.html" % (build_site.journal_rel(c), slug)]
 
     @staticmethod
     def hrefs(page, cls):
@@ -1269,9 +1242,9 @@ class PostMoreLinks(unittest.TestCase):
             for c in build_site.BLOG_CODES:
                 want = []
                 if i + 1 < len(self.posts):
-                    want.append("/%s/blog/%s/" % (c, self.posts[i + 1]["slug"]))  # older = previous
+                    want.append("%s%s/" % (build_site.journal_path(c), self.posts[i + 1]["slug"]))  # older = previous
                 if i > 0:
-                    want.append("/%s/blog/%s/" % (c, self.posts[i - 1]["slug"]))  # newer = next
+                    want.append("%s%s/" % (build_site.journal_path(c), self.posts[i - 1]["slug"]))  # newer = next
                 self.assertEqual(self.hrefs(self.page(c, p["slug"]), "post-adj"), want, "%s/%s" % (c, p["slug"]))
         newest = self.page("en", self.posts[0]["slug"])
         oldest = self.page("en", self.posts[-1]["slug"])
@@ -1284,7 +1257,7 @@ class PostMoreLinks(unittest.TestCase):
         for i, p in enumerate(self.posts):
             skip = {p["slug"]} | {self.posts[j]["slug"] for j in (i - 1, i + 1) if 0 <= j < len(self.posts)}
             for c in build_site.BLOG_CODES:
-                want = ["/%s/blog/%s/" % (c, q["slug"]) for q in self.posts if q["slug"] not in skip][:3]
+                want = ["%s%s/" % (build_site.journal_path(c), q["slug"]) for q in self.posts if q["slug"] not in skip][:3]
                 got = self.hrefs(self.page(c, p["slug"]), "post-related")
                 self.assertEqual(got, want, "%s/%s" % (c, p["slug"]))
                 adj = self.hrefs(self.page(c, p["slug"]), "post-adj")
@@ -1331,7 +1304,7 @@ class PostMoreLinksSmall(unittest.TestCase):
 
     def test_single_post_has_no_extra_links(self):
         write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
-        t = build_site.build(self.dir)["ko/blog/a-post/index.html"]
+        t = build_site.build(self.dir)["ko/journal/a-post/index.html"]
         self.assertNotIn("post-adj", t)
         self.assertNotIn("post-related", t)
 
@@ -1339,10 +1312,10 @@ class PostMoreLinksSmall(unittest.TestCase):
         write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
         write_post(self.dir, "b-post", extra="published: 2026-10-01T10:30:00+09:00\n")
         f = build_site.build(self.dir)
-        a, b = f["en/blog/a-post/index.html"], f["en/blog/b-post/index.html"]
-        self.assertIn('rel="next" href="/en/blog/b-post/"', a)
+        a, b = f["journal/a-post/index.html"], f["journal/b-post/index.html"]
+        self.assertIn('rel="next" href="/journal/b-post/"', a)
         self.assertNotIn('rel="prev"', a)
-        self.assertIn('rel="prev" href="/en/blog/a-post/"', b)
+        self.assertIn('rel="prev" href="/journal/a-post/"', b)
         self.assertNotIn('rel="next"', b)
         self.assertEqual(PostMoreLinks.hrefs(a, "post-related"), [])  # the only other post is already the next link
         self.assertNotIn("post-related", a)
@@ -1350,14 +1323,14 @@ class PostMoreLinksSmall(unittest.TestCase):
     def test_three_posts_related_fills_with_next_latest(self):
         for n, t in (("a-post", "09:00:00"), ("b-post", "10:00:00"), ("c-post", "11:00:00"), ("d-post", "12:00:00")):
             write_post(self.dir, n, extra="published: 2026-10-01T%s+09:00\n" % t)
-        b = build_site.build(self.dir)["en/blog/b-post/index.html"]  # prev a, next c -> only d is left
-        self.assertEqual(PostMoreLinks.hrefs(b, "post-adj"), ["/en/blog/a-post/", "/en/blog/c-post/"])
-        self.assertEqual(PostMoreLinks.hrefs(b, "post-related"), ["/en/blog/d-post/"])
+        b = build_site.build(self.dir)["journal/b-post/index.html"]  # prev a, next c -> only d is left
+        self.assertEqual(PostMoreLinks.hrefs(b, "post-adj"), ["/journal/a-post/", "/journal/c-post/"])
+        self.assertEqual(PostMoreLinks.hrefs(b, "post-related"), ["/journal/d-post/"])
 
     def test_draft_posts_are_never_linked(self):
         write_post(self.dir, "a-post", extra="published: 2026-10-01T09:09:45+09:00\n")
         write_post(self.dir, "z-draft", extra="draft: true\n")
-        self.assertNotIn("z-draft", build_site.build(self.dir)["en/blog/a-post/index.html"])
+        self.assertNotIn("z-draft", build_site.build(self.dir)["journal/a-post/index.html"])
 
 
 class DescriptionLimit(unittest.TestCase):

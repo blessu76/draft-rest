@@ -4,6 +4,7 @@ description: Wer in einer Sackgasse aufhört, hat es morgen schwer. Hör auf, we
 date: 2026-11-06
 slug: stop-mid-sentence
 published: 2026-11-06T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Man sagt oft, das Schwerste am Schreiben sei der Anfang, doch wie schwer der Anfang fällt, hängt davon ab, wo du gestern aufgehört hast. Ein Text, den du festgefahren geschlossen hast, ohne noch etwas sagen zu können, fühlt sich beim erneuten Öffnen wie ein leerer Bildschirm an. Ein Text, den du verlassen hast, solange du noch wusstest, was als Nächstes kam, geht weiter, sobald du ihn öffnest. Absichtlich etwas früher aufzuhören ist keine Faulheit; es ist ein kleines Geschenk an dein Ich von morgen.

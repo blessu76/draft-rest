@@ -4,6 +4,7 @@ description: Ein ganzer Tag, aber die Bildunterschrift bleibt leer. So holst du 
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box
+copy_review: legacy-2026-11-14
 ---
 
 Du hattest einen ganzen Tag voller Dinge, die sich zu erzählen lohnen, und jetzt starrst du auf den blinkenden Cursor im Feld für die Bildunterschrift. Die Worte fehlen nicht, weil du schlecht schreibst. Du hast nur am schwersten Punkt angefangen: der leeren Seite.

@@ -5,6 +5,7 @@ date: 2026-10-29
 slug: open-with-one-sense
 published: 2026-10-29T16:12:00+09:00
 updated: 2026-10-30T16:30:35+09:00
+copy_review: legacy-2026-11-14
 ---
 
 La mayoría de las escenas empiezan por lo que vimos. «Era una tarde de lluvia y estaba sentado en un café». Es la apertura más fácil y, a menudo, la más plana. Abre la misma escena con un solo sonido, olor o tacto y quien lee estará dentro en una frase.

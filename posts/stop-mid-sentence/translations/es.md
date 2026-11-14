@@ -4,6 +4,7 @@ description: Parar en un callejón sin salida complica el día siguiente. Para c
 date: 2026-11-06
 slug: stop-mid-sentence
 published: 2026-11-06T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Se suele decir que lo más difícil de escribir es empezar, pero lo difícil que sea empezar depende de dónde te detuviste ayer. Un texto que cerraste atascado, sin nada más que decir, se siente como una pantalla en blanco cuando lo abres de nuevo. Un texto que dejaste mientras aún sabías qué venía después se retoma en cuanto lo abres. Parar un poco antes a propósito no es pereza; es un pequeño regalo para el tú de mañana.

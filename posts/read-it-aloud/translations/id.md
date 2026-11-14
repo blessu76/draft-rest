@@ -4,6 +4,7 @@ description: Mata memaafkan apa yang tidak dimaafkan mulut. Tiga langkah membaca
 date: 2026-11-04
 slug: read-it-aloud
 published: 2026-11-04T16:02:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Setelah menulis beberapa baris lalu membacanya dalam hati, biasanya semuanya tampak baik-baik saja. Bacalah baris yang sama dengan suara keras, dan di suatu tempat napasmu habis, kamu mendengar kata yang sama dua kali, atau tanpa sadar melewatkan satu kata. Mata memaafkan; mulut tidak. Membaca keras-keras sekali adalah penyuntingan paling ringan: tanpa aturan baru, hanya telingamu.
