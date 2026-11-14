@@ -6,7 +6,7 @@
 
 Sets `date` (KST day) and `published` (KST, e.g. 2026-10-24T16:00:00+09:00) in every language file — default: now (KST).
 Run it right before the commit that is pushed to main; if the push slips, re-run scripts/stamp_published.py.
-Validates every file first and writes nothing if any file is bad. A future time is refused.
+Validates every file first and writes nothing if any file is bad or lacks Iris's `copy_review: iris` + `copy_review_date` (gate). A future time is refused.
 
 After publishing it prints SEO warnings (never an error, the exit code stays 0): body shorter than the target (latin/cyrillic
 400 words, CJK ko/ja/zh-Hant/th 800 characters without spaces), rendered <title> longer than 60 (CJK 40) characters, description longer
@@ -59,6 +59,24 @@ def rewrite(text, when):
     return "---\n" + head + "\n---" + rest
 
 
+def copy_review_gate(files, when):
+    """copy_review errors (build_site.copy_review_problems) for the post as it would be once published at `when`."""
+    langs = {}
+    for f in files:
+        try:
+            m = build_site.parse_post_file(f)
+        except ValueError:
+            continue  # a bad front matter is reported by rewrite()
+        m["_date"] = max(when.date(), build_site.COPY_REVIEW_FROM)  # a publication happening now always needs Iris (no legacy)
+        langs[f.stem] = m
+    name = next(iter(langs.values()))["slug"] if langs else "?"
+    errors = build_site.copy_review_problems(name, langs)
+    for c, m in sorted(langs.items()):  # the legacy tag is only for posts already live before 11-15, never for a publication happening now
+        if str(m.get("copy_review", "")).lower() == build_site.COPY_REVIEW_LEGACY:
+            errors.append("%s/%s: `%s` is not valid for a new publication - needs `copy_review: iris` + copy_review_date" % (name, c, build_site.COPY_REVIEW_LEGACY))
+    return errors
+
+
 def publish(root, slug, when=None):
     """Validate every language file first; write only if all of them are fine (no partial publish)."""
     when = (when or dt.datetime.now(KST)).astimezone(KST).replace(second=0, microsecond=0)
@@ -75,6 +93,9 @@ def publish(root, slug, when=None):
             errors.append("%s: %s" % (f, ex))
     if errors:
         raise SystemExit("publish_post: nothing written\n  " + "\n  ".join(errors))
+    gate = copy_review_gate(files, when)
+    if gate:  # Iris's copy review is a hard gate on the publishing path (w00 decision): no mark, no publish
+        raise SystemExit("publish_post: nothing written - copy_review gate\n  " + "\n  ".join(gate))
     for f, text in new.items():
         f.write_text(text, encoding="utf-8")
     return files, when.isoformat(timespec="seconds")

@@ -14,10 +14,18 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "tests"))
 import build_site  # noqa: E402
 import publish_post  # noqa: E402
-from test_build_site import write_post  # noqa: E402
+from test_build_site import write_post as write_post_raw  # noqa: E402
 
 KST = build_site.KST
+REVIEWED = "copy_review: iris\ncopy_review_date: 2026-11-14\n"  # later key wins over the helper's legacy mark
 FULL = "word " * 400  # a body that meets the 400-word / 800-character target in every language
+
+
+def write_post(root, slug, **kw):
+    """Fixture posts are published "now", so they carry Iris's mark (a legacy tag stops being valid on 11-15)."""
+    if "copy_review" not in kw.get("extra", ""):
+        kw["extra"] = kw.get("extra", "") + REVIEWED
+    write_post_raw(root, slug, **kw)
 
 
 class PublishPost(unittest.TestCase):
@@ -59,6 +67,32 @@ class PublishPost(unittest.TestCase):
             publish_post.publish(self.dir, "q-one")
         self.assertIn("no `date:` line", str(cm.exception))
         self.assertEqual(before, {f: f.read_text(encoding="utf-8") for f in (self.dir / "posts").rglob("*.md")})
+
+    def test_copy_review_gate_blocks_publish_and_writes_nothing(self):
+        """No `copy_review: iris` on a post dated today/after 11-15, or only the legacy tag -> refused, files untouched."""
+        write_post_raw(self.dir, "q-one", extra="draft: true\n")  # helper carries legacy-2026-11-14 only
+        before = {f: f.read_text(encoding="utf-8") for f in (self.dir / "posts").rglob("*.md")}
+        when = dt.datetime(2026, 11, 15, 12, 0, tzinfo=KST)
+        with mock.patch.object(publish_post.dt, "datetime", wraps=dt.datetime) as m:
+            m.now.return_value = dt.datetime(2026, 11, 15, 13, 0, tzinfo=KST)
+            with self.assertRaises(SystemExit) as cm:
+                publish_post.publish(self.dir, "q-one", when)
+        self.assertIn("copy_review gate", str(cm.exception))
+        self.assertIn("copy_review must be `iris`", str(cm.exception))
+        self.assertEqual(before, {f: f.read_text(encoding="utf-8") for f in (self.dir / "posts").rglob("*.md")})
+
+    def test_legacy_tag_refused_even_when_published_before_11_15(self):
+        """Publishing today (11-14) with only the legacy tag is refused: the exception is for posts already live."""
+        write_post_raw(self.dir, "q-one", extra="draft: true\n")
+        with self.assertRaises(SystemExit) as cm:
+            publish_post.publish(self.dir, "q-one", dt.datetime(2026, 11, 14, 12, 0, tzinfo=KST))
+        self.assertIn("copy_review gate", str(cm.exception))
+
+    def test_copy_review_missing_blocks_publish(self):
+        write_post_raw(self.dir, "q-one", extra="draft: true\ncopy_review:\n")
+        with self.assertRaises(SystemExit) as cm:
+            publish_post.publish(self.dir, "q-one", dt.datetime.now(KST) - dt.timedelta(minutes=1))
+        self.assertIn("copy_review", str(cm.exception))
 
     def test_future_time_is_refused(self):
         write_post(self.dir, "q-one", extra="draft: true\n")
