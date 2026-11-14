@@ -15,16 +15,15 @@
 <link rel="alternate" hreflang="en" href="https://draft.ipe.rest/">
 <link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/">
 <link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/">
-<link rel="alternate" hreflang="zh" href="https://draft.ipe.rest/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://draft.ipe.rest/zh-Hant/">
 <link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/">
-<link rel="alternate" hreflang="pt" href="https://draft.ipe.rest/pt/">
-<link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/">
-<link rel="alternate" hreflang="ru" href="https://draft.ipe.rest/ru/">
-<link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/">
+<link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/">
 <link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/">
 <link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/">
-<link rel="alternate" hreflang="ar" href="https://draft.ipe.rest/ar/">
-<link rel="alternate" hreflang="hi" href="https://draft.ipe.rest/hi/">
+<link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/">
+<link rel="alternate" hreflang="th" href="https://draft.ipe.rest/th/">
+<link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/">
+<link rel="alternate" hreflang="tr" href="https://draft.ipe.rest/tr/">
 <link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/">
 <link rel="alternate" type="application/rss+xml" title="draft() Journal" href="https://draft.ipe.rest/fr/journal/feed.xml">
 <meta property="og:type" content="website">
@@ -40,15 +39,14 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:locale:alternate" content="ja_JP">
-<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="zh_TW">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale:alternate" content="pt_BR">
-<meta property="og:locale:alternate" content="id_ID">
-<meta property="og:locale:alternate" content="ru_RU">
-<meta property="og:locale:alternate" content="vi_VN">
 <meta property="og:locale:alternate" content="de_DE">
-<meta property="og:locale:alternate" content="ar_AR">
-<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="th_TH">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="tr_TR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="draft() — Dis-le. Récupère ton histoire.">
 <meta name="twitter:description" content="Tu parles. draft() lui donne la forme de quelque chose que les gens lisent vraiment.">
@@ -120,30 +118,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=5b11e97f">
+<link rel="stylesheet" href="/assets/ipe-kit.css?v=0.1.0-56024b02">
+<link rel="stylesheet" href="/assets/site.css?v=2240f4b1">
 <noscript><style>.reveal{opacity:1;transform:none}.demo-raw{display:none}.demo-clean{display:block}</style></noscript>
 <!-- Cloudflare Web Analytics (cookieless, no PII) -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d4506883dbd42d4b65644a4e72f05da"}'></script>
 <script>(function(){var GA_ID='G-XG4BH800J0';var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};window.gtag('js',new Date());window.gtag('config',GA_ID);function track(e){if(e.type==='auxclick'&&e.button!==1)return;var a=e.target.closest&&e.target.closest('a[href^="http"]');if(!a)return;var h=a.hostname;if(h==='ipe.rest'||/\.ipe\.rest$/.test(h))return;window.gtag('event','outbound_click',{link_url:a.href,link_domain:h,transport_type:'beacon'})}document.addEventListener('click',track);document.addEventListener('auxclick',track)})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Aller au contenu</a>
 <nav class="toplink" aria-label="draft()"><a href="/fr/">draft()</a><span aria-hidden="true">/</span><a href="/fr/journal/">Journal</a></nav>
 <label class="langsel" aria-label="Language">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
-  <select id="lang" aria-label="Language" data-path="" data-en="/">
+  <select id="lang" aria-label="Language" data-path="" data-en="/" data-blog="en,ko,ja,zh,es,pt,id,ru,vi,fr,de,ar,hi">
     <option value="en">English</option>
     <option value="ko">한국어</option>
     <option value="ja">日本語</option>
-    <option value="zh">中文</option>
+    <option value="zh-Hant">繁體中文</option>
     <option value="es">Español</option>
     <option value="pt">Português</option>
-    <option value="id">Bahasa Indonesia</option>
-    <option value="ru">Русский</option>
-    <option value="vi">Tiếng Việt</option>
     <option value="fr" selected>Français</option>
     <option value="de">Deutsch</option>
-    <option value="ar">العربية</option>
-    <option value="hi">हिन्दी</option>
+    <option value="id">Bahasa Indonesia</option>
+    <option value="th">ไทย</option>
+    <option value="vi">Tiếng Việt</option>
+    <option value="tr">Türkçe</option>
   </select>
 </label>
 
@@ -177,21 +176,21 @@
     <p class="lede reveal">De courts guides pour transformer ce que vous dites en une histoire que l&#x27;on lit vraiment, par l&#x27;équipe de draft().</p>
     <ol class="bcards">
         <li class="bcard reveal">
-          <p class="comment">// <span class="j-no">No. 11</span> · <time datetime="2026-11-03T20:03+09:00" data-ipe-time title="2026-11-03 20:03 KST">2026-11-03 20:03 KST</time></p>
-          <h3><a class="bcard-link" href="/fr/journal/one-line-they-said/">Gardez telle quelle une phrase que quelqu&#x27;un a dite</a></h3>
-          <p class="bcard-ex">Un résumé perd la voix, une phrase dite la garde. Trois critères pour la choisir, avec un exemple et les écueils les plus fréquents.</p>
+          <p class="comment">// <span class="j-no">No. 20</span> · <time datetime="2026-11-12T16:01+09:00" data-ipe-time title="2026-11-12 16:01 KST">2026-11-12 16:01 KST</time></p>
+          <h3><a class="bcard-link" href="/fr/journal/what-you-didnt-say/">Écrivez la phrase que vous n&#x27;avez pas dite</a></h3>
+          <p class="bcard-ex">Certains moments gardent une phrase jamais prononcée. Écrivez-la en trois étapes, avec un exemple et les écueils fréquents.</p>
           <span class="bcard-more" aria-hidden="true">Lire la suite &rarr;</span>
         </li>
         <li class="bcard reveal">
-          <p class="comment">// <span class="j-no">No. 10</span> · <time datetime="2026-11-01T16:01+09:00" data-ipe-time title="2026-11-01 16:01 KST">2026-11-01 16:01 KST</time></p>
-          <h3><a class="bcard-link" href="/fr/journal/start-later/">Coupez l&#x27;échauffement et commencez au milieu de la scène</a></h3>
-          <p class="bcard-ex">Plutôt que d&#x27;ouvrir sur la météo et l&#x27;heure, commencez là où il se passe déjà quelque chose. Trois façons de trouver votre point de départ, avec un exemple.</p>
+          <p class="comment">// <span class="j-no">No. 19</span> · <time datetime="2026-11-11T16:49+09:00" data-ipe-time title="2026-11-11 16:49 KST">2026-11-11 16:49 KST</time></p>
+          <h3><a class="bcard-link" href="/fr/journal/one-sentence-a-day/">Écrivez une phrase par jour et laissez les histoires s&#x27;accumuler</a></h3>
+          <p class="bcard-ex">Pas le temps d&#x27;écrire ? Clôturez chaque journée par une phrase : où vous étiez, ce qui a changé. Trois étapes, un exemple et les écueils courants.</p>
           <span class="bcard-more" aria-hidden="true">Lire la suite &rarr;</span>
         </li>
         <li class="bcard reveal">
-          <p class="comment">// <span class="j-no">No. 9</span> · <time datetime="2026-10-31T16:00+09:00" data-ipe-time title="2026-10-31 16:00 KST">2026-10-31 16:00 KST</time></p>
-          <h3><a class="bcard-link" href="/fr/journal/name-the-detail/">Écrivez un détail concret plutôt que le nom du sentiment</a></h3>
-          <p class="bcard-ex">Au lieu d&#x27;écrire « j&#x27;étais triste », écrivez ce que vous avez vu. Le sentiment passe sans explication. Trois questions pour choisir un détail, et un exemple.</p>
+          <p class="comment">// <span class="j-no">No. 18</span> · <time datetime="2026-11-10T20:00+09:00" data-ipe-time title="2026-11-10 20:00 KST">2026-11-10 20:00 KST</time></p>
+          <h3><a class="bcard-link" href="/fr/journal/title-last/">Donnez le titre à la fin</a></h3>
+          <p class="bcard-ex">Choisir le titre d&#x27;abord peut bloquer un texte. Trois étapes pour le trouver une fois fini, avec un exemple et les écueils courants.</p>
           <span class="bcard-more" aria-hidden="true">Lire la suite &rarr;</span>
         </li>
     </ol>
@@ -377,26 +376,25 @@
       <a href="/fr/about/">À propos</a>
       <a href="https://ipe.rest/en/legal/privacy/">Confidentialité</a>
     </nav>
-    <div class="foot-studio">an ipe studio app</div>
+    <p class="ipe-studio" dir="ltr"><span class="ipe-studio__org"><a href="https://ipe.rest/">an ipe studio app</a></span></p>
     <nav class="foot-langs" aria-label="Languages">
       <a href="/" hreflang="en" lang="en">English</a>
       <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
       <a href="/ja/" hreflang="ja" lang="ja">日本語</a>
-      <a href="/zh/" hreflang="zh" lang="zh">中文</a>
+      <a href="/zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
       <a href="/es/" hreflang="es" lang="es">Español</a>
-      <a href="/pt/" hreflang="pt" lang="pt">Português</a>
-      <a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a>
-      <a href="/ru/" hreflang="ru" lang="ru">Русский</a>
-      <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+      <a href="/pt/" hreflang="pt-BR" lang="pt-BR">Português</a>
       <a href="/fr/" hreflang="fr" lang="fr" aria-current="page">Français</a>
       <a href="/de/" hreflang="de" lang="de">Deutsch</a>
-      <a href="/ar/" hreflang="ar" lang="ar">العربية</a>
-      <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+      <a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+      <a href="/th/" hreflang="th" lang="th">ไทย</a>
+      <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a>
+      <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
     </nav>
   </div>
 </footer>
 
-<script src="/assets/site.js?v=5b11e97f" defer></script>
+<script src="/assets/site.js?v=2240f4b1" defer></script>
 <script>/* ipe-localtime v2 · 정본 ipe-rest/shared/ipe-localtime.js · 사본은 바이트 그대로 */
 /* time[data-ipe-time] 의 datetime(+09:00)을 보는 기기 시간대로 바꿔 보인다. 실패하면 정적 KST 글자를 그대로 둔다. */
 /* v2: 오프셋 없는/잘못된 datetime 은 건너뜀 · 그레고리력·라틴 숫자 고정 */

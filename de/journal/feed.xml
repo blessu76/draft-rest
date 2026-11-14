@@ -7,7 +7,70 @@
     <atom:link href="https://draft.ipe.rest/de/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Schreiben Sie den Satz, den Sie nicht gesagt haben</title>
+      <link>https://draft.ipe.rest/de/journal/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Manche Momente bergen einen Satz, der nie fiel. Schreiben Sie ihn in drei Schritten auf, mit Beispiel und häufigen Stolpersteinen.</description>
+    </item>
+    <item>
+      <title>Ein Satz pro Tag: So sammeln sich Geschichten an</title>
+      <link>https://draft.ipe.rest/de/journal/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>Keine Zeit zum Schreiben? Beenden Sie jeden Tag mit einem Satz: wo Sie waren, was sich verschob. Drei Schritte, ein Beispiel, typische Stolpersteine.</description>
+    </item>
+    <item>
+      <title>Den Titel erst am Ende finden</title>
+      <link>https://draft.ipe.rest/de/journal/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Wer den Titel zuerst wählt, kommt oft ins Stocken. Drei Schritte, den Titel nach dem Schreiben zu finden, mit Beispiel und häufigen Stolpersteinen.</description>
+    </item>
+    <item>
+      <title>Beginnen Sie Ihre Geschichte an einem einzigen Ort</title>
+      <link>https://draft.ipe.rest/de/journal/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Worüber schreiben? Beginnen Sie dort, wo es geschieht. Drei Schritte, einen Text mit einem kleinen Ort zu eröffnen, mit Beispiel und Stolpersteinen.</description>
+    </item>
+    <item>
+      <title>Schreiben Sie für einen Menschen, nicht für alle</title>
+      <link>https://draft.ipe.rest/de/journal/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Wer für alle schreibt, macht die Worte vage. Drei Schritte, einen Leser zu wählen und für ihn zu schreiben, mit Beispiel und typischen Stolpersteinen.</description>
+    </item>
+    <item>
+      <title>Die erste Fassung darf grob sein</title>
+      <link>https://draft.ipe.rest/de/journal/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Wer ab der ersten Zeile gut schreiben will, bremst die Hand. Drei Schritte, eine grobe erste Fassung zu beenden, mit Beispiel und typischen Stolpersteinen.</description>
+    </item>
+    <item>
+      <title>Hör auf, solange du noch weißt, was als Nächstes kommt</title>
+      <link>https://draft.ipe.rest/de/journal/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Wer in einer Sackgasse aufhört, hat es morgen schwer. Hör auf, wenn du die nächste Zeile kennst, und lass eine Notiz da: Der Neustart wird leicht.</description>
+    </item>
+    <item>
+      <title>Lass es über Nacht ruhen und ändere nur eine Sache</title>
+      <link>https://draft.ipe.rest/de/journal/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Direkt nach dem Schreiben liest du, was du meintest. Drei Schritte, einen Text über Nacht ruhen zu lassen und nur eine Sache zu ändern, mit Beispiel.</description>
+    </item>
+    <item>
+      <title>Lies es einmal laut vor und ändere nur, wo du stolperst</title>
+      <link>https://draft.ipe.rest/de/journal/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>Die Augen verzeihen, was der Mund nicht verzeiht. Drei Schritte, einen kurzen Text laut zu lesen, Stolperstellen zu markieren und nur diese zu ändern.</description>
+    </item>
     <item>
       <title>Behalte einen Satz, den jemand gesagt hat, so, wie er fiel</title>
       <link>https://draft.ipe.rest/de/journal/one-line-they-said/</link>

@@ -1,0 +1,2414 @@
+{
+ "_about": "국가별 댓글 개인정보 기준(ISO 3166-1 alpha-2). 정본 문서: _ipe/site/community-comments-privacy-by-country.md · 검토표: _ipe/foundry/F-024_ipe-web-kit/privacy-ai-legal-review-20261108.md. review=\"ai-conservative\" = AI 보수적 검토(변호사 검토 아님), reviewed = 검토일, sources = 근거 URL(법 조문·감독기관). legal_age = 법정 동의 나이(고정 나이 없으면 null), consent_age = 서비스 적용값 = 법정+1, 출처를 못 찾거나 애매하면 18(age_basis default).",
+ "as_of": "2026-11-08",
+ "countries": {
+  "AE": {
+   "region": "MENA",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "아동 디지털 안전 연방법령(2025): 13세 미만 검증 가능한 부모 동의 · PDPL 45/2021",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "—",
+   "rights": [],
+   "authority_name": "UAE Data Office",
+   "authority_url": "https://u.ae/en/about-the-uae/digital-uae/data/data-protection-laws",
+   "retention_legal": "—",
+   "sources": [
+    "https://u.ae/en/information-and-services/social-affairs/Priority-groups/children/Childrens-digital-safety",
+    "https://uaelegislation.gov.ae/en/legislations/3912/download"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "United Arab Emirates",
+    "ko": "아랍에미리트",
+    "ja": "アラブ首長国連邦",
+    "zh": "阿拉伯联合酋长国",
+    "es": "Emiratos Árabes Unidos",
+    "fr": "Émirats arabes unis",
+    "de": "Vereinigte Arabische Emirate",
+    "pt": "Emirados Árabes Unidos",
+    "ru": "ОАЭ",
+    "ar": "الإمارات العربية المتحدة",
+    "hi": "संयुक्त अरब अमीरात",
+    "id": "Uni Emirat Arab"
+   }
+  },
+  "AR": {
+   "region": "LATAM",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "guidance",
+   "law": "AAIP Res.4/2019 · 민법 제26조: 16세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "EU 적정국 · 제12조 적정 수준 국가만",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "AAIP",
+   "authority_url": "https://www.argentina.gob.ar/aaip",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-4-2019-318874/texto",
+    "https://www.argentina.gob.ar/noticias/proteccion-de-datos-y-privacidad-de-ninos-ninas-y-adolescentes-en-entornos-digitales"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Argentina",
+    "ko": "아르헨티나",
+    "ja": "アルゼンチン",
+    "zh": "阿根廷",
+    "es": "Argentina",
+    "fr": "Argentine",
+    "de": "Argentinien",
+    "pt": "Argentina",
+    "ru": "Аргентина",
+    "ar": "الأرجنتين",
+    "hi": "अर्जेंटीना",
+    "id": "Argentina"
+   }
+  },
+  "AT": {
+   "region": "EU",
+   "legal_age": 14,
+   "consent_age": 15,
+   "age_basis": "statute",
+   "law": "DSG §4(4): 14세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "DSB",
+   "authority_url": "https://www.dsb.gv.at",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40212006/NOR40212006.html"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Austria",
+    "ko": "오스트리아",
+    "ja": "オーストリア",
+    "zh": "奥地利",
+    "es": "Austria",
+    "fr": "Autriche",
+    "de": "Österreich",
+    "pt": "Áustria",
+    "ru": "Австрия",
+    "ar": "النمسا",
+    "hi": "ऑस्ट्रिया",
+    "id": "Austria"
+   }
+  },
+  "AU": {
+   "region": "OC",
+   "legal_age": null,
+   "consent_age": 17,
+   "age_basis": "guidance",
+   "law": "Privacy Act 1988 — 고정 나이 없음 · 소셜미디어 최소 연령 16(2025-12) → 17",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "APP 8",
+   "rights": [
+    "access",
+    "rectification"
+   ],
+   "authority_name": "OAIC",
+   "authority_url": "https://www.oaic.gov.au",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.oaic.gov.au/privacy/your-privacy-rights/more-privacy-rights/children-and-young-people",
+    "https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-b-key-concepts"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "소셜미디어 최소 연령 16 을 기준으로 +1",
+   "names": {
+    "en": "Australia",
+    "ko": "오스트레일리아",
+    "ja": "オーストラリア",
+    "zh": "澳大利亚",
+    "es": "Australia",
+    "fr": "Australie",
+    "de": "Australien",
+    "pt": "Austrália",
+    "ru": "Австралия",
+    "ar": "أستراليا",
+    "hi": "ऑस्ट्रेलिया",
+    "id": "Australia"
+   }
+  },
+  "BE": {
+   "region": "EU",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "2018-07-30 법 art.7: 13세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "APD/GBA",
+   "authority_url": "https://www.autoriteprotectiondonnees.be",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.dataprotectionauthority.be/publications/act-of-30-july-2018.pdf",
+    "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=fr&la=F&table_name=loi&cn=2018073054"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Belgium",
+    "ko": "벨기에",
+    "ja": "ベルギー",
+    "zh": "比利时",
+    "es": "Bélgica",
+    "fr": "Belgique",
+    "de": "Belgien",
+    "pt": "Bélgica",
+    "ru": "Бельгия",
+    "ar": "بلجيكا",
+    "hi": "बेल्जियम",
+    "id": "Belgia"
+   }
+  },
+  "BG": {
+   "region": "EU",
+   "legal_age": 14,
+   "consent_age": 15,
+   "age_basis": "statute",
+   "law": "개인정보보호법 art.25c: 14세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "CPDP",
+   "authority_url": "https://www.cpdp.bg",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://cpdp.bg/en/legislation/personal-data-protection-act/"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Bulgaria",
+    "ko": "불가리아",
+    "ja": "ブルガリア",
+    "zh": "保加利亚",
+    "es": "Bulgaria",
+    "fr": "Bulgarie",
+    "de": "Bulgarien",
+    "pt": "Bulgária",
+    "ru": "Болгария",
+    "ar": "بلغاريا",
+    "hi": "बुल्गारिया",
+    "id": "Bulgaria"
+   }
+  },
+  "BR": {
+   "region": "LATAM",
+   "legal_age": null,
+   "consent_age": 18,
+   "age_basis": "default",
+   "law": "LGPD 제14조(12세 미만 부모 동의) · ECA Digital(Lei 15.211/2025) — 청소년 기준 애매 → 18",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "LGPD 제33조 · ANPD 결의 19/2024(SCC) [미검증]",
+   "rights": [
+    "confirmation",
+    "access",
+    "rectification",
+    "erasure",
+    "portability"
+   ],
+   "authority_name": "ANPD",
+   "authority_url": "https://www.gov.br/anpd",
+   "retention_legal": "Marco Civil 제15조 접속기록 6개월(IP 미저장이면 해당 여부 검토) [미검증]",
+   "sources": [
+    "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm",
+    "https://bibliotecadigital.mj.gov.br/handle/1/10215"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "삭제 요청 15일(LGPD 제19조) [미검증] · 기준 애매 → 18",
+   "names": {
+    "en": "Brazil",
+    "ko": "브라질",
+    "ja": "ブラジル",
+    "zh": "巴西",
+    "es": "Brasil",
+    "fr": "Brésil",
+    "de": "Brasilien",
+    "pt": "Brasil",
+    "ru": "Бразилия",
+    "ar": "البرازيل",
+    "hi": "ब्राज़ील",
+    "id": "Brasil"
+   }
+  },
+  "CA": {
+   "region": "CA",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "guidance",
+   "law": "PIPEDA — 법정 고정 나이 없음 · OPC 아동 프라이버시 코드(2026) 13세 미만 부모 · 퀘벡 민간부문법 §4.1: 14세 미만 부모",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "퀘벡 Law 25 §17 국외이전 사전 평가 [미검증 조문]",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "OPC",
+   "authority_url": "https://www.priv.gc.ca",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.priv.gc.ca/en/privacy-topics/privacy-for-businesses/protection-of-children-for-businesses/childrens-privacy-code/children-code-final-report-2026/"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "퀘벡 CAI https://www.cai.gouv.qc.ca",
+   "subdivisions": {
+    "QC": {
+     "legal_age": 14,
+     "consent_age": 15,
+     "law": "Loi 25 / 민간부문 개인정보보호법 §4.1: 14세 미만 부모 동의",
+     "sources": [
+      "https://www.legisquebec.gouv.qc.ca/en/document/cs/P-39.1"
+     ]
+    }
+   },
+   "names": {
+    "en": "Canada",
+    "ko": "캐나다",
+    "ja": "カナダ",
+    "zh": "加拿大",
+    "es": "Canadá",
+    "fr": "Canada",
+    "de": "Kanada",
+    "pt": "Canadá",
+    "ru": "Канада",
+    "ar": "كندا",
+    "hi": "कनाडा",
+    "id": "Kanada"
+   }
+  },
+  "CH": {
+   "region": "CH",
+   "legal_age": null,
+   "consent_age": 18,
+   "age_basis": "default",
+   "law": "FADP — 법정 고정 나이 없음(판단능력 기준) → 18",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "FADP 16·17조: 적정국 또는 SCC [미검증: 한국 적정성]",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "FDPIC",
+   "authority_url": "https://www.edoeb.admin.ch",
+   "retention_legal": "없음",
+   "sources": [
+    "https://www.edoeb.admin.ch/en/faq-data-protection"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "고정 나이 없음 → 보수 기준 18",
+   "names": {
+    "en": "Switzerland",
+    "ko": "스위스",
+    "ja": "スイス",
+    "zh": "瑞士",
+    "es": "Suiza",
+    "fr": "Suisse",
+    "de": "Schweiz",
+    "pt": "Suíça",
+    "ru": "Швейцария",
+    "ar": "سويسرا",
+    "hi": "स्विट्ज़रलैंड",
+    "id": "Swiss"
+   }
+  },
+  "CL": {
+   "region": "LATAM",
+   "legal_age": 14,
+   "consent_age": 15,
+   "age_basis": "statute",
+   "law": "Ley 21.719(2026-12-01 시행): 14세 미만 부모 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "신 법 제27~28조 [미검증]",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "objection"
+   ],
+   "authority_name": "Agencia de Protección de Datos Personales (현행 CPLT)",
+   "authority_url": "https://www.cplt.cl",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.bcn.cl/leychile/navegar?idNorma=1209272"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "신설 Agencia 사이트 없음 — 감독기관 URL 은 현행 CPLT [미검증: 이관 뒤 바꿈]",
+   "names": {
+    "en": "Chile",
+    "ko": "칠레",
+    "ja": "チリ",
+    "zh": "智利",
+    "es": "Chile",
+    "fr": "Chili",
+    "de": "Chile",
+    "pt": "Chile",
+    "ru": "Чили",
+    "ar": "تشيلي",
+    "hi": "चिली",
+    "id": "Cile"
+   }
+  },
+  "CN": {
+   "region": "AS",
+   "legal_age": 14,
+   "consent_age": 15,
+   "age_basis": "statute",
+   "law": "PIPL 제31조: 14세 미만 부모 동의 · 미성년자 인터넷 개인정보 보호 규정(2019)",
+   "under_age_handling": "comments_disabled",
+   "comments_recommended": false,
+   "transfer_basis": "PIPL 38~40조: 안전평가·표준계약(2023-06-01)·인증 · 2024 면제 규정 [미검증 세부]",
+   "rights": [
+    "access",
+    "copy",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "国家互联网信息办公室(CAC)",
+   "authority_url": "https://www.cac.gov.cn",
+   "retention_legal": "실명인증·로그 보관 의무(跟帖评论服务管理规定) [미검증]",
+   "sources": [
+    "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "실명제·표준계약·ICP 부담 [미검증] — 법률 검토 전 댓글 비활성 권고",
+   "names": {
+    "en": "China",
+    "ko": "중국",
+    "ja": "中国",
+    "zh": "中国",
+    "es": "China",
+    "fr": "Chine",
+    "de": "China",
+    "pt": "China",
+    "ru": "Китай",
+    "ar": "الصين",
+    "hi": "चीन",
+    "id": "Tiongkok"
+   }
+  },
+  "CO": {
+   "region": "LATAM",
+   "legal_age": 18,
+   "consent_age": 19,
+   "age_basis": "statute",
+   "law": "Ley 1581/2012 제7조 · 민법 성년 18: 미성년자 법정대리인",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "제26조 적정 수준 국가만",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "SIC",
+   "authority_url": "https://www.sic.gov.co",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=53646",
+    "https://www.sic.gov.co/recursos_user/documentos/normatividad/Leyes/2012/Ley_1581_2012.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Colombia",
+    "ko": "콜롬비아",
+    "ja": "コロンビア",
+    "zh": "哥伦比亚",
+    "es": "Colombia",
+    "fr": "Colombie",
+    "de": "Kolumbien",
+    "pt": "Colômbia",
+    "ru": "Колумбия",
+    "ar": "كولومبيا",
+    "hi": "कोलंबिया",
+    "id": "Kolombia"
+   }
+  },
+  "CY": {
+   "region": "EU",
+   "legal_age": 14,
+   "consent_age": 15,
+   "age_basis": "statute",
+   "law": "Law 125(I)/2018 art.8: 14세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "Commissioner for Personal Data Protection",
+   "authority_url": "https://www.dataprotection.gov.cy",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.cylaw.org/nomoi/enop/non-ind/2018_1_125/index.html"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Cyprus",
+    "ko": "키프로스",
+    "ja": "キプロス",
+    "zh": "塞浦路斯",
+    "es": "Chipre",
+    "fr": "Chypre",
+    "de": "Zypern",
+    "pt": "Chipre",
+    "ru": "Кипр",
+    "ar": "قبرص",
+    "hi": "साइप्रस",
+    "id": "Siprus"
+   }
+  },
+  "CZ": {
+   "region": "EU",
+   "legal_age": 15,
+   "consent_age": 16,
+   "age_basis": "statute",
+   "law": "Act 110/2019 §7: 15세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "ÚOOÚ",
+   "authority_url": "https://www.uoou.cz",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://uoou.gov.cz/media/act-no-110-2019-coll.pdf",
+    "https://www.zakonyprolidi.cz/cs/2019-110"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Czechia",
+    "ko": "체코",
+    "ja": "チェコ",
+    "zh": "捷克",
+    "es": "Chequia",
+    "fr": "Tchéquie",
+    "de": "Tschechien",
+    "pt": "Tchéquia",
+    "ru": "Чехия",
+    "ar": "التشيك",
+    "hi": "चेकिया",
+    "id": "Ceko"
+   }
+  },
+  "DE": {
+   "region": "EU",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "GDPR Art.8(1) 16세(독일은 낮추지 않음)",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "BfDI",
+   "authority_url": "https://www.bfdi.bund.de",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.bfdi.bund.de/DE/Service/Inhalte/Flyer/Kinderschutz/7-Verantwortlichkeit.html"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Germany",
+    "ko": "독일",
+    "ja": "ドイツ",
+    "zh": "德国",
+    "es": "Alemania",
+    "fr": "Allemagne",
+    "de": "Deutschland",
+    "pt": "Alemanha",
+    "ru": "Германия",
+    "ar": "ألمانيا",
+    "hi": "जर्मनी",
+    "id": "Jerman"
+   }
+  },
+  "DK": {
+   "region": "EU",
+   "legal_age": 15,
+   "consent_age": 16,
+   "age_basis": "statute",
+   "law": "Databeskyttelsesloven §6(2): 15세(L79, 2024-01-01부터 13→15)",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "Datatilsynet",
+   "authority_url": "https://www.datatilsynet.dk",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.retsinformation.dk/eli/lta/2024/289",
+    "https://www.ft.dk/ripdf/samling/20231/lovforslag/l79/20231_l79_som_fremsat.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Denmark",
+    "ko": "덴마크",
+    "ja": "デンマーク",
+    "zh": "丹麦",
+    "es": "Dinamarca",
+    "fr": "Danemark",
+    "de": "Dänemark",
+    "pt": "Dinamarca",
+    "ru": "Дания",
+    "ar": "الدانمرك",
+    "hi": "डेनमार्क",
+    "id": "Denmark"
+   }
+  },
+  "EE": {
+   "region": "EU",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "개인정보보호법 §8: 13세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "AKI",
+   "authority_url": "https://www.aki.ee",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.riigiteataja.ee/akt/106032026010"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Estonia",
+    "ko": "에스토니아",
+    "ja": "エストニア",
+    "zh": "爱沙尼亚",
+    "es": "Estonia",
+    "fr": "Estonie",
+    "de": "Estland",
+    "pt": "Estônia",
+    "ru": "Эстония",
+    "ar": "إستونيا",
+    "hi": "एस्टोनिया",
+    "id": "Estonia"
+   }
+  },
+  "EG": {
+   "region": "MENA",
+   "legal_age": null,
+   "consent_age": 18,
+   "age_basis": "default",
+   "law": "Law 151/2020 제12조: 아동 정보 보호자 동의 — 공식 원문 확인 못함 → 18",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "14조 허가제",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "Personal Data Protection Center",
+   "authority_url": "https://pdpc.gov.eg",
+   "retention_legal": "—",
+   "sources": [],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "공식 출처 접속 불가(pdpc.gov.eg) → 보수 기준 18 · 감독기관 URL [미검증]",
+   "names": {
+    "en": "Egypt",
+    "ko": "이집트",
+    "ja": "エジプト",
+    "zh": "埃及",
+    "es": "Egipto",
+    "fr": "Égypte",
+    "de": "Ägypten",
+    "pt": "Egito",
+    "ru": "Египет",
+    "ar": "مصر",
+    "hi": "मिस्र",
+    "id": "Mesir"
+   }
+  },
+  "ES": {
+   "region": "EU",
+   "legal_age": 14,
+   "consent_age": 15,
+   "age_basis": "statute",
+   "law": "LOPDGDD art.7: 14세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "AEPD",
+   "authority_url": "https://www.aepd.es",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1001-cual-es-la-edad-para-que-los-menores-puedan-prestar-consentimiento-para-tratar-sus-datos-personales"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Spain",
+    "ko": "스페인",
+    "ja": "スペイン",
+    "zh": "西班牙",
+    "es": "España",
+    "fr": "Espagne",
+    "de": "Spanien",
+    "pt": "Espanha",
+    "ru": "Испания",
+    "ar": "إسبانيا",
+    "hi": "स्पेन",
+    "id": "Spanyol"
+   }
+  },
+  "FI": {
+   "region": "EU",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "Tietosuojalaki §5: 13세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "Tietosuojavaltuutetun toimisto",
+   "authority_url": "https://tietosuoja.fi",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://tietosuoja.fi/en/children-s-data-protection"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Finland",
+    "ko": "핀란드",
+    "ja": "フィンランド",
+    "zh": "芬兰",
+    "es": "Finlandia",
+    "fr": "Finlande",
+    "de": "Finnland",
+    "pt": "Finlândia",
+    "ru": "Финляндия",
+    "ar": "فنلندا",
+    "hi": "फ़िनलैंड",
+    "id": "Finlandia"
+   }
+  },
+  "FR": {
+   "region": "EU",
+   "legal_age": 15,
+   "consent_age": 16,
+   "age_basis": "statute",
+   "law": "Loi Informatique et Libertés art.45: 15세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "CNIL",
+   "authority_url": "https://www.cnil.fr",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000037823040"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "France",
+    "ko": "프랑스",
+    "ja": "フランス",
+    "zh": "法国",
+    "es": "Francia",
+    "fr": "France",
+    "de": "Frankreich",
+    "pt": "França",
+    "ru": "Франция",
+    "ar": "فرنسا",
+    "hi": "फ़्रांस",
+    "id": "Prancis"
+   }
+  },
+  "GB": {
+   "region": "UK",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "Data Protection Act 2018 s.9: 13세",
+   "under_age_handling": "block_or_parental_consent",
+   "comments_recommended": true,
+   "transfer_basis": "IDTA 또는 UK Addendum(SCC) [미검증: 영국의 한국 적정성]",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "ICO",
+   "authority_url": "https://ico.org.uk",
+   "retention_legal": "없음(필요한 기간만)",
+   "sources": [
+    "https://www.legislation.gov.uk/ukpga/2018/12/section/9/enacted",
+    "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/children-and-the-uk-gdpr-old/what-are-the-rules-about-an-iss-and-consent/"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "ICO Children's Code · Online Safety Act 2023 적용 가능 [미검증]",
+   "names": {
+    "en": "United Kingdom",
+    "ko": "영국",
+    "ja": "イギリス",
+    "zh": "英国",
+    "es": "Reino Unido",
+    "fr": "Royaume-Uni",
+    "de": "Vereinigtes Königreich",
+    "pt": "Reino Unido",
+    "ru": "Великобритания",
+    "ar": "المملكة المتحدة",
+    "hi": "यूनाइटेड किंगडम",
+    "id": "Inggris Raya"
+   }
+  },
+  "GR": {
+   "region": "EU",
+   "legal_age": 15,
+   "consent_age": 16,
+   "age_basis": "statute",
+   "law": "Law 4624/2019 art.21: 15세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "HDPA",
+   "authority_url": "https://www.dpa.gr",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.dpa.gr/en/personal_data/children_data"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Greece",
+    "ko": "그리스",
+    "ja": "ギリシャ",
+    "zh": "希腊",
+    "es": "Grecia",
+    "fr": "Grèce",
+    "de": "Griechenland",
+    "pt": "Grécia",
+    "ru": "Греция",
+    "ar": "اليونان",
+    "hi": "यूनान",
+    "id": "Yunani"
+   }
+  },
+  "HK": {
+   "region": "AS",
+   "legal_age": null,
+   "consent_age": 18,
+   "age_basis": "default",
+   "law": "PDPO — 고정 나이 없음 · PCPD: 아동 = 18세 미만 → 18",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "PDPO §33(미시행) [미검증]",
+   "rights": [
+    "access",
+    "rectification"
+   ],
+   "authority_name": "PCPD",
+   "authority_url": "https://www.pcpd.org.hk",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.pcpd.org.hk/english/resources_centre/publications/files/leaflet_childrenonlineprivacy_e.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "고정 나이 없음 → 보수 기준 18",
+   "names": {
+    "en": "Hong Kong SAR China",
+    "ko": "홍콩(중국 특별행정구)",
+    "ja": "中華人民共和国香港特別行政区",
+    "zh": "中国香港特别行政区",
+    "es": "RAE de Hong Kong (China)",
+    "fr": "R.A.S. chinoise de Hong Kong",
+    "de": "Sonderverwaltungsregion Hongkong",
+    "pt": "Hong Kong, RAE da China",
+    "ru": "Гонконг (САР)",
+    "ar": "هونغ كونغ الصينية (منطقة إدارية خاصة)",
+    "hi": "हाँग काँग (चीन विशेष प्रशासनिक क्षेत्र)",
+    "id": "Hong Kong DAK Tiongkok"
+   }
+  },
+  "HR": {
+   "region": "EU",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "GDPR 시행법(NN 42/2018) art.19: 16세",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "AZOP",
+   "authority_url": "https://azop.hr",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://narodne-novine.nn.hr/clanci/sluzbeni/2018_05_42_805.html",
+    "https://azop.hr/privola/"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Croatia",
+    "ko": "크로아티아",
+    "ja": "クロアチア",
+    "zh": "克罗地亚",
+    "es": "Croacia",
+    "fr": "Croatie",
+    "de": "Kroatien",
+    "pt": "Croácia",
+    "ru": "Хорватия",
+    "ar": "كرواتيا",
+    "hi": "क्रोएशिया",
+    "id": "Kroasia"
+   }
+  },
+  "HU": {
+   "region": "EU",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "Infotv.(CXII/2011) · GDPR Art.8 16세(낮추지 않음)",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "NAIH",
+   "authority_url": "https://naih.hu",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.naih.hu/files/Privacy_Act-CXII-of-2011_EN_201310.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Hungary",
+    "ko": "헝가리",
+    "ja": "ハンガリー",
+    "zh": "匈牙利",
+    "es": "Hungría",
+    "fr": "Hongrie",
+    "de": "Ungarn",
+    "pt": "Hungria",
+    "ru": "Венгрия",
+    "ar": "هنغاريا",
+    "hi": "हंगरी",
+    "id": "Hungaria"
+   }
+  },
+  "ID": {
+   "region": "AS",
+   "legal_age": 18,
+   "consent_age": 19,
+   "age_basis": "statute",
+   "law": "UU PDP 27/2022 제25조 · PP 17/2025: 18세 미만 부모·후견인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "PDP Law 56조 [미검증]",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "Komdigi",
+   "authority_url": "https://www.komdigi.go.id",
+   "retention_legal": "—",
+   "sources": [
+    "https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang+nomor+27+tahun+2022",
+    "https://peraturan.bpk.go.id/Download/377994/PP%20Nomor%2017%20Tahun%202025.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Indonesia",
+    "ko": "인도네시아",
+    "ja": "インドネシア",
+    "zh": "印度尼西亚",
+    "es": "Indonesia",
+    "fr": "Indonésie",
+    "de": "Indonesien",
+    "pt": "Indonésia",
+    "ru": "Индонезия",
+    "ar": "إندونيسيا",
+    "hi": "इंडोनेशिया",
+    "id": "Indonesia"
+   }
+  },
+  "IE": {
+   "region": "EU",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "Data Protection Act 2018 s.31: 16세",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "DPC",
+   "authority_url": "https://www.dataprotection.ie",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.irishstatutebook.ie/eli/2018/act/7/section/31/enacted/en/html"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Ireland",
+    "ko": "아일랜드",
+    "ja": "アイルランド",
+    "zh": "爱尔兰",
+    "es": "Irlanda",
+    "fr": "Irlande",
+    "de": "Irland",
+    "pt": "Irlanda",
+    "ru": "Ирландия",
+    "ar": "أيرلندا",
+    "hi": "आयरलैंड",
+    "id": "Irlandia"
+   }
+  },
+  "IN": {
+   "region": "AS",
+   "legal_age": 18,
+   "consent_age": 19,
+   "age_basis": "statute",
+   "law": "DPDP Act 2023 §9: 18세 미만 검증 가능한 부모 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "§16 정부 지정 국가 제외 허용(블랙리스트) [미검증]",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "grievance"
+   ],
+   "authority_name": "Data Protection Board of India",
+   "authority_url": "https://www.meity.gov.in",
+   "retention_legal": "—",
+   "sources": [
+    "https://indiacode.nic.in/handle/123456789/22037",
+    "https://www.meity.gov.in/static/uploads/2024/06/2bf1f0e9f04e6fb4f8fef35e82c42aa5.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "India",
+    "ko": "인도",
+    "ja": "インド",
+    "zh": "印度",
+    "es": "India",
+    "fr": "Inde",
+    "de": "Indien",
+    "pt": "Índia",
+    "ru": "Индия",
+    "ar": "الهند",
+    "hi": "भारत",
+    "id": "India"
+   }
+  },
+  "IS": {
+   "region": "EEA",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "Lög 90/2018 art.10: 13세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "Persónuvernd",
+   "authority_url": "https://www.personuvernd.is",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.althingi.is/lagas/154b/2018090.html"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Iceland",
+    "ko": "아이슬란드",
+    "ja": "アイスランド",
+    "zh": "冰岛",
+    "es": "Islandia",
+    "fr": "Islande",
+    "de": "Island",
+    "pt": "Islândia",
+    "ru": "Исландия",
+    "ar": "آيسلندا",
+    "hi": "आइसलैंड",
+    "id": "Islandia"
+   }
+  },
+  "IT": {
+   "region": "EU",
+   "legal_age": 14,
+   "consent_age": 15,
+   "age_basis": "statute",
+   "law": "Codice Privacy art.2-quinquies: 14세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "Garante",
+   "authority_url": "https://www.garanteprivacy.it",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.garanteprivacy.it/temi/minori"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Italy",
+    "ko": "이탈리아",
+    "ja": "イタリア",
+    "zh": "意大利",
+    "es": "Italia",
+    "fr": "Italie",
+    "de": "Italien",
+    "pt": "Itália",
+    "ru": "Италия",
+    "ar": "إيطاليا",
+    "hi": "इटली",
+    "id": "Italia"
+   }
+  },
+  "JP": {
+   "region": "AS",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "個人情報保護法 2026 개정: 16세 미만 법정대리인 동의(현행 PPC 지침 12~15세)",
+   "under_age_handling": "block_or_parental_consent",
+   "comments_recommended": true,
+   "transfer_basis": "APPI 28조(개정 후 번호 [미검증]): 본인 동의+정보 제공 또는 기준 적합 체제. 한국은 일본 적정국 아님 [미검증]",
+   "rights": [
+    "disclosure",
+    "rectification",
+    "suspension"
+   ],
+   "authority_name": "個人情報保護委員会",
+   "authority_url": "https://www.ppc.go.jp",
+   "retention_legal": "없음",
+   "sources": [
+    "https://www.ppc.go.jp/all_faq_index/faq1-q1-62/",
+    "https://www.ppc.go.jp/files/pdf/260717_kaiseihounitsuite.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "개정법 16세 기준 선반영(시행일 [미검증])",
+   "names": {
+    "en": "Japan",
+    "ko": "일본",
+    "ja": "日本",
+    "zh": "日本",
+    "es": "Japón",
+    "fr": "Japon",
+    "de": "Japan",
+    "pt": "Japão",
+    "ru": "Япония",
+    "ar": "اليابان",
+    "hi": "जापान",
+    "id": "Jepang"
+   }
+  },
+  "KR": {
+   "region": "KR",
+   "legal_age": 14,
+   "consent_age": 15,
+   "age_basis": "statute",
+   "law": "개인정보 보호법 제22조의2: 14세 미만 법정대리인 동의",
+   "under_age_handling": "block_or_parental_consent",
+   "comments_recommended": true,
+   "transfer_basis": "국내(서울 리전) 저장 — 국외이전 아님. Google 처리 시 제28조의8 검토 [미검증]",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "suspension"
+   ],
+   "authority_name": "개인정보보호위원회",
+   "authority_url": "https://www.pipc.go.kr",
+   "retention_legal": "법정 보관 의무 없음 [미검증] · 목적 달성 시 지체 없이 파기(제21조)",
+   "sources": [
+    "https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1029334761"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "신고 https://privacy.go.kr · 정보통신망법 제44조의2 임시조치 [미검증 조문] · 삭제 요청 10일(시행령) [미검증]",
+   "names": {
+    "en": "South Korea",
+    "ko": "대한민국",
+    "ja": "韓国",
+    "zh": "韩国",
+    "es": "Corea del Sur",
+    "fr": "Corée du Sud",
+    "de": "Südkorea",
+    "pt": "Coreia do Sul",
+    "ru": "Республика Корея",
+    "ar": "كوريا الجنوبية",
+    "hi": "दक्षिण कोरिया",
+    "id": "Korea Selatan"
+   }
+  },
+  "LI": {
+   "region": "EEA",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "DSG · GDPR Art.8 16세(낮추지 않음)",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "DSS",
+   "authority_url": "https://www.datenschutzstelle.li",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.datenschutzstelle.li/datenschutz/themen-z/einwilligung",
+    "https://www.gesetze.li/konso/pdf/2018272000?version=1"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Liechtenstein",
+    "ko": "리히텐슈타인",
+    "ja": "リヒテンシュタイン",
+    "zh": "列支敦士登",
+    "es": "Liechtenstein",
+    "fr": "Liechtenstein",
+    "de": "Liechtenstein",
+    "pt": "Liechtenstein",
+    "ru": "Лихтенштейн",
+    "ar": "ليختنشتاين",
+    "hi": "लिचेंस्टीन",
+    "id": "Liechtenstein"
+   }
+  },
+  "LT": {
+   "region": "EU",
+   "legal_age": 14,
+   "consent_age": 15,
+   "age_basis": "statute",
+   "law": "개인정보 법적 보호법 art.6: 14세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "VDAI",
+   "authority_url": "https://vdai.lrv.lt",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://e-tar.lt/portal/lt/legalAct/TAR.5368B592234C/asr"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Lithuania",
+    "ko": "리투아니아",
+    "ja": "リトアニア",
+    "zh": "立陶宛",
+    "es": "Lituania",
+    "fr": "Lituanie",
+    "de": "Litauen",
+    "pt": "Lituânia",
+    "ru": "Литва",
+    "ar": "ليتوانيا",
+    "hi": "लिथुआनिया",
+    "id": "Lituania"
+   }
+  },
+  "LU": {
+   "region": "EU",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "GDPR Art.8 16세(룩셈부르크는 낮추지 않음)",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "CNPD",
+   "authority_url": "https://cnpd.public.lu",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://cnpd.public.lu/fr/legislation/droit-europ/union-europeenne/rgpd/chapitre-2.html",
+    "https://legilux.public.lu/eli/etat/leg/loi/2018/08/01/a686/jo"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Luxembourg",
+    "ko": "룩셈부르크",
+    "ja": "ルクセンブルク",
+    "zh": "卢森堡",
+    "es": "Luxemburgo",
+    "fr": "Luxembourg",
+    "de": "Luxemburg",
+    "pt": "Luxemburgo",
+    "ru": "Люксембург",
+    "ar": "لوكسمبورغ",
+    "hi": "लग्ज़मबर्ग",
+    "id": "Luksemburg"
+   }
+  },
+  "LV": {
+   "region": "EU",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "개인정보처리법 §33: 13세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "DVI",
+   "authority_url": "https://www.dvi.gov.lv",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://likumi.lv/ta/id/300099-fizisko-personu-datu-apstrades-likums",
+    "https://www.dvi.gov.lv/lv/jaunums/dviskaidro-vecaku-piekrisana-berna-personas-datu-apstradei"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Latvia",
+    "ko": "라트비아",
+    "ja": "ラトビア",
+    "zh": "拉脱维亚",
+    "es": "Letonia",
+    "fr": "Lettonie",
+    "de": "Lettland",
+    "pt": "Letônia",
+    "ru": "Латвия",
+    "ar": "لاتفيا",
+    "hi": "लातविया",
+    "id": "Latvia"
+   }
+  },
+  "MA": {
+   "region": "MENA",
+   "legal_age": null,
+   "consent_age": 18,
+   "age_basis": "default",
+   "law": "Loi 09-08 — 나이 규정 없음 → 18",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "제43조",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "CNDP",
+   "authority_url": "https://www.cndp.ma",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.cndp.ma/wp-content/uploads/2023/11/Loi-09-08-Fr.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "고정 나이 없음 → 보수 기준 18",
+   "names": {
+    "en": "Morocco",
+    "ko": "모로코",
+    "ja": "モロッコ",
+    "zh": "摩洛哥",
+    "es": "Marruecos",
+    "fr": "Maroc",
+    "de": "Marokko",
+    "pt": "Marrocos",
+    "ru": "Марокко",
+    "ar": "المغرب",
+    "hi": "मोरक्को",
+    "id": "Maroko"
+   }
+  },
+  "MT": {
+   "region": "EU",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "Data Protection Act Cap.586 · S.L.586.11: 13세",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "IDPC",
+   "authority_url": "https://idpc.org.mt",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://legislation.mt/eli/cap/586/eng/pdf",
+    "https://idpc.org.mt/our-office/legislation/"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Malta",
+    "ko": "몰타",
+    "ja": "マルタ",
+    "zh": "马耳他",
+    "es": "Malta",
+    "fr": "Malte",
+    "de": "Malta",
+    "pt": "Malta",
+    "ru": "Мальта",
+    "ar": "مالطا",
+    "hi": "माल्टा",
+    "id": "Malta"
+   }
+  },
+  "MX": {
+   "region": "LATAM",
+   "legal_age": 18,
+   "consent_age": 19,
+   "age_basis": "statute",
+   "law": "LFPDPPP(2025) 시행규칙 · LGPDPPSO: 미성년자는 민법상 법정대리인",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "이전 시 고지·동의",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "objection"
+   ],
+   "authority_name": "Secretaría Anticorrupción y Buen Gobierno",
+   "authority_url": "https://www.gob.mx",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.diputados.gob.mx/LeyesBiblio/regley/Reg_LFPDPPP.pdf",
+    "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGPDPPSO.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "INAI 감독 기능 이관 [미검증]",
+   "names": {
+    "en": "Mexico",
+    "ko": "멕시코",
+    "ja": "メキシコ",
+    "zh": "墨西哥",
+    "es": "México",
+    "fr": "Mexique",
+    "de": "Mexiko",
+    "pt": "México",
+    "ru": "Мексика",
+    "ar": "المكسيك",
+    "hi": "मैक्सिको",
+    "id": "Meksiko"
+   }
+  },
+  "MY": {
+   "region": "AS",
+   "legal_age": 18,
+   "consent_age": 19,
+   "age_basis": "statute",
+   "law": "PDPA 2010 §4: 18세 미만은 부모·후견인이 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "§129",
+   "rights": [
+    "access",
+    "rectification"
+   ],
+   "authority_name": "PDP Commissioner",
+   "authority_url": "https://www.pdp.gov.my",
+   "retention_legal": "—",
+   "sources": [
+    "https://lom.agc.gov.my/ilims/upload/portal/akta/outputaktap/3301061_BI/Act%20709%20(Reprint%202026).pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Malaysia",
+    "ko": "말레이시아",
+    "ja": "マレーシア",
+    "zh": "马来西亚",
+    "es": "Malasia",
+    "fr": "Malaisie",
+    "de": "Malaysia",
+    "pt": "Malásia",
+    "ru": "Малайзия",
+    "ar": "ماليزيا",
+    "hi": "मलेशिया",
+    "id": "Malaysia"
+   }
+  },
+  "NL": {
+   "region": "EU",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "UAVG art.5: 16세",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "AP",
+   "authority_url": "https://www.autoriteitpersoonsgegevens.nl",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://wetten.overheid.nl/BWBR0040940/2026-09-01/0",
+    "https://www.autoriteitpersoonsgegevens.nl/nl/nieuws/mag-ik-onder-de-avg-gegevens-van-kinderen-verwerken"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Netherlands",
+    "ko": "네덜란드",
+    "ja": "オランダ",
+    "zh": "荷兰",
+    "es": "Países Bajos",
+    "fr": "Pays-Bas",
+    "de": "Niederlande",
+    "pt": "Países Baixos",
+    "ru": "Нидерланды",
+    "ar": "هولندا",
+    "hi": "नीदरलैंड",
+    "id": "Belanda"
+   }
+  },
+  "NO": {
+   "region": "EEA",
+   "legal_age": 13,
+   "consent_age": 16,
+   "age_basis": "statute",
+   "law": "Personopplysningsloven §5: 13세(정부가 15세 상향 추진)",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "Datatilsynet",
+   "authority_url": "https://www.datatilsynet.no",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://lovdata.no/lov/2018-06-15-38/%C2%A75",
+    "https://www.datatilsynet.no/personvern-pa-ulike-omrader/kundehandtering-handel-og-medlemskap/digitale-tjenester-og-forbrukeres-personopplysninger/barn-og-unge-forbrukere/"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "상향 추진(15) 선반영 → 16",
+   "names": {
+    "en": "Norway",
+    "ko": "노르웨이",
+    "ja": "ノルウェー",
+    "zh": "挪威",
+    "es": "Noruega",
+    "fr": "Norvège",
+    "de": "Norwegen",
+    "pt": "Noruega",
+    "ru": "Норвегия",
+    "ar": "النرويج",
+    "hi": "नॉर्वे",
+    "id": "Norwegia"
+   }
+  },
+  "NZ": {
+   "region": "OC",
+   "legal_age": null,
+   "consent_age": 18,
+   "age_basis": "default",
+   "law": "Privacy Act 2020 — 고정 나이 없음(이해능력 기준) → 18",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "IPP 12",
+   "rights": [
+    "access",
+    "rectification"
+   ],
+   "authority_name": "OPC",
+   "authority_url": "https://www.privacy.org.nz",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.privacy.org.nz/privacy-principles/4/",
+    "https://www.legislation.govt.nz/act/public/2020/0031/latest/LMS23223.html"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "고정 나이 없음 → 보수 기준 18",
+   "names": {
+    "en": "New Zealand",
+    "ko": "뉴질랜드",
+    "ja": "ニュージーランド",
+    "zh": "新西兰",
+    "es": "Nueva Zelanda",
+    "fr": "Nouvelle-Zélande",
+    "de": "Neuseeland",
+    "pt": "Nova Zelândia",
+    "ru": "Новая Зеландия",
+    "ar": "نيوزيلندا",
+    "hi": "न्यूज़ीलैंड",
+    "id": "Selandia Baru"
+   }
+  },
+  "PE": {
+   "region": "LATAM",
+   "legal_age": 14,
+   "consent_age": 15,
+   "age_basis": "statute",
+   "law": "Ley 29733 시행규칙(DS 016-2024-JUS): 14세 미만 부모 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "제11조",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "ANPD",
+   "authority_url": "https://www.gob.pe/anpd",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.gob.pe/institucion/anpd/campa%C3%B1as/128319-nuevo-reglamento-de-proteccion-de-datos-personales",
+    "https://www3.congreso.gob.pe/Docs/DGP/DIDP/files/ds_016-2024-jus.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Peru",
+    "ko": "페루",
+    "ja": "ペルー",
+    "zh": "秘鲁",
+    "es": "Perú",
+    "fr": "Pérou",
+    "de": "Peru",
+    "pt": "Peru",
+    "ru": "Перу",
+    "ar": "بيرو",
+    "hi": "पेरू",
+    "id": "Peru"
+   }
+  },
+  "PH": {
+   "region": "AS",
+   "legal_age": null,
+   "consent_age": 18,
+   "age_basis": "default",
+   "law": "DPA 2012 — 고정 나이 없음 · NPC 지침: 아동 = 18세 미만, 위험도별 보호자 관여 → 18",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "—",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "NPC",
+   "authority_url": "https://www.privacy.gov.ph",
+   "retention_legal": "—",
+   "sources": [
+    "https://privacy.gov.ph/wp-content/uploads/2024/12/Advisory-2024.12.17-Guidelines-on-Child-Oriented-Transparency-w-SGD.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "고정 나이 없음 → 보수 기준 18",
+   "names": {
+    "en": "Philippines",
+    "ko": "필리핀",
+    "ja": "フィリピン",
+    "zh": "菲律宾",
+    "es": "Filipinas",
+    "fr": "Philippines",
+    "de": "Philippinen",
+    "pt": "Filipinas",
+    "ru": "Филиппины",
+    "ar": "الفلبين",
+    "hi": "फ़िलिपींस",
+    "id": "Filipina"
+   }
+  },
+  "PL": {
+   "region": "EU",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "GDPR Art.8 16세(폴란드는 낮추지 않음)",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "UODO",
+   "authority_url": "https://uodo.gov.pl",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://uodo.gov.pl/pl/493/2261"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Poland",
+    "ko": "폴란드",
+    "ja": "ポーランド",
+    "zh": "波兰",
+    "es": "Polonia",
+    "fr": "Pologne",
+    "de": "Polen",
+    "pt": "Polônia",
+    "ru": "Польша",
+    "ar": "بولندا",
+    "hi": "पोलैंड",
+    "id": "Polandia"
+   }
+  },
+  "PT": {
+   "region": "EU",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "Lei 58/2019 art.16: 13세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "CNPD",
+   "authority_url": "https://www.cnpd.pt",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Portugal",
+    "ko": "포르투갈",
+    "ja": "ポルトガル",
+    "zh": "葡萄牙",
+    "es": "Portugal",
+    "fr": "Portugal",
+    "de": "Portugal",
+    "pt": "Portugal",
+    "ru": "Португалия",
+    "ar": "البرتغال",
+    "hi": "पुर्तगाल",
+    "id": "Portugal"
+   }
+  },
+  "RO": {
+   "region": "EU",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "GDPR Art.8 16세(Law 190/2018, 낮추지 않음)",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "ANSPDCP",
+   "authority_url": "https://www.dataprotection.ro",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://legislatie.just.ro/Public/DetaliiDocument/203151",
+    "https://www.dataprotection.ro/?page=IntrebariFrecvente1"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Romania",
+    "ko": "루마니아",
+    "ja": "ルーマニア",
+    "zh": "罗马尼亚",
+    "es": "Rumanía",
+    "fr": "Roumanie",
+    "de": "Rumänien",
+    "pt": "Romênia",
+    "ru": "Румыния",
+    "ar": "رومانيا",
+    "hi": "रोमानिया",
+    "id": "Rumania"
+   }
+  },
+  "RU": {
+   "region": "RU",
+   "legal_age": null,
+   "consent_age": 18,
+   "age_basis": "default",
+   "law": "152-FZ — 나이 규정 없음(해설상 14세 미만 부모) → 18",
+   "under_age_handling": "comments_disabled",
+   "comments_recommended": false,
+   "transfer_basis": "152-FZ 18조 5항: 러시아 국민 개인정보 국내 서버 저장 의무 [미검증]",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "Роскомнадзор",
+   "authority_url": "https://rkn.gov.ru",
+   "retention_legal": "—",
+   "sources": [
+    "https://72.rkn.gov.ru/p21978/p25026/p25030/"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "국내 저장 의무 — 법률 검토 전 댓글 비활성 권고",
+   "names": {
+    "en": "Russia",
+    "ko": "러시아",
+    "ja": "ロシア",
+    "zh": "俄罗斯",
+    "es": "Rusia",
+    "fr": "Russie",
+    "de": "Russland",
+    "pt": "Rússia",
+    "ru": "Россия",
+    "ar": "روسيا",
+    "hi": "रूस",
+    "id": "Rusia"
+   }
+  },
+  "SA": {
+   "region": "MENA",
+   "legal_age": 18,
+   "consent_age": 19,
+   "age_basis": "statute",
+   "law": "PDPL 시행규칙 · SDAIA 아동·무능력자 정보보호 정책: 완전한 행위능력자만 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "PDPL 29조·이전 규정 [미검증]",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "SDAIA",
+   "authority_url": "https://sdaia.gov.sa",
+   "retention_legal": "—",
+   "sources": [
+    "https://sdaia.gov.sa/en/SDAIA/about/Documents/ImplementingRegulation.pdf",
+    "https://sdaia.gov.sa/ar/SDAIA/about/Documents/Children%20and%20Incompetents%E2%80%99%20Data%20Protection%20Policy.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Saudi Arabia",
+    "ko": "사우디아라비아",
+    "ja": "サウジアラビア",
+    "zh": "沙特阿拉伯",
+    "es": "Arabia Saudí",
+    "fr": "Arabie saoudite",
+    "de": "Saudi-Arabien",
+    "pt": "Arábia Saudita",
+    "ru": "Саудовская Аравия",
+    "ar": "المملكة العربية السعودية",
+    "hi": "सऊदी अरब",
+    "id": "Arab Saudi"
+   }
+  },
+  "SE": {
+   "region": "EU",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "Lag 2018:218 2 kap. 4 §: 13세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "IMY",
+   "authority_url": "https://www.imy.se",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2018218-med-kompletterande-bestammelser_sfs-2018-218/",
+    "https://www.imy.se/verksamhet/dataskydd/det-har-galler-enligt-gdpr/rattslig-grund/samtycke/"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Sweden",
+    "ko": "스웨덴",
+    "ja": "スウェーデン",
+    "zh": "瑞典",
+    "es": "Suecia",
+    "fr": "Suède",
+    "de": "Schweden",
+    "pt": "Suécia",
+    "ru": "Швеция",
+    "ar": "السويد",
+    "hi": "स्वीडन",
+    "id": "Swedia"
+   }
+  },
+  "SG": {
+   "region": "AS",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "guidance",
+   "law": "PDPA · PDPC 아동 개인정보 권고 지침(2024-03): 13세 미만 부모",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "PDPA 26조",
+   "rights": [
+    "access",
+    "rectification"
+   ],
+   "authority_name": "PDPC",
+   "authority_url": "https://www.pdpc.gov.sg",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/advisory-guidelines/advisory-guidelines-on-the-pdpa-for-children's-personal-data-in-the-digital-environment_mar24.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Singapore",
+    "ko": "싱가포르",
+    "ja": "シンガポール",
+    "zh": "新加坡",
+    "es": "Singapur",
+    "fr": "Singapour",
+    "de": "Singapur",
+    "pt": "Singapura",
+    "ru": "Сингапур",
+    "ar": "سنغافورة",
+    "hi": "सिंगापुर",
+    "id": "Singapura"
+   }
+  },
+  "SI": {
+   "region": "EU",
+   "legal_age": 15,
+   "consent_age": 16,
+   "age_basis": "statute",
+   "law": "ZVOP-2 art.8: 15세 이상 본인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "IP RS",
+   "authority_url": "https://www.ip-rs.si",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://pisrs.si/Pis.web/pregledPredpisa?id=ZAKO7959",
+    "https://www.ip-rs.si/zakonodaja/zakon-o-varstvu-osebnih-podatkov/"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Slovenia",
+    "ko": "슬로베니아",
+    "ja": "スロベニア",
+    "zh": "斯洛文尼亚",
+    "es": "Eslovenia",
+    "fr": "Slovénie",
+    "de": "Slowenien",
+    "pt": "Eslovênia",
+    "ru": "Словения",
+    "ar": "سلوفينيا",
+    "hi": "स्लोवेनिया",
+    "id": "Slovenia"
+   }
+  },
+  "SK": {
+   "region": "EU",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "Act 18/2018 §15: 16세",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Korea adequacy decision (EU) 2021/1321 [미검증: 운영 주체·Google 처리자 구조 적용 여부] · 대체 SCC (EU) 2021/914",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure",
+    "restriction",
+    "objection",
+    "portability"
+   ],
+   "authority_name": "Úrad na ochranu osobných údajov",
+   "authority_url": "https://dataprotection.gov.sk",
+   "retention_legal": "법정 보관 의무 없음 — GDPR 5(1)(e) 필요한 기간만",
+   "sources": [
+    "https://static.slov-lex.sk/pdf/SK/ZZ/2018/18/ZZ_2018_18_20240701.pdf"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Slovakia",
+    "ko": "슬로바키아",
+    "ja": "スロバキア",
+    "zh": "斯洛伐克",
+    "es": "Eslovaquia",
+    "fr": "Slovaquie",
+    "de": "Slowakei",
+    "pt": "Eslováquia",
+    "ru": "Словакия",
+    "ar": "سلوفاكيا",
+    "hi": "स्लोवाकिया",
+    "id": "Slovakia"
+   }
+  },
+  "TH": {
+   "region": "AS",
+   "legal_age": 20,
+   "consent_age": 21,
+   "age_basis": "statute",
+   "law": "PDPA 2019 s.20 · 민법 성년 20: 미성년자 부모 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "§28",
+   "rights": [
+    "access",
+    "erasure",
+    "objection"
+   ],
+   "authority_name": "PDPC",
+   "authority_url": "https://www.pdpc.or.th",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.ratchakitcha.soc.go.th/DATA/PDF/2562/A/069/T_0052.PDF"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "",
+   "names": {
+    "en": "Thailand",
+    "ko": "태국",
+    "ja": "タイ",
+    "zh": "泰国",
+    "es": "Tailandia",
+    "fr": "Thaïlande",
+    "de": "Thailand",
+    "pt": "Tailândia",
+    "ru": "Таиланд",
+    "ar": "تايلاند",
+    "hi": "थाईलैंड",
+    "id": "Thailand"
+   }
+  },
+  "TW": {
+   "region": "AS",
+   "legal_age": 18,
+   "consent_age": 19,
+   "age_basis": "statute",
+   "law": "個人資料保護法(나이 규정 없음) · 민법 성년 18: 미성년자 법정대리인",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "PDPA 21조 주무기관 제한 가능 [미검증]",
+   "rights": [
+    "inquiry",
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "個人資料保護委員會(PDPC)",
+   "authority_url": "https://www.pdpc.gov.tw",
+   "retention_legal": "—",
+   "sources": [
+    "https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021",
+    "https://theme.ndc.gov.tw/lawout/NewsContent.aspx?id=10452"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "감독기관 URL [미검증]",
+   "names": {
+    "en": "Taiwan",
+    "ko": "대만",
+    "ja": "台湾",
+    "zh": "台湾",
+    "es": "Taiwán",
+    "fr": "Taïwan",
+    "de": "Taiwan",
+    "pt": "Taiwan",
+    "ru": "Тайвань",
+    "ar": "تايوان",
+    "hi": "ताइवान",
+    "id": "Taiwan"
+   }
+  },
+  "US": {
+   "region": "US",
+   "legal_age": 13,
+   "consent_age": 14,
+   "age_basis": "statute",
+   "law": "COPPA 15 U.S.C. §6501 · 16 CFR 312: 13세 미만 부모 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "연방 제한 없음",
+   "rights": [
+    "parental_access",
+    "parental_erasure"
+   ],
+   "authority_name": "FTC",
+   "authority_url": "https://www.ftc.gov/business-guidance/privacy-security/childrens-privacy",
+   "retention_legal": "COPPA: 필요한 기간만(보관 정책 공개)",
+   "sources": [
+    "https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "CA: CCPA/CPRA §1798.120(c) 16세 미만 판매·공유 opt-in — 본 서비스는 판매·공유 없음. 주별 청소년 SNS법(UT·AR·TX·FL·LA 등 13~18) 해당 여부 별도 검토 [미검증]. 2025 COPPA 개정 이행 2026 [미검증 세부]",
+   "names": {
+    "en": "United States",
+    "ko": "미국",
+    "ja": "アメリカ合衆国",
+    "zh": "美国",
+    "es": "Estados Unidos",
+    "fr": "États-Unis",
+    "de": "Vereinigte Staaten",
+    "pt": "Estados Unidos",
+    "ru": "Соединенные Штаты",
+    "ar": "الولايات المتحدة",
+    "hi": "संयुक्त राज्य",
+    "id": "Amerika Serikat"
+   }
+  },
+  "UY": {
+   "region": "LATAM",
+   "legal_age": null,
+   "consent_age": 18,
+   "age_basis": "default",
+   "law": "Ley 18.331 — 나이 규정 없음 · 미성년자 법정대리인 → 18",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "EU 적정국",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "URCDP",
+   "authority_url": "https://www.gub.uy/unidad-reguladora-control-datos-personales",
+   "retention_legal": "—",
+   "sources": [
+    "https://www.gub.uy/unidad-reguladora-control-datos-personales/comunicacion/publicaciones/guia-general-proteccion-datos-personales-uruguay",
+    "https://www.impo.com.uy/bases/decretos/414-2009"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "고정 나이 없음 → 보수 기준 18",
+   "names": {
+    "en": "Uruguay",
+    "ko": "우루과이",
+    "ja": "ウルグアイ",
+    "zh": "乌拉圭",
+    "es": "Uruguay",
+    "fr": "Uruguay",
+    "de": "Uruguay",
+    "pt": "Uruguai",
+    "ru": "Уругвай",
+    "ar": "أورغواي",
+    "hi": "उरूग्वे",
+    "id": "Uruguay"
+   }
+  },
+  "VN": {
+   "region": "AS",
+   "legal_age": 16,
+   "consent_age": 17,
+   "age_basis": "statute",
+   "law": "개인정보보호법 91/2025/QH15(2026-01-01 시행): 16세 미만 아동 — 7세 이상 본인+법정대리인 동의",
+   "under_age_handling": "block",
+   "comments_recommended": true,
+   "transfer_basis": "Decree 13 Art.25 국외이전 영향평가 신고 [미검증]",
+   "rights": [
+    "access",
+    "rectification",
+    "erasure"
+   ],
+   "authority_name": "Bộ Công an (A05)",
+   "authority_url": "https://bocongan.gov.vn",
+   "retention_legal": "—",
+   "sources": [
+    "https://vanban.chinhphu.vn/?classid=1&docid=214590&pageid=27160",
+    "https://xaydungchinhsach.chinhphu.vn/quy-dinh-bao-ve-du-lieu-ca-nhan-cua-tre-em-nguoi-bi-mat-hoac-han-che-nang-luc-hanh-vi-dan-su-119250725165056743.htm"
+   ],
+   "review": "ai-conservative",
+   "reviewed": "2026-11-08",
+   "notes": "감독기관 URL [미검증]",
+   "names": {
+    "en": "Vietnam",
+    "ko": "베트남",
+    "ja": "ベトナム",
+    "zh": "越南",
+    "es": "Vietnam",
+    "fr": "Viêt Nam",
+    "de": "Vietnam",
+    "pt": "Vietnã",
+    "ru": "Вьетнам",
+    "ar": "فيتنام",
+    "hi": "वियतनाम",
+    "id": "Vietnam"
+   }
+  }
+ }
+}

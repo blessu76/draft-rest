@@ -27,7 +27,7 @@ def check_post(post_dir):
     """-> list of problems for one posts/<slug>/ folder (empty = ready to queue / publish)."""
     name = Path(post_dir).name
     errors, langs = [], {}
-    for c in build_site.CODES:
+    for c in build_site.BLOG_CODES:
         f = Path(post_dir) / (c + ".md" if c in ("ko", "en") else "translations/%s.md" % c)
         if not f.is_file():
             errors.append("%s: missing language file %s" % (name, c))
@@ -56,7 +56,7 @@ def check_post(post_dir):
 def post_warnings(post_dir):
     """-> body-below-target warnings for one posts/<slug>/ folder (unreadable files are skipped: check_post reports them)."""
     name, langs = Path(post_dir).name, {}
-    for c in build_site.CODES:
+    for c in build_site.BLOG_CODES:
         f = Path(post_dir) / (c + ".md" if c in ("ko", "en") else "translations/%s.md" % c)
         try:
             langs[c] = build_site.parse_post_file(f)

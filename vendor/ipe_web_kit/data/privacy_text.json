@@ -1,0 +1,1058 @@
+{
+ "_about": "댓글 개인정보 처리방침 12개 언어 문구. body/country 는 _ipe/site/community-comments-privacy-draft.md(en §2·ko §3)·draft.i18n.md 를 옮긴 것(뜻 그대로, [검토] 표시만 뺌). country.conservative(연령 보수 기준 줄)·ko/ja other 첫 문장 정리는 v0.3.3 에서 키트가 씀 — 원어민 검수 전. labels 는 키트에서 새로 쓴 표 머리·경고 문구 — 원어민 검수 전. 자리표시자 {{...}} 는 privacy.render_* 가 사이트 설정으로 채운다.",
+ "langs": [
+  "en",
+  "ko",
+  "ja",
+  "zh",
+  "es",
+  "fr",
+  "de",
+  "pt",
+  "ru",
+  "ar",
+  "hi",
+  "id"
+ ],
+ "rtl": [
+  "ar"
+ ],
+ "labels": {
+  "en": {
+   "title": "Privacy policy",
+   "col_country": "Country / region",
+   "col_age": "Minimum age to comment",
+   "col_authority": "Supervisory authority",
+   "unverified_banner": "Some country entries below have not yet been checked against the official legal text. They may change.",
+   "unverified_mark": "unverified",
+   "comments_unavailable": "Comments not available",
+   "legal_pending": "Draft — pending legal review.",
+   "operator_line": "Operator: {{OPERATOR}} · Contact: {{CONTACT_EMAIL}}"
+  },
+  "ko": {
+   "title": "개인정보 처리방침",
+   "col_country": "국가·지역",
+   "col_age": "댓글 최소 연령(만)",
+   "col_authority": "감독기관",
+   "unverified_banner": "아래 일부 국가 항목은 아직 공식 법령 원문과 대조하지 않았습니다. 바뀔 수 있습니다.",
+   "unverified_mark": "미검증",
+   "comments_unavailable": "댓글 이용 불가",
+   "legal_pending": "초안 — 법률 검토 전입니다.",
+   "operator_line": "운영자: {{OPERATOR}} · 문의: {{CONTACT_EMAIL}}"
+  },
+  "ja": {
+   "title": "プライバシーポリシー",
+   "col_country": "国・地域",
+   "col_age": "コメントできる最低年齢",
+   "col_authority": "監督機関",
+   "unverified_banner": "以下の一部の国の項目は、まだ公式の法令原文と照合していません。変更される場合があります。",
+   "unverified_mark": "未確認",
+   "comments_unavailable": "コメント利用不可",
+   "legal_pending": "草案 — 法務確認前です。",
+   "operator_line": "運営者: {{OPERATOR}} · 連絡先: {{CONTACT_EMAIL}}"
+  },
+  "zh": {
+   "title": "隐私政策",
+   "col_country": "国家/地区",
+   "col_age": "可评论的最低年龄",
+   "col_authority": "监管机构",
+   "unverified_banner": "以下部分国家条目尚未与官方法律原文核对，可能会有变动。",
+   "unverified_mark": "未核实",
+   "comments_unavailable": "不提供评论",
+   "legal_pending": "草案——尚待法律审核。",
+   "operator_line": "运营者：{{OPERATOR}} · 联系方式：{{CONTACT_EMAIL}}"
+  },
+  "es": {
+   "title": "Política de privacidad",
+   "col_country": "País / región",
+   "col_age": "Edad mínima para comentar",
+   "col_authority": "Autoridad de control",
+   "unverified_banner": "Algunas entradas de países aún no se han contrastado con el texto legal oficial. Pueden cambiar.",
+   "unverified_mark": "sin verificar",
+   "comments_unavailable": "Comentarios no disponibles",
+   "legal_pending": "Borrador: pendiente de revisión legal.",
+   "operator_line": "Responsable: {{OPERATOR}} · Contacto: {{CONTACT_EMAIL}}"
+  },
+  "fr": {
+   "title": "Politique de confidentialité",
+   "col_country": "Pays / région",
+   "col_age": "Âge minimum pour commenter",
+   "col_authority": "Autorité de contrôle",
+   "unverified_banner": "Certaines entrées de pays ci-dessous n'ont pas encore été vérifiées par rapport au texte juridique officiel. Elles peuvent changer.",
+   "unverified_mark": "non vérifié",
+   "comments_unavailable": "Commentaires non disponibles",
+   "legal_pending": "Brouillon — en attente de revue juridique.",
+   "operator_line": "Responsable : {{OPERATOR}} · Contact : {{CONTACT_EMAIL}}"
+  },
+  "de": {
+   "title": "Datenschutzerklärung",
+   "col_country": "Land / Region",
+   "col_age": "Mindestalter zum Kommentieren",
+   "col_authority": "Aufsichtsbehörde",
+   "unverified_banner": "Einige Ländereinträge unten wurden noch nicht mit dem amtlichen Gesetzestext abgeglichen. Sie können sich ändern.",
+   "unverified_mark": "ungeprüft",
+   "comments_unavailable": "Kommentare nicht verfügbar",
+   "legal_pending": "Entwurf – rechtliche Prüfung ausstehend.",
+   "operator_line": "Betreiber: {{OPERATOR}} · Kontakt: {{CONTACT_EMAIL}}"
+  },
+  "pt": {
+   "title": "Política de privacidade",
+   "col_country": "País / região",
+   "col_age": "Idade mínima para comentar",
+   "col_authority": "Autoridade de controle",
+   "unverified_banner": "Algumas entradas de países abaixo ainda não foram conferidas com o texto legal oficial. Podem mudar.",
+   "unverified_mark": "não verificado",
+   "comments_unavailable": "Comentários indisponíveis",
+   "legal_pending": "Rascunho — aguardando revisão jurídica.",
+   "operator_line": "Controlador: {{OPERATOR}} · Contato: {{CONTACT_EMAIL}}"
+  },
+  "ru": {
+   "title": "Политика конфиденциальности",
+   "col_country": "Страна / регион",
+   "col_age": "Минимальный возраст для комментариев",
+   "col_authority": "Надзорный орган",
+   "unverified_banner": "Некоторые записи о странах ниже ещё не сверены с официальным текстом закона. Они могут измениться.",
+   "unverified_mark": "не проверено",
+   "comments_unavailable": "Комментарии недоступны",
+   "legal_pending": "Черновик — ожидает юридической проверки.",
+   "operator_line": "Оператор: {{OPERATOR}} · Контакт: {{CONTACT_EMAIL}}"
+  },
+  "ar": {
+   "title": "سياسة الخصوصية",
+   "col_country": "البلد / المنطقة",
+   "col_age": "الحد الأدنى لسن التعليق",
+   "col_authority": "السلطة الرقابية",
+   "unverified_banner": "لم تتم بعد مطابقة بعض بيانات الدول أدناه مع النص القانوني الرسمي، وقد تتغير.",
+   "unverified_mark": "غير متحقق منه",
+   "comments_unavailable": "التعليقات غير متاحة",
+   "legal_pending": "مسودة — بانتظار المراجعة القانونية.",
+   "operator_line": "المشغّل: {{OPERATOR}} · التواصل: {{CONTACT_EMAIL}}"
+  },
+  "hi": {
+   "title": "गोपनीयता नीति",
+   "col_country": "देश / क्षेत्र",
+   "col_age": "टिप्पणी करने की न्यूनतम आयु",
+   "col_authority": "पर्यवेक्षी प्राधिकरण",
+   "unverified_banner": "नीचे कुछ देशों की जानकारी अभी आधिकारिक कानूनी पाठ से मिलाई नहीं गई है। यह बदल सकती है।",
+   "unverified_mark": "असत्यापित",
+   "comments_unavailable": "टिप्पणियाँ उपलब्ध नहीं",
+   "legal_pending": "मसौदा — कानूनी समीक्षा बाकी है।",
+   "operator_line": "संचालक: {{OPERATOR}} · संपर्क: {{CONTACT_EMAIL}}"
+  },
+  "id": {
+   "title": "Kebijakan privasi",
+   "col_country": "Negara / wilayah",
+   "col_age": "Usia minimum untuk berkomentar",
+   "col_authority": "Otoritas pengawas",
+   "unverified_banner": "Beberapa entri negara di bawah belum dicocokkan dengan teks hukum resmi. Dapat berubah.",
+   "unverified_mark": "belum diverifikasi",
+   "comments_unavailable": "Komentar tidak tersedia",
+   "legal_pending": "Draf — menunggu tinjauan hukum.",
+   "operator_line": "Pengelola: {{OPERATOR}} · Kontak: {{CONTACT_EMAIL}}"
+  }
+ },
+ "body": {
+  "en": [
+   [
+    "h",
+    "Comments and likes"
+   ],
+   [
+    "p",
+    "Journal articles on {{SERVICE_NAME}} can have a like button and a comment box. You don't need an account."
+   ],
+   [
+    "p",
+    "**What we collect when you comment**"
+   ],
+   [
+    "li",
+    "the **nickname** you type (up to 30 characters) and the **comment** text (up to 500 characters);"
+   ],
+   [
+    "li",
+    "the **language** of the page you were reading (en, ko, ja, …) and the **time** you posted;"
+   ],
+   [
+    "li",
+    "a **random browser token** — a string of letters and digits generated in your browser; it is not linked to your name, e-mail or IP address, and it is used only to enforce a short pause between two posts and to spot repeated abuse;"
+   ],
+   [
+    "li",
+    "a **report count** for the comment, increased when readers press \"Report\"."
+   ],
+   [
+    "p",
+    "Your nickname, comment, language and posting time are **shown publicly** under the article, in every language version of it. Please don't put personal information in them. Links are not allowed."
+   ],
+   [
+    "p",
+    "**What we collect when you like or report**"
+   ],
+   [
+    "li",
+    "a like only increases a counter for the article; we store no identity with it;"
+   ],
+   [
+    "li",
+    "a report only increases the report count of that comment."
+   ],
+   [
+    "p",
+    "In your browser's local storage we keep small markers so the page remembers that you liked, reported, or just posted (and the random token above). They never leave your browser except the token described above, and you can clear them in your browser settings."
+   ],
+   [
+    "p",
+    "**Where it is stored.** Comments, like counts and report counts are stored with Google Firebase (Cloud Firestore), in the Seoul region (asia-northeast3). Google acts as our service provider. Google may receive your IP address and device information when your browser contacts its servers, as described in Google's privacy policy."
+   ],
+   [
+    "p",
+    "**Moderation.** Comments are not reviewed before they appear. A comment that receives **3 reports** is hidden automatically, and we may hide or delete any comment (for example for abuse, spam, personal information or links)."
+   ],
+   [
+    "p",
+    "**How long we keep it.** A comment is kept for as long as the article is published, and at most **{{RETENTION_YEARS}} years** after it was posted, unless you ask us to delete it earlier or we remove it. Hidden comments are deleted within **{{HIDDEN_DELETE_DAYS}} days**. Like and report counters carry no personal data and are kept as long as the article."
+   ],
+   [
+    "p",
+    "**Delete your comment.** E-mail **{{CONTACT_EMAIL}}** with the article address and the nickname and (a few words of) the text you wrote; we delete it within **{{DELETE_REQUEST_DAYS}} days**. We can't identify a comment from anything else, because we don't keep your name or e-mail. We will reply to confirm."
+   ],
+   [
+    "p",
+    "**Children.** The site is not directed at children under {{MIN_AGE}}. Please don't comment if you are younger."
+   ]
+  ],
+  "ko": [
+   [
+    "h",
+    "댓글과 좋아요"
+   ],
+   [
+    "p",
+    "{{SERVICE_NAME}} 저널 글에는 좋아요 버튼과 댓글 입력란이 있을 수 있습니다. 계정은 필요 없습니다."
+   ],
+   [
+    "p",
+    "**댓글을 쓸 때 수집하는 정보**"
+   ],
+   [
+    "li",
+    "입력하신 **닉네임**(30자 이내)과 **댓글** 내용(500자 이내)"
+   ],
+   [
+    "li",
+    "읽고 계시던 페이지의 **언어**와 **작성 시각**"
+   ],
+   [
+    "li",
+    "브라우저에서 만들어지는 **무작위 브라우저 식별값**(영문·숫자 문자열). 이름·이메일·IP 와 연결되지 않으며, 연속 등록 간격을 지키고 반복 악용을 가려내는 데만 씁니다."
+   ],
+   [
+    "li",
+    "독자가 「신고」를 누를 때 늘어나는 해당 댓글의 **신고 횟수**"
+   ],
+   [
+    "p",
+    "닉네임·댓글·언어·작성 시각은 글 아래에 **공개**되며 모든 언어 버전에서 같이 보입니다. 개인정보를 적지 말아 주세요. 링크는 넣을 수 없습니다."
+   ],
+   [
+    "p",
+    "**좋아요·신고**"
+   ],
+   [
+    "li",
+    "좋아요는 글의 숫자만 올리며 신원 정보를 저장하지 않습니다."
+   ],
+   [
+    "li",
+    "신고는 해당 댓글의 신고 횟수만 올립니다."
+   ],
+   [
+    "p",
+    "이미 좋아요·신고·등록했는지 기억하려고 브라우저 로컬 저장소에 작은 표시(위 무작위 식별값 포함)를 둡니다. 이 값은 위 식별값을 빼면 브라우저 밖으로 나가지 않으며, 브라우저 설정에서 지울 수 있습니다."
+   ],
+   [
+    "p",
+    "**저장 위치.** 댓글·좋아요·신고 횟수는 Google Firebase(Cloud Firestore) 서울 리전(asia-northeast3)에 저장되며, Google 은 수탁(서비스 제공)자입니다. 브라우저가 Google 서버에 접속할 때 IP 주소·기기 정보가 Google 에 전달될 수 있습니다(Google 개인정보처리방침 참조)."
+   ],
+   [
+    "p",
+    "**관리.** 댓글은 올라가기 전에 검토하지 않습니다. **신고가 3회** 쌓인 댓글은 자동으로 숨겨지며, 악용·스팸·개인정보·링크 등이 있으면 운영자가 숨기거나 삭제할 수 있습니다."
+   ],
+   [
+    "p",
+    "**보관 기간.** 글이 공개되어 있는 동안, 작성 후 최대 **{{RETENTION_YEARS}}년**까지 보관하되 삭제를 요청하시거나 운영자가 지운 경우 더 일찍 삭제합니다. 숨김 처리된 댓글은 **{{HIDDEN_DELETE_DAYS}}일** 안에 삭제합니다. 좋아요·신고 숫자는 개인정보가 아니며 글과 함께 보관합니다."
+   ],
+   [
+    "p",
+    "**삭제 요청 방법.** **{{CONTACT_EMAIL}}** 으로 글 주소, 닉네임, 쓰신 내용 일부를 보내 주시면 **{{DELETE_REQUEST_DAYS}}일** 안에 삭제하고 회신합니다. 이름·이메일을 저장하지 않기 때문에 이 정보 외에는 댓글을 찾을 수 없습니다."
+   ],
+   [
+    "p",
+    "**아동.** 만 {{MIN_AGE}}세 미만을 대상으로 하지 않습니다."
+   ]
+  ],
+  "ja": [
+   [
+    "h",
+    "コメントと「いいね」"
+   ],
+   [
+    "p",
+    "{{SERVICE_NAME}} のジャーナル記事には、「いいね」ボタンとコメント欄が表示されることがあります。アカウントは不要です。"
+   ],
+   [
+    "p",
+    "**コメントを投稿する際に収集する情報**"
+   ],
+   [
+    "li",
+    "入力された**ニックネーム**(30文字以内)と**コメント**本文(500文字以内)"
+   ],
+   [
+    "li",
+    "お読みになっていたページの**言語**(en、ko、ja など)と**投稿日時**"
+   ],
+   [
+    "li",
+    "ブラウザ上で生成される**ランダムなブラウザトークン**(英数字の文字列)。お名前・メールアドレス・IPアドレスとは紐づかず、連続投稿の間隔を保つことと、繰り返しの不正利用を見つけることにのみ使用します。"
+   ],
+   [
+    "li",
+    "読者が「報告」を押すと増える、そのコメントの**報告回数**"
+   ],
+   [
+    "p",
+    "ニックネーム、コメント、言語、投稿日時は、記事の下に**公開**され、すべての言語版で表示されます。個人情報を記入しないでください。リンクは投稿できません。"
+   ],
+   [
+    "p",
+    "**「いいね」や報告の際に収集する情報**"
+   ],
+   [
+    "li",
+    "「いいね」は記事のカウンターを増やすだけで、個人を特定する情報は保存しません。"
+   ],
+   [
+    "li",
+    "報告は、そのコメントの報告回数を増やすだけです。"
+   ],
+   [
+    "p",
+    "ページが「いいね」・報告・投稿の済みであることを記憶するため、ブラウザのローカルストレージに小さな目印(上記のランダムトークンを含む)を保存します。上記のトークンを除き、これらがブラウザの外に出ることはなく、ブラウザの設定で削除できます。"
+   ],
+   [
+    "p",
+    "**保存場所。** コメント、「いいね」数、報告数は、Google Firebase(Cloud Firestore)のソウルリージョン(asia-northeast3)に保存されます。Google は当サイトのサービス提供事業者です。ブラウザが Google のサーバーに接続する際、Google の個人情報保護方針に記載のとおり、IPアドレスや端末情報が Google に送信される場合があります。"
+   ],
+   [
+    "p",
+    "**モデレーション。** コメントは、表示される前に審査されません。**3件の報告**を受けたコメントは自動的に非表示になり、不正利用、スパム、個人情報、リンクなどがある場合、当方は任意のコメントを非表示または削除することがあります。"
+   ],
+   [
+    "p",
+    "**保存期間。** コメントは、記事が公開されている間、投稿から最長**{{RETENTION_YEARS}}年**保存します。ただし、お客様から早期の削除を依頼された場合、または当方が削除した場合を除きます。非表示にしたコメントは**{{HIDDEN_DELETE_DAYS}}日**以内に削除します。「いいね」数と報告数には個人データが含まれず、記事が存在する限り保存します。"
+   ],
+   [
+    "p",
+    "**コメントの削除。** 記事のアドレス、ニックネーム、投稿した内容の一部を **{{CONTACT_EMAIL}}** までメールでお送りください。**{{DELETE_REQUEST_DAYS}}日**以内に削除します。お名前やメールアドレスを保存していないため、これ以外の情報ではコメントを特定できません。削除後に確認のご返信をいたします。"
+   ],
+   [
+    "p",
+    "**お子様。** 当サイトは{{MIN_AGE}}歳未満のお子様を対象としていません。それより若い方はコメントを投稿しないでください。"
+   ]
+  ],
+  "zh": [
+   [
+    "h",
+    "评论与点赞"
+   ],
+   [
+    "p",
+    "{{SERVICE_NAME}} 上的期刊文章可能带有点赞按钮和评论框。无需注册账号。"
+   ],
+   [
+    "p",
+    "**您发表评论时我们收集的信息**"
+   ],
+   [
+    "li",
+    "您输入的**昵称**(最多 30 个字符)和**评论**内容(最多 500 个字符);"
+   ],
+   [
+    "li",
+    "您所阅读页面的**语言**(en、ko、ja 等)和**发表时间**;"
+   ],
+   [
+    "li",
+    "一个**随机浏览器令牌**——由您的浏览器生成的字母和数字字符串;它不与您的姓名、电子邮件或 IP 地址关联,仅用于限制两次发表之间的间隔以及识别重复的滥用行为;"
+   ],
+   [
+    "li",
+    "该评论的**举报次数**,读者每点击一次“举报”即增加一次。"
+   ],
+   [
+    "p",
+    "您的昵称、评论、语言和发表时间将**公开显示**在文章下方,并在该文章的所有语言版本中可见。请勿在其中填写个人信息。不允许包含链接。"
+   ],
+   [
+    "p",
+    "**您点赞或举报时我们收集的信息**"
+   ],
+   [
+    "li",
+    "点赞只会增加文章的计数器,我们不会同时保存任何身份信息;"
+   ],
+   [
+    "li",
+    "举报只会增加该评论的举报次数。"
+   ],
+   [
+    "p",
+    "我们会在您浏览器的本地存储中保存一些小标记,使页面记住您已点赞、已举报或刚刚发表过评论(以及上述随机令牌)。除上述令牌外,这些标记不会离开您的浏览器,您可以在浏览器设置中清除它们。"
+   ],
+   [
+    "p",
+    "**存储位置。** 评论、点赞数和举报次数存储在 Google Firebase(Cloud Firestore)的首尔区域(asia-northeast3)。Google 是我们的服务提供商。当您的浏览器连接 Google 服务器时,Google 可能会收到您的 IP 地址和设备信息,详见 Google 的隐私政策。"
+   ],
+   [
+    "p",
+    "**审核管理。** 评论在显示前不经审核。获得 **3 次举报**的评论会被自动隐藏,对于任何评论(例如存在滥用、垃圾信息、个人信息或链接的评论),我们都可能将其隐藏或删除。"
+   ],
+   [
+    "p",
+    "**保存期限。** 评论在文章公开期间予以保存,自发表之日起最长保存 **{{RETENTION_YEARS}} 年**;但若您要求提前删除或由我们删除,则不在此限。被隐藏的评论将在 **{{HIDDEN_DELETE_DAYS}} 天**内删除。点赞和举报计数不含个人数据,与文章保存相同时间。"
+   ],
+   [
+    "p",
+    "**删除您的评论。** 请发送电子邮件至 **{{CONTACT_EMAIL}}**,并附上文章地址、昵称以及您所写内容的几个字;我们将在 **{{DELETE_REQUEST_DAYS}} 天**内删除。由于我们不保存您的姓名或电子邮件,除此之外无法识别评论。我们会回复确认。"
+   ],
+   [
+    "p",
+    "**儿童。** 本网站不面向 {{MIN_AGE}} 岁以下的儿童。如果您未满该年龄,请不要发表评论。"
+   ]
+  ],
+  "es": [
+   [
+    "h",
+    "Comentarios y «Me gusta»"
+   ],
+   [
+    "p",
+    "Los artículos del diario de {{SERVICE_NAME}} pueden tener un botón de «Me gusta» y un cuadro de comentarios. No necesita una cuenta."
+   ],
+   [
+    "p",
+    "**Qué recopilamos cuando comenta**"
+   ],
+   [
+    "li",
+    "el **apodo** que escribe (hasta 30 caracteres) y el texto del **comentario** (hasta 500 caracteres);"
+   ],
+   [
+    "li",
+    "el **idioma** de la página que estaba leyendo (en, ko, ja, …) y la **hora** de publicación;"
+   ],
+   [
+    "li",
+    "un **token aleatorio del navegador**: una cadena de letras y dígitos generada en su navegador; no está vinculada a su nombre, correo electrónico ni dirección IP, y se utiliza únicamente para imponer una breve pausa entre dos publicaciones y detectar abusos repetidos;"
+   ],
+   [
+    "li",
+    "un **recuento de denuncias** del comentario, que aumenta cuando los lectores pulsan «Denunciar»."
+   ],
+   [
+    "p",
+    "Su apodo, comentario, idioma y hora de publicación se **muestran públicamente** debajo del artículo, en todas sus versiones lingüísticas. Le rogamos que no incluya información personal en ellos. No se permiten enlaces."
+   ],
+   [
+    "p",
+    "**Qué recopilamos cuando da «Me gusta» o denuncia**"
+   ],
+   [
+    "li",
+    "un «Me gusta» solo aumenta un contador del artículo; no almacenamos ninguna identidad con él;"
+   ],
+   [
+    "li",
+    "una denuncia solo aumenta el recuento de denuncias de ese comentario."
+   ],
+   [
+    "p",
+    "En el almacenamiento local de su navegador guardamos pequeños marcadores para que la página recuerde que ha dado «Me gusta», ha denunciado o acaba de publicar (y el token aleatorio indicado arriba). Salvo el token descrito, nunca salen de su navegador, y puede borrarlos en la configuración del navegador."
+   ],
+   [
+    "p",
+    "**Dónde se almacena.** Los comentarios, los recuentos de «Me gusta» y los de denuncias se almacenan en Google Firebase (Cloud Firestore), en la región de Seúl (asia-northeast3). Google actúa como nuestro proveedor de servicios. Google puede recibir su dirección IP y datos del dispositivo cuando su navegador contacta con sus servidores, tal como se describe en la política de privacidad de Google."
+   ],
+   [
+    "p",
+    "**Moderación.** Los comentarios no se revisan antes de aparecer. Un comentario que recibe **3 denuncias** se oculta automáticamente, y podemos ocultar o eliminar cualquier comentario (por ejemplo, por abuso, spam, información personal o enlaces)."
+   ],
+   [
+    "p",
+    "**Cuánto tiempo lo conservamos.** Un comentario se conserva mientras el artículo esté publicado y, como máximo, durante **{{RETENTION_YEARS}} años** desde su publicación, salvo que usted solicite su eliminación antes o que nosotros lo retiremos. Los comentarios ocultos se eliminan en un plazo de **{{HIDDEN_DELETE_DAYS}} días**. Los contadores de «Me gusta» y de denuncias no contienen datos personales y se conservan mientras exista el artículo."
+   ],
+   [
+    "p",
+    "**Eliminar su comentario.** Envíe un correo electrónico a **{{CONTACT_EMAIL}}** con la dirección del artículo, el apodo y (unas pocas palabras de) el texto que escribió; lo eliminaremos en un plazo de **{{DELETE_REQUEST_DAYS}} días**. No podemos identificar un comentario por ningún otro dato, porque no conservamos su nombre ni su correo electrónico. Le responderemos para confirmarlo."
+   ],
+   [
+    "p",
+    "**Menores.** El sitio no está dirigido a menores de {{MIN_AGE}} años. Si es más joven, le rogamos que no comente."
+   ]
+  ],
+  "fr": [
+   [
+    "h",
+    "Commentaires et mentions « J'aime »"
+   ],
+   [
+    "p",
+    "Les articles du journal d'{{SERVICE_NAME}} peuvent comporter un bouton « J'aime » et une zone de commentaire. Vous n'avez pas besoin de compte."
+   ],
+   [
+    "p",
+    "**Ce que nous collectons lorsque vous commentez**"
+   ],
+   [
+    "li",
+    "le **pseudonyme** que vous saisissez (30 caractères maximum) et le texte du **commentaire** (500 caractères maximum) ;"
+   ],
+   [
+    "li",
+    "la **langue** de la page que vous lisiez (en, ko, ja, …) et l'**heure** de publication ;"
+   ],
+   [
+    "li",
+    "un **jeton aléatoire de navigateur** — une chaîne de lettres et de chiffres générée dans votre navigateur ; il n'est lié ni à votre nom, ni à votre adresse e-mail, ni à votre adresse IP, et sert uniquement à imposer un court délai entre deux publications et à repérer les abus répétés ;"
+   ],
+   [
+    "li",
+    "un **compteur de signalements** pour le commentaire, qui augmente lorsque des lecteurs appuient sur « Signaler »."
+   ],
+   [
+    "p",
+    "Votre pseudonyme, votre commentaire, la langue et l'heure de publication sont **affichés publiquement** sous l'article, dans toutes ses versions linguistiques. Veuillez ne pas y inscrire d'informations personnelles. Les liens ne sont pas autorisés."
+   ],
+   [
+    "p",
+    "**Ce que nous collectons lorsque vous aimez ou signalez**"
+   ],
+   [
+    "li",
+    "un « J'aime » incrémente seulement un compteur de l'article ; nous n'y associons aucune identité ;"
+   ],
+   [
+    "li",
+    "un signalement incrémente seulement le compteur de signalements de ce commentaire."
+   ],
+   [
+    "p",
+    "Dans le stockage local de votre navigateur, nous conservons de petits repères afin que la page se souvienne que vous avez aimé, signalé ou venez de publier (ainsi que le jeton aléatoire ci-dessus). À l'exception du jeton décrit plus haut, ils ne quittent jamais votre navigateur, et vous pouvez les effacer dans les paramètres de celui-ci."
+   ],
+   [
+    "p",
+    "**Lieu de stockage.** Les commentaires, les compteurs de « J'aime » et de signalements sont stockés chez Google Firebase (Cloud Firestore), dans la région de Séoul (asia-northeast3). Google agit en tant que notre prestataire de services. Google peut recevoir votre adresse IP et des informations sur votre appareil lorsque votre navigateur contacte ses serveurs, comme décrit dans la politique de confidentialité de Google."
+   ],
+   [
+    "p",
+    "**Modération.** Les commentaires ne sont pas examinés avant leur publication. Un commentaire qui reçoit **3 signalements** est masqué automatiquement, et nous pouvons masquer ou supprimer tout commentaire (par exemple en cas d'abus, de spam, d'informations personnelles ou de liens)."
+   ],
+   [
+    "p",
+    "**Durée de conservation.** Un commentaire est conservé tant que l'article est publié, et au plus **{{RETENTION_YEARS}} ans** après sa publication, sauf si vous demandez sa suppression plus tôt ou si nous le retirons. Les commentaires masqués sont supprimés dans un délai de **{{HIDDEN_DELETE_DAYS}} jours**. Les compteurs de « J'aime » et de signalements ne contiennent aucune donnée personnelle et sont conservés aussi longtemps que l'article."
+   ],
+   [
+    "p",
+    "**Supprimer votre commentaire.** Écrivez à **{{CONTACT_EMAIL}}** en indiquant l'adresse de l'article, le pseudonyme et (quelques mots de) votre texte ; nous le supprimerons dans un délai de **{{DELETE_REQUEST_DAYS}} jours**. Nous ne pouvons identifier un commentaire par aucun autre moyen, car nous ne conservons ni votre nom ni votre adresse e-mail. Nous vous répondrons pour confirmer."
+   ],
+   [
+    "p",
+    "**Enfants.** Le site ne s'adresse pas aux enfants de moins de {{MIN_AGE}} ans. Si vous êtes plus jeune, veuillez ne pas commenter."
+   ]
+  ],
+  "de": [
+   [
+    "h",
+    "Kommentare und „Gefällt mir“"
+   ],
+   [
+    "p",
+    "Journalartikel auf {{SERVICE_NAME}} können eine „Gefällt mir“-Schaltfläche und ein Kommentarfeld haben. Sie benötigen kein Konto."
+   ],
+   [
+    "p",
+    "**Was wir erheben, wenn Sie kommentieren**"
+   ],
+   [
+    "li",
+    "den von Ihnen eingegebenen **Spitznamen** (bis zu 30 Zeichen) und den **Kommentar**text (bis zu 500 Zeichen);"
+   ],
+   [
+    "li",
+    "die **Sprache** der Seite, die Sie gelesen haben (en, ko, ja, …), und den **Zeitpunkt** der Veröffentlichung;"
+   ],
+   [
+    "li",
+    "einen **zufälligen Browser-Token** – eine in Ihrem Browser erzeugte Zeichenfolge aus Buchstaben und Ziffern; er ist weder mit Ihrem Namen noch mit Ihrer E-Mail-Adresse oder IP-Adresse verknüpft und dient ausschließlich dazu, eine kurze Pause zwischen zwei Beiträgen durchzusetzen und wiederholten Missbrauch zu erkennen;"
+   ],
+   [
+    "li",
+    "einen **Meldezähler** für den Kommentar, der steigt, wenn Leser auf „Melden“ klicken."
+   ],
+   [
+    "p",
+    "Ihr Spitzname, Ihr Kommentar, die Sprache und der Veröffentlichungszeitpunkt werden unter dem Artikel in allen Sprachversionen **öffentlich angezeigt**. Bitte geben Sie darin keine personenbezogenen Daten an. Links sind nicht erlaubt."
+   ],
+   [
+    "p",
+    "**Was wir erheben, wenn Sie „Gefällt mir“ klicken oder melden**"
+   ],
+   [
+    "li",
+    "Ein „Gefällt mir“ erhöht lediglich einen Zähler für den Artikel; wir speichern dazu keine Identität;"
+   ],
+   [
+    "li",
+    "eine Meldung erhöht lediglich den Meldezähler dieses Kommentars."
+   ],
+   [
+    "p",
+    "Im lokalen Speicher Ihres Browsers legen wir kleine Markierungen ab, damit sich die Seite merkt, dass Sie „Gefällt mir“ geklickt, gemeldet oder gerade einen Beitrag veröffentlicht haben (sowie den oben genannten zufälligen Token). Mit Ausnahme des beschriebenen Tokens verlassen sie Ihren Browser nie, und Sie können sie in den Browsereinstellungen löschen."
+   ],
+   [
+    "p",
+    "**Wo die Daten gespeichert werden.** Kommentare, „Gefällt mir“-Zähler und Meldezähler werden bei Google Firebase (Cloud Firestore) in der Region Seoul (asia-northeast3) gespeichert. Google handelt als unser Dienstleister. Google kann Ihre IP-Adresse und Geräteinformationen erhalten, wenn Ihr Browser dessen Server kontaktiert, wie in der Datenschutzerklärung von Google beschrieben."
+   ],
+   [
+    "p",
+    "**Moderation.** Kommentare werden vor ihrer Anzeige nicht geprüft. Ein Kommentar, der **3 Meldungen** erhält, wird automatisch ausgeblendet, und wir können jeden Kommentar ausblenden oder löschen (zum Beispiel bei Missbrauch, Spam, personenbezogenen Daten oder Links)."
+   ],
+   [
+    "p",
+    "**Wie lange wir die Daten speichern.** Ein Kommentar wird so lange gespeichert, wie der Artikel veröffentlicht ist, höchstens jedoch **{{RETENTION_YEARS}} Jahre** nach der Veröffentlichung, es sei denn, Sie bitten uns, ihn früher zu löschen, oder wir entfernen ihn. Ausgeblendete Kommentare werden innerhalb von **{{HIDDEN_DELETE_DAYS}} Tagen** gelöscht. Die Zähler für „Gefällt mir“ und Meldungen enthalten keine personenbezogenen Daten und werden so lange gespeichert wie der Artikel."
+   ],
+   [
+    "p",
+    "**Ihren Kommentar löschen.** Senden Sie eine E-Mail an **{{CONTACT_EMAIL}}** mit der Artikeladresse, dem Spitznamen und (einigen Worten) des von Ihnen verfassten Textes; wir löschen ihn innerhalb von **{{DELETE_REQUEST_DAYS}} Tagen**. Anhand anderer Angaben können wir einen Kommentar nicht identifizieren, da wir weder Ihren Namen noch Ihre E-Mail-Adresse speichern. Wir antworten Ihnen zur Bestätigung."
+   ],
+   [
+    "p",
+    "**Kinder.** Die Website richtet sich nicht an Kinder unter {{MIN_AGE}} Jahren. Wenn Sie jünger sind, kommentieren Sie bitte nicht."
+   ]
+  ],
+  "pt": [
+   [
+    "h",
+    "Comentários e «Gosto»"
+   ],
+   [
+    "p",
+    "Os artigos do diário do {{SERVICE_NAME}} podem ter um botão de «Gosto» e uma caixa de comentários. Não precisa de conta."
+   ],
+   [
+    "p",
+    "**O que recolhemos quando comenta**"
+   ],
+   [
+    "li",
+    "o **apelido** que escreve (até 30 caracteres) e o texto do **comentário** (até 500 caracteres);"
+   ],
+   [
+    "li",
+    "o **idioma** da página que estava a ler (en, ko, ja, …) e a **hora** da publicação;"
+   ],
+   [
+    "li",
+    "um **token aleatório do navegador** — uma sequência de letras e dígitos gerada no seu navegador; não está associado ao seu nome, e-mail ou endereço IP, e é utilizado apenas para impor uma curta pausa entre duas publicações e para detetar abusos repetidos;"
+   ],
+   [
+    "li",
+    "uma **contagem de denúncias** do comentário, que aumenta quando os leitores carregam em «Denunciar»."
+   ],
+   [
+    "p",
+    "O seu apelido, comentário, idioma e hora de publicação são **apresentados publicamente** sob o artigo, em todas as versões linguísticas do mesmo. Pedimos que não inclua informações pessoais nestes campos. Não são permitidas ligações."
+   ],
+   [
+    "p",
+    "**O que recolhemos quando dá «Gosto» ou denuncia**"
+   ],
+   [
+    "li",
+    "um «Gosto» apenas aumenta um contador do artigo; não guardamos qualquer identidade com ele;"
+   ],
+   [
+    "li",
+    "uma denúncia apenas aumenta a contagem de denúncias desse comentário."
+   ],
+   [
+    "p",
+    "No armazenamento local do seu navegador guardamos pequenos marcadores para que a página se lembre de que deu «Gosto», denunciou ou acabou de publicar (e do token aleatório acima). Com exceção do token descrito, nunca saem do seu navegador, e pode eliminá-los nas definições do navegador."
+   ],
+   [
+    "p",
+    "**Onde é armazenado.** Os comentários, as contagens de «Gosto» e as contagens de denúncias são armazenados no Google Firebase (Cloud Firestore), na região de Seul (asia-northeast3). A Google atua como nosso prestador de serviços. A Google pode receber o seu endereço IP e informações do dispositivo quando o seu navegador contacta os respetivos servidores, conforme descrito na política de privacidade da Google."
+   ],
+   [
+    "p",
+    "**Moderação.** Os comentários não são revistos antes de aparecerem. Um comentário que receba **3 denúncias** é ocultado automaticamente, e podemos ocultar ou eliminar qualquer comentário (por exemplo, por abuso, spam, informações pessoais ou ligações)."
+   ],
+   [
+    "p",
+    "**Durante quanto tempo os conservamos.** Um comentário é conservado enquanto o artigo estiver publicado e, no máximo, durante **{{RETENTION_YEARS}} anos** após a publicação, salvo se pedir a sua eliminação mais cedo ou se o removermos. Os comentários ocultados são eliminados no prazo de **{{HIDDEN_DELETE_DAYS}} dias**. Os contadores de «Gosto» e de denúncias não contêm dados pessoais e são conservados enquanto o artigo existir."
+   ],
+   [
+    "p",
+    "**Eliminar o seu comentário.** Envie um e-mail para **{{CONTACT_EMAIL}}** com o endereço do artigo, o apelido e (algumas palavras do) texto que escreveu; eliminamo-lo no prazo de **{{DELETE_REQUEST_DAYS}} dias**. Não conseguimos identificar um comentário por qualquer outro meio, porque não guardamos o seu nome nem o seu e-mail. Responderemos para confirmar."
+   ],
+   [
+    "p",
+    "**Crianças.** O site não se destina a crianças com menos de {{MIN_AGE}} anos. Se for mais novo, pedimos que não comente."
+   ]
+  ],
+  "ru": [
+   [
+    "h",
+    "Комментарии и «лайки»"
+   ],
+   [
+    "p",
+    "Под статьями журнала на {{SERVICE_NAME}} могут быть кнопка «Нравится» и поле для комментария. Учётная запись не требуется."
+   ],
+   [
+    "p",
+    "**Что мы собираем, когда вы оставляете комментарий**"
+   ],
+   [
+    "li",
+    "введённый вами **псевдоним** (до 30 символов) и текст **комментария** (до 500 символов);"
+   ],
+   [
+    "li",
+    "**язык** Страницы, которую вы читали (en, ko, ja, …), и **время** публикации;"
+   ],
+   [
+    "li",
+    "**случайный токен браузера** — строку из букв и цифр, созданную в вашем браузере; он не связан с вашим именем, адресом электронной почты или IP-адресом и используется только для соблюдения короткой паузы между двумя публикациями и для выявления повторных злоупотреблений;"
+   ],
+   [
+    "li",
+    "**счётчик жалоб** На комментарий, который увеличивается, когда читатели нажимают «Пожаловаться»."
+   ],
+   [
+    "p",
+    "Ваш псевдоним, комментарий, язык и время публикации **отображаются публично** под статьёй во всех её языковых версиях. Пожалуйста, не указывайте в них персональные данные. Ссылки не допускаются."
+   ],
+   [
+    "p",
+    "**Что мы собираем, когда вы ставите «лайк» или жалуетесь**"
+   ],
+   [
+    "li",
+    "«лайк» лишь увеличивает счётчик статьи; никаких идентификационных данных мы с ним не сохраняем;"
+   ],
+   [
+    "li",
+    "жалоба лишь увеличивает счётчик жалоб на этот комментарий."
+   ],
+   [
+    "p",
+    "В локальном хранилище вашего браузера мы сохраняем небольшие метки, чтобы страница помнила, что вы поставили «лайк», пожаловались или только что опубликовали комментарий (а также описанный выше случайный токен). За исключением описанного токена, они никогда не покидают ваш браузер, и вы можете удалить их в настройках браузера."
+   ],
+   [
+    "p",
+    "**Где хранятся данные.** Комментарии, счётчики «лайков» и счётчики жалоб хранятся в Google Firebase (Cloud Firestore) в регионе Сеул (asia-northeast3). Google выступает нашим поставщиком услуг. Google может получать ваш IP-адрес и сведения об устройстве, когда ваш браузер обращается к его серверам, как описано в политике конфиденциальности Google."
+   ],
+   [
+    "p",
+    "**Модерация.** Комментарии не проверяются до публикации. Комментарий, получивший **3 жалобы**, скрывается автоматически, и мы можем скрыть или удалить любой комментарий (например, за оскорбления, спам, персональные данные или ссылки)."
+   ],
+   [
+    "p",
+    "**Срок хранения.** Комментарий хранится, пока статья опубликована, и не дольше **{{RETENTION_YEARS}} лет** с момента публикации, если только вы не попросите удалить его раньше или мы не удалим его сами. Скрытые комментарии удаляются в течение **{{HIDDEN_DELETE_DAYS}} дней**. Счётчики «лайков» и жалоб не содержат персональных данных и хранятся столько же, сколько статья."
+   ],
+   [
+    "p",
+    "**Удаление вашего комментария.** Напишите на **{{CONTACT_EMAIL}}**, указав адрес статьи, псевдоним и (несколько слов из) написанного вами текста; мы удалим комментарий в течение **{{DELETE_REQUEST_DAYS}} дней**. По любым другим данным мы не можем определить комментарий, поскольку не храним ваше имя и адрес электронной почты. Мы ответим вам для подтверждения."
+   ],
+   [
+    "p",
+    "**Дети.** Сайт не предназначен для детей младше {{MIN_AGE}} лет. Если вы младше, пожалуйста, не оставляйте комментарии."
+   ]
+  ],
+  "ar": [
+   [
+    "h",
+    "التعليقات والإعجابات"
+   ],
+   [
+    "p",
+    "قد تتضمّن مقالات المجلة على {{SERVICE_NAME}} زرّ إعجاب ومربّع تعليق. لا تحتاج إلى حساب."
+   ],
+   [
+    "p",
+    "**ما نجمعه عند كتابة تعليق**"
+   ],
+   [
+    "li",
+    "**الاسم المستعار** الذي تكتبه (حتى 30 حرفًا) ونص **التعليق** (حتى 500 حرف)؛"
+   ],
+   [
+    "li",
+    "**لغة** الصفحة التي كنت تقرؤها (en وko وja وغيرها) و**وقت** النشر؛"
+   ],
+   [
+    "li",
+    "**رمز عشوائي للمتصفّح** — سلسلة من الحروف والأرقام يُنشئها متصفّحك؛ وهو غير مرتبط باسمك أو بريدك الإلكتروني أو عنوان IP الخاص بك، ويُستخدم فقط لفرض فاصل قصير بين منشورين ولرصد إساءة الاستخدام المتكررة؛"
+   ],
+   [
+    "li",
+    "**عدد البلاغات** عن التعليق، ويزداد عندما يضغط القرّاء على «إبلاغ»."
+   ],
+   [
+    "p",
+    "يُعرض اسمك المستعار وتعليقك ولغتك ووقت نشرك **علنًا** أسفل المقال، في جميع النسخ اللغوية منه. يُرجى عدم إدراج معلومات شخصية فيها. لا يُسمح بالروابط."
+   ],
+   [
+    "p",
+    "**ما نجمعه عند الإعجاب أو الإبلاغ**"
+   ],
+   [
+    "li",
+    "الإعجاب يزيد عدّادًا للمقال فقط؛ ولا نخزّن أي هوية معه؛"
+   ],
+   [
+    "li",
+    "البلاغ يزيد عدد البلاغات عن ذلك التعليق فقط."
+   ],
+   [
+    "p",
+    "نحتفظ في التخزين المحلي لمتصفّحك بعلامات صغيرة كي تتذكّر الصفحة أنك أعجبت بمقال أو أبلغت أو نشرت للتوّ (إضافةً إلى الرمز العشوائي المذكور أعلاه). ولا تغادر هذه العلامات متصفّحك أبدًا باستثناء الرمز الموصوف، ويمكنك مسحها من إعدادات المتصفّح."
+   ],
+   [
+    "p",
+    "**مكان التخزين.** تُخزَّن التعليقات وأعداد الإعجابات وأعداد البلاغات لدى Google Firebase (Cloud Firestore) في منطقة سيول (asia-northeast3). تعمل Google بصفتها مزوّد الخدمة لدينا. وقد تتلقى Google عنوان IP الخاص بك ومعلومات جهازك عندما يتصل متصفّحك بخوادمها، كما هو موضّح في سياسة الخصوصية الخاصة بـ Google."
+   ],
+   [
+    "p",
+    "**الإشراف.** لا تُراجَع التعليقات قبل ظهورها. يُخفى تلقائيًا أي تعليق يتلقى **3 بلاغات**، ويجوز لنا إخفاء أي تعليق أو حذفه (مثلًا بسبب إساءة أو محتوى مزعج أو معلومات شخصية أو روابط)."
+   ],
+   [
+    "p",
+    "**مدة الاحتفاظ.** يُحتفظ بالتعليق طالما كان المقال منشورًا، وبحدّ أقصى **{{RETENTION_YEARS}} سنوات** من تاريخ نشره، ما لم تطلب حذفه في وقت أبكر أو نزيله نحن. تُحذف التعليقات المخفية خلال **{{HIDDEN_DELETE_DAYS}} يومًا**. لا تتضمن عدّادات الإعجابات والبلاغات أي بيانات شخصية، ويُحتفظ بها طالما بقي المقال."
+   ],
+   [
+    "p",
+    "**حذف تعليقك.** راسلنا عبر البريد الإلكتروني **{{CONTACT_EMAIL}}** مع عنوان المقال والاسم المستعار و(بضع كلمات من) النص الذي كتبته؛ وسنحذفه خلال **{{DELETE_REQUEST_DAYS}} يومًا**. لا يمكننا تحديد تعليق ما بأي معلومة أخرى، لأننا لا نحتفظ باسمك أو بريدك الإلكتروني. وسنردّ عليك للتأكيد."
+   ],
+   [
+    "p",
+    "**الأطفال.** الموقع غير موجَّه إلى الأطفال دون سنّ {{MIN_AGE}} عامًا. إذا كنت أصغر من ذلك، فيُرجى عدم كتابة تعليقات."
+   ]
+  ],
+  "hi": [
+   [
+    "h",
+    "टिप्पणियाँ और लाइक"
+   ],
+   [
+    "p",
+    "{{SERVICE_NAME}} पर जर्नल लेखों में लाइक बटन और टिप्पणी बॉक्स हो सकता है। आपको खाते की आवश्यकता नहीं है।"
+   ],
+   [
+    "p",
+    "**टिप्पणी करने पर हम क्या एकत्र करते हैं**"
+   ],
+   [
+    "li",
+    "आपके द्वारा टाइप किया गया **उपनाम** (अधिकतम 30 अक्षर) और **टिप्पणी** का पाठ (अधिकतम 500 अक्षर);"
+   ],
+   [
+    "li",
+    "आप जिस पृष्ठ को पढ़ रहे थे उसकी **भाषा** (en, ko, ja, …) और पोस्ट करने का **समय**;"
+   ],
+   [
+    "li",
+    "एक **यादृच्छिक ब्राउज़र टोकन** — आपके ब्राउज़र में बनाई गई अक्षरों और अंकों की एक स्ट्रिंग; यह आपके नाम, ई-मेल या IP पते से जुड़ा नहीं है, और इसका उपयोग केवल दो पोस्ट के बीच छोटा अंतराल लागू करने और बार-बार होने वाले दुरुपयोग को पहचानने के लिए किया जाता है;"
+   ],
+   [
+    "li",
+    "टिप्पणी की **रिपोर्ट संख्या**, जो पाठकों द्वारा \"रिपोर्ट करें\" दबाने पर बढ़ती है।"
+   ],
+   [
+    "p",
+    "आपका उपनाम, टिप्पणी, भाषा और पोस्ट करने का समय लेख के नीचे, उसके सभी भाषा संस्करणों में, **सार्वजनिक रूप से दिखाए जाते हैं**। कृपया इनमें व्यक्तिगत जानकारी न डालें। लिंक की अनुमति नहीं है।"
+   ],
+   [
+    "p",
+    "**लाइक या रिपोर्ट करने पर हम क्या एकत्र करते हैं**"
+   ],
+   [
+    "li",
+    "लाइक केवल लेख का एक काउंटर बढ़ाता है; हम इसके साथ कोई पहचान संग्रहीत नहीं करते;"
+   ],
+   [
+    "li",
+    "रिपोर्ट केवल उस टिप्पणी की रिपोर्ट संख्या बढ़ाती है।"
+   ],
+   [
+    "p",
+    "आपके ब्राउज़र के लोकल स्टोरेज में हम छोटे चिह्न रखते हैं ताकि पृष्ठ को याद रहे कि आपने लाइक किया, रिपोर्ट किया या अभी पोस्ट किया है (और ऊपर बताया गया यादृच्छिक टोकन)। वर्णित टोकन को छोड़कर, ये आपके ब्राउज़र से बाहर कभी नहीं जाते, और आप इन्हें ब्राउज़र सेटिंग में साफ़ कर सकते हैं।"
+   ],
+   [
+    "p",
+    "**यह कहाँ संग्रहीत होता है।** टिप्पणियाँ, लाइक संख्या और रिपोर्ट संख्या Google Firebase (Cloud Firestore) में, सियोल क्षेत्र (asia-northeast3) में संग्रहीत की जाती हैं। Google हमारे सेवा प्रदाता के रूप में कार्य करता है। जब आपका ब्राउज़र Google के सर्वरों से संपर्क करता है, तो Google को आपका IP पता और डिवाइस की जानकारी मिल सकती है, जैसा कि Google की गोपनीयता नीति में बताया गया है।"
+   ],
+   [
+    "p",
+    "**मॉडरेशन।** टिप्पणियाँ दिखने से पहले उनकी समीक्षा नहीं की जाती। जिस टिप्पणी को **3 रिपोर्ट** मिलती हैं, वह अपने आप छिपा दी जाती है, और हम किसी भी टिप्पणी को छिपा या हटा सकते हैं (उदाहरण के लिए दुरुपयोग, स्पैम, व्यक्तिगत जानकारी या लिंक के कारण)।"
+   ],
+   [
+    "p",
+    "**हम इसे कितने समय तक रखते हैं।** कोई टिप्पणी तब तक रखी जाती है जब तक लेख प्रकाशित है, और पोस्ट किए जाने के बाद अधिकतम **{{RETENTION_YEARS}} वर्ष** तक, जब तक कि आप उसे पहले हटाने के लिए न कहें या हम उसे हटा न दें। छिपाई गई टिप्पणियाँ **{{HIDDEN_DELETE_DAYS}} दिनों** के भीतर हटा दी जाती हैं। लाइक और रिपोर्ट काउंटर में कोई व्यक्तिगत डेटा नहीं होता और उन्हें लेख के रहने तक रखा जाता है।"
+   ],
+   [
+    "p",
+    "**अपनी टिप्पणी हटाएँ।** लेख का पता, उपनाम और आपने जो लिखा उसके (कुछ शब्दों के) साथ **{{CONTACT_EMAIL}}** पर ई-मेल करें; हम इसे **{{DELETE_REQUEST_DAYS}} दिनों** के भीतर हटा देंगे। हम किसी अन्य जानकारी से टिप्पणी की पहचान नहीं कर सकते, क्योंकि हम आपका नाम या ई-मेल नहीं रखते। पुष्टि के लिए हम आपको उत्तर देंगे।"
+   ],
+   [
+    "p",
+    "**बच्चे।** यह साइट {{MIN_AGE}} वर्ष से कम उम्र के बच्चों के लिए नहीं है। यदि आप इससे छोटे हैं, तो कृपया टिप्पणी न करें।"
+   ]
+  ],
+  "id": [
+   [
+    "h",
+    "Komentar dan suka"
+   ],
+   [
+    "p",
+    "Artikel jurnal di {{SERVICE_NAME}} dapat memiliki tombol suka dan kotak komentar. Anda tidak memerlukan akun."
+   ],
+   [
+    "p",
+    "**Apa yang kami kumpulkan saat Anda berkomentar**"
+   ],
+   [
+    "li",
+    "**nama panggilan** Yang Anda ketik (maksimal 30 karakter) dan teks **komentar** (maksimal 500 karakter);"
+   ],
+   [
+    "li",
+    "**bahasa** Halaman yang Anda baca (en, ko, ja, …) dan **waktu** Anda memposting;"
+   ],
+   [
+    "li",
+    "**token peramban acak** — rangkaian huruf dan angka yang dibuat di peramban Anda; token ini tidak terhubung dengan nama, e-mail, atau alamat IP Anda, dan hanya digunakan untuk menerapkan jeda singkat di antara dua kiriman serta mendeteksi penyalahgunaan berulang;"
+   ],
+   [
+    "li",
+    "**jumlah laporan** Untuk komentar tersebut, yang bertambah ketika pembaca menekan \"Laporkan\"."
+   ],
+   [
+    "p",
+    "Nama panggilan, komentar, bahasa, dan waktu posting Anda **ditampilkan secara publik** di bawah artikel, dalam setiap versi bahasanya. Mohon jangan mencantumkan informasi pribadi di dalamnya. Tautan tidak diperbolehkan."
+   ],
+   [
+    "p",
+    "**Apa yang kami kumpulkan saat Anda menyukai atau melaporkan**"
+   ],
+   [
+    "li",
+    "suka hanya menambah penghitung untuk artikel; kami tidak menyimpan identitas apa pun bersamanya;"
+   ],
+   [
+    "li",
+    "laporan hanya menambah jumlah laporan pada komentar tersebut."
+   ],
+   [
+    "p",
+    "Di penyimpanan lokal peramban Anda, kami menyimpan penanda kecil agar halaman mengingat bahwa Anda telah menyukai, melaporkan, atau baru saja memposting (serta token acak di atas). Selain token yang dijelaskan, penanda ini tidak pernah keluar dari peramban Anda, dan Anda dapat menghapusnya di pengaturan peramban."
+   ],
+   [
+    "p",
+    "**Tempat penyimpanan.** Komentar, jumlah suka, dan jumlah laporan disimpan di Google Firebase (Cloud Firestore), di wilayah Seoul (asia-northeast3). Google bertindak sebagai penyedia layanan kami. Google dapat menerima alamat IP dan informasi perangkat Anda ketika peramban Anda menghubungi server mereka, sebagaimana dijelaskan dalam kebijakan privasi Google."
+   ],
+   [
+    "p",
+    "**Moderasi.** Komentar tidak ditinjau sebelum muncul. Komentar yang menerima **3 laporan** disembunyikan secara otomatis, dan kami dapat menyembunyikan atau menghapus komentar apa pun (misalnya karena penyalahgunaan, spam, informasi pribadi, atau tautan)."
+   ],
+   [
+    "p",
+    "**Berapa lama kami menyimpannya.** Komentar disimpan selama artikel dipublikasikan, dan paling lama **{{RETENTION_YEARS}} tahun** setelah diposting, kecuali Anda meminta kami menghapusnya lebih awal atau kami menghapusnya. Komentar yang disembunyikan dihapus dalam **{{HIDDEN_DELETE_DAYS}} hari**. Penghitung suka dan laporan tidak memuat data pribadi dan disimpan selama artikel ada."
+   ],
+   [
+    "p",
+    "**Menghapus komentar Anda.** Kirim e-mail ke **{{CONTACT_EMAIL}}** dengan alamat artikel, nama panggilan, dan (beberapa kata dari) teks yang Anda tulis; kami akan menghapusnya dalam **{{DELETE_REQUEST_DAYS}} hari**. Kami tidak dapat mengenali komentar dari informasi lain, karena kami tidak menyimpan nama atau e-mail Anda. Kami akan membalas untuk mengonfirmasi."
+   ],
+   [
+    "p",
+    "**Anak-anak.** Situs ini tidak ditujukan bagi anak di bawah {{MIN_AGE}} tahun. Jika Anda lebih muda, mohon jangan berkomentar."
+   ]
+  ]
+ },
+ "country": {
+  "ko": {
+   "heading": "국가·지역별 기준",
+   "conservative": "연령 기준은 법정 기준보다 보수적으로 정함 — 법정 나이보다 한 살 높게 두고, 기준이 불분명한 나라는 **만 {{DEFAULT_AGE}}세**로 합니다.",
+   "other": "**그 밖의 나라:** 목록에 없는 나라는 **만 {{DEFAULT_AGE}}세 미만**이면 댓글 작성이 제한됩니다. 좋아요·읽기는 가능합니다."
+  },
+  "en": {
+   "heading": "Country and regional standards",
+   "conservative": "Age thresholds are set more conservatively than the legal standard — one year above the statutory age, and **{{DEFAULT_AGE}}** where the law is unclear.",
+   "other": "**Everywhere else:** if your country is not listed, commenting is disabled for **under {{DEFAULT_AGE}}**. Reading and liking remain available."
+  },
+  "ja": {
+   "heading": "国・地域別の基準",
+   "conservative": "年齢基準は法定基準より保守的に定めています — 法定年齢より一歳高くし、基準が明確でない国は**{{DEFAULT_AGE}}歳**とします。",
+   "other": "**その他の国:** 記載のない国では**{{DEFAULT_AGE}}歳未満**の方はコメントできません(閲覧と「いいね」は可能)。"
+  },
+  "zh": {
+   "heading": "国家和地区标准",
+   "conservative": "年龄标准比法定标准更为保守——比法定年龄高一岁;标准不明确的国家按**{{DEFAULT_AGE}} 岁**执行。",
+   "other": "**其他国家/地区:** 未列出的国家适用默认标准,**未满 {{DEFAULT_AGE}} 岁**不能发表评论(仍可浏览与点赞)。"
+  },
+  "es": {
+   "heading": "Criterios por país y región",
+   "conservative": "Los umbrales de edad se fijan de forma más prudente que el criterio legal: un año por encima de la edad legal y **{{DEFAULT_AGE}} años** cuando la norma no es clara.",
+   "other": "**Resto de países:** si su país no figura, no puede comentar si tiene **menos de {{DEFAULT_AGE}} años** (puede leer y dar «Me gusta»)."
+  },
+  "fr": {
+   "heading": "Critères par pays et région",
+   "conservative": "Les seuils d'âge sont fixés de manière plus prudente que le seuil légal : un an au-dessus de l'âge légal, et **{{DEFAULT_AGE}} ans** lorsque la règle n'est pas claire.",
+   "other": "**Autres pays :** si votre pays n'est pas listé, les personnes de **moins de {{DEFAULT_AGE}} ans** ne peuvent pas commenter (lecture et « J'aime » restent possibles)."
+  },
+  "de": {
+   "heading": "Maßstäbe nach Land und Region",
+   "conservative": "Die Altersgrenzen sind strenger als gesetzlich vorgeschrieben: ein Jahr über dem gesetzlichen Alter und **{{DEFAULT_AGE}} Jahre**, wenn die Regelung unklar ist.",
+   "other": "**Andere Länder:** Ist Ihr Land nicht aufgeführt, können Personen **unter {{DEFAULT_AGE}} Jahren** keine Kommentare schreiben (Lesen und „Gefällt mir“ bleiben möglich)."
+  },
+  "pt": {
+   "heading": "Critérios por país e região",
+   "conservative": "Os limites de idade são definidos de forma mais prudente do que o critério legal: um ano acima da idade legal e **{{DEFAULT_AGE}} anos** quando a regra não é clara.",
+   "other": "**Outros países:** se o seu país não constar da lista, quem tem **menos de {{DEFAULT_AGE}} anos** não pode comentar (pode ler e dar «Gosto»)."
+  },
+  "ru": {
+   "heading": "Требования по странам и регионам",
+   "conservative": "Возрастные пороги установлены строже, чем требует закон: на один год выше установленного законом возраста, а если правило неясно — **{{DEFAULT_AGE}} лет**.",
+   "other": "**Другие страны:** если вашей страны нет в списке, комментарии недоступны **младше {{DEFAULT_AGE}} лет** (чтение и «лайки» доступны)."
+  },
+  "ar": {
+   "heading": "معايير حسب الدولة والمنطقة",
+   "conservative": "حُدِّدت معايير العمر بشكل أكثر تحفظًا من المعيار القانوني: أعلى بسنة واحدة من السن القانونية، و**{{DEFAULT_AGE}} عامًا** حيث تكون القاعدة غير واضحة.",
+   "other": "**الدول الأخرى:** إذا لم تكن دولتك مدرجة، فلا يمكن لمن هم **دون {{DEFAULT_AGE}} عامًا** كتابة تعليقات (القراءة والإعجاب متاحان)."
+  },
+  "hi": {
+   "heading": "देश और क्षेत्र के अनुसार मानक",
+   "conservative": "आयु सीमाएँ कानूनी मानक से अधिक सावधानी से तय की गई हैं — कानूनी आयु से एक वर्ष अधिक, और जहाँ नियम स्पष्ट नहीं है वहाँ **{{DEFAULT_AGE}} वर्ष**।",
+   "other": "**अन्य देश:** यदि आपका देश सूचीबद्ध नहीं है, तो **{{DEFAULT_AGE}} वर्ष से कम** आयु वाले टिप्पणी नहीं कर सकते (पढ़ना और लाइक करना संभव है)।"
+  },
+  "id": {
+   "heading": "Standar menurut negara dan wilayah",
+   "conservative": "Batas usia ditetapkan lebih ketat daripada standar hukum — satu tahun di atas usia menurut hukum, dan **{{DEFAULT_AGE}} tahun** bila aturannya tidak jelas.",
+   "other": "**Negara lain:** jika negara Anda tidak tercantum, pengguna **di bawah {{DEFAULT_AGE}} tahun** tidak dapat berkomentar (membaca dan memberi suka tetap bisa)."
+  }
+ }
+}

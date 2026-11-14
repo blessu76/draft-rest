@@ -7,7 +7,70 @@
     <atom:link href="https://draft.ipe.rest/ru/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Короткие руководства о том, как превратить сказанное в историю, которую люди действительно читают, — от команды draft().</description>
     <language>ru</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Напишите фразу, которую вы не сказали</title>
+      <link>https://draft.ipe.rest/ru/journal/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/journal/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>В некоторых моментах остаётся несказанная фраза. Как записать её за три шага: пример и частые затруднения.</description>
+    </item>
+    <item>
+      <title>Одно предложение в день: пусть истории накапливаются</title>
+      <link>https://draft.ipe.rest/ru/journal/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/journal/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>Нет времени писать? Закрывайте каждый день одним предложением о том, где вы были и что сдвинулось. Три шага, пример и частые препятствия.</description>
+    </item>
+    <item>
+      <title>Название — в самом конце</title>
+      <link>https://draft.ipe.rest/ru/journal/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/journal/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Если выбрать название заранее, текст может застопориться. Три шага, как найти его после написания, с примером и частыми ошибками.</description>
+    </item>
+    <item>
+      <title>Начните историю с одного места</title>
+      <link>https://draft.ipe.rest/ru/journal/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/journal/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Не знаете, о чём писать? Начните с того, где всё происходит. Три шага, как открыть текст одним маленьким местом, с примером и частыми ошибками.</description>
+    </item>
+    <item>
+      <title>Пишите одному человеку, а не всем</title>
+      <link>https://draft.ipe.rest/ru/journal/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/journal/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Если писать для всех, слова расплываются. Три шага, чтобы выбрать одного читателя и писать ему, с примером и частыми трудностями.</description>
+    </item>
+    <item>
+      <title>Первый вариант может быть черновым</title>
+      <link>https://draft.ipe.rest/ru/journal/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/journal/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Желание писать хорошо с первой строки останавливает руку. Три шага, чтобы дописать черновой первый вариант, с примером и частыми препятствиями.</description>
+    </item>
+    <item>
+      <title>Остановитесь, пока ещё знаете, что будет дальше</title>
+      <link>https://draft.ipe.rest/ru/journal/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/journal/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Остановка в тупике усложняет завтрашний день. Остановитесь, пока знаете следующую строку, оставьте заметку — и продолжить будет легко. Три шага и пример.</description>
+    </item>
+    <item>
+      <title>Оставьте текст на ночь и измените только одно</title>
+      <link>https://draft.ipe.rest/ru/journal/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/journal/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Сразу после письма вы читаете то, что хотели сказать. Три шага: оставить текст на ночь и изменить только одно, с примером и частыми ошибками.</description>
+    </item>
+    <item>
+      <title>Прочитайте вслух раз и правьте лишь там, где споткнулись</title>
+      <link>https://draft.ipe.rest/ru/journal/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ru/journal/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>Глаза прощают то, что рот не прощает. Три шага: прочитать короткий текст вслух, отметить, где споткнулись, и исправить только эти места.</description>
+    </item>
     <item>
       <title>Сохраните одну фразу, сказанную кем-то, как она прозвучала</title>
       <link>https://draft.ipe.rest/ru/journal/one-line-they-said/</link>

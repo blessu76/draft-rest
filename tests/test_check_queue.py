@@ -15,7 +15,7 @@ FM = "---\ntitle: T %s\ndescription: %s\ndate: 2026-10-28\nslug: %s\n%s---\n\n%s
 
 
 def write(root, slug, desc=None, ko_len=1400, extra="draft: true\n", skip=(), slug_in_file=None, words=400, cjk=800):
-    for c in build_site.CODES:
+    for c in build_site.BLOG_CODES:
         if c in skip:
             continue
         f = Path(root) / "posts" / slug / (c + ".md" if c in ("ko", "en") else "translations/%s.md" % c)

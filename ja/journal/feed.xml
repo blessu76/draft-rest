@@ -7,7 +7,70 @@
     <atom:link href="https://draft.ipe.rest/ja/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>言えなかった一行を書いてみましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>言えずに終わった言葉が残る場面があります。その一行を文章にする三つの手順を、例とよくあるつまずきと一緒にまとめました。</description>
+    </item>
+    <item>
+      <title>一日一文の日記で、物語のたねをためよう</title>
+      <link>https://draft.ipe.rest/ja/journal/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>物語を書く時間がないなら、一日を一文で閉じてみましょう。どこにいて何が変わったかだけを書く三つのステップと例、つまずきやすい点を紹介します。</description>
+    </item>
+    <item>
+      <title>タイトルは書き終えてからつけましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>先にタイトルを決めると手が止まります。書き終えた文章からタイトルを見つける三つの手順を、例とよくあるつまずきと一緒にまとめました。</description>
+    </item>
+    <item>
+      <title>場所ひとつから物語を始めましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>何を書くか迷ったら、まず場所から。小さな場所ひとつで文章を始める三つの手順を、例とよくあるつまずきと一緒にまとめました。</description>
+    </item>
+    <item>
+      <title>みんなではなく、一人に向けて書きましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>みんなに向けて書くと言葉がぼやけます。一人の読者を決めてその人に書く三つの手順を、例とよくあるつまずきと一緒にまとめました。</description>
+    </item>
+    <item>
+      <title>最初の版は荒くてもかまいません</title>
+      <link>https://draft.ipe.rest/ja/journal/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>最初からうまく書こうとすると手が止まります。荒い最初の版を最後まで書く三つの手順を、例とよくあるつまずきと一緒にまとめました。</description>
+    </item>
+    <item>
+      <title>次に来る言葉がわかっているうちに止めましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>行き詰まったまま閉じると、明日の書き始めが重くなります。次の一行がわかるうちに止めてメモを残す三つの手順を、例と一緒にまとめました。</description>
+    </item>
+    <item>
+      <title>ひと晩寝かせてから、ひとつだけ直しましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>書いた直後は、自分が意図したことを読んでしまいます。文章をひと晩寝かせて、ひとつだけ直す三つの手順を、例とつまずきやすい点といっしょにまとめました。</description>
+    </item>
+    <item>
+      <title>声に出して一度読み、引っかかる所だけ直しましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>目は見逃しても、口は引っかかります。短い文章を声に出して読み、引っかかる所に印をつけ、そこだけ直す三つの手順をまとめました。</description>
+    </item>
     <item>
       <title>誰かが言ったひとことを、そのまま生かしてみましょう</title>
       <link>https://draft.ipe.rest/ja/journal/one-line-they-said/</link>

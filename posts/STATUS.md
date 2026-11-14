@@ -1,6 +1,6 @@
 # Blog queue — status
 
-Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` + `translations/<lang>.md` (ja zh es pt id ru vi fr de ar hi) — all 13 languages present.
+One post a day at a random time between 12:00 and 18:00 KST (`python3 scripts/pick_publish_time.py <date>`; avoids the previous day's hour). Each post = `posts/<slug>/ko.md` (canonical) + `en.md` + `translations/<lang>.md` (ja zh es pt id ru vi fr de ar hi) — all 13 languages present.
 
 | # | Publish date (KST) | Slug | Topic | Status |
 |---|--------------------|------|-------|--------|
@@ -14,6 +14,22 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 8 | 2026-10-30 | `small-turning-point` | Look for the small turn inside a scene | published (main) |
 | 9 | 2026-10-31 | `name-the-detail` | Write one concrete detail instead of naming the feeling | published (main) |
 | 10 | 2026-11-01 | `start-later` | Cut the warm-up paragraph and start mid-scene | published (main) |
+| 11 | 2026-11-03 | `one-line-they-said` | Keep one line someone said, word for word | published (main) — 2026-11-03 20:07 (9243dc0) |
+| 12 | 2026-11-04 | `read-it-aloud` | Read it aloud once and fix only where you stumble | published (main) |
+| 13 | 2026-11-05 | `let-it-rest` | Leave it overnight, then change just one thing | published (main) |
+| 14 | 2026-11-06 | `stop-mid-sentence` | Stop while you still know the next line, and leave a note | published (main) |
+| 15 | 2026-11-07 | `rough-first-version` | Let the first version be rough and finish it | published (main) |
+| 16 | 2026-11-08 | `write-to-one-reader` | Write to one real reader, not to everyone | published (main) |
+| 17 | 2026-11-09 | `title-last` | Write the title last | published (main) — 2026-11-10 20:00 (late; bot rate limit) |
+| 18 | 2026-11-10 | `start-from-a-place` | Start your story from one place | published (main) — 2026-11-10 20:00 |
+| 19 | 2026-11-11 | `one-sentence-a-day` | Close each day with one sentence: where you were and what shifted | published (main) |
+| 20 | 2026-11-12 | `what-you-didnt-say` | Write the one line you did not say | published (main) |
+| 21 | 2026-11-13 | `pin-the-hour` | Pin one time of day to your scene | queued (draft) |
+| 22 | 2026-11-14 | `one-object-on-the-table` | Let one object in the scene do the talking | queued (draft) |
+| 23 | 2026-11-15 | `one-small-want` | Give the person in your scene one small want | queued (draft) |
+| 24 | 2026-11-16 | `verb-over-adjective` | Swap one adjective for an action | queued (draft) |
+| 25 | 2026-11-17 | `one-small-slip` | Leave one small slip in your scene | queued (draft) |
+| 26 | 2026-11-18 | `the-way-between` | Write the short way between two places | queued (draft) |
 
 Queued dates are placeholders; `publish_post.py` stamps the real date and time. Facts about draft() are limited to what the site states
 (talk ~30 s → 2–3 gentle questions → story hook/rising/peak/reflection/close; privacy; no claims about release or formats).
@@ -26,7 +42,7 @@ python3 scripts/check_queue.py [<slug>]        # all 13 languages, description <
 
 Run it on every new draft before committing it to the queue; fix until it prints OK.
 
-## Publish one post (daily, ~16:00 KST)
+## Publish one post (daily, 12:00–18:00 KST)
 
 ```
 python3 scripts/publish_post.py <slug>          # removes `draft: true`, sets date + `published` = now (KST) in all 13 files

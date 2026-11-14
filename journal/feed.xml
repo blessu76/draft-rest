@@ -7,7 +7,70 @@
     <atom:link href="https://draft.ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Write the one line you didn&#x27;t say</title>
+      <link>https://draft.ipe.rest/journal/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Some moments hold a sentence you never said. Write it down in three steps, with an example and common stumbling blocks.</description>
+    </item>
+    <item>
+      <title>Keep a one-sentence diary and let stories pile up</title>
+      <link>https://draft.ipe.rest/journal/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>No time to write? Close each day with one sentence about where you were and what shifted. Three steps, an example, and common stumbling blocks.</description>
+    </item>
+    <item>
+      <title>Write the title last</title>
+      <link>https://draft.ipe.rest/journal/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Picking a title first can stall a piece. Three steps to find the title after you finish, with an example and common stumbling blocks.</description>
+    </item>
+    <item>
+      <title>Start your story from one place</title>
+      <link>https://draft.ipe.rest/journal/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Not sure what to write about? Start with where it happens. Three steps to open a piece with one small place, with an example and common stumbling blocks.</description>
+    </item>
+    <item>
+      <title>Write to one person, not to everyone</title>
+      <link>https://draft.ipe.rest/journal/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Writing for everyone makes the words go vague. Three steps to pick one reader and write to them, with an example and common stumbling blocks.</description>
+    </item>
+    <item>
+      <title>The first version is allowed to be rough</title>
+      <link>https://draft.ipe.rest/journal/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Trying to write well from the first line stalls your hand. Three steps to finish a rough first version, with an example and common stumbling blocks.</description>
+    </item>
+    <item>
+      <title>Stop while you still know what comes next</title>
+      <link>https://draft.ipe.rest/journal/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Stopping at a dead end makes tomorrow hard. Stop when you know the next line, leave a note, and restarting gets easy. Three steps, with an example.</description>
+    </item>
+    <item>
+      <title>Leave it overnight, then change just one thing</title>
+      <link>https://draft.ipe.rest/journal/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Right after writing, you read what you meant. Three steps to let a piece rest overnight and change only one thing, with an example.</description>
+    </item>
+    <item>
+      <title>Read it aloud once, then fix only where you stumble</title>
+      <link>https://draft.ipe.rest/journal/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>Your eyes forgive what your mouth won&#x27;t. Three steps for reading a short piece aloud, marking where you stumble, and fixing only those spots.</description>
+    </item>
     <item>
       <title>Keep one line someone said, exactly as they said it</title>
       <link>https://draft.ipe.rest/journal/one-line-they-said/</link>

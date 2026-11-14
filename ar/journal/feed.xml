@@ -7,7 +7,70 @@
     <atom:link href="https://draft.ipe.rest/ar/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>أدلة قصيرة لتحويل ما تقوله إلى قصة يحب الناس قراءتها — من الفريق الذي يقف وراء draft().</description>
     <language>ar</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>اكتب الجملة التي لم تقلها</title>
+      <link>https://draft.ipe.rest/ar/journal/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/journal/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>بعض اللحظات تحتفظ بجملة لم تُقَل أبدًا. ثلاث خطوات لكتابتها، مع مثال والعقبات الشائعة.</description>
+    </item>
+    <item>
+      <title>اكتب جملة واحدة كل يوم ودع القصص تتراكم</title>
+      <link>https://draft.ipe.rest/ar/journal/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/journal/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>لا وقت للكتابة؟ اختم كل يوم بجملة واحدة عن المكان الذي كنت فيه وما الذي تغيّر. ثلاث خطوات ومثال وعقبات شائعة.</description>
+    </item>
+    <item>
+      <title>ضع العنوان بعد أن تنتهي من الكتابة</title>
+      <link>https://draft.ipe.rest/ar/journal/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/journal/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>اختيار العنوان أولًا قد يعطّل الكتابة. ثلاث خطوات لإيجاد العنوان بعد الانتهاء، مع مثال والعقبات الشائعة.</description>
+    </item>
+    <item>
+      <title>ابدأ قصتك من مكان واحد</title>
+      <link>https://draft.ipe.rest/ar/journal/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/journal/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>لا تدري عمّ تكتب؟ ابدأ من المكان الذي جرى فيه كل شيء. ثلاث خطوات لافتتاح نص بمكان صغير، مع مثال والعقبات الشائعة.</description>
+    </item>
+    <item>
+      <title>اكتب لشخص واحد، لا للجميع</title>
+      <link>https://draft.ipe.rest/ar/journal/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/journal/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>الكتابة للجميع تجعل الكلمات غامضة. ثلاث خطوات لاختيار قارئ واحد والكتابة له، مع مثال والعقبات الشائعة.</description>
+    </item>
+    <item>
+      <title>لا بأس أن تكون المسوّدة الأولى خشنة</title>
+      <link>https://draft.ipe.rest/ar/journal/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/journal/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>الرغبة في الكتابة الجيدة من السطر الأول توقف اليد. ثلاث خطوات لإنهاء مسوّدة أولى خشنة، مع مثال والعقبات الشائعة.</description>
+    </item>
+    <item>
+      <title>توقّف وأنت ما زلت تعرف ما يأتي بعد ذلك</title>
+      <link>https://draft.ipe.rest/ar/journal/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/journal/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>التوقف عند طريق مسدود يصعّب الغد. توقّف حين تعرف السطر التالي واترك ملاحظة، فيسهل الاستئناف. ثلاث خطوات مع مثال.</description>
+    </item>
+    <item>
+      <title>اتركه ليلة كاملة، ثم غيّر شيئًا واحدًا فقط</title>
+      <link>https://draft.ipe.rest/ar/journal/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/journal/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>بعد الكتابة مباشرة تقرأ ما قصدته. ثلاث خطوات لترك النص يستريح ليلة وتغيير شيء واحد فقط، مع مثال.</description>
+    </item>
+    <item>
+      <title>اقرأه بصوت عالٍ مرة واحدة، ثم أصلح مواضع التعثر فقط</title>
+      <link>https://draft.ipe.rest/ar/journal/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ar/journal/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>العين تتسامح بما لا يتسامح به الفم. ثلاث خطوات لقراءة نص قصير بصوت عالٍ، وتعليم مواضع التعثر، وإصلاحها هي فقط.</description>
+    </item>
     <item>
       <title>احتفظ بجملة واحدة قالها أحدهم، كما قالها تمامًا</title>
       <link>https://draft.ipe.rest/ar/journal/one-line-they-said/</link>

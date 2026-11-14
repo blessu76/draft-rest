@@ -7,7 +7,70 @@
     <atom:link href="https://draft.ipe.rest/id/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Tulis satu kalimat yang tidak sempat Anda ucapkan</title>
+      <link>https://draft.ipe.rest/id/journal/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Ada momen yang menyisakan kalimat yang tak pernah terucap. Tulis dalam tiga langkah, lengkap dengan contoh dan kendala yang umum.</description>
+    </item>
+    <item>
+      <title>Tulis satu kalimat sehari, biarkan cerita menumpuk</title>
+      <link>https://draft.ipe.rest/id/journal/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>Tidak sempat menulis? Tutup setiap hari dengan satu kalimat tentang di mana Anda berada dan apa yang berubah. Tiga langkah, satu contoh, dan hambatan umum.</description>
+    </item>
+    <item>
+      <title>Beri judul setelah selesai menulis</title>
+      <link>https://draft.ipe.rest/id/journal/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Menentukan judul lebih dulu bisa membuat tulisan macet. Tiga langkah menemukan judul setelah selesai, dengan contoh dan jebakan yang umum.</description>
+    </item>
+    <item>
+      <title>Mulai cerita dari satu tempat</title>
+      <link>https://draft.ipe.rest/id/journal/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>Bingung mau menulis apa? Mulailah dari tempat kejadiannya. Tiga langkah membuka tulisan dengan satu tempat kecil, dengan contoh dan jebakan yang umum.</description>
+    </item>
+    <item>
+      <title>Menulislah untuk satu orang, bukan untuk semua orang</title>
+      <link>https://draft.ipe.rest/id/journal/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Menulis untuk semua orang membuat kata-kata jadi kabur. Tiga langkah memilih satu pembaca dan menulis untuknya, lengkap dengan contoh dan kendala umum.</description>
+    </item>
+    <item>
+      <title>Draf pertama boleh kasar</title>
+      <link>https://draft.ipe.rest/id/journal/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Ingin menulis bagus sejak baris pertama justru menghentikan tangan. Tiga langkah menyelesaikan draf pertama yang kasar, dengan contoh dan hambatan umum.</description>
+    </item>
+    <item>
+      <title>Berhentilah selagi kamu masih tahu apa yang berikutnya</title>
+      <link>https://draft.ipe.rest/id/journal/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Berhenti di jalan buntu membuat esok sulit. Berhentilah saat tahu baris berikutnya, tinggalkan catatan, dan memulai lagi jadi mudah. Tiga langkah dan contoh.</description>
+    </item>
+    <item>
+      <title>Diamkan semalam, lalu ubah satu hal saja</title>
+      <link>https://draft.ipe.rest/id/journal/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>Tepat setelah menulis, kamu membaca apa yang kamu maksud. Tiga langkah mendiamkan tulisan semalam dan mengubah satu hal saja, lengkap dengan contoh.</description>
+    </item>
+    <item>
+      <title>Baca keras-keras sekali, perbaiki hanya yang tersandung</title>
+      <link>https://draft.ipe.rest/id/journal/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>Mata memaafkan apa yang tidak dimaafkan mulut. Tiga langkah membaca tulisan pendek keras-keras, menandai yang tersandung, dan memperbaikinya.</description>
+    </item>
     <item>
       <title>Pertahankan satu kalimat ucapan seseorang apa adanya</title>
       <link>https://draft.ipe.rest/id/journal/one-line-they-said/</link>

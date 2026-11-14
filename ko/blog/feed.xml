@@ -7,7 +7,70 @@
     <atom:link href="https://draft.ipe.rest/ko/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:03:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <item>
+      <title>말하지 못한 한 줄을 써 보세요</title>
+      <link>https://draft.ipe.rest/ko/journal/what-you-didnt-say/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/what-you-didnt-say/</guid>
+      <pubDate>Thu, 12 Nov 2026 16:01:00 +0900</pubDate>
+      <description>어떤 순간에는 끝내 하지 못한 말이 남습니다. 그 한 줄을 글로 옮기는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.</description>
+    </item>
+    <item>
+      <title>하루 한 문장 일기로 이야기를 쌓아 보세요</title>
+      <link>https://draft.ipe.rest/ko/journal/one-sentence-a-day/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/one-sentence-a-day/</guid>
+      <pubDate>Wed, 11 Nov 2026 16:49:00 +0900</pubDate>
+      <description>글 쓸 시간이 없다면 하루를 한 문장으로 닫아 보세요. 어디에 있었고 무엇이 달라졌는지만 적는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.</description>
+    </item>
+    <item>
+      <title>제목은 다 쓴 뒤에 붙이세요</title>
+      <link>https://draft.ipe.rest/ko/journal/title-last/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/title-last/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>제목부터 정하면 글이 막힙니다. 다 쓴 뒤 글에서 제목을 건져 내는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.</description>
+    </item>
+    <item>
+      <title>장소 하나에서 이야기를 시작하세요</title>
+      <link>https://draft.ipe.rest/ko/journal/start-from-a-place/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/start-from-a-place/</guid>
+      <pubDate>Tue, 10 Nov 2026 20:00:00 +0900</pubDate>
+      <description>무슨 이야기를 쓸지 막막하다면 장소부터 정해 보세요. 작은 장소 하나로 글을 여는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.</description>
+    </item>
+    <item>
+      <title>모두가 아니라 한 사람에게 쓰세요</title>
+      <link>https://draft.ipe.rest/ko/journal/write-to-one-reader/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/write-to-one-reader/</guid>
+      <pubDate>Sun, 08 Nov 2026 16:01:00 +0900</pubDate>
+      <description>모두를 위해 쓰면 문장이 흐려집니다. 한 사람을 정해 그 사람에게 쓰는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.</description>
+    </item>
+    <item>
+      <title>첫 판은 거칠어도 괜찮습니다</title>
+      <link>https://draft.ipe.rest/ko/journal/rough-first-version/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/rough-first-version/</guid>
+      <pubDate>Sat, 07 Nov 2026 16:01:00 +0900</pubDate>
+      <description>처음부터 잘 쓰려 하면 손이 멈춥니다. 거친 첫 판을 끝까지 쓰는 세 단계와 예시, 흔한 걸림돌을 정리했습니다.</description>
+    </item>
+    <item>
+      <title>다음 줄을 아는 채로 멈추세요</title>
+      <link>https://draft.ipe.rest/ko/journal/stop-mid-sentence/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/stop-mid-sentence/</guid>
+      <pubDate>Fri, 06 Nov 2026 16:01:00 +0900</pubDate>
+      <description>막다른 곳에서 멈추면 내일 시작이 어렵습니다. 다음 줄을 아는 채로 멈추고 메모를 남기는 세 단계와 예시, 걸림돌을 정리했습니다.</description>
+    </item>
+    <item>
+      <title>하룻밤 묵혀 두고, 딱 하나만 고쳐 보세요</title>
+      <link>https://draft.ipe.rest/ko/journal/let-it-rest/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/let-it-rest/</guid>
+      <pubDate>Thu, 05 Nov 2026 16:01:00 +0900</pubDate>
+      <description>다 쓴 직후에는 내가 의도한 것을 읽게 됩니다. 글을 하룻밤 묵혀 두었다가 딱 하나만 고치는 세 단계와 예시, 걸림돌을 정리했습니다.</description>
+    </item>
+    <item>
+      <title>소리 내어 한 번 읽고, 걸리는 곳만 고쳐 보세요</title>
+      <link>https://draft.ipe.rest/ko/journal/read-it-aloud/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/read-it-aloud/</guid>
+      <pubDate>Wed, 04 Nov 2026 16:02:00 +0900</pubDate>
+      <description>눈은 넘어가도 입은 걸립니다. 짧은 글을 소리 내어 읽으며 걸리는 곳에 표시하고, 그 자리만 고치는 세 단계를 정리했습니다.</description>
+    </item>
     <item>
       <title>누군가 한 말 한 줄을 그대로 살려 보세요</title>
       <link>https://draft.ipe.rest/ko/journal/one-line-they-said/</link>
