@@ -4,6 +4,7 @@ description: Viết cho tất cả mọi người khiến câu chữ mơ hồ. B
 date: 2026-11-08
 slug: write-to-one-reader
 published: 2026-11-08T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Khi cố viết cho tất cả mọi người, câu chữ trở nên mơ hồ. Bạn thêm chút giải thích cho người đọc này và chút lịch sự cho người đọc kia, rồi bài viết cuối cùng không thuộc về ai cả. Một bài ngắn đọc hay nhất khi được viết cho một người. Chọn một người đọc không làm bạn mất độc giả; nó cho câu văn của bạn một chỗ để tựa vào.

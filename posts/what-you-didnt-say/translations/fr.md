@@ -4,6 +4,7 @@ description: Certains moments gardent une phrase jamais prononcée. Écrivez-la 
 date: 2026-11-12
 slug: what-you-didnt-say
 published: 2026-11-12T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Vous est-il déjà arrivé de répondre « ça va » en sentant qu'une autre phrase se tenait juste derrière ? Beaucoup de moments qui valent la peine d'être écrits contiennent une ligne comme celle-là : quelque chose que l'on a presque dit, puis avalé. La phrase non dite est souvent la plus sincère de la journée, et elle peut donner son centre à un texte court. Vous n'avez à la dire à personne. Il suffit de l'écrire une fois.

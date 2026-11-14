@@ -4,6 +4,7 @@ description: Terlalu banyak orang membuat cerita kabur. Pilih satu orang, ajukan
 date: 2026-10-28
 slug: one-person-in-focus
 published: 2026-10-28T15:58:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Cerita pendek biasanya kabur karena satu alasan: terlalu banyak orang di dalamnya. "Kami makan malam bersama tim, semua tertawa dan mengobrol" itu benar, tetapi pembaca tidak melihat siapa pun. Pilih satu orang, dan gambarnya langsung jelas.

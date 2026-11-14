@@ -4,6 +4,7 @@ description: Khi bạn muốn khép lại bằng câu "và lúc đó mình nhậ
 slug: ending-without-a-moral
 date: 2026-10-26
 published: 2026-10-26T17:15:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Nhiều câu chuyện hay bị hỏng ở dòng cuối, kiểu như "và mình học được rằng những điều tử tế nhỏ bé quý giá biết bao". Câu ấy đúng, nhưng nó lấy mất phần mà người đọc lẽ ra tự cảm nhận.

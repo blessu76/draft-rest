@@ -13,15 +13,17 @@ import check_sitemap  # noqa: E402
 
 
 class Locales(unittest.TestCase):
-    def test_sixteen_languages_with_en_as_fallback(self):
-        self.assertEqual(len(build_site.CODES), 16)
+    def test_twelve_languages_with_en_as_fallback(self):
+        self.assertEqual(len(build_site.CODES), 12)
         self.assertEqual(build_site.CODES[0], "en")
-        self.assertEqual(set(build_site.CODES), set("en ko ja zh zh-Hant es pt id ru vi fr de ar hi th tr".split()))
+        self.assertEqual(set(build_site.CODES), set("en ko ja zh-Hant es pt-BR fr de id th vi tr".split()))
 
-    def test_ended_languages_are_kept_as_files_but_not_listed(self):
-        self.assertEqual(set(build_site.CODES) - set(build_site.LISTED), {"ru", "ar", "hi", "zh"})
+    def test_ended_languages_are_redirect_stubs_not_listed(self):
+        self.assertEqual(set(build_site.CODES), set(build_site.LISTED))
         self.assertTrue(set(build_site.BLOG_LISTED) <= set(build_site.LISTED))
-        self.assertEqual(set(build_site.NO_PRIVACY), {"zh-Hant", "th", "tr"})
+        self.assertEqual(set(build_site.LEGACY_LANGS), {"pt", "zh", "ar", "hi", "ru"})
+        for c in build_site.LEGACY_LANGS:
+            self.assertNotIn(c, build_site.CODES)
 
     def test_every_language_has_every_english_key(self):
         loc = build_site.load_locales(ROOT)
@@ -45,7 +47,7 @@ class Pages(unittest.TestCase):
     @property
     def home(self):
         return {k: v for k, v in self.files.items()
-                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES + build_site.LEGAL + ("journal",))}
+                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES + build_site.LEGAL + ("journal",) + build_site.LEGACY_LANGS)}
 
     @property
     def indexed_home(self):
@@ -101,78 +103,65 @@ class Pages(unittest.TestCase):
             self.assertIn('<link rel="canonical" href="%s">' % url, text, rel)
             self.assertEqual(len(re.findall(r'rel="alternate" hreflang=', text)), len(build_site.LISTED) + 1, rel)
             self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/"', text, rel)
-            self.assertNotIn("?lang=", text.replace(build_site.LEGACY_REDIRECT, ""), rel)
+            self.assertNotIn("?lang=", text, rel)
             self.assertNotIn("data-i18n", text, rel)
             self.assertNotIn("{{", text, rel)
-            self.assertIn('<html lang="%s"%s>' % (build_site.tag(lang) if lang else "en", ' dir="rtl"' if lang == "ar" else ""), text, rel)
+            self.assertIn('<html lang="%s"%s>' % (build_site.tag(lang) if lang else "en", ""), text, rel)
 
-    def test_only_root_has_legacy_redirect(self):
-        self.assertIn("location.replace", self.files["index.html"])
-        for c in build_site.CODES:
-            if c != "en":
-                self.assertNotIn("location.replace", self.files["%s/index.html" % c])
+    def test_only_root_has_language_detection(self):
+        """Kit v0.7.2: the root carries the redirecting ipe-lang.js (data-redirect); every other page only the select."""
+        self.assertIn("data-redirect", self.files["index.html"])
+        self.assertRegex(self.files["index.html"], r'/assets/ipe-lang\.js\?v=[0-9a-f]+')
+        for rel, text in self.files.items():
+            if not rel.endswith(".html") or rel == "index.html" or 'http-equiv="refresh"' in text:
+                continue
+            self.assertNotIn("data-redirect", text, rel)
 
-    def test_root_language_rule_url_then_saved_then_browser_then_english(self):
-        """REACH_PROCESS language rule at "/": 1 ?lang= -> 2 localStorage draft_lang -> 3 navigator.languages -> 4 English."""
-        js = build_site.LEGACY_REDIRECT
-        self.assertIn("location.replace", self.files["index.html"])
-        self.assertIn("navigator.languages", js)
-        self.assertIn("navigator.language", js)  # single-value fallback
-        self.assertIn("split('-')[0]", js)  # ko-KR -> ko, zh-TW -> zh
-        # order: ?lang= (q.get) before the saved choice (getItem) before the browser list (navigator.languages)
-        self.assertLess(js.index("q.get('lang')"), js.index("getItem('draft_lang')"))
-        self.assertLess(js.index("getItem('draft_lang')"), js.index("navigator.languages"))
-        # only an explicit pick is stored (?lang=); the browser-language redirect never writes
-        self.assertEqual(js.count("setItem"), 1)
-        self.assertLess(js.index("setItem"), js.index("getItem"))
-        # English is a stay, not a redirect (single English body at "/")
-        self.assertIn("if(c!=='en')go(c);return;", js)
-        self.assertIn("if(sv!=='en')go(sv);return;", js)
-        self.assertNotIn("go('en')", js)
-        # the old "view in <language>" hint is gone: the root now decides the language itself
-        self.assertNotIn('id="langhint"', self.files["index.html"])
+    def test_top_language_select_on_every_page(self):
+        for rel, text in self.indexed_home.items():
+            lang = rel.split("/")[0] if "/" in rel else "en"
+            self.assertIn('id="ipe-lang-select"', text, rel)
+            self.assertEqual(len(re.findall(r"<option ", text.split('id="ipe-lang-select"')[1].split("</select>")[0])), 12, rel)
+
+    def test_root_language_rule_saved_then_browser_then_english(self):
+        js = (ROOT / "assets" / "ipe-lang.js").read_text(encoding="utf-8")
+        self.assertIn("ipe_lang", js)
+        self.assertIn("nav.languages", js)
+        self.assertLess(js.index("stored()"), js.index("nav.languages"))
+        self.assertIn("ipe_lang", (ROOT / "assets" / "site.js").read_text(encoding="utf-8"))
+        self.assertNotIn("draft_lang", self.files["index.html"])
         self.assertNotIn("langhint", (ROOT / "assets" / "site.js").read_text(encoding="utf-8"))
 
-    def test_links_to_other_ipe_sites_carry_the_page_language(self):
-        """REACH_PROCESS rule 2: ipe.rest has /<lang>/ homes (not vi) -> path; elsewhere ?lang=xx; English stays plain."""
-        L = build_site.ipe_link
-        self.assertEqual(L("https://ipe.rest", "en"), "https://ipe.rest")
-        self.assertEqual(L("https://ipe.rest", None), "https://ipe.rest")
-        self.assertEqual(L("https://ipe.rest", "ko"), "https://ipe.rest/ko/")
-        self.assertEqual(L("https://ipe.rest/", "fr"), "https://ipe.rest/fr/")
-        self.assertEqual(L("https://ipe.rest", "vi"), "https://ipe.rest/?lang=vi")
-        self.assertEqual(L("https://ipe.rest", "ar"), "https://ipe.rest/ar/")
-        self.assertEqual(L("https://ipe.rest", "hi"), "https://ipe.rest/hi/")
-        self.assertEqual(L("https://play.ipe.rest/", "ja"), "https://play.ipe.rest/?lang=ja")
-        self.assertEqual(L("https://ipe.rest/about/#x", "de"), "https://ipe.rest/about/?lang=de#x")
-        self.assertEqual(L("https://ipe.rest/?a=1", "de"), "https://ipe.rest/?a=1&lang=de")
-        self.assertEqual(L("https://ipe.rest/?lang=ko", "de"), "https://ipe.rest/?lang=ko")
-        for url in ("https://draft.ipe.rest/ko/", "https://example.com/", "https://notipe.rest/", "https://ipe.rest.evil.com/", "/ko/"):
-            self.assertEqual(L(url, "ko"), url)
+    def test_footer_has_terms_link_but_nav_does_not(self):
         for c in build_site.CODES:
-            # the "Maker" link of every generated page points at ipe.rest in that page's language
-            want = build_site.ipe_link("https://ipe.rest", c)
-            for rel in (build_site.page_path(c, "about").strip("/") + "/index.html",):
-                self.assertIn('href="%s"' % want, self.files[rel], rel)
-        self.assertIn('href="https://ipe.rest/ko/"', self.files["ko/about/index.html"])
-        self.assertIn('href="https://ipe.rest"', self.files["about/index.html"])
-        self.assertIn('href="https://ipe.rest/?lang=vi"', self.files["vi/about/index.html"])
+            rel = "index.html" if c == "en" else "%s/index.html" % c
+            text = self.files[rel]
+            url = build_site.legal_url(c, "terms")
+            foot = text[text.index("<footer"):]
+            self.assertIn('href="%s"' % url, foot, rel)
+            self.assertNotIn(url, text[:text.index("<footer")], rel)
 
-    def test_language_rule_script_only_on_root(self):
-        """Language pages, content pages, posts and the 404 carry their language in the URL: no redirect script there."""
-        for rel, text in self.files.items():
-            if not rel.endswith(".html") or rel == "index.html":
-                continue
-            if rel == "en/index.html":  # stub: stores en, then forwards to /
-                continue
-            self.assertNotIn("navigator.languages", text, rel)
-            self.assertNotIn("location.replace", text, rel)
+    def test_journal_nav_label_in_every_language(self):
+        loc = build_site.load_locales(ROOT)
+        for c in build_site.CODES:
+            self.assertTrue(loc[c]["nav_journal"], c)
+            self.assertNotIn("blog_title_old", loc[c])
+        self.assertEqual(loc["en"]["nav_journal"], "Journal")
 
-    def test_legacy_redirect_covers_all_languages(self):
-        for c in build_site.LISTED:
-            self.assertIn('"%s": "%s"' % (c.lower(), c), build_site.LEGACY_REDIRECT, c)
-        for c in ("ar", "hi", "ru", "zh"):
-            self.assertNotIn('"%s": ' % c, build_site.LEGACY_REDIRECT, c)
+    def test_old_blog_urls_are_noindex_meta_refresh_stubs(self):
+        t = self.files["en/blog/index.html"]
+        self.assertIn('http-equiv="refresh"', t)
+        self.assertIn('rel="canonical"', t)
+        self.assertIn("noindex,follow", t)
+        self.assertIn("/journal/", t)
+        self.assertIn("journal/index.html", self.files)
+
+    def test_ended_language_stubs_point_to_the_new_language(self):
+        for old, new in (("pt", "pt-BR"), ("zh", "zh-Hant"), ("ar", "en"), ("hi", "en"), ("ru", "en")):
+            t = self.files["%s/index.html" % old]
+            self.assertIn('http-equiv="refresh"', t, old)
+            self.assertIn("noindex", t, old)
+            self.assertNotIn("<loc>%s</loc>" % build_site.page_url(old), self.files["sitemap.xml"])
 
     def test_language_page_uses_its_own_strings(self):
         loc = build_site.load_locales(ROOT)
@@ -205,65 +194,46 @@ class Pages(unittest.TestCase):
         self.assertNotIn("One post per day", self.files["llms.txt"])
 
 
-class ArabicHindi(unittest.TestCase):
-    """ar (right-to-left) and hi (Devanagari) are first-class languages: pages, hreflang, selector, fonts, RTL rules."""
+class EndedLanguages(unittest.TestCase):
+    """ar/hi/ru end support (redirect to en), pt -> pt-BR, zh -> zh-Hant; th and tr are new full languages."""
 
     @classmethod
     def setUpClass(cls):
         cls.files = build_site.build(ROOT)
 
-    def test_only_arabic_is_rtl(self):
-        self.assertEqual(build_site.RTL, ("ar",))
+    def test_no_rtl_and_no_dir_attribute(self):
+        self.assertEqual(build_site.RTL, ())
         for rel, text in self.files.items():
-            if not rel.endswith(".html"):
-                continue
-            m = re.search(r"<html lang=\"([a-z]+)\"( dir=\"rtl\")?>", text)
-            if m is None:
-                continue
-            self.assertEqual(m.group(2) is not None, m.group(1) == "ar", rel)
+            if rel.endswith(".html"):
+                self.assertNotIn(' dir="rtl"', text, rel)
 
-    def test_pages_exist_for_both_languages_in_every_section(self):
-        for c in ("ar", "hi"):
-            for rel in ("%s/index.html" % c, "%s/about/index.html" % c, "%s/privacy/index.html" % c,
+    def test_new_languages_have_every_section(self):
+        for c in ("th", "tr", "zh-Hant", "pt-BR"):
+            for rel in ("%s/index.html" % c, "%s/about/index.html" % c, "%s/privacy/index.html" % c, "%s/terms/index.html" % c,
                         "%s/index.html" % build_site.journal_rel(c), "%s/feed.xml" % build_site.journal_rel(c)):
                 self.assertIn(rel, self.files, rel)
-        self.assertIn('<html lang="ar" dir="rtl">', self.files["ar/index.html"])
-        self.assertIn('<html lang="hi">', self.files["hi/index.html"])
+        self.assertIn('<html lang="th">', self.files["th/index.html"])
+        self.assertIn('<html lang="zh-Hant">', self.files["zh-Hant/index.html"])
 
-    def test_ended_languages_are_kept_but_not_listed(self):
+    def test_ended_languages_are_not_listed_anywhere(self):
         home = self.files["index.html"]
-        for c, locale in (("ar", "ar_AR"), ("hi", "hi_IN")):
-            self.assertNotIn('hreflang="%s" href="%s"' % (c, build_site.page_url(c)), home)
-            self.assertNotIn('<option value="%s">' % c, home)
-            self.assertNotIn('content="%s"' % locale, self.files["fr/index.html"])
-            self.assertNotIn("<loc>%s</loc>" % build_site.page_url(c), self.files["sitemap.xml"])
+        for c in build_site.LEGACY_LANGS:
+            self.assertNotIn('hreflang="%s"' % c, home)
+            self.assertNotIn('<option value="%s"' % c, home)
+            self.assertNotIn("/%s/" % c, self.files["sitemap.xml"])
             self.assertNotIn("(%s)" % build_site.page_url(c), self.files["llms.txt"])
 
-    def test_noto_fonts_only_on_the_pages_that_need_them(self):
-        self.assertIn("Noto+Sans+Arabic", self.files["ar/index.html"])
-        self.assertNotIn("Noto+Sans+Devanagari", self.files["ar/index.html"])
-        self.assertIn("Noto+Sans+Devanagari", self.files["hi/index.html"])
-        self.assertNotIn("Noto+Sans", self.files["de/index.html"])
-        css = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")
-        self.assertIn("'Noto Sans Arabic'", css)
-        self.assertIn("'Noto Sans Devanagari'", css)
+    def test_sitemap_has_no_leaks_per_kit(self):
+        import sys as _s
+        _s.path.insert(0, str(ROOT / "vendor"))
+        from ipe_web_kit import redirects
+        self.assertEqual(list(redirects.sitemap_leaks(self.files["sitemap.xml"])), [])
 
-    def test_css_has_rtl_rules_and_keeps_code_ltr(self):
-        css = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")
-        self.assertIn("[dir=rtl] .langsel", css)
-        self.assertIn("[dir=rtl] .copy-btn", css)
-        self.assertRegex(css, r"\[dir=rtl\] pre,[^{]*\{direction:ltr")
-        self.assertRegex(css, r"\[dir=rtl\] \.wordmark,[^{]*\[dir=rtl\] \.toplink a:first-child[^{]*\{direction:ltr")  # draft() must not flip to ()draft
-
-    def test_language_rule_script_does_not_send_ended_languages_anywhere(self):
-        self.assertNotIn('"ar": ', build_site.LEGACY_REDIRECT)
-        self.assertNotIn('"hi": ', build_site.LEGACY_REDIRECT)
-
-    def test_blog_posts_in_both_languages(self):
+    def test_every_post_in_every_language(self):
         posts, errors = build_site.load_posts(ROOT)
         self.assertEqual(errors, [])
         for p in posts:
-            for c in ("ar", "hi"):
+            for c in build_site.CODES:
                 self.assertIn(c, p["langs"], p["slug"])
                 self.assertIn("%s/%s/index.html" % (build_site.journal_rel(c), p["slug"]), self.files)
 
@@ -306,7 +276,7 @@ class InternalLinks(unittest.TestCase):
         self.assertIn('href="/journal/"', root)
 
 
-POST_FM = "---\ntitle: %s\ndescription: d %s\ndate: 2026-10-01\nslug: %s\n%s---\n\n%s\n"
+POST_FM = "---\ntitle: %s\ndescription: d %s\ndate: 2026-10-01\ncopy_review: legacy-2026-11-14\nslug: %s\n%s---\n\n%s\n"
 
 
 def write_post(root, slug, langs=None, body=None, extra="", slug_in_file=None):
@@ -486,9 +456,9 @@ class PublishedTime(unittest.TestCase):
         self.assertIn('"datePublished": "2026-10-23T17:30:00+09:00"', post)
 
 
-PAGER_LABEL = {"en": "Page", "ko": "페이지", "ja": "ページ", "zh": "分页", "es": "Página", "pt": "Página",
-               "id": "Halaman", "ru": "Страница", "vi": "Trang", "fr": "Page", "de": "Seite", "ar": "الصفحة", "hi": "पृष्ठ"}
-PAGE_WORD = dict(PAGER_LABEL, zh="页")  # title/description word; only zh differs from the aria-label
+PAGER_LABEL = {"en": "Page", "ko": "페이지", "ja": "ページ", "zh-Hant": "頁", "es": "Página", "pt-BR": "Página",
+               "id": "Halaman", "th": "หน้า", "vi": "Trang", "fr": "Page", "de": "Seite", "tr": "Sayfa"}
+PAGE_WORD = dict(PAGER_LABEL, **{"zh-Hant": "第"})  # unused by the title check below; zh-Hant writes "第 2 頁"
 
 
 class NumberingAndPaging(unittest.TestCase):
@@ -544,14 +514,15 @@ class NumberingAndPaging(unittest.TestCase):
             url = "https://draft.ipe.rest%spage/2/" % build_site.journal_path(c)
             self.assertIn('<link rel="canonical" href="%s">' % url, html)
             title = re.search(r"<title>(.*?)</title>", html).group(1)
-            word = PAGE_WORD[c]
-            self.assertTrue(title.endswith(" · %s 2" % word), title)
+            word = PAGER_LABEL[c]
+            suffix = " · " + loc[c]["blog_page"].format(n=2)
+            self.assertTrue(title.endswith(suffix), title)
             desc = re.search(r'<meta name="description" content="(.*?)">', html).group(1)
-            self.assertTrue(desc.endswith(" · %s 2" % word), desc)
+            self.assertTrue(desc.endswith(suffix), desc)
             self.assertIn('<a class="pg-step" rel="prev" href="%s">' % build_site.journal_path(c), html)
             self.assertNotIn('rel="next"', html)
             self.assertIn('<span class="pg-num" aria-current="page">2</span>', html)
-            self.assertIn('<a class="pg-num" href="%s" aria-label="%s 1">1</a>' % (build_site.journal_path(c), word), html)
+            self.assertIn('<a class="pg-num" href="%s" aria-label="%s">1</a>' % (build_site.journal_path(c), loc[c]["blog_page"].format(n=1)), html)
             for o in build_site.BLOG_LISTED:
                 self.assertIn('hreflang="%s" href="https://draft.ipe.rest%spage/2/"' % (build_site.tag(o), build_site.journal_path(o)), html)
             self.assertIn('hreflang="x-default" href="https://draft.ipe.rest/journal/page/2/"', html)
@@ -946,7 +917,8 @@ class JsonLd(unittest.TestCase):
         self.assertEqual(build_site.word_count("<p>One two  three</p><p>four</p>", "en"), 4)
         self.assertEqual(build_site.word_count("<p>첫 줄이 이야기를 살립니다</p>", "ko"), 4)  # space-delimited: words
         self.assertEqual(build_site.word_count("<p>最初の、ひと文。 A1</p>", "ja"), 8)  # characters; spaces and punctuation excluded
-        self.assertEqual(build_site.word_count("<p>第一句，很重要。</p>", "zh"), 6)
+        self.assertEqual(build_site.word_count("<p>第一句，很重要。</p>", "zh-Hant"), 6)
+        self.assertEqual(build_site.word_count("<p>วันนี้ ฝนตก</p>", "th"), 7)  # th: letters/digits only (combining marks and spaces excluded)
         self.assertEqual(build_site.word_count("<p>a &amp; b</p>", "en"), 3)
 
     def test_post_has_wordcount_keywords_section_about_per_language(self):
@@ -1068,7 +1040,8 @@ class SeoFixes(unittest.TestCase):
             home = self.files["index.html" if c == "en" else "%s/index.html" % c]
             self.assertIn('href="%s"' % build_site.legal_url(c, "privacy"), home, c)
         self.assertEqual(build_site.legal_url("ko", "privacy"), "https://ipe.rest/ko/legal/privacy/")
-        self.assertEqual(build_site.legal_url("ja", "terms"), "https://ipe.rest/en/legal/terms/")
+        self.assertEqual(build_site.legal_url("ja", "terms"), "https://ipe.rest/ja/legal/terms/")
+        self.assertEqual(build_site.legal_url("zh-Hant", "terms"), "https://ipe.rest/zh-Hant/legal/terms/")
         self.assertNotIn("/privacy/", self.files["sitemap.xml"])
         self.assertNotIn("/terms/", self.files["sitemap.xml"])
 
@@ -1090,7 +1063,7 @@ class SeoFixes(unittest.TestCase):
     def test_content_pages_say_nothing_about_price_or_free(self):
         for c in build_site.BLOG_CODES:
             d = build_site.load_content(ROOT)[c]
-            text = json.dumps({k: d[k] for k in ("about", "privacy")}, ensure_ascii=False)
+            text = json.dumps({k: d[k] for k in ("about",) + (("privacy",) if "privacy" in d else ())}, ensure_ascii=False)
             self.assertNotRegex(text, r"[$€¥]|USD|\d+[.,]\d{2}\s", c)
             self.assertNotRegex(text.lower(), FREE_WORDS, c)
 
@@ -1119,12 +1092,12 @@ class SeoFixes(unittest.TestCase):
             self.assertLessEqual(len(t), 60, c)
             self.assertGreater(len(t), 20, c)
             seen.add(t)
-        self.assertEqual(len(seen), 13)
+        self.assertEqual(len(seen), 12)
 
     def test_home_description_lengths(self):
         for c in build_site.BLOG_CODES:
             d = self.loc[c]["meta_desc_short"]
-            self.assertLessEqual(len(d), 100 if c in ("ko", "ja", "zh") else 160, c)
+            self.assertLessEqual(len(d), 100 if c in ("ko", "ja", "zh-Hant") else 160, c)
             home = self.files["index.html" if c == "en" else "%s/index.html" % c]
             self.assertIn('<meta name="description" content="%s">' % build_site.esc(d), home)
 
@@ -1135,7 +1108,7 @@ class SeoFixes(unittest.TestCase):
 
     def test_touch_icon_and_favicon(self):
         for rel, t in self.pages().items():
-            if rel == "en/index.html":  # redirect stub, no <head> furniture
+            if 'http-equiv="refresh"' in t:  # redirect stub, no <head> furniture
                 continue
             self.assertIn('<link rel="apple-touch-icon" href="/apple-touch-icon.png">', t, rel)
         png = (ROOT / "apple-touch-icon.png").read_bytes()

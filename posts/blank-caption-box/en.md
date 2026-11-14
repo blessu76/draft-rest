@@ -4,6 +4,7 @@ description: You had a whole day, but the caption box gives you nothing. Here's 
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box
+copy_review: legacy-2026-11-14
 ---
 
 You had a whole day full of things worth telling, and now you're staring at a blinking cursor in the caption box. The words aren't missing because you're a bad writer. You started at the hardest part: the blank page.

@@ -5,6 +5,7 @@ date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00
 updated: 2026-10-30T16:32:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Has someone asked "How was your day?" and all you could say was "fine"? Try to explain a whole day and you won't know where to start. A story doesn't begin with a day. It begins with one scene.

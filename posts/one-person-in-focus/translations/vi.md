@@ -4,6 +4,7 @@ description: Nhiều người quá thì câu chuyện nhòe đi. Hãy chọn m�
 date: 2026-10-28
 slug: one-person-in-focus
 published: 2026-10-28T15:58:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Câu chuyện ngắn thường nhòe đi vì một lý do: có quá nhiều người trong đó. "Cả nhóm đi ăn tối, ai cũng cười nói vui vẻ" là thật, nhưng người đọc không thấy ai cả. Chỉ cần chọn một người, bức tranh sẽ rõ nét.

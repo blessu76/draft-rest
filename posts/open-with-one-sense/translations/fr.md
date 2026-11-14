@@ -5,6 +5,7 @@ date: 2026-10-29
 slug: open-with-one-sense
 published: 2026-10-29T16:12:00+09:00
 updated: 2026-10-30T16:30:35+09:00
+copy_review: legacy-2026-11-14
 ---
 
 La plupart des scènes commencent par ce que l'on a vu. « C'était un soir de pluie et j'étais assis dans un café. » C'est l'ouverture la plus facile, et souvent la plus plate. Ouvrez la même scène avec un seul son, une odeur ou un toucher, et le lecteur y est en une phrase.

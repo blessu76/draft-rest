@@ -4,6 +4,7 @@ description: Tóm tắt làm mất giọng nói, còn một câu nguyên văn th
 date: 2026-11-03
 slug: one-line-they-said
 published: 2026-11-03T20:03:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Hãy so "mẹ nói mẹ đã lo" với câu mẹ thật sự đã nói, bạn sẽ thấy ngay câu nào mang giọng của mẹ. Khi tóm tắt lời ai đó, nội dung còn lại nhưng giọng nói mất đi. Giữ nguyên một câu đáng nhớ đúng như đã nói, người ấy sẽ đứng ngay trong khung cảnh.

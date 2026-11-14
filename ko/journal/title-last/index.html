@@ -15,12 +15,15 @@
 <link rel="alternate" hreflang="en" href="https://draft.ipe.rest/journal/title-last/">
 <link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/journal/title-last/">
 <link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/journal/title-last/">
+<link rel="alternate" hreflang="zh-Hant" href="https://draft.ipe.rest/zh-Hant/journal/title-last/">
 <link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/journal/title-last/">
-<link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/journal/title-last/">
-<link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/journal/title-last/">
-<link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/journal/title-last/">
+<link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt-BR/journal/title-last/">
 <link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/journal/title-last/">
 <link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/journal/title-last/">
+<link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/journal/title-last/">
+<link rel="alternate" hreflang="th" href="https://draft.ipe.rest/th/journal/title-last/">
+<link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/journal/title-last/">
+<link rel="alternate" hreflang="tr" href="https://draft.ipe.rest/tr/journal/title-last/">
 <link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/journal/title-last/">
 <link rel="alternate" type="application/rss+xml" title="draft() Journal" href="https://draft.ipe.rest/ko/journal/feed.xml">
 <meta property="og:type" content="article">
@@ -140,8 +143,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/ipe-kit.css?v=0.1.0-56024b02">
-<link rel="stylesheet" href="/assets/site.css?v=2240f4b1">
+<link rel="stylesheet" href="/assets/ipe-kit.css?v=0.2.0-17090b32">
+<link rel="stylesheet" href="/assets/site.css?v=30b76882">
 <noscript><style>.reveal{opacity:1;transform:none}.demo-raw{display:none}.demo-clean{display:block}</style></noscript>
 <!-- Cloudflare Web Analytics (cookieless, no PII) -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d4506883dbd42d4b65644a4e72f05da"}'></script>
@@ -150,23 +153,7 @@
 <body>
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
 <nav class="toplink" aria-label="draft()"><a href="/ko/">draft()</a><span aria-hidden="true">/</span><a href="/ko/journal/" aria-current="page">저널</a></nav>
-<label class="langsel" aria-label="Language">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
-  <select id="lang" aria-label="Language" data-path="journal/title-last/" data-en="/journal/title-last/" data-blog="en,ko,ja,zh,es,pt,id,ru,vi,fr,de,ar,hi">
-    <option value="en">English</option>
-    <option value="ko" selected>한국어</option>
-    <option value="ja">日本語</option>
-    <option value="zh-Hant">繁體中文</option>
-    <option value="es">Español</option>
-    <option value="pt">Português</option>
-    <option value="fr">Français</option>
-    <option value="de">Deutsch</option>
-    <option value="id">Bahasa Indonesia</option>
-    <option value="th">ไทย</option>
-    <option value="vi">Tiếng Việt</option>
-    <option value="tr">Türkçe</option>
-  </select>
-</label>
+<div class="ipe-lang"><label class="ipe-lang__label" for="ipe-lang-select">언어</label><select class="ipe-lang__select" id="ipe-lang-select" aria-label="언어" onchange="var o=this.options[this.selectedIndex];try{localStorage.setItem(&#x27;ipe_lang&#x27;,o.lang)}catch(e){}if(o.value)location.href=o.value"><option value="/journal/title-last/" lang="en">English</option><option value="/ko/journal/title-last/" lang="ko" selected>한국어</option><option value="/ja/journal/title-last/" lang="ja">日本語</option><option value="/zh-Hant/journal/title-last/" lang="zh-Hant">繁體中文</option><option value="/es/journal/title-last/" lang="es">Español</option><option value="/pt-BR/journal/title-last/" lang="pt-BR">Português (Brasil)</option><option value="/fr/journal/title-last/" lang="fr">Français</option><option value="/de/journal/title-last/" lang="de">Deutsch</option><option value="/id/journal/title-last/" lang="id">Bahasa Indonesia</option><option value="/th/journal/title-last/" lang="th">ไทย</option><option value="/vi/journal/title-last/" lang="vi">Tiếng Việt</option><option value="/tr/journal/title-last/" lang="tr">Türkçe</option></select><noscript><nav class="ipe-lang__links" aria-label="언어"><a href="/journal/title-last/" hreflang="en">English</a><a href="/ko/journal/title-last/" hreflang="ko" aria-current="page">한국어</a><a href="/ja/journal/title-last/" hreflang="ja">日本語</a><a href="/zh-Hant/journal/title-last/" hreflang="zh-Hant">繁體中文</a><a href="/es/journal/title-last/" hreflang="es">Español</a><a href="/pt-BR/journal/title-last/" hreflang="pt-BR">Português (Brasil)</a><a href="/fr/journal/title-last/" hreflang="fr">Français</a><a href="/de/journal/title-last/" hreflang="de">Deutsch</a><a href="/id/journal/title-last/" hreflang="id">Bahasa Indonesia</a><a href="/th/journal/title-last/" hreflang="th">ไทย</a><a href="/vi/journal/title-last/" hreflang="vi">Tiếng Việt</a><a href="/tr/journal/title-last/" hreflang="tr">Türkçe</a></nav></noscript></div>
 <main id="main" class="post-wrap">
   <article class="post">
     <p class="comment">// <span class="j-no">No. 18</span> · <time datetime="2026-11-10T20:00+09:00" data-ipe-time title="2026-11-10 20:00 KST">2026-11-10 20:00 KST</time></p>
@@ -211,7 +198,7 @@
     </section>
     <nav class="post-foot" aria-label="Blog">
       <a href="/ko/journal/">&larr; 모든 글</a>
-      <p class="post-langs"><span class="comment">다른 언어로 읽기</span><br><a href="https://draft.ipe.rest/journal/title-last/" hreflang="en" lang="en">English</a> · <a href="https://draft.ipe.rest/ja/journal/title-last/" hreflang="ja" lang="ja">日本語</a> · <a href="https://draft.ipe.rest/es/journal/title-last/" hreflang="es" lang="es">Español</a> · <a href="https://draft.ipe.rest/pt/journal/title-last/" hreflang="pt-BR" lang="pt-BR">Português</a> · <a href="https://draft.ipe.rest/id/journal/title-last/" hreflang="id" lang="id">Bahasa Indonesia</a> · <a href="https://draft.ipe.rest/vi/journal/title-last/" hreflang="vi" lang="vi">Tiếng Việt</a> · <a href="https://draft.ipe.rest/fr/journal/title-last/" hreflang="fr" lang="fr">Français</a> · <a href="https://draft.ipe.rest/de/journal/title-last/" hreflang="de" lang="de">Deutsch</a></p>
+      <p class="post-langs"><span class="comment">다른 언어로 읽기</span><br><a href="https://draft.ipe.rest/journal/title-last/" hreflang="en" lang="en">English</a> · <a href="https://draft.ipe.rest/ja/journal/title-last/" hreflang="ja" lang="ja">日本語</a> · <a href="https://draft.ipe.rest/zh-Hant/journal/title-last/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a> · <a href="https://draft.ipe.rest/es/journal/title-last/" hreflang="es" lang="es">Español</a> · <a href="https://draft.ipe.rest/pt-BR/journal/title-last/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a> · <a href="https://draft.ipe.rest/fr/journal/title-last/" hreflang="fr" lang="fr">Français</a> · <a href="https://draft.ipe.rest/de/journal/title-last/" hreflang="de" lang="de">Deutsch</a> · <a href="https://draft.ipe.rest/id/journal/title-last/" hreflang="id" lang="id">Bahasa Indonesia</a> · <a href="https://draft.ipe.rest/th/journal/title-last/" hreflang="th" lang="th">ไทย</a> · <a href="https://draft.ipe.rest/vi/journal/title-last/" hreflang="vi" lang="vi">Tiếng Việt</a> · <a href="https://draft.ipe.rest/tr/journal/title-last/" hreflang="tr" lang="tr">Türkçe</a></p>
     </nav>
   </article>
 </main>
@@ -223,26 +210,27 @@
       <a href="/ko/journal/">저널</a>
       <a href="/ko/about/">소개</a>
       <a href="https://ipe.rest/ko/legal/privacy/">개인정보</a>
+      <a href="https://ipe.rest/ko/legal/terms/">이용약관</a>
     </nav>
     <p class="ipe-studio" dir="ltr"><span class="ipe-studio__org"><a href="https://ipe.rest/">an ipe studio app</a></span></p>
     <nav class="foot-langs" aria-label="Languages">
       <a href="/journal/title-last/" hreflang="en" lang="en">English</a>
       <a href="/ko/journal/title-last/" hreflang="ko" lang="ko" aria-current="page">한국어</a>
       <a href="/ja/journal/title-last/" hreflang="ja" lang="ja">日本語</a>
-      <a href="/zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+      <a href="/zh-Hant/journal/title-last/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
       <a href="/es/journal/title-last/" hreflang="es" lang="es">Español</a>
-      <a href="/pt/journal/title-last/" hreflang="pt-BR" lang="pt-BR">Português</a>
+      <a href="/pt-BR/journal/title-last/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
       <a href="/fr/journal/title-last/" hreflang="fr" lang="fr">Français</a>
       <a href="/de/journal/title-last/" hreflang="de" lang="de">Deutsch</a>
       <a href="/id/journal/title-last/" hreflang="id" lang="id">Bahasa Indonesia</a>
-      <a href="/th/" hreflang="th" lang="th">ไทย</a>
+      <a href="/th/journal/title-last/" hreflang="th" lang="th">ไทย</a>
       <a href="/vi/journal/title-last/" hreflang="vi" lang="vi">Tiếng Việt</a>
-      <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+      <a href="/tr/journal/title-last/" hreflang="tr" lang="tr">Türkçe</a>
     </nav>
   </div>
 </footer>
 
-<script src="/assets/site.js?v=2240f4b1" defer></script>
+<script src="/assets/site.js?v=30b76882" defer></script>
 <script>/* ipe-localtime v2 · 정본 ipe-rest/shared/ipe-localtime.js · 사본은 바이트 그대로 */
 /* time[data-ipe-time] 의 datetime(+09:00)을 보는 기기 시간대로 바꿔 보인다. 실패하면 정적 KST 글자를 그대로 둔다. */
 /* v2: 오프셋 없는/잘못된 datetime 은 건너뜀 · 그레고리력·라틴 숫자 고정 */

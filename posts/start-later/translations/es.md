@@ -4,6 +4,7 @@ description: En vez de abrir con el tiempo y la hora, empieza donde ya está pas
 date: 2026-11-01
 slug: start-later
 published: 2026-11-01T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Casi todos calentamos al empezar a escribir: a qué hora nos levantamos, qué tiempo hacía, adónde fuimos, todo por orden. A quien escribe le hace falta ese tiempo, pero para quien lee es tiempo de espera hasta que empiece la historia. Si quitas ese párrafo de calentamiento y empiezas en mitad de la escena, el texto se aligera de inmediato.

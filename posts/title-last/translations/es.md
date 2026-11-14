@@ -4,6 +4,7 @@ description: Elegir el título primero puede bloquear un texto. Tres pasos para 
 date: 2026-11-10
 slug: title-last
 published: 2026-11-10T20:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 ¿Alguna vez te has quedado mucho rato frente a la casilla del título? Ponerle nombre a un texto que aún no has escrito es difícil, y es normal. Un título necesita que sepas en qué se convirtió el texto. En un texto corto, suele ser más fácil escribir el título al final. Escribe primero y deja que el texto terminado te diga cómo se llama.

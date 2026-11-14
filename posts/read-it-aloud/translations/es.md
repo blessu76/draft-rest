@@ -4,6 +4,7 @@ description: Los ojos perdonan lo que la boca no. Tres pasos para leer un texto 
 date: 2026-11-04
 slug: read-it-aloud
 published: 2026-11-04T16:02:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Cuando escribes unas líneas y las lees en silencio, casi siempre parecen estar bien. Léelas en voz alta y, en algún punto, te quedas sin aire, oyes la misma palabra dos veces o te sorprendes saltándote una sin querer. Los ojos perdonan; la boca no. Leer en voz alta una vez es la edición más ligera que existe: no hay reglas nuevas que aprender, solo tu oído.

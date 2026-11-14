@@ -4,6 +4,7 @@ description: Die Augen verzeihen, was der Mund nicht verzeiht. Drei Schritte, ei
 date: 2026-11-04
 slug: read-it-aloud
 published: 2026-11-04T16:02:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Wenn du ein paar Zeilen schreibst und sie still liest, wirken sie meistens in Ordnung. Lies dieselben Zeilen laut, und irgendwo geht dir die Luft aus, du hörst dasselbe Wort zweimal oder bemerkst, dass du ungewollt ein Wort übersprungen hast. Die Augen verzeihen, der Mund nicht. Einmal laut zu lesen ist die leichteste Überarbeitung, die es gibt: keine neuen Regeln, nur dein Gehör.

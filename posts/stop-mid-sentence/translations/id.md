@@ -4,6 +4,7 @@ description: Berhenti di jalan buntu membuat esok sulit. Berhentilah saat tahu b
 date: 2026-11-06
 slug: stop-mid-sentence
 published: 2026-11-06T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Orang sering bilang bagian tersulit dari menulis adalah memulai, tetapi sesulit apa memulai itu bergantung pada di mana kamu berhenti kemarin. Tulisan yang kamu tutup saat buntu, tanpa ada lagi yang bisa dikatakan, terasa seperti layar kosong ketika dibuka kembali. Tulisan yang kamu tinggalkan selagi masih tahu apa yang berikutnya langsung bisa dilanjutkan begitu dibuka. Berhenti sedikit lebih awal dengan sengaja bukan kemalasan; itu hadiah kecil untuk dirimu esok hari.

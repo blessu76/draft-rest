@@ -4,6 +4,7 @@ description: Statt „ich war traurig" schreib auf, was du gesehen hast. Das Gef
 date: 2026-10-31
 slug: name-the-detail
 published: 2026-10-31T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Wörter wie „glücklich", „traurig" oder „einsam" lassen sich leicht schreiben. Aber die Leserin sieht dabei keine Szene vor sich. Ersetz den Namen des Gefühls durch ein konkretes Detail, und sie fühlt es, ohne dass du es erklärst.

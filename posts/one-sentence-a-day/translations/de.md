@@ -4,6 +4,7 @@ description: Keine Zeit zum Schreiben? Beenden Sie jeden Tag mit einem Satz: wo 
 date: 2026-11-11
 slug: one-sentence-a-day
 published: 2026-11-11T16:49:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Haben Sie das Gefühl, keine Zeit für Geschichten zu haben? Versuchen Sie, jeden Tag mit einem einzigen Satz abzuschließen. Ein Satz dauert weniger als eine Minute, doch nach einigen Wochen liegt ein kleiner Stapel echter Momente vor Ihnen, und jeder davon kann zur Geschichte werden, wenn die Zeit dafür gekommen ist.

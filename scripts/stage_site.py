@@ -4,7 +4,7 @@
     python3 scripts/stage_site.py [--root DIR] [--out DIR]
 
 Whitelist: root files (index.html, 404.html, CNAME, .nojekyll, robots.txt, sitemap.xml, llms.txt, og-image.png,
-the IndexNow key file <32 hex>.txt), assets/, the language folders (en ko ja zh es pt id ru vi fr de) and the English content-page folders (about) and the legal forwarding folders (privacy terms).
+the IndexNow key file <32 hex>.txt), assets/, the language folders (en ko ja zh-Hant es pt-BR id th tr vi fr de) and the English content-page folders (about) and the legal forwarding folders (privacy terms).
 Everything else (scripts/ tests/ posts/ locales/ src/ .github/ manuscripts, STATUS.md, ...) stays out.
 Standard library only.
 """

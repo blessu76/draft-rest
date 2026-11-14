@@ -2,9 +2,9 @@
 """Build draft.ipe.rest — no dependencies (Python 3.8+ stdlib only).
 
 Reads   src/home_body.html          home page body template ({{key}} = locale string, {{key|attr}} = for attributes)
-        locales/<lang>.json         per-language strings (13 languages, en is the fallback)
+        locales/<lang>.json         per-language strings (12 languages, en is the fallback)
 Writes  index.html                  the English page; also x-default and hreflang "en" (single English body)
-        <lang>/index.html           one static page per other language (ko ja zh es pt id ru vi fr de ar hi)
+        <lang>/index.html           one static page per other language (en ko ja zh-Hant es pt-BR fr de id th vi tr)
         about/                      English content page (root-level); <lang>/about/ for the others — texts in content/<lang>.json
         privacy/ terms/             forwarding pages -> ipe.rest/{ko,en}/legal/… (root and every language; noindex, not in the sitemap)
         en/index.html               redirect stub -> / (noindex, canonical /; not in the sitemap)
@@ -34,6 +34,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "vendor"))
 from ipe_web_kit import languages as kit_lang  # noqa: E402  language list, ended languages, tags, names (same pinned kit)
+from ipe_web_kit import langswitch as kit_langswitch  # noqa: E402  top language select + browser-language detection (ipe-lang.js)
+from ipe_web_kit import redirects as kit_redirects  # noqa: E402  ended-language redirect stubs (pt zh ar hi ru)
 from ipe_web_kit import ui as kit_ui  # noqa: E402  web kit (vendor/ipe_web_kit, pinned tag) — footer studio line + its CSS
 
 SITE = "https://draft.ipe.rest"
@@ -56,20 +58,20 @@ GA_SNIPPET = (
 KST = dt.timezone(dt.timedelta(hours=9))
 DEFAULT_LANG = "en"
 
-# folder code (URL segment, locales/<code>.json), native name, og:locale
-LANGS = [  # the selector and footer follow this order (kit order for the live languages, then the ended ones)
+# folder code (URL segment, locales/<code>.json), native name, og:locale — exactly the kit's 12 languages (kit-0029), in kit order
+LANGS = [
     ("en", "English", "en_US"), ("ko", "한국어", "ko_KR"), ("ja", "日本語", "ja_JP"), ("zh-Hant", "繁體中文", "zh_TW"),
-    ("es", "Español", "es_ES"), ("pt", "Português", "pt_BR"), ("fr", "Français", "fr_FR"), ("de", "Deutsch", "de_DE"),
+    ("es", "Español", "es_ES"), ("pt-BR", "Português (Brasil)", "pt_BR"), ("fr", "Français", "fr_FR"), ("de", "Deutsch", "de_DE"),
     ("id", "Bahasa Indonesia", "id_ID"), ("th", "ไทย", "th_TH"), ("vi", "Tiếng Việt", "vi_VN"), ("tr", "Türkçe", "tr_TR"),
-    ("zh", "中文", "zh_CN"), ("ru", "Русский", "ru_RU"), ("ar", "العربية", "ar_AR"), ("hi", "हिन्दी", "hi_IN"),
 ]
-RTL = ("ar",)  # right-to-left languages: <html dir="rtl"> (assets/site.css has the [dir=rtl] rules)
-CODES = [c for c, _, _ in LANGS]  # every folder that is built (ended languages keep their pages and URLs)
-TAG = {"pt": "pt-BR", "zh": "zh-Hans"}  # folder code -> kit language tag (html lang, hreflang, inLanguage)
-LISTED = [c for c in CODES if not kit_lang.is_ended(TAG.get(c, c))]  # selector, footer, hreflang, sitemap, llms
-BLOG_CODES = ("en", "ko", "ja", "zh", "es", "pt", "id", "ru", "vi", "fr", "de", "ar", "hi")  # the languages posts are written in
+assert tuple(c for c, _, _ in LANGS) == kit_lang.SUPPORTED, "LANGS must follow ipe_web_kit.languages.SUPPORTED"
+RTL = ()  # right-to-left languages: <html dir="rtl">; none of the 12 (assets/site.css keeps the [dir=rtl] rules for a future one)
+CODES = [c for c, _, _ in LANGS]  # every folder that is built
+TAG = {}  # folder code -> kit language tag; the folders already are the tags (pt-BR, zh-Hant)
+LISTED = list(CODES)  # selector, footer, hreflang, sitemap, llms
+BLOG_CODES = tuple(CODES)  # the languages posts are written in: all 12 (th, tr and zh-Hant translations included)
 BLOG_LISTED = [c for c in BLOG_CODES if c in LISTED]
-NO_PRIVACY = ("zh-Hant", "th", "tr")  # legal pages stay ko/en: these link to the English privacy page instead
+LEGACY_LANGS = tuple(kit_redirects.LEGACY_REDIRECTS)  # ended languages (pt zh ar hi ru): their old /<lang>/... URLs forward (stubs), never listed
 NAMES = {c: n for c, n, _ in LANGS}
 LOCALE = {c: l for c, _, l in LANGS}
 
@@ -79,15 +81,7 @@ def tag(lang):
 
 
 def page_codes(slug):
-    return CODES if slug == "about" else privacy_codes()
-
-
-def privacy_codes():
-    return [c for c in CODES if c not in NO_PRIVACY]
-
-
-def privacy_lang(lang):
-    return DEFAULT_LANG if lang in NO_PRIVACY else lang
+    return CODES
 
 
 KEYWORDS = "storytelling app, AI writing, voice to text, story generator, creator tool, journaling, caption writer, private AI, privacy, draft, ipe"
@@ -101,33 +95,15 @@ EXTRA_FONTS = {"ar": "&family=Noto+Sans+Arabic:wght@300;400;500;600", "hi": "&fa
 
 def fonts_url(lang):
     return FONTS.replace("&display=swap", EXTRA_FONTS.get(lang, "") + "&display=swap")
-# Root-only script (runs before paint). Company-wide language rule (REACH_PROCESS, Davy 2026-11-01), only at "/":
-#  1. ?lang=xx (any case, other query params kept) -> that language's page, and remember it (an explicit pick);
-#     an unsupported ?lang= is ignored and 2-4 decide.
-#  2. a language the visitor picked earlier (localStorage draft_lang) -> that page.
-#  3. navigator.languages in order, first supported match (ko-KR -> ko, zh-TW -> zh) -> that page. Not stored: only picks are.
-#  4. nothing matches (or English matches first) -> stay on the English root.
-# Language pages (/ko/ ...), content pages and posts carry their language in the URL (rule 1) and never redirect.
-LEGACY_MAP = {}  # lowercase folder code or kit tag (and regional aliases) -> folder code, listed languages only
-for _c in LISTED:
-    LEGACY_MAP[_c.lower()] = _c
-    LEGACY_MAP[tag(_c).lower()] = _c
-LEGACY_MAP.update({"zh-tw": "zh-Hant", "zh-hk": "zh-Hant", "zh-mo": "zh-Hant"})
-LEGACY_REDIRECT = ("(function(){try{var M=" + json.dumps(LEGACY_MAP, sort_keys=True) + ","
-                   "pick=function(s){s=String(s||'').toLowerCase();return M[s]||M[s.split('-')[0]]||null;},"
-                   "q=new URLSearchParams(location.search),l=pick(q.get('lang'));"
-                   "function go(c){q.delete('lang');var s=q.toString();location.replace((c==='en'?'/':'/'+c+'/')+(s?'?'+s:'')+location.hash);}"
-                   "if(l){try{localStorage.setItem('draft_lang',l)}catch(e){}"
-                   "if(l==='en'){q.delete('lang');var r=q.toString();history.replaceState(null,'','/'+(r?'?'+r:'')+location.hash);}else go(l);return;}"
-                   "var v=null;try{v=localStorage.getItem('draft_lang')}catch(e){}"
-                   "var sv=pick(v);if(sv){if(sv!=='en')go(sv);return;}"
-                   "var p=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];"
-                   "for(var i=0;i<p.length;i++){var c=pick(p[i]);if(c){if(c!=='en')go(c);return;}}"
-                   "}catch(e){}})();")
+# Language rule (kit v0.7.2 langswitch, REACH_PROCESS): at "/" only, assets/ipe-lang.js (data-redirect) sends a first-time visitor to
+#  1. the language they picked earlier (localStorage ipe_lang), else 2. navigator.languages in order (ko-KR -> /ko/, zh-TW -> /zh-Hant/, pt -> /pt-BR/),
+#  else 3. stays on the English root. Language pages (/ko/ ...), content pages and posts carry their language in the URL and never redirect.
+# The top <select> (ipe-lang-select) stores a pick in ipe_lang and navigates; without JS its <noscript> links work.
+LANG_JS = "assets/" + kit_langswitch.JS.name  # generated: a copy of the kit's ipe-lang.js (build --check keeps it in step with vendor/)
 # Sites that leave this one for another ipe site hand over the current language (REACH_PROCESS rule 2). ipe.rest has
 # static /<lang>/ home pages for these languages (checked live 2026-11-01 incl. ar, hi; no vi); anywhere else -> "?lang=xx" on the page.
 # English (and no language) stays the plain URL.
-IPE_HOME_LANGS = ("ko", "ja", "zh", "es", "pt", "id", "ru", "fr", "de", "ar", "hi")
+IPE_HOME_LANGS = ("ko", "ja", "es", "id", "fr", "de")  # [미검증] zh-Hant / pt-BR / th / vi / tr home pages on ipe.rest: unchecked, so they get ?lang=xx
 
 
 def ipe_link(url, lang):
@@ -162,6 +138,9 @@ def journal_rel(lang):
     return journal_path(lang).strip("/")
 
 
+OLD_BLOG_LANGS = ("en", "ko", "ja", "es", "id", "vi", "fr", "de")  # languages that already had /<lang>/blog/ live before the rename (the others never did)
+
+
 def legacy_blog_rel(lang):
     """The journal used to be /<lang>/blog/ (every language, English too); those URLs stay alive as forwarding stubs."""
     return "%s/blog" % lang
@@ -177,7 +156,8 @@ def page_path(lang, slug):
 
 
 def legal_url(lang, slug):
-    return "https://ipe.rest/%s/legal/%s/" % ("ko" if lang == "ko" else "en", slug)
+    """ipe.rest's legal page (privacy / terms) in the page's language: https://ipe.rest/<lang>/legal/<slug>/ (folder codes = kit tags)."""
+    return "https://ipe.rest/%s/legal/%s/" % (lang, slug)
 
 
 def lang_path(lang, path=""):
@@ -289,7 +269,7 @@ def head(locales, lang, version, url, title, desc, cluster, ld, og_type="website
          robots="index, follow, max-image-preview:large"):
     """<head> shared by every page. cluster = {lang: url, 'x-default': url}; ld = ready <script ld+json> blocks."""
     rss = '<link rel="alternate" type="application/rss+xml" title="draft() Journal" href="%s">\n' % esc(feed) if feed else ""
-    legacy = '<script>%s</script>\n' % legacy if legacy else ""
+    legacy = legacy + "\n" if legacy else ""  # raw tags that must run before paint (the root page's ipe-lang.js)
     og_desc = og_desc or desc
     canon = '<link rel="canonical" href="%s">\n' % esc(url) if url else ""
     og_url = '<meta property="og:url" content="%s">\n' % esc(url) if url else ""
@@ -343,13 +323,8 @@ def shown_langs(lang):
 
 
 def lang_select(lang, path=""):
-    opts = "\n".join('    <option value="%s"%s>%s</option>' % (c, " selected" if c == lang else "", esc(n)) for c, n in shown_langs(lang))
-    return f"""<label class="langsel" aria-label="Language">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
-  <select id="lang" aria-label="Language" data-path="{path}" data-en="{lang_path(DEFAULT_LANG, path)}" data-blog="{",".join(BLOG_CODES)}">
-{opts}
-  </select>
-</label>"""
+    """Top language select (kit langswitch): every one of the 12 languages, same page in the other language (journal pages fall back to the home page)."""
+    return kit_langswitch.select_html(lang, lambda c: lang_path(c, path), CODES)
 
 
 def foot_langs(lang, path=""):
@@ -379,11 +354,12 @@ def chrome(locales, lang, path="", blog=False):
     top = '<nav class="toplink" aria-label="draft()"><a href="%s">draft()</a>' % base
     foot = []
     if blog and lang in BLOG_CODES:
-        top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (blog_href, ' aria-current="page"' if path.startswith("journal") else "", esc(tr(locales, lang, "nav_blog")))
-        foot.append('<a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_blog"))))
+        top += '<span aria-hidden="true">/</span><a href="%s"%s>%s</a>' % (blog_href, ' aria-current="page"' if path.startswith("journal") else "", esc(tr(locales, lang, "nav_journal")))
+        foot.append('<a href="%s">%s</a>' % (blog_href, esc(tr(locales, lang, "nav_journal"))))
     top += "</nav>"
     foot += ['<a href="%s">%s</a>' % (page_path(lang, "about"), esc(tr(locales, lang, "nav_about"))),
-             '<a href="%s">%s</a>' % (legal_url(lang, "privacy"), esc(tr(locales, lang, "foot_privacy")))]
+             '<a href="%s">%s</a>' % (legal_url(lang, "privacy"), esc(tr(locales, lang, "foot_privacy"))),
+             '<a href="%s">%s</a>' % (legal_url(lang, "terms"), esc(tr(locales, lang, "foot_terms")))]  # terms: footer only, never in the nav
     studio = kit_ui.studio_line(label=None, studio=tr(locales, lang, "foot_studio"))  # links to ipe.rest; looks from --ipe-* (site.css)
     return {"LANGSEL": lang_select(lang, path), "FOOTLANGS": foot_langs(lang, path), "FOOTLINKS": "\n      ".join(foot), "TOPLINK": top,
             "STUDIO": studio}
@@ -427,7 +403,7 @@ def render_home(root, locales, lang, version, blog=False, posts=()):
     root_page = lang == DEFAULT_LANG
     h = head(locales, lang, version, url, tr(locales, lang, "meta_title"), tr(locales, lang, "meta_desc_short"), home_cluster(),
              home_ld(locales, lang, url), extra='<meta name="keywords" content="%s">\n' % esc(KEYWORDS),
-             legacy=LEGACY_REDIRECT if root_page else "", feed=blog_feed_url(lang) if blog else None, og_desc=tr(locales, lang, "hero_sub"))
+             legacy=kit_langswitch.script({"js": "/%s?v=%s" % (LANG_JS, kit_langswitch.asset_version())}, redirect=True) if root_page else "", feed=blog_feed_url(lang) if blog else None, og_desc=tr(locales, lang, "hero_sub"))
     local = ""
     if "data-ipe-time" in body:
         local = "<script>" + (Path(root) / LOCALTIME_JS).read_bytes().decode("utf-8") + "</script>\n"
@@ -446,7 +422,7 @@ def render_en_stub(version):
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="{SITE}/">
 <meta http-equiv="refresh" content="0; url=/">
-<script>try{{localStorage.setItem('draft_lang','en');}}catch(e){{}}location.replace('/'+location.search+location.hash);</script>
+<script>try{{localStorage.setItem('{kit_langswitch.KEY}','en');}}catch(e){{}}location.replace('/'+location.search+location.hash);</script>
 </head>
 <body>
 <p><a href="/">draft()</a></p>
@@ -468,6 +444,25 @@ def render_journal_redirect(version, lang, target):
     h = head({}, lang, version, target, "draft() Journal", "Moved.", None, "", robots="noindex,follow",
              extra='<meta http-equiv="refresh" content="0; url=%s">\n' % esc(target))
     return h + f'<p><a href="{esc(target)}">{esc(target)}</a></p>\n</body>\n</html>\n'
+
+
+def legacy_language_stubs(out):
+    """Ended languages (pt zh ar hi ru): every old /<lang>/<path> that was live forwards to the new language (pt->pt-BR, zh->zh-Hant, ar/hi/ru->en)
+    as a meta-refresh stub (canonical = the target, noindex,follow; the host has no server redirects). Old paths: home, about/, privacy/, terms/ and
+    the old blog tree (blog/, blog/page/N/, blog/<slug>/), which maps to the journal. A target page this build does not produce -> the target's home."""
+    en_paths = [""]  # language-less site paths that exist in the English (root) tree
+    for rel in sorted(out):
+        if rel.endswith("/index.html") and rel.split("/")[0] in PAGES + LEGAL + ("journal",):
+            en_paths.append(rel[:-len("index.html")])
+    stubs = {}
+    for old, new in kit_redirects.LEGACY_REDIRECTS.items():
+        for path in en_paths:
+            dest_rel = ("%s/index.html" % path.strip("/") if path else "index.html") if new == DEFAULT_LANG else "%s/%sindex.html" % (new, path)
+            dest = path if dest_rel in out else ""
+            url = SITE + ("/" + dest if new == DEFAULT_LANG else "/%s/%s" % (new, dest))
+            old_path = "blog/" + path[len("journal/"):] if path.startswith("journal/") else path
+            stubs["%s/%sindex.html" % (old, old_path)] = kit_redirects.redirect_page(url, lang=new)
+    return stubs
 
 
 def render_404(version):
@@ -594,10 +589,31 @@ DESC_MAX = 160  # meta / og / JSON-LD description (every language)
 KO_BODY_MIN, KO_BODY_MAX = 1100, 1900  # allowed ko body length (target 1,200~1,800)
 
 
+COPY_REVIEW_FROM = dt.date(2026, 11, 15)  # posts dated on/after this day need Iris's copy review in every language (Matt 2026-11-14)
+COPY_REVIEW_LEGACY = "legacy-2026-11-14"  # exception tag for posts published before 11-15 (never valid on a new post)
+
+
+def copy_review_problems(name, langs):
+    """`copy_review: iris` + `copy_review_date: YYYY-MM-DD` is required on every language file of a post dated on/after
+    COPY_REVIEW_FROM; older posts carry `copy_review: legacy-2026-11-14` (or iris). Shared with check_queue.py and the build."""
+    errors = []
+    for c, m in sorted(langs.items()):
+        cr = str(m.get("copy_review", "")).lower()
+        d = m.get("_date")
+        new = d is not None and d >= COPY_REVIEW_FROM
+        if new and cr != "iris":
+            errors.append("%s/%s: copy_review must be `iris` (+ copy_review_date) for posts dated %s or later - Iris's copy review is required" % (name, c, COPY_REVIEW_FROM))
+        elif new and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(m.get("copy_review_date", ""))):
+            errors.append("%s/%s: copy_review_date (YYYY-MM-DD) is missing" % (name, c))
+        elif not new and cr not in ("iris", COPY_REVIEW_LEGACY):
+            errors.append("%s/%s: copy_review must be `%s` (posts before %s) or `iris`" % (name, c, COPY_REVIEW_LEGACY, COPY_REVIEW_FROM))
+    return errors
+
+
 def length_problems(name, langs):
     """Length rules every post must meet before it is published. Shared with scripts/check_queue.py, so the queue check
     and the build can never disagree. langs: {lang: parsed meta}. Returns a list of error strings."""
-    errors = []
+    errors = copy_review_problems(name, langs)
     for c, m in langs.items():
         if len(m["description"]) > DESC_MAX:
             errors.append("%s/%s: description is %d chars (max %d: it is the meta, og and JSON-LD description)" % (name, c, len(m["description"]), DESC_MAX))
@@ -610,7 +626,7 @@ def length_problems(name, langs):
 
 def load_posts(root):
     """-> (posts, errors). posts: [{slug, date, updated, draft, langs: {lang: meta}}] newest first, drafts skipped.
-    Layout: posts/<slug>/ko.md (canonical) + en.md + translations/<lang>.md  — every published post needs all 13 languages."""
+    Layout: posts/<slug>/ko.md (canonical) + en.md + translations/<lang>.md  — every published post needs all 12 languages."""
     base = Path(root) / "posts"
     posts, errors = [], []
     if not base.is_dir():
@@ -804,9 +820,9 @@ def image_object(root, rel):
 
 
 def word_count(html_body, lang):
-    """Words of the post text; ja/zh have no spaces, so count characters (letters/digits, no punctuation or spaces) instead."""
+    """Words of the post text; ja/zh-Hant/th have no word spaces, so count characters (letters/digits, no punctuation or spaces) instead."""
     text = html.unescape(re.sub(r"<[^>]+>", " ", html_body))
-    if lang in ("ja", "zh"):
+    if lang in ("ja", "zh-Hant", "th"):
         return sum(1 for ch in text if unicodedata.category(ch)[0] in "LN")
     return len(text.split())
 
@@ -842,7 +858,7 @@ def ld_script(obj):
 
 
 def breadcrumb(locales, lang, post=None, page=1):
-    items = [("draft()", page_url(lang)), (tr(locales, lang, "nav_blog"), blog_list_url(lang))]
+    items = [("draft()", page_url(lang)), (tr(locales, lang, "nav_journal"), blog_list_url(lang))]
     if page > 1:
         items.append((tr(locales, lang, "blog_page").format(n=page), blog_list_url(lang, page)))
     if post:
@@ -1089,7 +1105,7 @@ def render_feed(locales, posts, lang):
 
 def render_llms_blog(posts):
     lines = ["## Journal",
-             "Short guides on turning what you say into a story people actually read. New posts regularly, each in 13 languages. "
+             "Short guides on turning what you say into a story people actually read. New posts regularly, each in 12 languages. "
              "Feed: %s · Index: %s" % (blog_feed_url("en"), blog_list_url("en")),
              "Journal index per language: " + ", ".join("[%s](%s)" % (c, blog_list_url(c)) for c in BLOG_LISTED)]
     if page_count(len(posts)) > 1:  # older posts: <journal>/page/<n>/
@@ -1161,7 +1177,8 @@ def build(root):
     content = load_content(root)
     blog = bool(posts)
     out = {"index.html": render_home(root, locales, DEFAULT_LANG, version, blog=blog, posts=posts),
-           "en/index.html": render_en_stub(version), "404.html": render_404(version), KIT_CSS: kit_ui.css_text()}
+           "en/index.html": render_en_stub(version), "404.html": render_404(version), KIT_CSS: kit_ui.css_text(),
+           LANG_JS: kit_langswitch.JS.read_text(encoding="utf-8")}
     src_date = git_date(root, ["src", "assets", "locales/en.json"])
     cluster = home_cluster()
     if posts:  # the home page lists the newest posts, so its lastmod moves with them
@@ -1185,16 +1202,19 @@ def build(root):
             j = journal_rel(c)
             feed = render_feed(locales, posts, c)
             out["%s/feed.xml" % j] = feed
-            out["%s/feed.xml" % legacy_blog_rel(c)] = feed  # feed readers that subscribed to the old address keep working
+            if c in OLD_BLOG_LANGS:
+                out["%s/feed.xml" % legacy_blog_rel(c)] = feed  # feed readers that subscribed to the old address keep working
             for n in range(1, page_count(len(posts)) + 1):
                 out["%s/index.html" % j if n == 1 else "%s/page/%d/index.html" % (j, n)] = render_list(root, locales, version, posts, c, n, numbers)
-                out["%s/index.html" % legacy_blog_rel(c) if n == 1 else "%s/page/%d/index.html" % (legacy_blog_rel(c), n)] = render_journal_redirect(version, c, blog_list_url(c, n))
+                if c in OLD_BLOG_LANGS:
+                    out["%s/index.html" % legacy_blog_rel(c) if n == 1 else "%s/page/%d/index.html" % (legacy_blog_rel(c), n)] = render_journal_redirect(version, c, blog_list_url(c, n))
                 if c in BLOG_LISTED:
                     pages.append((blog_list_url(c, n), newest, "0.7" if n == 1 else "0.5", "daily", list_cluster(n)))
         for p in posts:
             for c in BLOG_CODES:
                 out["%s/%s/index.html" % (journal_rel(c), p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]], posts)
-                out["%s/%s/index.html" % (legacy_blog_rel(c), p["slug"])] = render_journal_redirect(version, c, post_url(c, p["slug"]))
+                if c in OLD_BLOG_LANGS:
+                    out["%s/%s/index.html" % (legacy_blog_rel(c), p["slug"])] = render_journal_redirect(version, c, post_url(c, p["slug"]))
                 if c in BLOG_LISTED:
                     pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
     prio = {"about": "0.8"}
@@ -1206,6 +1226,7 @@ def build(root):
     for slug in LEGAL:
         for c in CODES:
             out[page_path(c, slug).strip("/") + "/index.html"] = render_legal_redirect(version, c, slug)
+    out.update(legacy_language_stubs(out))
     want = min(HOME_CARDS, len(posts))
     for c in CODES:
         rel = "index.html" if c == DEFAULT_LANG else "%s/index.html" % c
@@ -1226,7 +1247,8 @@ def build(root):
 def stale_generated(root, files):
     """Generated blog files on disk that the current build no longer produces (e.g. an unpublished post)."""
     stale = []
-    for d in [Path(root) / journal_rel(c) for c in CODES] + [Path(root) / legacy_blog_rel(c) for c in CODES]:
+    for d in ([Path(root) / journal_rel(c) for c in CODES] + [Path(root) / legacy_blog_rel(c) for c in CODES]
+              + [Path(root) / c for c in LEGACY_LANGS]):  # ended languages: their old generated pages go (the stubs carry no GEN_MARK)
         if not d.is_dir():
             continue
         for f in d.rglob("*"):

@@ -4,6 +4,7 @@ description: Manche Momente bergen einen Satz, der nie fiel. Schreiben Sie ihn i
 date: 2026-11-12
 slug: what-you-didnt-say
 published: 2026-11-12T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Haben Sie schon einmal „Mir geht es gut“ geantwortet und gespürt, dass direkt dahinter ein anderer Satz saß? In vielen Momenten, über die es sich zu schreiben lohnt, steckt eine solche Zeile: etwas, das man beinahe gesagt und dann hinuntergeschluckt hat. Der ungesagte Satz ist oft der ehrlichste des Tages und kann einem kurzen Text seine Mitte geben. Sie müssen ihn niemandem sagen. Sie müssen ihn nur einmal aufschreiben.

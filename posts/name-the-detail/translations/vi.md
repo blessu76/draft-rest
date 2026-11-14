@@ -4,6 +4,7 @@ description: Thay vì viết "tôi buồn", hãy viết một điều bạn đã
 date: 2026-10-31
 slug: name-the-detail
 published: 2026-10-31T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Những từ như "vui", "buồn", "cô đơn" rất dễ viết. Nhưng người đọc không hình dung ra cảnh nào từ chúng. Nếu đổi tên cảm xúc thành một chi tiết cụ thể, người đọc sẽ tự cảm nhận được mà bạn không cần giải thích.

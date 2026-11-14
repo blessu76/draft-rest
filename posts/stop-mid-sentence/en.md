@@ -4,6 +4,7 @@ description: Stopping at a dead end makes tomorrow hard. Stop when you know the 
 date: 2026-11-06
 slug: stop-mid-sentence
 published: 2026-11-06T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 People say the hardest part of writing is starting, but how hard it is to start depends on where you stopped yesterday. A piece you closed while stuck, with nothing left to say, feels like a blank screen when you open it again. A piece you left while you still knew what came next picks up the moment you open it. Stopping a little early on purpose isn't laziness; it's a small gift to tomorrow's you.

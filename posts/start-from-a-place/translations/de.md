@@ -4,6 +4,7 @@ description: Worüber schreiben? Beginnen Sie dort, wo es geschieht. Drei Schrit
 date: 2026-11-10
 slug: start-from-a-place
 published: 2026-11-10T20:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Wissen Sie noch nicht, wovon Ihre Geschichte handelt? Beginnen Sie dort, wo sie spielt. Ein Ort lässt sich leichter beschreiben als ein Gefühl, und er trägt still die Menschen, Geräusche und kleinen Ereignisse in sich, aus denen eine Geschichte besteht. Wählen Sie einen Ort und lassen Sie sich von ihm in den Text führen.

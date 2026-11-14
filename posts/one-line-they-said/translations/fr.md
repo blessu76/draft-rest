@@ -4,6 +4,7 @@ description: Un résumé perd la voix, une phrase dite la garde. Trois critères
 date: 2026-11-03
 slug: one-line-they-said
 published: 2026-11-03T20:03:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Comparez « maman a dit qu'elle s'était inquiétée » et la phrase que votre mère a vraiment prononcée : on voit tout de suite laquelle porte sa voix. Quand on résume ce que quelqu'un a dit, le contenu reste, mais la voix s'en va. Gardez telle quelle une phrase marquante, et cette personne se tient debout dans la scène.

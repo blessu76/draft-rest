@@ -5,6 +5,7 @@ date: 2026-10-29
 slug: open-with-one-sense
 published: 2026-10-29T16:12:00+09:00
 updated: 2026-10-30T16:30:35+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Die meisten Szenen beginnen mit dem, was wir gesehen haben. „Es war ein regnerischer Abend, und ich saß in einem Café.“ Das ist der einfachste Anfang und oft der flachste. Eröffne dieselbe Szene mit einem einzigen Geräusch, Geruch oder einer Berührung, und die Lesenden sind in einem Satz mittendrin.

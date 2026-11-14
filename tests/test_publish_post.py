@@ -95,7 +95,7 @@ class Lint(unittest.TestCase):
         w = self.lint()
         for c in ("en", "de", "fr"):
             self.assertTrue(any(x.startswith("q-one/%s: body is 299 words (< 300 floor)" % c) for x in w), (c, w))
-        self.assertFalse(any("q-one/%s: body is" % c in x for c in ("ko", "ja", "zh") for x in w), w)  # 299 'words' = 1495 chars: long enough
+        self.assertFalse(any("q-one/%s: body is" % c in x for c in ("ko", "ja", "zh-Hant", "th") for x in w), w)  # 299 'words' = 1495 chars: long enough
         write_post(self.dir, "q-two", body="word " * 300)
         w = self.lint("q-two")
         self.assertTrue(any(x.startswith("q-two/en: body is 300 words (< 400 target)") for x in w), w)  # exactly 300 is above the floor, below the target
@@ -104,7 +104,7 @@ class Lint(unittest.TestCase):
         self.assertFalse([x for x in self.lint("q-full") if "body is" in x])
         write_post(self.dir, "q-cjk", body="가" * 599)
         w = self.lint("q-cjk")
-        for c in ("ja", "zh"):
+        for c in ("ja", "zh-Hant", "th"):
             self.assertTrue(any(x.startswith("q-cjk/%s: body is 599 chars (< 600 floor)" % c) for x in w), (c, w))
         self.assertTrue(any(x.startswith("q-cjk/ko: body is 599 chars (< 800 target)") for x in w), w)  # ko: target only, the build owns its floor
         self.assertFalse(any("q-cjk/ko" in x and "floor" in x for x in w), w)
@@ -112,18 +112,18 @@ class Lint(unittest.TestCase):
         self.assertTrue(any("q-cjk2/ko: body is 400 chars" in x for x in self.lint("q-cjk2")))
         write_post(self.dir, "q-cjk3", body="가" * 799)
         w = self.lint("q-cjk3")
-        for c in ("ko", "ja", "zh"):
+        for c in ("ko", "ja", "zh-Hant", "th"):
             self.assertTrue(any(x.startswith("q-cjk3/%s: body is 799 chars (< 800 target)" % c) for x in w), (c, w))
-        self.assertFalse(any("floor" in x and x.split(":")[0].split("/")[1] in ("ko", "ja", "zh") for x in w), w)  # (the 1-word latin files are not the point here)
+        self.assertFalse(any("floor" in x and x.split(":")[0].split("/")[1] in ("ko", "ja", "zh-Hant", "th") for x in w), w)  # (the 1-word latin files are not the point here)
         write_post(self.dir, "q-cjk4", body="가" * 800)
-        self.assertFalse(any(("q-cjk4/%s: body is" % c) in x for c in ("ko", "ja", "zh") for x in self.lint("q-cjk4")))
+        self.assertFalse(any(("q-cjk4/%s: body is" % c) in x for c in ("ko", "ja", "zh-Hant", "th") for x in self.lint("q-cjk4")))
 
     def test_floor_and_target_findings_are_split(self):
-        langs = {"en": {"_body": "w " * 299}, "ru": {"_body": "w " * 300}, "de": {"_body": "w " * 400},
-                 "zh": {"_body": "字" * 599}, "ja": {"_body": "字" * 600}, "ko": {"_body": "字" * 799}}
+        langs = {"en": {"_body": "w " * 299}, "tr": {"_body": "w " * 300}, "de": {"_body": "w " * 400},
+                 "zh-Hant": {"_body": "字" * 599}, "ja": {"_body": "字" * 600}, "ko": {"_body": "字" * 799}}
         floor, target = publish_post.body_length_findings("s", langs)
-        self.assertEqual([x.split(":")[0] for x in floor], ["s/en", "s/zh"])
-        self.assertEqual([x.split(":")[0] for x in target], ["s/ja", "s/ko", "s/ru"])
+        self.assertEqual([x.split(":")[0] for x in floor], ["s/en", "s/zh-Hant"])
+        self.assertEqual([x.split(":")[0] for x in target], ["s/ja", "s/ko", "s/tr"])
         self.assertTrue(all(publish_post.is_floor_warning(x) for x in floor))
         self.assertFalse(any(publish_post.is_floor_warning(x) for x in target))
 
@@ -132,7 +132,7 @@ class Lint(unittest.TestCase):
                "[リンク](https://example.com/very/long/url/path)と**強調**\n\n![図](img/a.png)\n\n"
                "```\nprint('code block content')\n```\n\n---\n<b>タグ</b>")
         # visible: 見出し(3) 項目あ(3) 引用い(3) リンク(3) と(1) 強調(2) タグ(2) = 17
-        for lang in ("ja", "zh"):
+        for lang in ("ja", "zh-Hant", "th"):
             self.assertEqual(publish_post.body_size(cjk, lang), (17, "chars"))
         latin = "# Title here\n\n1. first item\n2. second item\n- bullet one\n> quoted words\n\n[link text](https://x.io/a/b) and **bold** *it*\n\n```\nnot counted at all\n```\n\n![alt](a.png)\n---\n"
         # Title here(2) first item(2) second item(2) bullet one(2) quoted words(2) link text and bold it(5) = 15
@@ -162,12 +162,12 @@ class Lint(unittest.TestCase):
         self.edit("q-one", "en", "description: d en", "description: " + "x" * 160)
         self.edit("q-one", "fr", "description: d fr", "description: " + "x" * 161)  # the build refuses this one, the lint only warns
         self.edit("q-one", "ko", "description: d ko", "description: " + "가" * 110)
-        self.edit("q-one", "zh", "description: d zh", "description: " + "字" * 111)
+        self.edit("q-one", "zh-Hant", "description: d zh-Hant", "description: " + "字" * 111)
         w = self.lint()
         self.assertFalse(any(x.startswith("q-one/en: description") for x in w), w)
         self.assertTrue(any(x.startswith("q-one/fr: description is 161 chars (> 160)") for x in w), w)
         self.assertFalse(any(x.startswith("q-one/ko: description") for x in w), w)
-        self.assertTrue(any(x.startswith("q-one/zh: description is 111 chars (> 110)") for x in w), w)
+        self.assertTrue(any(x.startswith("q-one/zh-Hant: description is 111 chars (> 110)") for x in w), w)
 
     def test_duplicate_title_inside_one_language(self):
         write_post(self.dir, "q-one", body=FULL)

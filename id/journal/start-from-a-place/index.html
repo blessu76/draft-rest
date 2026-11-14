@@ -15,12 +15,15 @@
 <link rel="alternate" hreflang="en" href="https://draft.ipe.rest/journal/start-from-a-place/">
 <link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/journal/start-from-a-place/">
 <link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/journal/start-from-a-place/">
+<link rel="alternate" hreflang="zh-Hant" href="https://draft.ipe.rest/zh-Hant/journal/start-from-a-place/">
 <link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/journal/start-from-a-place/">
-<link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/journal/start-from-a-place/">
-<link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/journal/start-from-a-place/">
-<link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/journal/start-from-a-place/">
+<link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt-BR/journal/start-from-a-place/">
 <link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/journal/start-from-a-place/">
 <link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/journal/start-from-a-place/">
+<link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/journal/start-from-a-place/">
+<link rel="alternate" hreflang="th" href="https://draft.ipe.rest/th/journal/start-from-a-place/">
+<link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/journal/start-from-a-place/">
+<link rel="alternate" hreflang="tr" href="https://draft.ipe.rest/tr/journal/start-from-a-place/">
 <link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/journal/start-from-a-place/">
 <link rel="alternate" type="application/rss+xml" title="draft() Journal" href="https://draft.ipe.rest/id/journal/feed.xml">
 <meta property="og:type" content="article">
@@ -140,8 +143,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/ipe-kit.css?v=0.1.0-56024b02">
-<link rel="stylesheet" href="/assets/site.css?v=2240f4b1">
+<link rel="stylesheet" href="/assets/ipe-kit.css?v=0.2.0-17090b32">
+<link rel="stylesheet" href="/assets/site.css?v=30b76882">
 <noscript><style>.reveal{opacity:1;transform:none}.demo-raw{display:none}.demo-clean{display:block}</style></noscript>
 <!-- Cloudflare Web Analytics (cookieless, no PII) -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d4506883dbd42d4b65644a4e72f05da"}'></script>
@@ -150,23 +153,7 @@
 <body>
 <a class="skip-link" href="#main">Lewati ke konten</a>
 <nav class="toplink" aria-label="draft()"><a href="/id/">draft()</a><span aria-hidden="true">/</span><a href="/id/journal/" aria-current="page">Jurnal</a></nav>
-<label class="langsel" aria-label="Language">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
-  <select id="lang" aria-label="Language" data-path="journal/start-from-a-place/" data-en="/journal/start-from-a-place/" data-blog="en,ko,ja,zh,es,pt,id,ru,vi,fr,de,ar,hi">
-    <option value="en">English</option>
-    <option value="ko">한국어</option>
-    <option value="ja">日本語</option>
-    <option value="zh-Hant">繁體中文</option>
-    <option value="es">Español</option>
-    <option value="pt">Português</option>
-    <option value="fr">Français</option>
-    <option value="de">Deutsch</option>
-    <option value="id" selected>Bahasa Indonesia</option>
-    <option value="th">ไทย</option>
-    <option value="vi">Tiếng Việt</option>
-    <option value="tr">Türkçe</option>
-  </select>
-</label>
+<div class="ipe-lang"><label class="ipe-lang__label" for="ipe-lang-select">Bahasa</label><select class="ipe-lang__select" id="ipe-lang-select" aria-label="Bahasa" onchange="var o=this.options[this.selectedIndex];try{localStorage.setItem(&#x27;ipe_lang&#x27;,o.lang)}catch(e){}if(o.value)location.href=o.value"><option value="/journal/start-from-a-place/" lang="en">English</option><option value="/ko/journal/start-from-a-place/" lang="ko">한국어</option><option value="/ja/journal/start-from-a-place/" lang="ja">日本語</option><option value="/zh-Hant/journal/start-from-a-place/" lang="zh-Hant">繁體中文</option><option value="/es/journal/start-from-a-place/" lang="es">Español</option><option value="/pt-BR/journal/start-from-a-place/" lang="pt-BR">Português (Brasil)</option><option value="/fr/journal/start-from-a-place/" lang="fr">Français</option><option value="/de/journal/start-from-a-place/" lang="de">Deutsch</option><option value="/id/journal/start-from-a-place/" lang="id" selected>Bahasa Indonesia</option><option value="/th/journal/start-from-a-place/" lang="th">ไทย</option><option value="/vi/journal/start-from-a-place/" lang="vi">Tiếng Việt</option><option value="/tr/journal/start-from-a-place/" lang="tr">Türkçe</option></select><noscript><nav class="ipe-lang__links" aria-label="Bahasa"><a href="/journal/start-from-a-place/" hreflang="en">English</a><a href="/ko/journal/start-from-a-place/" hreflang="ko">한국어</a><a href="/ja/journal/start-from-a-place/" hreflang="ja">日本語</a><a href="/zh-Hant/journal/start-from-a-place/" hreflang="zh-Hant">繁體中文</a><a href="/es/journal/start-from-a-place/" hreflang="es">Español</a><a href="/pt-BR/journal/start-from-a-place/" hreflang="pt-BR">Português (Brasil)</a><a href="/fr/journal/start-from-a-place/" hreflang="fr">Français</a><a href="/de/journal/start-from-a-place/" hreflang="de">Deutsch</a><a href="/id/journal/start-from-a-place/" hreflang="id" aria-current="page">Bahasa Indonesia</a><a href="/th/journal/start-from-a-place/" hreflang="th">ไทย</a><a href="/vi/journal/start-from-a-place/" hreflang="vi">Tiếng Việt</a><a href="/tr/journal/start-from-a-place/" hreflang="tr">Türkçe</a></nav></noscript></div>
 <main id="main" class="post-wrap">
   <article class="post">
     <p class="comment">// <span class="j-no">No. 17</span> · <time datetime="2026-11-10T20:00+09:00" data-ipe-time title="2026-11-10 20:00 KST">2026-11-10 20:00 KST</time></p>
@@ -211,7 +198,7 @@
     </section>
     <nav class="post-foot" aria-label="Blog">
       <a href="/id/journal/">&larr; Semua tulisan</a>
-      <p class="post-langs"><span class="comment">Baca dalam bahasa lain</span><br><a href="https://draft.ipe.rest/journal/start-from-a-place/" hreflang="en" lang="en">English</a> · <a href="https://draft.ipe.rest/ko/journal/start-from-a-place/" hreflang="ko" lang="ko">한국어</a> · <a href="https://draft.ipe.rest/ja/journal/start-from-a-place/" hreflang="ja" lang="ja">日本語</a> · <a href="https://draft.ipe.rest/es/journal/start-from-a-place/" hreflang="es" lang="es">Español</a> · <a href="https://draft.ipe.rest/pt/journal/start-from-a-place/" hreflang="pt-BR" lang="pt-BR">Português</a> · <a href="https://draft.ipe.rest/vi/journal/start-from-a-place/" hreflang="vi" lang="vi">Tiếng Việt</a> · <a href="https://draft.ipe.rest/fr/journal/start-from-a-place/" hreflang="fr" lang="fr">Français</a> · <a href="https://draft.ipe.rest/de/journal/start-from-a-place/" hreflang="de" lang="de">Deutsch</a></p>
+      <p class="post-langs"><span class="comment">Baca dalam bahasa lain</span><br><a href="https://draft.ipe.rest/journal/start-from-a-place/" hreflang="en" lang="en">English</a> · <a href="https://draft.ipe.rest/ko/journal/start-from-a-place/" hreflang="ko" lang="ko">한국어</a> · <a href="https://draft.ipe.rest/ja/journal/start-from-a-place/" hreflang="ja" lang="ja">日本語</a> · <a href="https://draft.ipe.rest/zh-Hant/journal/start-from-a-place/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a> · <a href="https://draft.ipe.rest/es/journal/start-from-a-place/" hreflang="es" lang="es">Español</a> · <a href="https://draft.ipe.rest/pt-BR/journal/start-from-a-place/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a> · <a href="https://draft.ipe.rest/fr/journal/start-from-a-place/" hreflang="fr" lang="fr">Français</a> · <a href="https://draft.ipe.rest/de/journal/start-from-a-place/" hreflang="de" lang="de">Deutsch</a> · <a href="https://draft.ipe.rest/th/journal/start-from-a-place/" hreflang="th" lang="th">ไทย</a> · <a href="https://draft.ipe.rest/vi/journal/start-from-a-place/" hreflang="vi" lang="vi">Tiếng Việt</a> · <a href="https://draft.ipe.rest/tr/journal/start-from-a-place/" hreflang="tr" lang="tr">Türkçe</a></p>
     </nav>
   </article>
 </main>
@@ -222,27 +209,28 @@
     <nav class="foot-links" aria-label="Footer">
       <a href="/id/journal/">Jurnal</a>
       <a href="/id/about/">Tentang</a>
-      <a href="https://ipe.rest/en/legal/privacy/">Privasi</a>
+      <a href="https://ipe.rest/id/legal/privacy/">Privasi</a>
+      <a href="https://ipe.rest/id/legal/terms/">Ketentuan</a>
     </nav>
     <p class="ipe-studio" dir="ltr"><span class="ipe-studio__org"><a href="https://ipe.rest/">an ipe studio app</a></span></p>
     <nav class="foot-langs" aria-label="Languages">
       <a href="/journal/start-from-a-place/" hreflang="en" lang="en">English</a>
       <a href="/ko/journal/start-from-a-place/" hreflang="ko" lang="ko">한국어</a>
       <a href="/ja/journal/start-from-a-place/" hreflang="ja" lang="ja">日本語</a>
-      <a href="/zh-Hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+      <a href="/zh-Hant/journal/start-from-a-place/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
       <a href="/es/journal/start-from-a-place/" hreflang="es" lang="es">Español</a>
-      <a href="/pt/journal/start-from-a-place/" hreflang="pt-BR" lang="pt-BR">Português</a>
+      <a href="/pt-BR/journal/start-from-a-place/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
       <a href="/fr/journal/start-from-a-place/" hreflang="fr" lang="fr">Français</a>
       <a href="/de/journal/start-from-a-place/" hreflang="de" lang="de">Deutsch</a>
       <a href="/id/journal/start-from-a-place/" hreflang="id" lang="id" aria-current="page">Bahasa Indonesia</a>
-      <a href="/th/" hreflang="th" lang="th">ไทย</a>
+      <a href="/th/journal/start-from-a-place/" hreflang="th" lang="th">ไทย</a>
       <a href="/vi/journal/start-from-a-place/" hreflang="vi" lang="vi">Tiếng Việt</a>
-      <a href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
+      <a href="/tr/journal/start-from-a-place/" hreflang="tr" lang="tr">Türkçe</a>
     </nav>
   </div>
 </footer>
 
-<script src="/assets/site.js?v=2240f4b1" defer></script>
+<script src="/assets/site.js?v=30b76882" defer></script>
 <script>/* ipe-localtime v2 · 정본 ipe-rest/shared/ipe-localtime.js · 사본은 바이트 그대로 */
 /* time[data-ipe-time] 의 datetime(+09:00)을 보는 기기 시간대로 바꿔 보인다. 실패하면 정적 KST 글자를 그대로 둔다. */
 /* v2: 오프셋 없는/잘못된 datetime 은 건너뜀 · 그레고리력·라틴 숫자 고정 */

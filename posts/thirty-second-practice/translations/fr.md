@@ -5,6 +5,7 @@ date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00
 updated: 2026-10-30T16:32:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 On vous a déjà demandé « comment était ta journée ? » et vous n'avez su répondre que « bof » ? Quand on essaie d'expliquer une journée entière, on ne sait pas par où commencer. Une histoire ne commence pas par une journée. Elle commence par une scène.

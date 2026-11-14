@@ -4,6 +4,7 @@ description: Chưa biết viết gì? Hãy bắt đầu từ nơi mọi việc x
 date: 2026-11-10
 slug: start-from-a-place
 published: 2026-11-10T20:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Bạn vẫn chưa biết câu chuyện của mình nói về điều gì? Hãy bắt đầu từ nơi mọi việc xảy ra. Một nơi chốn dễ miêu tả hơn một cảm xúc, và nó lặng lẽ chứa những con người, âm thanh cùng những sự việc nhỏ làm nên một câu chuyện. Chọn một nơi, rồi để nơi ấy dẫn bạn vào bài viết.
