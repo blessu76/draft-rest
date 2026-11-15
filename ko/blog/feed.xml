@@ -7,7 +7,28 @@
     <atom:link href="https://draft.ipe.rest/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 13:11:00 +0900</lastBuildDate>
+    <item>
+      <title>장면 속 사람에게 작은 바람 하나를 주세요</title>
+      <link>https://draft.ipe.rest/ko/blog/one-small-want/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/one-small-want/</guid>
+      <pubDate>Sun, 15 Nov 2026 13:11:00 +0900</pubDate>
+      <description>사람이 무엇을 원하는지 한 줄 쓰면 장면이 움직입니다. 바람을 적고 가로막는 것을 적고 한 걸음을 더하는 세 단계와 예시를 정리했습니다.</description>
+    </item>
+    <item>
+      <title>장면 속 물건 하나에 말을 시켜 보세요</title>
+      <link>https://draft.ipe.rest/ko/blog/one-object-on-the-table/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/one-object-on-the-table/</guid>
+      <pubDate>Sun, 15 Nov 2026 13:10:00 +0900</pubDate>
+      <description>물건 하나가 장면의 분위기를 대신 전합니다. 눈에 띈 물건을 고르고 모양을 적고 곁에 있던 사람과 잇는 세 단계와 예시를 정리했습니다.</description>
+    </item>
+    <item>
+      <title>장면에 시각을 하나 붙여 보세요</title>
+      <link>https://draft.ipe.rest/ko/blog/pin-the-hour/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/blog/pin-the-hour/</guid>
+      <pubDate>Sun, 15 Nov 2026 13:09:00 +0900</pubDate>
+      <description>시각 하나가 장면을 또렷하게 만듭니다. 순간을 고르고 시각을 적고 그 시각이 한 일을 더하는 세 단계와 예시를 정리했습니다.</description>
+    </item>
     <item>
       <title>말하지 못한 한 줄을 써 보세요</title>
       <link>https://draft.ipe.rest/ko/blog/what-you-didnt-say/</link>

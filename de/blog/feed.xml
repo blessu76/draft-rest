@@ -7,7 +7,28 @@
     <atom:link href="https://draft.ipe.rest/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 12 Nov 2026 16:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 13:11:00 +0900</lastBuildDate>
+    <item>
+      <title>Geben Sie der Person in Ihrer Szene einen kleinen Wunsch</title>
+      <link>https://draft.ipe.rest/de/blog/one-small-want/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/one-small-want/</guid>
+      <pubDate>Sun, 15 Nov 2026 13:11:00 +0900</pubDate>
+      <description>Eine Zeile darüber, was jemand wollte, bringt eine Szene in Bewegung. Schreiben Sie den Wunsch, nennen Sie das Hindernis und fügen Sie einen Schritt hinzu.</description>
+    </item>
+    <item>
+      <title>Lassen Sie einen einzigen Gegenstand in der Szene sprechen</title>
+      <link>https://draft.ipe.rest/de/blog/one-object-on-the-table/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/one-object-on-the-table/</guid>
+      <pubDate>Sun, 15 Nov 2026 13:10:00 +0900</pubDate>
+      <description>Ein einzelner Gegenstand kann die Stimmung einer Szene tragen. Wählen Sie einen aus, beschreiben Sie sein Aussehen und verbinden Sie ihn mit einer Person.</description>
+    </item>
+    <item>
+      <title>Heften Sie eine Uhrzeit an Ihre Szene</title>
+      <link>https://draft.ipe.rest/de/blog/pin-the-hour/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/blog/pin-the-hour/</guid>
+      <pubDate>Sun, 15 Nov 2026 13:09:00 +0900</pubDate>
+      <description>Eine einzige Uhrzeit kann eine Szene schärfer machen. Einen Moment wählen, die Zeit notieren und ergänzen, was sie bewirkt hat: drei Schritte mit Beispiel.</description>
+    </item>
     <item>
       <title>Schreiben Sie den Satz, den Sie nicht gesagt haben</title>
       <link>https://draft.ipe.rest/de/blog/what-you-didnt-say/</link>
