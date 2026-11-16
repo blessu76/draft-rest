@@ -22,6 +22,8 @@ ROOT_FILES = ("index.html", "404.html", "CNAME", ".nojekyll", "robots.txt", "sit
 KEY_RE = re.compile(r"^[0-9a-f]{32}\.txt$")
 # inside language folders only generated site files are public (never a stray .md)
 PUBLIC_EXT = {".html", ".xml"}
+# forwarding pages for removed sections (noindex + canonical + refresh) — must go out or the old URL 404s
+MOVED_DIRS = ("releases",)
 
 
 def public_files(root):
@@ -30,7 +32,7 @@ def public_files(root):
     out += [Path(p.name) for p in root.iterdir() if p.is_file() and KEY_RE.match(p.name)]
     if (root / "assets").is_dir():
         out += [f.relative_to(root) for f in sorted((root / "assets").rglob("*")) if f.is_file()]
-    for c in list(CODES) + list(PAGES) + list(LEGAL):  # PAGES / LEGAL = the English folders at the root
+    for c in list(CODES) + list(PAGES) + list(LEGAL) + list(MOVED_DIRS):  # PAGES / LEGAL = the English folders at the root
         d = root / c
         if d.is_dir():
             out += [f.relative_to(root) for f in sorted(d.rglob("*")) if f.is_file() and f.suffix in PUBLIC_EXT]
