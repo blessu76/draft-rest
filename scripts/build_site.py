@@ -69,6 +69,12 @@ TAG = {"pt": "pt-BR", "zh": "zh-Hans"}  # folder code -> kit language tag (html 
 LISTED = [c for c in CODES if not kit_lang.is_ended(TAG.get(c, c))]  # selector, footer, hreflang, sitemap, llms
 BLOG_CODES = ("en", "ko", "ja", "zh", "es", "pt", "id", "ru", "vi", "fr", "de", "ar", "hi")  # the languages posts are written in
 BLOG_LISTED = [c for c in BLOG_CODES if c in LISTED]
+# Languages that were shut down (ar/hi/ru): every old page under /<code>/ becomes a forward to its English twin
+# (static hosting cannot send a 301, so: meta refresh + canonical + noindex), kept out of the sitemap/hreflang.
+# zh is ended too but still serves its full pages for now. Feeds stay as they are (XML cannot forward).
+REDIRECT_LANGS = ("ru", "ar", "hi")
+# Old addresses that no longer exist at all -> where they forward (the releases page left with web kit v0.6.0).
+RETIRED_PATHS = {"releases/": "/about/"}
 NO_PRIVACY = ("zh-Hant", "th", "tr")  # legal pages stay ko/en: these link to the English privacy page instead
 NAMES = {c: n for c, n, _ in LANGS}
 LOCALE = {c: l for c, _, l in LANGS}
@@ -443,6 +449,35 @@ def render_legal_redirect(version, lang, slug):
     h = head({}, lang, version, target, LEGAL_TITLE[slug], "Moved to ipe.rest.", None, "", robots="noindex,follow",
              extra='<meta http-equiv="refresh" content="0; url=%s">\n' % esc(target))
     return h + f'<p><a href="{esc(target)}">{esc(target)}</a></p>\n</body>\n</html>\n'
+
+
+def render_moved(version, target_path):
+    """A retired URL -> its live counterpart: meta refresh + canonical + noindex, never in the sitemap (static host: no real 301)."""
+    target = SITE + target_path
+    h = head({}, DEFAULT_LANG, version, target, "draft()", "This page has moved.", None, "", robots="noindex, follow",
+             extra='<meta http-equiv="refresh" content="0; url=%s">\n' % esc(target_path))
+    return h + f"""<nav class="toplink" aria-label="draft()"><a href="/">draft()</a></nav>
+<main id="main" class="post-wrap">
+  <header class="blog-head">
+    <p class="comment">// moved</p>
+    <h1>This page has moved</h1>
+    <p class="post-desc">This language or page is no longer available. Taking you to <a href="{esc(target_path)}">{esc(target_path)}</a>.</p>
+  </header>
+</main>
+<script>location.replace({json.dumps(target_path)}+location.search+location.hash);</script>
+</body>
+</html>
+"""
+
+
+def moved_target(rel):
+    """Generated path 'ar/blog/x/index.html' of a shut-down language -> the English counterpart's site path."""
+    inner = rel.split("/", 1)[1][: -len("index.html")]  # '', 'about/', 'blog/x/', 'blog/page/2/'
+    if not inner:
+        return "/"
+    if inner.strip("/") in PAGES:
+        return page_path(DEFAULT_LANG, inner.strip("/"))
+    return "/en/" + inner
 
 
 def render_404(version):
@@ -1183,6 +1218,12 @@ def build(root):
         got = out[rel].count('class="bcard ')
         if got != expected:
             raise BuildError("%s: home shows %d blog cards, expected %d" % (rel, got, expected))
+    for rel in sorted(out):
+        lang_dir = rel.split("/", 1)[0]
+        if lang_dir in REDIRECT_LANGS and rel.endswith("/index.html") and rel.split("/")[1] not in LEGAL:
+            out[rel] = render_moved(version, moved_target(rel))
+    for old, new in RETIRED_PATHS.items():
+        out[old + "index.html"] = render_moved(version, new)
     pages = [(u, when_iso(d) if hasattr(d, "isoformat") else d, pr, fq, cl) for u, d, pr, fq, cl in pages]
     out["sitemap.xml"] = render_sitemap(root, pages)
     llms = (root / "llms.txt").read_text(encoding="utf-8")

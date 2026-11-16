@@ -11,6 +11,58 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import build_site  # noqa: E402
 import check_sitemap  # noqa: E402
 
+# The content tests below look at the full pages of every blog language, so the shut-down languages (ru/ar/hi, which the real
+# build turns into forwards) are generated in full for this module; RedirectedLanguages / RepoIsBuilt use the real setting.
+REAL_REDIRECT_LANGS = build_site.REDIRECT_LANGS
+
+
+def setUpModule():
+    build_site.REDIRECT_LANGS = ()
+
+
+def tearDownModule():
+    build_site.REDIRECT_LANGS = REAL_REDIRECT_LANGS
+
+
+class RedirectedLanguages(unittest.TestCase):
+    """ar/hi/ru were shut down: every old URL forwards to its English twin (no 404), stays out of the sitemap, and /releases/ forwards too."""
+
+    @classmethod
+    def setUpClass(cls):
+        build_site.REDIRECT_LANGS = REAL_REDIRECT_LANGS
+        try:
+            cls.files = build_site.build(ROOT)
+        finally:
+            build_site.REDIRECT_LANGS = ()
+
+    def target(self, rel):
+        m = re.search(r'<link rel="canonical" href="https://draft\.ipe\.rest(/[^"]*)">', self.files[rel])
+        return m.group(1)
+
+    def test_every_old_page_forwards_noindex_with_canonical_and_refresh(self):
+        old = [r for r in self.files if r.split("/")[0] in REAL_REDIRECT_LANGS and r.endswith("/index.html")
+               and r.split("/")[1] not in build_site.LEGAL]
+        self.assertGreater(len(old), 60)
+        for rel in old:
+            t, tgt = self.files[rel], self.target(rel)
+            self.assertIn('<meta name="robots" content="noindex, follow">', t, rel)
+            self.assertIn('<meta http-equiv="refresh" content="0; url=%s">' % tgt, t, rel)
+            self.assertNotIn("hreflang", t, rel)
+            self.assertIn(tgt.strip("/") + "/index.html" if tgt != "/" else "index.html", self.files, rel)
+
+    def test_destinations(self):
+        for c in REAL_REDIRECT_LANGS:
+            self.assertEqual(self.target("%s/index.html" % c), "/")
+            self.assertEqual(self.target("%s/about/index.html" % c), "/about/")
+            self.assertEqual(self.target("%s/blog/index.html" % c), "/en/blog/")
+            self.assertEqual(self.target("%s/blog/page/2/index.html" % c), "/en/blog/page/2/")
+        self.assertEqual(self.target("ar/blog/start-later/index.html"), "/en/blog/start-later/")
+        self.assertEqual(self.target("releases/index.html"), "/about/")
+
+    def test_not_in_sitemap(self):
+        locs = re.findall(r"<loc>(.*?)</loc>", self.files["sitemap.xml"])
+        self.assertFalse([u for u in locs if re.match(r"https://draft\.ipe\.rest/(ar|hi|ru|releases)/", u)])
+
 
 class Locales(unittest.TestCase):
     def test_sixteen_languages_with_en_as_fallback(self):
@@ -40,7 +92,8 @@ class Locales(unittest.TestCase):
 class Pages(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.files = build_site.build(ROOT)
+        cls.files = {k: v for k, v in build_site.build(ROOT).items()
+                     if k not in [p + "index.html" for p in build_site.RETIRED_PATHS]}  # forwards for removed pages: see RedirectedLanguages
 
     @property
     def home(self):
@@ -646,7 +699,11 @@ class StageSite(unittest.TestCase):
 
 class RepoIsBuilt(unittest.TestCase):
     def test_generated_files_are_up_to_date(self):
-        self.assertEqual(build_site.main(["--check"]), 0)
+        build_site.REDIRECT_LANGS = REAL_REDIRECT_LANGS
+        try:
+            self.assertEqual(build_site.main(["--check"]), 0)
+        finally:
+            build_site.REDIRECT_LANGS = ()
 
     def test_sitemap_checker_passes(self):
         self.assertEqual(check_sitemap.check(ROOT), [])

@@ -50,7 +50,7 @@ class SeoBaseline(unittest.TestCase):
 
     def test_there_are_indexable_pages_in_every_language(self):
         self.assertGreater(len(self.pages), 100)
-        for code in CODES:
+        for code in CODES - set(build_site.REDIRECT_LANGS):  # ar/hi/ru only forward now
             self.assertTrue([r for r in self.pages if r.startswith(code + "/")], code)
 
     def test_every_indexable_page_has_title_and_description(self):
