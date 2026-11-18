@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://draft.ipe.rest/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -61,7 +61,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/zh-Hant/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -99,7 +99,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -137,7 +137,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -156,7 +156,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -175,7 +175,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/th/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -194,7 +194,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -213,7 +213,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/tr/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/"/>
@@ -232,7 +232,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/en/blog/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -248,7 +248,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/en/blog/page/2/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/2/"/>
@@ -264,7 +264,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/en/blog/page/3/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/3/"/>
@@ -280,7 +280,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/blog/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -296,7 +296,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/blog/page/2/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/2/"/>
@@ -312,7 +312,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ko/blog/page/3/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/3/"/>
@@ -328,7 +328,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/blog/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -344,7 +344,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/blog/page/2/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/2/"/>
@@ -360,7 +360,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/ja/blog/page/3/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/3/"/>
@@ -376,7 +376,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/blog/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -392,7 +392,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/blog/page/2/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/2/"/>
@@ -408,7 +408,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/es/blog/page/3/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/3/"/>
@@ -424,7 +424,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/blog/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -440,7 +440,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/blog/page/2/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/2/"/>
@@ -456,7 +456,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/pt/blog/page/3/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/3/"/>
@@ -472,7 +472,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/blog/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -488,7 +488,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/blog/page/2/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/2/"/>
@@ -504,7 +504,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/id/blog/page/3/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/3/"/>
@@ -520,7 +520,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/blog/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -536,7 +536,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/blog/page/2/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/2/"/>
@@ -552,7 +552,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/vi/blog/page/3/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/3/"/>
@@ -568,7 +568,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/blog/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -584,7 +584,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/blog/page/2/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/2/"/>
@@ -600,7 +600,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/fr/blog/page/3/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/3/"/>
@@ -616,7 +616,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/blog/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/"/>
@@ -632,7 +632,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/blog/page/2/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/2/"/>
@@ -648,7 +648,7 @@
   </url>
   <url>
     <loc>https://draft.ipe.rest/de/blog/page/3/</loc>
-    <lastmod>2026-11-15T13:11:00+09:00</lastmod>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/page/3/"/>
@@ -661,6 +661,438 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/page/3/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/page/3/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/page/3/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/en/blog/the-way-between/</loc>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ko/blog/the-way-between/</loc>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ja/blog/the-way-between/</loc>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/es/blog/the-way-between/</loc>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/pt/blog/the-way-between/</loc>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/id/blog/the-way-between/</loc>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/vi/blog/the-way-between/</loc>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/fr/blog/the-way-between/</loc>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/de/blog/the-way-between/</loc>
+    <lastmod>2026-11-18T13:05:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/the-way-between/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/the-way-between/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/en/blog/one-small-slip/</loc>
+    <lastmod>2026-11-18T13:04:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ko/blog/one-small-slip/</loc>
+    <lastmod>2026-11-18T13:04:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ja/blog/one-small-slip/</loc>
+    <lastmod>2026-11-18T13:04:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/es/blog/one-small-slip/</loc>
+    <lastmod>2026-11-18T13:04:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/pt/blog/one-small-slip/</loc>
+    <lastmod>2026-11-18T13:04:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/id/blog/one-small-slip/</loc>
+    <lastmod>2026-11-18T13:04:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/vi/blog/one-small-slip/</loc>
+    <lastmod>2026-11-18T13:04:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/fr/blog/one-small-slip/</loc>
+    <lastmod>2026-11-18T13:04:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/de/blog/one-small-slip/</loc>
+    <lastmod>2026-11-18T13:04:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/one-small-slip/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/one-small-slip/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/en/blog/verb-over-adjective/</loc>
+    <lastmod>2026-11-18T13:03:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ko/blog/verb-over-adjective/</loc>
+    <lastmod>2026-11-18T13:03:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/ja/blog/verb-over-adjective/</loc>
+    <lastmod>2026-11-18T13:03:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/es/blog/verb-over-adjective/</loc>
+    <lastmod>2026-11-18T13:03:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/pt/blog/verb-over-adjective/</loc>
+    <lastmod>2026-11-18T13:03:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/id/blog/verb-over-adjective/</loc>
+    <lastmod>2026-11-18T13:03:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/vi/blog/verb-over-adjective/</loc>
+    <lastmod>2026-11-18T13:03:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/fr/blog/verb-over-adjective/</loc>
+    <lastmod>2026-11-18T13:03:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+  </url>
+  <url>
+    <loc>https://draft.ipe.rest/de/blog/verb-over-adjective/</loc>
+    <lastmod>2026-11-18T13:03:00+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://draft.ipe.rest/ko/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://draft.ipe.rest/ja/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://draft.ipe.rest/es/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://draft.ipe.rest/pt/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://draft.ipe.rest/id/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://draft.ipe.rest/vi/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://draft.ipe.rest/fr/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://draft.ipe.rest/de/blog/verb-over-adjective/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://draft.ipe.rest/en/blog/verb-over-adjective/"/>
   </url>
   <url>
     <loc>https://draft.ipe.rest/en/blog/one-small-want/</loc>

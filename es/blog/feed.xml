@@ -7,7 +7,28 @@
     <atom:link href="https://draft.ipe.rest/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Sun, 15 Nov 2026 13:11:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 13:05:00 +0900</lastBuildDate>
+    <item>
+      <title>Escribe el breve camino entre dos lugares</title>
+      <link>https://draft.ipe.rest/es/blog/the-way-between/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/the-way-between/</guid>
+      <pubDate>Wed, 18 Nov 2026 13:05:00 +0900</pubDate>
+      <description>El trayecto corto entre dos lugares puede unir una historia. Anota la salida y la llegada y añade algo del camino, en tres pasos y con un ejemplo.</description>
+    </item>
+    <item>
+      <title>Deja un pequeño desliz en tu escena</title>
+      <link>https://draft.ipe.rest/es/blog/one-small-slip/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/one-small-slip/</guid>
+      <pubDate>Wed, 18 Nov 2026 13:04:00 +0900</pubDate>
+      <description>Un pequeño desliz en una escena fluida la vuelve creíble. Elige el desliz, escribe lo ocurrido y añade lo que hiciste, en tres pasos con un ejemplo.</description>
+    </item>
+    <item>
+      <title>Cambia un adjetivo por una acción</title>
+      <link>https://draft.ipe.rest/es/blog/verb-over-adjective/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/blog/verb-over-adjective/</guid>
+      <pubDate>Wed, 18 Nov 2026 13:03:00 +0900</pubDate>
+      <description>Cambiar un adjetivo por una acción da más nitidez a la frase. Elige una palabra, recuerda qué hizo el cuerpo y reescribe en tres pasos, con un ejemplo.</description>
+    </item>
     <item>
       <title>Dale a la persona de tu escena un pequeño deseo</title>
       <link>https://draft.ipe.rest/es/blog/one-small-want/</link>
