@@ -1,0 +1,61 @@
+# 자동 발행 — 1·2단계(드라이런 전용). 설계: F-006 docs/auto-publish-design.md §6.
+# 이 워크플로는 아무것도 쓰지 않고 push 하지 않는다. --dry-run 이 하드코딩돼 있다.
+# 3단계(실발행)에서 바꿀 것: 아래 permissions 를 contents: write + actions: write 로, --dry-run 을 제거하고
+# 발행 커밋·push 단계를 추가. 그 전까지 contents: read 를 유지한다.
+name: publish-scheduled
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  # 3단계에서 필요: contents: write (발행 커밋 push), actions: write (실패 알림 재시도 상태 기록)
+
+concurrency:
+  group: auto-publish
+  cancel-in-progress: false  # 발행 중인 틱을 끊지 않는다 — 대기열만 직렬로 돈다
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PUBLISH_PAUSED: ${{ vars.PUBLISH_PAUSED }}  # 1 이면 스크립트가 즉시 skip (긴급 정지 스위치)
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout blog/queue (대기열)
+        uses: actions/checkout@v4
+        with:
+          ref: blog/queue
+          path: queue
+          fetch-depth: 0  # Iris 근거 커밋 탐색(git log)에 전체 이력이 필요
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Auto-publish dry run
+        run: |
+          set -o pipefail
+          python3 scripts/auto_publish.py --dry-run \
+            --queue-dir queue \
+            --schedule queue/posts/SCHEDULE.tsv \
+            --main-dir . 2>&1 | tee auto_publish.log
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## auto-publish (dry-run)"
+            echo ""
+            echo '```'
+            grep -E '^(auto_publish|RESULT)' auto_publish.log || echo "(로그 없음)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
