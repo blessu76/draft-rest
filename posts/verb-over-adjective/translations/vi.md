@@ -1,9 +1,9 @@
 ---
 title: Đổi một tính từ thành một hành động
 description: Đổi một tính từ thành hành động giúp câu văn rõ nét hơn. Chọn một từ, nhớ lại cơ thể đã làm gì rồi viết lại, gồm ba bước và ví dụ.
-date: 2026-11-18
 slug: verb-over-adjective
-published: 2026-11-18T13:03:00+09:00
+date: 2026-11-18
+published: 2026-11-18T21:06:00+09:00
 ---
 
 Những câu như "căn phòng thật yên tĩnh" hay "họ trông có vẻ mệt" rất dễ đọc, nhưng cảnh thì khó đọng lại. Tính từ trao kết luận ngay từ đầu, nên người đọc còn ít chỗ để tự tưởng tượng. Nếu đặt một hành động vào chỗ đó, ý vẫn như cũ nhưng câu văn rõ nét hơn nhiều. Chỉ cần chọn một tính từ trong đoạn đã viết và đổi nó thành một hành động.

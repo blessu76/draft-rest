@@ -1,9 +1,9 @@
 ---
 title: Escreva o pequeno caminho entre dois lugares
 description: O trajeto curto entre dois lugares pode unir uma história. Anote a saída e a chegada e acrescente algo do caminho, em três passos e com um exemplo.
-date: 2026-11-18
 slug: the-way-between
-published: 2026-11-18T13:05:00+09:00
+date: 2026-11-18
+published: 2026-11-18T21:08:00+09:00
 ---
 
 Quando escrevemos uma história, costumamos escrever só os lugares onde as coisas aconteceram: o que se passou em casa, o que se passou no escritório. O trajeto entre eles fica de fora. No entanto, o caminho curto de um lugar a outro costuma ser onde os sentimentos do dia aparecem com mais sinceridade. Acrescente uma linha sobre os poucos minutos que passou andando ou no ônibus, e a história se une com mais naturalidade.

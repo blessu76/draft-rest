@@ -1,9 +1,9 @@
 ---
 title: Remplacez un adjectif par une action
 description: Remplacer un adjectif par une action rend la phrase plus nette. Choisissez un mot, rappelez ce que le corps a fait, puis réécrivez. Trois étapes, un exemple.
-date: 2026-11-18
 slug: verb-over-adjective
-published: 2026-11-18T13:03:00+09:00
+date: 2026-11-18
+published: 2026-11-18T21:06:00+09:00
 ---
 
 Des phrases comme « la pièce était calme » ou « la fatigue se lisait sur leur visage » se lisent facilement, mais la scène ne reste pas en mémoire. L'adjectif livre la conclusion d'emblée et laisse moins de place à l'imagination de qui lit. Si une action prend sa place, le message reste le même, mais il passe avec beaucoup plus de netteté. Il suffit de choisir un seul adjectif dans un texte déjà écrit et de le remplacer par une action.

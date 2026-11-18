@@ -1,9 +1,9 @@
 ---
 title: Laissez un petit faux pas dans votre scène
 description: Un petit faux pas dans une scène trop lisse la rend vraie. Choisissez-le, écrivez ce qui s'est passé, ajoutez votre geste. Trois étapes et un exemple.
-date: 2026-11-18
 slug: one-small-slip
-published: 2026-11-18T13:04:00+09:00
+date: 2026-11-18
+published: 2026-11-18T21:07:00+09:00
 ---
 
 Une journée où tout s'est déroulé sans accroc a tendance à paraître plate sur la page. Une vraie journée recèle presque toujours un petit faux pas : une tasse renversée, un prénom écorché, des clés oubliées à la maison. On veut généralement oublier ces moments, mais à l'écrit, ils comptent parmi les meilleurs moyens de rendre une scène vraie.

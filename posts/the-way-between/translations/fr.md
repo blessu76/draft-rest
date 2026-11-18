@@ -1,9 +1,9 @@
 ---
 title: Écrivez le petit chemin entre deux lieux
 description: Le court trajet entre deux lieux peut relier une histoire. Notez le départ et l'arrivée, puis ajoutez un détail du chemin, en trois étapes avec un exemple.
-date: 2026-11-18
 slug: the-way-between
-published: 2026-11-18T13:05:00+09:00
+date: 2026-11-18
+published: 2026-11-18T21:08:00+09:00
 ---
 
 Quand on écrit une histoire, on n'écrit d'ordinaire que les lieux où quelque chose s'est passé : ce qui est arrivé à la maison, ce qui est arrivé au bureau. Le trajet entre les deux est sauté. Pourtant, le court chemin d'un lieu à l'autre est souvent l'endroit où les sentiments de la journée se montrent le plus franchement. Ajoutez une ligne sur les quelques minutes passées à marcher ou dans le bus, et l'histoire se relie plus naturellement.

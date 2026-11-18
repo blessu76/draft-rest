@@ -1,9 +1,9 @@
 ---
 title: Tinggalkan Satu Kekeliruan Kecil dalam Adegan
 description: Satu kekeliruan kecil dalam adegan yang mulus membuatnya terasa nyata. Pilih kekeliruannya, tulis kejadiannya, tambahkan tindakanmu. Tiga langkah dan contoh.
-date: 2026-11-18
 slug: one-small-slip
-published: 2026-11-18T13:04:00+09:00
+date: 2026-11-18
+published: 2026-11-18T21:07:00+09:00
 ---
 
 Hari yang semuanya berjalan mulus cenderung terlihat datar saat dituliskan. Hari yang nyata hampir selalu menyimpan satu kekeliruan kecil: cangkir yang tumpah, nama yang salah disebut, kunci yang tertinggal. Kita biasanya ingin melupakan momen-momen seperti itu, tetapi dalam tulisan, justru itulah salah satu cara terbaik untuk membuat adegan terasa nyata.

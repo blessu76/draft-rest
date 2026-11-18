@@ -1,9 +1,9 @@
 ---
 title: Troque um adjetivo por uma ação
 description: Trocar um adjetivo por uma ação deixa a frase mais nítida. Escolha uma palavra, lembre o que o corpo fez e reescreva em três passos, com exemplo.
-date: 2026-11-18
 slug: verb-over-adjective
-published: 2026-11-18T13:03:00+09:00
+date: 2026-11-18
+published: 2026-11-18T21:06:00+09:00
 ---
 
 Frases como «a sala estava quieta» ou «dava para ver o cansaço» são fáceis de ler, mas a cena não fica na memória. O adjetivo entrega a conclusão primeiro e deixa menos espaço para quem lê imaginar. Se uma ação ocupar esse lugar, a mensagem continua a mesma, só que chega com muito mais nitidez. Basta escolher um único adjetivo de algo que já foi escrito e trocá-lo por uma ação.
