@@ -1,7 +1,8 @@
-# 자동 발행 — 1·2단계(드라이런 전용). 설계: F-006 docs/auto-publish-design.md §6.
-# 이 워크플로는 아무것도 쓰지 않고 push 하지 않는다. --dry-run 이 하드코딩돼 있다.
-# 3단계(실발행)에서 바꿀 것: 아래 permissions 를 contents: write + actions: write 로, --dry-run 을 제거하고
-# 발행 커밋·push 단계를 추가. 그 전까지 contents: read 를 유지한다.
+# 자동 발행 — 3단계(실발행). 설계: F-006 docs/auto-publish-design.md §6.
+# 10분마다 돌아, 도래한 슬롯의 첫 통과 후보 1편을 blog/queue → main 으로 옮겨 커밋·push 한다(G1~G10 그대로).
+# 긴급 정지: 저장소 변수 PUBLISH_PAUSED=1 (스크립트가 즉시 skip).
+# 주의: GITHUB_TOKEN 으로 push 한 커밋은 deploy.yml 을 자동 기동하지 않는다.
+#       배포 연결(gh workflow run deploy.yml → actions: write)은 오너/방장 결정 뒤에 추가한다 — 지금은 contents: write 만.
 name: publish-scheduled
 
 on:
@@ -10,52 +11,67 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  # 3단계에서 필요: contents: write (발행 커밋 push), actions: write (실패 알림 재시도 상태 기록)
+  contents: write  # 발행 커밋 push 에만 필요. 그 외 권한 없음.
 
 concurrency:
   group: auto-publish
   cancel-in-progress: false  # 발행 중인 틱을 끊지 않는다 — 대기열만 직렬로 돈다
 
 jobs:
-  dry-run:
+  publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     env:
       PUBLISH_PAUSED: ${{ vars.PUBLISH_PAUSED }}  # 1 이면 스크립트가 즉시 skip (긴급 정지 스위치)
+      STATE_FILE: ${{ runner.temp }}/auto_publish_state.json
+      LOG_FILE: ${{ runner.temp }}/auto_publish.log
     steps:
-      - name: Checkout main
+      - name: Checkout main (push 가 필요해 자격 증명 유지)
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
+          persist-credentials: true
 
-      - name: Checkout blog/queue (대기열)
+      - name: Checkout blog/queue (대기열, 읽기 전용)
         uses: actions/checkout@v4
         with:
           ref: blog/queue
           path: queue
           fetch-depth: 0  # Iris 근거 커밋 탐색(git log)에 전체 이력이 필요
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Auto-publish dry run
+      # 알림 억제(3시간) 상태 — run_id 키로 저장하고 prefix 로 가장 최근 것을 복원한다.
+      # 잡이 성공해야 저장된다(스크립트는 hold/skip 도 exit 0).
+      - name: Restore alert state
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/auto_publish_state.json
+          key: auto-publish-state-${{ github.run_id }}
+          restore-keys: |
+            auto-publish-state-
+
+      - name: Auto-publish
         run: |
           set -o pipefail
-          python3 scripts/auto_publish.py --dry-run \
+          python3 scripts/auto_publish.py \
             --queue-dir queue \
             --schedule queue/posts/SCHEDULE.tsv \
-            --main-dir . 2>&1 | tee auto_publish.log
+            --main-dir . \
+            --state-file "$STATE_FILE" 2>&1 | tee "$LOG_FILE"
 
       - name: Job summary
         if: always()
         run: |
           {
-            echo "## auto-publish (dry-run)"
+            echo "## auto-publish"
             echo ""
             echo '```'
-            grep -E '^(auto_publish|RESULT)' auto_publish.log || echo "(로그 없음)"
+            grep -E '^(auto_publish|RESULT)' "$LOG_FILE" || echo "(로그 없음)"
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
