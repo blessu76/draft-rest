@@ -3,6 +3,8 @@ title: Swap one adjective for an action
 description: Replacing one adjective with an action sharpens a sentence. Pick a word, recall what the body did, and rewrite it in three steps, with an example.
 date: 2026-11-18
 slug: verb-over-adjective
+copy_review: iris
+copy_review_date: 2026-11-18
 published: 2026-11-18T13:03:00+09:00
 ---
 

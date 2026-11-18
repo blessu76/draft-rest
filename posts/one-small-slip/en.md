@@ -3,6 +3,8 @@ title: Leave one small slip in your scene
 description: One small slip in a smooth scene makes it feel real. Pick the slip, write what happened, and add what you did, in three steps with an example.
 date: 2026-11-18
 slug: one-small-slip
+copy_review: iris
+copy_review_date: 2026-11-18
 published: 2026-11-18T13:04:00+09:00
 ---
 

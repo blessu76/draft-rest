@@ -3,6 +3,8 @@ title: 작은 어긋남 하나를 장면에 남겨 보세요
 description: 매끄러운 장면에 작은 어긋남을 하나 넣으면 실감이 납니다. 어긋남을 고르고 그 자리에서 한 일을 적는 세 단계와 예시를 정리했습니다.
 date: 2026-11-18
 slug: one-small-slip
+copy_review: iris
+copy_review_date: 2026-11-18
 published: 2026-11-18T13:04:00+09:00
 ---
 

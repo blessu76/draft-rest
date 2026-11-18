@@ -3,6 +3,8 @@ title: Write the short way between two places
 description: The short trip between two places can link a story together. Name the start and the end, add one thing from the way, in three steps, with an example.
 date: 2026-11-18
 slug: the-way-between
+copy_review: iris
+copy_review_date: 2026-11-18
 published: 2026-11-18T13:05:00+09:00
 ---
 

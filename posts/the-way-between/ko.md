@@ -3,6 +3,8 @@ title: 두 장소 사이의 길을 한 줄 써 보세요
 description: 두 장소 사이를 오가는 짧은 길이 이야기를 이어 줍니다. 출발과 도착을 적고 길 위의 것을 하나 붙이는 세 단계와 예시를 정리했습니다.
 date: 2026-11-18
 slug: the-way-between
+copy_review: iris
+copy_review_date: 2026-11-18
 published: 2026-11-18T13:05:00+09:00
 ---
 
