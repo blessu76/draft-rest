@@ -27,9 +27,9 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 21 | 2026-11-13 | `pin-the-hour` | Pin one time of day to your scene | published (main) — 2026-11-15 13:09 (backfill) |
 | 22 | 2026-11-14 | `one-object-on-the-table` | Let one object in the scene do the talking | published (main) — 2026-11-15 13:10 (backfill) |
 | 23 | 2026-11-15 | `one-small-want` | Give the person in your scene one small want | published (main) — 2026-11-15 13:11 |
-| 24 | 2026-11-18 | `verb-over-adjective` | Swap one adjective for an action | published (main) — 2026-11-18 13:03 (backfill; Iris 검수 대기) |
-| 25 | 2026-11-18 | `one-small-slip` | Leave one small slip in your scene | published (main) — 2026-11-18 13:04 (backfill; Iris 검수 대기) |
-| 26 | 2026-11-18 | `the-way-between` | Write the short way between two places | published (main) — 2026-11-18 13:05 (backfill; Iris 검수 대기) |
+| 24 | 2026-11-18 | `verb-over-adjective` | Swap one adjective for an action | published (main) — 2026-11-18 21:06 (backfill; Iris 통과) |
+| 25 | 2026-11-18 | `one-small-slip` | Leave one small slip in your scene | published (main) — 2026-11-18 21:07 (backfill; Iris 통과) |
+| 26 | 2026-11-18 | `the-way-between` | Write the short way between two places | published (main) — 2026-11-18 21:08 (backfill; Iris 통과) |
 
 Queued dates are placeholders; `publish_post.py` stamps the real date and time. Facts about draft() are limited to what the site states
 (talk ~30 s → 2–3 gentle questions → story hook/rising/peak/reflection/close; privacy; no claims about release or formats).
