@@ -1,9 +1,11 @@
 ---
 title: Write the short way between two places
 description: The short trip between two places can link a story together. Name the start and the end, add one thing from the way, in three steps, with an example.
-date: 2026-11-18
 slug: the-way-between
-draft: true
+copy_review: iris
+copy_review_date: 2026-11-18
+date: 2026-11-18
+published: 2026-11-18T21:08:00+09:00
 ---
 
 When we write a story we usually write only the places where things happened: what took place at home, what took place at the office. The way between them gets skipped. Yet the short trip from one place to another is often where the day's feelings show most honestly. Add one line about the few minutes you spent walking or riding, and the story links together more naturally.

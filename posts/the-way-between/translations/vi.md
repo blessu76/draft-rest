@@ -1,9 +1,9 @@
 ---
 title: Viết đoạn đường ngắn giữa hai nơi
 description: Quãng đường ngắn giữa hai nơi có thể nối câu chuyện lại. Ghi nơi đi và nơi đến, thêm một điều trên đường, qua ba bước và một ví dụ.
-date: 2026-11-18
 slug: the-way-between
-draft: true
+date: 2026-11-18
+published: 2026-11-18T21:08:00+09:00
 ---
 
 Khi viết một câu chuyện, chúng ta thường chỉ viết những nơi có chuyện xảy ra: chuyện ở nhà, chuyện ở văn phòng. Đoạn đường ở giữa bị bỏ qua. Vậy mà quãng đường ngắn từ nơi này sang nơi khác lại thường là chỗ cảm xúc trong ngày lộ ra thành thật nhất. Chỉ cần thêm một dòng về vài phút đi bộ hay ngồi xe buýt, câu chuyện sẽ nối liền tự nhiên hơn.

@@ -3,7 +3,7 @@ title: Geben Sie der Person in Ihrer Szene einen kleinen Wunsch
 description: Eine Zeile darüber, was jemand wollte, bringt eine Szene in Bewegung. Schreiben Sie den Wunsch, nennen Sie das Hindernis und fügen Sie einen Schritt hinzu.
 date: 2026-11-15
 slug: one-small-want
-draft: true
+published: 2026-11-15T13:11:00+09:00
 ---
 
 Einem Text, in dem scheinbar nichts passiert, fehlt oft ein Wunsch. Sobald ein Mensch etwas will, und sei es nur ein wenig, kommt die Szene in Bewegung. Es muss kein großes Ziel sein. Den letzten freien Platz haben zu wollen oder auf einen Anruf zu hoffen, genügt völlig. Schreiben Sie eine einzige Zeile darüber, was die Person in Ihrer Geschichte in diesem Moment wollte.

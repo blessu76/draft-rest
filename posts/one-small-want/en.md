@@ -3,7 +3,9 @@ title: Give the person in your scene one small want
 description: One line about what a person wanted sets a scene moving. Write the want, name what stood in the way, and add one step, with an example.
 date: 2026-11-15
 slug: one-small-want
-draft: true
+copy_review: iris
+copy_review_date: 2026-11-15
+published: 2026-11-15T13:11:00+09:00
 ---
 
 A piece that feels as if nothing happens is often missing a want. The moment a person wants something, even slightly, the scene starts to move. It doesn't have to be a grand goal. Wanting the last open seat or hoping for a phone call is enough. Write one line about what the person in your story wanted in that moment.

@@ -3,7 +3,7 @@ title: Dê à pessoa da sua cena um pequeno desejo
 description: Uma linha sobre o que alguém queria põe a cena em movimento. Escreva o desejo, nomeie o obstáculo e acrescente um passo, com um exemplo.
 date: 2026-11-15
 slug: one-small-want
-draft: true
+published: 2026-11-15T13:11:00+09:00
 ---
 
 Um texto em que parece que nada acontece costuma estar sem um desejo. No instante em que alguém quer alguma coisa, ainda que pouco, a cena começa a se mover. Não precisa ser uma grande meta. Querer o último assento livre ou esperar uma ligação já basta. Escreva uma única linha sobre o que a pessoa da sua história queria naquele momento.

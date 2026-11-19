@@ -3,7 +3,7 @@ title: Hãy cho người trong cảnh của bạn một mong muốn nhỏ
 description: Một dòng về điều một người muốn sẽ khiến cảnh chuyển động. Viết mong muốn, nêu điều cản trở, thêm một bước đi, qua ba bước và một ví dụ.
 date: 2026-11-15
 slug: one-small-want
-draft: true
+published: 2026-11-15T13:11:00+09:00
 ---
 
 Một đoạn văn đọc lên có cảm giác chẳng có gì xảy ra thường là đoạn còn thiếu một mong muốn. Khi một người muốn điều gì đó, dù chỉ một chút, cảnh bắt đầu chuyển động. Mong muốn ấy không cần là một mục tiêu lớn lao. Muốn có chỗ ngồi trống cuối cùng, hay mong có một cuộc gọi đến, là đã đủ. Hãy viết một dòng về điều người trong câu chuyện của bạn đã muốn vào khoảnh khắc ấy.

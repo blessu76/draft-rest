@@ -1,9 +1,11 @@
 ---
 title: Pin one time of day to your scene
 description: One clock time can make a scene sharper. Pick a moment, write the time, and add what that time did, in three steps with an example.
-date: 2026-11-13
+date: 2026-11-15
 slug: pin-the-hour
-draft: true
+copy_review: iris
+copy_review_date: 2026-11-15
+published: 2026-11-15T13:09:00+09:00
 ---
 
 A story that opens with "one afternoon" blurs in the reader's mind almost at once. A story that opens with "the 6:40 bus went past the stop" feels like standing right there. A time of day is a tiny piece of information, but it fixes a scene firmly into one slot of the day. Glancing at a clock and writing down a single time can make a story much clearer.

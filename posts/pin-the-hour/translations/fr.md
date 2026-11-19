@@ -1,9 +1,9 @@
 ---
 title: Fixez une heure de la journée dans votre scène
 description: Une seule heure à l'horloge peut rendre une scène plus nette. Choisissez un instant, notez l'heure, ajoutez ce qu'elle a fait. Trois étapes et un exemple.
-date: 2026-11-13
+date: 2026-11-15
 slug: pin-the-hour
-draft: true
+published: 2026-11-15T13:09:00+09:00
 ---
 
 Un récit qui s'ouvre sur « un après-midi » s'efface presque aussitôt de l'esprit de ceux qui le lisent. Un récit qui s'ouvre sur « le bus de 6 h 40 est passé devant l'arrêt sans s'arrêter » donne l'impression d'être sur place. L'heure est une information minuscule, mais elle cloue la scène à un point précis de la journée. Jeter un œil à l'horloge et noter une seule heure peut rendre une histoire bien plus claire.

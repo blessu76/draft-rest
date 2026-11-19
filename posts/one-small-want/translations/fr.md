@@ -3,7 +3,7 @@ title: Donnez à la personne de votre scène un petit désir
 description: Une ligne sur ce que quelqu'un voulait met la scène en mouvement. Écrivez le désir, nommez l'obstacle et ajoutez un pas, avec un exemple.
 date: 2026-11-15
 slug: one-small-want
-draft: true
+published: 2026-11-15T13:11:00+09:00
 ---
 
 Un texte où l'on a l'impression qu'il ne se passe rien manque souvent d'un désir. Dès qu'une personne veut quelque chose, même un peu, la scène se met en mouvement. Il n'est pas nécessaire que ce soit un grand objectif. Vouloir la dernière place libre ou espérer un appel téléphonique suffit. Écrivez une seule ligne sur ce que voulait, à ce moment-là, la personne de votre histoire.

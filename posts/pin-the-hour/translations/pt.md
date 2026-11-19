@@ -1,9 +1,9 @@
 ---
 title: Fixe uma hora do dia na sua cena
 description: Uma única hora do relógio pode deixar a cena mais nítida. Escolha um momento, escreva a hora e acrescente o que ela fez, em três passos com exemplo.
-date: 2026-11-13
+date: 2026-11-15
 slug: pin-the-hour
-draft: true
+published: 2026-11-15T13:09:00+09:00
 ---
 
 Uma história que começa com "numa tarde qualquer" se dissolve na mente de quem lê quase de imediato. Uma que começa com "o ônibus das 6h40 passou direto pelo ponto" parece colocar a pessoa bem ali. A hora é uma informação minúscula, mas prende a cena a um ponto exato do dia. Olhar um relógio e anotar uma só hora pode deixar a história muito mais clara.

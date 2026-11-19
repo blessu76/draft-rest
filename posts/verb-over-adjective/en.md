@@ -1,9 +1,11 @@
 ---
 title: Swap one adjective for an action
 description: Replacing one adjective with an action sharpens a sentence. Pick a word, recall what the body did, and rewrite it in three steps, with an example.
-date: 2026-11-16
 slug: verb-over-adjective
-draft: true
+copy_review: iris
+copy_review_date: 2026-11-18
+date: 2026-11-18
+published: 2026-11-18T21:06:00+09:00
 ---
 
 Sentences like "the room was quiet" or "they looked tired" are easy to read, but the scene doesn't stay with you. An adjective hands over the conclusion first, which leaves the reader less room to imagine. Put an action in its place and the same message comes through far more sharply. Pick just one adjective in something you wrote and swap it for an action.

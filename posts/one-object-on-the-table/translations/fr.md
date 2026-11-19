@@ -1,9 +1,9 @@
 ---
 title: Laissez un seul objet de la scène parler à votre place
 description: Un seul objet peut porter l'ambiance d'une scène. Choisissez-en un, décrivez son aspect et reliez-le à une personne en trois étapes, avec un exemple.
-date: 2026-11-14
+date: 2026-11-15
 slug: one-object-on-the-table
-draft: true
+published: 2026-11-15T13:10:00+09:00
 ---
 
 Si vous écrivez « la maison était en désordre », chacun s'imagine un désordre à sa manière. Mais si vous écrivez « le flacon de médicaments sans bouchon traînait sur la table depuis trois jours », on voit jusqu'au temps que l'on a passé à vivre ainsi dans cette maison. Un objet est minuscule, et pourtant il peut contenir à la fois l'ambiance d'une scène et la situation d'une personne. Regardez autour de vous et notez ce sur quoi votre regard revient sans cesse.

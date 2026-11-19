@@ -1,9 +1,9 @@
 ---
 title: Heften Sie eine Uhrzeit an Ihre Szene
 description: Eine einzige Uhrzeit kann eine Szene schärfer machen. Einen Moment wählen, die Zeit notieren und ergänzen, was sie bewirkt hat: drei Schritte mit Beispiel.
-date: 2026-11-13
+date: 2026-11-15
 slug: pin-the-hour
-draft: true
+published: 2026-11-15T13:09:00+09:00
 ---
 
 Ein Text, der mit „eines Nachmittags“ beginnt, verschwimmt im Kopf der Lesenden fast sofort. Ein Text, der mit „Der Bus von 6:40 Uhr fuhr an der Haltestelle vorbei“ beginnt, fühlt sich an, als stünde man selbst dort. Eine Uhrzeit ist eine winzige Information, aber sie heftet die Szene fest an eine Stelle des Tages. Ein Blick auf die Uhr und eine einzige notierte Zeit können eine Geschichte deutlich klarer machen.

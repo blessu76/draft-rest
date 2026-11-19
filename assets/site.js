@@ -6,6 +6,8 @@
     sel.addEventListener('change', function () {
       try { localStorage.setItem('draft_lang', this.value); } catch (e) {}
       var path = this.getAttribute('data-path') || '';
+      var blogLangs = (this.getAttribute('data-blog') || '').split(',');
+      if (path.split('/')[0] === 'blog' && blogLangs.indexOf(this.value) < 0) path = '';
       location.href = this.value === 'en' ? (this.getAttribute('data-en') || '/') : '/' + this.value + '/' + path;
     });
   }

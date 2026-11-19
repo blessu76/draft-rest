@@ -1,9 +1,9 @@
 ---
 title: Để một món đồ trong cảnh lên tiếng thay bạn
 description: Chỉ một món đồ cũng mang được không khí của cả cảnh. Chọn một món, tả dáng vẻ rồi nối với một người, qua ba bước và một ví dụ.
-date: 2026-11-14
+date: 2026-11-15
 slug: one-object-on-the-table
-draft: true
+published: 2026-11-15T13:10:00+09:00
 ---
 
 Nếu bạn viết "căn nhà bừa bộn", người đọc sẽ tự hình dung một cảnh bừa bộn theo cách của họ. Nhưng nếu bạn viết "lọ thuốc không nắp đã nằm trên bàn ăn ba ngày nay", người đọc còn thấy được người ta đã sống như thế trong căn nhà ấy bao lâu rồi. Một món đồ thì rất nhỏ, vậy mà nó có thể chứa cùng lúc không khí của cảnh và hoàn cảnh của một con người. Hãy nhìn quanh phòng và ghi lại món đồ mà mắt bạn cứ vướng vào.

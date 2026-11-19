@@ -1,9 +1,9 @@
 ---
 title: Deixe um pequeno deslize na sua cena
 description: Um pequeno deslize numa cena fluida a torna real. Escolha o deslize, escreva o que aconteceu e acrescente o que fez, em três passos com um exemplo.
-date: 2026-11-17
 slug: one-small-slip
-draft: true
+date: 2026-11-18
+published: 2026-11-18T21:07:00+09:00
 ---
 
 Um dia em que tudo correu sem tropeços tende a parecer sem graça no papel. Um dia real quase sempre guarda um pequeno deslize: uma xícara derramada, um nome trocado, as chaves esquecidas em casa. Costumamos querer esquecer esses momentos, mas na escrita eles estão entre as melhores formas de fazer uma cena parecer real.

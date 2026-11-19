@@ -36,10 +36,10 @@ def copy_css(dest_dir, url_prefix="/assets/"):
     return "%s%s?v=%s" % (url_prefix, CSS.name, css_version())
 
 
-def studio_line(label="an ipe studio app", year=None, version=None, release_url=None, studio="ipe studio"):
+def studio_line(label="an ipe studio app", year=None, version=None, studio="ipe studio"):
     """푸터 아래 회사 서명 줄 — `© 2026 ipe studio · an ipe studio app · v1.0.0 (73)`.
 
-    version 은 version.AppVersion. release_url 이 있으면 버전 글자가 그 주소(앵커 포함)로 간다.
+    version 은 version.AppVersion(버전 글자만 보인다).
     글자(label · studio)는 웹이 번역해 넘긴다. year 가 None 이면 © 부분을 빼고 studio 링크만.
     """
     head = '<a href="%s">%s</a>' % (STUDIO_URL, esc(studio))
@@ -48,27 +48,6 @@ def studio_line(label="an ipe studio app", year=None, version=None, release_url=
         parts.append('<span class="ipe-studio__label">%s</span>' % esc(label))
     if version is not None and version.version:
         text = "v" + version.label
-        ver = ('<a class="ipe-studio__ver" href="%s">%s</a>' % (esc(release_url), esc(text)) if release_url
-               else '<span class="ipe-studio__ver">%s</span>' % esc(text))
-        parts.append(ver)
+        parts.append('<span class="ipe-studio__ver">%s</span>' % esc(text))
     sep = '<span class="ipe-studio__sep" aria-hidden="true">·</span>'
     return '<p class="ipe-studio" dir="ltr">%s</p>' % sep.join(parts)
-
-
-def release_card(version, at, items, legacy_build_id=True, strict=False, at_text=None):
-    """릴리스 노트 카드 하나 — id 는 ipe_kit 앵커 규칙(`1.0.0-73`), 머리는 화면 글자(`1.0.0 (73)`).
-
-    at 은 aware datetime(게시 시각 · ipe-localtime 이 보는 기기 시간대로 바꾼다). items 는 이미 escape 된 HTML 줄이 아니라
-    평문 목록이다(여기서 escape) — 항목이 `(글, 언어)` 쌍이면 `<li lang="…">`(번역이 없어 다른 언어로 보여 줄 때). at_text 는 날짜만 있을 때 보일 글자. legacy_build_id 면 옛 링크(`#b73`)용 빈 span 을 함께 둔다(iltonggi 웹이 이미 쓰는 모양).
-    """
-    anchor = version.anchor(strict)
-    if anchor is None:
-        raise ValueError("release_card needs a version (and a build when strict)")
-    legacy = '<span id="b%s"></span>' % esc(version.build) if legacy_build_id and version.build else ""
-    lis = "\n".join(("    <li lang=\"%s\">%s</li>" % (esc(t[1]), esc(t[0])) if isinstance(t, tuple) else "    <li>%s</li>" % esc(t))
-                    for t in items)
-    return ('<article class="ipe-rel" id="%s">%s\n'
-            '  <h2 class="ipe-rel__head"><span class="ipe-rel__build">%s</span></h2>\n'
-            '  <p class="ipe-rel__at">%s</p>\n'
-            '  <ul>\n%s\n  </ul>\n'
-            '</article>' % (esc(anchor), legacy, esc(version.label), time_tag(at, at_text), lis))

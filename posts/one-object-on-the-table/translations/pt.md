@@ -1,9 +1,9 @@
 ---
 title: Deixe um único objeto da cena falar por você
 description: Um único objeto pode carregar o clima de uma cena. Escolha um, descreva o aspecto e ligue-o a uma pessoa em três passos, com um exemplo.
-date: 2026-11-14
+date: 2026-11-15
 slug: one-object-on-the-table
-draft: true
+published: 2026-11-15T13:10:00+09:00
 ---
 
 Se você escreve "a casa estava uma bagunça", quem lê imagina uma bagunça do seu jeito. Mas se escreve "o frasco de remédio sem tampa estava havia três dias em cima da mesa", dá para ver até quanto tempo se vive assim naquela casa. Um objeto é minúsculo, e mesmo assim pode guardar ao mesmo tempo o clima de uma cena e a situação de uma pessoa. Olhe ao redor e anote aquilo em que o seu olhar insiste em pousar.

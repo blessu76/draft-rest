@@ -1,9 +1,9 @@
 ---
 title: Deja un pequeño desliz en tu escena
 description: Un pequeño desliz en una escena fluida la vuelve creíble. Elige el desliz, escribe lo ocurrido y añade lo que hiciste, en tres pasos con un ejemplo.
-date: 2026-11-17
 slug: one-small-slip
-draft: true
+date: 2026-11-18
+published: 2026-11-18T21:07:00+09:00
 ---
 
 Un día en el que todo salió sin tropiezos tiende a verse plano sobre el papel. Un día real casi siempre guarda un pequeño desliz: una taza derramada, un nombre equivocado, unas llaves olvidadas. Solemos querer olvidar esos momentos, pero al escribir se cuentan entre las mejores formas de que una escena resulte real.

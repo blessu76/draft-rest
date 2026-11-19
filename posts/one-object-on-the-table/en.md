@@ -1,9 +1,11 @@
 ---
 title: Let one object in the scene do the talking
 description: A single object can carry the mood of a scene. Pick one, write its look, and link it to a person in three steps, with an example.
-date: 2026-11-14
+date: 2026-11-15
 slug: one-object-on-the-table
-draft: true
+copy_review: iris
+copy_review_date: 2026-11-15
+published: 2026-11-15T13:10:00+09:00
 ---
 
 Write "the house was a mess" and the reader pictures a mess on their own. Write "the pill bottle with no cap had sat on the table for three days" and the reader sees how long people have been living there. One object is tiny, yet it can hold the mood of a scene and a person's circumstances all at once. Look around the room and write down the one thing your eye keeps landing on.

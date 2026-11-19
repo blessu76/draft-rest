@@ -1,9 +1,9 @@
 ---
 title: Tulis jalan singkat di antara dua tempat
 description: Perjalanan pendek di antara dua tempat bisa menyambung cerita. Catat keberangkatan dan kedatangan, tambahkan satu hal dari jalan. Tiga langkah dan contoh.
-date: 2026-11-18
 slug: the-way-between
-draft: true
+date: 2026-11-18
+published: 2026-11-18T21:08:00+09:00
 ---
 
 Saat menulis cerita, kita biasanya hanya menulis tempat terjadinya peristiwa: apa yang terjadi di rumah, apa yang terjadi di kantor. Jalan di antara keduanya terlewat. Padahal perjalanan singkat dari satu tempat ke tempat lain sering kali menjadi bagian tempat perasaan hari itu tampak paling jujur. Tambahkan satu baris tentang beberapa menit yang dihabiskan berjalan kaki atau naik bus, dan cerita akan tersambung dengan lebih wajar.

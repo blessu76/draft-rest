@@ -1,9 +1,9 @@
 ---
 title: Biarkan Satu Benda dalam Adegan yang Berbicara
 description: Satu benda bisa membawa suasana sebuah adegan. Pilih satu, tulis wujudnya, lalu hubungkan dengan seseorang dalam tiga langkah, lengkap dengan contoh.
-date: 2026-11-14
+date: 2026-11-15
 slug: one-object-on-the-table
-draft: true
+published: 2026-11-15T13:10:00+09:00
 ---
 
 Kalau Anda menulis "rumahnya berantakan", pembaca akan membayangkan kekacauan menurut versinya sendiri. Tetapi kalau Anda menulis "botol obat tanpa tutup itu sudah tiga hari tergeletak di meja makan", terlihat pula berapa lama orang-orang sudah hidup begitu di rumah itu. Satu benda memang kecil, tetapi bisa memuat suasana adegan sekaligus keadaan seseorang. Lihatlah sekeliling ruangan dan tuliskan satu benda yang terus menarik pandangan Anda.

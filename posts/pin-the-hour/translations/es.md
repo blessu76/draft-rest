@@ -1,9 +1,9 @@
 ---
 title: Fija una hora del día en tu escena
 description: Una sola hora del reloj puede volver más nítida una escena. Elige un momento, escribe la hora y añade lo que hizo, en tres pasos con ejemplo.
-date: 2026-11-13
+date: 2026-11-15
 slug: pin-the-hour
-draft: true
+published: 2026-11-15T13:09:00+09:00
 ---
 
 Un relato que empieza con "una tarde" se desdibuja en la mente de quien lo lee casi de inmediato. Uno que empieza con "el autobús de las 6:40 pasó de largo por la parada" se siente como estar allí mismo. La hora es un dato diminuto, pero clava la escena en un punto concreto del día. Mirar un reloj y anotar una sola hora puede aclarar mucho una historia.

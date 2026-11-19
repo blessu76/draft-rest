@@ -1,0 +1,28 @@
+{
+  "nav_about": "關於",
+  "updated_label": "最後更新",
+  "updated": "2026-11-01",
+  "about": {
+    "title": "關於 draft() — 它與其他 Draft 應用程式的差異",
+    "desc": "ipe Studio 的 draft() 是以語音為核心的說故事應用程式。說明它與其他同名 Draft 應用程式有何不同。",
+    "comment": "// 不是另一個 Draft",
+    "h1": "ipe Studio 的 draft()",
+    "sections": [
+      {
+        "h": "同一個名字，不同的應用程式",
+        "p": [
+          "許多應用程式與工具都叫做「Draft」。本站的 draft() 是另一款產品：由 ipe Studio 開發、以語音為核心的說故事應用程式。你大約說三十秒，回答兩三個溫和的問題，就能得到完成的故事——開場、推進、高潮、回想與收尾——而你的話仍然屬於你。"
+        ]
+      },
+      {
+        "h": "如何辨識它是我們的",
+        "li": [
+          "官方網站：draft.ipe.rest——即本站。",
+          "開發者：ipe Studio——[ipe.rest](https://ipe.rest)。",
+          "名稱寫作 draft()，附括號，並標示為「an ipe studio app」。",
+          "平台：iOS，籌備中。"
+        ]
+      }
+    ]
+  }
+}

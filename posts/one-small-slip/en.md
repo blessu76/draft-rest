@@ -1,9 +1,11 @@
 ---
 title: Leave one small slip in your scene
 description: One small slip in a smooth scene makes it feel real. Pick the slip, write what happened, and add what you did, in three steps with an example.
-date: 2026-11-17
 slug: one-small-slip
-draft: true
+copy_review: iris
+copy_review_date: 2026-11-18
+date: 2026-11-18
+published: 2026-11-18T21:07:00+09:00
 ---
 
 A day in which everything went smoothly tends to look flat on the page. A real day almost always holds one small slip: a spilled cup, a wrong name, keys left behind. We usually want to forget such moments, but in writing they are among the best ways to make a scene feel real.

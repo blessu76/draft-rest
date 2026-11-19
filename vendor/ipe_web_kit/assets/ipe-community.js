@@ -74,11 +74,20 @@
     on.reports = on.reports && on.comments;
     var geoBlocked = regionBlocked();  // CN·RU: read-only — no write UI at all (the Firestore writes are never reachable from the page)
     if (geoBlocked) { on.likes = false; on.reports = false; }
-    var langs = words(root.getAttribute('data-langs')).filter(function (l) { return T[l]; });
+    var TEXT_KEY = { 'zh-hans': 'zh', 'pt-br': 'pt' };  // site tags (kit-0029) → the keys of T
+    var langs = words(root.getAttribute('data-langs'));
     if (!langs.length) langs = ['en'];
-    var lang = (root.getAttribute('data-lang') || document.documentElement.lang || '').toLowerCase().split('-')[0];
-    if (langs.indexOf(lang) < 0) lang = langs.indexOf('en') >= 0 ? 'en' : langs[0];  // the rules accept the site's langs only
-    var t = T[lang];
+    function pick(raw) {  // exact (any case), then the language code alone — zh never falls to the Simplified text by its code
+      var low = String(raw || '').replace(/_/g, '-').toLowerCase(), i;
+      for (i = 0; i < langs.length; i++) if (langs[i].toLowerCase() === low) return langs[i];
+      var code = low.split('-')[0];
+      if (code === 'zh') return null;
+      for (i = 0; i < langs.length; i++) if (langs[i].toLowerCase() === code) return langs[i];
+      return null;
+    }
+    var lang = pick(root.getAttribute('data-lang')) || pick(document.documentElement.lang);
+    if (!lang) lang = langs.indexOf('en') >= 0 ? 'en' : langs[0];  // the rules accept the site's langs only
+    var t = T[TEXT_KEY[lang.toLowerCase()] || lang] || T.en;  // no text yet (th·vi·tr·zh-Hant) → English
     var hideAt = int(root.getAttribute('data-hide-at'), 3), gapMs = int(root.getAttribute('data-gap'), 30) * 1000;
     var extra = String(root.getAttribute('data-banned') || '').split('|').filter(Boolean)
       .map(function (w) { return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); });
@@ -180,7 +189,7 @@
       var ts = f.createdAt && f.createdAt.timestampValue ? new Date(f.createdAt.timestampValue) : null;
       if (ts && !isNaN(ts) && fmt) { var tm = el('time', 'ipe-cm__time', fmt.format(ts)); tm.setAttribute('datetime', ts.toISOString()); meta.appendChild(tm); }
       var cl = f.lang && f.lang.stringValue;
-      if (cl && /^[a-z]{2}$/.test(cl) && langs.length > 1) meta.appendChild(el('span', 'ipe-cm__lang', cl));  // a post's comments are shared by all its language pages
+      if (cl && /^[A-Za-z]{2,3}(-[A-Za-z]{2,4})?$/.test(cl) && langs.length > 1) meta.appendChild(el('span', 'ipe-cm__lang', cl));  // a post's comments are shared by all its language pages
       li.appendChild(meta);
       li.appendChild(el('p', 'ipe-cm__body', f.text ? f.text.stringValue : ''));  // textContent only — never HTML
       if (id && on.reports) {
