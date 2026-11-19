@@ -95,7 +95,7 @@ class ZhHansEnded(unittest.TestCase):
             t = (ROOT / rel).read_text(encoding="utf-8")
             self.assertIn('<meta name="robots" content="noindex, follow">', t, rel)
             self.assertIn('http-equiv="refresh"', t, rel)
-            self.assertNotIn("index, follow", t, rel)
+            self.assertNotIn('content="index, follow"', t, rel)
 
     def test_zh_hant_hreflang_stays_in_sitemap(self):
         text = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
