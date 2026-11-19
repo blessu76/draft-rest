@@ -168,7 +168,7 @@ class Pages(unittest.TestCase):
     @property
     def home(self):
         return {k: v for k, v in self.files.items()
-                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES + build_site.LEGAL + ("journal",) + build_site.LEGACY_LANGS)}
+                if k == "index.html" or (k.count("/") == 1 and k.endswith("/index.html") and k.split("/")[0] not in build_site.PAGES + build_site.LEGAL + ("journal", "blog") + build_site.LEGACY_LANGS)}
 
     @property
     def indexed_home(self):
@@ -276,6 +276,16 @@ class Pages(unittest.TestCase):
         self.assertIn("noindex,follow", t)
         self.assertIn("/journal/", t)
         self.assertIn("journal/index.html", self.files)
+
+    def test_root_english_blog_forwards_to_journal(self):
+        """English lived at the root: /blog/, /blog/page/N/, /blog/<slug>/ and /blog/feed.xml must not 404 after the rename."""
+        for rel, target in (("blog/index.html", "/journal/"), ("blog/start-later/index.html", "/journal/start-later/")):
+            t = self.files[rel]
+            self.assertIn('http-equiv="refresh"', t, rel)
+            self.assertIn("noindex,follow", t, rel)
+            self.assertIn('rel="canonical" href="%s%s"' % (build_site.SITE, target), t, rel)
+        self.assertEqual(self.files["blog/feed.xml"], self.files["journal/feed.xml"])
+        self.assertFalse([u for u in re.findall(r"<loc>([^<]+)</loc>", self.files["sitemap.xml"]) if "/blog/" in u])
 
     def test_ended_language_stubs_point_to_the_new_language(self):
         for old, new in (("pt", "pt-BR"), ("zh", "zh-Hant"), ("ar", "en"), ("hi", "en"), ("ru", "en")):
@@ -743,7 +753,7 @@ class StageSite(unittest.TestCase):
             files = {f.as_posix() for f in stage_site.stage(ROOT, tmp)}
         built = set(build_site.build(ROOT))
         self.assertEqual(sorted(built - files), [])
-        for must in ("feed.xml", "journal/feed.xml", "releases/index.html", "ko/blog/index.html", "pt/index.html", "zh/blog/index.html",
+        for must in ("feed.xml", "journal/feed.xml", "releases/index.html", "blog/index.html", "blog/feed.xml", "ko/blog/index.html", "pt/index.html", "zh/blog/index.html",
                      "ru/blog/start-later/index.html", "pt-BR/journal/index.html"):
             self.assertIn(must, files)
 

@@ -148,6 +148,11 @@ def legacy_blog_rel(lang):
     return "%s/blog" % lang
 
 
+def legacy_blog_rels(lang):
+    """Every folder the old journal lived at: /<lang>/blog/, plus English's real root address /blog/ (indexed and shared before the rename)."""
+    return [legacy_blog_rel(lang)] + (["blog"] if lang == DEFAULT_LANG else [])
+
+
 PAGES = ("about",)  # content pages; English lives at /<page>/, the others at /<lang>/<page>/
 LEGAL = ("privacy", "terms")  # the legal pages live on ipe.rest; these paths only forward there
 LEGAL_TITLE = {"privacy": "Privacy — draft()", "terms": "Terms — draft()"}
@@ -1225,18 +1230,21 @@ def build(root):
             feed = render_feed(locales, posts, c)
             out["%s/feed.xml" % j] = feed
             if c in OLD_BLOG_LANGS:
-                out["%s/feed.xml" % legacy_blog_rel(c)] = feed  # feed readers that subscribed to the old address keep working
+                for lb in legacy_blog_rels(c):
+                    out["%s/feed.xml" % lb] = feed  # feed readers that subscribed to the old address keep working
             for n in range(1, page_count(len(posts)) + 1):
                 out["%s/index.html" % j if n == 1 else "%s/page/%d/index.html" % (j, n)] = render_list(root, locales, version, posts, c, n, numbers)
                 if c in OLD_BLOG_LANGS:
-                    out["%s/index.html" % legacy_blog_rel(c) if n == 1 else "%s/page/%d/index.html" % (legacy_blog_rel(c), n)] = render_journal_redirect(version, c, blog_list_url(c, n))
+                    for lb in legacy_blog_rels(c):
+                        out["%s/index.html" % lb if n == 1 else "%s/page/%d/index.html" % (lb, n)] = render_journal_redirect(version, c, blog_list_url(c, n))
                 if c in BLOG_LISTED:
                     pages.append((blog_list_url(c, n), newest, "0.7" if n == 1 else "0.5", "daily", list_cluster(n)))
         for p in posts:
             for c in BLOG_CODES:
                 out["%s/%s/index.html" % (journal_rel(c), p["slug"])] = render_post(root, locales, version, p, c, numbers[p["slug"]], posts)
                 if c in OLD_BLOG_LANGS:
-                    out["%s/%s/index.html" % (legacy_blog_rel(c), p["slug"])] = render_journal_redirect(version, c, post_url(c, p["slug"]))
+                    for lb in legacy_blog_rels(c):
+                        out["%s/%s/index.html" % (lb, p["slug"])] = render_journal_redirect(version, c, post_url(c, p["slug"]))
                 if c in BLOG_LISTED:
                     pages.append((post_url(c, p["slug"]), p["langs"][c].get("_updated") or p["date"], "0.6", "monthly", post_cluster(p["slug"])))
     prio = {"about": "0.8"}
@@ -1271,7 +1279,7 @@ def build(root):
 def stale_generated(root, files):
     """Generated blog files on disk that the current build no longer produces (e.g. an unpublished post)."""
     stale = []
-    for d in ([Path(root) / journal_rel(c) for c in CODES] + [Path(root) / legacy_blog_rel(c) for c in CODES]
+    for d in ([Path(root) / journal_rel(c) for c in CODES] + [Path(root) / lb for c in CODES for lb in legacy_blog_rels(c)]
               + [Path(root) / c for c in LEGACY_LANGS]):  # ended languages: their old generated pages go (the stubs carry no GEN_MARK)
         if not d.is_dir():
             continue

@@ -24,7 +24,7 @@ KEY_RE = re.compile(r"^[0-9a-f]{32}\.txt$")
 # inside language folders only generated site files are public (never a stray .md)
 PUBLIC_EXT = {".html", ".xml"}
 # forwarding pages for removed sections (noindex + canonical + refresh) — must go out or the old URL 404s
-MOVED_DIRS = ("releases",)
+MOVED_DIRS = ("releases", "blog")  # blog = the English journal's old root address (/blog/ -> /journal/)
 
 
 def public_files(root):
