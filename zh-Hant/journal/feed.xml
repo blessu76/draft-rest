@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh-Hant/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>簡短的指南，教你把說出口的話變成人們真的會讀的故事——來自 draft() 背後的團隊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Wed, 18 Nov 2026 21:08:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <item>
+      <title>讓天氣替你說出心裡話</title>
+      <link>https://draft.ipe.rest/zh-Hant/journal/let-the-weather-speak/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh-Hant/journal/let-the-weather-speak/</guid>
+      <pubDate>Thu, 19 Nov 2026 21:38:00 +0900</pubDate>
+      <description>人說不出口的心情，那天的天氣可以替他傳達。選一種天氣，再加上身體的反應，三個步驟配上範例。</description>
+    </item>
     <item>
       <title>寫下兩個地點之間的那段路</title>
       <link>https://draft.ipe.rest/zh-Hant/journal/the-way-between/</link>

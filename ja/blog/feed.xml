@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 18 Nov 2026 21:08:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <item>
+      <title>天気に気持ちを代わりに語らせてみましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/let-the-weather-speak/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/let-the-weather-speak/</guid>
+      <pubDate>Thu, 19 Nov 2026 21:38:00 +0900</pubDate>
+      <description>人が口にできない気持ちを、その日の天気が代わりに伝えてくれます。天気を一つ選び、体の反応を添える三つのステップを例つきで紹介します。</description>
+    </item>
     <item>
       <title>二つの場所のあいだの道を一行書いてみましょう</title>
       <link>https://draft.ipe.rest/ja/journal/the-way-between/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/tr/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Söylediklerini insanların gerçekten okuyacağı bir hikâyeye çevirmek için kısa rehberler — draft() ekibinden.</description>
     <language>tr</language>
-    <lastBuildDate>Wed, 18 Nov 2026 21:08:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <item>
+      <title>Kişinin söylemediğini hava söylesin</title>
+      <link>https://draft.ipe.rest/tr/journal/let-the-weather-speak/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/tr/journal/let-the-weather-speak/</guid>
+      <pubDate>Thu, 19 Nov 2026 21:38:00 +0900</pubDate>
+      <description>Günün havası, kişinin söyleyemediği bir duyguyu taşıyabilir. Tek bir hava durumu seçin ve bedensel bir tepki ekleyin: üç adım ve bir örnekle.</description>
+    </item>
     <item>
       <title>İki yer arasındaki kısa yolu yazın</title>
       <link>https://draft.ipe.rest/tr/journal/the-way-between/</link>

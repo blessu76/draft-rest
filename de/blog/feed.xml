@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 18 Nov 2026 21:08:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <item>
+      <title>Lass das Wetter sagen, was die Person nicht sagt</title>
+      <link>https://draft.ipe.rest/de/journal/let-the-weather-speak/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/let-the-weather-speak/</guid>
+      <pubDate>Thu, 19 Nov 2026 21:38:00 +0900</pubDate>
+      <description>Das Wetter des Tages kann ein Gefühl tragen, das die Figur nicht aussprechen kann. Wähle ein Wetter, füge eine Körperreaktion hinzu: drei Schritte, Beispiel.</description>
+    </item>
     <item>
       <title>Schreiben Sie den kurzen Weg zwischen zwei Orten</title>
       <link>https://draft.ipe.rest/de/journal/the-way-between/</link>

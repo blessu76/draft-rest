@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Wed, 18 Nov 2026 21:08:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <item>
+      <title>Deja que el clima diga lo que la persona no dice</title>
+      <link>https://draft.ipe.rest/es/journal/let-the-weather-speak/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/journal/let-the-weather-speak/</guid>
+      <pubDate>Thu, 19 Nov 2026 21:38:00 +0900</pubDate>
+      <description>El clima del día puede llevar un sentimiento que el personaje no logra decir. Elige un clima y añade una reacción del cuerpo, en tres pasos y con un ejemplo.</description>
+    </item>
     <item>
       <title>Escribe el breve camino entre dos lugares</title>
       <link>https://draft.ipe.rest/es/journal/the-way-between/</link>

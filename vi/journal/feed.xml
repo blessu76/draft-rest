@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/vi/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Wed, 18 Nov 2026 21:08:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <item>
+      <title>Để thời tiết nói thay điều người ấy không nói</title>
+      <link>https://draft.ipe.rest/vi/journal/let-the-weather-speak/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/journal/let-the-weather-speak/</guid>
+      <pubDate>Thu, 19 Nov 2026 21:38:00 +0900</pubDate>
+      <description>Thời tiết của ngày hôm đó có thể mang một cảm xúc mà nhân vật không nói nên lời. Chọn một kiểu thời tiết và thêm phản ứng của cơ thể, qua ba bước có ví dụ.</description>
+    </item>
     <item>
       <title>Viết đoạn đường ngắn giữa hai nơi</title>
       <link>https://draft.ipe.rest/vi/journal/the-way-between/</link>
