@@ -71,8 +71,8 @@ BLOG_CODES = ("en", "ko", "ja", "zh", "es", "pt", "id", "ru", "vi", "fr", "de", 
 BLOG_LISTED = [c for c in BLOG_CODES if c in LISTED]
 # Languages that were shut down (ar/hi/ru): every old page under /<code>/ becomes a forward to its English twin
 # (static hosting cannot send a 301, so: meta refresh + canonical + noindex), kept out of the sitemap/hreflang.
-# zh is ended too but still serves its full pages for now. Feeds stay as they are (XML cannot forward).
-REDIRECT_LANGS = ("ru", "ar", "hi")
+# zh (zh-Hans) is ended too (ADR 0087, 11-15): same forward. Feeds stay as they are (XML cannot forward).
+REDIRECT_LANGS = ("ru", "ar", "hi", "zh")
 # Old addresses that no longer exist at all -> where they forward (the releases page left with web kit v0.6.0).
 RETIRED_PATHS = {"releases/": "/about/"}
 NO_PRIVACY = ("zh-Hant", "th", "tr")  # legal pages stay ko/en: these link to the English privacy page instead

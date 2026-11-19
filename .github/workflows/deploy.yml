@@ -38,6 +38,10 @@ jobs:
         with:
           python-version: '3.12'
 
+      # DeployWorkflow tests parse the workflow files with PyYAML (not preinstalled on the runner).
+      - name: Install test dependency
+        run: python3 -m pip install 'PyYAML==6.0.2'
+
       # Gate: nothing is deployed unless the generated pages are current and valid.
       - name: Unit tests
         run: python3 -m unittest discover -s tests

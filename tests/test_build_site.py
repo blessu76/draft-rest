@@ -83,6 +83,26 @@ class SitemapLanguages(unittest.TestCase):
         self.assertFalse(re.findall(r'hreflang="(?:ar|hi|ru|zh|zh-Hans)"', text))
 
 
+class ZhHansEnded(unittest.TestCase):
+    """zh (zh-Hans) is ended like ar/hi/ru (ADR 0087): forward + noindex on disk, while zh-Hant stays a live, listed language."""
+    def test_zh_is_forwarded_zh_hant_is_not(self):
+        self.assertIn("zh", REAL_REDIRECT_LANGS)
+        self.assertNotIn("zh-Hant", REAL_REDIRECT_LANGS)
+        self.assertIn("zh-Hant", build_site.LISTED)
+
+    def test_zh_pages_on_disk_are_noindex_forwards(self):
+        for rel in ("zh/index.html", "zh/about/index.html", "zh/blog/index.html"):
+            t = (ROOT / rel).read_text(encoding="utf-8")
+            self.assertIn('<meta name="robots" content="noindex, follow">', t, rel)
+            self.assertIn('http-equiv="refresh"', t, rel)
+            self.assertNotIn("index, follow", t, rel)
+
+    def test_zh_hant_hreflang_stays_in_sitemap(self):
+        text = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn('hreflang="zh-Hant"', text)
+        self.assertIn("https://draft.ipe.rest/zh-Hant/", text)
+
+
 class DeployWorkflow(unittest.TestCase):
     """deploy.yml also fires after the scheduled publish succeeds (GITHUB_TOKEN pushes do not trigger push events)."""
     def setUp(self):
