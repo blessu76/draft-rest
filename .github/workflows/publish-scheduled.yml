@@ -1,8 +1,10 @@
 # 자동 발행 — 3단계(실발행). 설계: F-006 docs/auto-publish-design.md §6.
 # 10분마다 돌아, 도래한 슬롯의 첫 통과 후보 1편을 blog/queue → main 으로 옮겨 커밋·push 한다(G1~G10 그대로).
 # 긴급 정지: 저장소 변수 PUBLISH_PAUSED=1 (스크립트가 즉시 skip).
-# 주의: GITHUB_TOKEN 으로 push 한 커밋은 deploy.yml 을 자동 기동하지 않는다.
-#       배포 연결(gh workflow run deploy.yml → actions: write)은 오너/방장 결정 뒤에 추가한다 — 지금은 contents: write 만.
+# 주의: GITHUB_TOKEN 으로 push 한 커밋은 deploy.yml 을 자동 기동하지 않는다(GitHub 의 재귀 방지).
+#       그래서 실제로 발행 커밋을 push 한 틱에서만 `gh workflow run deploy.yml --ref main` 으로 Deploy 를 직접 기동한다
+#       (workflow_dispatch 는 GITHUB_TOKEN 에도 허용 — actions: write 만 필요, 새 시크릿·PAT 없음).
+#       hold·skip·PUBLISH_PAUSED 인 틱은 기동하지 않는다.
 name: publish-scheduled
 
 on:
@@ -11,7 +13,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # 발행 커밋 push 에만 필요. 그 외 권한 없음.
+  contents: write  # 발행 커밋 push 에 필요.
+  actions: write   # 발행 뒤 `gh workflow run deploy.yml` (workflow_dispatch) 기동에 필요.
 
 concurrency:
   group: auto-publish
@@ -68,6 +71,26 @@ jobs:
             --schedule queue/posts/SCHEDULE.tsv \
             --main-dir . \
             --state-file "$STATE_FILE" 2>&1 | tee "$LOG_FILE"
+
+      # 마지막 RESULT 가 `publish <slug>` 이고 main HEAD 가 그 글의 Auto-Publish 커밋일 때만 Deploy 를 기동한다.
+      # (실발행 경로에서 RESULT publish 는 push 성공 뒤에만 나온다. hold·skip 은 여기서 건너뛴다.)
+      - name: Trigger Deploy (발행 커밋을 push 한 경우만)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          last=$(grep -E '^RESULT: ' "$LOG_FILE" | tail -n 1 || true)
+          echo "last: ${last:-(없음)}"
+          case "$last" in
+            "RESULT: publish "*) ;;
+            *) echo "발행 없음 — deploy 기동 안 함"; exit 0 ;;
+          esac
+          slug="${last#RESULT: publish }"
+          if ! git log -1 --format=%B | grep -Eq "^Auto-Publish:[[:space:]]*${slug}([[:space:]]|$)"; then
+            echo "::warning::RESULT publish 인데 HEAD 에 Auto-Publish 트레일러가 없다 — deploy 기동 안 함"
+            exit 0
+          fi
+          gh workflow run deploy.yml --ref main
+          echo "deploy.yml 기동: $slug"
 
       - name: Job summary
         if: always()
