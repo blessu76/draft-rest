@@ -30,6 +30,12 @@ Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` 
 | 24 | 2026-11-18 | `verb-over-adjective` | Swap one adjective for an action | published (main) — 2026-11-18 21:06 (backfill; Iris 통과) |
 | 25 | 2026-11-18 | `one-small-slip` | Leave one small slip in your scene | published (main) — 2026-11-18 21:07 (backfill; Iris 통과) |
 | 26 | 2026-11-18 | `the-way-between` | Write the short way between two places | published (main) — 2026-11-18 21:08 (backfill; Iris 통과) |
+| 27 | 2026-11-19 | `let-the-weather-speak` | Let the weather say what the person won't | queued (draft) — slot 2026-11-19 15:20 |
+| 28 | 2026-11-20 | `one-exact-number` | Put one exact number into your scene | queued (draft) — slot 2026-11-20 16:20 |
+| 29 | 2026-11-21 | `one-small-kindness` | Leave one small kindness in your story | queued (draft) — slot 2026-11-21 15:40 |
+| 30 | 2026-11-22 | `write-a-small-wait` | Write the small wait, where nothing happens yet | queued (draft) — slot 2026-11-22 16:50; Iris 검수 대기 |
+| 31 | 2026-11-23 | `where-your-hands-were` | Put the person's hands somewhere in the scene | queued (draft) — slot 2026-11-23 13:05; Iris 검수 대기 |
+| 32 | 2026-11-24 | `answer-with-a-scene` | When asked how it felt, answer with a scene | queued (draft) — slot 2026-11-24 16:43; Iris 검수 대기 |
 
 Queued dates are placeholders; `publish_post.py` stamps the real date and time. Facts about draft() are limited to what the site states
 (talk ~30 s → 2–3 gentle questions → story hook/rising/peak/reflection/close; privacy; no claims about release or formats).
