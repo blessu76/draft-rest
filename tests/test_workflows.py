@@ -51,5 +51,43 @@ class PublishTriggersDeploy(unittest.TestCase):
         self.assertNotIn("--dry-run", self.pub.split("- name: Auto-publish")[1].split("- name: Trigger Deploy")[0])
 
 
+class G7CleanTreeGuards(unittest.TestCase):
+    """Importing scripts/ writes scripts/__pycache__, which made G7 (dirty tree) fail on every CI tick."""
+    ROOT = WF.parent.parent
+
+    def test_deploy_has_no_workflow_run_but_keeps_dispatch(self):
+        dep = (WF / "deploy.yml").read_text(encoding="utf-8")
+        self.assertNotIn("workflow_run", dep)
+        self.assertRegex(dep, r"(?m)^  workflow_dispatch:")
+        self.assertRegex(dep, r"(?m)^  push:")
+
+    def test_gitignore_covers_pycache(self):
+        lines = (self.ROOT / ".gitignore").read_text(encoding="utf-8").split()
+        self.assertIn("__pycache__/", lines)
+        self.assertIn("*.pyc", lines)
+
+    def test_publish_workflow_disables_bytecode(self):
+        pub = (WF / "publish-scheduled.yml").read_text(encoding="utf-8")
+        self.assertIn("PYTHONDONTWRITEBYTECODE: '1'", pub)
+
+    def test_clean_tree_ignores_pycache_with_repo_gitignore(self):
+        import shutil
+        import subprocess
+        import sys
+        import tempfile
+        sys.path.insert(0, str(self.ROOT / "scripts"))
+        import auto_publish
+        with tempfile.TemporaryDirectory() as d:
+            subprocess.run(["git", "-C", d, "init", "-q"], check=True)
+            shutil.copy(self.ROOT / ".gitignore", d)
+            subprocess.run(["git", "-C", d, "add", ".gitignore"], check=True)
+            subprocess.run(["git", "-C", d, "-c", "user.name=t", "-c", "user.email=t@t", "commit", "-qm", "i"], check=True)
+            (Path(d) / "scripts" / "__pycache__").mkdir(parents=True)
+            (Path(d) / "scripts" / "__pycache__" / "x.cpython-312.pyc").write_bytes(b"\0")
+            self.assertTrue(auto_publish.clean_tree(Path(d), "queue"))
+            (Path(d) / "stray.txt").write_text("x")
+            self.assertFalse(auto_publish.clean_tree(Path(d), "queue"))
+
+
 if __name__ == "__main__":
     unittest.main()

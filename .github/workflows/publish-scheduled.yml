@@ -26,6 +26,7 @@ jobs:
     timeout-minutes: 15
     env:
       PUBLISH_PAUSED: ${{ vars.PUBLISH_PAUSED }}  # 1 이면 스크립트가 즉시 skip (긴급 정지 스위치)
+      PYTHONDONTWRITEBYTECODE: '1'  # import 가 scripts/__pycache__ 를 만들면 G7(작업 트리 dirty)이 걸린다
     steps:
       # job 레벨 env 에는 runner 컨텍스트가 없다 — 경로는 $RUNNER_TEMP 로 만들어 이후 step 에 넘긴다.
       - name: Set state/log paths

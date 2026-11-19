@@ -100,38 +100,6 @@ class ZhHansEnded(unittest.TestCase):
         self.assertIn("https://draft.ipe.rest/zh-Hant/", text)
 
 
-class DeployWorkflow(unittest.TestCase):
-    """deploy.yml also fires after the scheduled publish succeeds (GITHUB_TOKEN pushes do not trigger push events)."""
-    def setUp(self):
-        import yaml
-        wf = ROOT / ".github" / "workflows"
-        self.dep = yaml.safe_load((wf / "deploy.yml").read_text(encoding="utf-8"))
-        self.pub = yaml.safe_load((wf / "publish-scheduled.yml").read_text(encoding="utf-8"))
-        self.text = (wf / "deploy.yml").read_text(encoding="utf-8")
-
-    def triggers(self):
-        return self.dep.get("on", self.dep.get(True))  # PyYAML reads the bare key `on` as True
-
-    def test_workflow_run_names_the_publish_workflow(self):
-        t = self.triggers()
-        self.assertEqual(t["workflow_run"]["workflows"], [self.pub["name"]])
-        self.assertEqual(t["workflow_run"]["types"], ["completed"])
-        self.assertIn("push", t)
-        self.assertIn("workflow_dispatch", t)
-
-    def test_job_only_blocked_for_failed_workflow_run(self):
-        cond = self.dep["jobs"]["deploy"]["if"]
-        self.assertIn("github.event_name != 'workflow_run'", cond)
-        self.assertIn("github.event.workflow_run.conclusion == 'success'", cond)
-
-    def test_checkout_main_for_workflow_run_and_no_new_secrets(self):
-        co = self.dep["jobs"]["deploy"]["steps"][0]
-        self.assertIn("'main'", co["with"]["ref"])
-        self.assertIn("workflow_run", co["with"]["ref"])
-        self.assertNotIn("PAT", self.text)
-        self.assertEqual(set(re.findall(r"secrets\.(\w+)", self.text)), {"SLACK_BOT_TOKEN"})
-
-
 class Locales(unittest.TestCase):
     def test_twelve_languages_with_en_as_fallback(self):
         self.assertEqual(len(build_site.CODES), 12)
