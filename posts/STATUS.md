@@ -1,6 +1,6 @@
 # Blog queue — status
 
-Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` + `translations/<lang>.md` (ja zh es pt id ru vi fr de ar hi) — all 13 languages present.
+Daily post at 16:00 KST. Each post = `posts/<slug>/ko.md` (canonical) + `en.md` + `translations/<lang>.md` (ja es pt-BR id vi fr de th tr zh-Hant) — all 12 languages present.
 
 | # | Publish date (KST) | Slug | Topic | Status |
 |---|--------------------|------|-------|--------|
