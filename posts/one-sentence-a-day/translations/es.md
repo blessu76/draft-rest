@@ -4,6 +4,7 @@ description: ¿Sin tiempo para escribir? Cierra cada día con una sola frase sob
 date: 2026-11-11
 slug: one-sentence-a-day
 published: 2026-11-11T16:49:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 ¿Crees que no tienes tiempo para escribir historias? Prueba a cerrar cada día con una sola frase. Una frase lleva menos de un minuto, pero al cabo de unas semanas tienes un pequeño montón de momentos reales, y cualquiera de ellos puede crecer hasta ser una historia cuando llegue el momento.

@@ -4,6 +4,7 @@ description: Wer für alle schreibt, macht die Worte vage. Drei Schritte, einen 
 date: 2026-11-08
 slug: write-to-one-reader
 published: 2026-11-08T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Wenn Sie versuchen, für alle zu schreiben, werden die Worte vage. Für diesen Leser fügen Sie ein wenig Erklärung hinzu, für jenen ein wenig Höflichkeit, und am Ende gehört der Text niemandem. Ein kurzer Text liest sich am besten, wenn er an einen Menschen gerichtet ist. Einen einzigen Leser zu wählen verkleinert Ihr Publikum nicht; es gibt Ihren Sätzen etwas, woran sie sich lehnen können.

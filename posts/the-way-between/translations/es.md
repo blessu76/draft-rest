@@ -4,6 +4,8 @@ description: El trayecto corto entre dos lugares puede unir una historia. Anota 
 slug: the-way-between
 date: 2026-11-18
 published: 2026-11-18T21:08:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Cuando escribimos una historia, solemos escribir solo los lugares donde pasaron cosas: lo que ocurrió en casa, lo que ocurrió en la oficina. El trayecto entre ellos se salta. Sin embargo, el camino corto de un lugar a otro suele ser donde los sentimientos del día se ven con más sinceridad. Añade una línea sobre los pocos minutos que pasaste caminando o en el autobús, y la historia se une con más naturalidad.

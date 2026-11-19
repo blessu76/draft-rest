@@ -4,6 +4,8 @@ description: Satu baris tentang apa yang diinginkan seseorang membuat adegan ber
 date: 2026-11-15
 slug: one-small-want
 published: 2026-11-15T13:11:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Tulisan yang terasa seperti tidak ada yang terjadi biasanya kekurangan sebuah keinginan. Begitu seseorang menginginkan sesuatu, sekecil apa pun, adegan mulai bergerak. Keinginan itu tidak harus berupa tujuan besar. Ingin duduk di kursi terakhir yang kosong atau berharap ada telepon masuk sudah cukup. Tuliskan satu baris tentang apa yang diinginkan tokoh dalam cerita Anda pada saat itu.

@@ -4,6 +4,7 @@ description: ¿No sabes qué escribir? Empieza por dónde ocurre. Tres pasos par
 date: 2026-11-10
 slug: start-from-a-place
 published: 2026-11-10T20:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 ¿Todavía no sabes de qué trata tu historia? Empieza por el lugar donde ocurre. Un lugar es más fácil de describir que un sentimiento, y guarda en silencio a las personas, los sonidos y los pequeños sucesos que forman una historia. Elige un lugar y deja que te lleve al interior del texto.

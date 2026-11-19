@@ -4,6 +4,7 @@ description: Tulisan yang dibuka dengan penjelasan sulit dibaca sampai habis. Ti
 date: 2026-10-25
 slug: first-line-hook
 published: 2026-10-25T16:53:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Orang yang sedang menggulir layar memutuskan di baris pertama apakah akan terus membaca. Karena itu kalimat pertama sebuah cerita, yaitu hook, penting. Tak perlu megah. Cukup langsung masuk ke tengah adegan, dan tulisannya berubah.

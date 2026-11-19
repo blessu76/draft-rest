@@ -4,6 +4,7 @@ description: Ngay cả một ngày không có gì đặc biệt cũng chứa m�
 date: 2026-10-27
 slug: nothing-happened-today
 published: 2026-10-27T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 "Hôm nay chẳng có gì." Những ngày câu này được nói nhiều nhất lại chính là những ngày giấu nhiều chuyện nhất. Một ngày không có sự kiện lớn không phải là một ngày không có chuyện. Chỉ là đôi mắt để ý những điều nhỏ bé chưa được bật lên.

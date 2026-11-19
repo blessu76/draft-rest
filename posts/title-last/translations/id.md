@@ -4,6 +4,7 @@ description: Menentukan judul lebih dulu bisa membuat tulisan macet. Tiga langka
 date: 2026-11-10
 slug: title-last
 published: 2026-11-10T20:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Pernahkah Anda terdiam lama di depan kotak judul? Memberi nama pada tulisan yang belum ditulis memang sulit, dan itu wajar. Judul butuh kita tahu tulisan itu akhirnya menjadi apa. Untuk tulisan pendek, biasanya lebih mudah menulis judul paling akhir. Tulislah dulu, lalu biarkan tulisan yang sudah jadi memberi tahu namanya.

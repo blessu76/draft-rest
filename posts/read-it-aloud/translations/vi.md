@@ -4,6 +4,7 @@ description: Mắt bỏ qua được, miệng thì không. Ba bước đọc to 
 date: 2026-11-04
 slug: read-it-aloud
 published: 2026-11-04T16:02:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Viết vài dòng rồi đọc thầm, thường bạn thấy chúng ổn. Đọc to chính những dòng ấy, và ở đâu đó bạn sẽ hết hơi, nghe cùng một từ hai lần, hoặc bỗng nhận ra mình lỡ bỏ sót một từ. Mắt thì bỏ qua cho, miệng thì không. Đọc to một lần là cách chỉnh sửa nhẹ nhàng nhất: không cần học quy tắc mới, chỉ cần đôi tai của bạn.

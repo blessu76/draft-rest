@@ -4,6 +4,7 @@ description: Au lieu d'écrire « j'étais triste », écrivez ce que vous avez 
 date: 2026-10-31
 slug: name-the-detail
 published: 2026-10-31T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Des mots comme « heureux », « triste » ou « seul » sont faciles à écrire. Mais le lecteur ne voit aucune scène en les lisant. Remplacez le nom du sentiment par un détail concret, et le lecteur le ressent sans qu'on le lui explique.

@@ -4,6 +4,7 @@ description: Escribir para todos vuelve vagas las palabras. Tres pasos para eleg
 date: 2026-11-08
 slug: write-to-one-reader
 published: 2026-11-08T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Cuando intentas escribir para todos, las palabras se vuelven vagas. Añades un poco de explicación para este lector y un poco de cortesía para aquel, y el texto acaba sin pertenecer a nadie. Un texto breve se lee mejor cuando está escrito para una sola persona. Elegir a un lector no reduce tu público; da a tus frases algo en lo que apoyarse.

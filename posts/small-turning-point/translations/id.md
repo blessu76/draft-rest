@@ -4,6 +4,7 @@ description: Adegan dengan detail bagus tetap bisa datar jika tak ada yang berge
 date: 2026-10-30
 slug: small-turning-point
 published: 2026-10-30T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Ada adegan yang detailnya bagus tetapi tetap terbaca datar. Yang kurang biasanya titik balik: saat sesuatu bergeser, sekecil apa pun. Titik balik tidak harus dramatis. Suasana hati yang berubah, keputusan kecil, atau menyadari sesuatu yang selama ini terlewat sudah cukup.

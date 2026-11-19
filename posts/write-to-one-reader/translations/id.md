@@ -4,6 +4,7 @@ description: Menulis untuk semua orang membuat kata-kata jadi kabur. Tiga langka
 date: 2026-11-08
 slug: write-to-one-reader
 published: 2026-11-08T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Saat Anda mencoba menulis untuk semua orang, kata-kata menjadi kabur. Anda menambah sedikit penjelasan untuk pembaca ini dan sedikit kesopanan untuk pembaca itu, lalu tulisannya akhirnya tidak menjadi milik siapa pun. Tulisan pendek paling enak dibaca bila ditulis untuk satu orang. Memilih satu pembaca tidak mengurangi pembaca Anda; itu memberi kalimat Anda sesuatu untuk bersandar.

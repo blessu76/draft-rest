@@ -4,6 +4,8 @@ description: Satu jam di jam dinding bisa membuat adegan lebih tajam. Pilih satu
 date: 2026-11-15
 slug: pin-the-hour
 published: 2026-11-15T13:09:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Cerita yang dibuka dengan "suatu sore" cepat memudar di benak pembaca. Cerita yang dibuka dengan "bus pukul 06.40 melewati halte begitu saja" terasa seperti berdiri di tempat itu. Waktu hanyalah informasi kecil, tetapi ia memaku adegan pada satu titik tertentu dalam sehari. Melihat jam lalu menuliskan satu waktu saja bisa membuat cerita jauh lebih jelas.

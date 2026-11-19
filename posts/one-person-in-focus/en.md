@@ -4,6 +4,7 @@ description: A story with a crowd in it goes blurry. Pick one person, ask three 
 date: 2026-10-28
 slug: one-person-in-focus
 published: 2026-10-28T15:58:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Short stories usually go blurry for one reason: too many people are standing in them. "We had a team dinner and everyone was laughing and talking" is true, but the reader can't see anyone. Pick one person and the picture comes into focus.

@@ -4,6 +4,8 @@ description: Un petit faux pas dans une scène trop lisse la rend vraie. Choisis
 slug: one-small-slip
 date: 2026-11-18
 published: 2026-11-18T21:07:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Une journée où tout s'est déroulé sans accroc a tendance à paraître plate sur la page. Une vraie journée recèle presque toujours un petit faux pas : une tasse renversée, un prénom écorché, des clés oubliées à la maison. On veut généralement oublier ces moments, mais à l'écrit, ils comptent parmi les meilleurs moyens de rendre une scène vraie.

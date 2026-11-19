@@ -4,6 +4,7 @@ description: Your eyes forgive what your mouth won't. Three steps for reading a 
 date: 2026-11-04
 slug: read-it-aloud
 published: 2026-11-04T16:02:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 After you write a few lines and read them silently, they usually look fine. Read the same lines aloud, and somewhere you run out of breath, hear the same word twice, or catch yourself skipping a word without meaning to. The eyes forgive; the mouth doesn't. Reading aloud once is the lightest edit there is: no new rules to learn, just your ear.

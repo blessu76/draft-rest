@@ -25,13 +25,13 @@ GIT = ["-c", "user.name=test", "-c", "user.email=test@example.invalid", "-c", "c
 
 
 def make_post(root, slug, extra="draft: true\n", skip=()):
-    """Synthetic post folder with all 13 languages, sized so check_queue passes."""
+    """Synthetic post folder with all 12 languages (build_site.CODES), sized so check_queue passes."""
     for c in build_site.CODES:
         if c in skip:
             continue
         f = Path(root) / "posts" / slug / (c + ".md" if c in ("ko", "en") else "translations/%s.md" % c)
         f.parent.mkdir(parents=True, exist_ok=True)
-        body = "가" * 1400 if c == "ko" else "字" * 800 if c in ("ja", "zh") else "word " * 400
+        body = "가" * 1400 if c == "ko" else "字" * 800 if c in ("ja", "zh-Hant") else "word " * 400
         f.write_text(FM % (c, "short description " + c, slug, extra, body), encoding="utf-8")
 
 
@@ -287,10 +287,10 @@ class Selection(Base):
 
 
 class StampInvariants(Base):
-    """§7-5: the provisional stamp and the confirmed re-stamp keep date and published consistent across 13 files."""
+    """§7-5: the provisional stamp and the confirmed re-stamp keep date and published consistent across all 12 language files."""
 
-    def test_restamp_keeps_thirteen_files_consistent(self):
-        make_post(self.queue, "p1")
+    def test_restamp_keeps_every_language_file_consistent(self):
+        make_post(self.queue, "p1", extra="draft: true\n" + MARKS)  # Iris-reviewed: the copy_review gate on publish_post must pass
         first = dt.datetime(2026, 11, 10, 15, 20, tzinfo=KST)
         second = dt.datetime(2026, 11, 10, 15, 24, tzinfo=KST)
         publish_post.publish(str(self.queue), "p1", first)

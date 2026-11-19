@@ -4,6 +4,7 @@ description: Zu viele Leute machen eine Geschichte unscharf. Wähle eine Person,
 date: 2026-10-28
 slug: one-person-in-focus
 published: 2026-10-28T15:58:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Kurze Geschichten werden meist aus einem Grund unscharf: Es stehen zu viele Menschen darin. „Wir waren mit dem Team essen, alle haben gelacht und geredet“ stimmt, aber die Lesenden sehen niemanden. Wähle eine Person, und das Bild wird scharf.

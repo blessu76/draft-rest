@@ -4,6 +4,8 @@ description: Ein einzelner Gegenstand kann die Stimmung einer Szene tragen. Wäh
 date: 2026-11-15
 slug: one-object-on-the-table
 published: 2026-11-15T13:10:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Wenn Sie schreiben „Das Haus war ein einziges Chaos", stellt sich jeder beim Lesen auf eigene Weise ein Chaos vor. Schreiben Sie aber „Das Medikamentenfläschchen ohne Deckel stand seit drei Tagen auf dem Tisch", sieht man sogar, wie lange man in diesem Haus schon so lebt. Ein Gegenstand ist winzig, kann aber die Stimmung einer Szene und die Lage eines Menschen zugleich enthalten. Sehen Sie sich im Raum um und schreiben Sie auf, worauf Ihr Blick immer wieder fällt.

@@ -4,6 +4,7 @@ description: Écrire pour tout le monde rend les mots flous. Trois étapes pour 
 date: 2026-11-08
 slug: write-to-one-reader
 published: 2026-11-08T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Quand vous essayez d'écrire pour tout le monde, les mots deviennent flous. Vous ajoutez un peu d'explication pour ce lecteur, un peu de politesse pour celui-là, et le texte finit par n'appartenir à personne. Un texte court se lit mieux lorsqu'il est écrit pour une seule personne. Choisir un seul lecteur ne réduit pas votre public ; cela donne à vos phrases un appui.

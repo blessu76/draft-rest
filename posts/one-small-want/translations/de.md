@@ -4,6 +4,8 @@ description: Eine Zeile darüber, was jemand wollte, bringt eine Szene in Bewegu
 date: 2026-11-15
 slug: one-small-want
 published: 2026-11-15T13:11:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Einem Text, in dem scheinbar nichts passiert, fehlt oft ein Wunsch. Sobald ein Mensch etwas will, und sei es nur ein wenig, kommt die Szene in Bewegung. Es muss kein großes Ziel sein. Den letzten freien Platz haben zu wollen oder auf einen Anruf zu hoffen, genügt völlig. Schreiben Sie eine einzige Zeile darüber, was die Person in Ihrer Geschichte in diesem Moment wollte.

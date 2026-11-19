@@ -4,6 +4,8 @@ description: Cambiar un adjetivo por una acción da más nitidez a la frase. Eli
 slug: verb-over-adjective
 date: 2026-11-18
 published: 2026-11-18T21:06:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Frases como «la habitación estaba tranquila» o «se les veía cansancio» se leen con facilidad, pero la escena apenas se queda en la memoria. El adjetivo entrega primero la conclusión y deja menos espacio para que quien lee imagine. Si en su lugar se coloca una acción, el mensaje sigue siendo el mismo, pero llega con mucha más nitidez. Basta con elegir un solo adjetivo de algo que ya se haya escrito y cambiarlo por una acción.

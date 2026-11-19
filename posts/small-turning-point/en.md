@@ -4,6 +4,7 @@ description: A scene with good details can still feel flat if nothing shifts in 
 date: 2026-10-30
 slug: small-turning-point
 published: 2026-10-30T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Some scenes have good details and still read flat. What's missing is usually a turn: a moment where something shifted, even slightly. A turn doesn't have to be dramatic. A mood changing, a small decision, or noticing something you hadn't is enough.

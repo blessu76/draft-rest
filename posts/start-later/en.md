@@ -4,6 +4,7 @@ description: Instead of opening with the weather and the time, start where somet
 date: 2026-11-01
 slug: start-later
 published: 2026-11-01T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Most of us warm up when we start writing. What time we woke up, what the weather was like, where we went: we write it all in order. The writer needs that time, but for the reader it is time spent waiting for the story to begin. Cut the warm-up and start in the middle of the scene, and the piece gets lighter at once.

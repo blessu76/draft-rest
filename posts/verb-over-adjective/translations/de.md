@@ -4,6 +4,8 @@ description: Ein Adjektiv durch eine Handlung zu ersetzen, macht den Satz klarer
 slug: verb-over-adjective
 date: 2026-11-18
 published: 2026-11-18T21:06:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Sätze wie „Das Zimmer war still“ oder „Man sah ihnen die Müdigkeit an“ lesen sich leicht, aber die Szene bleibt nicht haften. Das Adjektiv liefert die Schlussfolgerung gleich mit und lässt weniger Raum für die Vorstellungskraft. Setzt man an seine Stelle eine Handlung, bleibt die Aussage dieselbe, kommt aber viel schärfer an. Es genügt, in einem bereits geschriebenen Text ein einziges Adjektiv auszuwählen und durch eine Handlung zu ersetzen.

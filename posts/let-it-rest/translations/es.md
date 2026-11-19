@@ -4,6 +4,7 @@ description: Justo después de escribir lees lo que querías decir. Tres pasos p
 date: 2026-11-05
 slug: let-it-rest
 published: 2026-11-05T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 En el momento de terminar de escribir, a menudo llegan dos sensaciones a la vez: es perfecto, o es un desastre. Las dos vienen de seguir todavía dentro del texto. Justo después de escribir, lees lo que querías decir. Después de una noche, lees lo que de verdad hay en la página. Dejarlo reposar una noche no es aplazarlo; es una forma de que una versión de ti, situada a cierta distancia, se convierta en lector.

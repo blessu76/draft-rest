@@ -14,10 +14,18 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "tests"))
 import build_site  # noqa: E402
 import publish_post  # noqa: E402
-from test_build_site import write_post  # noqa: E402
+from test_build_site import write_post as write_post_raw  # noqa: E402
 
 KST = build_site.KST
+REVIEWED = "copy_review: iris\ncopy_review_date: 2026-11-14\n"  # later key wins over the helper's legacy mark
 FULL = "word " * 400  # a body that meets the 400-word / 800-character target in every language
+
+
+def write_post(root, slug, **kw):
+    """Fixture posts are published "now", so they carry Iris's mark (a legacy tag stops being valid on 11-15)."""
+    if "copy_review" not in kw.get("extra", ""):
+        kw["extra"] = kw.get("extra", "") + REVIEWED
+    write_post_raw(root, slug, **kw)
 
 
 class PublishPost(unittest.TestCase):
@@ -48,7 +56,7 @@ class PublishPost(unittest.TestCase):
         _, iso = publish_post.publish(self.dir, "q-one")
         posts, errors = build_site.load_posts(self.dir)
         self.assertEqual((len(posts), errors), (1, []))
-        self.assertIn(">%s %s KST</time>" % (iso[:10], iso[11:16]), build_site.build(self.dir)["en/blog/q-one/index.html"])
+        self.assertIn(">%s %s KST</time>" % (iso[:10], iso[11:16]), build_site.build(self.dir)["journal/q-one/index.html"])
 
     def test_bad_file_writes_nothing(self):
         write_post(self.dir, "q-one", extra="draft: true\n")
@@ -59,6 +67,32 @@ class PublishPost(unittest.TestCase):
             publish_post.publish(self.dir, "q-one")
         self.assertIn("no `date:` line", str(cm.exception))
         self.assertEqual(before, {f: f.read_text(encoding="utf-8") for f in (self.dir / "posts").rglob("*.md")})
+
+    def test_copy_review_gate_blocks_publish_and_writes_nothing(self):
+        """No `copy_review: iris` on a post dated today/after 11-15, or only the legacy tag -> refused, files untouched."""
+        write_post_raw(self.dir, "q-one", extra="draft: true\n")  # helper carries legacy-2026-11-14 only
+        before = {f: f.read_text(encoding="utf-8") for f in (self.dir / "posts").rglob("*.md")}
+        when = dt.datetime(2026, 11, 15, 12, 0, tzinfo=KST)
+        with mock.patch.object(publish_post.dt, "datetime", wraps=dt.datetime) as m:
+            m.now.return_value = dt.datetime(2026, 11, 15, 13, 0, tzinfo=KST)
+            with self.assertRaises(SystemExit) as cm:
+                publish_post.publish(self.dir, "q-one", when)
+        self.assertIn("copy_review gate", str(cm.exception))
+        self.assertIn("copy_review must be `iris`", str(cm.exception))
+        self.assertEqual(before, {f: f.read_text(encoding="utf-8") for f in (self.dir / "posts").rglob("*.md")})
+
+    def test_legacy_tag_refused_even_when_published_before_11_15(self):
+        """Publishing today (11-14) with only the legacy tag is refused: the exception is for posts already live."""
+        write_post_raw(self.dir, "q-one", extra="draft: true\n")
+        with self.assertRaises(SystemExit) as cm:
+            publish_post.publish(self.dir, "q-one", dt.datetime(2026, 11, 14, 12, 0, tzinfo=KST))
+        self.assertIn("copy_review gate", str(cm.exception))
+
+    def test_copy_review_missing_blocks_publish(self):
+        write_post_raw(self.dir, "q-one", extra="draft: true\ncopy_review:\n")
+        with self.assertRaises(SystemExit) as cm:
+            publish_post.publish(self.dir, "q-one", dt.datetime.now(KST) - dt.timedelta(minutes=1))
+        self.assertIn("copy_review", str(cm.exception))
 
     def test_future_time_is_refused(self):
         write_post(self.dir, "q-one", extra="draft: true\n")
@@ -95,7 +129,7 @@ class Lint(unittest.TestCase):
         w = self.lint()
         for c in ("en", "de", "fr"):
             self.assertTrue(any(x.startswith("q-one/%s: body is 299 words (< 300 floor)" % c) for x in w), (c, w))
-        self.assertFalse(any("q-one/%s: body is" % c in x for c in ("ko", "ja", "zh") for x in w), w)  # 299 'words' = 1495 chars: long enough
+        self.assertFalse(any("q-one/%s: body is" % c in x for c in ("ko", "ja", "zh-Hant", "th") for x in w), w)  # 299 'words' = 1495 chars: long enough
         write_post(self.dir, "q-two", body="word " * 300)
         w = self.lint("q-two")
         self.assertTrue(any(x.startswith("q-two/en: body is 300 words (< 400 target)") for x in w), w)  # exactly 300 is above the floor, below the target
@@ -104,7 +138,7 @@ class Lint(unittest.TestCase):
         self.assertFalse([x for x in self.lint("q-full") if "body is" in x])
         write_post(self.dir, "q-cjk", body="가" * 599)
         w = self.lint("q-cjk")
-        for c in ("ja", "zh"):
+        for c in ("ja", "zh-Hant", "th"):
             self.assertTrue(any(x.startswith("q-cjk/%s: body is 599 chars (< 600 floor)" % c) for x in w), (c, w))
         self.assertTrue(any(x.startswith("q-cjk/ko: body is 599 chars (< 800 target)") for x in w), w)  # ko: target only, the build owns its floor
         self.assertFalse(any("q-cjk/ko" in x and "floor" in x for x in w), w)
@@ -112,18 +146,18 @@ class Lint(unittest.TestCase):
         self.assertTrue(any("q-cjk2/ko: body is 400 chars" in x for x in self.lint("q-cjk2")))
         write_post(self.dir, "q-cjk3", body="가" * 799)
         w = self.lint("q-cjk3")
-        for c in ("ko", "ja", "zh"):
+        for c in ("ko", "ja", "zh-Hant", "th"):
             self.assertTrue(any(x.startswith("q-cjk3/%s: body is 799 chars (< 800 target)" % c) for x in w), (c, w))
-        self.assertFalse(any("floor" in x and x.split(":")[0].split("/")[1] in ("ko", "ja", "zh") for x in w), w)  # (the 1-word latin files are not the point here)
+        self.assertFalse(any("floor" in x and x.split(":")[0].split("/")[1] in ("ko", "ja", "zh-Hant", "th") for x in w), w)  # (the 1-word latin files are not the point here)
         write_post(self.dir, "q-cjk4", body="가" * 800)
-        self.assertFalse(any(("q-cjk4/%s: body is" % c) in x for c in ("ko", "ja", "zh") for x in self.lint("q-cjk4")))
+        self.assertFalse(any(("q-cjk4/%s: body is" % c) in x for c in ("ko", "ja", "zh-Hant", "th") for x in self.lint("q-cjk4")))
 
     def test_floor_and_target_findings_are_split(self):
-        langs = {"en": {"_body": "w " * 299}, "ru": {"_body": "w " * 300}, "de": {"_body": "w " * 400},
-                 "zh": {"_body": "字" * 599}, "ja": {"_body": "字" * 600}, "ko": {"_body": "字" * 799}}
+        langs = {"en": {"_body": "w " * 299}, "tr": {"_body": "w " * 300}, "de": {"_body": "w " * 400},
+                 "zh-Hant": {"_body": "字" * 599}, "ja": {"_body": "字" * 600}, "ko": {"_body": "字" * 799}}
         floor, target = publish_post.body_length_findings("s", langs)
-        self.assertEqual([x.split(":")[0] for x in floor], ["s/en", "s/zh"])
-        self.assertEqual([x.split(":")[0] for x in target], ["s/ja", "s/ko", "s/ru"])
+        self.assertEqual([x.split(":")[0] for x in floor], ["s/en", "s/zh-Hant"])
+        self.assertEqual([x.split(":")[0] for x in target], ["s/ja", "s/ko", "s/tr"])
         self.assertTrue(all(publish_post.is_floor_warning(x) for x in floor))
         self.assertFalse(any(publish_post.is_floor_warning(x) for x in target))
 
@@ -132,7 +166,7 @@ class Lint(unittest.TestCase):
                "[リンク](https://example.com/very/long/url/path)と**強調**\n\n![図](img/a.png)\n\n"
                "```\nprint('code block content')\n```\n\n---\n<b>タグ</b>")
         # visible: 見出し(3) 項目あ(3) 引用い(3) リンク(3) と(1) 強調(2) タグ(2) = 17
-        for lang in ("ja", "zh"):
+        for lang in ("ja", "zh-Hant", "th"):
             self.assertEqual(publish_post.body_size(cjk, lang), (17, "chars"))
         latin = "# Title here\n\n1. first item\n2. second item\n- bullet one\n> quoted words\n\n[link text](https://x.io/a/b) and **bold** *it*\n\n```\nnot counted at all\n```\n\n![alt](a.png)\n---\n"
         # Title here(2) first item(2) second item(2) bullet one(2) quoted words(2) link text and bold it(5) = 15
@@ -162,12 +196,12 @@ class Lint(unittest.TestCase):
         self.edit("q-one", "en", "description: d en", "description: " + "x" * 160)
         self.edit("q-one", "fr", "description: d fr", "description: " + "x" * 161)  # the build refuses this one, the lint only warns
         self.edit("q-one", "ko", "description: d ko", "description: " + "가" * 110)
-        self.edit("q-one", "zh", "description: d zh", "description: " + "字" * 111)
+        self.edit("q-one", "zh-Hant", "description: d zh-Hant", "description: " + "字" * 111)
         w = self.lint()
         self.assertFalse(any(x.startswith("q-one/en: description") for x in w), w)
         self.assertTrue(any(x.startswith("q-one/fr: description is 161 chars (> 160)") for x in w), w)
         self.assertFalse(any(x.startswith("q-one/ko: description") for x in w), w)
-        self.assertTrue(any(x.startswith("q-one/zh: description is 111 chars (> 110)") for x in w), w)
+        self.assertTrue(any(x.startswith("q-one/zh-Hant: description is 111 chars (> 110)") for x in w), w)
 
     def test_duplicate_title_inside_one_language(self):
         write_post(self.dir, "q-one", body=FULL)

@@ -4,6 +4,7 @@ description: Con mucha gente, el relato se emborrona. Elige a una persona, hazle
 date: 2026-10-28
 slug: one-person-in-focus
 published: 2026-10-28T15:58:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Los relatos cortos suelen desenfocarse por una sola razón: hay demasiada gente en ellos. «Cenamos con el equipo y todos reían y hablaban» es verdad, pero quien lee no ve a nadie. Elige a una persona y la imagen se enfoca.

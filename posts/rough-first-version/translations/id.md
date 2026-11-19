@@ -4,6 +4,7 @@ description: Ingin menulis bagus sejak baris pertama justru menghentikan tangan.
 date: 2026-11-07
 slug: rough-first-version
 published: 2026-11-07T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Kamu menulis kalimat pertama, menghapusnya, menulis lagi, menghapus lagi, dan tahu-tahu satu jam sudah lewat. Ketika kamu berusaha menulis bagus sejak awal, penilaian datang lebih dulu daripada tulisan. Tugas draf pertama bukan menjadi bagus, melainkan ada sampai akhir. Tulisan kasar yang sampai di ujung bisa diperbaiki. Tulisan yang ditinggalkan di tengah jalan tidak punya apa pun untuk diperbaiki.

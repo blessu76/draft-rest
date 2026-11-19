@@ -4,6 +4,8 @@ description: Chỉ một mốc giờ cũng làm cảnh viết rõ nét hơn. Ch�
 date: 2026-11-15
 slug: pin-the-hour
 published: 2026-11-15T13:09:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Một câu chuyện mở đầu bằng "một buổi chiều nọ" sẽ nhanh chóng mờ đi trong đầu người đọc. Một câu chuyện mở đầu bằng "chuyến xe buýt 6 giờ 40 chạy ngang qua trạm" lại giống như đang đứng ngay đó. Mốc giờ chỉ là thông tin rất nhỏ, nhưng nó đóng đinh cảnh vào một vị trí rõ ràng trong ngày. Chỉ cần nhìn đồng hồ và ghi lại một mốc giờ, câu chuyện sẽ rõ ràng hơn nhiều.
