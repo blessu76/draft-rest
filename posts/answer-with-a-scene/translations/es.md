@@ -4,6 +4,8 @@ description: "Una palabra de emoción cierra la historia demasiado pronto. Déja
 date: 2026-11-24
 slug: answer-with-a-scene
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Alguien pregunta: «¿Cómo te sentiste?» y la respuesta más rápida llega enseguida: «triste», «feliz», «raro». Son palabras verdaderas, pero también son puertas que se cierran. Cuando dices «fue triste», quien escucha asiente y la historia termina. Una escena mantiene la puerta abierta. Deja que la otra persona entre en la habitación contigo y lo sienta por su cuenta.

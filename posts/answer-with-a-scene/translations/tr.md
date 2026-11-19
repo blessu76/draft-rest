@@ -4,6 +4,8 @@ description: "Duygu sözcüğü çoğu zaman hikâyeyi erkenden kapatır. Onu bi
 date: 2026-11-24
 slug: answer-with-a-scene
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Biri "Nasıl hissettin?" diye sorar ve en hızlı yanıt hemen gelir: "üzgün", "mutlu", "tuhaf". Bu sözcükler doğrudur, ama aynı zamanda kapanan kapılardır. "Üzgündüm" dediğiniz anda dinleyen başını sallar ve hikâye biter. Bir sahne kapıyı açık tutar. Karşınızdakinin sizinle aynı odada durmasını ve bunu kendisinin hissetmesini sağlar.
@@ -42,4 +44,4 @@ Yaklaşık otuz saniye konuştuktan sonra draft() iki üç nazik soru sorar. Bun
 
 ## Bugün deneyin
 
-Bu haftadan bir anı düşünün ve duygu sözcüğünü yazın. Üstünü çizin. Sonra önünüzde olanı anlatan bir iki satır yazın ve sesli okuyun. Sözcük olmadan da duygunun orada durup durmadığına bakın; gerekirse tek bir küçük ayrıntı daha ekleyin.
+Bu haftadan bir anı düşünün ve duygu sözcüğünü yazın. Üstünü çizin. Sonra önünüzde olanı anlatan bir iki satır yazın ve sesli okuyun. Sözcük olmadan da duygunun orada durup durmadığına bakın.

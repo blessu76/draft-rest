@@ -4,6 +4,8 @@ description: "Une courte attente, celle d'une bouilloire, d'un bus ou d'une rép
 date: 2026-11-22
 slug: write-a-small-wait
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Une grande partie de la journée se passe à attendre : que la bouilloire chauffe, que le bus arrive, qu'une réponse vienne. Quand on raconte, on saute d'ordinaire ces minutes, car il semble qu'il ne s'y passe rien. Pourtant la tension habite l'attente. Quelque chose va arriver et la personne ne peut pas l'accélérer. Écrire une petite attente peut donner à une scène une traction silencieuse, sans aucune intrigue.

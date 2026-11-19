@@ -4,6 +4,8 @@ description: "Una espera corta, como la de una tetera, un autobús o una respues
 date: 2026-11-22
 slug: write-a-small-wait
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Buena parte del día se nos va esperando: a que hierva la tetera, a que llegue el autobús, a que llegue una respuesta que no llega. Al contar una historia solemos saltarnos esos minutos, porque parece que no pasa nada. Pero en la espera vive la tensión. Algo está a punto de llegar y la persona no puede acelerarlo. Escribir una pequeña espera puede dar a una escena un tirón silencioso sin necesidad de trama.

@@ -4,6 +4,8 @@ description: "Las manos muestran lo que las palabras ocultan. Colócalas en una 
 date: 2026-11-23
 slug: where-your-hands-were
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Cuando recordamos un momento, solemos recordar las caras y las palabras y olvidar las manos. Sin embargo, las manos están ocupadas en casi todas las escenas: sostienen una taza, doblan un recibo, aprietan un teléfono. Además son honestas. Una persona puede decir «estoy bien» mientras sus manos rompen una servilleta en tiras. Poner manos en una escena deja que el lector lea el ánimo sin que se lo digan.

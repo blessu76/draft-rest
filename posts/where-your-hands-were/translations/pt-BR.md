@@ -4,6 +4,8 @@ description: "As mãos mostram o que as palavras escondem. Coloque-as em uma lin
 date: 2026-11-23
 slug: where-your-hands-were
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Quando lembramos de um momento, costumamos lembrar dos rostos e das palavras e esquecer das mãos. No entanto, as mãos estão ocupadas em quase toda cena: segurando uma xícara, dobrando um recibo, apertando o celular. Elas também são honestas. Uma pessoa pode dizer "estou bem" enquanto as mãos rasgam um guardanapo em tiras. Colocar mãos na cena deixa o leitor perceber o clima sem que alguém conte.

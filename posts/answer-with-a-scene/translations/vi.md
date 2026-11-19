@@ -4,6 +4,8 @@ description: "Từ chỉ cảm xúc thường đóng câu chuyện quá sớm. H
 date: 2026-11-24
 slug: answer-with-a-scene
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Ai đó hỏi: "Lúc đó bạn cảm thấy thế nào?" và câu trả lời nhanh nhất hiện ra ngay: "buồn", "vui", "lạ". Những từ này đúng, nhưng cũng là những cánh cửa đóng lại. Khi bạn nói "buồn lắm", người nghe gật đầu và câu chuyện kết thúc. Một cảnh giữ cánh cửa mở. Nó để người kia đứng trong cùng căn phòng với bạn và tự cảm nhận.

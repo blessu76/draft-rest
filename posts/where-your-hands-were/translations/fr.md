@@ -4,6 +4,8 @@ description: "Les mains montrent ce que les mots cachent. Placez-les en une lign
 date: 2026-11-23
 slug: where-your-hands-were
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Quand on se souvient d'un moment, on retient souvent les visages et les paroles, et on oublie les mains. Pourtant les mains sont occupées dans presque toutes les scènes : elles tiennent une tasse, plient un ticket, serrent un téléphone. Elles sont aussi sincères. Une personne peut dire « ça va » pendant que ses mains déchirent une serviette en lanières. Mettre des mains dans une scène permet au lecteur de lire l'ambiance sans qu'on la lui dise.

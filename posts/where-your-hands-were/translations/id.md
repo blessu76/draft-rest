@@ -4,6 +4,8 @@ description: "Tangan memperlihatkan apa yang disembunyikan kata-kata. Tempatkan 
 date: 2026-11-23
 slug: where-your-hands-were
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Ketika mengingat sebuah momen, kita cenderung ingat wajah dan kata-kata, tetapi lupa tangan. Padahal tangan sibuk di hampir setiap adegan: memegang cangkir, melipat struk, menggenggam ponsel. Tangan juga jujur. Seseorang bisa berkata "aku baik-baik saja" sementara tangannya merobek serbet menjadi helai-helai. Menaruh tangan dalam adegan membuat pembaca bisa membaca suasana tanpa diberi tahu.

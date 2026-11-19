@@ -4,6 +4,8 @@ description: Hands show what words hide. Place them in one line, give them a sma
 date: 2026-11-23
 slug: where-your-hands-were
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 When we remember a moment, we tend to remember faces and words and forget the hands. Yet hands are busy in almost every scene: holding a cup, folding a receipt, gripping a phone. They are also honest. A person can say "I'm fine" while their hands tear a napkin into strips. Putting hands into a scene lets the reader read the mood without being told.

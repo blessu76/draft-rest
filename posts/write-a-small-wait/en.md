@@ -4,6 +4,8 @@ description: A short wait, like a kettle, a bus or a reply, holds a story's tens
 date: 2026-11-22
 slug: write-a-small-wait
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Much of a day is spent waiting: for a kettle to boil, for a bus, for a reply that hasn't come. We usually skip these minutes when we tell a story, because nothing seems to happen. But a wait is where tension lives. Something is about to arrive, and the person cannot make it come faster. Writing a small wait can give a scene a quiet pull without any plot.

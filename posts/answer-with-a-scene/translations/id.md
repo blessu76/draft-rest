@@ -4,6 +4,8 @@ description: "Kata perasaan sering menutup cerita terlalu cepat. Singkirkan dulu
 date: 2026-11-24
 slug: answer-with-a-scene
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Seseorang bertanya, "Bagaimana rasanya?" dan jawaban tercepat langsung muncul: "sedih", "senang", "aneh". Kata-kata ini benar, tetapi juga pintu yang menutup. Begitu Anda berkata "rasanya sedih", pendengar mengangguk dan cerita pun selesai. Sebuah adegan membiarkan pintu tetap terbuka. Ia membuat orang lain berdiri di ruangan yang sama dengan Anda dan merasakannya sendiri.
@@ -42,4 +44,4 @@ Setelah Anda berbicara sekitar tiga puluh detik, draft() mengajukan dua atau tig
 
 ## Coba hari ini
 
-Pikirkan satu momen dari minggu ini dan tulis kata perasaannya. Coret. Lalu tulis satu atau dua baris yang menggambarkan apa yang ada di depan Anda, dan bacakan dengan suara keras. Perhatikan apakah perasaan itu masih terasa tanpa kata tersebut, dan tambahkan satu detail kecil lagi bila perlu.
+Pikirkan satu momen dari minggu ini dan tulis kata perasaannya. Coret. Lalu tulis satu atau dua baris yang menggambarkan apa yang ada di depan Anda, dan bacakan dengan suara keras. Perhatikan apakah perasaan itu masih terasa tanpa kata tersebut.

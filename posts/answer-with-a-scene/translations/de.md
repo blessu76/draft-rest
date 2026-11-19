@@ -4,13 +4,15 @@ description: "Ein Gefühlswort beendet eine Geschichte oft zu früh. Legen Sie e
 date: 2026-11-24
 slug: answer-with-a-scene
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
-Jemand fragt: „Wie hat sich das angefühlt?“, und die schnellste Antwort kommt sofort: „traurig“, „glücklich“, „seltsam“. Diese Wörter sind wahr, aber sie sind auch Türen, die sich schließen. Sobald Sie sagen „es war traurig“, nickt die Zuhörerin, und die Geschichte ist zu Ende. Eine Szene hält die Tür offen. Sie lässt den anderen Menschen mit Ihnen im Raum stehen und es selbst spüren.
+Jemand fragt: „Wie hat sich das angefühlt?“, und die schnellste Antwort kommt sofort: „traurig“, „glücklich“, „seltsam“. Diese Wörter sind wahr, aber sie sind auch Türen, die sich schließen. Sobald Sie sagen „es war traurig“, nicken die Zuhörenden, und die Geschichte ist zu Ende. Eine Szene hält die Tür offen. Sie lässt den anderen Menschen mit Ihnen im Raum stehen und es selbst spüren.
 
 ## Warum ein Gefühlswort die Geschichte beendet
 
-Ein Gefühlswort ist eine Zusammenfassung. Es presst alles, woran Sie sich erinnern, in ein Etikett, und dieses Etikett teilen tausend andere Geschichten. Eine Szene gehört nur Ihnen. Wenn die Zuhörerin dieselbe Tasse und dieselbe Türschwelle sieht, muss ihr niemand sagen, was das bedeutete.
+Ein Gefühlswort ist eine Zusammenfassung. Es presst alles, woran Sie sich erinnern, in ein Etikett, und dieses Etikett teilen tausend andere Geschichten. Eine Szene gehört nur Ihnen. Wenn Zuhörende dieselbe Tasse und dieselbe Türschwelle sehen, muss ihnen niemand sagen, was das bedeutete.
 
 ## Drei Schritte, um mit einer Szene zu antworten
 

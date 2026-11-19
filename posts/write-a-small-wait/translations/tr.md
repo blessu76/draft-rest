@@ -4,6 +4,8 @@ description: "Su ısıtıcısı, otobüs ya da cevap beklemek gibi kısa bir bek
 date: 2026-11-22
 slug: write-a-small-wait
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Günün büyük kısmı beklemekle geçer: su ısıtıcısının kaynamasını, otobüsün gelmesini, bir türlü gelmeyen bir cevabı beklemek. Hikâye anlatırken bu dakikaları genellikle atlarız, çünkü hiçbir şey olmuyormuş gibi görünür. Oysa gerilim bekleyişin içinde yaşar. Bir şey gelmek üzeredir ve kişi onu hızlandıramaz. Küçük bir bekleyişi yazmak, olay örgüsü olmadan da sahneye sessiz bir çekim kazandırabilir.

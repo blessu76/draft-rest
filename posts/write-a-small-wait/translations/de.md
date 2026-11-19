@@ -4,13 +4,15 @@ description: "Ein kurzes Warten auf Wasserkocher, Bus oder Antwort trägt die Sp
 date: 2026-11-22
 slug: write-a-small-wait
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Ein großer Teil des Tages geht mit Warten dahin: auf den Wasserkocher, auf den Bus, auf eine Antwort, die nicht kommt. Beim Erzählen überspringen wir diese Minuten meist, weil dort scheinbar nichts passiert. Doch im Warten steckt Spannung. Etwas wird gleich eintreffen, und die Person kann es nicht beschleunigen. Ein kleines Warten zu schreiben gibt einer Szene einen leisen Sog, auch ohne Handlung.
 
 ## Warum Warten funktioniert
 
-Das Warten stellt einen kleinen Wunsch und eine kleine Verzögerung nebeneinander, und die Leserin spürt den Abstand dazwischen. Sie müssen nicht erklären, dass die Person nervös oder gelangweilt ist. Wie sie die Minuten verbringt, zeigt es schon.
+Das Warten stellt einen kleinen Wunsch und eine kleine Verzögerung nebeneinander, und Lesende spüren den Abstand dazwischen. Sie müssen nicht erklären, dass die Person nervös oder gelangweilt ist. Wie sie die Minuten verbringt, zeigt es schon.
 
 ## Drei Schritte, um ein kleines Warten zu schreiben
 

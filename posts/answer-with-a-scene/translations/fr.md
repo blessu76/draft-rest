@@ -4,6 +4,8 @@ description: "Un mot de sentiment ferme souvent l'histoire trop tôt. Mettez-le 
 date: 2026-11-24
 slug: answer-with-a-scene
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Quelqu'un demande : « Qu'as-tu ressenti ? » et la réponse la plus rapide arrive aussitôt : « triste », « heureux », « bizarre ». Ces mots sont vrais, mais ce sont aussi des portes qui se ferment. Dès que vous dites « c'était triste », l'auditeur hoche la tête et l'histoire est finie. Une scène garde la porte ouverte. Elle laisse l'autre personne entrer dans la pièce avec vous et le ressentir par elle-même.

@@ -4,6 +4,8 @@ description: "Một khoảng chờ ngắn, như chờ ấm nước, xe buýt hay
 date: 2026-11-22
 slug: write-a-small-wait
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Phần lớn một ngày trôi qua trong chờ đợi: chờ ấm nước sôi, chờ xe buýt, chờ một tin nhắn trả lời chưa tới. Khi kể chuyện, ta thường bỏ qua những phút ấy vì có vẻ chẳng có gì xảy ra. Nhưng sự căng nằm ngay trong lúc chờ. Có điều gì đó sắp đến và người ấy không thể làm nó đến nhanh hơn. Viết một khoảng chờ nhỏ có thể cho cảnh một sức kéo lặng lẽ mà không cần cốt truyện.

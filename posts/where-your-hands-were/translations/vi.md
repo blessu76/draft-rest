@@ -4,6 +4,8 @@ description: "Đôi tay cho thấy điều lời nói che giấu. Đặt chúng 
 date: 2026-11-23
 slug: where-your-hands-were
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Khi nhớ lại một khoảnh khắc, ta thường nhớ khuôn mặt và lời nói mà quên đôi tay. Vậy mà gần như cảnh nào bàn tay cũng bận rộn: cầm cốc, gấp hóa đơn, siết chặt điện thoại. Bàn tay cũng thành thật. Một người có thể nói "tôi ổn" trong khi tay xé khăn giấy thành từng sợi. Đặt đôi tay vào cảnh cho phép người đọc tự đọc ra bầu không khí mà không cần ai nói trước.

@@ -4,6 +4,8 @@ description: A feeling word often closes a story too early. Set it aside, descri
 date: 2026-11-24
 slug: answer-with-a-scene
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Someone asks, "How did it feel?" and the quickest answer arrives at once: "sad," "happy," "strange." These words are true, but they are also doors that close. Once you say "it was sad," the listener nods and the story is over. A scene keeps the door open. It lets the other person stand in the room with you and feel it on their own.

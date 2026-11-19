@@ -1,22 +1,24 @@
 ---
 title: "Geben Sie den Händen der Figur einen Platz in der Szene"
-description: "Hände zeigen, was Worte verbergen. Setzen Sie sie in eine Zeile, geben Sie ihnen eine kleine Aufgabe, und die Leserin liest die Stimmung ohne Gefühlswort."
+description: "Hände zeigen, was Worte verbergen. Setzen Sie sie in eine Zeile, geben Sie ihnen eine kleine Aufgabe, und beim Lesen entsteht die Stimmung ohne Gefühlswort."
 date: 2026-11-23
 slug: where-your-hands-were
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
-Wenn wir uns an einen Moment erinnern, behalten wir meist Gesichter und Worte und vergessen die Hände. Dabei sind Hände in fast jeder Szene beschäftigt: Sie halten eine Tasse, falten einen Kassenbon, umklammern ein Handy. Sie sind auch ehrlich. Ein Mensch kann „Mir geht es gut“ sagen, während seine Hände eine Serviette in Streifen reißen. Hände in eine Szene zu setzen lässt die Leserin die Stimmung lesen, ohne dass man sie ihr nennt.
+Wenn wir uns an einen Moment erinnern, behalten wir meist Gesichter und Worte und vergessen die Hände. Dabei sind Hände in fast jeder Szene beschäftigt: Sie halten eine Tasse, falten einen Kassenbon, umklammern ein Handy. Sie sind auch ehrlich. Ein Mensch kann „Mir geht es gut“ sagen, während seine Hände eine Serviette in Streifen reißen. Hände in eine Szene zu setzen lässt Lesende die Stimmung erkennen, ohne dass man sie ihnen nennt.
 
 ## Warum Hände so viel tragen
 
-Hände sind der Teil des Körpers, der immer etwas Kleines tut. Kleine Handlungen sind konkret, und konkrete Details lassen eine Leserin einer Szene glauben. Außerdem bewegen sich Hände oft, wenn die Stimme ruhig bleibt, und zeigen so, was die Stimme verbirgt.
+Hände sind der Teil des Körpers, der immer etwas Kleines tut. Kleine Handlungen sind konkret, und konkrete Details lassen Lesende einer Szene glauben. Außerdem bewegen sich Hände oft, wenn die Stimme ruhig bleibt, und zeigen so, was die Stimme verbirgt.
 
 ## Drei Schritte, um Hände in eine Szene zu setzen
 
 1. **Suchen Sie die Hände in Ihrer Erinnerung.** Fragen Sie, wo sie waren: auf dem Tisch, in der Tasche, um eine Tasse.
 2. **Geben Sie ihnen eine kleine Aufgabe.** Einen Ring drehen, einen Fingernagel in die Handfläche drücken, eine Tischdecke glatt streichen.
-3. **Lassen Sie die Hände zu den Worten passen oder ihnen widersprechen.** Beides sagt der Leserin etwas. Danach erklären Sie nichts mehr.
+3. **Lassen Sie die Hände zu den Worten passen oder ihnen widersprechen.** Beides sagt den Lesenden etwas. Danach erklären Sie nichts mehr.
 
 ## Beispiel: das Telefonat
 

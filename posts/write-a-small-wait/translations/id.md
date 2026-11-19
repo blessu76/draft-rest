@@ -4,6 +4,8 @@ description: "Penantian singkat, seperti menunggu ketel, bus, atau balasan, meny
 date: 2026-11-22
 slug: write-a-small-wait
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Sebagian besar hari kita habis untuk menunggu: menunggu ketel mendidih, menunggu bus, menunggu balasan yang belum datang. Saat bercerita, kita biasanya melewati menit-menit itu karena tampaknya tidak ada yang terjadi. Padahal di dalam penantian ada ketegangan. Sesuatu akan segera tiba, dan orang itu tidak bisa membuatnya datang lebih cepat. Menulis satu penantian kecil bisa memberi adegan tarikan yang tenang tanpa perlu alur apa pun.

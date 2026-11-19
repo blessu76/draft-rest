@@ -4,6 +4,8 @@ description: "Uma palavra de emoção encerra a história cedo demais. Deixe-a d
 date: 2026-11-24
 slug: answer-with-a-scene
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Alguém pergunta: "Como você se sentiu?" e a resposta mais rápida chega na hora: "triste", "feliz", "estranho". Essas palavras são verdadeiras, mas também são portas que se fecham. Quando você diz "foi triste", quem ouve acena com a cabeça e a história acaba. Uma cena mantém a porta aberta. Ela deixa a outra pessoa entrar na sala com você e sentir por conta própria.

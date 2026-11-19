@@ -4,6 +4,8 @@ description: "Uma espera curta, como a da chaleira, do ônibus ou de uma respost
 date: 2026-11-22
 slug: write-a-small-wait
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Boa parte do dia é gasta esperando: a chaleira ferver, o ônibus passar, uma resposta que ainda não veio. Quando contamos uma história, costumamos pular esses minutos, porque parece que nada acontece. Mas é na espera que mora a tensão. Algo está para chegar e a pessoa não pode apressar. Escrever uma pequena espera pode dar à cena uma atração silenciosa, sem precisar de enredo.
