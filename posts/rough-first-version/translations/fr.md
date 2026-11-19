@@ -4,6 +4,7 @@ description: Vouloir bien écrire dès la première ligne bloque la main. Trois 
 date: 2026-11-07
 slug: rough-first-version
 published: 2026-11-07T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Vous écrivez une première phrase, vous l'effacez, vous la réécrivez, vous l'effacez encore, et soudain une heure a passé. Quand on essaie de bien écrire dès le départ, le jugement arrive avant les mots. Le travail d'une première version n'est pas d'être bonne, mais d'exister jusqu'au bout. Un texte brouillon qui arrive à la fin peut être corrigé. Un texte abandonné à mi-chemin n'a rien à corriger.

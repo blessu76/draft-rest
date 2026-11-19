@@ -5,6 +5,7 @@ date: 2026-10-29
 slug: open-with-one-sense
 published: 2026-10-29T16:12:00+09:00
 updated: 2026-10-30T16:30:35+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Most scenes begin with what we saw. "It was a rainy evening and I was sitting in a café." That is the easiest opening, and often the flattest. Open the same scene with a single sound, smell or touch and the reader is inside it in one sentence.

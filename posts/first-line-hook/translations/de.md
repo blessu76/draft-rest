@@ -4,6 +4,7 @@ description: Texte, die mit einer Erklärung beginnen, liest man selten zu Ende.
 date: 2026-10-25
 slug: first-line-hook
 published: 2026-10-25T16:53:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Wer durch den Feed scrollt, entscheidet in der ersten Zeile, ob er weiterliest. Deshalb ist der erste Satz einer Geschichte, der Aufhänger, so wichtig. Er muss nicht großartig sein. Schon der Sprung mitten in eine Szene verändert den ganzen Text.

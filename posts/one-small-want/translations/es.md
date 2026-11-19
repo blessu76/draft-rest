@@ -4,6 +4,8 @@ description: Una línea sobre lo que alguien quería pone la escena en marcha. E
 date: 2026-11-15
 slug: one-small-want
 published: 2026-11-15T13:11:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Un texto en el que parece que no pasa nada suele carecer de un deseo. En cuanto alguien quiere algo, aunque sea un poco, la escena empieza a moverse. No tiene que ser una gran meta. Querer el último asiento libre o esperar una llamada de teléfono es suficiente. Escribe una sola línea sobre lo que quería la persona de tu historia en ese momento.

@@ -4,6 +4,8 @@ description: Ein kleiner Ausrutscher macht eine glatte Szene lebendig. Ausrutsch
 slug: one-small-slip
 date: 2026-11-18
 published: 2026-11-18T21:07:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Ein Tag, an dem alles glattging, wirkt auf dem Papier schnell flach. Ein echter Tag enthält fast immer einen kleinen Ausrutscher: eine umgekippte Tasse, einen verwechselten Namen, einen zu Hause vergessenen Schlüssel. Meist möchte man solche Momente vergessen, doch im Schreiben gehören sie zu den besten Mitteln, eine Szene echt wirken zu lassen.

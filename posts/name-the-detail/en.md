@@ -4,6 +4,7 @@ description: Instead of writing "I was upset," write one thing you could see. Th
 date: 2026-10-31
 slug: name-the-detail
 published: 2026-10-31T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Words like "happy," "upset" and "lonely" are easy to write. But a reader can't picture anything from them. Swap the feeling's name for one concrete detail, and the reader feels it without being told.

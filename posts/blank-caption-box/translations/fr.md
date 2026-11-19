@@ -4,6 +4,7 @@ description: Une journée entière, mais la zone de légende reste vide. Comment
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box
+copy_review: legacy-2026-11-14
 ---
 
 Vous avez eu une journée pleine de choses à raconter, et vous voilà devant le curseur qui clignote dans la zone de légende. Les mots ne viennent pas parce que vous écririez mal. Vous avez simplement commencé par le plus difficile : la page blanche.

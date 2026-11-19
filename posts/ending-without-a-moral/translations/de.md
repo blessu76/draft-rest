@@ -4,6 +4,7 @@ description: Wenn du versucht bist, mit „und da erkannte ich, wie kostbar das 
 slug: ending-without-a-moral
 date: 2026-10-26
 published: 2026-10-26T17:15:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Viele gute Geschichten werden durch ihre letzte Zeile verdorben, etwa durch „und ich lernte, wie kostbar kleine Freundlichkeiten sind“. Das stimmt, nimmt dem Leser aber den Teil, den er selbst gefühlt hätte.

@@ -4,11 +4,11 @@
     python3 scripts/check_queue.py              # every post under posts/ that is a draft
     python3 scripts/check_queue.py <slug> ...   # only those slugs (draft or not)
 
-For each post: all 13 languages present, front matter parses, slug == folder name, `draft` identical in all files,
+For each post: all 12 languages present, front matter parses, slug == folder name, `draft` identical in all files,
 `date:` line present (publish_post.py needs it), no `published` stamp on a draft, description <= build_site.DESC_MAX,
 ko body inside build_site.KO_BODY_MIN..MAX, and publish_post.rewrite() accepts every file. The length rules come from
 build_site.length_problems(), so this check and the build can never disagree. Body length (publish_post.BODY_FLOOR/BODY_TARGET):
-below the floor (latin 300 words, ja/zh 600 chars) is an ERROR, below the target (400 words / 800 chars, ko too) is a WARN line
+below the floor (latin 300 words, ja/zh-Hant 600 chars) is an ERROR, below the target (400 words / 800 chars, ko too) is a WARN line
 and does not change the exit code. Exit 1 when anything is wrong. The build itself does not check these (published posts may be short).
 """
 import argparse

@@ -4,6 +4,8 @@ description: Mengganti satu kata sifat dengan tindakan membuat kalimat lebih jel
 slug: verb-over-adjective
 date: 2026-11-18
 published: 2026-11-18T21:06:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Kalimat seperti "ruangan itu sunyi" atau "dia tampak lelah" mudah dibaca, tetapi adegannya tidak membekas. Kata sifat menyerahkan kesimpulan lebih dulu, sehingga ruang bagi pembaca untuk membayangkan jadi lebih sempit. Kalau di tempat itu diletakkan sebuah tindakan, pesannya tetap sama tetapi terasa jauh lebih jelas. Cukup pilih satu kata sifat dari tulisan yang sudah ada, lalu gantilah dengan tindakan.

@@ -11,3 +11,5 @@
 .ipe-studio a:hover,.ipe-studio a:focus-visible{color:var(--ipe-accent);border-bottom-color:currentColor}
 .ipe-studio__ver{font-family:var(--ipe-font-mono);letter-spacing:0}
 .ipe-studio__sep{opacity:.6}
+/* 상단 언어 select — ipe_web_kit.langswitch.CSS 와 같다(시험이 대조) */
+.ipe-lang{display:inline-flex;align-items:center;max-width:100%;font-family:var(--ipe-font-sans,system-ui,sans-serif);font-size:.8125rem}.ipe-lang__label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.ipe-lang__select{max-width:100%;min-height:44px;padding:0 8px;font:inherit;color:var(--ipe-text,#1a1a1a);background:var(--ipe-bg,#fff);border:1px solid var(--ipe-line,#e3e3df);border-radius:var(--ipe-radius,12px)}.ipe-lang__links{display:flex;flex-wrap:wrap;gap:4px 10px}.ipe-lang__links a{color:var(--ipe-muted,#6b6b6b)}.ipe-lang__links a[aria-current]{color:var(--ipe-text,#1a1a1a);font-weight:600}

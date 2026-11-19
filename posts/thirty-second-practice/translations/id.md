@@ -5,6 +5,7 @@ date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00
 updated: 2026-10-30T16:32:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Pernahkah ditanya "gimana harimu?" dan yang keluar hanya "biasa saja"? Kalau mencoba menjelaskan satu hari penuh, kamu tak tahu harus mulai dari mana. Cerita tidak dimulai dari sehari. Cerita dimulai dari satu adegan.

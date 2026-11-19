@@ -4,6 +4,7 @@ description: Pas le temps d'écrire ? Clôturez chaque journée par une phrase :
 date: 2026-11-11
 slug: one-sentence-a-day
 published: 2026-11-11T16:49:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Vous pensez ne pas avoir le temps d'écrire des histoires ? Essayez de clore chaque journée par une seule phrase. Une phrase prend moins d'une minute, mais au bout de quelques semaines vous détenez un petit tas de moments réels, et n'importe lequel peut grandir en histoire le moment venu.

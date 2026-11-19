@@ -5,6 +5,7 @@ date: 2026-10-24
 slug: thirty-second-practice
 published: 2026-10-24T16:00:00+09:00
 updated: 2026-10-30T16:32:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Có bao giờ ai đó hỏi "hôm nay thế nào?" mà bạn chỉ đáp được "bình thường"? Khi cố giải thích cả một ngày, bạn không biết bắt đầu từ đâu. Một câu chuyện không bắt đầu từ một ngày. Nó bắt đầu từ một cảnh.

@@ -5,6 +5,7 @@ date: 2026-10-29
 slug: open-with-one-sense
 published: 2026-10-29T16:12:00+09:00
 updated: 2026-10-30T16:30:35+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Kebanyakan adegan dimulai dari apa yang terlihat. "Sore itu hujan dan aku duduk di sebuah kafe." Itu pembukaan yang paling mudah, dan sering kali paling datar. Buka adegan yang sama dengan satu suara, bau, atau sentuhan, dan pembaca sudah berada di dalamnya dalam satu kalimat.

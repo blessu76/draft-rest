@@ -4,6 +4,7 @@ description: Harimu panjang, tapi kotak keterangan tetap kosong. Begini cara men
 date: 2026-10-23
 published: 2026-10-23T17:30:00+09:00
 slug: blank-caption-box
+copy_review: legacy-2026-11-14
 ---
 
 Seharian kamu punya banyak hal untuk diceritakan, tetapi begitu membuka kotak keterangan, hanya kursor yang berkedip. Kata-kata tidak muncul bukan karena kamu buruk dalam menulis. Kamu hanya memulai dari bagian tersulit: halaman kosong.

@@ -4,6 +4,8 @@ description: Quãng đường ngắn giữa hai nơi có thể nối câu chuy�
 slug: the-way-between
 date: 2026-11-18
 published: 2026-11-18T21:08:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Khi viết một câu chuyện, chúng ta thường chỉ viết những nơi có chuyện xảy ra: chuyện ở nhà, chuyện ở văn phòng. Đoạn đường ở giữa bị bỏ qua. Vậy mà quãng đường ngắn từ nơi này sang nơi khác lại thường là chỗ cảm xúc trong ngày lộ ra thành thật nhất. Chỉ cần thêm một dòng về vài phút đi bộ hay ngồi xe buýt, câu chuyện sẽ nối liền tự nhiên hơn.

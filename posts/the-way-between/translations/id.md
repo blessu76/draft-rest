@@ -4,6 +4,8 @@ description: Perjalanan pendek di antara dua tempat bisa menyambung cerita. Cata
 slug: the-way-between
 date: 2026-11-18
 published: 2026-11-18T21:08:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Saat menulis cerita, kita biasanya hanya menulis tempat terjadinya peristiwa: apa yang terjadi di rumah, apa yang terjadi di kantor. Jalan di antara keduanya terlewat. Padahal perjalanan singkat dari satu tempat ke tempat lain sering kali menjadi bagian tempat perasaan hari itu tampak paling jujur. Tambahkan satu baris tentang beberapa menit yang dihabiskan berjalan kaki atau naik bus, dan cerita akan tersambung dengan lebih wajar.

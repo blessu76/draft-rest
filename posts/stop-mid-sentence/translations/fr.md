@@ -4,6 +4,7 @@ description: S'arrêter dans une impasse complique demain. Arrêtez-vous quand v
 date: 2026-11-06
 slug: stop-mid-sentence
 published: 2026-11-06T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 On dit souvent que le plus dur, en écriture, c'est de commencer, mais la difficulté de commencer dépend de l'endroit où vous vous êtes arrêté hier. Un texte que vous avez refermé bloqué, sans plus rien à dire, ressemble à un écran blanc quand vous le rouvrez. Un texte que vous avez laissé alors que vous saviez encore ce qui venait ensuite reprend dès que vous l'ouvrez. S'arrêter un peu plus tôt, exprès, n'est pas de la paresse : c'est un petit cadeau à celui que vous serez demain.

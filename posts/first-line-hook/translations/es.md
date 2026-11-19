@@ -4,6 +4,7 @@ description: Los textos que empiezan con una explicación cuesta terminarlos. Tr
 date: 2026-10-25
 slug: first-line-hook
 published: 2026-10-25T16:53:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Quien va haciendo scroll decide en la primera línea si sigue leyendo. Por eso importa la primera frase de una historia, el gancho. No tiene que ser grandiosa. Con solo meterte en mitad de una escena, el texto cambia.

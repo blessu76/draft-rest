@@ -4,6 +4,8 @@ description: Der kurze Weg zwischen zwei Orten kann eine Geschichte verbinden. N
 slug: the-way-between
 date: 2026-11-18
 published: 2026-11-18T21:08:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Wenn wir eine Geschichte schreiben, schreiben wir meist nur die Orte, an denen etwas geschehen ist: was zu Hause passiert ist, was im Büro passiert ist. Der Weg dazwischen wird übersprungen. Dabei zeigen sich auf dem kurzen Weg von einem Ort zum anderen die Gefühle des Tages oft am ehrlichsten. Eine Zeile über die paar Minuten zu Fuß oder im Bus, und die Geschichte verbindet sich natürlicher.

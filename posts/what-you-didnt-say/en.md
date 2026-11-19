@@ -4,6 +4,7 @@ description: Some moments hold a sentence you never said. Write it down in three
 date: 2026-11-12
 slug: what-you-didnt-say
 published: 2026-11-12T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Have you ever answered "I'm fine" and felt a different sentence sitting right behind it? Many moments worth writing about have a line like that, something you almost said and then swallowed. The unsaid line is often the most honest sentence of the day, and it can give a short piece its center. You don't have to say it to anyone. You only have to write it down once.

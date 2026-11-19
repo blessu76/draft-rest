@@ -4,6 +4,7 @@ description: Incluso un día sin nada especial guarda una historia. Tres pregunt
 date: 2026-10-27
 slug: nothing-happened-today
 published: 2026-10-27T16:00:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 "Hoy no pasó nada." Los días en que más sale esa frase son los días con más historias escondidas. Un día sin gran acontecimiento no es un día sin historia. Solo significa que el ojo para las cosas pequeñas todavía no se ha encendido.

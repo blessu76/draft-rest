@@ -4,6 +4,8 @@ description: Một sơ suất nhỏ trong cảnh quá trơn tru giúp cảnh th�
 slug: one-small-slip
 date: 2026-11-18
 published: 2026-11-18T21:07:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Một ngày mà mọi thứ đều trôi chảy thường trông phẳng lặng khi viết ra giấy. Một ngày thật gần như luôn có một sơ suất nhỏ: ly nước bị đổ, cái tên bị gọi nhầm, chìa khóa để quên ở nhà. Ta thường muốn quên những khoảnh khắc ấy, nhưng trong văn viết, chúng lại là một trong những cách tốt nhất để làm cho cảnh trở nên chân thực.

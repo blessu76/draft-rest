@@ -5,6 +5,7 @@ date: 2026-10-29
 slug: open-with-one-sense
 published: 2026-10-29T16:12:00+09:00
 updated: 2026-10-30T16:30:35+09:00
+copy_review: legacy-2026-11-14
 ---
 
 Phần lớn các cảnh bắt đầu từ điều ta nhìn thấy. "Chiều mưa, tôi ngồi trong quán cà phê." Đó là cách mở dễ nhất, và thường cũng là phẳng nhất. Hãy mở cùng cảnh ấy bằng một âm thanh, mùi hương hay xúc giác, người đọc sẽ vào trong cảnh chỉ sau một câu.

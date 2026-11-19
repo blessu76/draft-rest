@@ -4,6 +4,7 @@ description: Trying to write well from the first line stalls your hand. Three st
 date: 2026-11-07
 slug: rough-first-version
 published: 2026-11-07T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 You write a first sentence, delete it, write it again, delete it again, and suddenly an hour has passed. When you try to write well from the very start, judging arrives before writing does. The job of a first version isn't to be good; it's to exist, all the way to the end. A rough piece that reaches the end can be fixed. A piece abandoned halfway has nothing left to fix.

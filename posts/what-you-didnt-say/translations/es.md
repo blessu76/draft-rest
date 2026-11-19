@@ -4,6 +4,7 @@ description: Algunos momentos guardan una frase que nunca dijiste. Escríbela en
 date: 2026-11-12
 slug: what-you-didnt-say
 published: 2026-11-12T16:01:00+09:00
+copy_review: legacy-2026-11-14
 ---
 
 ¿Alguna vez has respondido «estoy bien» y has sentido que justo detrás había otra frase? Muchos momentos que valen la pena escribirse tienen una línea así: algo que casi dijiste y te tragaste. La frase que no se dijo suele ser la más sincera del día y puede darle centro a un texto corto. No tienes que decírsela a nadie. Solo tienes que escribirla una vez.

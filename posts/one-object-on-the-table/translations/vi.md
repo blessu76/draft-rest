@@ -4,6 +4,8 @@ description: Chỉ một món đồ cũng mang được không khí của cả c
 date: 2026-11-15
 slug: one-object-on-the-table
 published: 2026-11-15T13:10:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Nếu bạn viết "căn nhà bừa bộn", người đọc sẽ tự hình dung một cảnh bừa bộn theo cách của họ. Nhưng nếu bạn viết "lọ thuốc không nắp đã nằm trên bàn ăn ba ngày nay", người đọc còn thấy được người ta đã sống như thế trong căn nhà ấy bao lâu rồi. Một món đồ thì rất nhỏ, vậy mà nó có thể chứa cùng lúc không khí của cảnh và hoàn cảnh của một con người. Hãy nhìn quanh phòng và ghi lại món đồ mà mắt bạn cứ vướng vào.

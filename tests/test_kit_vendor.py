@@ -47,7 +47,7 @@ class KitVendor(unittest.TestCase):
         home = self.files["ko/index.html"]
         self.assertIn('<p class="ipe-studio" dir="ltr"><span class="ipe-studio__org"><a href="https://ipe.rest/">an ipe studio app</a></span></p>', home)
         self.assertNotIn("foot-studio", home)
-        blog = [t for r, t in self.files.items() if r.startswith("ja/blog/") and r.endswith("index.html")]
+        blog = [t for r, t in self.files.items() if r.startswith("ja/journal/") and r.endswith("index.html")]
         self.assertTrue(blog)
         for t in blog:
             self.assertIn('class="ipe-studio"', t)

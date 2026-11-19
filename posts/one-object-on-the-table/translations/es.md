@@ -4,6 +4,8 @@ description: Un solo objeto puede transmitir el ambiente de una escena. Elige un
 date: 2026-11-15
 slug: one-object-on-the-table
 published: 2026-11-15T13:10:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Si escribes "la casa estaba hecha un desorden", quien lee se imagina un desorden a su manera. Pero si escribes "el frasco de pastillas sin tapa llevaba tres días sobre la mesa", se ve incluso cuánto tiempo se ha vivido así en esa casa. Un objeto es diminuto, y aun así puede contener a la vez el ambiente de una escena y la situación de una persona. Mira a tu alrededor y anota lo primero en lo que se te va la vista.

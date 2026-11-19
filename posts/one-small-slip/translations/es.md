@@ -4,6 +4,8 @@ description: Un pequeño desliz en una escena fluida la vuelve creíble. Elige e
 slug: one-small-slip
 date: 2026-11-18
 published: 2026-11-18T21:07:00+09:00
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Un día en el que todo salió sin tropiezos tiende a verse plano sobre el papel. Un día real casi siempre guarda un pequeño desliz: una taza derramada, un nombre equivocado, unas llaves olvidadas. Solemos querer olvidar esos momentos, pero al escribir se cuentan entre las mejores formas de que una escena resulte real.
