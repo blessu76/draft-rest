@@ -4,9 +4,11 @@ description: Một điều tử tế nhỏ thoảng qua mang lại hơi ấm cho
 date: 2026-11-22
 slug: one-small-kindness
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
-Nhìn lại một ngày, dù không có chuyện gì lớn, thường vẫn có một điều tử tế nhỏ: ai đó giữ cửa cho mình, một chiếc ô được đưa qua không nói lời nào, vài giây một người lạ kiên nhẫn đợi ở quầy thu ngân. Những khoảnh khắc ấy mau bị quên, nhưng chỉ cần để lại một dòng về nó trong câu chuyện, hơi ấm sẽ lan khắp cả cảnh. Bạn không cần một khoảnh khắc lớn lao, cảm động, chỉ cần một khoảnh khắc nhỏ và cụ thể.
+Nhìn lại một ngày, dù không có chuyện gì lớn, thường vẫn có một điều tử tế nhỏ: ai đó giữ cửa cho mình, một chiếc ô được đưa qua không nói lời nào, vài giây một người lạ đợi ở quầy thu ngân. Những khoảnh khắc ấy mau bị quên, nhưng chỉ cần để lại một dòng về nó trong câu chuyện, hơi ấm sẽ lan khắp cả cảnh. Bạn không cần một khoảnh khắc lớn lao, cảm động, chỉ cần một khoảnh khắc nhỏ và cụ thể.
 
 ## Vì sao một điều tử tế nhỏ có thể thay đổi câu chuyện
 

@@ -4,6 +4,8 @@ description: "Yanından geçip giden küçük bir iyilik, hikâyeye sıcaklığ�
 date: 2026-11-22
 slug: one-small-kindness
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Bir güne geri dönüp bakın; büyük bir şey olmasa bile genellikle küçük bir iyilik vardır: kapıyı tutan biri, tek kelime etmeden uzatılan bir şemsiye, kasada bir yabancının beklediği birkaç saniye. Bu anlar çabuk unutulur, ama hikâyede onlardan tek bir satır bırakırsanız sıcaklık bütün sahneye yayılır. Büyük, duygulandırıcı bir ana gerek yok; küçük ve somut bir an yeter.

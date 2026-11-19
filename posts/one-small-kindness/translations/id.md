@@ -4,9 +4,11 @@ description: Kebaikan kecil yang lewat memberi kehangatan pada cerita. Tulis sia
 date: 2026-11-22
 slug: one-small-kindness
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
-Tengok kembali satu hari, dan meski tidak ada kejadian besar, biasanya selalu ada satu kebaikan kecil: seseorang yang menahan pintu, payung yang diulurkan tanpa sepatah kata, beberapa detik yang ditunggu orang asing di kasir. Momen seperti itu cepat terlupa, tetapi sisakan satu baris tentangnya dalam cerita, dan kehangatan akan menyebar ke seluruh adegan. Kamu tidak perlu momen besar yang mengharukan, cukup yang kecil dan konkret. Pembaca jarang mengingat pidato panjang, tetapi mereka mengingat sebuah tangan yang terulur di tengah keramaian pagi, jadi tangkap saja tangan itu dan tunjukkan persis seperti yang kamu lihat.
+Tengok kembali satu hari, dan meski tidak ada kejadian besar, biasanya selalu ada satu kebaikan kecil: seseorang yang menahan pintu, payung yang diulurkan tanpa sepatah kata, beberapa detik yang ditunggu orang asing di kasir. Momen seperti itu cepat terlupa, tetapi sisakan satu baris tentangnya dalam cerita, dan kehangatan akan menyebar ke seluruh adegan. Kamu tidak perlu momen besar yang mengharukan, cukup yang kecil dan konkret.
 
 ## Mengapa kebaikan kecil dapat mengubah sebuah cerita
 
@@ -34,7 +36,7 @@ Tanpa kata "dengan baik hati", kebaikannya tetap terlihat.
 
 - **Menghias kebaikan terlalu berlebihan.** Ungkapan seperti "malaikat berwujud manusia" membuatnya terasa jauh. Tindakan kecil lebih dipercaya.
 - **Hanya menulis si penolong lalu berhenti.** Selalu tambahkan reaksi penerimanya. Kebaikan baru menjadi cerita lewat sebuah reaksi.
-- **Menutup dengan pelajaran.** Hapus kalimat seperti "dunia ini ternyata masih hangat" dan berhentilah pada tindakannya, lalu biarkan pembaca menyimpulkan sendiri maknanya, karena mereka biasanya mampu melakukannya.
+- **Menutup dengan pelajaran.** Hapus kalimat seperti "dunia ini ternyata masih hangat" dan berhentilah pada tindakannya.
 
 ## Tips memakai draft()
 
@@ -42,4 +44,4 @@ Setelah kamu berbicara sekitar tiga puluh detik, draft() menawarkan dua atau tig
 
 ## Coba hari ini
 
-Ingat satu kebaikan kecil yang ditunjukkan seseorang kepadamu hari ini. Tulis apa yang orang itu lakukan dalam satu baris, dan bagaimana kamu bereaksi di baris lain. Dua baris sudah cukup, dan tak perlu dipoles berlebihan pada percobaan pertama. Bacakan keras-keras dan periksa apakah rasa terima kasihnya terasa meski kamu tak pernah menulis "terima kasih".
+Ingat satu kebaikan kecil yang ditunjukkan seseorang kepadamu hari ini. Tulis apa yang orang itu lakukan dalam satu baris, dan bagaimana kamu bereaksi di baris lain. Dua baris sudah cukup. Bacakan keras-keras dan periksa apakah rasa terima kasihnya terasa meski kamu tak pernah menulis "terima kasih".

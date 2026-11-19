@@ -4,6 +4,8 @@ description: Una pequeña amabilidad que pasa le da calidez a una historia. Escr
 date: 2026-11-22
 slug: one-small-kindness
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Mira atrás en un día y, aunque no haya pasado nada grande, casi siempre hay una pequeña amabilidad: alguien que sostuvo una puerta, un paraguas entregado sin una palabra, unos segundos que un desconocido esperó en la caja. Esos momentos se olvidan pronto, pero si dejas una línea sobre ellos en una historia, la calidez se extiende por toda la escena. No necesitas un momento grandioso y conmovedor, solo uno pequeño y concreto.

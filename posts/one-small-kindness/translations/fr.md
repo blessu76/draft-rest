@@ -4,6 +4,8 @@ description: Une petite gentillesse qui passe donne de la chaleur à une histoir
 date: 2026-11-22
 slug: one-small-kindness
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Repensez à une journée et, même s'il ne s'est rien passé de grand, il y a presque toujours une petite gentillesse : quelqu'un qui a tenu une porte, un parapluie tendu sans un mot, quelques secondes qu'un inconnu a attendues à la caisse. Ces instants s'oublient vite, mais laissez-en une ligne dans une histoire et la chaleur se répand sur toute la scène. Vous n'avez pas besoin d'un moment grandiose et bouleversant, seulement d'un moment petit et concret.

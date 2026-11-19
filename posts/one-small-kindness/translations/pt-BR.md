@@ -4,13 +4,15 @@ description: Uma pequena gentileza que passa dá calor a uma história. Escreva 
 date: 2026-11-22
 slug: one-small-kindness
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Olhe para trás num dia e, mesmo que nada de grande tenha acontecido, quase sempre há uma pequena gentileza: alguém que segurou a porta, um guarda-chuva entregue sem uma palavra, alguns segundos que um desconhecido esperou no caixa. Esses momentos são esquecidos depressa, mas deixe uma linha sobre eles numa história e o calor se espalha por toda a cena. Você não precisa de um momento grandioso e comovente, só de um pequeno e concreto.
 
 ## Por que uma pequena gentileza pode mudar uma história
 
-A gentileza aparece melhor em pequenas ações do que em grandes palavras. Ao lê-las, o leitor percebe em que tipo de mundo o personagem vive. E o constrangimento ou a gratidão de quem a recebeu é difícil de esconder, o que torna o personagem mais real.
+A gentileza aparece melhor em pequenas ações do que em grandes palavras. Ao lê-las, o leitor percebe em que tipo de mundo a personagem vive. E o constrangimento ou a gratidão de quem a recebeu é difícil de esconder, o que torna a personagem mais real.
 
 ## Três passos para escrever uma pequena gentileza
 

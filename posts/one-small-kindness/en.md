@@ -4,6 +4,8 @@ description: A small kindness that passed by gives a story its warmth. Write who
 date: 2026-11-22
 slug: one-small-kindness
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Look back over a day and even when nothing big happened, there is usually one small kindness: someone who held a door, an umbrella handed over without a word, a few seconds a stranger waited at the register. Such moments are forgotten quickly, but leave one line about it in a story and warmth spreads through the whole scene. You don't need a grand, moving moment, only a small and concrete one.
