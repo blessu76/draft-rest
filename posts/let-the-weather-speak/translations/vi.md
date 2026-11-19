@@ -4,6 +4,8 @@ description: Thời tiết của ngày hôm đó có thể mang một cảm xúc
 date: 2026-11-20
 slug: let-the-weather-speak
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Ngay khi nhân vật bắt đầu giải thích mình cảm thấy thế nào, cảnh truyện trở nên cứng nhắc. Thay vì viết "cô ấy thấy cô đơn" hay "anh ấy vui", hãy viết một dòng về thời tiết lúc đó. Thời tiết dựng nên không khí nhanh hơn hầu hết mọi thứ mà không cần giải thích, và người đọc nhìn lên bầu trời rồi tự đoán ra cảm xúc.

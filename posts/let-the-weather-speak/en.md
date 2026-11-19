@@ -4,6 +4,8 @@ description: The day's weather can carry a feeling the person cannot say. Pick o
 date: 2026-11-20
 slug: let-the-weather-speak
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 The moment a character starts explaining how they feel, the scene stiffens. Instead of writing "she felt lonely" or "he was glad," write one line about the weather at that moment. Weather sets a mood faster than almost anything else without explaining itself, and the reader looks at the sky and works out the feeling alone.

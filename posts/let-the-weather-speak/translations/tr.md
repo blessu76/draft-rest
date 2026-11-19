@@ -4,6 +4,8 @@ description: "Günün havası, kişinin söyleyemediği bir duyguyu taşıyabili
 date: 2026-11-20
 slug: let-the-weather-speak
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Karakter ne hissettiğini açıklamaya başladığı anda sahne kaskatı kesilir. "Kendini yalnız hissetti" ya da "sevindi" yazmak yerine o andaki hava hakkında tek bir satır yazın. Hava, kendini açıklamadan hemen hemen her şeyden hızlı bir ruh hâli kurar ve okur gökyüzüne bakıp duyguyu kendi başına çıkarır.

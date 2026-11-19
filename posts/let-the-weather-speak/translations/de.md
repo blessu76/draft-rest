@@ -4,6 +4,8 @@ description: Das Wetter des Tages kann ein Gefühl tragen, das die Figur nicht a
 date: 2026-11-20
 slug: let-the-weather-speak
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Sobald eine Figur anfängt zu erklären, wie sie sich fühlt, wird die Szene steif. Statt „sie fühlte sich einsam“ oder „er freute sich“ zu schreiben, schreib eine Zeile über das Wetter in diesem Moment. Wetter erzeugt Stimmung schneller als fast alles andere, ohne etwas zu erklären, und die Leserin schaut in den Himmel und errät das Gefühl selbst.

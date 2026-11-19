@@ -4,6 +4,8 @@ description: Cuaca hari itu bisa membawa perasaan yang tak sanggup diucapkan tok
 date: 2026-11-20
 slug: let-the-weather-speak
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Begitu tokoh mulai menjelaskan perasaannya, adegan langsung menjadi kaku. Daripada menulis "dia merasa kesepian" atau "dia senang", tulislah satu baris tentang cuaca pada saat itu. Cuaca membangun suasana lebih cepat daripada hampir semua hal tanpa menjelaskan diri, dan pembaca menatap langit lalu menebak perasaannya sendiri.

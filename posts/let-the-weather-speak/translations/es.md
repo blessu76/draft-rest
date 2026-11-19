@@ -4,6 +4,8 @@ description: El clima del día puede llevar un sentimiento que el personaje no l
 date: 2026-11-20
 slug: let-the-weather-speak
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 En cuanto un personaje empieza a explicar cómo se siente, la escena se pone rígida. En lugar de escribir "se sintió sola" o "él estaba contento", escribe una línea sobre el clima de ese momento. El clima crea un ambiente más rápido que casi cualquier otra cosa sin explicarse, y el lector mira el cielo y deduce solo el sentimiento.

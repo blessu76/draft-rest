@@ -4,6 +4,8 @@ description: O tempo do dia pode carregar um sentimento que a personagem não co
 date: 2026-11-20
 slug: let-the-weather-speak
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 No instante em que uma personagem começa a explicar o que sente, a cena endurece. Em vez de escrever "ela se sentiu sozinha" ou "ele estava feliz", escreva uma linha sobre o tempo naquele momento. O tempo cria um clima mais rápido do que quase qualquer outra coisa sem se explicar, e o leitor olha para o céu e deduz sozinho o sentimento.

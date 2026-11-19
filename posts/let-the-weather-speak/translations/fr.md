@@ -4,6 +4,8 @@ description: La météo du jour peut porter un sentiment que le personnage n'arr
 date: 2026-11-20
 slug: let-the-weather-speak
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Dès qu'un personnage se met à expliquer ce qu'il ressent, la scène se raidit. Au lieu d'écrire « elle se sentait seule » ou « il était content », écrivez une ligne sur le temps qu'il faisait à cet instant. La météo installe une ambiance plus vite que presque tout le reste sans rien expliquer, et le lecteur regarde le ciel et devine seul le sentiment.

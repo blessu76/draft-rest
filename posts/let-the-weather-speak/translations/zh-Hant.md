@@ -4,6 +4,8 @@ description: "人說不出口的心情，那天的天氣可以替他傳達。選
 date: 2026-11-20
 slug: let-the-weather-speak
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 角色一開始解釋自己的感受，場景就會變得僵硬。與其寫「她覺得好孤單」或「他很高興」，不如寫一行那一刻的天氣。天氣比幾乎任何東西都更快營造出氛圍，又不必自我解釋，讀者抬頭看看天空，就能自己讀出那份心情。
