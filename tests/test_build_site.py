@@ -64,6 +64,57 @@ class RedirectedLanguages(unittest.TestCase):
         self.assertFalse([u for u in locs if re.match(r"https://draft\.ipe\.rest/(ar|hi|ru|releases)/", u)])
 
 
+class SitemapLanguages(unittest.TestCase):
+    """The sitemap's language set has a single source (the kit's SUPPORTED list); ended languages never leak into it."""
+    def test_hreflang_set_is_the_kit_supported_list(self):
+        text = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        tags = set(re.findall(r'hreflang="([^"]+)"', text)) - {"x-default"}
+        self.assertEqual(tags, set(build_site.kit_lang.SUPPORTED))
+        self.assertEqual(len(build_site.LISTED), 12)
+
+    def test_forwarded_languages_are_ended_and_unlisted(self):
+        for c in build_site.REDIRECT_LANGS:
+            self.assertTrue(build_site.kit_lang.is_ended(build_site.TAG.get(c, c)), c)
+            self.assertNotIn(c, build_site.LISTED)
+
+    def test_every_ended_language_is_out_of_the_sitemap(self):
+        text = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertFalse(re.findall(r"<loc>https://draft\.ipe\.rest/(?:ar|hi|ru|zh)/", text))
+        self.assertFalse(re.findall(r'hreflang="(?:ar|hi|ru|zh|zh-Hans)"', text))
+
+
+class DeployWorkflow(unittest.TestCase):
+    """deploy.yml also fires after the scheduled publish succeeds (GITHUB_TOKEN pushes do not trigger push events)."""
+    def setUp(self):
+        import yaml
+        wf = ROOT / ".github" / "workflows"
+        self.dep = yaml.safe_load((wf / "deploy.yml").read_text(encoding="utf-8"))
+        self.pub = yaml.safe_load((wf / "publish-scheduled.yml").read_text(encoding="utf-8"))
+        self.text = (wf / "deploy.yml").read_text(encoding="utf-8")
+
+    def triggers(self):
+        return self.dep.get("on", self.dep.get(True))  # PyYAML reads the bare key `on` as True
+
+    def test_workflow_run_names_the_publish_workflow(self):
+        t = self.triggers()
+        self.assertEqual(t["workflow_run"]["workflows"], [self.pub["name"]])
+        self.assertEqual(t["workflow_run"]["types"], ["completed"])
+        self.assertIn("push", t)
+        self.assertIn("workflow_dispatch", t)
+
+    def test_job_only_blocked_for_failed_workflow_run(self):
+        cond = self.dep["jobs"]["deploy"]["if"]
+        self.assertIn("github.event_name != 'workflow_run'", cond)
+        self.assertIn("github.event.workflow_run.conclusion == 'success'", cond)
+
+    def test_checkout_main_for_workflow_run_and_no_new_secrets(self):
+        co = self.dep["jobs"]["deploy"]["steps"][0]
+        self.assertIn("'main'", co["with"]["ref"])
+        self.assertIn("workflow_run", co["with"]["ref"])
+        self.assertNotIn("PAT", self.text)
+        self.assertEqual(set(re.findall(r"secrets\.(\w+)", self.text)), {"SLACK_BOT_TOKEN"})
+
+
 class Locales(unittest.TestCase):
     def test_sixteen_languages_with_en_as_fallback(self):
         self.assertEqual(len(build_site.CODES), 16)

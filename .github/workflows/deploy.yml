@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # 자동 발행(publish-scheduled)이 GITHUB_TOKEN 으로 main 에 push 하면 push 이벤트가 안 일어난다 → 성공 종료를 받아 배포한다.
+  workflow_run:
+    workflows: [publish-scheduled]
+    types: [completed]
 
 permissions:
   contents: read
@@ -16,6 +20,8 @@ concurrency:
 
 jobs:
   deploy:
+    # push / 수동은 그대로, workflow_run 은 발행 워크플로가 success 일 때만
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -23,6 +29,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # workflow_run 의 기본 ref 는 기본 브랜치지만 명시한다 — 발행 커밋이 main 에 올라간 뒤의 최신
+          ref: ${{ github.event_name == 'workflow_run' && 'main' || github.ref }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
