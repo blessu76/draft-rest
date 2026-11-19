@@ -4,6 +4,8 @@ description: Un solo número puede poner la escena ante el lector. Elige un prec
 date: 2026-11-21
 slug: one-exact-number
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Frases como «esperé mucho tiempo» o «era caro» no forman ninguna imagen en la mente del lector. Pon solo un número en esa misma escena. «Esperé cuarenta minutos», «costó siete euros con cincuenta»: un número exacto sujeta la escena con firmeza, porque se lee como una prueba y no como una explicación.
@@ -28,11 +30,11 @@ Ahora reescríbelo con un número:
 
 > Despertó la pantalla del móvil por trigésima primera vez. Habían pasado cuarenta minutos desde la hora acordada. Junto al café frío, volvió a leer sin motivo los cuatro con cincuenta del recibo.
 
-Sin la palabra «mucho», se percibe el tamaño de la espera. El lector siente la paciencia agotándose en cada repetición del gesto.
+Sin la palabra «mucho», se percibe el tamaño de la espera.
 
 ## Tropiezos comunes
 
-- **Usar demasiados números.** Con uno por escena basta. Si hay más, suena a informe y el lector deja de sentir a la persona.
+- **Usar demasiados números.** Con uno por escena basta. Si hay más, suena a informe.
 - **Escribir el número y detenerse.** Conéctalo siempre con cómo lo supo el personaje. Un número tiene que estar unido a una persona.
 - **Esconderse tras cifras redondas.** «Nueve» es mucho más firme que «unos diez».
 

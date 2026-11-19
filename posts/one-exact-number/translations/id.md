@@ -4,6 +4,8 @@ description: Satu angka bisa menghadirkan adegan di depan pembaca. Pilih harga, 
 date: 2026-11-21
 slug: one-exact-number
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Kalimat seperti "aku menunggu lama" atau "harganya mahal" tidak membentuk gambaran apa pun di benak pembaca. Masukkan hanya satu angka ke adegan yang sama. "Aku menunggu empat puluh menit", "harganya tujuh puluh lima ribu rupiah": angka yang tepat menahan adegan dengan kokoh, karena terbaca sebagai bukti, bukan penjelasan.
@@ -28,12 +30,12 @@ Sekarang tulis ulang dengan angka:
 
 > Ia menyalakan layar ponselnya untuk ketiga puluh satu kalinya. Empat puluh menit sudah lewat dari jam yang dijanjikan. Di samping kopi yang dingin, ia membaca lagi angka empat puluh lima ribu di struk tanpa alasan.
 
-Tanpa kata "lama", besarnya penantian tetap terasa. Pembaca merasakan kesabaran tokoh itu terkikis setiap kali gerakan yang sama diulang.
+Tanpa kata "lama", besarnya penantian tetap terasa.
 
 ## Hambatan yang sering muncul
 
-- **Memakai terlalu banyak angka.** Satu per adegan sudah cukup. Lebih banyak angka membuatnya terbaca seperti laporan, dan pembaca berhenti merasakan tokohnya.
-- **Menulis angka lalu berhenti.** Selalu hubungkan dengan cara tokoh mengetahuinya. Angka harus terikat pada seseorang, sebab tanpa orangnya ia hanya tinggal data yang dingin.
+- **Memakai terlalu banyak angka.** Satu per adegan sudah cukup. Lebih banyak angka membuatnya terbaca seperti laporan.
+- **Menulis angka lalu berhenti.** Selalu hubungkan dengan cara tokoh mengetahuinya. Angka harus terikat pada seseorang.
 - **Bersembunyi di balik angka bulat.** "Sembilan" jauh lebih kokoh daripada "sekitar sepuluh".
 
 ## Tips memakai draft()

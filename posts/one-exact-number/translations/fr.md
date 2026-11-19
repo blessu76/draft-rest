@@ -4,6 +4,8 @@ description: Un seul chiffre peut mettre la scène sous les yeux du lecteur. Cho
 date: 2026-11-21
 slug: one-exact-number
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Des phrases comme « j'ai attendu longtemps » ou « c'était cher » ne dessinent aucune image dans l'esprit du lecteur. Mettez un seul chiffre dans la même scène. « J'ai attendu quarante minutes », « ça a coûté sept euros cinquante » : un chiffre exact ancre solidement une scène, car il se lit comme une preuve plutôt que comme une explication.

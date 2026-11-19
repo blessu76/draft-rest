@@ -4,6 +4,8 @@ description: One number can put a scene right in front of the reader. Pick a pri
 date: 2026-11-21
 slug: one-exact-number
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Sentences like "I waited a long time" or "it was expensive" don't build a picture in the reader's mind. Put just one number into the same scene. "I waited forty minutes," "it cost seven dollars and fifty cents": an exact number holds a scene firmly in place, because a number reads like evidence rather than explanation.

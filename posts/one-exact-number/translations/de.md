@@ -4,6 +4,8 @@ description: Eine Zahl kann die Szene vor dem Leser lebendig machen. Wähle Prei
 date: 2026-11-21
 slug: one-exact-number
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Sätze wie „Ich habe lange gewartet“ oder „Es war teuer“ erzeugen im Kopf der Leserin kein Bild. Setze in dieselbe Szene nur eine einzige Zahl. „Ich habe vierzig Minuten gewartet“, „es kostete sieben Euro fünfzig“: Eine genaue Zahl hält eine Szene fest an ihrem Platz, weil sie wie ein Beleg wirkt und nicht wie eine Erklärung.

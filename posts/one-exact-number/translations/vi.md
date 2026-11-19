@@ -4,6 +4,8 @@ description: Một con số có thể đặt cả cảnh ngay trước mắt ng�
 date: 2026-11-21
 slug: one-exact-number
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 Những câu như "tôi đã đợi rất lâu" hay "nó đắt lắm" không dựng nên hình ảnh nào trong đầu người đọc. Hãy đặt chỉ một con số vào chính cảnh đó. "Tôi đã đợi bốn mươi phút", "nó giá bảy mươi lăm nghìn đồng": một con số chính xác giữ cảnh đứng vững, vì nó được đọc như bằng chứng chứ không phải lời giải thích.

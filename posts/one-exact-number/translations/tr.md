@@ -4,6 +4,8 @@ description: "Tek bir sayı, bir sahneyi okurun tam önüne koyabilir. Bir fiyat
 date: 2026-11-21
 slug: one-exact-number
 draft: true
+copy_review: iris
+copy_review_date: 2026-11-19
 ---
 
 "Uzun süre bekledim" ya da "pahalıydı" gibi cümleler okurun zihninde bir resim kurmaz. Aynı sahneye yalnızca bir sayı koyun. "Kırk dakika bekledim", "yetmiş beş liraydı": kesin bir sayı sahneyi sağlam tutar, çünkü sayı açıklama gibi değil, kanıt gibi okunur.
