@@ -521,6 +521,43 @@ class RealPublish(Base):
         self.assertTrue((self.main / "x.txt").exists())
         self.assertEqual(self.remote_head(), git_out(self.main, "rev-parse", "HEAD"))
 
+    def test_push_rejection_with_other_post_today_stops(self):
+        """되감기 뒤 원격에 오늘자 다른 글이 있으면 하루 1편 규칙으로 중단한다."""
+        other = self.tmp / "other"
+        subprocess.run(["git", "clone", "-q", str(self.bare), str(other)], check=True)
+        calls = {"n": 0}
+        real_run = subprocess.run
+
+        def racing(argv, *a, **kw):
+            if isinstance(argv, list) and "push" in argv and calls["n"] == 0:
+                calls["n"] += 1
+                make_post(other, "x", extra="published: 2026-11-10T13:00:00+09:00\n")
+                commit_all(other, "other today")
+                git(other, "push", "-q", "origin", "main")
+            return real_run(argv, *a, **kw)
+        with mock.patch.object(auto_publish.subprocess, "run", side_effect=racing):
+            _, out, last = self.run_real()
+        self.assertEqual(last, "RESULT: hold p1 dup")
+        self.assertIn("오늘(KST) 다른 글이 발행됨", out)
+        self.assertFalse((self.main / "posts" / "p1").exists())
+        self.assertEqual(calls["n"], 1)
+
+    def test_push_blocked_recheck_before_push(self):
+        """push 직전 금지 시간대에 들어서면 push 하지 않고 커밋을 되돌린다."""
+        remote, head = self.remote_head(), git_out(self.main, "rev-parse", "HEAD")
+        real_blocked = auto_publish.in_push_blocked
+        n = {"c": 0}
+
+        def blocked_late(when):
+            n["c"] += 1
+            return True if n["c"] >= 3 else real_blocked(when)
+        with mock.patch.object(auto_publish, "in_push_blocked", side_effect=blocked_late):
+            _, out, last = self.run_real()
+        self.assertEqual(last, "RESULT: hold p1 G8")
+        self.assertEqual(self.remote_head(), remote)
+        self.assertEqual(git_out(self.main, "rev-parse", "HEAD"), head)
+        self.assertFalse((self.main / "posts" / "p1").exists())
+
     def test_push_rejected_three_times_holds(self):
         real = subprocess.run
 

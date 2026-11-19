@@ -56,7 +56,7 @@ SLOT_WINDOW = (12 * 60, 18 * 60)  # [start, end), minus PUSH_BLOCKED
 PUSH_TRIES = 3
 MAX_NOW_SKEW = dt.timedelta(minutes=5)
 BOT = ["-c", "user.name=draft-auto-publish", "-c", "user.email=auto-publish@users.noreply.github.com", "-c", "commit.gpgsign=false"]
-DATE_RE =re.compile(r"^\d{4}-\d{2}-\d{2}$")
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def log(msg):
@@ -407,6 +407,12 @@ def real_publish(a, queue, main_dir, slug, slot, when):
         if a.no_push:
             log("--no-push: push 생략 (로컬 커밋만)")
             return True, None, []
+        if in_push_blocked(now_kst()):  # G8 재확인: 게이트·빌드에 걸린 시간 동안 금지 시간대에 들어섰을 수 있다
+            try:
+                git(main_dir, "reset", "--hard", "-q", "HEAD~1")
+            except (subprocess.CalledProcessError, OSError) as ex:
+                return False, "G8", ["push 직전 금지 시간 진입 — 커밋 되돌리기 실패: %s" % ex]
+            return False, "G8", ["push 직전 푸시 금지 시간 진입 — 커밋을 되돌리고 이월"]
         r = subprocess.run(["git", "-C", str(main_dir), "push", a.remote, "HEAD:refs/heads/" + a.branch], capture_output=True, text=True)
         if r.returncode == 0:
             skew = now_kst() - stamp_time
@@ -423,6 +429,10 @@ def real_publish(a, queue, main_dir, slug, slot, when):
         if slug in published_slugs(main_dir):
             log("완료 처리: %s — 그 사이 원격에 발행됨" % slug)
             return False, "dup", ["원격에 이미 발행됨"]
+        done_today = published_today([main_dir, queue], when.date())
+        if done_today:
+            log("완료 처리: %s — 그 사이 오늘(KST) 다른 글이 발행됨: %s" % (slug, ", ".join(sorted(done_today))))
+            return False, "dup", ["오늘 이미 발행됨(하루 1편): %s" % ", ".join(sorted(done_today))]
     return False, "push", ["push %d회 거절" % PUSH_TRIES]
 
 

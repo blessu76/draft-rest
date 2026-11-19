@@ -23,9 +23,13 @@ jobs:
     timeout-minutes: 15
     env:
       PUBLISH_PAUSED: ${{ vars.PUBLISH_PAUSED }}  # 1 이면 스크립트가 즉시 skip (긴급 정지 스위치)
-      STATE_FILE: ${{ runner.temp }}/auto_publish_state.json
-      LOG_FILE: ${{ runner.temp }}/auto_publish.log
     steps:
+      # job 레벨 env 에는 runner 컨텍스트가 없다 — 경로는 $RUNNER_TEMP 로 만들어 이후 step 에 넘긴다.
+      - name: Set state/log paths
+        run: |
+          echo "STATE_FILE=$RUNNER_TEMP/auto_publish_state.json" >> "$GITHUB_ENV"
+          echo "LOG_FILE=$RUNNER_TEMP/auto_publish.log" >> "$GITHUB_ENV"
+
       - name: Checkout main (push 가 필요해 자격 증명 유지)
         uses: actions/checkout@v4
         with:
@@ -72,6 +76,6 @@ jobs:
             echo "## auto-publish"
             echo ""
             echo '```'
-            grep -E '^(auto_publish|RESULT)' "$LOG_FILE" || echo "(로그 없음)"
+            grep -E '^(auto_publish|RESULT)' "$LOG_FILE" 2>/dev/null || echo "(로그 없음)"
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
