@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <item>
+      <title>場面に正確な数字をひとつ入れてみる</title>
+      <link>https://draft.ipe.rest/ja/journal/one-exact-number/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/one-exact-number/</guid>
+      <pubDate>Fri, 20 Nov 2026 18:01:00 +0900</pubDate>
+      <description>数字ひとつで場面は読者の目の前に立ち上がります。値段・個数・時刻のどれかを選び、それが人物にとって何を意味するかを添える三つの手順を、例つきで紹介します。</description>
+    </item>
     <item>
       <title>天気に気持ちを代わりに語らせてみましょう</title>
       <link>https://draft.ipe.rest/ja/journal/let-the-weather-speak/</link>

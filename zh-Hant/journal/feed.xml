@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh-Hant/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>簡短的指南，教你把說出口的話變成人們真的會讀的故事——來自 draft() 背後的團隊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <item>
+      <title>在你的場景裡放進一個精確的數字</title>
+      <link>https://draft.ipe.rest/zh-Hant/journal/one-exact-number/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh-Hant/journal/one-exact-number/</guid>
+      <pubDate>Fri, 20 Nov 2026 18:01:00 +0900</pubDate>
+      <description>一個數字就能讓場景立在讀者眼前。選一個價格、數量或時間，再補上它對人物意味著什麼，只需三步，並附範例。</description>
+    </item>
     <item>
       <title>讓天氣替你說出心裡話</title>
       <link>https://draft.ipe.rest/zh-Hant/journal/let-the-weather-speak/</link>

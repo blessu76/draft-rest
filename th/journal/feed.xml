@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/th/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>คู่มือสั้น ๆ ว่าด้วยการเปลี่ยนสิ่งที่คุณพูดให้เป็นเรื่องที่คนอ่านจริง ๆ จากทีมที่อยู่เบื้องหลัง draft()</description>
     <language>th</language>
-    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <item>
+      <title>ใส่ตัวเลขที่แน่นอนหนึ่งตัวลงในฉากของคุณ</title>
+      <link>https://draft.ipe.rest/th/journal/one-exact-number/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/th/journal/one-exact-number/</guid>
+      <pubDate>Fri, 20 Nov 2026 18:01:00 +0900</pubDate>
+      <description>ตัวเลขเพียงหนึ่งตัวสามารถวางฉากไว้ตรงหน้าผู้อ่านได้ เลือกราคา จำนวน หรือเวลา แล้วเพิ่มว่ามันมีความหมายอย่างไรต่อคนคนนั้น สามขั้นตอนพร้อมตัวอย่าง</description>
+    </item>
     <item>
       <title>ให้สภาพอากาศพูดแทนสิ่งที่คนไม่พูด</title>
       <link>https://draft.ipe.rest/th/journal/let-the-weather-speak/</link>

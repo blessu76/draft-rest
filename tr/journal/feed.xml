@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/tr/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Söylediklerini insanların gerçekten okuyacağı bir hikâyeye çevirmek için kısa rehberler — draft() ekibinden.</description>
     <language>tr</language>
-    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Sahnenize tek bir kesin sayı koyun</title>
+      <link>https://draft.ipe.rest/tr/journal/one-exact-number/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/tr/journal/one-exact-number/</guid>
+      <pubDate>Fri, 20 Nov 2026 18:01:00 +0900</pubDate>
+      <description>Tek bir sayı, bir sahneyi okurun tam önüne koyabilir. Bir fiyat, bir adet ya da bir saat seçin ve kişi için ne anlama geldiğini ekleyin: üç adım ve bir örnekle.</description>
+    </item>
     <item>
       <title>Kişinin söylemediğini hava söylesin</title>
       <link>https://draft.ipe.rest/tr/journal/let-the-weather-speak/</link>

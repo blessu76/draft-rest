@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Pon un número exacto en tu escena</title>
+      <link>https://draft.ipe.rest/es/journal/one-exact-number/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/journal/one-exact-number/</guid>
+      <pubDate>Fri, 20 Nov 2026 18:01:00 +0900</pubDate>
+      <description>Un solo número puede poner la escena ante el lector. Elige un precio, una cantidad o una hora y añade qué significa para la persona: tres pasos y un ejemplo.</description>
+    </item>
     <item>
       <title>Deja que el clima diga lo que la persona no dice</title>
       <link>https://draft.ipe.rest/es/journal/let-the-weather-speak/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <item>
+      <title>장면에 정확한 숫자를 하나 넣어 보세요</title>
+      <link>https://draft.ipe.rest/ko/journal/one-exact-number/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/one-exact-number/</guid>
+      <pubDate>Fri, 20 Nov 2026 18:01:00 +0900</pubDate>
+      <description>숫자 하나가 장면을 눈앞에 놓아 줍니다. 가격, 개수, 시간 중 하나를 고르고 그것이 인물에게 뜻하는 바를 붙이는 세 단계와 예시를 정리했습니다.</description>
+    </item>
     <item>
       <title>날씨에게 마음을 대신 말하게 해 보세요</title>
       <link>https://draft.ipe.rest/ko/journal/let-the-weather-speak/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/id/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Thu, 19 Nov 2026 21:38:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <item>
+      <title>Masukkan satu angka yang tepat ke dalam adegan Anda</title>
+      <link>https://draft.ipe.rest/id/journal/one-exact-number/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/one-exact-number/</guid>
+      <pubDate>Fri, 20 Nov 2026 18:01:00 +0900</pubDate>
+      <description>Satu angka bisa menghadirkan adegan di depan pembaca. Pilih harga, jumlah, atau waktu, lalu tambahkan artinya bagi tokoh, dalam tiga langkah beserta contoh.</description>
+    </item>
     <item>
       <title>Biarkan cuaca mengatakan apa yang tak diucapkan orangnya</title>
       <link>https://draft.ipe.rest/id/journal/let-the-weather-speak/</link>
