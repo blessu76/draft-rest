@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/id/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Sisakan satu kebaikan kecil dalam ceritamu</title>
+      <link>https://draft.ipe.rest/id/journal/one-small-kindness/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/one-small-kindness/</guid>
+      <pubDate>Sat, 21 Nov 2026 16:00:00 +0900</pubDate>
+      <description>Kebaikan kecil yang lewat memberi kehangatan pada cerita. Tulis siapa melakukan apa, lalu tambahkan reaksi penerimanya, dalam tiga langkah beserta contoh.</description>
+    </item>
     <item>
       <title>Masukkan satu angka yang tepat ke dalam adegan Anda</title>
       <link>https://draft.ipe.rest/id/journal/one-exact-number/</link>

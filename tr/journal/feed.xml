@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/tr/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Söylediklerini insanların gerçekten okuyacağı bir hikâyeye çevirmek için kısa rehberler — draft() ekibinden.</description>
     <language>tr</language>
-    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Hikâyenize küçük bir iyilik bırakın</title>
+      <link>https://draft.ipe.rest/tr/journal/one-small-kindness/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/tr/journal/one-small-kindness/</guid>
+      <pubDate>Sat, 21 Nov 2026 16:00:00 +0900</pubDate>
+      <description>Yanından geçip giden küçük bir iyilik, hikâyeye sıcaklığını verir. Kimin ne yaptığını yazın ve alan kişinin tepkisini ekleyin: üç adım ve bir örnekle.</description>
+    </item>
     <item>
       <title>Sahnenize tek bir kesin sayı koyun</title>
       <link>https://draft.ipe.rest/tr/journal/one-exact-number/</link>

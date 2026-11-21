@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>物語に小さな親切をひとつ残してみましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/one-small-kindness/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/one-small-kindness/</guid>
+      <pubDate>Sat, 21 Nov 2026 16:00:00 +0900</pubDate>
+      <description>通りすぎた小さな親切が物語にぬくもりを与えます。誰が何をしたかを書き、受け取った人の反応を添える三つのステップを、例つきで紹介します。</description>
+    </item>
     <item>
       <title>場面に正確な数字をひとつ入れてみる</title>
       <link>https://draft.ipe.rest/ja/journal/one-exact-number/</link>

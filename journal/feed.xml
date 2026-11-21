@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Leave one small kindness in your story</title>
+      <link>https://draft.ipe.rest/journal/one-small-kindness/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/one-small-kindness/</guid>
+      <pubDate>Sat, 21 Nov 2026 16:00:00 +0900</pubDate>
+      <description>A small kindness that passed by gives a story its warmth. Write who did what and add the receiver&#x27;s reaction, in three steps, with an example.</description>
+    </item>
     <item>
       <title>Put one exact number into your scene</title>
       <link>https://draft.ipe.rest/journal/one-exact-number/</link>

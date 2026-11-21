@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh-Hant/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>簡短的指南，教你把說出口的話變成人們真的會讀的故事——來自 draft() 背後的團隊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>在你的故事裡留下一點小小的善意</title>
+      <link>https://draft.ipe.rest/zh-Hant/journal/one-small-kindness/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh-Hant/journal/one-small-kindness/</guid>
+      <pubDate>Sat, 21 Nov 2026 16:00:00 +0900</pubDate>
+      <description>一點路過的小善意，能替故事添上溫度。寫下誰做了什麼，再加上接受者的反應，分三步，附一個範例。</description>
+    </item>
     <item>
       <title>在你的場景裡放進一個精確的數字</title>
       <link>https://draft.ipe.rest/zh-Hant/journal/one-exact-number/</link>

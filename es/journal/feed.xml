@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Deja una pequeña amabilidad en tu historia</title>
+      <link>https://draft.ipe.rest/es/journal/one-small-kindness/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/journal/one-small-kindness/</guid>
+      <pubDate>Sat, 21 Nov 2026 16:00:00 +0900</pubDate>
+      <description>Una pequeña amabilidad que pasa le da calidez a una historia. Escribe quién hizo qué y añade la reacción de quien la recibe, en tres pasos y con un ejemplo.</description>
+    </item>
     <item>
       <title>Pon un número exacto en tu escena</title>
       <link>https://draft.ipe.rest/es/journal/one-exact-number/</link>

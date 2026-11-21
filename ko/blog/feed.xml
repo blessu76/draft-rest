@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 20 Nov 2026 18:01:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <item>
+      <title>작은 친절 하나를 이야기에 남겨 보세요</title>
+      <link>https://draft.ipe.rest/ko/journal/one-small-kindness/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/one-small-kindness/</guid>
+      <pubDate>Sat, 21 Nov 2026 16:00:00 +0900</pubDate>
+      <description>스쳐 간 작은 친절이 이야기의 온기를 만듭니다. 누가 무엇을 했는지 적고 받은 사람의 반응을 붙이는 세 단계와 예시를 정리했습니다.</description>
+    </item>
     <item>
       <title>장면에 정확한 숫자를 하나 넣어 보세요</title>
       <link>https://draft.ipe.rest/ko/journal/one-exact-number/</link>
