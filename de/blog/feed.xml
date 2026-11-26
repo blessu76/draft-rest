@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/de/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Kurze Anleitungen, wie aus Gesprochenem eine Geschichte wird, die Menschen wirklich lesen – vom draft()-Team.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <item>
+      <title>Schreiben Sie das kleine Warten, in dem noch nichts geschieht</title>
+      <link>https://draft.ipe.rest/de/journal/write-a-small-wait/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/de/journal/write-a-small-wait/</guid>
+      <pubDate>Thu, 26 Nov 2026 16:11:00 +0900</pubDate>
+      <description>Ein kurzes Warten auf Wasserkocher, Bus oder Antwort trägt die Spannung einer Geschichte. Nennen Sie das Erwartete und hören Sie vor der Ankunft auf.</description>
+    </item>
     <item>
       <title>Lass eine kleine Freundlichkeit in deiner Geschichte zurück</title>
       <link>https://draft.ipe.rest/de/journal/one-small-kindness/</link>

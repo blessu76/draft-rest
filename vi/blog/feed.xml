@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/vi/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <item>
+      <title>Viết khoảng chờ nhỏ khi chưa có gì xảy ra</title>
+      <link>https://draft.ipe.rest/vi/journal/write-a-small-wait/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/journal/write-a-small-wait/</guid>
+      <pubDate>Thu, 26 Nov 2026 16:11:00 +0900</pubDate>
+      <description>Một khoảng chờ ngắn, như chờ ấm nước, xe buýt hay tin nhắn, chứa sự căng của câu chuyện. Nêu điều đang chờ và dừng lại trước khi nó đến.</description>
+    </item>
     <item>
       <title>Hãy để lại một điều tử tế nhỏ trong câu chuyện của bạn</title>
       <link>https://draft.ipe.rest/vi/journal/one-small-kindness/</link>

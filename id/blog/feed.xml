@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/id/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Panduan singkat untuk mengubah ucapanmu menjadi cerita yang benar-benar dibaca orang, dari tim draft().</description>
     <language>id</language>
-    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <item>
+      <title>Tulis penantian kecil saat belum ada yang terjadi</title>
+      <link>https://draft.ipe.rest/id/journal/write-a-small-wait/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/id/journal/write-a-small-wait/</guid>
+      <pubDate>Thu, 26 Nov 2026 16:11:00 +0900</pubDate>
+      <description>Penantian singkat, seperti menunggu ketel, bus, atau balasan, menyimpan ketegangan cerita. Sebut yang ditunggu dan berhenti sebelum ia tiba.</description>
+    </item>
     <item>
       <title>Sisakan satu kebaikan kecil dalam ceritamu</title>
       <link>https://draft.ipe.rest/id/journal/one-small-kindness/</link>

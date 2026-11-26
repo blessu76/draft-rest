@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/tr/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Söylediklerini insanların gerçekten okuyacağı bir hikâyeye çevirmek için kısa rehberler — draft() ekibinden.</description>
     <language>tr</language>
-    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <item>
+      <title>Henüz hiçbir şeyin olmadığı küçük bir bekleyişi yazın</title>
+      <link>https://draft.ipe.rest/tr/journal/write-a-small-wait/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/tr/journal/write-a-small-wait/</guid>
+      <pubDate>Thu, 26 Nov 2026 16:11:00 +0900</pubDate>
+      <description>Su ısıtıcısı, otobüs ya da cevap beklemek gibi kısa bir bekleyiş hikâyenin gerilimini taşır. Beklenen şeyi söyleyin ve gelmeden hemen önce durun.</description>
+    </item>
     <item>
       <title>Hikâyenize küçük bir iyilik bırakın</title>
       <link>https://draft.ipe.rest/tr/journal/one-small-kindness/</link>

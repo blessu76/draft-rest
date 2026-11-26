@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <item>
+      <title>Escribe la pequeña espera en la que aún no pasa nada</title>
+      <link>https://draft.ipe.rest/es/journal/write-a-small-wait/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/journal/write-a-small-wait/</guid>
+      <pubDate>Thu, 26 Nov 2026 16:11:00 +0900</pubDate>
+      <description>Una espera corta, como la de una tetera, un autobús o una respuesta, guarda la tensión de un relato. Nombra lo esperado y detente antes de que llegue.</description>
+    </item>
     <item>
       <title>Deja una pequeña amabilidad en tu historia</title>
       <link>https://draft.ipe.rest/es/journal/one-small-kindness/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <item>
+      <title>Write the small wait, where nothing happens yet</title>
+      <link>https://draft.ipe.rest/journal/write-a-small-wait/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/write-a-small-wait/</guid>
+      <pubDate>Thu, 26 Nov 2026 16:11:00 +0900</pubDate>
+      <description>A short wait, like a kettle, a bus or a reply, holds a story&#x27;s tension. Name what is awaited, show what the body does, and stop before it arrives.</description>
+    </item>
     <item>
       <title>Leave one small kindness in your story</title>
       <link>https://draft.ipe.rest/journal/one-small-kindness/</link>

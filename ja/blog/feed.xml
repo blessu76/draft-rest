@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Nov 2026 16:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <item>
+      <title>まだ何も起きていない、小さな待ち時間を書いてみましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/write-a-small-wait/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/write-a-small-wait/</guid>
+      <pubDate>Thu, 26 Nov 2026 16:11:00 +0900</pubDate>
+      <description>やかん、バス、返信を待つ短い時間に、物語の緊張があります。待つものを書き、体の動きを見せ、届く直前で止める三つのステップです。</description>
+    </item>
     <item>
       <title>物語に小さな親切をひとつ残してみましょう</title>
       <link>https://draft.ipe.rest/ja/journal/one-small-kindness/</link>
