@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/vi/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Những hướng dẫn ngắn để biến điều bạn nói thành câu chuyện người ta thực sự đọc — từ đội ngũ draft().</description>
     <language>vi</language>
-    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <item>
+      <title>Đặt đôi tay của nhân vật vào đâu đó trong cảnh</title>
+      <link>https://draft.ipe.rest/vi/journal/where-your-hands-were/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/vi/journal/where-your-hands-were/</guid>
+      <pubDate>Fri, 27 Nov 2026 17:31:00 +0900</pubDate>
+      <description>Đôi tay cho thấy điều lời nói che giấu. Đặt chúng vào một dòng, giao một việc nhỏ, và người đọc cảm được bầu không khí mà không cần từ chỉ cảm xúc.</description>
+    </item>
     <item>
       <title>Viết khoảng chờ nhỏ khi chưa có gì xảy ra</title>
       <link>https://draft.ipe.rest/vi/journal/write-a-small-wait/</link>

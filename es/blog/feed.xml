@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <item>
+      <title>Pon las manos de la persona en algún lugar de la escena</title>
+      <link>https://draft.ipe.rest/es/journal/where-your-hands-were/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/journal/where-your-hands-were/</guid>
+      <pubDate>Fri, 27 Nov 2026 17:31:00 +0900</pubDate>
+      <description>Las manos muestran lo que las palabras ocultan. Colócalas en una línea, dales una tarea pequeña y el lector leerá el ánimo sin ninguna palabra de emoción.</description>
+    </item>
     <item>
       <title>Escribe la pequeña espera en la que aún no pasa nada</title>
       <link>https://draft.ipe.rest/es/journal/write-a-small-wait/</link>

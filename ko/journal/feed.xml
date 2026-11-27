@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <item>
+      <title>장면 속에 사람의 손을 놓아 보세요</title>
+      <link>https://draft.ipe.rest/ko/journal/where-your-hands-were/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/where-your-hands-were/</guid>
+      <pubDate>Fri, 27 Nov 2026 17:31:00 +0900</pubDate>
+      <description>손은 말이 감추는 것을 보여 줍니다. 한 줄에 손을 놓고 작은 일을 맡기면 감정을 나타내는 말 없이도 독자가 분위기를 읽습니다.</description>
+    </item>
     <item>
       <title>아무 일도 일어나지 않은 작은 기다림을 써 보세요</title>
       <link>https://draft.ipe.rest/ko/journal/write-a-small-wait/</link>

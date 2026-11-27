@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/th/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>คู่มือสั้น ๆ ว่าด้วยการเปลี่ยนสิ่งที่คุณพูดให้เป็นเรื่องที่คนอ่านจริง ๆ จากทีมที่อยู่เบื้องหลัง draft()</description>
     <language>th</language>
-    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <item>
+      <title>วางมือของตัวละครไว้ที่ไหนสักแห่งในฉาก</title>
+      <link>https://draft.ipe.rest/th/journal/where-your-hands-were/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/th/journal/where-your-hands-were/</guid>
+      <pubDate>Fri, 27 Nov 2026 17:31:00 +0900</pubDate>
+      <description>มือแสดงสิ่งที่คำพูดซ่อนไว้ วางมือในหนึ่งบรรทัด ให้ทำงานเล็ก ๆ แล้วผู้อ่านจะอ่านบรรยากาศได้โดยไม่ต้องใช้คำบอกความรู้สึก</description>
+    </item>
     <item>
       <title>เขียนการรอคอยเล็ก ๆ ที่ยังไม่มีอะไรเกิดขึ้น</title>
       <link>https://draft.ipe.rest/th/journal/write-a-small-wait/</link>

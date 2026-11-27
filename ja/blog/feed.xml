@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <item>
+      <title>場面の中に、その人の手を置いてみましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/where-your-hands-were/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/where-your-hands-were/</guid>
+      <pubDate>Fri, 27 Nov 2026 17:31:00 +0900</pubDate>
+      <description>手は言葉が隠すものを見せてくれます。一行で手を置き、小さな仕事を与えると、気持ちを表す言葉がなくても読み手が空気を読み取れます。</description>
+    </item>
     <item>
       <title>まだ何も起きていない、小さな待ち時間を書いてみましょう</title>
       <link>https://draft.ipe.rest/ja/journal/write-a-small-wait/</link>

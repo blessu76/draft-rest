@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <item>
+      <title>Put the person&#x27;s hands somewhere in the scene</title>
+      <link>https://draft.ipe.rest/journal/where-your-hands-were/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/where-your-hands-were/</guid>
+      <pubDate>Fri, 27 Nov 2026 17:31:00 +0900</pubDate>
+      <description>Hands show what words hide. Place them in one line, give them a small task, and let the reader read the mood without a single feeling word.</description>
+    </item>
     <item>
       <title>Write the small wait, where nothing happens yet</title>
       <link>https://draft.ipe.rest/journal/write-a-small-wait/</link>

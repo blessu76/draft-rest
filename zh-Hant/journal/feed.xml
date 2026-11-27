@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/zh-Hant/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>簡短的指南，教你把說出口的話變成人們真的會讀的故事——來自 draft() 背後的團隊。</description>
     <language>zh-Hant</language>
-    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <item>
+      <title>在場景裡替這個人的雙手找個位置</title>
+      <link>https://draft.ipe.rest/zh-Hant/journal/where-your-hands-were/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/zh-Hant/journal/where-your-hands-were/</guid>
+      <pubDate>Fri, 27 Nov 2026 17:31:00 +0900</pubDate>
+      <description>手會顯露言語想隱藏的事。用一行寫下手的位置，給它一件小事去做，讀者不需要任何情緒字眼，也能讀出氣氛。</description>
+    </item>
     <item>
       <title>寫下一段什麼都還沒發生的小小等待</title>
       <link>https://draft.ipe.rest/zh-Hant/journal/write-a-small-wait/</link>

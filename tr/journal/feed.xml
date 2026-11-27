@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/tr/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Söylediklerini insanların gerçekten okuyacağı bir hikâyeye çevirmek için kısa rehberler — draft() ekibinden.</description>
     <language>tr</language>
-    <lastBuildDate>Thu, 26 Nov 2026 16:11:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <item>
+      <title>Kişinin ellerini sahnede bir yere koyun</title>
+      <link>https://draft.ipe.rest/tr/journal/where-your-hands-were/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/tr/journal/where-your-hands-were/</guid>
+      <pubDate>Fri, 27 Nov 2026 17:31:00 +0900</pubDate>
+      <description>Eller sözcüklerin sakladığını gösterir. Elleri tek satırda yerleştirin, küçük bir iş verin; okur tek bir duygu sözcüğü olmadan havayı okusun.</description>
+    </item>
     <item>
       <title>Henüz hiçbir şeyin olmadığı küçük bir bekleyişi yazın</title>
       <link>https://draft.ipe.rest/tr/journal/write-a-small-wait/</link>
