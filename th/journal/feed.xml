@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/th/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>คู่มือสั้น ๆ ว่าด้วยการเปลี่ยนสิ่งที่คุณพูดให้เป็นเรื่องที่คนอ่านจริง ๆ จากทีมที่อยู่เบื้องหลัง draft()</description>
     <language>th</language>
-    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 15:31:00 +0900</lastBuildDate>
+    <item>
+      <title>เมื่อถูกถามว่ารู้สึกอย่างไร ลองตอบด้วยฉากหนึ่งฉาก</title>
+      <link>https://draft.ipe.rest/th/journal/answer-with-a-scene/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/th/journal/answer-with-a-scene/</guid>
+      <pubDate>Sat, 28 Nov 2026 15:31:00 +0900</pubDate>
+      <description>คำบอกความรู้สึกมักปิดเรื่องเล่าเร็วเกินไป วางคำนั้นไว้ก่อน แล้วบรรยายสิ่งที่อยู่ตรงหน้า ภาพเล็ก ๆ ภาพเดียวจะสื่อความรู้สึกแทนคุณ</description>
+    </item>
     <item>
       <title>วางมือของตัวละครไว้ที่ไหนสักแห่งในฉาก</title>
       <link>https://draft.ipe.rest/th/journal/where-your-hands-were/</link>

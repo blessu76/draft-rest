@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ja/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>話したことを、人が実際に読む物語に変えるための短いガイド。draft() のチームが書いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 15:31:00 +0900</lastBuildDate>
+    <item>
+      <title>気持ちをたずねられたら、場面で答えてみましょう</title>
+      <link>https://draft.ipe.rest/ja/journal/answer-with-a-scene/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ja/journal/answer-with-a-scene/</guid>
+      <pubDate>Sat, 28 Nov 2026 15:31:00 +0900</pubDate>
+      <description>気持ちを表す言葉は、物語を早く閉じてしまいがちです。その言葉を脇に置き、目の前にあったものを書けば、小さな場面がかわりに気持ちを伝えます。</description>
+    </item>
     <item>
       <title>場面の中に、その人の手を置いてみましょう</title>
       <link>https://draft.ipe.rest/ja/journal/where-your-hands-were/</link>

@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Short guides on turning what you say into a story people actually read — from the team behind draft().</description>
     <language>en</language>
-    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 15:31:00 +0900</lastBuildDate>
+    <item>
+      <title>When asked how it felt, answer with a scene</title>
+      <link>https://draft.ipe.rest/journal/answer-with-a-scene/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/journal/answer-with-a-scene/</guid>
+      <pubDate>Sat, 28 Nov 2026 15:31:00 +0900</pubDate>
+      <description>A feeling word often closes a story too early. Set it aside, describe what was in front of you, and let one small image carry the feeling for you.</description>
+    </item>
     <item>
       <title>Put the person&#x27;s hands somewhere in the scene</title>
       <link>https://draft.ipe.rest/journal/where-your-hands-were/</link>

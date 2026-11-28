@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/ko/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>말한 것을 사람들이 실제로 읽는 이야기로 바꾸는 짧은 가이드 — draft() 팀이 씁니다.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 15:31:00 +0900</lastBuildDate>
+    <item>
+      <title>기분이 어땠냐는 질문에는 장면으로 답해 보세요</title>
+      <link>https://draft.ipe.rest/ko/journal/answer-with-a-scene/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/ko/journal/answer-with-a-scene/</guid>
+      <pubDate>Sat, 28 Nov 2026 15:31:00 +0900</pubDate>
+      <description>감정을 나타내는 말은 이야기를 너무 일찍 닫아 버리곤 합니다. 그 말을 내려놓고 눈앞에 있던 것을 적으면 작은 장면 하나가 감정을 대신 전해 줍니다.</description>
+    </item>
     <item>
       <title>장면 속에 사람의 손을 놓아 보세요</title>
       <link>https://draft.ipe.rest/ko/journal/where-your-hands-were/</link>

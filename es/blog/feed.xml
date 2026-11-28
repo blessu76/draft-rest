@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/es/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Guías breves para convertir lo que dices en una historia que la gente sí lee, del equipo de draft().</description>
     <language>es</language>
-    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 15:31:00 +0900</lastBuildDate>
+    <item>
+      <title>Cuando te pregunten cómo se sintió, responde con una escena</title>
+      <link>https://draft.ipe.rest/es/journal/answer-with-a-scene/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/es/journal/answer-with-a-scene/</guid>
+      <pubDate>Sat, 28 Nov 2026 15:31:00 +0900</pubDate>
+      <description>Una palabra de emoción cierra la historia demasiado pronto. Déjala a un lado, describe lo que tenías delante y deja que una imagen pequeña lleve el sentimiento.</description>
+    </item>
     <item>
       <title>Pon las manos de la persona en algún lugar de la escena</title>
       <link>https://draft.ipe.rest/es/journal/where-your-hands-were/</link>

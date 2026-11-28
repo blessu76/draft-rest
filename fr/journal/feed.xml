@@ -7,7 +7,14 @@
     <atom:link href="https://draft.ipe.rest/fr/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>De courts guides pour transformer ce que vous dites en une histoire que l&#x27;on lit vraiment, par l&#x27;équipe de draft().</description>
     <language>fr</language>
-    <lastBuildDate>Fri, 27 Nov 2026 17:31:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 15:31:00 +0900</lastBuildDate>
+    <item>
+      <title>Quand on vous demande ce que vous avez ressenti, répondez par une scène</title>
+      <link>https://draft.ipe.rest/fr/journal/answer-with-a-scene/</link>
+      <guid isPermaLink="true">https://draft.ipe.rest/fr/journal/answer-with-a-scene/</guid>
+      <pubDate>Sat, 28 Nov 2026 15:31:00 +0900</pubDate>
+      <description>Un mot de sentiment ferme souvent l&#x27;histoire trop tôt. Mettez-le de côté, décrivez ce qui était devant vous et laissez une petite image porter le sentiment.</description>
+    </item>
     <item>
       <title>Placez les mains du personnage quelque part dans la scène</title>
       <link>https://draft.ipe.rest/fr/journal/where-your-hands-were/</link>
